@@ -3,7 +3,9 @@
 cd "$(dirname "$0")/.."
 R=$(printf "r%04d" "$1"); shift
 MODEL=claude-opus-5-5
+mkdir -p work/board/$R
 for role in "$@"; do
+  [ -f work/board/$R/$role.json ] && { echo "$role $R already done"; continue; }
   mkdir -p work/agents/$role work/board/$R
   allow=(Read Glob Grep WebSearch WebFetch "Write(work/agents/$role/**)" "Edit(work/agents/$role/**)"
          "Write(work/board/$R/$role.json)" "Edit(work/board/$R/$role.json)")
