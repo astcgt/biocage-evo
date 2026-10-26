@@ -8,3 +8,4 @@ __pycache__/
 *.log
 results/gpufe_verify/**/*.txt
 work/agents/*/gate1_rerun/
+work/agents/*.log

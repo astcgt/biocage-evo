@@ -88,3 +88,4 @@ constraints = surgery-compatible + no nerve / bone harm; maximum freedom otherwi
   +2.35 mm beyond d -> it must be compliant, or the hard core must stay inside the insertable envelope. Open: surgeon
   confirmation (Haertl team) of the transient limit.
 - 2026-10-26 PI: the model snapshot (snapshot/model, snapshot/reference, ~52 MB) is committed to the repository.
+- 2026-10-26 PI: unattended operation. ~/.jupyter/jupyter_server_config.py runs ops/resume_all.sh at every server start (PI-authorised); ops/activity_keepalive.py reports real background work (FEBio running, queued jobs, GPU solver or agent round) as Jupyter activity every 10 min so the idle culler does not stop a computing server, and stops reporting when no work is left (PI-authorised, permission rule added by the PI; log work/agents/keepalive.log). Recommended: inform the server admin.
