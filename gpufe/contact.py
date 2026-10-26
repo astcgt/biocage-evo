@@ -75,7 +75,7 @@ class Pass:
         self.tri = torch.tensor(tri_faces(master_faces), device=dev)
         n = len(nodes)
         self.cand = None
-        self.anchor_tri = torch.zeros(n, dtype=torch.long, device=dev); self.anchor_L = torch.zeros(n, 3, dtype=DT, device=dev)
+        self.anchor_tri = torch.zeros(n, 3, dtype=torch.long, device=dev); self.anchor_L = torch.zeros(n, 3, dtype=DT, device=dev)
         self.anchor_ok = torch.zeros(n, dtype=torch.bool, device=dev)
         self.tie_off = None
         self.force_n = torch.zeros(n, dtype=DT, device=dev); self.force_t = torch.zeros(n, 3, dtype=DT, device=dev)
@@ -104,8 +104,14 @@ class Pass:
         return tri, Lk, q[ar, k], nrm, d[ar, k]
 
     def set_anchor(self, x):
+        """start of a load increment (FESlidingElasticSurface::InitSlidingSurface, m_rsp = m_rs): a node that ended the last
+        increment in stick keeps its stick point (FEBio sets m_rs = m_rsp while stuck, FESlidingElasticInterface.cpp:881);
+        a node that slipped, or was not in contact, is re-anchored at its current projection (F-0003)."""
         tri, L, q, nrm, d = self.project(x)
-        self.anchor_tri, self.anchor_L, self.anchor_ok = tri, L, d < self.R
+        keep = self.stick & self.anchor_ok
+        self.anchor_tri = torch.where(keep[:, None], self.anchor_tri, tri)
+        self.anchor_L = torch.where(keep[:, None], self.anchor_L, L)
+        self.anchor_ok = keep | (d < self.R)
 
     def tie(self, x):
         self.search(x)

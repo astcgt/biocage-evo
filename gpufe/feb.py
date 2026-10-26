@@ -137,7 +137,8 @@ def _control(el):
     if el is None: return None
     ts = el.find('time_stepper')
     return dict(time_steps=int(el.find('time_steps').text), step_size=float(el.find('step_size').text),
-                dtmax=_num(ts, 'dtmax') if ts is not None else None)
+                dtmax=_num(ts, 'dtmax') if ts is not None else None,
+                **{k: float(el.find(k).text) for k in ('dtol', 'etol', 'rtol') if el.find(k) is not None})
 
 
 def _loads(el):

@@ -436,7 +436,7 @@ class Solver:
             ctl = st['control']; n = ctl['time_steps']; h = ctl['step_size']
             inc = self.o['increments_per_step'] or n
             t_end = t + n * h
-            self._step_setup(st, t, t_end)
+            self._step_setup(st, t, t_end); self.ctl = ctl
             for k in range(1, inc + 1):
                 self.t = t + (t_end - t) * k / inc
                 # ties are created at their init time

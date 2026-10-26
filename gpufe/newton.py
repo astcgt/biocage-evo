@@ -27,7 +27,7 @@ def _to_t(a): return torch.from_dlpack(a)
 
 class NewtonSolver(S.Solver):
     def __init__(self, model, opts=None):
-        o = dict(newton_tol=1e-6, newton_dx=1e-7, max_newton=60, refactor_every=8, contact_band=0.05, ls_max=6)
+        o = dict(dtol=None, etol=None, rtol=None, stop_unconverged=True, max_newton=60, refactor_every=8, contact_band=0.05, ls_max=6)
         o.update(opts or {}); super().__init__(model, o)
         self._pattern = None; self._ds = None; self._dsP = None
 
@@ -118,10 +118,30 @@ class NewtonSolver(S.Solver):
         indptr = torch.zeros(N3 + 1, dtype=torch.long, device=self.dev); indptr.index_add_(0, rows + 1, torch.ones_like(rows)); indptr = indptr.cumsum(0)
         K = csp.csr_matrix((_to_cp(data), _to_cp(cols), _to_cp(indptr)), shape=(N3, N3))
         Kr = (self.PT @ K @ self.P).tocsr()
+        Kg = self._rigid_geo(x)
+        if Kg is not None: Kr = (Kr + Kg).tocsr()
         Kr.sum_duplicates(); Kr.sort_indices()
         dg = Kr.diagonal(); reg = 1e-10 * float(cp.abs(dg).max())
         Kr = (Kr + csp.identity(Kr.shape[0], dtype=np.float64, format='csr') * reg).tocsr(); Kr.sort_indices()
         return Kr
+
+    def _rigid_geo(self, x):
+        """geometric stiffness of the rigid-body rotation dofs: the rigid nodes carry large individual forces (prestrain,
+        reactions), and rotating the body turns them; with g = J(u)^T r(x(u)), K_red = J^T K J - H.r with
+        (H.r)_ab = sum_i [ (f_b r_a + f_a r_b) / 2 - (r . f) delta_ab ], r_i = x_i - c, f_i = residual force on node i."""
+        rr_all = None; R_, C_, V_ = [], [], []
+        for k, cmap in self.rcols.items():
+            rot = [i for i in (3, 4, 5) if i in cmap]
+            if not rot: continue
+            if rr_all is None: rr_all = self.residual(x)
+            rb = self.rb[k]; r = x[rb['nodes']] - rb['c']; f = rr_all[rb['nodes']]
+            A = r.T @ f                                                   # A[a, b] = sum r_a f_b
+            H = 0.5 * (A + A.T) - torch.trace(A) * torch.eye(3, dtype=DT, device=self.dev)
+            for a in rot:
+                for b in rot:
+                    R_.append(cmap[a]); C_.append(cmap[b]); V_.append(-H[a - 3, b - 3])
+        if not R_: return None
+        return csp.coo_matrix((_to_cp(torch.stack(V_)), (cp.asarray(R_), cp.asarray(C_))), shape=(self.nd, self.nd)).tocsr()
 
     def _factor(self, x):
         Kr = self._assemble(x)
@@ -141,6 +161,7 @@ class NewtonSolver(S.Solver):
 
     # -------------------------------------------------------------- residual in reduced dofs
     def _gres(self, x):
+        if self.rcols: self._dofmap(x)                                        # rigid lever arms follow the rotation
         r = self.residual(x)
         for k, rb in self.rb.items():                                         # reactions / applied loads (bookkeeping)
             rr = x[rb['nodes']] - rb['c']; fn = r[rb['nodes']]
@@ -191,9 +212,9 @@ class NewtonSolver(S.Solver):
             if p.kind != 'tied': p.search(x)
             if p.kind == 'sliding' and p.mu > 0: p.set_anchor(x)
         self._dofmap(x)
-        g, r = self._gres(x); g0n = max(float(g.norm()), 1e-12)
-        fsc = max(float(self._fint.norm()), 1.0)
-        conv = False; it = 0; nfac = 0
+        g, r = self._gres(x)
+        tol = self._tols()
+        conv = False; it = 0; nfac = 0; U = torch.zeros(self.nd, dtype=DT, device=self.dev)
         for it in range(1, o['max_newton'] + 1):
             if (it - 1) % o['refactor_every'] == 0:
                 self._factor(x); nfac += 1
@@ -205,13 +226,28 @@ class NewtonSolver(S.Solver):
                 if float(gnew.norm()) < gn or a < 0.02: break
                 for k, (c_, R_) in saved.items(): self.rb[k]['c'], self.rb[k]['R'] = c_, R_
                 a *= 0.5
+            if it == 1:                                                   # FEBio FESolidSolver2::Quasin initial norms
+                normRi = float(g @ g); normEi = abs(float(du @ g))
+            ui = a * du; U = U + ui
+            normR1 = float(gnew @ gnew); normu = float(ui @ ui); normU = float(U @ U); normE1 = abs(float(ui @ gnew))
             x, g = xn, gnew
             for p in self.passes:
                 if p.kind != 'tied': p.search(x)
-            fsc = max(float(self._fint.norm()), 1.0)
-            dxm = float((a * du).abs().max())
-            if o['log_every']: print(f'  {label} newton {it} |g| {float(g.norm()):.3e} rel {float(g.norm()) / fsc:.2e} a {a:.3f} dx {dxm:.2e}', flush=True)
-            if float(g.norm()) / fsc < o['newton_tol'] and dxm < o['newton_dx'] * 10 or float(g.norm()) / fsc < o['newton_tol'] * 1e-2:
+            if o['log_every']:
+                print(f'  {label} newton {it} R {normR1:.2e}/{normRi:.2e} E {normE1:.2e}/{normEi:.2e} u {normu:.2e}/{normU:.2e} a {a:.3f}', flush=True)
+            if not (normR1 == normR1 and normu == normu): break             # NaN
+            ok = ((tol['rtol'] <= 0 or normR1 <= tol['rtol'] * normRi) and (tol['dtol'] <= 0 or normu <= tol['dtol']**2 * normU)
+                  and (tol['etol'] <= 0 or normE1 <= tol['etol'] * normEi))
+            if ok or normR1 <= 1e-24 * max(normRi, 1e-300):
                 conv = True; break
         self.x = x
-        return dict(iters=it, factorizations=nfac, converged=conv, seconds=_time.time() - t0, rel_res=float(g.norm()) / fsc)
+        info = dict(iters=it, factorizations=nfac, converged=conv, seconds=_time.time() - t0, res=float(g.norm()))
+        if not conv and o['stop_unconverged']:                            # F-0004: never continue from an unconverged state
+            raise RuntimeError(f'Newton not converged at t={self.t:.4f} ({label}): {info}')
+        return info
+
+    def _tols(self):
+        """FEBio convergence tolerances: opts override, else the step's Control block, else FEBio defaults."""
+        ctl = getattr(self, 'ctl', None) or {}
+        d = dict(dtol=0.001, etol=0.01, rtol=0.0)
+        return {k: self.o.get(k) if self.o.get(k) is not None else ctl.get(k, v) for k, v in d.items()}
