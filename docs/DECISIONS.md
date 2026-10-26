@@ -79,3 +79,11 @@ constraints = surgery-compatible + no nerve / bone harm; maximum freedom otherwi
 - 2026-10-26 PI (insertion): maximum TRANSIENT intraoperative distraction: follow current surgical guidelines / surgeon
   teaching (analyst to research); endplate preparation: NO bone removal or shaping, soft-tissue clearing only -> the endplate
   concavity stays; insertion must work with the concavity (hard core inside the insertable envelope, compliant parts allowed).
+- 2026-10-26 transient distraction (analyst, literature; no explicit mm limit exists): Mobi-C technique - trial heights start at
+  the smallest and must not exceed the height of the healthy adjacent discs (4.5 mm size added to avoid facet over-distraction);
+  Bryan technique - minimise pin distraction, prefer intradiscal distraction (PMC6132602); over-distraction >= 2 mm of final
+  disc-height gain is harmful (Sci Rep 2023); a distraction-force study suggests <= 6 kgf cm. DEFAULT until the PI / surgeon
+  confirms: total intraoperative disc-height gain (transient, for insertion) <= 2 mm over native, final d 0.5-1.5 mm;
+  hard PLCL strain during insertion <= 3 %, compliant PLCL 50:50 <= 40 %. With no bone shaping, a contour-matched dome needs
+  +2.35 mm beyond d -> it must be compliant, or the hard core must stay inside the insertable envelope. Open: surgeon
+  confirmation (Haertl team) of the transient limit.

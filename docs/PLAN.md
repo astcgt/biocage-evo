@@ -25,7 +25,7 @@ Sources of method:
 | # | What | Rule (S4, S5, S9 and mu agreed 2026-10-26; others default) | Why |
 |---|------|-------------------------------|-----|
 | S1 | Stays in the disc space | voxels only inside the inset footprint and between the endplates (by construction) | nerves / cord / vertebral artery are outside |
-| S2 | Insertable in one piece from anterior | after 0.8x compression, the part slides along -X without hitting the endplates; Y width <= anterior opening | surgery |
+| S2 | Insertable in one piece from anterior | slides along -X with transient disc-height gain <= 2 mm over native (no bone shaping, soft tissue clearing only); hard PLCL strain <= 3 %, compliant PLCL <= 40 % during insertion; Y width <= anterior opening (PI 2026-10-26, default pending surgeon confirmation) | surgery |
 | S3 | One connected part | single solid component (6-connectivity), no loose pieces | debris near the cord |
 | S4 | Biodisc space | void connected to both endplates, >= 50 % of the disc-space volume (PI 2026-10-26; more is an objective) | purpose: biodisc matures |
 | S5 | Printable | min feature 0.4 mm in X-Y, 0.2 mm layers; every solid voxel supported within 45 deg from the layer below (build along Z) (kept, PI 2026-10-26) | fabrication |
