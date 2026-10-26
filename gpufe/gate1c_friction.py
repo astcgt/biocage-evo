@@ -9,10 +9,10 @@ Pass: |Fx / Fz - mu| < 2 % of mu once sliding (GPU); FEBio shown for reference.
 import os, sys, json, subprocess, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import feb, model as mdl, solver as slv
-from gate1_patch import FEBIO, P, read_log
+from gate1_patch import FEBIO, P, MKL, read_log
 from gate1b_equilibrium import bar
 
-OUT = os.path.join(P, 'human_study/evo/gpufe_verify/gate1c')
+OUT = os.path.join(P, 'results/gpufe_verify/gate1c')
 
 
 def write(path, mu, drag=0.3, press=0.02):
@@ -55,7 +55,7 @@ def run(mu):
     d = os.path.join(OUT, f'mu{mu}'); os.makedirs(d, exist_ok=True); fp = os.path.join(d, 'case.feb')
     top = write(fp, mu)
     subprocess.run([FEBIO, '-i', 'case.feb', '-silent'], cwd=d, capture_output=True,
-                   env=dict(os.environ, LD_LIBRARY_PATH=os.path.join(P, 'third_party/mkl/lib'), OMP_NUM_THREADS='1'))
+                   env=dict(os.environ, LD_LIBRARY_PATH=MKL, OMP_NUM_THREADS='1'))
     ok = 'N O R M A L   T E R M I N A T I O N' in open(os.path.join(d, 'case.log')).read()
     Rf = read_log(os.path.join(d, 'react.txt')) if os.path.exists(os.path.join(d, 'react.txt')) else {}
     m = feb.read(fp); M = mdl.build(m)

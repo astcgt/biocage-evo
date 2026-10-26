@@ -1,6 +1,6 @@
 # Free-form evolutionary BIOCAGE (evo)
 
-Decisions: `human_study/DECISIONS.md`, section "Free-form evolutionary design (evo)". Scripts: `scripts/7_evo/`.
+Decisions: `docs/DECISIONS.md`, section "Free-form evolutionary design (evo)". Scripts: `./`.
 
 ## Idea
 Do not start from a "cage with a window". Let shape and material grow inside the design space and keep a whole map of
@@ -46,10 +46,10 @@ Sources of method:
 - L2 full FEBio (h14 physio test + compression + push-out, h24 preflight, h19 scheduler): only for archive elites, chosen to
   cover the map; results recalibrate L1 (and are the only numbers reported as results).
 
-## The four roles (headless Claude, `scripts/7_evo/roles/`)
-Each round = one engine generation block. Every role reads the round report and writes a JSON verdict into `human_study/evo/rounds/<n>/`.
+## The four roles (headless Claude, `roles/prompts/`)
+Each round = one engine generation block. Every role reads the round report and writes a JSON verdict into `work/rounds/<n>/`.
 - designer: proposes new design programs / encodings / mutation ideas; rewarded for novelty that survives.
 - verifier: reruns a sample with fixed seeds, checks code + data versions, mesh / solver convergence, L1-vs-L2 agreement; can block a round.
 - safety guard: checks constraints S1-S9 are implemented and applied, no candidate breaks them, the purpose (support + fixation + biodisc space) is met; can veto designs.
 - red team: attacks all three (designer exploiting L1 model gaps, verifier blind spots, missing safety items); each finding = severity + evidence + 2-3 fix options.
-Disagreements and every rule change go to `human_study/evo/ISSUES.md` for the PI; nothing in S1-S9 changes without the PI.
+Disagreements and every rule change go to `docs/ISSUES.md` for the PI; nothing in S1-S9 changes without the PI.

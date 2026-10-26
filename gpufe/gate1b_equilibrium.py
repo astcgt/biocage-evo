@@ -8,9 +8,9 @@ Pass: max node displacement difference < 1e-3 of the largest displacement, total
 import os, sys, json, subprocess, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import feb, model as mdl, solver as slv
-from gate1_patch import FEBIO, P, read_log, tets_from_hexes
+from gate1_patch import FEBIO, P, MKL, read_log, tets_from_hexes
 
-OUT = os.path.join(P, 'human_study/evo/gpufe_verify/gate1b')
+OUT = os.path.join(P, 'results/gpufe_verify/gate1b')
 
 
 def bar(nx=12, ny=4, nz=4, L=(6.0, 2.0, 2.0)):
@@ -48,7 +48,7 @@ def run(name, X, E, etype, mat_xml, lift, opts=None):
     d = os.path.join(OUT, name); os.makedirs(d, exist_ok=True); fp = os.path.join(d, 'case.feb')
     clamp = write(fp, X, E, etype, mat_xml, lift)
     subprocess.run([FEBIO, '-i', 'case.feb', '-silent'], cwd=d, capture_output=True,
-                   env=dict(os.environ, LD_LIBRARY_PATH=os.path.join(P, 'third_party/mkl/lib'), OMP_NUM_THREADS='1'))
+                   env=dict(os.environ, LD_LIBRARY_PATH=MKL, OMP_NUM_THREADS='1'))
     ok = 'N O R M A L   T E R M I N A T I O N' in open(os.path.join(d, 'case.log')).read()
     Uf = read_log(os.path.join(d, 'u.txt')); Rf = read_log(os.path.join(d, 'react.txt'))
     m = feb.read(fp); M = mdl.build(m)

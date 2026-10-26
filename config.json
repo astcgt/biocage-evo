@@ -1,0 +1,7 @@
+{
+ "note": "External tools only (not data). Data come from snapshot/ (see snapshot/MANIFEST.json).",
+ "febio_bin": "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/third_party/FEBio/cbuild/bin/febio4",
+ "mkl_lib": "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/third_party/mkl/lib",
+ "gpu": "5",
+ "febio_src": "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/third_party/FEBio"
+}

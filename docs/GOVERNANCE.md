@@ -26,7 +26,7 @@ PI 2026-10-26: four roles, each independent, cooperating and supervising each ot
 
 ## Folder layout (no mixing)
 ```
-human_study/evo/
+work/
   board/            shared blackboard, append-only; one file per round per role: board/r0007/designer.json, verifier.json ...
   archive/          engine only: evaluated designs (genome, voxels, L0/L1/L2 results, provenance), never edited by roles
   roles/<role>/     each role's private workspace (notes, scratch); no other role reads or writes it

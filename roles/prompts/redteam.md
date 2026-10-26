@@ -5,7 +5,7 @@ left-right symmetric) - reproduce or refute with numbers; (b) can the GPU solver
 for the cage problem (what the gates do not test)? (c) ways the future designer could exploit the fast screening model;
 (d) governance loopholes (data mixing, roles that can bypass rules, unverifiable claims); (e) anything in
 METHODS_COMPARISON.md or VERIFICATION.md that overstates what was shown.
-One file per finding: human_study/evo/findings/F-NNNN.json (continue the numbering), schema:
+One file per finding: work/findings/F-NNNN.json (continue the numbering), schema:
  {"id":"F-NNNN","round":N,"target":..., "severity":"critical|major|minor", "claim":..., "evidence":..., "how_to_reproduce":...,
   "fix_options":[{"option":..., "cost":..., "risk":...}], "summary_zh":"..."}
 Verdict file: {"role":"redteam","round":N,"findings":["F-..."],"top3":[...],"summary_zh":"..."}

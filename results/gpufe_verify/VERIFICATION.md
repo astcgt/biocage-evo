@@ -1,6 +1,6 @@
-# GPU explicit solver (scripts/7_evo/gpufe) - credibility record
+# GPU explicit solver (./gpufe) - credibility record
 
-Gate plan: human_study/evo/METHODS_COMPARISON.md. Each gate script writes its JSON report next to this file.
+Gate plan: docs/METHODS_COMPARISON.md. Each gate script writes its JSON report next to this file.
 Formulas were transcribed from the FEBio 4 source in third_party/FEBio (FEOrthoElastic, FENeoHookean, FEHolmesMow,
 FEFiberExpPow, FEGentMaterial, FEPreStrainUncoupledElastic + FEConstPrestrainGradient, FE3FieldElasticSolidDomain,
 FENonlinearSpring, PointCurve SMOOTH, FEContactInterface::AutoPenalty, FESlidingElasticInterface::ContactTraction).

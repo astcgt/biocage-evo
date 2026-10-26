@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+# third-party model data and large run outputs stay local (hashes in snapshot/MANIFEST.json)
+snapshot/model/
+snapshot/reference/
+*.xplt
+*.dmp
+*.feb
+*.log
+results/gpufe_verify/**/*.txt
+work/agents/*/gate1_rerun/

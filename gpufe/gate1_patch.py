@@ -12,11 +12,10 @@ import os, sys, json, subprocess, numpy as np, torch
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import feb, model as mdl, solver as slv
 
-P = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-FEBIO = os.path.join(P, 'third_party/FEBio/cbuild/bin/febio4')
-OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(P, 'human_study/evo/gpufe_verify/gate1')
+from paths import ROOT as P, FEBIO, MKL
+OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(P, 'results/gpufe_verify/gate1')
 Fdef = np.array([[1.06, 0.03, 0.02], [0.01, 0.95, 0.04], [0.02, -0.03, 1.09]])
-LIG_LC = os.path.join(P, 'human_study/fsu/C34_fsu_refined.feb')
+LIG_LC = os.path.join(P, 'snapshot/model/C34_fsu_refined.feb')
 
 HEX_NODES = np.array([[0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0], [0, 0, 1], [1, 0, 1], [1, 1, 1], [0, 1, 1]], float)
 TET_SPLIT = [[0, 1, 3, 4], [1, 2, 3, 6], [1, 3, 4, 6], [3, 4, 6, 7], [1, 4, 5, 6]]   # 5-tet split of the cube (positive volume ordering fixed below)
@@ -90,7 +89,7 @@ def run_case(name, X, elems, etype, mat_xml, lc_extra='', springs=None, rot=None
     d = os.path.join(OUT, name); os.makedirs(d, exist_ok=True); fp = os.path.join(d, 'case.feb')
     write_feb(fp, X, elems, etype, mat_xml, lc_extra, springs, rot)
     r = subprocess.run([FEBIO, '-i', 'case.feb', '-silent'], cwd=d, capture_output=True, text=True,
-                       env=dict(os.environ, LD_LIBRARY_PATH=os.path.join(P, 'third_party/mkl/lib'), OMP_NUM_THREADS='1'))
+                       env=dict(os.environ, LD_LIBRARY_PATH=MKL, OMP_NUM_THREADS='1'))
     ok_febio = 'N O R M A L   T E R M I N A T I O N' in open(os.path.join(d, 'case.log')).read()
     S_fe = read_log(os.path.join(d, 'stress.txt')) if len(elems) else {}
     R_fe = read_log(os.path.join(d, 'react.txt'))
