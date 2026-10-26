@@ -87,3 +87,4 @@ constraints = surgery-compatible + no nerve / bone harm; maximum freedom otherwi
   hard PLCL strain during insertion <= 3 %, compliant PLCL 50:50 <= 40 %. With no bone shaping, a contour-matched dome needs
   +2.35 mm beyond d -> it must be compliant, or the hard core must stay inside the insertable envelope. Open: surgeon
   confirmation (Haertl team) of the transient limit.
+- 2026-10-26 PI: the model snapshot (snapshot/model, snapshot/reference, ~52 MB) is committed to the repository.

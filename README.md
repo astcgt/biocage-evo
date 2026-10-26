@@ -13,6 +13,6 @@ guard, red team). Split from `biocage-stimulation-test-1` (commit in `snapshot/M
 | `work/` | role workspaces (`agents/`), shared board (`board/rNNNN/`), red-team findings, change requests, design archive |
 | `results/` | verification reports and method results |
 | `common/`, `l2_febio/` | code copied from the old repo (endplate geometry, xplt reader, FEBio case builder) for the full-FEBio level; `h24_preflight.py` still has old-repo paths and is not wired yet |
-| `snapshot/` | model data copied from the old repo (local only, not in git) + `MANIFEST.json` with source paths and SHA-256 |
+| `snapshot/` | model data copied from the old repo (committed) + `MANIFEST.json` with source paths and SHA-256 |
 
 External tools (FEBio binary, MKL, FEBio source) are referenced in `config.json`.

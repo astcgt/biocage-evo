@@ -2,7 +2,7 @@
  "source_repo": "biocage-stimulation-test-1 (astcgt/biocage-stimulation-test-1)",
  "source_commit": "87c438804fc766a15de005f826acbc173370dcba",
  "copied": "2026-10-26",
- "note": "Snapshot so this repo runs independently. Model data (snapshot/model, snapshot/reference) stay local (third-party FEBio cervical model, Herron 2020); hashes here prove which files were used. Code copies are committed.",
+ "note": "Snapshot so this repo runs independently. Model data (snapshot/model, snapshot/reference) are committed (PI 2026-10-26); source model: FEBio cervical spine model, 26 y.o. female, Herron et al. 2020 J Biomech (simtk.org/projects/febiocervical) - check its licence before making this repository public. Hashes prove which files were used.",
  "files": {
   "common/cage_geom.py": {
    "source": "scripts/common/cage_geom.py",
