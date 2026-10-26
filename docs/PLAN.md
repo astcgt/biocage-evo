@@ -1,6 +1,6 @@
 # Free-form evolutionary BIOCAGE (evo)
 
-Decisions: `docs/DECISIONS.md`, section "Free-form evolutionary design (evo)". Scripts: `./`.
+Decisions: `docs/DECISIONS.md`. Code: `gpufe/`, `methods/`, `roles/`.
 
 ## Idea
 Do not start from a "cage with a window". Let shape and material grow inside the design space and keep a whole map of
@@ -41,13 +41,14 @@ Sources of method:
 
 ## Three evaluation levels
 - L0 geometry / safety checks (S1-S5): milliseconds, CPU.
-- L1 fast physics: GPU voxel finite-element model (linear elastic, unilateral endplate contact, posterior elements as springs
-  calibrated on the existing FEBio physio runs); gives mu_req, capacity estimate, height loss, endplate pressure. Seconds.
-- L2 full FEBio (h14 physio test + compression + push-out, h24 preflight, h19 scheduler): only for archive elites, chosen to
+- L1 fast physics (< 1 min): reduced GPU model for screening (cage + endplate region), calibrated against L1b / L2.
+- L1b full GPU model (10-30 min, PI 2026-10-26): the same C3-C4 FSU as FEBio solved by gpufe (GPU Newton + cuDSS, explicit
+  Coulomb friction), real-friction slip-out test for the front runners.
+- L2 full FEBio (finalists) (h14 physio test + compression + push-out, h24 preflight, h19 scheduler): only for archive elites, chosen to
   cover the map; results recalibrate L1 (and are the only numbers reported as results).
 
 ## The four roles (headless Claude, `roles/prompts/`)
-Each round = one engine generation block. Every role reads the round report and writes a JSON verdict into `work/rounds/<n>/`.
+Each round = one engine generation block. Every role reads the round report and writes a JSON verdict into `work/board/rNNNN/`.
 - designer: proposes new design programs / encodings / mutation ideas; rewarded for novelty that survives.
 - verifier: reruns a sample with fixed seeds, checks code + data versions, mesh / solver convergence, L1-vs-L2 agreement; can block a round.
 - safety guard: checks constraints S1-S9 are implemented and applied, no candidate breaks them, the purpose (support + fixation + biodisc space) is met; can veto designs.
