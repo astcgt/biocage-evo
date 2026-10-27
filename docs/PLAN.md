@@ -32,7 +32,7 @@ Sources of method:
 | S6 | Load capacity | >= 1164 N compression before failure (Moroney 1988) | support |
 | S7 | Height | height loss <= d/2 at 150 N | keep distraction, foramen height |
 | S8 | Bone | no endplate overload: peak 1 mm2-averaged contact pressure below the subsidence proxy (calibrated on FEBio) | subsidence |
-| S9 | No slip-out | at mu 0.3 (sensitivity 0.2 / 0.45): cage-centre translation <= 1 mm relative to C3 and C4 in every direction, 6 directions x 3 cycles, no ratcheting; posterior (toward the cord) net migration <= 0.5 mm and posterior push-out >= 135 N (PI 2026-10-26) | main goal + cord safety |
+| S9 | No slip-out (dislocation: rigid-body radial outward migration of the whole cage; local squash / micro-slip allowed, PI 2026-10-27) | at mu 0.3 (sensitivity 0.2 / 0.45): cage-centre translation <= 1 mm relative to C3 and C4 in every direction, 6 directions x 3 cycles, no ratcheting; posterior (toward the cord) net migration <= 0.5 mm and posterior push-out >= 135 N (PI 2026-10-26) | main goal + cord safety |
 
 ## Objectives
 - Fixation: minimise mu_req = worst friction coefficient needed to hold over the 6 physiological directions (1.5 N m + 100 N follower).

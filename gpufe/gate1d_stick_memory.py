@@ -1,10 +1,10 @@
 """Credibility gate 1d (stick memory, finding F-0003): a sticking interface must not creep under cyclic shear.
 
 The gate 1c block pair (mu 0.5) is pressed (t 0-0.25), then the top face is moved along x 0 -> a -> 0 three times
-(t 0.25-1), with a small enough that the interface sticks throughout (|Fx| < mu |Fz|). With FEBio's rule (a sticking node
-keeps its stick point across increments) the tangential force returns to zero at the end of every cycle whatever the
-increment size; with the old GPU rule (every node re-anchored each increment) a residual force builds up in proportion
-to the number of increments. Runs the GPU Newton solver with 10 / 20 / 40 increments per half cycle, current rule and
+(t 0.25-1), with a small enough that the interface sticks throughout (|Fx| < mu |Fz|). With stick memory (a sticking node
+keeps its stick point across increments: Coulomb's law) the tangential force returns to zero at the end of every cycle
+whatever the increment size; with re-anchoring every increment (the old GPU rule, and also FEBio 4's own rule:
+FESlidingElasticInterface::Update projects before InitSlidingSurface) a residual force builds up. Runs the GPU Newton solver with 10 / 20 / 40 increments per half cycle, current rule and
 (for the record) the old rule.
 Pass (current rule): stick throughout, and |Fx / Fz| at every cycle end < 1e-3 for all increment counts.
 """
@@ -66,7 +66,7 @@ def main():
     rep = dict(gate='1d stick memory: cyclic shear below the friction limit', all_passed=all(c['passed'] for c in cases if not c['legacy_rule']), cases=cases)
     json.dump(rep, open(os.path.join(OUT, 'gate1d_report.json'), 'w'), indent=1)
     for c in cases:
-        print(f"{'old rule' if c['legacy_rule'] else 'FEBio rule'} n {c['n']:3d}: cycle-end |Fx/Fz| {np.round(c['cycle_end_Fx_over_Fz'], 5).tolist()} "
+        print(f"{'re-anchor (old / FEBio) rule' if c['legacy_rule'] else 'stick-memory rule'} n {c['n']:3d}: cycle-end |Fx/Fz| {np.round(c['cycle_end_Fx_over_Fz'], 5).tolist()} "
               f"max |Fx/Fz| {c['max_Fx_over_Fz']:.3f} min stick {c['min_stick_frac']:.3f} {'PASS' if c['passed'] else 'FAIL'}")
     print('ALL PASSED' if rep['all_passed'] else 'SOME FAILED')
 

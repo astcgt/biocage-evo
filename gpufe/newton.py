@@ -27,9 +27,11 @@ def _to_t(a): return torch.from_dlpack(a)
 
 class NewtonSolver(S.Solver):
     def __init__(self, model, opts=None):
-        o = dict(dtol=None, etol=None, rtol=None, stop_unconverged=True, max_newton=60, refactor_every=8, contact_band=0.05, ls_max=6)
+        o = dict(dtol=None, etol=None, rtol=None, stop_unconverged=True, max_newton=60, refactor_every=None, ls_conv_min=0.1, max_cuts=6, reg=1e-16, contact_band=0.05, ls_max=6)
         o.update(opts or {}); super().__init__(model, o)
         self._pattern = None; self._ds = None; self._dsP = None
+        if self.o['refactor_every'] is None:                              # contact changes the tangent from step to step: full Newton
+            self.o['refactor_every'] = 1 if any(p.kind == 'sliding' for p in self.passes) else 8
 
     # -------------------------------------------------------------- dof map
     def _dofmap(self, x):
@@ -103,6 +105,15 @@ class NewtonSolver(S.Solver):
             wv = torch.cat([torch.ones(len(k), 1, dtype=DT, device=self.dev), -L], 1)            # slave, master a, b, c
             Kc = (k * act)[:, None, None, None, None] * wv[:, :, None, None, None] * wv[:, None, None, :, None] * M[:, None, :, None, :]
             add_blocks(torch.cat([p.s[:, None], tri], 1), Kc)
+        for Pq in self.pressure:                                          # follower pressure: load stiffness (non-symmetric)
+            pv = Pq['scale'] * self.lc(Pq['lc'])
+            if pv == 0: continue
+            xq = x[Pq['q']]; cols = []
+            for b in range(4):
+                for j in range(3):
+                    t = torch.zeros_like(xq); t[:, b, j] = 1.0
+                    cols.append(-torch.func.jvp(lambda y: S.Solver.pressure_q(y, pv), (xq,), (t,))[1])
+            add_blocks(Pq['q'], torch.stack(cols, -1).reshape(xq.shape[0], 4, 3, 4, 3))
         return torch.cat(R), torch.cat(C), torch.cat(V)
 
     def _assemble(self, x):
@@ -121,7 +132,7 @@ class NewtonSolver(S.Solver):
         Kg = self._rigid_geo(x)
         if Kg is not None: Kr = (Kr + Kg).tocsr()
         Kr.sum_duplicates(); Kr.sort_indices()
-        dg = Kr.diagonal(); reg = 1e-10 * float(cp.abs(dg).max())
+        dg = Kr.diagonal(); reg = self.o['reg'] * float(cp.abs(dg).max())
         Kr = (Kr + csp.identity(Kr.shape[0], dtype=np.float64, format='csr') * reg).tocsr(); Kr.sort_indices()
         return Kr
 
@@ -214,37 +225,104 @@ class NewtonSolver(S.Solver):
         self._dofmap(x)
         g, r = self._gres(x)
         tol = self._tols()
-        conv = False; it = 0; nfac = 0; U = torch.zeros(self.nd, dtype=DT, device=self.dev)
-        for it in range(1, o['max_newton'] + 1):
-            if (it - 1) % o['refactor_every'] == 0:
-                self._factor(x); nfac += 1
+        conv = False; it = 0; nfac = 0; U = torch.zeros(self.nd, dtype=DT, device=self.dev); fresh = False; why = 'max_newton'
+        it = 0
+        while it < o['max_newton']:
+            it += 1
+            if (it - 1) % o['refactor_every'] == 0 and not fresh:
+                self._factor(x); nfac += 1; fresh = True
             du = self._solve(g)
-            gn = float(g.norm()); a = 1.0
+            gn = float(g.norm()); a = 1.0; dec = False
             for _ in range(o['ls_max']):
                 xn, saved = self._update(x, du, a)
                 gnew, r = self._gres(xn)
-                if float(gnew.norm()) < gn or a < 0.02: break
+                if float(gnew.norm()) < gn: dec = True; break
                 for k, (c_, R_) in saved.items(): self.rb[k]['c'], self.rb[k]['R'] = c_, R_
                 a *= 0.5
+            if not dec:                                                   # no descent along this direction
+                self._gres(x)
+                if not fresh:                                             # stale tangent: refactor here and try again
+                    self._factor(x); nfac += 1; fresh = True; it -= 1; continue
+                why = 'line search'; break                                # fresh tangent and still no descent: the increment fails
+            fresh = False
             if it == 1:                                                   # FEBio FESolidSolver2::Quasin initial norms
                 normRi = float(g @ g); normEi = abs(float(du @ g))
             ui = a * du; U = U + ui
             normR1 = float(gnew @ gnew); normu = float(ui @ ui); normU = float(U @ U); normE1 = abs(float(ui @ gnew))
             x, g = xn, gnew
-            for p in self.passes:
-                if p.kind != 'tied': p.search(x)
+            if any(p.kind != 'tied' for p in self.passes):
+                for p in self.passes:
+                    if p.kind != 'tied': p.search(x)
+                g, r = self._gres(x)                                      # new candidates can change the projections
             if o['log_every']:
                 print(f'  {label} newton {it} R {normR1:.2e}/{normRi:.2e} E {normE1:.2e}/{normEi:.2e} u {normu:.2e}/{normU:.2e} a {a:.3f}', flush=True)
-            if not (normR1 == normR1 and normu == normu): break             # NaN
+            if not (normR1 == normR1 and normu == normu): why = 'NaN'; break
             ok = ((tol['rtol'] <= 0 or normR1 <= tol['rtol'] * normRi) and (tol['dtol'] <= 0 or normu <= tol['dtol']**2 * normU)
                   and (tol['etol'] <= 0 or normE1 <= tol['etol'] * normEi))
-            if ok or normR1 <= 1e-24 * max(normRi, 1e-300):
+            # a strongly cut line step makes the displacement / energy norms small without equilibrium (FEBio: s < LSmin)
+            if (ok and a >= o['ls_conv_min']) or normR1 <= 1e-24 * max(normRi, 1e-300):
                 conv = True; break
         self.x = x
-        info = dict(iters=it, factorizations=nfac, converged=conv, seconds=_time.time() - t0, res=float(g.norm()))
-        if not conv and o['stop_unconverged']:                            # F-0004: never continue from an unconverged state
-            raise RuntimeError(f'Newton not converged at t={self.t:.4f} ({label}): {info}')
-        return info
+        return dict(iters=it, factorizations=nfac, converged=conv, seconds=_time.time() - t0, res=float(g.norm()), why=None if conv else why)
+
+    # -------------------------------------------------------------- driver with automatic increment cutting
+    def _snap(self):
+        rb = {k: {n: v[n].clone() for n in ('c', 'R', 'F', 'M')} for k, v in self.rb.items()}
+        ps = [{n: (getattr(p, n).clone() if torch.is_tensor(getattr(p, n)) else getattr(p, n))
+               for n in ('anchor_tri', 'anchor_L', 'anchor_ok', 'stick', 'cand', 'tie_off', 'tied_done', 'force_n', 'force_t', 'gap')} for p in self.passes]
+        return self.x.clone(), self.t, rb, ps
+
+    def _restore(self, S):
+        x, t, rb, ps = S; self.x = x.clone(); self.t = t
+        for k, v in rb.items(): self.rb[k].update({n: w.clone() for n, w in v.items()})
+        for p, d in zip(self.passes, ps):
+            for n, v in d.items(): setattr(p, n, v.clone() if torch.is_tensor(v) else v)
+
+    def run(self, t_stop=None, on_increment=None, resume=None):
+        """FEBio-like auto time stepping: the nominal increments (increments_per_step) are must-points; an increment that
+        does not converge is retried from the last converged state with half the size (up to max_cuts halvings, else stop:
+        F-0004); after an easy increment the size grows back (x1.5, never above nominal, never across a must-point).
+        resume: a state from _snap() (e.g. a checkpoint); increments up to its time are skipped."""
+        t = 0.0; hist = []; self.internal_scale = 1.0
+        for si, st in enumerate(self.feb['steps']):
+            ctl = st['control']; n = ctl['time_steps']; h = ctl['step_size']
+            inc = self.o['increments_per_step'] or n
+            t_end = t + n * h; dt0 = (t_end - t) / inc
+            self._step_setup(st, t, t_end); self.ctl = ctl
+            grid = [t + dt0 * k for k in range(1, inc + 1)]; gi = 0; dt = dt0; tc = t
+            if resume is not None and resume[1] > t - 1e-12:
+                if resume[1] >= t_end - 1e-12: t = t_end; continue
+                self._restore(resume); tc = resume[1]; gi = sum(g_ <= tc + 1e-12 for g_ in grid)
+            while gi < len(grid):
+                S = self._snap(); cuts = 0
+                while True:
+                    tn = min(tc + dt, grid[gi])
+                    self.t = tn
+                    for p in self.passes:
+                        if p.kind == 'tied' and not p.tied_done and self.t >= p.init_time - 1e-12:
+                            p.tie(self.x); p.tied_done = True
+                    self.internal_scale = max(self._force_scale(), 1e-6)
+                    info = self.relax(label=f"{st['name']} t={self.t:.4f}")
+                    if info['converged']: break
+                    if self.o['verbose']: print(f"  [cut] t={tn:.5f} dt {tn - tc:.2e} failed ({info['why']}, {info['iters']} it): retry with half", flush=True)
+                    self._restore(S); cuts += 1; dt = (tn - tc) / 2
+                    if cuts > self.o['max_cuts']:
+                        if self.o['stop_unconverged']:
+                            raise RuntimeError(f'Newton not converged at t={tn:.5f} after {cuts - 1} cuts: {info}')
+                        break
+                info['dt'] = tn - tc; info['cuts'] = cuts
+                tc = tn
+                if abs(tc - grid[gi]) < 1e-12: gi += 1
+                if info['iters'] <= 6 and cuts == 0: dt = min(dt * 1.5, dt0)
+                row = self.record(); row.update(info, step=st['name']); hist.append(row)
+                if self.o['verbose']:
+                    print(f"[{st['name']}] t={self.t:.4f} dt {info['dt']:.3g} iters {info['iters']} {info['seconds']:.1f}s "
+                          + ' '.join(f"{v['name']}: x {np.round(v['x'], 4).tolist()} th {np.round(v['th'], 5).tolist()} F {np.round(v['F'], 3).tolist()} M {np.round(v['M'], 2).tolist()}"
+                                     for v in row['rigid'].values() if v['name'] != 'Fixed'), flush=True)
+                if on_increment: on_increment(self, row)
+                if t_stop is not None and self.t >= t_stop - 1e-12: return hist
+            t = t_end
+        return hist
 
     def _tols(self):
         """FEBio convergence tolerances: opts override, else the step's Control block, else FEBio defaults."""

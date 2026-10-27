@@ -122,8 +122,9 @@ def P_gentps(xe, G, w, V0, Gmod, k, Jm, Fp):
 PFUN = dict(neo=P_neo, ortho=P_ortho, hmfib=P_hmfib, gentps=P_gentps)
 
 
-def elem_tangent(kind, xe, G, w, params, chunk=8192):
-    """element stiffness K[e, a, i, b, j] = d f_e[a, i] / d x_e[b, j] by forward-mode autodiff, in chunks.
+def elem_tangent(kind, xe, G, w, params, chunk=16384):
+    """element stiffness K[e, a, i, b, j] = d f_e[a, i] / d x_e[b, j] by forward-mode autodiff, in chunks; the 3n tangent
+    directions are batched with vmap (one pass instead of 3n).
     params: per-element tensors (first dim E) and constants (as a tuple; constants are passed through)."""
     Pf = PFUN[kind]; E_, n = xe.shape[0], xe.shape[1]
     out = []
@@ -133,12 +134,7 @@ def elem_tangent(kind, xe, G, w, params, chunk=8192):
         xs, Gs, ws = xe[sl], G[sl], w[sl]
         def fe(x_):
             return elem_forces(Pf(x_, Gs, ws, *pp), Gs, ws)
-        cols = []
-        for b in range(n):
-            for j in range(3):
-                t = torch.zeros_like(xs); t[:, b, j] = 1.0
-                _, d = torch.func.jvp(fe, (xs,), (t,))
-                cols.append(d)                                   # (e, n, 3)
-        K = torch.stack(cols, -1).reshape(xs.shape[0], n, 3, n, 3)
-        out.append(K)
+        T = torch.eye(3 * n, dtype=xs.dtype, device=xs.device).reshape(3 * n, 1, n, 3).expand(3 * n, xs.shape[0], n, 3)
+        d = torch.func.vmap(lambda t: torch.func.jvp(fe, (xs,), (t,))[1])(T)       # (3n, e, n, 3): column (b, j) first
+        out.append(d.permute(1, 2, 3, 0).reshape(xs.shape[0], n, 3, n, 3))
     return torch.cat(out)

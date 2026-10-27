@@ -89,3 +89,29 @@ constraints = surgery-compatible + no nerve / bone harm; maximum freedom otherwi
   confirmation (Haertl team) of the transient limit.
 - 2026-10-26 PI: the model snapshot (snapshot/model, snapshot/reference, ~52 MB) is committed to the repository.
 - 2026-10-26 PI: unattended operation. ~/.jupyter/jupyter_server_config.py runs ops/resume_all.sh at every server start (PI-authorised); ops/activity_keepalive.py reports real background work (FEBio running, queued jobs, GPU solver or agent round) as Jupyter activity every 10 min so the idle culler does not stop a computing server, and stops reporting when no work is left (PI-authorised, permission rule added by the PI; log work/agents/keepalive.log). Recommended: inform the server admin.
+- 2026-10-27 PI (after round 2):
+  (1) Slip-out is judged by calculation first: from the fixed (tied) cage, the force the interface must carry vs what friction
+      can give, i.e. the minimum friction coefficient needed (mu_req, limit-surface method e02); the full frictional
+      simulation is only the check of that shortcut on selected designs. Where a frictional reference is needed, the law
+      (no slip below the friction limit) is the reference, not FEBio (FEBio re-anchors stick points every increment:
+      FESlidingElasticInterface::Update projects before InitSlidingSurface; verifier round 2, confirmed in the source).
+      e02 must handle curved contact faces (red team round 2: flat assumption under-estimates mu_req up to 7.5x).
+  (2) Posterior push-out 135 N kept (origin: safety guard round 1, Moroney 1988 maximum cervical AP shear). Expand-after-
+      insertion / latch structures are allowed, but the safety guard must verify them carefully.
+  (3) Safety guard insertion rules accepted: hard core passes the narrowest anterior gap without compression (stress based,
+      no permanent set), soft material compression <= 30 %, posterior checks at mu 0.2, transient distraction 2 mm
+      (1.5-2.5 sensitivity) pending surgeon confirmation.
+  (4) Slip-out also judged by the displacement of the most posterior cage point (toward the cord), not only the centre.
+  (5) Friction experiments come later; simulate as realistically as possible meanwhile (mu 0.3 main, 0.2 / 0.45).
+  (6) All role tool permissions opened (roles/run_roles.sh): roles are independent processes that each push one goal to the
+      limit and supervise each other; no single agent plays several roles.
+  (7) Focus: short-term safe non-slip-out first. Fatigue, insertion depth stop, soft debris / delamination and 16-week
+      degradation are recorded as later checks, applied once a suitable prototype exists.
+- 2026-10-27 PI (definition of slip-out): slip-out means dislocation, i.e. the cage as a whole moving radially out of the disc
+  space. Being squashed a little, local deformation or local micro-slip at part of the contact face are acceptable as long
+  as the cage as a whole does not dislocate. Implementation: (a) dislocation = the rigid-body part of the cage motion (best-fit
+  rigid motion of all cage nodes, relative to C3 and C4), its radial outward component (from the disc-space centre); limits
+  1 mm any direction, 0.5 mm posterior; (b) elastic shape change is excluded from (a); a posterior bulge of soft material
+  is a nerve-safety check of its own (no cage material inside the canal clearance zone), not slip-out; (c) the friction
+  shortcut uses the whole-face limit (mu_req: the least mu at which the whole cage face can hold the load as one body), so
+  local partial slip does not count as failure. Supersedes (4) of the entry above ("most posterior point displacement").

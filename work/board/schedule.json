@@ -1,1 +1,14 @@
-{"note": "rounds run by ops/evo_daemon.sh when due; a round is done when every role verdict exists", "rounds": [{"round": 2, "at": "2026-10-27T10:15:00", "roles": ["verifier", "safety", "redteam"]}]}
+{
+ "note": "rounds run by ops/evo_daemon.sh when due; a round is done when every role verdict exists",
+ "rounds": [
+  {
+   "round": 2,
+   "at": "2026-10-27T06:36:20",
+   "roles": [
+    "verifier",
+    "safety",
+    "redteam"
+   ]
+  }
+ ]
+}

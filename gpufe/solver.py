@@ -187,22 +187,25 @@ class Solver:
         sp = self.spr
         f += self._compiled('springs', False)(x, sp['i'], sp['j'], sp['L0'], sp['cid'], sp['x0'], sp['dx'], sp['ys'], self.m['N'])
 
+    @staticmethod
+    def pressure_q(xq, p):
+        """follower pressure p on bilinear quads (2x2 Gauss): nodal forces (Q, 4, 3) = -p int N (dx/da x dx/db)."""
+        gp = torch.tensor([-1, 1], dtype=xq.dtype, device=xq.device) / np.sqrt(3)
+        fq = torch.zeros_like(xq)
+        for a in gp:
+            for b in gp:
+                N = torch.stack([(1 - a) * (1 - b), (1 + a) * (1 - b), (1 + a) * (1 + b), (1 - a) * (1 + b)]) / 4
+                dNa = torch.stack([-(1 - b), (1 - b), (1 + b), -(1 + b)]) / 4
+                dNb = torch.stack([-(1 - a), -(1 + a), (1 + a), (1 - a)]) / 4
+                ta = (dNa[None, :, None] * xq).sum(1); tb = (dNb[None, :, None] * xq).sum(1)
+                fq = fq - p * N[None, :, None] * torch.cross(ta, tb, dim=-1)[:, None, :]
+        return fq
+
     def pressure_f(self, x, f):
-        if not self.pressure: return
-        gp = torch.tensor([-1, 1], dtype=DT, device=self.dev) / np.sqrt(3)
         for P in self.pressure:
             p = P['scale'] * self.lc(P['lc'])
             if p == 0: continue
-            xq = x[P['q']]                                          # (Q, 4, 3)
-            for a in gp:
-                for b in gp:
-                    N = torch.stack([(1 - a) * (1 - b), (1 + a) * (1 - b), (1 + a) * (1 + b), (1 - a) * (1 + b)]) / 4
-                    dNa = torch.stack([-(1 - b), (1 - b), (1 + b), -(1 + b)]) / 4
-                    dNb = torch.stack([-(1 - a), -(1 + a), (1 + a), (1 - a)]) / 4
-                    ta = (dNa[None, :, None] * xq).sum(1); tb = (dNb[None, :, None] * xq).sum(1)
-                    nA = torch.cross(ta, tb, dim=-1)
-                    fn = -p * N[None, :, None] * nA[:, None, :]
-                    f.index_add_(0, P['q'].reshape(-1), fn.reshape(-1, 3))
+            f.index_add_(0, P['q'].reshape(-1), self.pressure_q(x[P['q']], p).reshape(-1, 3))
 
     def contacts_f(self, x, f):
         for p in self.passes:

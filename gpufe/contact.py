@@ -104,9 +104,12 @@ class Pass:
         return tri, Lk, q[ar, k], nrm, d[ar, k]
 
     def set_anchor(self, x):
-        """start of a load increment (FESlidingElasticSurface::InitSlidingSurface, m_rsp = m_rs): a node that ended the last
-        increment in stick keeps its stick point (FEBio sets m_rs = m_rsp while stuck, FESlidingElasticInterface.cpp:881);
-        a node that slipped, or was not in contact, is re-anchored at its current projection (F-0003)."""
+        """start of a load increment: Coulomb friction with stick memory (F-0003). A node that ended the last increment in
+        stick keeps its stick point; a node that slipped, or was not in contact, is re-anchored at its current projection.
+        NOTE (verifier round 2, checked in the source): this is NOT what FEBio 4 does. FESlidingElasticInterface::Update
+        re-projects (ProjectSurface, sets m_rs) before InitSlidingSurface (m_rsp = m_rs) at iteration 0 of every
+        increment, so FEBio forgets the stick point each increment and creeps under sustained / cyclic shear. Here the
+        physically correct rule is used; FEBio is therefore not the reference for sustained or cyclic friction."""
         tri, L, q, nrm, d = self.project(x)
         keep = self.stick & self.anchor_ok
         self.anchor_tri = torch.where(keep[:, None], self.anchor_tri, tri)

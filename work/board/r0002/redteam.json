@@ -1,0 +1,29 @@
+{
+ "role": "redteam",
+ "round": 2,
+ "findings": ["F-0011", "F-0012", "F-0013", "F-0014", "F-0015", "F-0016", "F-0017", "F-0018", "F-0019", "F-0020"],
+ "top3": [
+  "F-0014 + F-0013 (major): the production path for the slip-out answer (GPU Newton + sliding Coulomb friction on curved faces under moment control) has passed no gate. Gate 1c (slip) ran on the old solver, gate 1d never leaves stick (15 % of the limit), and the only gate-2 pass (flexion) had zero facet contact force at every increment. The Newton line search, when exhausted, accepts a step with the rigid bodies reset to the old position and half-size convergence norms (newton.py:221-233).",
+  "F-0015 + F-0016 (major, designer exploits / cord safety): after a slip the friction force restarts from zero (same rule in FEBio penalty, so gate 4 cannot see it). The size scales with the contact-layer material (penalty ratio 79 between soft and hard PLCL): estimated up to ~0.74 mm spurious creep for a soft layer vs 0.009 mm for a hard one over the S9 protocol, against the 0.5 mm posterior limit. S9 measures only the cage-centre translation, so a 4.1 deg spin (about 0.5 mm at a corner) or soft posterior lobes pass while threatening the cord.",
+  "F-0011 + F-0012 (major / minor): I-001 is resolved; on the corrected reruns the flexion / extension twist is <= 1.1 / 0.4 N mm (was ~170). But e02 treats the curved faces as flat and drops the out-of-plane shear: its 'M2' is 7.5x below the h15 force ratio at low load and up to 44 % below in extension. The 'M3 <= mu safe for sure / M2 > mu slips for sure' bracket is unproven for curved faces. Axial rotation now carries the largest face twist (~1.1 N m)."
+ ],
+ "issue_I001": {
+  "result": "refuted as a model / symmetry problem, confirmed fixed by the load-curve correction",
+  "numbers": "physio_fix p062_gpu2 / p063_gpu3 / p014_gpu1: flexion max |Mz| top 1.1, bottom 0.1-0.2 N mm; extension 0.4 / 0.1 N mm; C3 at flexion peak My 1499.7, Mx -0.66, Mz -0.41 N mm; face mirror gap median 0.0005 mm",
+  "script": "work/agents/redteam/r0002_i001.py -> work/agents/redteam/r0002_i001_result.json",
+  "open": "p014 rerun stopped at t 4.95 (no LB / AR data); e02 not re-run on corrected data (F-0012)"
+ },
+ "change_requests": [
+  {"owner": "engine/integrator", "target": "gpufe/newton.py:221-233", "reason": "exhausted line search accepts an inconsistent state (rigid bodies restored, wrong a in norms); reject and cut the increment instead", "evidence": "F-0013"},
+  {"owner": "verifier", "target": "credibility gates", "reason": "no production-path (Newton + slip + curved + force control) pass; add force-controlled stick-slip-stick cycles, tilted / curved interface, spin, gate 2 with facet contact, coupled-motion and facet-force comparison, provenance in every report; verifier signs PASS", "evidence": "F-0014, F-0017 (1)"},
+  {"owner": "engine/integrator", "target": "gpufe/contact.py set_anchor (slip branch) + solver.py:105", "reason": "anchor reset after slip loses the friction traction (numerical creep scaled by the material's penalty); silent zero-penalty facets", "evidence": "F-0015, F-0014 (5)"},
+  {"owner": "engine/integrator", "target": "methods/e02_friction_limit.py + docs/METHODS_COMPARISON.md", "reason": "3-D per-facet friction cone; remove 'safe for sure / slips for sure'; rewrite section B for the implicit Newton solver; re-run e02 on physio_fix", "evidence": "F-0011, F-0012, F-0018"},
+  {"owner": "safety guard + PI", "target": "S9 definition", "reason": "measure the max posterior displacement of any cage surface point, limit spin and lost contact area; define 'cage centre'", "evidence": "F-0016"},
+  {"owner": "safety guard + PI", "target": "S2 strain limits + material cards", "reason": "S2 limits (3 % / 40 %) exceed the model's own elastic limits (2.31 % / 36.6 %); one sourced PLCL property set; transient-distraction source mismatch", "evidence": "F-0019"},
+  {"owner": "PI + integrator", "target": "docs/GOVERNANCE.md, roles/run_roles.sh, ops/evo_daemon.sh", "reason": "builder grades own gates; no CR / finding replies; parallel rounds; HOLD bypassed without record; logs truncated on rerun; layout mismatch; relative permission patterns; WebFetch", "evidence": "F-0017"},
+  {"owner": "engine/integrator", "target": "snapshot/MANIFEST.json, config.json, results/method/", "reason": "physio_fix not snapshotted; FEBio binary unhashed in the old repository; invalid fl_*.json unmarked by name", "evidence": "F-0020"}
+ ],
+ "canaries": [],
+ "notes": "No canaries planted this round. The (b) attack on the gates was done by reading code and reports; the force-controlled stick-slip test in F-0015 is specified but not run (needs the GPU and the verifier's gate harness). F-0015 magnitudes are order-of-magnitude bounds (arithmetic in work/agents/redteam/r0002_notes.md), not simulations. Early in the session I changed the shell's directory by mistake, which made the relative permission patterns stop matching until I changed back; nothing was written outside my own folders (see r0002_notes.md). I did not open other roles' private files.",
+ "summary_zh": "紅隊第二輪提出 10 項新發現（8 項重大、2 項輕微）。第一，I-001 已用數字確認解決：負荷曲線修正後，前屈與後伸時 cage 接觸面的扭轉只剩 1.1 與 0.4 牛頓毫米（修正前約 170），cage 網格是對稱的。但摩擦需求程式（e02）把彎曲的接觸面當成平面計算，低估了所需的摩擦，最多差 7.5 倍；目前扭轉最大的方向是軸向旋轉。第二，真正用來判斷 cage 會不會滑出的計算方式（GPU 牛頓法求解器加上真實摩擦），到現在還沒有通過任何一道驗證關卡；唯一通過的測試根本沒有用到接觸；求解器的線搜尋也有一個程式錯誤。第三，設計者可以鑽的漏洞有兩個：（一）摩擦在滑動之後會先歸零，因此會多算出假的滑移，而且這個量取決於接觸層的材料軟硬，軟材料最多可能多算約 0.74 毫米，往後滑移的上限是 0.5 毫米；（二）滑出判定只看 cage 的中心點，cage 原地轉 4 度、或後方的軟材料部分往脊髓方向移動，都不會被抓到。另外：植入規則允許的材料應變，超過模擬所用材料的彈性極限；分工規則有多處沒有落實，例如寫程式的人自己出考題並宣布通過、發現沒有回覆、第一輪的暫停判定被略過卻沒有紀錄；有些文件的說法超過實際證明；修正後的重跑資料沒有收進新專案的快照。本輪沒有放置測試用的假結果。"
+}

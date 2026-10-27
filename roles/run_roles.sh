@@ -7,11 +7,9 @@ mkdir -p work/board/$R
 for role in "$@"; do
   [ -f work/board/$R/$role.json ] && { echo "$role $R already done"; continue; }
   mkdir -p work/agents/$role work/board/$R
-  allow=(Read Glob Grep WebSearch WebFetch "Write(work/agents/$role/**)" "Edit(work/agents/$role/**)"
-         "Write(work/board/$R/$role.json)" "Edit(work/board/$R/$role.json)")
-  [ $role = redteam ] && allow+=("Write(work/findings/**)" "Edit(work/findings/**)" "Bash(python -I work/agents/redteam/*)")
-  [ $role = verifier ] && allow+=("Bash(python gpufe/gate1_patch.py work/agents/verifier/*)" "Bash(python -I work/agents/verifier/*)")
-  [ $role = safety ] && allow+=("Bash(python -I work/agents/safety/*)")
+  # PI 2026-10-27: full tool permissions for every role. Independence comes from separate processes, separate folders
+  # (work/agents/<role>/) and the governance rules, not from tool limits; each role pushes its own goal to the limit.
+  allow=(Bash Read Write Edit Glob Grep WebSearch WebFetch NotebookEdit)
   prompt="$(cat roles/prompts/common.md roles/prompts/$role.md)
 Round: $R. Start now."
   ( CUDA_VISIBLE_DEVICES=$(python -c "import json;print(json.load(open('config.json'))['gpu'])") claude -p "$prompt" --model $MODEL --allowed-tools "${allow[@]}" --output-format json --add-dir "$(python -c "import json;print(json.load(open('config.json'))['febio_src'])")" \

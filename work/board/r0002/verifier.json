@@ -1,0 +1,197 @@
+{
+ "role": "verifier",
+ "round": 2,
+ "verdict": "HOLD",
+ "verdict_reason": "The GPU Newton solver (production) still has no recorded pass on any gate that compares it with FEBio except 1 of 6 gate-2 directions; the F-0003 fix is correct physics but is documented as 'FEBio behaviour', which it is not, so the planned FEBio friction reference (gate 4) is invalid for holds and cycles; the line-search state bug of r0001 is still present. Nothing from the GPU solver may be used to rank or promote designs yet.",
+ "gate_reruns": [
+  {
+   "gate": "1 patch (gpufe/gate1_patch.py)",
+   "command": "python gpufe/gate1_patch.py work/agents/verifier/gate1_rerun",
+   "code": "git HEAD 77b7596, gpufe/ unmodified (git status clean for gpufe/, methods/)",
+   "log": "work/agents/verifier/gate1_rerun_r0002.log",
+   "result": "ALL PASSED: neo_hex 1.48e-12, neo_tet 4.13e-12, ortho_tet 1.70e-12, hm_fiber_hex 3.32e-12, gent_prestrain_hex 3.37e-12, spring_smooth 5.25e-08",
+   "reproducibility": "all 6 case.feb, 5 stress.txt and 6 react.txt byte-identical to results/gpufe_verify/gate1 (md5sum, listed in this round's session); gate1_report.json differs only in 2 numbers in the 4th significant digit of a 1e-12 error (neo_hex reaction_rel_err 1.47859e-12 vs 1.47844e-12; one more at line 100) = GPU atomic-add order. r0001 re-run was bit-identical; bit identity is therefore not guaranteed -> criterion must be a tolerance (1e-9 relative), not identity.",
+   "status": "ok"
+  },
+  {
+   "gate": "V02 stick creep under constant force (r0001 test) on current code",
+   "result": "NOT RUN this round: in this headless session only gpufe/gate*.py may be executed; running scripts from my own folder (work/agents/verifier/*.py) was refused by the permission system. Open item for r0003 (needs a permission rule or the integrator adopting V02 into gpufe/).",
+   "status": "not run"
+  }
+ ],
+ "checks": [
+  {
+   "item": "A1 F-0003 fix: GPU now keeps stick points across increments, but this is NOT what FEBio does; documentation and gate 1d call it 'the FEBio rule'",
+   "result": "problem",
+   "severity": "critical",
+   "evidence": "FEBio: FESlidingElasticInterface::Update projects first (FESlidingElasticInterface.cpp:680 -> ProjectSurface overwrites data.m_rs with the current projection at :596-597 and :610-611) and only then, at m_niter == 0, InitSlidingSurface sets m_rsp = m_rs (:685-688, :136); Update is called from FESolidSolver2::PrepStep -> UpdateModel (FESolidSolver2.cpp:962, :1046). So FEBio's stick point at every increment start = current projection; m_rs = m_rsp while stuck (:881) only holds WITHIN an increment. Empirical: r0001 V02 (work/agents/verifier/v02_results_E10.json) FEBio creep 0.0151 mm per hold increment (0.075 mm / 5 increments, 0.302 mm / 20), twice the old GPU rule. Write-up: work/agents/verifier/v05_febio_stick_order.md. False claims: gpufe/contact.py:107-109, gpufe/gate1d_stick_memory.py:5-7 and its print label 'FEBio rule' (:71); F-0003 'evidence' cites :136 and :880-881 without the call order. Consequence: the GPU (new rule) is the physically correct Coulomb stick, FEBio is not; any gate that compares cage translation / ratcheting over holds or cycles with FEBio (r0001 proposal gate 4b) would fail the correct solver or push it back to FEBio's creep, and all real-friction FEBio runs of the study contain increment-dependent ratcheting (the main endpoint).",
+   "fix_options": [
+    "Correct the docstrings and VERIFICATION.md: 'stick memory across increments (classical Coulomb return mapping, Wriggers 2006 Computational Contact Mechanics ch. 5); FEBio 4 re-anchors every increment (Update order) and creeps'",
+    "Gate 4: FEBio reference only for monotonic loading up to first gross slip; holds and cycles judged against the analytical requirement (zero creep below the limit) and increment-independence",
+    "Flag every FEBio real-friction run (old repo) as 'creep-contaminated' in the archive; never mix FEBio and GPU friction translations in one ranking"
+   ]
+  },
+  {
+   "item": "A2 Newton line search: accepted state is inconsistent when all 6 trials fail (r0001 C2, not fixed)",
+   "result": "problem",
+   "severity": "major",
+   "evidence": "gpufe/newton.py:223-228: trial lengths a = 1, 0.5, ..., 0.03125 (ls_max 6, :30); the break 'a < 0.02' is never reached. If no trial lowers |g|, the last loop pass restores the rigid-body c, R (:227) and halves a to 0.015625, but x = xn (:233) keeps the node positions of the a = 0.03125 trial, including rigid-body nodes moved by _apply_rigid in _update (:188). Then ui = a du (:231) is half of the step actually applied to free nodes, so normu (:232) is 4x too small and the dtol test (:239) can declare convergence falsely; the residual g accepted is larger than before. stop_unconverged (:245) does not catch this because the iteration may still be flagged converged.",
+   "fix_options": [
+    "On line-search failure: keep the state of the trial actually accepted (do not restore rb), use that a for ui; or reject the iteration, refactorise and retry; count it in info and fail the increment after 2 consecutive failures",
+    "Use FEBio's energy line search (FELineSearch, ui.R(s)) and its line-step check (FESolidSolver2.cpp:1119)"
+   ]
+  },
+  {
+   "item": "A3 The production solver (NewtonSolver) still has no recorded FEBio comparison on gates 1b and 1c (F-0004 option 1 not done); VERIFICATION.md out of date",
+   "result": "problem",
+   "severity": "major",
+   "evidence": "gpufe/gate1b_equilibrium.py:56 and gpufe/gate1c_friction.py:62 instantiate slv.Solver (dynamic relaxation); only gate1d_stick_memory.py:46 and gate2_fsu.py:33 use newton.NewtonSolver; gate 1d has no FEBio run at all. results/gpufe_verify/VERIFICATION.md has no row for gate 1d, no 'solver' column, and gate 2 still reads 'running' while results/gpufe_verify/gate2/ holds only flex_pos_y.json. (Gate 1 itself is fine with slv.Solver: it evaluates stresses at prescribed F, no solve; gpufe/gate1_patch.py:97-105.)",
+   "fix_options": [
+    "Re-run 1b and 1c through NewtonSolver with tight tolerances (dtol 1e-6, etol 1e-8) and record solver class + options in each report",
+    "Add a 'solver' and 'date / commit' column to VERIFICATION.md; a gate counts only for the solver class it ran"
+   ]
+  },
+  {
+   "item": "A4 Gate 2 (intact FSU): 1 of 6 directions; disc-endplate tie still reports exactly zero force",
+   "result": "problem",
+   "severity": "major",
+   "evidence": "results/gpufe_verify/gate2/flex_pos_y.json: end rotation 5.766 vs 5.781 deg (0.26 %), max_curve_dev_of_end 0.0465 (limit 0.05), all 20 increments converged, but 'tie_disc_C3' and 'tie_disc_C4' = 0.0 in every increment (grep finds no non-zero value) although the disc transmits the whole 1.5 N m. The driver now uses Solver.run, which forms ties (gpufe/solver.py:443-445), so r0001's explanation (driver bypassing run) is excluded; the surfaces are non-conforming (snapshot/reference/fsu_intact/flex_pos_y/fsu.feb:1566: disc_on_C3 quad nodes 7443, 7264, ... vs C3_endplate_refined tri nodes 250, 13513, ...). Cause unverified: either the tie force bookkeeping (contact.py:131-133, solver.py:470-473) or the tie is inactive (anchor_ok = d < search_radius 1.0, contact.py:121) and the agreement is accidental. Other 5 directions: NaN at t 1.2-1.3 when the facets touch (pi_updates.md). gate2_fsu.py:44-47 PASS uses only the C3 main rotation.",
+   "fix_options": [
+    "Diagnostic: print anchor_ok.sum(), |tie_off| and |fs| per tie pass at t = 0.1 and t = 2; compare with FEBio contact force of the tie",
+    "Gate 2 report must include per-interface force sums, facet force, coupled rotations and the solver options (criteria below)"
+   ]
+  },
+  {
+   "item": "A5 FEBio contact options still silently ignored (r0001 C5): augmented Lagrangian on the facet joints",
+   "result": "problem",
+   "severity": "major",
+   "evidence": "snapshot/model/*.feb + reference fsu.feb: 4 x <laugon>1 (facets, maxaug 10, fsu.feb:1699); gpufe/feb.py:155-164 stores every option, gpufe/solver.py:121-144 uses only penalty, auto_penalty, two_pass, fric_coeff, search_radius, penalty lc, init_time. The facet contact is exactly where 5 of 6 gate-2 directions fail. Also no check that fiber-exp-pow lam0 = 1 (FEFiberExpPow.cpp:40, :73 'In - lam0^2'; mech.py:124 assumes 1).",
+   "fix_options": [
+    "Whitelist per contact type; raise on any non-default option not implemented",
+    "Implement augmentation for laugon 1 (FEBio loop Lm += eps g, tolerance) or show penalty x10 changes ROM and facet force < 2 %"
+   ]
+  },
+  {
+   "item": "A6 Gent locking: GPU clamps, FEBio does not; the clamp sits inside the design range of the compliant PLCL",
+   "result": "problem",
+   "severity": "major",
+   "evidence": "gpufe/mech.py:157 den = clamp(1 - (I1~-3)/Jm, min 1e-6) -> past locking the stress is a finite G/1e-6 and the autodiff tangent of the clamped branch is 0; FEBio FEGentMaterial.cpp:57 W1 = 0.5 G Jm / (Jm - I1 + 3) has no guard (diverges / changes sign -> FEBio fails). Jm = 0.7 was chosen to lock near 40 % uniaxial compression (l2_febio/h14_build_case.py:48), and 40 % is the allowed strain of compliant PLCL 50:50 during insertion (DECISIONS.md 2026-10-26). Hand computation (incompressible uniaxial, lambda 0.6): I1~ - 3 = 0.36 + 2/0.6 - 3 = 0.693 = 99 % of Jm. Gate 1 tested only 21 % of Jm (r0001 v03_gate1_coverage.json).",
+   "fix_options": [
+    "Raise (mark the run invalid) when den < 1e-3 anywhere, instead of clamping",
+    "Add a gate-1 patch case at (I1~-3)/Jm = 0.9 and 0.98 (GPU vs FEBio < 1e-6) and a case past locking that must fail in both"
+   ]
+  },
+  {
+   "item": "A7 Formula transcription vs FEBio source",
+   "result": "ok",
+   "severity": "minor",
+   "evidence": "Orthotropic: mech.py:147-148 = FEOrthoElastic.cpp:96-98, 116-121. Gent: mech.py:158 S~ = G Jm/(Jm - I1~ + 3) I = 2 W1 I with FEGentMaterial.cpp:57. Fiber exp-pow: mech.py:123-127 = FEFiberExpPow.cpp:73, 91 (lam0 = 1 only, see A5). Newton norms: newton.py:229-240 (normRi = g.g, normEi = |du.g|, normu <= dtol^2 normU, normE1 <= etol normEi) = FESolidSolver2.cpp:1070-1112. Coulomb stick trial and test: contact.py:162-167 = FESlidingElasticInterface.cpp:857-871 (sign convention flipped). Gate 1 agreement 1e-12 confirms neo-Hookean, Holmes-Mow, Gent, prestrain, ortho numerically. Differences that remain (by design, must be covered by gates 2-4): node-to-facet with master normal vs FEBio slave Gauss points with slave normal (r0001 C7); slip direction = direction to the anchor (contact.py:168) vs FEBio incremental slip direction SlipTangent (FESlidingElasticInterface.cpp:701-757) - equal for monotonic slip, differ after stick memory; FEBio checks missing in Newton: line-step minimum (FESolidSolver2.cpp:1119), energy divergence (:1124), augmentations; no step cutting (run stops instead, newton.py:245 - safe).",
+   "fix_options": []
+  },
+  {
+   "item": "A8 Slip -> stick transition forgets the elastic offset (bounded artefact)",
+   "result": "problem",
+   "severity": "minor",
+   "evidence": "contact.py:111-114: a node that slipped is re-anchored at its current projection, so its tangential force restarts at 0 in the next increment and must be rebuilt by extra displacement ~ mu p / eps per slip-stick event (FEBio does the same). Hand estimate (eps = 10 E / 0.2 mm as in F-0003, p = 1 MPa, mu 0.3): hard PLCL E 400 -> 1.5e-5 mm, soft E 10 -> 6e-4 mm per event; unverified for the cage. Small against the 0.5 mm posterior limit but it is a ratchet near the friction limit.",
+   "fix_options": [
+    "Return mapping: after slip set the anchor to x_slave + t_slip / k (tangential part), so the force at the limit is carried into the next increment",
+    "Cover by the gate 4 cyclic case near the limit (0.9 mu N)"
+   ]
+  },
+  {
+   "item": "A9 Provenance of gate results",
+   "result": "problem",
+   "severity": "major",
+   "evidence": "Gate reports carry no code version, solver class, options / tolerances, input hashes, FEBio build or environment: results/gpufe_verify/gate1/gate1_report.json top-level keys = gate, all_passed, cases; gate2/flex_pos_y.json has increments and iteration counts but no tolerances or commit. The reference FEBio is a locally patched FEBio 4 outside this repository (config.json febio_bin / febio_src, absolute paths): 'BIOCAGE patch' in FEPreStrainUncoupledElastic.h:58 and FEConstPrestrain.h:55 (material physics: volumetric response of the prestrained cage), FESolidSolver2.cpp:1115 (convergence acceptance), FETiedElasticInterface.cpp:267, 402, 551 + .h:148-149 (tie time), FERigidSolidDomain.cpp:71, FEBioMechPlot.cpp:918, PointCurve.cpp:40. Neither the patch diff nor the binary hash is in snapshot/MANIFEST.json (it lists model files and l2_febio scripts only). Positive: code and gate results are now committed together (77b7596), so a git commit identifies them if the tree was clean when they ran - not recorded.",
+   "fix_options": [
+    "Provenance block in every report: git commit + dirty flag, solver class + full options, sha256 of every input file, FEBio binary sha256 + patch-set id, torch / cupy / CUDA versions, GPU, date; refuse to write a gate report from a dirty tree",
+    "Commit the FEBio patch set (git diff of third_party/FEBio) into this repo (e.g. snapshot/febio_patches.diff) and record the binary hash in MANIFEST.json; state in VERIFICATION.md that the reference is 'FEBio 4 + BIOCAGE patches'"
+   ]
+  },
+  {
+   "item": "A10 methods/e02_friction_limit.py and e02_batch.sh after the repository split",
+   "result": "problem",
+   "severity": "major",
+   "evidence": "e02_batch.sh:3 'cd $(dirname $0)/../..' leaves the repository (methods/ -> claude-work/), :4 reads human_study/al_v2/physio_analysis/cases.json which is not in this repo -> batch is broken. :5 '[ -f $o ] ||' skips existing outputs by name with no input hash -> the 77 results/method/fl_*.json made from the INVALID combined-loading physio runs (docs/ISSUES.md I-001 / I-002) would be kept on a re-run, and none of them carries an 'invalid' flag. e02_friction_limit.py:45, 54-57: face normals, areas and centres from the reference (undeformed) .feb coordinates, combined with the Cauchy (current-configuration) element stress (:68-71) -> traction force = sigma n A needs the current n and A (Nanson); error ~ the surface strain, small for hard PLCL (< 3 %), up to tens of % for compliant PLCL at 40 %. Unchanged from r0001 C9: element-centroid stress half a voxel inside the interface; shear and twist projected on global X-Y (:71, :76) although endplate faces are tilted; no check that the face forces balance the cage load. LP itself correct (inscribed 16-gon: inner radius cos(pi/16) = 0.981 -> mu over-estimated by <= 1.9 %, conservative; METHODS_COMPARISON.md analytic check 0.300 / 0.302).",
+   "fix_options": [
+    "Fix paths to this repo layout; cache key = sha256 of the case inputs + script commit, not the file name; move or mark the 77 invalid fl_*.json (e.g. results/method/INVALID_combined_loading/)",
+    "Use current coordinates (xplt displacement) for n, A, c; project on the mean face plane; add the force-balance check (sum of face forces vs cage axial force within 2 %)"
+   ]
+  },
+  {
+   "item": "A11 Gate 1d design (stick memory)",
+   "result": "problem",
+   "severity": "minor",
+   "evidence": "gpufe/gate1d_stick_memory.py: displacement-controlled shear (top face moved, :28-29), GPU only, one flat block pair; pass |Fx/Fz| < 1e-3 at cycle ends (:58). results/gpufe_verify/gate1d/gate1d_report.json: new rule 7.9e-10 at n 10 (passes, as expected). Not covered: force-controlled hold (the slip-out situation: constant load, cage free - r0001 V02), twist about the normal, load reversal, near-limit cycling (A8), curved / non-matching surfaces.",
+   "fix_options": [
+    "Add V02 (force-controlled hold) and a twisted disc to gate 1d; pass: creep < 1e-4 mm for n = 10 and 80"
+   ]
+  },
+  {
+   "item": "A12 Change-request process",
+   "result": "problem",
+   "severity": "minor",
+   "evidence": "No CR-*.json exists anywhere in the repository (glob **/CR-*.json empty; work/requests/ missing) although r0001 verifier.json:157-163 asked for CR-v1..v7; docs/GOVERNANCE.md requires the integrator to file them. Several r0001 requests are therefore untracked (A2, A5, A9, A10 above are repeats).",
+   "fix_options": [
+    "Integrator files CR-v1..v7 (r0001) and the r0002 requests below with status, so the verifier can close them"
+   ]
+  },
+  {
+   "item": "A13 Gate 1 reproducibility after the repository split",
+   "result": "ok",
+   "severity": "minor",
+   "evidence": "see gate_reruns[0]",
+   "fix_options": []
+  }
+ ],
+ "proposed_gate_criteria": {
+  "general_every_gate": "Run through the solver class used in production (NewtonSolver); every increment converged with dtol 1e-6, etol 1e-8 (tighter than FEBio defaults because the tangent is approximate) AND an absolute check: |reduced residual| <= 1e-6 x |applied load| on every rigid body; no line-search failure accepted (A2); provenance block (A9); FEBio NORMAL TERMINATION with the patch-set id recorded; verifier re-run agrees to 1e-9 relative (GPU atomics: no bit identity).",
+  "gate_1_additions": "Patch cases through NewtonSolver: superposed 60 deg rotation (objectivity), nu 0.49 neo-Hookean hex8 + tet4, Gent at (I1~-3)/Jm = 0.9 / 0.98, fiber lam0 check, follower pressure on a quad block, rigid body under force + moment, tied block (non-conforming), two-pass sliding: rel err < 1e-6 vs FEBio for materials, < 1e-3 for pressure / contact (different surface integration). Tangent check: finite-difference vs kern.elem_tangent < 1e-6 relative for every material.",
+  "gate_1d_stick": "Displacement-controlled cycles (exists) + force-controlled hold (V02) + twist + reversal + 0.9 mu cycling, n = 10 / 20 / 40 / 80 increments: below the limit creep < 1e-4 mm and |Fx/Fz| at cycle end < 1e-3 for all n; above the limit sliding force ratio within 2 % of mu. Reference = analytical Coulomb, not FEBio (A1).",
+  "gate_2_intact_FSU": {
+   "compare": "GPU vs FEBio snapshot/reference/fsu_intact/<dir> for all 6 directions, same .feb, PASS only if all 6 pass",
+   "main_rotation": "at 0.3 / 0.6 / 0.9 / 1.2 / 1.5 N m: |diff| <= max(5 % of FEBio, 0.1 deg). Why: in-vitro C3-C4 ROM scatter is far larger (Panjabi et al. 2001, Spine 26:2692-2700), so 5 % keeps solver error negligible against the biological uncertainty; 0.1 deg covers small coupled values",
+   "coupled_rotations": "|diff| <= max(20 %, 0.2 deg)",
+   "facet_force": "per side where FEBio > 5 N: |diff| <= 10 %, contact on/off identical; with FEBio-equivalent augmentation or a penalty x10 sensitivity < 2 % (A5)",
+   "interfaces": "tie force sum per tie non-zero and within 5 % of FEBio's tie contact force; moment balance C3 reaction vs applied moment <= 1 % (A4)",
+   "ligaments": "force sum per ligament set |diff| <= max(10 %, 1 N)",
+   "displacement_field": "RMS nodal displacement difference <= 2 % of the max displacement"
+  },
+  "gate_3_cage_tied": {
+   "compare": "GPU vs FEBio p062 physio (tied) re-run AFTER the load-curve fix (434c30b), same .feb, same e02 post-processing (fixed per A10) on both",
+   "ROM": "as gate 2 in each of the 6 windows",
+   "cage_axial_force": "<= 5 %",
+   "face_resultants": "per face shear force and twist: <= max(10 %, 1 N / 20 N mm)",
+   "friction_numbers": "mu_force and mu_limit per window: |diff| <= max(10 %, 0.03)",
+   "endplate_pressure": "peak 1 mm2-averaged pressure <= 15 %",
+   "insertion_prestrain": "cage height after insertion step <= 5 % or 0.005 mm"
+  },
+  "gate_4_real_friction": {
+   "4a_benchmarks": "Block slip onset at Ft/Fn within 2 % of mu (both directions and reversal); disc under pure twist slips at T = (2/3) mu N R within 3 %; combined shear + twist onset within 3 % of the e02 limit-surface LP (Goyal, Ruina & Papadopoulos 1991, Wear 143:307-330); gate 1d stick criteria",
+   "4b_cage_vs_FEBio_monotonic": "3 designs (stiff, soft, mixed) x mu 0.2 / 0.3 / 0.45, MONOTONIC ramp of each load direction to first gross slip only: slip-onset load |diff| <= 10 %; stick-area fraction within 10 percentage points. NO FEBio comparison of hold / cyclic translation (FEBio creeps, A1)",
+   "4c_increment_independence": "halve the increment size: cage-centre translation change <= 0.05 mm (10 % of the 0.5 mm posterior limit), ratchet per cycle change <= 0.01 mm",
+   "4d_penalty": "penalty x0.5 and x2: translation change <= 0.05 mm",
+   "4e_mesh": "cage voxel 0.2 vs 0.1 mm on one design: translation and mu_limit change <= 10 %"
+  },
+  "gate_5_every_production_run": {
+   "convergence": "every increment converged (general criteria), else the design result is INVALID, never ranked",
+   "equilibrium": "per rigid body |reactions + applied| <= 1e-3 x applied for force and moment",
+   "creep_canary": "each friction run ends with a 10-increment hold at constant load: cage translation in the hold < 1e-3 mm",
+   "material_limits": "no Gent element with (I1~-3)/Jm > 0.95 (A6)",
+   "sampled_refinement": "10 % of runs (seeded random) re-run at half increment: translation <= 0.05 mm, mu_limit <= max(2 %, 0.01)",
+   "provenance": "commit, input hashes, options, FEBio patch-set id stored with the archive row"
+  }
+ },
+ "change_requests": [
+  {"id_hint": "CR-v8", "owner": "engine", "target": "gpufe/contact.py:107-109, gpufe/gate1d_stick_memory.py:5-7 and :71, results/gpufe_verify/VERIFICATION.md", "reason": "A1: stick memory is called the FEBio rule; FEBio re-anchors every increment and creeps", "evidence": "FESlidingElasticInterface.cpp:680, 685-688, 596-611, 136; FESolidSolver2.cpp:962; work/agents/verifier/v05_febio_stick_order.md; v02_results_E10.json", "request": "correct the text; keep the new rule; record in DECISIONS.md that FEBio is not the reference for hold / cyclic friction; mark FEBio real-friction runs as creep-contaminated"},
+  {"id_hint": "CR-v2 (repeat)", "owner": "engine", "target": "gpufe/newton.py:223-233", "reason": "A2 line-search failure leaves inconsistent state and under-reports normu", "evidence": "newton.py:30, 223-233, 239", "request": "keep the accepted trial state or reject the iteration; count failures; fail the increment after 2"},
+  {"id_hint": "CR-v9", "owner": "engine", "target": "gpufe/gate1b_equilibrium.py:56, gpufe/gate1c_friction.py:62, VERIFICATION.md", "reason": "A3 production solver not gated vs FEBio", "evidence": "grep NewtonSolver gpufe/gate*.py", "request": "run 1b and 1c with NewtonSolver; add solver + commit columns to VERIFICATION.md; add gate 1d row"},
+  {"id_hint": "CR-v10", "owner": "engine", "target": "gate 2 tie forces", "reason": "A4 tie_disc forces 0.0 in all increments", "evidence": "results/gpufe_verify/gate2/flex_pos_y.json", "request": "diagnose (anchor_ok count, |tie_off|, |fs|) and report per-interface forces vs FEBio before any gate-2 pass is claimed"},
+  {"id_hint": "CR-v5 (repeat)", "owner": "engine", "target": "gpufe/feb.py:155-164, solver.py:121-144", "reason": "A5 laugon / lam0 silently ignored", "evidence": "fsu.feb laugon 1 on facets", "request": "whitelist + raise; implement augmentation or penalty-sensitivity proof"},
+  {"id_hint": "CR-v11", "owner": "engine", "target": "gpufe/mech.py:157", "reason": "A6 Gent clamp inside the compliant-PLCL design range", "evidence": "FEGentMaterial.cpp:57; h14_build_case.py:48; hand computation 0.693/0.7", "request": "fail instead of clamp when den < 1e-3; add near-locking gate-1 cases"},
+  {"id_hint": "CR-v4 (repeat, extended)", "owner": "engine + PI", "target": "all report writers, snapshot/MANIFEST.json", "reason": "A9 provenance; reference FEBio is a patched build outside the repo", "evidence": "gate1_report.json keys; 'BIOCAGE patch' sites listed in A9", "request": "provenance block; commit FEBio patch diff + binary hash; refuse dirty-tree gate reports"},
+  {"id_hint": "CR-v6 (repeat, extended)", "owner": "engine", "target": "methods/e02_batch.sh, methods/e02_friction_limit.py, results/method/", "reason": "A10 broken paths after split, name-only cache, invalid outputs unflagged, reference-config normals", "evidence": "e02_batch.sh:3-5; e02_friction_limit.py:45, 54-57, 68-76; ISSUES.md I-002", "request": "fix paths and cache key; quarantine the 77 invalid fl_*.json; current-configuration n, A; face-plane projection; force-balance check"},
+  {"id_hint": "CR-v12", "owner": "verifier (tests) + integrator (permission)", "target": "work/agents/verifier/v02_stick_creep.py", "reason": "V02 could not be re-run: role session may only execute gpufe/gate*.py", "evidence": "permission refusal in this round's session", "request": "allow 'python work/agents/verifier/*.py' for the verifier, or adopt V02 into gpufe/gate1d as proposed"}
+ ],
+ "summary_zh": "第 2 輪驗證結論：暫停（HOLD），GPU 求解器的結果還不能用來排名或推進任何 cage 設計。\n\n1. 可重現性：我重跑了第 1 關（材料公式的修補測試），六個案例全部通過，輸入檔與 FEBio 輸出逐位元相同；GPU 的誤差數字只在 10 的負 16 次方等級有差異（GPU 平行加總順序造成），屬正常。\n\n2. 最嚴重的問題（關鍵）：紅隊的 F-0003 修正讓 GPU 程式在負荷增量之間保留「黏著參考點」，這在物理上是正確的庫侖摩擦。但程式說明與第 1d 關都寫成「這是 FEBio 的做法」，這是錯的。我讀了 FEBio 原始碼：FEBio 在每個增量開始時會先重新投影、再存成參考點，所以 FEBio 每個增量都會忘記黏著位置，在固定負荷下會一直慢慢滑動（我第 1 輪的測試量到每個增量約 0.015 毫米）。後果：之後的摩擦驗證（第 4 關）不能拿 FEBio 當持續負荷或循環負荷的標準答案；過去用 FEBio 跑的真實摩擦結果，滑移量被人為放大。\n\n3. 其他主要問題：(a) 牛頓法求解器的步長搜尋在全部失敗時，會留下前後不一致的狀態，並少算位移，可能誤判為收斂（第 1 輪已提出，尚未修正）。(b) 實際使用的牛頓法求解器，在第 1b、1c 關仍沒有與 FEBio 比對的通過紀錄。(c) 第 2 關（完整脊椎節段）只有屈曲 1 個方向通過，另外 5 個方向在小面關節接觸時算出非數值；而且椎間盤與終板的黏合介面在每一步回報的力都是 0，原因未明。(d) FEBio 模型中小面關節使用的「增廣拉格朗日」接觸設定被 GPU 程式默默忽略。(e) 軟質 PLCL 使用的 Gent 材料在約 40% 壓縮時會「鎖死」，GPU 程式在此處把數值截斷而不報錯，FEBio 則會失敗；而 40% 正是植入時允許的上限。(f) 結果檔沒有記錄程式版本、設定、輸入檔雜湊值；作為參考答案的 FEBio 是本專案自行修改過的版本，修改內容與執行檔雜湊不在本儲存庫中。(g) 摩擦極限分析腳本在儲存庫拆分後路徑已失效；77 個以錯誤負荷曲線算出的結果檔沒有標記為無效；面的法向量與面積用的是變形前座標。\n\n4. 公式核對：正交異向、Gent、纖維、牛頓收斂判準與 FEBio 原始碼一致（附行號）。\n\n5. 我提出了第 2 到第 5 關的具體數字標準（例如第 2 關六個方向的旋轉角差異不超過 5% 或 0.1 度；第 4 關的持續負荷與循環負荷改以「低於摩擦極限時不得滑移」的解析要求為準，不再以 FEBio 為準），並提出 9 項變更請求。\n\n限制：本輪無法執行我自己資料夾中的測試腳本（權限只允許執行 gpufe 內的驗證腳本），所以固定負荷下的滑移測試（V02）留到第 3 輪。"
+}

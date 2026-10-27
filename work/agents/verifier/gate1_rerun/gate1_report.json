@@ -5,7 +5,7 @@
   {
    "case": "neo_hex",
    "febio_normal": true,
-   "worst_rel_err": 1.4785926754674162e-12,
+   "worst_rel_err": 1.4784398177525949e-12,
    "passed": true,
    "per_time": {
     "0.5": {
@@ -17,7 +17,7 @@
     "1.0": {
      "stress_rel_err": 1.4177449148334862e-12,
      "stress_scale": 11.5546616331,
-     "reaction_rel_err": 1.4785926754674162e-12,
+     "reaction_rel_err": 1.4784398177525949e-12,
      "reaction_scale": 11.6209825685
     }
    }
@@ -97,7 +97,7 @@
     "1.0": {
      "stress_rel_err": 3.3710902908382785e-12,
      "stress_scale": 115.041186002,
-     "reaction_rel_err": 1.4416048781069417e-12,
+     "reaction_rel_err": 1.4417275992168512e-12,
      "reaction_scale": 115.79796439
     }
    }
