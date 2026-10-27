@@ -10,7 +10,7 @@ Scope (two repositories on this machine):
 - Old repo "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1": FEBio queue human_study/queue/ run by
   scripts/5_compute/h19_scheduler.py (tmux biocage_sched), watchdog h23 (biocage_watchdog), GPU sampler (biocage_gpusamp).
 
-Each run (you are woken every 30 min):
+Each run (you are woken every 60 min):
 1. Inventory, with numbers: CPU cores busy / total (load), cgroup memory used / max (/sys/fs/cgroup + /proc/self/cgroup),
    every GPU's utilisation and memory (yours vs other users'), my FEBio / python / tmux processes, both queues
    (waiting / running / done / failed, oldest waiting age), throughput (tasks or runs finished in the last hours).

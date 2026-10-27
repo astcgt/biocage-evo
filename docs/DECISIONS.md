@@ -118,7 +118,7 @@ constraints = surgery-compatible + no nerve / bone harm; maximum freedom otherwi
 - 2026-10-28 PI: a FOREMAN agent for resources, speed, scheduling and restart resilience. Implementation: ops/task_runner.py
   (deterministic, every 5 min from ops/evo_daemon.sh: task queue work/ops/tasks/, starts tasks in tmux on a GPU with free
   memory and within the cgroup memory headroom, re-queues tasks lost in a restart) + roles/run_foreman.sh (independent
-  headless Claude, every 30 min, prompt roles/prompts/foreman.md: inventory, health, utilisation tuning of scheduling
+  headless Claude, every 60 min (PI 2026-10-28: changed from 30), prompt roles/prompts/foreman.md: inventory, health, utilisation tuning of scheduling
   only, restart coverage, report work/agents/foreman/status.json with summary_zh). It may not change science, invent
   scientific tasks, touch other users' processes, bypass the FEBio preflight, or commit / push.
 - 2026-10-28 integrator: GPU Newton absolute convergence floor res_abs = 0.05 N (total out-of-balance force) added; increments

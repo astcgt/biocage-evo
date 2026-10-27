@@ -15,7 +15,7 @@ for e in s['rounds']:
 P
   python ops/task_runner.py >> work/ops/task_runner.err 2>&1                       # long computations (every 5 min)
   last=$(stat -c %Y work/agents/foreman/last_run 2>/dev/null || echo 0)
-  if [ $(( $(date +%s) - last )) -ge 1800 ]; then                                   # foreman agent every 30 min
+  if [ $(( $(date +%s) - last )) -ge 3600 ]; then                                   # foreman agent every 60 min (PI 2026-10-28)
     touch work/agents/foreman/last_run; ( roles/run_foreman.sh & )
   fi
   sleep 300

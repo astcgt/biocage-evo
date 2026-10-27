@@ -1,5 +1,5 @@
 #!/bin/bash
-# One foreman pass (headless Claude, own process, full tools). Called by ops/evo_daemon.sh every 30 min; skips if one is running.
+# One foreman pass (headless Claude, own process, full tools). Called by ops/evo_daemon.sh every 60 min; skips if one is running.
 cd "$(dirname "$0")/.."
 ps -u "$(id -u)" -o args | grep -q "^claude -p You are the FOREMAN" && exit 0
 mkdir -p work/agents/foreman; ts=$(date +%Y%m%d_%H%M)
