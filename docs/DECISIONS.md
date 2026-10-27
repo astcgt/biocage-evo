@@ -126,3 +126,11 @@ constraints = surgery-compatible + no nerve / bone harm; maximum freedom otherwi
   model has a very soft mode where FEBio's displacement norm stalls at residuals of 1e-3 - 3e-2 N; adequacy of 0.05 N is
   judged by the gate 2 rotations vs FEBio; increments
   that start almost in equilibrium stalled FEBio's relative norms (gate 2, facet contact onset).
+- 2026-10-28 PI: physio / ROM loading for the frictional and gate runs: rotation control of the C3 rigid body about the main
+  axis (other dofs free) until the reaction moment reaches the target (1.5 N m), instead of applying the moment directly;
+  same equilibrium end state, a path that does not jump in the soft neutral zone (both FEBio and the GPU solver stall at
+  facet contact onset under moment control: 135 / 148 physio_v3 runs stalled in extension).
+- 2026-10-28 integrator proposal to the PI (pending): answer slip-out for lateral bending / axial rotation first with the
+  limit-surface slip mode (Goyal, Ruina & Papadopoulos 1991) on the existing tied results: instantaneous centre of the slip
+  motion, spin- vs translation-dominated, bounded slip angle from the segment torsional stiffness, resulting outward
+  displacement of the farthest cage point vs 1 mm / 0.5 mm; frictional runs only to check a few designs.
