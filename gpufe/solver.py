@@ -140,6 +140,8 @@ class Solver:
                     eps_f = np.full(len(slave), pen)
                 p = contact.Pass(slave, master, X, self._node_eps(slave, eps_f), self.dev, kind, mu=mu, search_radius=sr)
                 p.name = c['name']; p.plc = plc; p.init_time = init; p.tied_done = False
+                p.laugon = kind == 'sliding' and bool(c.get('laugon', 0)); p.atol = c.get('tolerance', 0.1)   # FEBio augmented Lagrangian
+                p.minaug, p.maxaug = int(c.get('minaug', 0)), int(c.get('maxaug', 10))
                 p.pmax = 1.0 if plc is None else max(1.0, float(np.max(feb['lcs'][plc].y)))
                 self.passes.append(p)
 

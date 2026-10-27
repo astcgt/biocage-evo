@@ -121,5 +121,8 @@ constraints = surgery-compatible + no nerve / bone harm; maximum freedom otherwi
   headless Claude, every 60 min (PI 2026-10-28: changed from 30), prompt roles/prompts/foreman.md: inventory, health, utilisation tuning of scheduling
   only, restart coverage, report work/agents/foreman/status.json with summary_zh). It may not change science, invent
   scientific tasks, touch other users' processes, bypass the FEBio preflight, or commit / push.
-- 2026-10-28 integrator: GPU Newton absolute convergence floor res_abs = 0.05 N (total out-of-balance force) added; increments
+- 2026-10-28 integrator: GPU Newton absolute convergence floor res_abs = 0.05 N (total out-of-balance force) added, with FEBio's energy line search (FELineSearch.cpp) transcribed, a C1
+  rounding of the contact penalty (0.005 mm) and FEBio's augmented Lagrangian for laugon contacts; near facet contact the
+  model has a very soft mode where FEBio's displacement norm stalls at residuals of 1e-3 - 3e-2 N; adequacy of 0.05 N is
+  judged by the gate 2 rotations vs FEBio; increments
   that start almost in equilibrium stalled FEBio's relative norms (gate 2, facet contact onset).

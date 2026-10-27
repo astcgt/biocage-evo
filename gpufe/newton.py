@@ -27,7 +27,7 @@ def _to_t(a): return torch.from_dlpack(a)
 
 class NewtonSolver(S.Solver):
     def __init__(self, model, opts=None):
-        o = dict(dtol=None, etol=None, rtol=None, stop_unconverged=True, max_newton=60, refactor_every=None, ls_conv_min=0.1, max_cuts=6, reg=1e-16, res_abs=0.05, contact_band=0.05, ls_max=6)
+        o = dict(dtol=None, etol=None, rtol=None, stop_unconverged=True, max_newton=60, refactor_every=None, ls_conv_min=0.1, max_cuts=6, reg=1e-16, res_abs=0.05, line_search='energy', max_du=0.05, ls_min=0.01, ls_iter=5, contact_band=0.05, ls_max=6)
         o.update(opts or {}); super().__init__(model, o)
         self._pattern = None; self._ds = None; self._dsP = None
         if self.o['refactor_every'] is None:                              # contact changes the tangent from step to step: full Newton
@@ -101,7 +101,7 @@ class NewtonSolver(S.Solver):
                 tri, L, q, nrm, d = p.project(x)                          # projection point) by forward-mode autodiff
                 nodes = torch.cat([p.s[:, None], tri], 1); xe = x[nodes]
                 T = torch.eye(12, dtype=DT, device=self.dev).reshape(12, 1, 4, 3).expand(12, len(k), 4, 3)
-                dK = torch.func.vmap(lambda t: torch.func.jvp(lambda y: contact.pair_forces(y, k, p.R), (xe,), (t,))[1])(T)
+                dK = torch.func.vmap(lambda t: torch.func.jvp(lambda y: contact.pair_forces(y, k, p.R, p.lam * psf), (xe,), (t,))[1])(T)
                 add_blocks(nodes, -dK.permute(1, 2, 3, 0).reshape(len(k), 4, 3, 4, 3))
                 continue
             else:
@@ -232,54 +232,121 @@ class NewtonSolver(S.Solver):
         self._dofmap(x)
         g, r = self._gres(x)
         tol = self._tols()
-        conv = False; it = 0; nfac = 0; U = torch.zeros(self.nd, dtype=DT, device=self.dev); fresh = False; why = 'max_newton'
-        it = 0
-        while it < o['max_newton']:
-            it += 1
-            if (it - 1) % o['refactor_every'] == 0 and not fresh:
-                self._factor(x); nfac += 1; fresh = True
-            du = self._solve(g)
-            gn = float(g.norm()); a = 1.0; dec = False
-            for _ in range(o['ls_max']):
-                xn, saved = self._update(x, du, a)
-                gnew, r = self._gres(xn)
-                if float(gnew.norm()) < gn: dec = True; break
-                for k, (c_, R_) in saved.items(): self.rb[k]['c'], self.rb[k]['R'] = c_, R_
-                a *= 0.5
-            if not dec:                                                   # no descent along this direction
-                self._gres(x)
-                if gn <= o['res_abs']: conv = True; break                 # already in equilibrium to the absolute floor
-                if not fresh:                                             # stale tangent: refactor here and try again
-                    self._factor(x); nfac += 1; fresh = True; it -= 1; continue
-                why = 'line search'; break                                # fresh tangent and still no descent: the increment fails
-            fresh = False
-            if it == 1:                                                   # FEBio FESolidSolver2::Quasin initial norms
-                normRi = float(g @ g); normEi = abs(float(du @ g))
-            ui = a * du; U = U + ui
-            normR1 = float(gnew @ gnew); normu = float(ui @ ui); normU = float(U @ U); normE1 = abs(float(ui @ gnew))
-            x, g = xn, gnew
-            if any(p.kind != 'tied' for p in self.passes):
-                for p in self.passes:
-                    if p.kind != 'tied': p.search(x)
-                g, r = self._gres(x)                                      # new candidates can change the projections
-            if o['log_every']:
-                print(f'  {label} newton {it} R {normR1:.2e}/{normRi:.2e} E {normE1:.2e}/{normEi:.2e} u {normu:.2e}/{normU:.2e} a {a:.3f}', flush=True)
-            if not (normR1 == normR1 and normu == normu): why = 'NaN'; break
-            ok = ((tol['rtol'] <= 0 or normR1 <= tol['rtol'] * normRi) and (tol['dtol'] <= 0 or normu <= tol['dtol']**2 * normU)
-                  and (tol['etol'] <= 0 or normE1 <= tol['etol'] * normEi))
-            # a strongly cut line step makes the displacement / energy norms small without equilibrium (FEBio: s < LSmin)
-            # absolute floor: total out-of-balance force <= res_abs N over the whole model (loads: 1.5 N m moments, joint
-            # forces of tens of N); FEBio's relative norms alone stall when an increment starts almost in equilibrium
-            if (ok and a >= o['ls_conv_min']) or normR1 <= 1e-24 * max(normRi, 1e-300) or float(g.norm()) <= o['res_abs']:
-                conv = True; break
+        nfac = 0; tot = 0; naug = 0
+        while True:                                                       # augmented Lagrangian passes (FEBio laugon)
+            conv = False; it = 0; U = torch.zeros(self.nd, dtype=DT, device=self.dev); fresh = False; why = 'max_newton'
+            while it < o['max_newton']:
+                it += 1; tot += 1
+                if (it - 1) % o['refactor_every'] == 0 and not fresh:
+                    self._factor(x); nfac += 1; fresh = True
+                du = self._solve(g)
+                gn = float(g.norm())
+                if o['max_du']:                                           # step-length limiter: no node moves more than max_du
+                    dmax = float(_to_t(self.P @ _to_cp(du)).reshape(-1, 3).norm(dim=1).max())   # mm per iteration, so a
+                    if dmax > o['max_du']: du = du * (o['max_du'] / dmax)                   # predictor in the soft neutral zone
+                                                                                            # cannot jump through the facets
+                if o['line_search'] == 'energy':
+                    a, xn, gnew, r = self._line_search_energy(x, du, g)
+                    if not (float(gnew.norm()) < 1e6 * max(gn, 1e-12)):        # blow-up (or NaN): this increment fails
+                        self._update_back(xn); why = 'diverged'; break
+                else:
+                    a = 1.0; dec = False
+                    for _ in range(o['ls_max']):
+                        xn, saved = self._update(x, du, a)
+                        gnew, r = self._gres(xn)
+                        if float(gnew.norm()) < gn: dec = True; break
+                        self._restore_rb(saved); a *= 0.5
+                    if not dec:                                               # no descent along this direction
+                        self._gres(x)
+                        if gn <= o['res_abs']: conv = True; break             # already in equilibrium to the absolute floor
+                        if not fresh:                                         # stale tangent: refactor here and try again
+                            self._factor(x); nfac += 1; fresh = True; it -= 1; continue
+                        why = 'line search'; break                            # fresh tangent and still no descent: the increment fails
+                fresh = False
+                if it == 1:                                                   # FEBio FESolidSolver2::Quasin initial norms
+                    normRi = float(g @ g); normEi = abs(float(du @ g))
+                ui = a * du; U = U + ui
+                normR1 = float(gnew @ gnew); normu = float(ui @ ui); normU = float(U @ U); normE1 = abs(float(ui @ gnew))
+                x, g = xn, gnew
+                if any(p.kind != 'tied' for p in self.passes):
+                    for p in self.passes:
+                        if p.kind != 'tied': p.search(x)
+                    g, r = self._gres(x)                                      # new candidates can change the projections
+                if o['log_every']:
+                    print(f'  {label} newton {it} R {normR1:.2e}/{normRi:.2e} E {normE1:.2e}/{normEi:.2e} u {normu:.2e}/{normU:.2e} a {a:.3f}', flush=True)
+                if not (normR1 == normR1 and normu == normu): why = 'NaN'; break
+                ok = ((tol['rtol'] <= 0 or normR1 <= tol['rtol'] * normRi) and (tol['dtol'] <= 0 or normu <= tol['dtol']**2 * normU)
+                      and (tol['etol'] <= 0 or normE1 <= tol['etol'] * normEi))
+                # a strongly cut line step makes the displacement / energy norms small without equilibrium (FEBio: s < LSmin)
+                # absolute floor: total out-of-balance force <= res_abs (0.05) N over the whole model (loads: 1.5 N m moments, joint
+                # forces of tens of N); FEBio's relative norms alone stall when an increment starts almost in equilibrium
+                if (ok and a >= o['ls_conv_min']) or normR1 <= 1e-24 * max(normRi, 1e-300) or float(g.norm()) <= o['res_abs']:
+                    conv = True; break
+            if not conv or not self._augment(naug): break
+            naug += 1; g, r = self._gres(x)
         self.x = x
-        return dict(iters=it, factorizations=nfac, converged=conv, seconds=_time.time() - t0, res=float(g.norm()), why=None if conv else why)
+        return dict(iters=tot, augmentations=naug, factorizations=nfac, converged=conv, seconds=_time.time() - t0, res=float(g.norm()),
+                    why=None if conv else why)
+
+    def _augment(self, naug):
+        """FESlidingElasticInterface::Augment: per contact interface, lam_new = the converged contact pressure force
+        (MBRACKET(lam + eps g)); done when |(|lam_new| - |lam|) / |lam_new|| < tolerance and naug >= minaug, or when
+        naug >= maxaug. Returns True if multipliers were updated (another Newton pass needed)."""
+        more = False; groups = {}
+        for p in self.passes:
+            if getattr(p, 'laugon', False): groups.setdefault(p.name, []).append(p)
+        for name, ps in groups.items():
+            psf = 1.0 if ps[0].plc is None else self.lc(ps[0].plc)
+            if psf == 0: continue
+            new = [p.force_n.clamp_min(0.0) / psf for p in ps]
+            L0 = float(sum((p.lam ** 2).sum() for p in ps)) ** 0.5; L1 = float(sum((v ** 2).sum() for v in new)) ** 0.5
+            pctn = abs((L1 - L0) / L1) if L1 > 0 else 0.0
+            done = (pctn < ps[0].atol and naug >= ps[0].minaug) or naug >= ps[0].maxaug
+            if self.o['log_every']: print(f'    augment {name} {naug}: |lam| {L0:.3e} -> {L1:.3e} pctn {pctn:.3e} {"done" if done else ""}', flush=True)
+            if not done:
+                for p, v in zip(ps, new): p.lam = v
+                more = True
+        return more
+
+    def _restore_rb(self, saved):
+        for k, (c_, R_) in saved.items(): self.rb[k]['c'], self.rb[k]['R'] = c_, R_
+
+    def _update_back(self, xn):
+        pass                                                              # the increment is restored by run() from its snapshot
+
+    def _line_search_energy(self, x, du, g):
+        """FEBio's line search (FECore/FELineSearch.cpp DoLineSearch), transcribed: energy r(s) = du . R(x + s du);
+        accept when |r(s) / r(0)| <= lstol, else the quadratic step update of FEBio, at most ls_iter times, then the step
+        with the smallest |r|; below ls_min the step 0.5 is used (FEBio / NIKE3D). Returns (s, x_new, g_new, r_new)."""
+        o = self.o; lstol = self._tols()['lstol']
+        r0 = float(du @ g); rmin = abs(r0); s = 1.0; smin = s; n = 0
+        while True:
+            xn, saved = self._update(x, du, s); g1, r = self._gres(xn)
+            if s < o['ls_min']:
+                self._restore_rb(saved); s = 0.5; xn, saved = self._update(x, du, s); g1, r = self._gres(xn); break
+            r1 = float(du @ g1)
+            if n == 0 or abs(r1) < rmin: smin, rmin = s, abs(r1)
+            rr = 0.0 if abs(r1) < 1e-17 else abs(r1 / r0)
+            if rr <= lstol: break
+            a = r0 / r1; A = 1 + a * (s - 1); B = a * s * s; D = B * B - 4 * A * B
+            if D >= 0:
+                s_new = (B + D**0.5) / (2 * A)
+                if s_new < 0: s_new = (B - D**0.5) / (2 * A)
+                if s_new < 0: s_new = 0.0
+            else:
+                s_new = 0.5 * B / A
+            if not (s_new == s_new) or s_new > 1.0: s_new = 0.5 if not (s_new == s_new) else 1.0   # A ~ 0 gives inf / NaN
+            n += 1
+            if n >= o['ls_iter']:
+                self._restore_rb(saved); s = smin; xn, saved = self._update(x, du, s); g1, r = self._gres(xn); break
+            self._restore_rb(saved); s = s_new
+        return s, xn, g1, r
 
     # -------------------------------------------------------------- driver with automatic increment cutting
     def _snap(self):
         rb = {k: {n: v[n].clone() for n in ('c', 'R', 'F', 'M')} for k, v in self.rb.items()}
         ps = [{n: (getattr(p, n).clone() if torch.is_tensor(getattr(p, n)) else getattr(p, n))
-               for n in ('anchor_tri', 'anchor_L', 'anchor_ok', 'stick', 'cand', 'tie_off', 'tied_done', 'force_n', 'force_t', 'gap')} for p in self.passes]
+               for n in ('anchor_tri', 'anchor_L', 'anchor_ok', 'stick', 'cand', 'tie_off', 'tied_done', 'force_n', 'force_t', 'gap', 'lam')} for p in self.passes]
         return self.x.clone(), self.t, rb, ps
 
     def _restore(self, S):
@@ -337,5 +404,5 @@ class NewtonSolver(S.Solver):
     def _tols(self):
         """FEBio convergence tolerances: opts override, else the step's Control block, else FEBio defaults."""
         ctl = getattr(self, 'ctl', None) or {}
-        d = dict(dtol=0.001, etol=0.01, rtol=0.0)
+        d = dict(dtol=0.001, etol=0.01, rtol=0.0, lstol=0.9)
         return {k: self.o.get(k) if self.o.get(k) is not None else ctl.get(k, v) for k, v in d.items()}

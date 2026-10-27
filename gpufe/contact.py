@@ -78,6 +78,7 @@ class Pass:
         self.anchor_tri = torch.zeros(n, 3, dtype=torch.long, device=dev); self.anchor_L = torch.zeros(n, 3, dtype=DT, device=dev)
         self.anchor_ok = torch.zeros(n, dtype=torch.bool, device=dev)
         self.tie_off = None
+        self.lam = torch.zeros(n, dtype=DT, device=dev)                # augmented Lagrangian multiplier per slave node (N)
         self.force_n = torch.zeros(n, dtype=DT, device=dev); self.force_t = torch.zeros(n, 3, dtype=DT, device=dev)
         self.stick = torch.zeros(n, dtype=torch.bool, device=dev); self.gap = torch.zeros(n, dtype=DT, device=dev)
         self._fn = None
@@ -136,7 +137,7 @@ class Pass:
             self.force_t = fs
         else:
             fa, fs, fn_, stick, g = self._fn(x, self.s, self.tri[self.cand], k, self.R, self.mu, self.anchor_tri, self.anchor_L,
-                                             self.anchor_ok, x.shape[0])
+                                             self.anchor_ok, x.shape[0], self.lam * psf)
             self.force_t, self.force_n, self.stick, self.gap = fs, fn_, stick, g
         f += fa
 
@@ -155,6 +156,16 @@ def _project(ps, T, x):
     return T[ar, k], L[ar, k], q[ar, k], nrm, torch.sqrt(d[ar, k])
 
 
+DELTA = 0.005          # mm: the penalty kink at first touch is rounded over this gap (C1 contact force, no Newton chatter)
+
+
+def smooth_pos(z, d: float = DELTA):
+    """C1 ramp: 0 for z <= 0, z^2 / (2 d) for 0 < z < d, z - d / 2 beyond (the force differs from the plain penalty by at
+    most k d / 2 at one node)."""
+    zc = z.clamp_min(0.0)
+    return torch.where(zc < d, zc * zc / (2 * d), zc - d / 2)
+
+
 def gap_normal(ps, q, nf, c0: float = 0.2, c1: float = 0.5):
     """signed gap and contact direction from the closest point q (facet normal nf, unit).
     n = unit vector along q - ps (= nf inside a facet): continuous when the closest point moves across a facet edge /
@@ -171,12 +182,12 @@ def gap_normal(ps, q, nf, c0: float = 0.2, c1: float = 0.5):
     return g, n
 
 
-def sliding_fn(x, s, T, k, R: float, mu: float, anchor_tri, anchor_L, anchor_ok, N: int):
+def sliding_fn(x, s, T, k, R: float, mu: float, anchor_tri, anchor_L, anchor_ok, N: int, lam):
     ps = x[s]
     tri, L, q, nrm, d = _project(ps, T, x)
     g, nrm = gap_normal(ps, q, nrm)                           # g > 0: slave behind the master surface (penetration)
     g = torch.where(d < R, g, torch.full_like(g, -1.0))
-    pn = (k * g).clamp_min(0.0)
+    pn = k * smooth_pos(g + lam / k)                         # lam: augmented Lagrangian multiplier (FEBio laugon)
     if mu > 0:
         xa = (anchor_L[:, :, None] * x[anchor_tri]).sum(1)
         dg = xa - ps                                          # anchor - slave
@@ -197,7 +208,7 @@ def sliding_fn(x, s, T, k, R: float, mu: float, anchor_tri, anchor_L, anchor_ok,
     return f, fs, (fs * nrm).sum(-1), stick, g
 
 
-def pair_forces(xe, k, R: float):
+def pair_forces(xe, k, R: float, lam):
     """frictionless node-to-triangle penalty force of one slave node on its chosen master triangle, same formula as
     sliding_fn; xe (n, 4, 3) = slave, a, b, c. Returns nodal forces (n, 4, 3). Used for the exact (autodiff) tangent."""
     ps, a, b, c = xe[:, 0], xe[:, 1], xe[:, 2], xe[:, 3]
@@ -206,7 +217,7 @@ def pair_forces(xe, k, R: float):
     nrm = torch.cross(b - a, c - a, dim=-1); nrm = nrm / nrm.norm(dim=-1, keepdim=True).clamp_min(1e-30)
     g, nrm = gap_normal(ps, q, nrm)
     g = torch.where((ps - q).norm(dim=-1) < R, g, torch.full_like(g, -1.0))
-    fs = (k * g).clamp_min(0.0)[:, None] * nrm
+    fs = (k * smooth_pos(g + lam / k))[:, None] * nrm
     return torch.cat([fs[:, None], -L[:, :, None] * fs[:, None, :]], 1)
 
 
