@@ -155,10 +155,26 @@ def _project(ps, T, x):
     return T[ar, k], L[ar, k], q[ar, k], nrm, torch.sqrt(d[ar, k])
 
 
+def gap_normal(ps, q, nf, c0: float = 0.2, c1: float = 0.5):
+    """signed gap and contact direction from the closest point q (facet normal nf, unit).
+    n = unit vector along q - ps (= nf inside a facet): continuous when the closest point moves across a facet edge /
+    vertex, where the facet normal jumps (that jump of the force stalled Newton at facet contact onset).
+    g = |q - ps| * S(c), c = cos(q - ps, nf): S = 1 for c >= c1 (inside a facet c = 1, at a smooth edge c ~ 1), smooth
+    fade to 0 at c <= c0, so a node beside the boundary edge of the master surface (c ~ 0, sign ambiguous; FEBio's ray
+    projection finds no facet there) gets no force instead of a force that flips sign. g < 0: in front (no force)."""
+    dv = q - ps; dn = dv.norm(dim=-1)
+    c = (dv * nf).sum(-1) / dn.clamp_min(1e-30)
+    u = ((c - c0) / (c1 - c0)).clamp(0.0, 1.0); Sm = u * u * (3 - 2 * u)
+    inside = dn <= 1e-12
+    g = torch.where(inside, torch.zeros_like(dn), torch.where(c > 0, dn * Sm, -dn))
+    n = torch.where(inside[:, None], nf, dv / dn.clamp_min(1e-30)[:, None] * torch.where(c >= 0, 1.0, -1.0).to(ps.dtype)[:, None])
+    return g, n
+
+
 def sliding_fn(x, s, T, k, R: float, mu: float, anchor_tri, anchor_L, anchor_ok, N: int):
     ps = x[s]
     tri, L, q, nrm, d = _project(ps, T, x)
-    g = ((q - ps) * nrm).sum(-1)                              # > 0: slave behind the master facet (penetration)
+    g, nrm = gap_normal(ps, q, nrm)                           # g > 0: slave behind the master surface (penetration)
     g = torch.where(d < R, g, torch.full_like(g, -1.0))
     pn = (k * g).clamp_min(0.0)
     if mu > 0:
@@ -179,6 +195,19 @@ def sliding_fn(x, s, T, k, R: float, mu: float, anchor_tri, anchor_L, anchor_ok,
     f.index_add_(0, s, fs)
     f.index_add_(0, tri.reshape(-1), (-L[:, :, None] * fs[:, None, :]).reshape(-1, 3))
     return f, fs, (fs * nrm).sum(-1), stick, g
+
+
+def pair_forces(xe, k, R: float):
+    """frictionless node-to-triangle penalty force of one slave node on its chosen master triangle, same formula as
+    sliding_fn; xe (n, 4, 3) = slave, a, b, c. Returns nodal forces (n, 4, 3). Used for the exact (autodiff) tangent."""
+    ps, a, b, c = xe[:, 0], xe[:, 1], xe[:, 2], xe[:, 3]
+    L = closest_on_tris(ps[:, None], a[:, None], b[:, None], c[:, None])[:, 0]
+    q = L[:, 0:1] * a + L[:, 1:2] * b + L[:, 2:3] * c
+    nrm = torch.cross(b - a, c - a, dim=-1); nrm = nrm / nrm.norm(dim=-1, keepdim=True).clamp_min(1e-30)
+    g, nrm = gap_normal(ps, q, nrm)
+    g = torch.where((ps - q).norm(dim=-1) < R, g, torch.full_like(g, -1.0))
+    fs = (k * g).clamp_min(0.0)[:, None] * nrm
+    return torch.cat([fs[:, None], -L[:, :, None] * fs[:, None, :]], 1)
 
 
 def tied_fn(x, s, anchor_tri, anchor_L, tie_off, ok, k, N: int):

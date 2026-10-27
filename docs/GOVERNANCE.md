@@ -60,3 +60,10 @@ Next round starts only when 3 + 4 are not HOLD / open-critical.
 - Designer is scored by archive cells it fills that pass verifier + safety (novelty that survives), not by L1 score alone.
 - Verifier is itself audited: the red team may plant known-bad results (canaries); missing them is a finding.
 - Disagreement that two rounds do not settle -> PI.
+
+## Foreman (operations agent, PI 2026-10-28)
+Not a scientific role. An independent headless agent (roles/prompts/foreman.md, every 30 min) whose only goal is that all
+queued computations use the account's resources as fully and as fast as possible and never sit idle after a server
+restart. It works through ops/task_runner.py (task queue work/ops/tasks/), ops/resume_all.sh and the old study's
+scheduler constants; it reports in work/agents/foreman/status.json. It may not change models, physics, settings, results or
+decisions, and it does not judge science.

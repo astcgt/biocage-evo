@@ -14,7 +14,7 @@ Element tangents come from forward-mode autodiff of the same stress functions ve
 """
 import time as _time, numpy as np, torch, cupy as cp, cupyx.scipy.sparse as csp
 from nvmath.sparse.advanced import DirectSolver
-import kern, solver as S
+import kern, contact, solver as S
 from solver import TRA, ROT, rotvec_to_R
 from mech import DT
 
@@ -27,7 +27,7 @@ def _to_t(a): return torch.from_dlpack(a)
 
 class NewtonSolver(S.Solver):
     def __init__(self, model, opts=None):
-        o = dict(dtol=None, etol=None, rtol=None, stop_unconverged=True, max_newton=60, refactor_every=None, ls_conv_min=0.1, max_cuts=6, reg=1e-16, contact_band=0.05, ls_max=6)
+        o = dict(dtol=None, etol=None, rtol=None, stop_unconverged=True, max_newton=60, refactor_every=None, ls_conv_min=0.1, max_cuts=6, reg=1e-16, res_abs=0.05, contact_band=0.05, ls_max=6)
         o.update(opts or {}); super().__init__(model, o)
         self._pattern = None; self._ds = None; self._dsP = None
         if self.o['refactor_every'] is None:                              # contact changes the tangent from step to step: full Newton
@@ -97,6 +97,13 @@ class NewtonSolver(S.Solver):
             if p.kind == 'tied':
                 tri, L = p.anchor_tri, p.anchor_L; M = torch.eye(3, dtype=DT, device=self.dev).expand(len(k), 3, 3)
                 act = p.anchor_ok.to(DT)
+            elif p.mu == 0:                                               # frictionless: exact tangent (normal, its rotation,
+                tri, L, q, nrm, d = p.project(x)                          # projection point) by forward-mode autodiff
+                nodes = torch.cat([p.s[:, None], tri], 1); xe = x[nodes]
+                T = torch.eye(12, dtype=DT, device=self.dev).reshape(12, 1, 4, 3).expand(12, len(k), 4, 3)
+                dK = torch.func.vmap(lambda t: torch.func.jvp(lambda y: contact.pair_forces(y, k, p.R), (xe,), (t,))[1])(T)
+                add_blocks(nodes, -dK.permute(1, 2, 3, 0).reshape(len(k), 4, 3, 4, 3))
+                continue
             else:
                 tri, L, q, nrm, d = p.project(x)
                 g = ((q - x[p.s]) * nrm).sum(-1)
@@ -241,6 +248,7 @@ class NewtonSolver(S.Solver):
                 a *= 0.5
             if not dec:                                                   # no descent along this direction
                 self._gres(x)
+                if gn <= o['res_abs']: conv = True; break                 # already in equilibrium to the absolute floor
                 if not fresh:                                             # stale tangent: refactor here and try again
                     self._factor(x); nfac += 1; fresh = True; it -= 1; continue
                 why = 'line search'; break                                # fresh tangent and still no descent: the increment fails
@@ -260,7 +268,9 @@ class NewtonSolver(S.Solver):
             ok = ((tol['rtol'] <= 0 or normR1 <= tol['rtol'] * normRi) and (tol['dtol'] <= 0 or normu <= tol['dtol']**2 * normU)
                   and (tol['etol'] <= 0 or normE1 <= tol['etol'] * normEi))
             # a strongly cut line step makes the displacement / energy norms small without equilibrium (FEBio: s < LSmin)
-            if (ok and a >= o['ls_conv_min']) or normR1 <= 1e-24 * max(normRi, 1e-300):
+            # absolute floor: total out-of-balance force <= res_abs N over the whole model (loads: 1.5 N m moments, joint
+            # forces of tens of N); FEBio's relative norms alone stall when an increment starts almost in equilibrium
+            if (ok and a >= o['ls_conv_min']) or normR1 <= 1e-24 * max(normRi, 1e-300) or float(g.norm()) <= o['res_abs']:
                 conv = True; break
         self.x = x
         return dict(iters=it, factorizations=nfac, converged=conv, seconds=_time.time() - t0, res=float(g.norm()), why=None if conv else why)

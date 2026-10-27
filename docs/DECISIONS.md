@@ -115,3 +115,11 @@ constraints = surgery-compatible + no nerve / bone harm; maximum freedom otherwi
   is a nerve-safety check of its own (no cage material inside the canal clearance zone), not slip-out; (c) the friction
   shortcut uses the whole-face limit (mu_req: the least mu at which the whole cage face can hold the load as one body), so
   local partial slip does not count as failure. Supersedes (4) of the entry above ("most posterior point displacement").
+- 2026-10-28 PI: a FOREMAN agent for resources, speed, scheduling and restart resilience. Implementation: ops/task_runner.py
+  (deterministic, every 5 min from ops/evo_daemon.sh: task queue work/ops/tasks/, starts tasks in tmux on a GPU with free
+  memory and within the cgroup memory headroom, re-queues tasks lost in a restart) + roles/run_foreman.sh (independent
+  headless Claude, every 30 min, prompt roles/prompts/foreman.md: inventory, health, utilisation tuning of scheduling
+  only, restart coverage, report work/agents/foreman/status.json with summary_zh). It may not change science, invent
+  scientific tasks, touch other users' processes, bypass the FEBio preflight, or commit / push.
+- 2026-10-28 integrator: GPU Newton absolute convergence floor res_abs = 0.05 N (total out-of-balance force) added; increments
+  that start almost in equilibrium stalled FEBio's relative norms (gate 2, facet contact onset).
