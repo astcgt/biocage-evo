@@ -77,12 +77,14 @@ def target_times(cd, sch):
     out = {}
     if sch.get('control') != 'rotation':
         return {w['name']: ((w['t0'] + w['t1']) / 2, True, None) for w in sch['windows']}
-    col = dict(Rx=9, Ry=10, Rz=11); rows, t = [], None
-    for line in open(os.path.join(cd, 'C3pot.txt')):
-        if line.startswith('*Time'): t = float(line.split('=')[1])
-        elif line[:1].isdigit() and t is not None: rows.append((t, [float(a) for a in line.split(',')]))
-    for w in sch['windows']:
-        up = [(tt, v[col[w['dof']]]) for tt, v in rows if w['t0'] + 1e-9 < tt <= w['t_peak'] + 1e-9]
+    # driving moment = the moment the joint of the window applies to C3 (drive.txt, rigid_connector_data, joint i = window i;
+    # needs the BIOCAGE FEGenericRigidJoint output patch 2026-10-28)
+    col = dict(Rx=4, Ry=5, Rz=6); rows, t = [], None
+    for line in open(os.path.join(cd, 'drive.txt')):
+        if line.startswith('*Time'): t = float(line.split('=')[1]); rows.append((t, {}))
+        elif line[:1].isdigit() and t is not None: v = line.split(','); rows[-1][1][int(v[0])] = [float(a) for a in v]
+    for i, w in enumerate(sch['windows']):
+        up = [(tt, d[i + 1][col[w['dof']]]) for tt, d in rows if (i + 1) in d and w['t0'] + 1e-9 < tt <= w['t_peak'] + 1e-9]
         hit = next(((tt, m) for tt, m in up if abs(m) >= sch['target_moment_Nmm']), None)
         out[w['name']] = (hit[0], True, hit[1]) if hit else ((up[-1][0], False, up[-1][1]) if up else (w['t_peak'], False, None))
     return out
