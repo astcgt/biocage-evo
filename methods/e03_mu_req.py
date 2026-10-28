@@ -71,6 +71,23 @@ def face_mu(c, n, A, tv):
     return out
 
 
+def target_times(cd, sch):
+    """rotation control (physio_rot, PI 2026-10-28): per window the first logged time in the up-ramp at which the C3 reaction
+    moment about the window's axis reaches the target; moment control: the window peak. -> {name: (t, reached, M)}."""
+    out = {}
+    if sch.get('control') != 'rotation':
+        return {w['name']: ((w['t0'] + w['t1']) / 2, True, None) for w in sch['windows']}
+    col = dict(Rx=9, Ry=10, Rz=11); rows, t = [], None
+    for line in open(os.path.join(cd, 'C3pot.txt')):
+        if line.startswith('*Time'): t = float(line.split('=')[1])
+        elif line[:1].isdigit() and t is not None: rows.append((t, [float(a) for a in line.split(',')]))
+    for w in sch['windows']:
+        up = [(tt, v[col[w['dof']]]) for tt, v in rows if w['t0'] + 1e-9 < tt <= w['t_peak'] + 1e-9]
+        hit = next(((tt, m) for tt, m in up if abs(m) >= sch['target_moment_Nmm']), None)
+        out[w['name']] = (hit[0], True, hit[1]) if hit else ((up[-1][0], False, up[-1][1]) if up else (w['t_peak'], False, None))
+    return out
+
+
 def provenance(cd):
     h = lambda p: hashlib.sha256(open(p, 'rb').read()).hexdigest() if os.path.exists(p) else None
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -115,14 +132,14 @@ def main(cd, out=None):
         for side, a in acc.items():
             r[side] = face_mu(np.array(a['c']), np.array(a['n']), np.array(a['A']), np.array(a['t']))
         rows.append(r)
-    per, missing = {}, []
+    per, missing = {}, []; tt_ = target_times(cd, sch)
     for w in sch['windows']:
-        rw = [r for r in rows if r['window'] == w['name']]
-        peak = (w['t0'] + w['t1']) / 2
+        peak, reached, Mhit = tt_[w['name']]
+        rw = [r for r in rows if r['window'] == w['name'] and r['t'] <= peak + 1e-6]          # up to the target moment
         if not rw or max(r['t'] for r in rw) < peak - 1e-6: missing.append(w['name']); continue
         f = lambda key, agg=max: agg(max(r[s][key] for s in ('top', 'bot') if s in r) for r in rw)
         per[w['name']] = dict(n_states=len(rw), mu_drop=f('mu_drop'), mu_scaled=f('mu_scaled'), mu_force=f('mu_force'),
-                              tension_frac_max=f('tension_frac'))
+                              tension_frac_max=f('tension_frac'), t_target=peak, target_reached=reached, M_at_target=Mhit)
     worst = dict(mu_drop=max([v['mu_drop'] for v in per.values()], default=float('nan')),
                  mu_scaled=max([v['mu_scaled'] for v in per.values()], default=float('nan')),
                  governing=max(per, key=lambda k: per[k]['mu_scaled']) if per else None)

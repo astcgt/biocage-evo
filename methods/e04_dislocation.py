@@ -70,9 +70,9 @@ def main(cd, out=None):
     sch = json.load(open(os.path.join(cd, 'physio_schedule.json')))
     c3 = read_log(os.path.join(cd, 'C3pot.txt')); cn = read_log(os.path.join(cd, 'cage_nodes.txt'))
     c4 = read_log(os.path.join(cd, 'C4_endplate_nodes.txt'))
-    res = {}
+    res = {}; tt_ = e3.target_times(cd, sch)
     for w in sch['windows']:
-        peak = (w['t0'] + w['t1']) / 2
+        peak, reached, Mhit = tt_[w['name']]
         st = min(states, key=lambda s: abs(s['time'] - peak))
         if abs(st['time'] - peak) > 0.05: res[w['name']] = 'missing'; continue
         S = st['elem']['stress']; per = {}
@@ -98,7 +98,7 @@ def main(cd, out=None):
         rel = uC3 - u4; slip_bound = float(np.linalg.norm(rel[:, :2], axis=1).max())
         # cage rigid-body translation in the tied run (relative to C4): mean of cage node displacements
         uc = np.array(list(nearest(cn, st['time'])[0].values())).mean(0) - u4
-        res[w['name']] = dict(t=st['time'], mu_squeeze=mu_sq, net_push_N=float(np.linalg.norm((Fnet - Fn)[:2])),
+        res[w['name']] = dict(t=st['time'], target_reached=reached, M_at_target=Mhit, mu_squeeze=mu_sq, net_push_N=float(np.linalg.norm((Fnet - Fn)[:2])),
                               net_twist_Nmm=float(abs((Mnet - Mn)[2])), N_total=float(Pn.sum()),
                               one_face_slip_bound_mm=slip_bound, cage_translation_tied_mm=uc.tolist())
     out_d = dict(case=cd, windows=res, provenance=e3.provenance(cd))
