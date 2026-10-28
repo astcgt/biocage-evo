@@ -3,11 +3,13 @@
  "windows": {
   "flexion": {
    "t": 4.0,
+   "target_reached": true,
+   "M_at_target": null,
    "mu_squeeze": 0.025378364242653183,
    "net_push_N": 5.40427666959907,
    "net_twist_Nmm": 0.42950710114498525,
    "N_total": 243.7398035474533,
-   "one_face_slip_bound_mm": 0.45774964658755374,
+   "one_face_slip_bound_mm": 0.10897428992152149,
    "cage_translation_tied_mm": [
     0.039450574636973504,
     -4.4999919965915805e-05,
@@ -16,11 +18,13 @@
   },
   "extension": {
    "t": 5.0,
+   "target_reached": true,
+   "M_at_target": null,
    "mu_squeeze": 0.01447446376512079,
    "net_push_N": 1.5142842348462626,
    "net_twist_Nmm": 0.15817487367698782,
    "N_total": 196.59936566047915,
-   "one_face_slip_bound_mm": 0.6360769441437485,
+   "one_face_slip_bound_mm": 0.126128130080885,
    "cage_translation_tied_mm": [
     -0.04512678035319242,
     0.00014577417940405817,
@@ -29,11 +33,13 @@
   },
   "LB_right": {
    "t": 6.0,
+   "target_reached": true,
+   "M_at_target": null,
    "mu_squeeze": 0.13502952473102803,
    "net_push_N": 19.58367392421583,
    "net_twist_Nmm": 46.75127445764581,
    "N_total": 213.8965944527728,
-   "one_face_slip_bound_mm": 0.3535638445311377,
+   "one_face_slip_bound_mm": 0.0709676998466739,
    "cage_translation_tied_mm": [
     -0.001400889286651814,
     -0.01857571473730788,
@@ -42,11 +48,13 @@
   },
   "LB_left": {
    "t": 7.0,
+   "target_reached": true,
+   "M_at_target": null,
    "mu_squeeze": 0.13497631044688618,
    "net_push_N": 19.444633946321872,
    "net_twist_Nmm": 47.19012359629434,
    "N_total": 214.0417774825049,
-   "one_face_slip_bound_mm": 0.35273764046400935,
+   "one_face_slip_bound_mm": 0.07068705223546988,
    "cage_translation_tied_mm": [
     -0.0015903929710664485,
     0.018666678588970764,
@@ -55,11 +63,13 @@
   },
   "AR_left": {
    "t": 7.984278678894043,
+   "target_reached": true,
+   "M_at_target": null,
    "mu_squeeze": 0.07591864358064414,
    "net_push_N": 12.002880681015519,
    "net_twist_Nmm": 25.839256851520283,
    "N_total": 208.8452858396127,
-   "one_face_slip_bound_mm": 0.3424146377323344,
+   "one_face_slip_bound_mm": 0.1940180575608132,
    "cage_translation_tied_mm": [
     -0.0020650725632233597,
     -0.0059469970534157465,
@@ -68,11 +78,13 @@
   },
   "AR_right": {
    "t": 8.986298561096191,
+   "target_reached": true,
+   "M_at_target": null,
    "mu_squeeze": 0.0755813699178768,
    "net_push_N": 12.032037189757055,
    "net_twist_Nmm": 25.73334730987721,
    "N_total": 208.94350003718324,
-   "one_face_slip_bound_mm": 0.3423061012650314,
+   "one_face_slip_bound_mm": 0.19398898611697563,
    "cage_translation_tied_mm": [
     -0.0018936454997544499,
     0.006053414892025243,
@@ -81,9 +93,9 @@
   }
  },
  "provenance": {
-  "git": "d4ec9a727fd28b56525de766dab7fe7d79a1975b",
+  "git": "dc1ea1a4b856b1782280f56b2d6461e68f72d73e",
   "script_dirty": false,
-  "script_sha256": "4ff9d0c76c7364fcc38cbd6f57c1b281ea461a914a2521f915490f3b438f4715",
+  "script_sha256": "5aafae2afcc17925eb06dd719c9906e6bd2fac6a8df6ad88364cee76265021db",
   "case_feb": "603492581f04f429a6799eca517c86e67d6353feb19be7240243e2ecd10a23b2",
   "case_xplt": "4f0e468a86e914a443ce88efb66fa1bcaaf9d6b8a20582179e42f155bba09f17"
  }

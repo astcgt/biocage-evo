@@ -39,6 +39,10 @@ def rigid_com(root, mat_id='2'):
     """volume-weighted centroid of the C3 potting rigid body (material 2 'Forced', the body logged in C3pot.txt; its
     x, y, z are displacements of this point)."""
     rid = [mat_id]
+    m = next((m for m in root.find('Material') if m.get('id') == mat_id), None)
+    if m is not None and m.find('center_of_mass') is not None:                  # FEBio uses a given centre of mass as is
+        X = {int(n.get('id')): np.array([float(v) for v in n.text.split(',')]) for n in root.find('Geometry').find('Nodes')}
+        return np.array([float(v) for v in m.find('center_of_mass').text.split(',')]), X
     X = {int(n.get('id')): np.array([float(v) for v in n.text.split(',')]) for n in root.find('Geometry').find('Nodes')}
     vs, cs = [], []
     for eb in root.find('Geometry').findall('Elements'):
