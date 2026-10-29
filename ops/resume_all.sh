@@ -9,6 +9,9 @@ tmux has-session -t evo_daemon 2>/dev/null || tmux new-session -d -s evo_daemon 
   tmux new-session -d -s biocage_physio_v3 "cd '$OLD' && python scripts/6_active_learning/h28_physio_prerun.py 12 >> human_study/al_v2/physio_v3_prerun.log 2>&1 && touch human_study/al_v2/physio_v3_prerun.done"
 [ -f "$OLD/human_study/al_v2/physio_rot_prerun.done" ] || tmux has-session -t biocage_physio_rot 2>/dev/null || \
   tmux new-session -d -s biocage_physio_rot "cd '$OLD' && python scripts/6_active_learning/h28_physio_prerun.py 12 physio_rot al_v2/physio_rot physrot_ >> human_study/al_v2/physio_rot_prerun.log 2>&1 && touch human_study/al_v2/physio_rot_prerun.done"
+# physio_rot pass chain (slow dynamic passes, 2026-10-30): queues the next pass when one ends, then exits
+[ -f "$OLD/human_study/rot_chain.done" ] || tmux has-session -t rot_chain 2>/dev/null || \
+  tmux new-session -d -s rot_chain "cd '$OLD' && python scripts/6_active_learning/h29_rot_chain.py 2>> human_study/rot_chain.err && touch human_study/rot_chain.done"
 # report real work as Jupyter activity so the idle culler does not stop a computing server (PI-authorised 2026-10-26)
 tmux has-session -t evo_keepalive 2>/dev/null || tmux new-session -d -s evo_keepalive "cd '$EVO' && python ops/activity_keepalive.py"
 echo "$(date -Is) resume_all" >> "$EVO/work/agents/resume_all.log"
