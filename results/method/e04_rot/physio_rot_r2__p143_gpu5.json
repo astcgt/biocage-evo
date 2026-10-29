@@ -1,0 +1,102 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/human_study/al_v2/physio_rot_r2/p143_gpu5",
+ "windows": {
+  "flexion": {
+   "t": 3.950000047683716,
+   "target_reached": true,
+   "M_at_target": -1558.07953553,
+   "mu_squeeze": 0.03169489900336328,
+   "net_push_N": 8.96825494583714,
+   "net_twist_Nmm": 0.16668555242717645,
+   "N_total": 275.4861097512333,
+   "one_face_slip_bound_mm": 0.21728413770365448,
+   "cage_translation_tied_mm": [
+    0.09743827612960236,
+    0.000526328078699499,
+    -0.02673347186898879
+   ]
+  },
+  "extension": {
+   "t": 4.985663890838623,
+   "target_reached": true,
+   "M_at_target": 1601.33068662,
+   "mu_squeeze": 0.011502129311644009,
+   "net_push_N": 0.7268029754374326,
+   "net_twist_Nmm": 0.10951317951709465,
+   "N_total": 179.92518378138018,
+   "one_face_slip_bound_mm": 0.28411043125668034,
+   "cage_translation_tied_mm": [
+    -0.08687821662118037,
+    0.0007266719428199406,
+    -0.02729800902142905
+   ]
+  },
+  "LB_right": {
+   "t": 5.97907829284668,
+   "target_reached": false,
+   "M_at_target": -1470.21633505,
+   "mu_squeeze": 0.13293245723124897,
+   "net_push_N": 17.41141429813759,
+   "net_twist_Nmm": 48.43905995929612,
+   "N_total": 221.83558115558313,
+   "one_face_slip_bound_mm": 0.12394972554880548,
+   "cage_translation_tied_mm": [
+    0.014779243858123889,
+    -0.03243338731756463,
+    -0.02646168288225347
+   ]
+  },
+  "LB_left": {
+   "t": 7.0,
+   "target_reached": true,
+   "M_at_target": 1535.58044214,
+   "mu_squeeze": 0.13471675578405215,
+   "net_push_N": 17.64138850463081,
+   "net_twist_Nmm": 49.50183075241514,
+   "N_total": 223.0484821809739,
+   "one_face_slip_bound_mm": 0.12845389971056648,
+   "cage_translation_tied_mm": [
+    0.014456639438200629,
+    0.03503070332998145,
+    -0.02645466230965248
+   ]
+  },
+  "AR_left": {
+   "t": 7.964084625244141,
+   "target_reached": false,
+   "M_at_target": -1382.21739675,
+   "mu_squeeze": 0.03733561101480406,
+   "net_push_N": 6.0428152928529775,
+   "net_twist_Nmm": 17.456669091863862,
+   "N_total": 205.63819267197084,
+   "one_face_slip_bound_mm": 0.2836405816377344,
+   "cage_translation_tied_mm": [
+    0.0031878358272059994,
+    -0.00515114716915087,
+    -0.024019174114380978
+   ]
+  },
+  "AR_right": {
+   "t": 8.965158462524414,
+   "target_reached": false,
+   "M_at_target": 1369.89367373,
+   "mu_squeeze": 0.03737650958045984,
+   "net_push_N": 5.990154449967674,
+   "net_twist_Nmm": 18.18935562373347,
+   "N_total": 205.76990830612579,
+   "one_face_slip_bound_mm": 0.28070939282571644,
+   "cage_translation_tied_mm": [
+    0.003504527489620838,
+    0.006213065812383433,
+    -0.024025664131266666
+   ]
+  }
+ },
+ "provenance": {
+  "git": "42eab88486e6823395e33aa436d9d42ccf50282b",
+  "script_dirty": false,
+  "script_sha256": "f6580ee1300fdd0024b8f55ef5c960061c3d8e445805cd2549f7b0439730e1ce",
+  "case_feb": "307bdde0be62e51a5651f058a3f6f90893b805f6af697f3925ab1fb5ed10521b",
+  "case_xplt": "d8a8217a18db33b1decf827a730db42201734aa003165fb7ca2afaa8c975dc68"
+ }
+}
