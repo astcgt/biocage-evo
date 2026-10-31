@@ -1,0 +1,46 @@
+{
+ "sustained": null,
+ "t_last": 3.0,
+ "windows": {
+  "flexion": {
+   "peak": null,
+   "reached": false,
+   "t_eval": 4.0
+  },
+  "extension": {
+   "peak": null,
+   "reached": false,
+   "t_eval": 5.0
+  },
+  "LB_right": {
+   "peak": null,
+   "reached": false,
+   "t_eval": 6.0
+  },
+  "LB_left": {
+   "peak": null,
+   "reached": false,
+   "t_eval": 7.0
+  },
+  "AR_left": {
+   "peak": null,
+   "reached": false,
+   "t_eval": 8.0
+  },
+  "AR_right": {
+   "peak": null,
+   "reached": false,
+   "t_eval": 9.0
+  }
+ },
+ "peak": null,
+ "pass_sustained": null,
+ "pass_peak": null,
+ "provenance": {
+  "git": "e3b05f877123f2f0f6736c6d4af804fc682c61b9",
+  "script_dirty": false,
+  "script_sha256": "f6580ee1300fdd0024b8f55ef5c960061c3d8e445805cd2549f7b0439730e1ce",
+  "case_feb": "fe84880e00f2ab683961dbb88d25f0fc9a00c0408aa0df692ceed2a04557ed26",
+  "case_xplt": "349ad457102f8e2380342d9a378eff8315a70830682005dc6dbd841974b2bfc9"
+ }
+}

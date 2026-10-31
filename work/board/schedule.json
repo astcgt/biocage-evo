@@ -9,6 +9,15 @@
     "safety",
     "redteam"
    ]
+  },
+  {
+   "round": 3,
+   "at": "2026-10-28T01:07:18",
+   "roles": [
+    "verifier",
+    "safety",
+    "redteam"
+   ]
   }
  ]
 }

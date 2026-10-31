@@ -1,0 +1,16 @@
+{
+ "p049": {
+  "sustained": 0.3956446070178272,
+  "peak_LB_right_invalid_window": 0.4003856679918954,
+  "source": "e05 on human_study/al_v2/physio_rot_split/p049_gpu2/w_LB_right (split v1 insertion state t 3.5; the v1 window rotation was not applied, so only the insertion state is used)",
+  "reason": "sequential physio_rot runs stop at t 3.05 (before the t 3.5 state), so e05 by_design has sustained = null; the split v1 insertion run is physically identical to split2 (bug affected only the window load curves). Computed 2026-10-31 by the integrator; p049 and p141 are the same design point (identical parameters), hence identical values.",
+  "verdict_implied": "fail (sustained 39.6 % > 15 %)"
+ },
+ "p141": {
+  "sustained": 0.3956446070178272,
+  "peak_LB_right_invalid_window": 0.4003856679918954,
+  "source": "e05 on human_study/al_v2/physio_rot_split/p141_gpu2/w_LB_right (split v1 insertion state t 3.5)",
+  "reason": "same as p049 (duplicate design point in the AL set)",
+  "verdict_implied": "fail (sustained 39.6 % > 15 %)"
+ }
+}

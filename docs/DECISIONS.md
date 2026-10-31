@@ -134,3 +134,12 @@ constraints = surgery-compatible + no nerve / bone harm; maximum freedom otherwi
   limit-surface slip mode (Goyal, Ruina & Papadopoulos 1991) on the existing tied results: instantaneous centre of the slip
   motion, spin- vs translation-dominated, bounded slip angle from the segment torsional stiffness, resulting outward
   displacement of the farthest cage point vs 1 mm / 0.5 mm; frictional runs only to check a few designs.
+- 2026-10-31 review day (integrator, inline after the agent workflow hit the usage limit). Evo-infrastructure audit (agent,
+  14 findings): gate 2 fails 5/6 directions and has not run since 10-28 (VERIFICATION.md stale); no designer / constraints /
+  design space / archive / engine exist; l2_febio h14 copy stale; HOLD not enforced in evo_daemon; 29 findings unanswered,
+  no CR register; task_runner and roles may use other users' GPUs (config gpu 5); foreman edit truncated OLD h19 on the full
+  disk. Proposals written for the PI: docs/DESIGNER_KICKOFF.md (readiness, designer prompt draft roles/prompts/designer.md,
+  schema, engine MVP on the FEBio-L2 path, round-0 seeds, ~100-140 h before round 1), docs/RISKS.md, docs/IDEAS_ARCHITECTURE.md,
+  paper/LITERATURE.md (5 topics, verification flags), paper/ABSTRACT_OUTLINE.md, paper/figures/F1-F7. ops/collect_split.py
+  rewritten to aggregate from all per-run files (see OLD DECISIONS 2026-10-31 10:40). Merged verdicts 62/62/24.
+  Pending PI: fitness definition (e04 vs e03), verdict rule for follower-load inversions, S8, designer start.

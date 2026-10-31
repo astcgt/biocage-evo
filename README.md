@@ -163,15 +163,14 @@ long-term creep and degradation.
 
 ## 6. Current status
 
-| Item | State |
+| Item | State (2026-10-31) |
 |---|---|
-| Constraints S1-S9, objectives | agreed with the PI (S2 transient distraction pending surgeon confirmation) |
-| GPU solver | gates 1, 1b, 1c passed; Newton solver for the full model being completed; gates 2-5 pending |
-| Agents | verifier, safety guard, red team: daily rounds; designer: not started |
-| Evolution engine, archive | not started |
-| Parent-study physiological-load results | invalid (load-curve bug), being re-run in the parent repository |
-
----
+| Constraints S1-S9, objectives | agreed with the PI (S2 transient distraction pending surgeon confirmation; S8 number pending) |
+| Parent-study physiological screen | re-run with the fixed load curves and the independent-window protocol: 148 valid designs (133 unique) -> 62 pass, 62 fail (soft-phase compression), 24 undetermined; every evaluable design needs mu_req < 0.17 (lateral bending governs); real-friction check of 7 designs queued (`results/method/split/*_merged.json`, `paper/figures/`) |
+| GPU solver | gates 1, 1b, 1c, 1d passed; gate 2 passes flexion only, fails the other five directions at facet-contact onset (last attempt 2026-10-28); gates 3-5 not started |
+| Agents | verifier, safety guard, red team: 3 rounds (10-26..10-28), verifier HOLD each time, 29 findings open; designer: DRAFT prompt only (`roles/prompts/designer.md`, `docs/DESIGNER_KICKOFF.md`) |
+| Evolution engine, archive | not started; plan and effort estimate in `docs/DESIGNER_KICKOFF.md` |
+| Paper material | `paper/LITERATURE.md`, `paper/ABSTRACT_OUTLINE.md`, `paper/figures/F1-F7`; risks in `docs/RISKS.md`; ideas in `docs/IDEAS_ARCHITECTURE.md` |
 
 ## 7. Repository layout
 
