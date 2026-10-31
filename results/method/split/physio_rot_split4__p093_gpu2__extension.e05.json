@@ -1,0 +1,21 @@
+{
+ "sustained": 0.03083981205555337,
+ "t_last": 4.0,
+ "windows": {
+  "extension": {
+   "peak": 0.10084430722265211,
+   "reached": true,
+   "t_eval": 3.73078919
+  }
+ },
+ "peak": 0.10084430722265211,
+ "pass_sustained": true,
+ "pass_peak": true,
+ "provenance": {
+  "git": "0b53cf7158ae6d88ffe3647ccced96b3562ae0bc",
+  "script_dirty": false,
+  "script_sha256": "f6580ee1300fdd0024b8f55ef5c960061c3d8e445805cd2549f7b0439730e1ce",
+  "case_feb": "46a83c6888848a18d6bdefce9c28e9dbea2e582e7e428416334dce38ca722baf",
+  "case_xplt": "6da0bf97d1c2deee9dd732f7c9ee5c1661558e20eb7239ffad2f2c10174dd802"
+ }
+}

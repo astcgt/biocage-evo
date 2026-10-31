@@ -199,34 +199,34 @@
   "flexion": {
    "t": 3.950000047683716,
    "target_reached": true,
-   "M_at_target": -1559.98992873,
-   "mu_squeeze": 0.003842728227460363,
-   "net_push_N": 0.27709417351140264,
-   "net_twist_Nmm": 0.4534078260861695,
-   "N_total": 253.76081370525662,
-   "one_face_slip_bound_mm": 0.1557027790151551,
+   "M_at_target": -1559.98992886,
+   "mu_squeeze": 0.003842728236389925,
+   "net_push_N": 0.2770941732751535,
+   "net_twist_Nmm": 0.453407834289668,
+   "N_total": 253.76081370353575,
+   "one_face_slip_bound_mm": 0.15570277901510196,
    "cage_translation_tied_mm": [
-    0.06875942523237727,
-    -0.0001298133064271717,
-    -0.011643142467707004
+    0.06875942523248117,
+    -0.00012981330643575082,
+    -0.011643142468067896
    ],
-   "source": "physio_rot_split3/p113/w_flexion"
+   "source": "physio_rot_split4/p113_gpu2/w_flexion"
   },
   "extension": {
-   "t": 4.0,
-   "target_reached": false,
-   "M_at_target": 1478.68037098,
-   "mu_squeeze": 0.014236684029126988,
-   "net_push_N": 1.3716911213071892,
-   "net_twist_Nmm": 0.06347591399880607,
-   "N_total": 190.46618825836683,
-   "one_face_slip_bound_mm": 0.1699802413950182,
+   "t": 3.9896230697631836,
+   "target_reached": true,
+   "M_at_target": 1620.36723735,
+   "mu_squeeze": 0.01267220905452624,
+   "net_push_N": 0.9376194894275434,
+   "net_twist_Nmm": 0.020253532193971635,
+   "N_total": 188.033859661776,
+   "one_face_slip_bound_mm": 0.1887627199942249,
    "cage_translation_tied_mm": [
-    -0.05023966276330703,
-    8.075314591618265e-05,
-    -0.018029153060680227
+    -0.05717358937142823,
+    0.00012374220665702714,
+    -0.018232298578753123
    ],
-   "source": "physio_rot_split3/p113/w_extension"
+   "source": "physio_rot_split4/p113_gpu2/w_extension"
   },
   "LB_right": {
    "t": 3.950000047683716,
@@ -236,13 +236,13 @@
    "net_push_N": 17.845199268676026,
    "net_twist_Nmm": 47.1670772130049,
    "N_total": 213.65817527407344,
-   "one_face_slip_bound_mm": 0.09010614290599843,
+   "one_face_slip_bound_mm": 0.0901061429059999,
    "cage_translation_tied_mm": [
-    0.01037957703623955,
-    -0.02415297770643145,
-    -0.014175124244026008
+    0.010379577036251591,
+    -0.024152977706433855,
+    -0.014175124244029141
    ],
-   "source": "physio_rot_split3/p113/w_LB_right"
+   "source": "physio_rot_split4/p113_gpu2/w_LB_right"
   },
   "LB_left": {
    "t": 3.950000047683716,
@@ -252,45 +252,45 @@
    "net_push_N": 17.806715951700006,
    "net_twist_Nmm": 47.75958696338401,
    "N_total": 214.13445992565278,
-   "one_face_slip_bound_mm": 0.0902041990853833,
+   "one_face_slip_bound_mm": 0.09020419908541061,
    "cage_translation_tied_mm": [
-    0.010111988135699461,
-    0.02423151003578656,
-    -0.014268233246116768
+    0.010111988135702533,
+    0.024231510035785175,
+    -0.014268233246117331
    ],
-   "source": "physio_rot_split3/p113/w_LB_left"
+   "source": "physio_rot_split4/p113_gpu2/w_LB_left"
   },
   "AR_left": {
    "t": 3.968055486679077,
    "target_reached": true,
-   "M_at_target": -1545.39023903,
-   "mu_squeeze": 0.058221206817593726,
-   "net_push_N": 7.553167435642766,
-   "net_twist_Nmm": 19.302561453508165,
-   "N_total": 199.08073603679583,
-   "one_face_slip_bound_mm": 0.2557268115837206,
+   "M_at_target": -1545.39023783,
+   "mu_squeeze": 0.05822120689341495,
+   "net_push_N": 7.553167463826952,
+   "net_twist_Nmm": 19.302561396074385,
+   "N_total": 199.08073592326429,
+   "one_face_slip_bound_mm": 0.2557268115933422,
    "cage_translation_tied_mm": [
-    0.0029691134495010534,
-    -0.00911998536316869,
-    -0.012772127239856228
+    0.002969113456849989,
+    -0.009119985388914563,
+    -0.012772127234362475
    ],
-   "source": "physio_rot_split3/p113/w_AR_left"
+   "source": "physio_rot_split4/p113_gpu2/w_AR_left"
   },
   "AR_right": {
    "t": 3.9658102989196777,
    "target_reached": true,
-   "M_at_target": 1534.26598787,
-   "mu_squeeze": 0.057912381654887844,
-   "net_push_N": 7.506016091075898,
-   "net_twist_Nmm": 20.0636600391384,
-   "N_total": 199.51722354520032,
-   "one_face_slip_bound_mm": 0.2534136843444039,
+   "M_at_target": 1534.26598725,
+   "mu_squeeze": 0.057912381565151404,
+   "net_push_N": 7.506016068518251,
+   "net_twist_Nmm": 20.063659972206484,
+   "N_total": 199.51722347156675,
+   "one_face_slip_bound_mm": 0.2534136842450788,
    "cage_translation_tied_mm": [
-    0.003781704550205007,
-    0.009036544295628396,
-    -0.012769855755938156
+    0.0037817045538736478,
+    0.00903654429513297,
+    -0.012769855756644292
    ],
-   "source": "physio_rot_split3/p113/w_AR_right"
+   "source": "physio_rot_split4/p113_gpu2/w_AR_right"
   }
  },
  "p083": {
@@ -886,65 +886,65 @@
    "t": 3.950000047683716,
    "target_reached": true,
    "M_at_target": -1523.55889628,
-   "mu_squeeze": 0.0063676970607221195,
-   "net_push_N": 2.3828435106911283,
-   "net_twist_Nmm": 0.6707012608377652,
-   "N_total": 377.4688317873119,
-   "one_face_slip_bound_mm": 0.09341461450786594,
+   "mu_squeeze": 0.006367697060697764,
+   "net_push_N": 2.3828435106821324,
+   "net_twist_Nmm": 0.6707012608350029,
+   "N_total": 377.46883178731446,
+   "one_face_slip_bound_mm": 0.09341461450786516,
    "cage_translation_tied_mm": [
-    0.037543806280666406,
-    -0.00012502340850711928,
-    -0.018704318365742417
+    0.03754380628066876,
+    -0.00012502340850668113,
+    -0.018704318365742916
    ],
-   "source": "physio_rot_split3/p036_gpu4/w_flexion"
+   "source": "physio_rot_split4/p036_gpu2/w_flexion"
   },
   "extension": {
-   "t": 4.0,
-   "target_reached": false,
-   "M_at_target": 1426.59494173,
-   "mu_squeeze": 0.009996643829893449,
-   "net_push_N": 0.9136351889093947,
-   "net_twist_Nmm": 0.14854817306929033,
-   "N_total": 243.26043943327073,
-   "one_face_slip_bound_mm": 0.22047268183312715,
+   "t": 3.9803504943847656,
+   "target_reached": true,
+   "M_at_target": 1542.63667395,
+   "mu_squeeze": 0.008355829419815395,
+   "net_push_N": 0.4191527818748491,
+   "net_twist_Nmm": 0.1431093292999816,
+   "N_total": 239.66905393380412,
+   "one_face_slip_bound_mm": 0.2352331866528362,
    "cage_translation_tied_mm": [
-    -0.061304019913635495,
-    2.4908545913631885e-05,
-    -0.016164679969038618
+    -0.06580687778606904,
+    3.2623715947958825e-05,
+    -0.01620324718281981
    ],
-   "source": "physio_rot_split3/p036_gpu4/w_extension"
+   "source": "physio_rot_split4/p036_gpu2/w_extension"
   },
   "LB_right": {
    "t": 3.8499999046325684,
    "target_reached": true,
    "M_at_target": -1699.53774902,
    "mu_squeeze": 0.09414668763954484,
-   "net_push_N": 25.353319344929254,
+   "net_push_N": 25.353319344929258,
    "net_twist_Nmm": 54.99738476131709,
    "N_total": 307.26049092322245,
-   "one_face_slip_bound_mm": 0.13359771690976593,
+   "one_face_slip_bound_mm": 0.13359771690976596,
    "cage_translation_tied_mm": [
-    -0.01255173717742332,
-    -0.024010866778311983,
-    -0.017163660357439152
+    -0.012551737177423777,
+    -0.024010866778314075,
+    -0.017163660357437
    ],
-   "source": "physio_rot_split3/p036_gpu4/w_LB_right"
+   "source": "physio_rot_split4/p036_gpu2/w_LB_right"
   },
   "LB_left": {
    "t": 3.8499999046325684,
    "target_reached": true,
    "M_at_target": 1710.52096387,
-   "mu_squeeze": 0.0940422993883593,
-   "net_push_N": 25.314116320065697,
-   "net_twist_Nmm": 55.68665982807015,
-   "N_total": 307.4456633797714,
-   "one_face_slip_bound_mm": 0.1339006795384265,
+   "mu_squeeze": 0.09404229938841102,
+   "net_push_N": 25.314116320088747,
+   "net_twist_Nmm": 55.686659827507206,
+   "N_total": 307.4456633797654,
+   "one_face_slip_bound_mm": 0.13390067953842635,
    "cage_translation_tied_mm": [
-    -0.012754315801469329,
-    0.024069789941136784,
-    -0.017220487756495116
+    -0.012754315801467566,
+    0.024069789941136233,
+    -0.017220487756495935
    ],
-   "source": "physio_rot_split3/p036_gpu4/w_LB_left"
+   "source": "physio_rot_split4/p036_gpu2/w_LB_left"
   },
   "AR_left": {
    "t": 3.950000047683716,
@@ -954,13 +954,13 @@
    "net_push_N": 8.217306281879624,
    "net_twist_Nmm": 28.30214122401282,
    "N_total": 308.7149629333774,
-   "one_face_slip_bound_mm": 0.27599344962315964,
+   "one_face_slip_bound_mm": 0.27599344962314276,
    "cage_translation_tied_mm": [
-    -0.009720502743522435,
-    -0.0009766512723215495,
-    -0.017360409246659603
+    -0.009720502743497205,
+    -0.0009766512723978012,
+    -0.017360409246662045
    ],
-   "source": "physio_rot_split3/p036_gpu4/w_AR_left"
+   "source": "physio_rot_split4/p036_gpu2/w_AR_left"
   },
   "AR_right": {
    "t": 3.950000047683716,
@@ -970,13 +970,13 @@
    "net_push_N": 8.193757403934171,
    "net_twist_Nmm": 28.602310451497118,
    "N_total": 308.7976471781184,
-   "one_face_slip_bound_mm": 0.2765637674430138,
+   "one_face_slip_bound_mm": 0.2765637674430099,
    "cage_translation_tied_mm": [
-    -0.009471216486956702,
-    0.0008822661917059945,
-    -0.01731314812505126
+    -0.009471216486947752,
+    0.0008822661917065887,
+    -0.017313148125047938
    ],
-   "source": "physio_rot_split3/p036_gpu4/w_AR_right"
+   "source": "physio_rot_split4/p036_gpu2/w_AR_right"
   }
  },
  "p121": {
@@ -8627,98 +8627,98 @@
   "flexion": {
    "t": 3.950000047683716,
    "target_reached": true,
-   "M_at_target": -1561.88675313,
-   "mu_squeeze": 0.030971239736845745,
-   "net_push_N": 8.45051457453812,
-   "net_twist_Nmm": 0.19706275150202132,
-   "N_total": 260.56085990519307,
-   "one_face_slip_bound_mm": 0.21002747807864608,
+   "M_at_target": -1561.88576613,
+   "mu_squeeze": 0.030971065868875946,
+   "net_push_N": 8.450480447695876,
+   "net_twist_Nmm": 0.19687258699187365,
+   "N_total": 260.56081264049794,
+   "one_face_slip_bound_mm": 0.21002772377496218,
    "cage_translation_tied_mm": [
-    0.09629730757312625,
-    0.0004346021111981283,
-    -0.02264475033341569
+    0.09629736201731208,
+    0.0004346547781383446,
+    -0.022644250621692195
    ],
-   "source": "physio_rot_split3/p093_gpu2/w_flexion"
+   "source": "physio_rot_split4/p093_gpu2/w_flexion"
   },
   "extension": {
-   "t": 4.0,
-   "target_reached": false,
-   "M_at_target": 1147.18614215,
-   "mu_squeeze": 0.019058916906527074,
-   "net_push_N": 2.4554458368058465,
-   "net_twist_Nmm": 0.08819766007159484,
-   "N_total": 186.32891583546785,
-   "one_face_slip_bound_mm": 0.17485147347166488,
+   "t": 3.7307891845703125,
+   "target_reached": true,
+   "M_at_target": 1615.20763857,
+   "mu_squeeze": 0.018104138996382354,
+   "net_push_N": 2.022952938207837,
+   "net_twist_Nmm": 1.8907730564796283,
+   "N_total": 181.21232643021688,
+   "one_face_slip_bound_mm": 0.22056846859377952,
    "cage_translation_tied_mm": [
-    -0.04771991738620324,
-    0.0005463065540409047,
-    -0.026135145320003626
+    -0.06544088183287138,
+    -0.001545551829979344,
+    -0.026204290732700804
    ],
-   "source": "physio_rot_split3/p093_gpu2/w_extension"
+   "source": "physio_rot_split4/p093_gpu2/w_extension"
   },
   "LB_right": {
    "t": 4.0,
    "target_reached": true,
-   "M_at_target": -1549.22321519,
-   "mu_squeeze": 0.13965178834583544,
-   "net_push_N": 16.889962554315986,
-   "net_twist_Nmm": 45.56158848258504,
-   "N_total": 214.3694765729614,
-   "one_face_slip_bound_mm": 0.12062079427341997,
+   "M_at_target": -1549.22360568,
+   "mu_squeeze": 0.1396516195063493,
+   "net_push_N": 16.889942186987714,
+   "net_twist_Nmm": 45.56177381521083,
+   "N_total": 214.3697827927209,
+   "one_face_slip_bound_mm": 0.12062055618805191,
    "cage_translation_tied_mm": [
-    0.01649834835420159,
-    -0.03322758491812626,
-    -0.024167814169136284
+    0.016498259587701434,
+    -0.033227307202680315,
+    -0.024167339302129245
    ],
-   "source": "physio_rot_split3/p093_gpu2/w_LB_right"
+   "source": "physio_rot_split4/p093_gpu2/w_LB_right"
   },
   "LB_left": {
    "t": 4.0,
    "target_reached": true,
-   "M_at_target": 1547.08485366,
-   "mu_squeeze": 0.13956576900086254,
-   "net_push_N": 16.79173336978801,
-   "net_twist_Nmm": 46.069158562614575,
-   "N_total": 214.67227823522185,
-   "one_face_slip_bound_mm": 0.12012215765528031,
+   "M_at_target": 1547.08531781,
+   "mu_squeeze": 0.1395662762629059,
+   "net_push_N": 16.79174649933197,
+   "net_twist_Nmm": 46.06941009903517,
+   "N_total": 214.67220439082234,
+   "one_face_slip_bound_mm": 0.12012178476871131,
    "cage_translation_tied_mm": [
-    0.016331357962442228,
-    0.03415587304906228,
-    -0.024030644663321457
+    0.01633115827673044,
+    0.03415583781852034,
+    -0.02403016723385801
    ],
-   "source": "physio_rot_split3/p093_gpu2/w_LB_left"
+   "source": "physio_rot_split4/p093_gpu2/w_LB_left"
   },
   "AR_left": {
    "t": 4.0,
    "target_reached": true,
-   "M_at_target": -1568.82341888,
-   "mu_squeeze": 0.042816962372624515,
-   "net_push_N": 6.279019301796591,
-   "net_twist_Nmm": 14.96808095201521,
-   "N_total": 192.9697698053252,
-   "one_face_slip_bound_mm": 0.30968289678353605,
+   "M_at_target": -1574.56459236,
+   "mu_squeeze": 0.042613368639254426,
+   "net_push_N": 6.247886000753223,
+   "net_twist_Nmm": 14.82707813384682,
+   "N_total": 192.7710518354035,
+   "one_face_slip_bound_mm": 0.310026338058773,
    "cage_translation_tied_mm": [
-    -0.002257223471264976,
-    -0.007499746810955444,
-    -0.020937658118334573
+    -0.002479164645780743,
+    -0.0074817302572865434,
+    -0.020906743512936747
    ],
-   "source": "physio_rot_split3/p093_gpu2/w_AR_left"
+   "source": "physio_rot_split4/p093_gpu2/w_AR_left"
   },
   "AR_right": {
    "t": 4.0,
    "target_reached": true,
-   "M_at_target": 1569.06790738,
-   "mu_squeeze": 0.04292821053517783,
-   "net_push_N": 6.1729122167894115,
-   "net_twist_Nmm": 15.872638059098747,
-   "N_total": 193.1800309688286,
-   "one_face_slip_bound_mm": 0.3092579842529469,
+   "M_at_target": 1575.64733262,
+   "mu_squeeze": 0.04253758665295114,
+   "net_push_N": 6.123725315914395,
+   "net_twist_Nmm": 15.650941628033745,
+   "N_total": 192.95573041469015,
+   "one_face_slip_bound_mm": 0.3095970849414691,
    "cage_translation_tied_mm": [
-    -0.001818362826292429,
-    0.00857742574168225,
-    -0.020942963969939336
+    -0.0020827853452001456,
+    0.008489775383168174,
+    -0.0209025400578889
    ],
-   "source": "physio_rot_split3/p093_gpu2/w_AR_right"
+   "source": "physio_rot_split4/p093_gpu2/w_AR_right"
   }
  },
  "p107": {
@@ -8821,198 +8821,198 @@
  },
  "p082": {
   "AR_left": {
-   "t": 4.0,
-   "target_reached": false,
-   "M_at_target": -1487.33343594,
-   "mu_squeeze": 0.03636172196253087,
-   "net_push_N": 7.415739476907331,
-   "net_twist_Nmm": 32.344298026436086,
-   "N_total": 257.7671102254824,
-   "one_face_slip_bound_mm": 0.26997774972296906,
+   "t": 3.977025032043457,
+   "target_reached": true,
+   "M_at_target": -11697.0055924,
+   "mu_squeeze": 0.1441289574032627,
+   "net_push_N": 20.84859851937963,
+   "net_twist_Nmm": 72.21410742786112,
+   "N_total": 245.5101964648493,
+   "one_face_slip_bound_mm": 0.5628287221890348,
    "cage_translation_tied_mm": [
-    0.013431692069075055,
-    0.00015367479776994987,
-    -0.023245103528872185
+    -0.049555532992433024,
+    -0.0903163525777489,
+    -0.02198805065024264
    ],
-   "source": "physio_rot_split3/p082_gpu3/w_AR_left"
+   "source": "physio_rot_split4/p082_gpu1/w_AR_left"
   },
   "LB_right": {
    "t": 3.950000047683716,
    "target_reached": true,
-   "M_at_target": -1654.02541589,
-   "mu_squeeze": 0.0989768668628305,
-   "net_push_N": 19.65949453928043,
-   "net_twist_Nmm": 49.316643973676754,
-   "N_total": 262.13860479053955,
-   "one_face_slip_bound_mm": 0.13830245688281412,
+   "M_at_target": -1654.02541588,
+   "mu_squeeze": 0.09897686676209654,
+   "net_push_N": 19.659494517373222,
+   "net_twist_Nmm": 49.31664395082289,
+   "N_total": 262.1386048102074,
+   "one_face_slip_bound_mm": 0.13830245688121265,
    "cage_translation_tied_mm": [
-    0.010863861914523548,
-    -0.031396272996344454,
-    -0.023619921836350463
+    0.010863861936134318,
+    -0.03139627300169322,
+    -0.023619921831021618
    ],
-   "source": "physio_rot_split3/p082_gpu3/w_LB_right"
+   "source": "physio_rot_split4/p082_gpu1/w_LB_right"
   },
   "LB_left": {
    "t": 3.950000047683716,
    "target_reached": true,
-   "M_at_target": 1664.93129607,
-   "mu_squeeze": 0.09924446881010665,
-   "net_push_N": 19.614272287976984,
-   "net_twist_Nmm": 50.103735052777076,
-   "N_total": 262.47992396217717,
-   "one_face_slip_bound_mm": 0.13846384203262962,
+   "M_at_target": 1664.93129608,
+   "mu_squeeze": 0.09924446872002694,
+   "net_push_N": 19.614272240690635,
+   "net_twist_Nmm": 50.103735116630475,
+   "N_total": 262.47992405894774,
+   "one_face_slip_bound_mm": 0.1384638420331824,
    "cage_translation_tied_mm": [
-    0.010678430302995704,
-    0.03223049526302074,
-    -0.02355788206270465
+    0.010678430324219293,
+    0.03223049525606745,
+    -0.02355788205764379
    ],
-   "source": "physio_rot_split3/p082_gpu3/w_LB_left"
+   "source": "physio_rot_split4/p082_gpu1/w_LB_left"
   },
   "AR_right": {
-   "t": 4.0,
+   "t": 3.9899394512176514,
    "target_reached": true,
-   "M_at_target": 1501.29817025,
-   "mu_squeeze": 0.03654171283884569,
-   "net_push_N": 7.34188289112665,
-   "net_twist_Nmm": 32.910480329977275,
-   "N_total": 257.63065027554035,
-   "one_face_slip_bound_mm": 0.27116491397403225,
+   "M_at_target": 1688.11616958,
+   "mu_squeeze": 0.03717094668568441,
+   "net_push_N": 7.47166171151509,
+   "net_twist_Nmm": 32.371803043135564,
+   "N_total": 257.4542238848219,
+   "one_face_slip_bound_mm": 0.2949199661544312,
    "cage_translation_tied_mm": [
-    0.013165862893327695,
-    0.00041857524001966893,
-    -0.023177254732375613
+    0.010831008200260193,
+    8.265210134656163e-05,
+    -0.02312747860558361
    ],
-   "source": "physio_rot_split2/p082_gpu1/w_AR_right"
+   "source": "physio_rot_split4/p082_gpu1/w_AR_right"
   },
   "extension": {
    "t": 4.0,
    "target_reached": true,
-   "M_at_target": 1525.95641662,
-   "mu_squeeze": 0.012928001846699427,
-   "net_push_N": 1.2822219445794556,
-   "net_twist_Nmm": 0.019611229973638736,
-   "N_total": 199.28997755489584,
-   "one_face_slip_bound_mm": 0.24987367299816768,
+   "M_at_target": 1525.9564166,
+   "mu_squeeze": 0.012928001929671064,
+   "net_push_N": 1.282221960920115,
+   "net_twist_Nmm": 0.01961122407413636,
+   "N_total": 199.2899776388753,
+   "one_face_slip_bound_mm": 0.24987367300273428,
    "cage_translation_tied_mm": [
-    -0.060337581319374264,
-    0.0003746811457151429,
-    -0.0213776767577854
+    -0.06033758129931752,
+    0.00037468113949390593,
+    -0.021377676753571696
    ],
-   "source": "physio_rot_split3/p082_gpu3/w_extension"
+   "source": "physio_rot_split4/p082_gpu1/w_extension"
   },
   "flexion": {
    "t": 3.950000047683716,
    "target_reached": true,
-   "M_at_target": -1538.05149934,
-   "mu_squeeze": 0.03763577867817816,
-   "net_push_N": 12.416259859099062,
-   "net_twist_Nmm": 0.3846972770949505,
-   "N_total": 330.64001562296596,
-   "one_face_slip_bound_mm": 0.16713815850810868,
+   "M_at_target": -1538.05149935,
+   "mu_squeeze": 0.03763577867380967,
+   "net_push_N": 12.416259860211724,
+   "net_twist_Nmm": 0.3846972431354061,
+   "N_total": 330.6400156468603,
+   "one_face_slip_bound_mm": 0.1671381585104959,
    "cage_translation_tied_mm": [
-    0.07964189201605923,
-    0.0002575483842221686,
-    -0.026613128704115155
+    0.07964189203985235,
+    0.00025754837784449513,
+    -0.02661312869893582
    ],
-   "source": "physio_rot_split3/p082_gpu3/w_flexion"
+   "source": "physio_rot_split4/p082_gpu1/w_flexion"
   }
  },
  "p051": {
   "flexion": {
-   "t": 3.9552035331726074,
+   "t": 3.978550434112549,
    "target_reached": true,
-   "M_at_target": -1591.19843731,
-   "mu_squeeze": 0.022088778031443473,
-   "net_push_N": 6.366450048361362,
-   "net_twist_Nmm": 0.20302861165287514,
-   "N_total": 276.72698067356,
-   "one_face_slip_bound_mm": 0.32120704976648723,
+   "M_at_target": -1700.40951663,
+   "mu_squeeze": 0.021825401322797058,
+   "net_push_N": 6.4589908566710665,
+   "net_twist_Nmm": 0.20344659080384597,
+   "N_total": 283.3244431525795,
+   "one_face_slip_bound_mm": 0.33969496973764846,
    "cage_translation_tied_mm": [
-    0.1437526443678353,
-    0.0005456452014105405,
-    -0.042473263755253086
+    0.15151810656220793,
+    0.0005454372973258074,
+    -0.043219958285959745
    ],
-   "source": "physio_rot_split3/p051_gpu1/w_flexion"
-  },
-  "LB_left": {
-   "t": 4.0,
-   "target_reached": false,
-   "M_at_target": 861.320238581,
-   "mu_squeeze": 0.11469884776942359,
-   "net_push_N": 14.148950179793175,
-   "net_twist_Nmm": 40.07295394126444,
-   "N_total": 208.85039626565077,
-   "one_face_slip_bound_mm": 0.10233531738829009,
-   "cage_translation_tied_mm": [
-    0.01914927634637502,
-    0.026620061758557058,
-    -0.03903356440459598
-   ],
-   "source": "physio_rot_split3/p051_gpu1/w_LB_left"
-  },
-  "AR_left": {
-   "t": 4.0,
-   "target_reached": false,
-   "M_at_target": -980.363108199,
-   "mu_squeeze": 0.017041483541475676,
-   "net_push_N": 3.220320328185849,
-   "net_twist_Nmm": 4.685712510103276,
-   "N_total": 196.528655017321,
-   "one_face_slip_bound_mm": 0.281204936491884,
-   "cage_translation_tied_mm": [
-    -0.0023571094207029625,
-    -0.006853331469160485,
-    -0.03606789279068949
-   ],
-   "source": "physio_rot_split3/p051_gpu1/w_AR_left"
+   "source": "physio_rot_split4/p051_gpu1/w_flexion"
   },
   "AR_right": {
-   "t": 4.0,
-   "target_reached": false,
-   "M_at_target": 980.581814871,
-   "mu_squeeze": 0.01717672196667148,
-   "net_push_N": 3.1977542273816004,
-   "net_twist_Nmm": 5.2780354977186725,
-   "N_total": 196.55995280256695,
-   "one_face_slip_bound_mm": 0.2803359661388465,
+   "t": 3.9893264770507812,
+   "target_reached": true,
+   "M_at_target": 1637.54395148,
+   "mu_squeeze": 0.007044455654715058,
+   "net_push_N": 1.5137101862574442,
+   "net_twist_Nmm": 1.5076270346691767,
+   "N_total": 192.28768518347874,
+   "one_face_slip_bound_mm": 0.4006198200668201,
    "cage_translation_tied_mm": [
-    -0.0018038270502391033,
-    0.007909884209139899,
-    -0.03606736623582797
+    -0.023731362443844325,
+    0.007849311319738279,
+    -0.03434647599265955
    ],
-   "source": "physio_rot_split3/p051_gpu1/w_AR_right"
+   "source": "physio_rot_split4/p051_gpu1/w_AR_right"
   },
-  "LB_right": {
-   "t": 4.0,
-   "target_reached": false,
-   "M_at_target": -856.143765665,
-   "mu_squeeze": 0.114031212919876,
-   "net_push_N": 14.18254930154174,
-   "net_twist_Nmm": 39.40112784855293,
-   "N_total": 208.60245575096639,
-   "one_face_slip_bound_mm": 0.1019252373760052,
+  "LB_left": {
+   "t": 3.950786590576172,
+   "target_reached": true,
+   "M_at_target": 1535.01680581,
+   "mu_squeeze": 0.13924943470936874,
+   "net_push_N": 17.679684438160045,
+   "net_twist_Nmm": 48.326316846192455,
+   "N_total": 216.95387230543213,
+   "one_face_slip_bound_mm": 0.18253794091919986,
    "cage_translation_tied_mm": [
-    0.019283626688680406,
-    -0.025344890895845747,
-    -0.03915003820334877
+    0.010600103573224702,
+    0.04616675638976829,
+    -0.039799762638894606
    ],
-   "source": "physio_rot_split3/p051_gpu1/w_LB_right"
+   "source": "physio_rot_split4/p051_gpu1/w_LB_left"
   },
   "extension": {
-   "t": 3.7728283405303955,
+   "t": 3.6454546451568604,
    "target_reached": true,
-   "M_at_target": 2910.58838242,
-   "mu_squeeze": 0.021664093541442338,
-   "net_push_N": 3.0922043057806046,
-   "net_twist_Nmm": 1.841024450760472,
-   "N_total": 184.92102434939636,
-   "one_face_slip_bound_mm": 0.23041449610942427,
+   "M_at_target": 1536.97015817,
+   "mu_squeeze": 0.019864876598742493,
+   "net_push_N": 3.4133873622115014,
+   "net_twist_Nmm": 1.043396573271688,
+   "N_total": 191.63003665232998,
+   "one_face_slip_bound_mm": 0.09960146071325889,
    "cage_translation_tied_mm": [
-    -0.06566989959109071,
-    -0.002074478135408971,
-    -0.040594083970629115
+    -0.021315303979199694,
+    -0.0002648350724913793,
+    -0.03949447295598476
    ],
-   "source": "physio_rot_split3/p051_gpu1/w_extension"
+   "source": "physio_rot_split4/p051_gpu1/w_extension"
+  },
+  "AR_left": {
+   "t": 3.9715750217437744,
+   "target_reached": true,
+   "M_at_target": -1534.04128684,
+   "mu_squeeze": 0.008483068652304164,
+   "net_push_N": 1.91345210801219,
+   "net_twist_Nmm": 1.1109452780010516,
+   "N_total": 192.67032265408966,
+   "one_face_slip_bound_mm": 0.38518987583536873,
+   "cage_translation_tied_mm": [
+    -0.02127759022659219,
+    -0.0069772213962943416,
+    -0.03453853730667348
+   ],
+   "source": "physio_rot_split4/p051_gpu1/w_AR_left"
+  },
+  "LB_right": {
+   "t": 3.9701521396636963,
+   "target_reached": true,
+   "M_at_target": -1616.57426415,
+   "mu_squeeze": 0.14097534029970285,
+   "net_push_N": 17.89805239480253,
+   "net_twist_Nmm": 48.26426488591602,
+   "N_total": 216.73475047898728,
+   "one_face_slip_bound_mm": 0.19583410273193594,
+   "cage_translation_tied_mm": [
+    0.008444137053878802,
+    -0.04715474089307558,
+    -0.03987205359973727
+   ],
+   "source": "physio_rot_split4/p051_gpu1/w_LB_right"
   }
  },
  "p130": {

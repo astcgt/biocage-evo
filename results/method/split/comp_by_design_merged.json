@@ -105,41 +105,41 @@
     "peak": 0.0419352087028036,
     "reached": true,
     "t_eval": 3.95,
-    "source": "physio_rot_split3/p113/w_flexion"
+    "source": "physio_rot_split4/p113_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.0412915326522344,
-    "reached": false,
-    "t_eval": 4.0,
-    "source": "physio_rot_split3/p113/w_extension"
+    "peak": 0.04362073157678476,
+    "reached": true,
+    "t_eval": 3.98962305,
+    "source": "physio_rot_split4/p113_gpu2/w_extension"
    },
    "LB_right": {
     "peak": 0.04043208194378414,
     "reached": true,
     "t_eval": 3.95,
-    "source": "physio_rot_split3/p113/w_LB_right"
+    "source": "physio_rot_split4/p113_gpu2/w_LB_right"
    },
    "LB_left": {
     "peak": 0.040651080669262804,
     "reached": true,
     "t_eval": 3.95,
-    "source": "physio_rot_split3/p113/w_LB_left"
+    "source": "physio_rot_split4/p113_gpu2/w_LB_left"
    },
    "AR_left": {
     "peak": 0.0425900397815323,
     "reached": true,
     "t_eval": 3.96805551,
-    "source": "physio_rot_split3/p113/w_AR_left"
+    "source": "physio_rot_split4/p113_gpu2/w_AR_left"
    },
    "AR_right": {
     "peak": 0.042270526222881466,
     "reached": true,
     "t_eval": 3.96581031,
-    "source": "physio_rot_split3/p113/w_AR_right"
+    "source": "physio_rot_split4/p113_gpu2/w_AR_right"
    }
   },
-  "source": "physio_rot_split3/p113/w_AR_right",
-  "verdict": "open"
+  "source": "physio_rot_split4/p113_gpu2/w_AR_left",
+  "verdict": "pass"
  },
  "p098": {
   "sustained": 0.4930187570656839,
@@ -148,47 +148,47 @@
   "verdict": "fail"
  },
  "p093": {
-  "sustained": 0.03083985302859192,
+  "sustained": 0.03083981205555337,
   "windows": {
    "flexion": {
-    "peak": 0.1203798138656074,
+    "peak": 0.1203796992532476,
     "reached": true,
     "t_eval": 3.95,
-    "source": "physio_rot_split3/p093_gpu2/w_flexion"
+    "source": "physio_rot_split4/p093_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.09291272581121478,
-    "reached": false,
-    "t_eval": 4.0,
-    "source": "physio_rot_split3/p093_gpu2/w_extension"
+    "peak": 0.10084430722265211,
+    "reached": true,
+    "t_eval": 3.73078919,
+    "source": "physio_rot_split4/p093_gpu2/w_extension"
    },
    "LB_right": {
-    "peak": 0.11140738805983845,
+    "peak": 0.11140762142213569,
     "reached": true,
     "t_eval": 4.0,
-    "source": "physio_rot_split3/p093_gpu2/w_LB_right"
+    "source": "physio_rot_split4/p093_gpu2/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.11140518015330748,
+    "peak": 0.1114050549150022,
     "reached": true,
     "t_eval": 4.0,
-    "source": "physio_rot_split3/p093_gpu2/w_LB_left"
+    "source": "physio_rot_split4/p093_gpu2/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.10359734328987157,
+    "peak": 0.1037935097567479,
     "reached": true,
     "t_eval": 4.0,
-    "source": "physio_rot_split3/p093_gpu2/w_AR_left"
+    "source": "physio_rot_split4/p093_gpu2/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.10369778275011647,
+    "peak": 0.10399112157911117,
     "reached": true,
     "t_eval": 4.0,
-    "source": "physio_rot_split3/p093_gpu2/w_AR_right"
+    "source": "physio_rot_split4/p093_gpu2/w_AR_right"
    }
   },
-  "source": "physio_rot_split3/p093_gpu2/w_LB_right",
-  "verdict": "open"
+  "source": "physio_rot_split4/p093_gpu2/w_AR_right",
+  "verdict": "pass"
  },
  "p080": {
   "sustained": 0.48752895627866666,
@@ -573,41 +573,41 @@
     "peak": 0.02537927138291862,
     "reached": true,
     "t_eval": 3.95,
-    "source": "physio_rot_split3/p036_gpu4/w_flexion"
+    "source": "physio_rot_split4/p036_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.04249240991957692,
-    "reached": false,
-    "t_eval": 4.0,
-    "source": "physio_rot_split3/p036_gpu4/w_extension"
+    "peak": 0.04438777876313605,
+    "reached": true,
+    "t_eval": 3.98035048,
+    "source": "physio_rot_split4/p036_gpu2/w_extension"
    },
    "LB_right": {
     "peak": 0.03765114371421421,
     "reached": true,
     "t_eval": 3.85,
-    "source": "physio_rot_split3/p036_gpu4/w_LB_right"
+    "source": "physio_rot_split4/p036_gpu2/w_LB_right"
    },
    "LB_left": {
     "peak": 0.03785990942499036,
     "reached": true,
     "t_eval": 3.85,
-    "source": "physio_rot_split3/p036_gpu4/w_LB_left"
+    "source": "physio_rot_split4/p036_gpu2/w_LB_left"
    },
    "AR_left": {
     "peak": 0.04636836060403031,
     "reached": true,
     "t_eval": 3.95,
-    "source": "physio_rot_split3/p036_gpu4/w_AR_left"
+    "source": "physio_rot_split4/p036_gpu2/w_AR_left"
    },
    "AR_right": {
     "peak": 0.04649527072511755,
     "reached": true,
     "t_eval": 3.95,
-    "source": "physio_rot_split3/p036_gpu4/w_AR_right"
+    "source": "physio_rot_split4/p036_gpu2/w_AR_right"
    }
   },
-  "source": "physio_rot_split3/p036_gpu4/w_AR_right",
-  "verdict": "open"
+  "source": "physio_rot_split4/p036_gpu2/w_AR_left",
+  "verdict": "pass"
  },
  "p121": {
   "sustained": 0.042189333008314706,
@@ -2991,47 +2991,47 @@
   "verdict": "fail"
  },
  "p051": {
-  "sustained": 0.0459837418756896,
+  "sustained": 0.04598382166198212,
   "windows": {
    "flexion": {
-    "peak": 0.16328215952181122,
+    "peak": 0.16953396216116184,
     "reached": true,
-    "t_eval": 3.9552036,
-    "source": "physio_rot_split3/p051_gpu1/w_flexion"
+    "t_eval": 3.97855047,
+    "source": "physio_rot_split4/p051_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.10619164282616862,
+    "peak": 0.07462363034427058,
     "reached": true,
-    "t_eval": 3.77282845,
-    "source": "physio_rot_split3/p051_gpu1/w_extension"
+    "t_eval": 3.64545455,
+    "source": "physio_rot_split4/p051_gpu1/w_extension"
    },
    "LB_left": {
-    "peak": 0.10632073609042814,
-    "reached": false,
-    "t_eval": 4.0,
-    "source": "physio_rot_split3/p051_gpu1/w_LB_left"
+    "peak": 0.14858497478884056,
+    "reached": true,
+    "t_eval": 3.95078663,
+    "source": "physio_rot_split4/p051_gpu1/w_LB_left"
    },
    "AR_right": {
-    "peak": 0.10531362873732747,
-    "reached": false,
-    "t_eval": 4.0,
-    "source": "physio_rot_split3/p051_gpu1/w_AR_right"
+    "peak": 0.1451766872189632,
+    "reached": true,
+    "t_eval": 3.98932658,
+    "source": "physio_rot_split4/p051_gpu1/w_AR_right"
    },
    "LB_right": {
-    "peak": 0.10635890158366779,
-    "reached": false,
-    "t_eval": 4.0,
-    "source": "physio_rot_split3/p051_gpu1/w_LB_right"
+    "peak": 0.15335240144047488,
+    "reached": true,
+    "t_eval": 3.97015203,
+    "source": "physio_rot_split4/p051_gpu1/w_LB_right"
    },
    "AR_left": {
-    "peak": 0.10522193611824267,
-    "reached": false,
-    "t_eval": 4.0,
-    "source": "physio_rot_split3/p051_gpu1/w_AR_left"
+    "peak": 0.13984459368110008,
+    "reached": true,
+    "t_eval": 3.97157502,
+    "source": "physio_rot_split4/p051_gpu1/w_AR_left"
    }
   },
-  "source": "physio_rot_split3/p051_gpu1/w_flexion",
-  "verdict": "open"
+  "source": "physio_rot_split4/p051_gpu1/w_extension",
+  "verdict": "pass"
  },
  "p027": {
   "sustained": 0.12517835438784602,
@@ -3182,41 +3182,41 @@
     "peak": 0.07469010557705427,
     "reached": true,
     "t_eval": 3.95,
-    "source": "physio_rot_split3/p082_gpu3/w_flexion"
+    "source": "physio_rot_split4/p082_gpu1/w_flexion"
    },
    "extension": {
     "peak": 0.10019312249831404,
     "reached": true,
     "t_eval": 4.0,
-    "source": "physio_rot_split3/p082_gpu3/w_extension"
+    "source": "physio_rot_split4/p082_gpu1/w_extension"
    },
    "LB_right": {
     "peak": 0.08145765146416802,
     "reached": true,
     "t_eval": 3.95,
-    "source": "physio_rot_split3/p082_gpu3/w_LB_right"
+    "source": "physio_rot_split4/p082_gpu1/w_LB_right"
    },
    "LB_left": {
     "peak": 0.08180619485562382,
     "reached": true,
     "t_eval": 3.95,
-    "source": "physio_rot_split3/p082_gpu3/w_LB_left"
+    "source": "physio_rot_split4/p082_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.07269927532229296,
-    "reached": false,
-    "t_eval": 4.0,
-    "source": "physio_rot_split3/p082_gpu3/w_AR_left"
+    "peak": 0.13374594582859167,
+    "reached": true,
+    "t_eval": 3.97702512,
+    "source": "physio_rot_split4/p082_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.07278261323515946,
+    "peak": 0.07647871720389313,
     "reached": true,
-    "t_eval": 4.0,
-    "source": "physio_rot_split2/p082_gpu1/w_AR_right"
+    "t_eval": 3.98993934,
+    "source": "physio_rot_split4/p082_gpu1/w_AR_right"
    }
   },
-  "source": "physio_rot_split3/p082_gpu3/w_AR_left",
-  "verdict": "open"
+  "source": "physio_rot_split4/p082_gpu1/w_flexion",
+  "verdict": "pass"
  },
  "p105": {
   "sustained": 0.008265997053420225,

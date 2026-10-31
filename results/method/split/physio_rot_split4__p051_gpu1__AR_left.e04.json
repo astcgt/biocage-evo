@@ -1,0 +1,27 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/human_study/al_v2/physio_rot_split4/p051_gpu1/w_AR_left",
+ "windows": {
+  "AR_left": {
+   "t": 3.9715750217437744,
+   "target_reached": true,
+   "M_at_target": -1534.04128684,
+   "mu_squeeze": 0.008483068652304164,
+   "net_push_N": 1.91345210801219,
+   "net_twist_Nmm": 1.1109452780010516,
+   "N_total": 192.67032265408966,
+   "one_face_slip_bound_mm": 0.38518987583536873,
+   "cage_translation_tied_mm": [
+    -0.02127759022659219,
+    -0.0069772213962943416,
+    -0.03453853730667348
+   ]
+  }
+ },
+ "provenance": {
+  "git": "0b53cf7158ae6d88ffe3647ccced96b3562ae0bc",
+  "script_dirty": false,
+  "script_sha256": "f6580ee1300fdd0024b8f55ef5c960061c3d8e445805cd2549f7b0439730e1ce",
+  "case_feb": "40ff515e2486bc33e8440252483dae13f3a608f5b14612be06f96712eda1737e",
+  "case_xplt": "d100b95c01731260a634dfcf55eb2de331692a50cde505a7166d57426904b46a"
+ }
+}
