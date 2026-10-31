@@ -16,10 +16,13 @@ WIN = ('flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right')
 SUS, PEAK = 0.15, 0.25
 ended = lambda log: os.path.exists(log) and any(k in open(log, errors='ignore').read()[-4000:] for k in ('N O R M A L', 'E R R O R'))
 
-wds = [w for w in sorted(glob.glob(R + 'physio_rot_split2/p*_*/w_*')) if ended(w + '/case.log') and os.path.exists(w + '/case.xplt')]
+SETS = ('physio_rot_split2', 'physio_rot_split3')          # split3 = second pass with retargeted amplitudes (2026-10-31)
+wds = [w for s in SETS for w in sorted(glob.glob(R + s + '/p*/w_*')) if ended(w + '/case.log') and os.path.exists(w + '/case.xplt')]
+set_of = lambda w: w.split('/al_v2/')[1].split('/')[0]
 
 def one(w):
-    tag = os.path.basename(os.path.dirname(w)) + '__' + os.path.basename(w)[2:]
+    # file tag: <design dir>__<window> for the original split2 set, <set>__<design dir>__<window> for later sets
+    tag = (('' if set_of(w) == 'physio_rot_split2' else set_of(w) + '__') + os.path.basename(os.path.dirname(w)) + '__' + os.path.basename(w)[2:])
     rc = 0
     for m, s, to in (('e04', 'methods/e04_dislocation.py', 1500), ('e05', 'methods/e05_compression.py', 2400)):
         o = os.path.join(OUT, f'{tag}.{m}.json')
@@ -37,7 +40,7 @@ with ThreadPoolExecutor(int(sys.argv[1]) if len(sys.argv) > 1 else 3) as ex: rc 
 # takes the preferred set that has it. Sources are recorded per value.
 import re
 INVALID = ('invalid', 'physio_rot_split/', 'physio_rot_split_test', 'cases_invalid', 'physio_test', 'facet_test', 'lb_test', 'physio_rot_facet')
-ORDER = ('physio_rot_split2', 'physio_rot_dyn2', 'physio_rot_dyn', 'physio_rot_r2', 'physio_rot')
+ORDER = ('physio_rot_split3', 'physio_rot_split2', 'physio_rot_dyn2', 'physio_rot_dyn', 'physio_rot_r2', 'physio_rot')
 rank = lambda case: next((i for i, s in enumerate(ORDER) if f'/{s}/' in case + '/'), len(ORDER))
 pid = lambda case: (re.search(r'/(p\d{3})', case) or [None, None])[1]
 valid = lambda case: not any(k in case for k in INVALID)
@@ -51,8 +54,12 @@ for f in glob.glob(os.path.join(E, 'results/method/e04_rot/*.json')) + glob.glob
 for f in glob.glob(os.path.join(E, 'results/method/e05/*.json')) + glob.glob(os.path.join(OUT, '*.e05.json')):
     b = os.path.basename(f)
     if b in ('by_design.json', 'verdict_lists.json') or '__' not in b: continue
-    s, d = b.split('__', 1)
-    case = R + (f'physio_rot_split2/{s}/w_{d[:-9]}' if f.startswith(OUT) else f'{s}/{d[:-5]}')
+    parts = b.split('__')
+    if f.startswith(OUT):                                   # split window result: [<set>__]<design dir>__<window>.e05.json
+        st, dd, wn_ = (parts if len(parts) == 3 else ['physio_rot_split2'] + parts)
+        case = R + f'{st}/{dd}/w_{wn_[:-9]}'
+    else:                                                   # sequential run result: <set>__<design dir>.json
+        s, d = parts[0], '__'.join(parts[1:]); case = R + f'{s}/{d[:-5]}'
     if not valid(case) or not pid(case): continue
     j = json.load(open(f)); e05c.setdefault(pid(case), {'sus': [], 'win': {}})
     if j.get('sustained') is not None: e05c[pid(case)]['sus'].append((j['sustained'], case, rank(case)))
