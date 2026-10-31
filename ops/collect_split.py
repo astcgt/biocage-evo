@@ -16,7 +16,7 @@ WIN = ('flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right')
 SUS, PEAK = 0.15, 0.25
 ended = lambda log: os.path.exists(log) and any(k in open(log, errors='ignore').read()[-4000:] for k in ('N O R M A L', 'E R R O R'))
 
-SETS = ('physio_rot_split2', 'physio_rot_split3')          # split3 = second pass with retargeted amplitudes (2026-10-31)
+SETS = ('physio_rot_split2', 'physio_rot_split3', 'physio_rot_split4')   # split3 / split4 = second / third pass with retargeted amplitudes (2026-10-31)
 wds = [w for s in SETS for w in sorted(glob.glob(R + s + '/p*/w_*')) if ended(w + '/case.log') and os.path.exists(w + '/case.xplt')]
 set_of = lambda w: w.split('/al_v2/')[1].split('/')[0]
 
@@ -40,7 +40,7 @@ with ThreadPoolExecutor(int(sys.argv[1]) if len(sys.argv) > 1 else 3) as ex: rc 
 # takes the preferred set that has it. Sources are recorded per value.
 import re
 INVALID = ('invalid', 'physio_rot_split/', 'physio_rot_split_test', 'cases_invalid', 'physio_test', 'facet_test', 'lb_test', 'physio_rot_facet')
-ORDER = ('physio_rot_split3', 'physio_rot_split2', 'physio_rot_dyn2', 'physio_rot_dyn', 'physio_rot_r2', 'physio_rot')
+ORDER = ('physio_rot_split4', 'physio_rot_split3', 'physio_rot_split2', 'physio_rot_dyn2', 'physio_rot_dyn', 'physio_rot_r2', 'physio_rot')
 rank = lambda case: next((i for i, s in enumerate(ORDER) if f'/{s}/' in case + '/'), len(ORDER))
 pid = lambda case: (re.search(r'/(p\d{3})', case) or [None, None])[1]
 valid = lambda case: not any(k in case for k in INVALID)
