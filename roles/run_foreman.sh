@@ -5,6 +5,6 @@ ps -u "$(id -u)" -o args | grep -q "^claude -p You are the FOREMAN" && exit 0
 mkdir -p work/agents/foreman; ts=$(date +%Y%m%d_%H%M)
 claude -p "$(cat roles/prompts/foreman.md)" --model claude-opus-5-5 \
   --allowed-tools Bash Read Write Edit Glob Grep --output-format json \
-  --add-dir "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1" \
+  --add-dir "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026" \
   > work/agents/foreman/$ts.session.json 2> work/agents/foreman/$ts.err
 echo "$(date -Is) foreman exit $?" >> work/agents/rounds.log

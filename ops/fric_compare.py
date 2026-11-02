@@ -11,7 +11,7 @@ import os, sys, glob, json, subprocess, math
 from concurrent.futures import ThreadPoolExecutor
 
 E = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-R = '/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/human_study/al_v2/'
+R = '/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/'
 OUT = os.path.join(E, 'results/method/fric'); os.makedirs(OUT, exist_ok=True)
 WIN = ('flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right')
 ended = lambda log: os.path.exists(log) and any(k in open(log, errors='ignore').read()[-4000:] for k in ('N O R M A L', 'E R R O R'))

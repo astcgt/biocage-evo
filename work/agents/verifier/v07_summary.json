@@ -1,0 +1,80 @@
+{
+ "text": "V07 force hold (block pair mu 0.3, Fn 4 N, Ft = ratio x mu Fn, t 0.5-1.0 constant load; GPU Newton HEAD 1f09ae2 + dirty tree, run with V07_PATCH=1 so that equilibrium-start increments do not crash, see B2). Coulomb answer: hold creep 0. ratio 0.5 E 10 n 10: GPU x(0.5) 0.05607 mm, hold creep 0.004166 mm in 5 increments (min stick 0.875, last-increment dx -7.958e-07); FEBio x(0.5) 0.065 mm, hold creep 0.07547 mm; ratio 0.5 E 10 n 40: GPU x(0.5) 0.05672 mm, hold creep 0.003198 mm in 20 increments (min stick 0.875, last-increment dx 0); FEBio x(0.5) 0.08722 mm, hold creep 0.3018 mm; ratio 0.9 E 10 n 10: GPU x(0.5) 0.1109 mm, hold creep 0.1187 mm in 20 increments (min stick 0.5, last-increment dx 0.005647); FEBio x(0.5) 0.1193 mm, hold creep 0.1509 mm; ratio 0.9 E 10 n 20: GPU x(0.5) 0.1109 mm, hold creep 0.1187 mm in 20 increments (min stick 0.5, last-increment dx 0.005647); FEBio x(0.5) 0.1344 mm, hold creep 0.3014 mm; ratio 0.9 E 10 n 40: GPU x(0.5) 0.1161 mm, hold creep 0.04604 mm in 25 increments (min stick 0.5, last-increment dx 0); FEBio x(0.5) 0.162 mm, hold creep 0.6029 mm | ratio 0.9 E 400 n 10 (patched): RuntimeError at t 0.6876 in the hold, max_newton 60 x 7 tries, residual 1.55e-7 N (4e-8 of Fn): probably stick / slip switching between iterations (not isolated), the displacement norm never meets dtol 1e-6 (v07_r0.9_patched.log); E 400 n 20 / 40 therefore not run. Unpatched runs: RuntimeError in the hold once all nodes stick (residual ~6e-13 N; v07_r0.5.log, v07_r0.9.log).",
+ "rows": [
+  {
+   "ratio": 0.5,
+   "E": 10.0,
+   "n": 10,
+   "gpu_x05_mm": 0.056071517163873486,
+   "gpu_hold_creep_mm": 0.004165814734003348,
+   "gpu_hold_increments": 5,
+   "gpu_min_stick_in_hold": 0.875,
+   "gpu_last_increment_dx_mm": -7.957995307172894e-07,
+   "gpu_max_iters": 2,
+   "gpu_all_converged": true,
+   "febio_normal": true,
+   "febio_x05_mm": 0.0649994346399998,
+   "febio_hold_creep_mm": 0.07547096931000041
+  },
+  {
+   "ratio": 0.5,
+   "E": 10.0,
+   "n": 40,
+   "gpu_x05_mm": 0.056719398199111426,
+   "gpu_hold_creep_mm": 0.0031983441263543355,
+   "gpu_hold_increments": 20,
+   "gpu_min_stick_in_hold": 0.875,
+   "gpu_last_increment_dx_mm": 0.0,
+   "gpu_max_iters": 2,
+   "gpu_all_converged": true,
+   "febio_normal": true,
+   "febio_x05_mm": 0.08721688922000004,
+   "febio_hold_creep_mm": 0.30176865929999996
+  },
+  {
+   "ratio": 0.9,
+   "E": 10.0,
+   "n": 10,
+   "gpu_x05_mm": 0.11085341553511463,
+   "gpu_hold_creep_mm": 0.11865602737121828,
+   "gpu_hold_increments": 20,
+   "gpu_min_stick_in_hold": 0.5,
+   "gpu_last_increment_dx_mm": 0.0056467656356593565,
+   "gpu_max_iters": 59,
+   "gpu_all_converged": true,
+   "febio_normal": true,
+   "febio_x05_mm": 0.11928516879999984,
+   "febio_hold_creep_mm": 0.1509280071600001
+  },
+  {
+   "ratio": 0.9,
+   "E": 10.0,
+   "n": 20,
+   "gpu_x05_mm": 0.11085341553511419,
+   "gpu_hold_creep_mm": 0.11865602737121783,
+   "gpu_hold_increments": 20,
+   "gpu_min_stick_in_hold": 0.5,
+   "gpu_last_increment_dx_mm": 0.005646765635658912,
+   "gpu_max_iters": 59,
+   "gpu_all_converged": true,
+   "febio_normal": true,
+   "febio_x05_mm": 0.13437672544000012,
+   "febio_hold_creep_mm": 0.30143247514999993
+  },
+  {
+   "ratio": 0.9,
+   "E": 10.0,
+   "n": 40,
+   "gpu_x05_mm": 0.11606370326943183,
+   "gpu_hold_creep_mm": 0.04604232901247185,
+   "gpu_hold_increments": 25,
+   "gpu_min_stick_in_hold": 0.5,
+   "gpu_last_increment_dx_mm": 0.0,
+   "gpu_max_iters": 54,
+   "gpu_all_converged": true,
+   "febio_normal": true,
+   "febio_x05_mm": 0.16196979427000002,
+   "febio_hold_creep_mm": 0.60291990794
+  }
+ ]
+}

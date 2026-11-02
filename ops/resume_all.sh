@@ -1,7 +1,9 @@
 #!/bin/bash
 # Bring all unattended BIOCAGE work back after a Jupyter server stop / cull (which kills every process of this account).
 # Idempotent: starts only what is not already running. Called by ~/.jupyter/jupyter_server_config.py at every server start.
-OLD="/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1"
+# the server-start PATH lacks ~/.local/bin (claude) and cuda: without this, foreman / role rounds fail "claude: command not found" (11-01 23:21)
+export PATH="/raid/jupyter-alz.ee09/.local/bin:/raid/jupyter-alz.ee09/bin:/usr/local/cuda/bin:$PATH"
+OLD="/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026"
 EVO="$(cd "$(dirname "$0")/.." && pwd)"
 tmux has-session -t biocage_watchdog 2>/dev/null || tmux new-session -d -s biocage_watchdog "cd '$OLD' && python scripts/5_compute/h23_watchdog.py 2>> human_study/watchdog.err"
 tmux has-session -t evo_daemon 2>/dev/null || tmux new-session -d -s evo_daemon "cd '$EVO' && ops/evo_daemon.sh >> work/agents/evo_daemon.log 2>&1"

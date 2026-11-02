@@ -7,7 +7,8 @@ Tasks are JSON files in work/ops/tasks/{queue,running,done,failed}/<name>.json:
 A pass:
   1. running tasks whose tmux session (task_<name>) is gone: exit code file 0 -> done/, else re-queue until max_retries,
      then failed/; no exit file (killed, server restart) -> re-queued without counting a retry.
-  2. queued tasks, highest priority then oldest first: started in tmux when there is host memory (cgroup memory.max -
+  2. queued tasks, highest priority then oldest first (none while ROOT's disk has < DISK_MIN_GB free):
+     started in tmux when there is host memory (cgroup memory.max -
      memory.current - HEADROOM_GB >= host_mem_gb) and, for GPU tasks, a GPU with >= gpu_mem_gb free (all GPUs of the node,
      other users included; the GPU with the most free memory that runs the fewest of my tasks is used).
 Every action is logged to work/ops/task_runner.log. Add a task: python ops/task_runner.py add <json-file-or-string>.
@@ -17,6 +18,7 @@ import os, sys, json, glob, time, subprocess
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 T = os.path.join(ROOT, 'work/ops/tasks'); LOG = os.path.join(ROOT, 'work/ops/task_runner.log')
 HEADROOM_GB = 16                                  # same margin as the old study's scheduler (h19: runs grow while running)
+DISK_MIN_GB = 30                                  # no new starts below this free on ROOT's disk (10-31 /raid hit 0 MB; AUDIT_TODO T10)
 CG = '/sys/fs/cgroup' + open('/proc/self/cgroup').read().strip().split(':')[-1]
 for d in ('queue', 'running', 'done', 'failed'): os.makedirs(os.path.join(T, d), exist_ok=True)
 
@@ -77,6 +79,8 @@ def check_running():
 def start_queued():
     q = [json.load(open(f)) for f in glob.glob(os.path.join(T, 'queue', '*.json'))]
     q.sort(key=lambda t: (-t.get('priority', 0), t.get('created', '')))
+    disk = os.statvfs(ROOT).f_bavail * os.statvfs(ROOT).f_frsize / 2**30
+    if q and disk < DISK_MIN_GB: log(f'disk {disk:.0f} GB free < {DISK_MIN_GB}: {len(q)} queued held'); return
     mine = {}
     for f in glob.glob(os.path.join(T, 'running', '*.json')):
         g = json.load(open(f)).get('gpu_id')

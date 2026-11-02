@@ -9,7 +9,7 @@ import os, sys, glob, json, subprocess
 from concurrent.futures import ThreadPoolExecutor
 
 E = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-R = '/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/human_study/al_v2/'
+R = '/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/'
 OUT = os.path.join(E, 'results/method/degr'); os.makedirs(OUT, exist_ok=True)
 WIN = ('flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right')
 SETS = {'physio_degr050': 0.5, 'physio_degr020': 0.2, 'physio_degr010': 0.1}

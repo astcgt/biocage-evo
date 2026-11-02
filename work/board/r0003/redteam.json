@@ -1,0 +1,79 @@
+{
+ "role": "redteam",
+ "round": 3,
+ "findings": [
+  "F-0021",
+  "F-0022",
+  "F-0023",
+  "F-0024",
+  "F-0025",
+  "F-0026",
+  "F-0027",
+  "F-0028",
+  "F-0029"
+ ],
+ "top3": [
+  "F-0021 (critical): the PI's new deciding number, mu_req from the tied cage (e02), counts the glue's TENSION as friction capacity. At peak load 38-47 % of the glued face is in tension and the tension is 0.4-1.8x the net compression, so mu_req is under-estimated 1.4-2.8x. p062 extension, bottom face: 0.119 -> 0.328 (0.468 with out-of-plane shear), i.e. holds -> slips at mu 0.3; lateral bending 0.611 -> 1.082. Script r0003_tension.py. Do not rank designs by mu_req until fixed.",
+  "F-0022 + F-0024 (major, designer exploits): the rigid-body dislocation rule passes a 10 deg spin (corners 1.2 mm), a posterior 10 % lobe sliding 4.5 mm toward the cord (reported 0.48 mm) and an anterior 25 % lobe extruding 3.5 mm out of the disc space (reported 0.88 mm); S1 is not checked after loading. The whole-face shortcut cannot see cyclic walking from accumulated local slip (Pai & Hess 2002), and the frictional check runs only 3 cycles on selected designs.",
+  "F-0023 + F-0025 + F-0026 + F-0029 (major): no gate tests tied contact or e02 with tension / curved faces; the Newton solver has passed only a never-slipping friction gate and a flexion run with zero facet force. Round 3 started despite the verifier's round-2 HOLD; no finding has ever been answered; F-0011..F-0020 are not in git; roles now have unrestricted write access while GOVERNANCE.md claims enforcement; solver code was edited during the round; VERIFICATION.md / METHODS_COMPARISON.md / PLAN.md S9 are stale and overstate ('safe for sure'). A fifth agent (foreman, added mid-round) can edit the round runner and restart / re-queue runs with no code-hash check and no audit."
+ ],
+ "issue_I001": {
+  "result": "refuted (model symmetric; cause was the load-curve bug); reproduced byte-identical this round",
+  "numbers": "flexion max |Mz| top 1.1 / bottom 0.1-0.2 N mm, extension 0.4 / 0.1; LB p062 bottom 91.1 vs 91.0 N mm left / right; AR 1121 vs 1128 N mm",
+  "script": "work/agents/redteam/r0002_i001.py -> r0002_i001_result.json (unchanged)",
+  "open": "p014_gpu1 ERROR TERMINATION after extension (no LB / AR); ISSUES.md not updated; axial rotation is the governing direction (mu_req 2.0-2.6)"
+ },
+ "change_requests": [
+  {
+   "owner": "engine/integrator",
+   "target": "methods/e02_friction_limit.py:71,76 and the mu_req pipeline",
+   "reason": "glue tension counted as compression; use non-adhesive no-slip contact or net compression + tension flag; also 3-D shear (F-0011)",
+   "evidence": "F-0021, work/agents/redteam/r0003_tension_result.json"
+  },
+  {
+   "owner": "safety guard + PI",
+   "target": "S9 / S1 implementation (constraints.py, not yet existing), PLAN.md:35",
+   "reason": "rigid-fit dislocation misses spin and partial-lobe migration; S1 not checked in the loaded state; canal clearance zone undefined",
+   "evidence": "F-0022, r0003_dislocation_result.json"
+  },
+  {
+   "owner": "verifier",
+   "target": "credibility gates",
+   "reason": "gates for tied contact, e02 with tension and curved faces, gate 3, Newton reruns of 1b / 1c with gross slip, gate 2 with facet force, code hash in every report",
+   "evidence": "F-0023"
+  },
+  {
+   "owner": "safety guard + PI",
+   "target": "ratcheting rule",
+   "reason": "per-cycle rigid migration extrapolated to the support period, on every promoted design",
+   "evidence": "F-0024"
+  },
+  {
+   "owner": "PI + integrator",
+   "target": "ops/evo_daemon.sh, roles/run_roles.sh, docs/GOVERNANCE.md, work/findings",
+   "reason": "HOLD gate on round start, code freeze per round, commit + answer findings, restore or audit write scope",
+   "evidence": "F-0025"
+  },
+  {
+   "owner": "verifier / integrator",
+   "target": "VERIFICATION.md, METHODS_COMPARISON.md, PLAN.md, ISSUES.md",
+   "reason": "stale, overstating, contradict PI 2026-10-27",
+   "evidence": "F-0026"
+  },
+  {
+   "owner": "engine/integrator",
+   "target": "gpufe/newton.py frictional tangent",
+   "reason": "residual / tangent mismatch for mu > 0",
+   "evidence": "F-0028"
+  },
+  {
+   "owner": "PI + integrator",
+   "target": "roles/run_foreman.sh, roles/prompts/foreman.md, ops/",
+   "reason": "foreman can edit the round runner (HOLD), resumes runs across code changes without provenance, no audit",
+   "evidence": "F-0029"
+  }
+ ],
+ "canaries": [],
+ "notes": "No canaries planted. F-0021 numbers are post-processing of existing FEBio tied runs (exact for the force ratio, scaled approximation for the twist limit). F-0022 uses a synthetic cage with imposed motions. F-0024's mechanism is from engineering literature (analogy, unverified for the cage); the proposed walking test was not run. Uncommitted solver code changed while I was reading it (snapshot in work/agents/redteam/r0003_snap/). Details in work/agents/redteam/r0003_notes.md. I wrote only in work/agents/redteam/, work/findings/F-0021..F-0029 and this file.",
+ "summary_zh": "紅隊第三輪提出 9 項新發現：1 項極嚴重、6 項重大、2 項輕微。最嚴重的是：PI 決定優先用來判斷滑出的「摩擦需求值」，會把黏死模型中黏膠的拉力誤當成摩擦力的來源，因此低估所需摩擦 1.4 到 2.8 倍。例如 p062 後伸時，在主設定摩擦係數 0.3 下，結論由「不會滑」變成「會滑」；修正前不應用這個數字排名設計。第二，新的滑出定義只看整個 cage 的平均位移：cage 原地旋轉 10 度、後方一小塊往脊髓方向滑 4.5 毫米、前方一塊滑出椎間盤空間 3.5 毫米，都會被判為通過；而局部小滑動在反覆受力下累積成整體移動的現象，目前的方法也看不到。第三，驗證關卡沒有測到現在真正要用的計算路線；第二輪驗證者判定暫停，第三輪卻照樣開始；紅隊的 20 項發現沒有一項得到回覆；本輪進行中求解器程式仍在修改；多份文件已過時並且說得比實際證明的多；本輪中途新增的第五個自動代理人「工頭」可以修改決定何時開始下一輪的程式，也會重啟計算而不檢查程式版本，沒有人稽核它。I-001（前屈與後伸時接觸面的扭轉）再次確認已經解決，數字與第二輪完全相同。本輪沒有放置測試用的假結果。"
+}

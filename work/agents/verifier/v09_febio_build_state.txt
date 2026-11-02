@@ -1,0 +1,26 @@
+FEBio source state, verifier r0003, 2026-10-28T01:16:22+08:00
+32ae206 Prepared version 4.13 release.
+ M FEBioMech/FEBioMechPlot.cpp
+ M FEBioMech/FEConstPrestrain.h
+ M FEBioMech/FEPreStrainUncoupledElastic.cpp
+ M FEBioMech/FEPreStrainUncoupledElastic.h
+ M FEBioMech/FERigidSolidDomain.cpp
+ M FEBioMech/FESolidSolver2.cpp
+ M FEBioMech/FETiedElasticInterface.cpp
+ M FEBioMech/FETiedElasticInterface.h
+ M FECore/PointCurve.cpp
+git diff sha256: 4ce68b96672e6913658007e1bfd5298954ebfdf66f64aad312bfa1f7eb302936  -
+febio4 binary sha256: 1d736a999e37ed2316753f8aa13c18c58f334a165c26f0c85793d1a2b9e571c7  cbuild/bin/febio4
+-rwxr-xr-x 1 jupyter-alz.ee09 jupyter-alz.ee09 103184 2026-10-20 06:42:01.101708379 +0800 cbuild/bin/febio4
+f85e4e94369ea5b7bbf3d68e199c218b47f709aee3a928ccc3f016a03a7f40db  cbuild/lib/libfeamr.so
+27fd94661396981b6c3d6cc79b185859da580aee0c26997d0b6b6bf2c152b4b5  cbuild/lib/libfebiofluid.so
+b495e2d3a2a9f3057deece6117932f1f711e572f2be806f94d16e18a2a184788  cbuild/lib/libfebiolib.so
+4c9750e174761763037d0504935f7c321b6883a263bb6d26672ca143f8d7402b  cbuild/lib/libfebiomech.so
+ad7b1920fcb0d450ffe759ca86618f70c4b279682fb3fd60e224b2b217e166e6  cbuild/lib/libfebiomix.so
+fa70819de2f03c4cecb2b708e74d036cb8a8a67dcdaf56d785bf0f31c8dc14df  cbuild/lib/libfebioopt.so
+a55354b415dfb1f27fc0f05eb4e86d075ebc86040bfc194070e7e7b443161bca  cbuild/lib/libfebioplot.so
+2cf92357cf3ed09d14cd607e6a849bbefc5484cdef47e3a0506c3280444d3b5a  cbuild/lib/libfebiorve.so
+0049904acf4281e540b57333f89e315827b1c5829d4fbbd319be01c0506f3edf  cbuild/lib/libfebioxml.so
+5fba0cdbb305d79bc4fb230b4d1330fcfe8ea4dca513eeefc22adfa90a18e19c  cbuild/lib/libfecore.so
+5e685507560dac5b81115231c3122267b577354cb3c0a7aa3224d8e082aaa281  cbuild/lib/libfeimglib.so
+037024d45fe503e5e11451fa27523a1acf223503df81b2050b32413c57bc859a  cbuild/lib/libnumcore.so

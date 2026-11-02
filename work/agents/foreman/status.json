@@ -1,0 +1,10 @@
+{"time": "2026-11-03T01:27",
+ "resources": {"cpu_quota_cores": 32, "cpu_used_cores": 1.3, "host_load": 28.7, "host_cores": 256, "nr_throttled": 4676,
+   "mem_used_gb": 55.9, "mem_max_gb": 137.4, "oom_kill": 0, "gpus_mine": 0,
+   "gpus_other": "GPU0 0% 38.5/40GB; GPU1-6 97-100% 15-33GB", "disk_free_tb": 1.5},
+ "queues": {"febio": {"waiting": 0, "running": 1, "done": 2274, "failed": 2, "running_job": "physrotFr2_p060 w_AR_right t=3.92/4", "finished_last_3h": 1},
+   "tasks": {"waiting": 0, "running": 0, "done": 1, "failed": 5}},
+ "actions": [],
+ "problems": ["30.7/32 cores idle, 0 GPUs mine: no queued work (32/32 idle once p060 finishes, <1 h)", "p109 flexion/extension stopped by watchdog 11-02 (static stall t~3.5)", "5 gate2 tasks failed since 10-28 (unchanged)"],
+ "requests": ["queue more FEBio/task work", "science owner: p109 flexion/extension stall in physio_fric2", "pending decisions: T01, T16, T10 h19 disk guard, al_loop gate"],
+ "summary_zh": "目前只剩 1 個 FEBio 計算在跑（p060 摩擦組，最後一段，約 1 小時內完成），其他佇列都空了。32 核只用約 1.3 核，GPU 沒有我們的工作，記憶體正常，所有服務正常。本次沒有改動。需要人：排入新的計算工作；查看 p109 屈曲/伸展卡住的問題；決定 T01、T16、T10、al_loop。"}

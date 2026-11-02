@@ -1,26 +1,50 @@
 {
- "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/human_study/al_v2/physio_rot_split2/p051_gpu2/w_extension",
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split2/p051_gpu2/w_extension",
  "windows": {
   "extension": {
-   "t": 3.6454546451568604,
+   "t": 3.9319048787237563,
    "target_reached": true,
-   "M_at_target": 1560.29941474,
-   "mu_squeeze": 0.019325885109185852,
-   "net_push_N": 3.383177731857551,
-   "net_twist_Nmm": 0.5109994705191574,
-   "N_total": 191.62740911919627,
-   "one_face_slip_bound_mm": 0.09710419491473596,
+   "M_at_target": 1500.0,
+   "mu_squeeze": 0.014255823483134103,
+   "net_push_N": 1.3074955231323195,
+   "net_twist_Nmm": 0.02045755550049108,
+   "N_total": 166.70078758918174,
+   "one_face_slip_bound_mm": 0.44579975842323655,
    "cage_translation_tied_mm": [
-    -0.021331907575201068,
-    0.0007193864603698678,
-    -0.03949257542983034
-   ]
+    -0.16160360780734961,
+    0.0008556772721757406,
+    -0.04134652140078114
+   ],
+   "eval": {
+    "t_a": 3.92264793,
+    "M_a": 1460.74570482,
+    "t_b": 3.94228455,
+    "M_b": 1544.01522492,
+    "frac": 0.4714125304536256,
+    "coarse": false,
+    "invalid": [
+     [
+      3.64545455,
+      0.045454550000000093,
+      1560.29941474,
+      "jump"
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 20,
+    "n_invalid": 1,
+    "dt_min": 0.0007580599999998938,
+    "monotonic": true,
+    "t_last": 4.0,
+    "complete": true
+   }
   }
  },
  "provenance": {
-  "git": "e3b05f877123f2f0f6736c6d4af804fc682c61b9",
-  "script_dirty": false,
-  "script_sha256": "f6580ee1300fdd0024b8f55ef5c960061c3d8e445805cd2549f7b0439730e1ce",
+  "git": "3b41de29d4f047f81781146531e0b02e0c093a8b",
+  "script_dirty": true,
+  "script_sha256": "26b3a6a8bb07d8b6ebde9003f6b3eadd35e0d6d63d3344f8edbe739b03ee83bb",
   "case_feb": "9d091f58f13d8f61f9b32dbef8c49a8d5c9e9fc7ad50e94cdc974ee3acbe39a6",
   "case_xplt": "a5af0690184812f97a414f7539c1fbd3119b48764abbd7c02daa2e86d30cf3cd"
  }

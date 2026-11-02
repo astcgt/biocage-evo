@@ -1,0 +1,15 @@
+{
+ "id": "F-0029",
+ "round": 3,
+ "target": "Foreman agent added during round 3 (commits 2e37663 2026-10-28 01:20, 99d71e0 01:22): roles/prompts/foreman.md, roles/run_foreman.sh, ops/task_runner.py, docs/GOVERNANCE.md 'Foreman' section",
+ "severity": "major",
+ "claim": "A fifth autonomous agent now runs every 60 min with Bash / Write / Edit and no path limit (run_foreman.sh:7). Its prompt lets it edit ops/*.sh and ops/task_runner.py: the round runner (evo_daemon.sh), which decides when rounds start and therefore whether a HOLD is respected (F-0025), is inside its edit scope. Its incentive is pure throughput ('nothing sits idle while work exists', 'pushed to the limit'). That pulls against every brake in the governance: a HOLD, a code freeze, or a run that should not be resumed after a code change all look like 'idle'. It also restarts hung or dead runs and re-queues tasks. A resumed or re-queued run that picks up gpufe / methods code changed in the meantime gives a result from two code versions with no record, and task_runner / gate reports store no code hash (F-0023). It tunes the scheduler of the OLD repository, whose physio_fix runs the new repository's results depend on and which the snapshot does not capture (F-0020). Its 'never change science' limit is a prompt instruction only; GOVERNANCE.md lists no verifier or red-team audit of its actions, and work/ops/foreman_actions.log is not committed. It was added in the middle of a round, without being listed in the round's pi_updates.md.",
+ "evidence": "roles/run_foreman.sh:7 '--allowed-tools Bash Read Write Edit Glob Grep'; roles/prompts/foreman.md step 3 ('You may tune ... ops/task_runner.py and ops/*.sh'), step 2 ('restart it the right way ... tasks re-queue'), goal line 2-3; git show --stat 2e37663 99d71e0 (timestamps after round start 01:07:18, schedule.json); docs/GOVERNANCE.md diff 1f09ae2..99d71e0 adds the Foreman section with no audit rule; work/board/r0003/pi_updates.md has no mention of it.",
+ "how_to_reproduce": "git show --stat 2e37663 99d71e0; cat roles/run_foreman.sh roles/prompts/foreman.md; git diff 1f09ae2 99d71e0 -- docs/GOVERNANCE.md",
+ "fix_options": [
+  {"option": "Take ops/evo_daemon.sh, roles/*.sh and anything that decides round start or HOLD out of the foreman's edit scope (owner: integrator + PI); foreman may only change queue priorities / resource numbers.", "cost": "low", "risk": "none"},
+  {"option": "Every task / run records git hash + dirty flag at launch; on resume the runner refuses if the code hash changed (re-run from scratch instead).", "cost": "low", "risk": "some lost compute"},
+  {"option": "Commit work/ops/foreman_actions.log and status.json each round; verifier and red team audit it (listed in GOVERNANCE.md).", "cost": "low", "risk": "none"}
+ ],
+ "summary_zh": "本輪進行中加入了第五個自動代理人「工頭」，每 60 分鐘執行一次。工頭擁有完整的執行與寫入權限，沒有路徑限制。它的唯一目標是「不讓電腦閒著」，而且它可以修改決定何時開始下一輪的排程程式。這和分工規則的煞車機制互相衝突：驗證者的暫停、凍結程式版本、程式改過後不該接續的計算，在它眼中都是「閒置」。它還會重啟或重新排入中斷的計算；如果期間程式改過，結果會混用兩個版本的程式，而且沒有紀錄。它也會調整舊專案的排程，新專案的結果依賴舊專案的資料。「不准改科學內容」只是指示，沒有任何角色負責稽核它的動作，它的動作紀錄也沒有存進版本控制。建議：把決定輪次與暫停的程式移出工頭可修改的範圍；每個計算在啟動時記錄程式版本，版本變了就不准接續；工頭的動作紀錄每輪提交並由驗證者與紅隊稽核。"
+}

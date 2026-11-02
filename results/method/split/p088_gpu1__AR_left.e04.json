@@ -1,26 +1,71 @@
 {
- "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/human_study/al_v2/physio_rot_split2/p088_gpu1/w_AR_left",
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split2/p088_gpu1/w_AR_left",
  "windows": {
   "AR_left": {
-   "t": 3.9576034545898438,
-   "target_reached": true,
-   "M_at_target": 2426.52417055,
-   "mu_squeeze": 0.07448397944183488,
-   "net_push_N": 14.04456317893122,
-   "net_twist_Nmm": 32.6680679079769,
-   "N_total": 268.41741309047825,
-   "one_face_slip_bound_mm": 0.3445548229098898,
+   "t": 3.93818199,
+   "target_reached": false,
+   "M_at_target": -1403.87861671,
+   "mu_squeeze": 0.0359870012129518,
+   "net_push_N": 7.339957287874558,
+   "net_twist_Nmm": 32.496769883088675,
+   "N_total": 257.8047518489268,
+   "one_face_slip_bound_mm": 0.25902722672109274,
    "cage_translation_tied_mm": [
-    0.006420177185769116,
-    0.03528327895440681,
-    -0.024148961878636882
-   ]
+    0.014377286752608619,
+    9.789584441599023e-06,
+    -0.023263775615467004
+   ],
+   "eval": {
+    "t_a": 3.93818199,
+    "M_a": -1403.87861671,
+    "t_b": 3.93818199,
+    "M_b": -1403.87861671,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": [
+     [
+      3.95760355,
+      0.01942156000000006,
+      2426.52417055,
+      "dyn",
+      4086.6,
+      2.89
+     ],
+     [
+      3.98063441,
+      0.023030859999999986,
+      -1600.19186388,
+      "dyn",
+      444.6,
+      6.1
+     ],
+     [
+      4.0,
+      0.019365590000000044,
+      -1776.09135214,
+      "dyn",
+      208.5,
+      2.31
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 12,
+    "n_invalid": 3,
+    "n_dyn": 3,
+    "dt_min": 0.04272743999999973,
+    "monotonic": true,
+    "rb_res_max": 26.609031440101074,
+    "rb_fres_max": 1.2608295283136544,
+    "t_last": 3.93818199,
+    "complete": false
+   }
   }
  },
  "provenance": {
-  "git": "e3b05f877123f2f0f6736c6d4af804fc682c61b9",
-  "script_dirty": false,
-  "script_sha256": "f6580ee1300fdd0024b8f55ef5c960061c3d8e445805cd2549f7b0439730e1ce",
+  "git": "3b41de29d4f047f81781146531e0b02e0c093a8b",
+  "script_dirty": true,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
   "case_feb": "5433d609ab7de19371e597d228ea804e0994d6a87a79c248ebb0ce4cba936f54",
   "case_xplt": "98c85e8db1eee5689751a5d8acfb5d42283504784f2febbbdbe814c9de186c58"
  }

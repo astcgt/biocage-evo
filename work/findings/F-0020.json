@@ -1,0 +1,15 @@
+{
+ "id": "F-0020",
+ "round": 2,
+ "target": "repository split (snapshot/MANIFEST.json, config.json, results/method/), 2026-10-26",
+ "severity": "minor",
+ "claim": "After the split, evo still depends on files in the old, still-changing repository that the snapshot does not capture. (1) The corrected physio reruns (al_v2/physio_fix/*) are the only valid data for I-001, e02 and the future L1 calibration, but they are not in snapshot/MANIFEST.json. They live in the old repository, which keeps running. physio_fix also holds two folders per case (p062 with no results, p062_gpu2 with results), and nothing records which one counts. (2) The FEBio binary and the MKL library, which produce every reference number in gates 1-4, are taken from the old repository's working tree (config.json). No version or hash of them is recorded (F-0014 (6)), so a rebuild there silently changes the reference. (3) results/method/ in the new repository holds 76 invalid pre-fix fl_*.json files whose names carry no invalid mark; only a separate INVALID.md says so. A glob over fl_*.json mixes invalid data into any new analysis.",
+ "evidence": "snapshot/MANIFEST.json: grep 'physio_fix' -> 0 matches (frame_c3c4.json is present, line 52); Glob 'biocage stimulation test 1'/human_study/al_v2/physio_fix/** (p062/ has case.feb, preflight.json only; p062_gpu2/ has case.xplt, summary.json); config.json:3-4 (febio_bin, mkl_lib in the old repository); results/method/ (79 entries, fl_*.json) and results/method/INVALID.md:3.",
+ "how_to_reproduce": "grep physio_fix snapshot/MANIFEST.json; ls results/method; read config.json.",
+ "fix_options": [
+  {"option": "Snapshot the physio_fix result folders actually used (summary.json, xplt hash, case.feb hash) into the manifest, and record which folder per case is authoritative", "cost": "~30 min", "risk": "low"},
+  {"option": "Record sha256 of febio4 and the MKL libraries in config.json and in every gate report; warn when they change", "cost": "~30 min", "risk": "low"},
+  {"option": "Move invalid fl_*.json into results/method/INVALID_prefix/ (or rename *_INVALID.json) so globs cannot pick them up", "cost": "minutes", "risk": "low"}
+ ],
+ "summary_zh": "專案拆分之後，新專案仍然依賴舊專案中的檔案，而快照沒有把它們收進來。（一）負荷曲線修正後重跑的生理負荷結果，是目前唯一有效、可用來驗證 I-001 和校正快速模型的資料，但它們只放在舊專案，舊專案還在持續變動，快照清單裡沒有它們；而且每個設計各有兩個資料夾，沒有註明哪一個才是正式的。（二）所有驗證關卡的參考數字都來自 FEBio 程式，但這個程式和數學函式庫放在舊專案裡，沒有記錄版本或雜湊值，舊專案一旦重新編譯，參考答案就會在沒人察覺的情況下改變。（三）新專案的結果資料夾裡有 76 個已知無效的舊結果檔，檔名上沒有標示無效；程式若一次讀取全部檔案，就會把無效資料混進去。"
+}

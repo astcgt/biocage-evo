@@ -13,7 +13,7 @@ from matplotlib.patches import Patch
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 EVO = os.path.dirname(os.path.dirname(HERE))
-OLD = '/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1'
+OLD = '/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026'
 HS = os.path.join(OLD, 'human_study')
 W = ('flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right')
 WL = {'flexion': 'Flex', 'extension': 'Ext', 'LB_right': 'Right LB', 'LB_left': 'Left LB', 'AR_left': 'Left AR', 'AR_right': 'Right AR'}

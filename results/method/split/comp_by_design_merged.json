@@ -40,7 +40,9 @@
    }
   },
   "source": "physio_rot_dyn/p132_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p086": {
   "sustained": 0.0366368790912782,
@@ -83,7 +85,9 @@
    }
   },
   "source": "physio_rot_dyn/p086_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p005": {
   "sustained": 0.3586366420693121,
@@ -96,148 +100,322 @@
    }
   },
   "source": "physio_rot/p005_gpu5",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.359 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p113": {
   "sustained": 0.01053511969284081,
   "windows": {
    "flexion": {
-    "peak": 0.0419352087028036,
+    "peak": 0.04079911301523465,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9344500140728966,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p113_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.04362073157678476,
+    "peak": 0.041613593068543064,
     "reached": true,
-    "t_eval": 3.98962305,
+    "t_eval": 3.9594956746366794,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.01037694999999994,
+     "monotonic": true,
+     "rb_res_max": 5.90985794832345,
+     "rb_fres_max": 1.5134611021568807,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p113_gpu2/w_extension"
    },
    "LB_right": {
-    "peak": 0.04043208194378414,
+    "peak": 0.04003252741994218,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9442356744482545,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p113_gpu2/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.040651080669262804,
+    "peak": 0.040027234439295976,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9410585673784166,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p113_gpu2/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.0425900397815323,
+    "peak": 0.04172440469524045,
     "reached": true,
-    "t_eval": 3.96805551,
+    "t_eval": 3.959219569125782,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.02802155000000006,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p113_gpu2/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.042270526222881466,
+    "peak": 0.04160425970683902,
     "reached": true,
-    "t_eval": 3.96581031,
+    "t_eval": 3.95899562573168,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.03418968999999983,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p113_gpu2/w_AR_right"
    }
   },
   "source": "physio_rot_split4/p113_gpu2/w_AR_left",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p098": {
   "sustained": 0.4930187570656839,
   "windows": {},
   "source": "physio_rot/p098",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.493 > 0.15"
  },
  "p093": {
   "sustained": 0.03083981205555337,
   "windows": {
    "flexion": {
-    "peak": 0.1203796992532476,
+    "peak": 0.11724745332597063,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.934683872950357,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 26.12573741043694,
+     "rb_fres_max": 6.397478393891007,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p093_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.10084430722265211,
+    "peak": 0.10522076460494907,
     "reached": true,
-    "t_eval": 3.73078919,
+    "t_eval": 3.7468870664890863,
+    "window_check": {
+     "n_rows": 19,
+     "n_invalid": 4,
+     "n_dyn": 4,
+     "dt_min": 0.010633259999999645,
+     "monotonic": true,
+     "rb_res_max": 15.137772881526505,
+     "rb_fres_max": 1.4571001659058445,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p093_gpu2/w_extension"
    },
    "LB_right": {
-    "peak": 0.11140762142213569,
+    "peak": 0.10886077045410679,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9850944664506156,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p093_gpu2/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.1114050549150022,
+    "peak": 0.1088968427675023,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.985670208861603,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p093_gpu2/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.1037935097567479,
+    "peak": 0.10002036634262866,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9848493490647843,
+    "window_check": {
+     "n_rows": 15,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.01751580999999991,
+     "monotonic": true,
+     "rb_res_max": 13.21782028308805,
+     "rb_fres_max": 0.5437472744491915,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p093_gpu2/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.10399112157911117,
+    "peak": 0.10011136393960696,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9843735740382495,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.028074919999999892,
+     "monotonic": true,
+     "rb_res_max": 9.718352245973326,
+     "rb_fres_max": 0.7709233898025905,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p093_gpu2/w_AR_right"
    }
   },
   "source": "physio_rot_split4/p093_gpu2/w_AR_right",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
+  "duplicates": [
+   "p145"
+  ]
  },
  "p080": {
   "sustained": 0.48752895627866666,
   "windows": {},
   "source": "physio_rot/p080_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.488 > 0.15"
  },
  "p083": {
   "sustained": 0.043682715652964735,
   "windows": {
    "flexion": {
-    "peak": 0.10983688208780691,
+    "peak": 0.10355864613099856,
     "reached": true,
-    "t_eval": 3.97611265,
+    "t_eval": 3.9343529512009607,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.023887349999999863,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p083_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.15050850792867093,
+    "peak": 0.13044742655712305,
     "reached": true,
-    "t_eval": 3.96662311,
+    "t_eval": 3.9438577324185866,
+    "window_check": {
+     "n_rows": 14,
+     "n_invalid": 0,
+     "dt_min": 0.0007323600000002095,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p083_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.10296059698958593,
+    "peak": 0.10178808775529054,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9917561483659143,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p083_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.10293841126404148,
+    "peak": 0.10139299129399006,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.988339978031051,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p083_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.08712244149442583,
+    "peak": 0.08618247379813566,
     "reached": true,
-    "t_eval": 3.98734257,
+    "t_eval": 3.981682595890417,
+    "window_check": {
+     "n_rows": 14,
+     "n_invalid": 0,
+     "dt_min": 0.01265742999999997,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p083_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.08738945004064226,
+    "peak": 0.08636499578739529,
     "reached": true,
-    "t_eval": 3.99025736,
+    "t_eval": 3.984244888980091,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 0,
+     "dt_min": 0.009742639999999803,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p083_gpu1/w_AR_right"
    }
   },
   "source": "physio_rot_split2/p083_gpu1/w_LB_right",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p029": {
   "sustained": 0.17791230538893896,
@@ -280,50 +458,120 @@
    }
   },
   "source": "physio_rot_dyn/p029_gpu5",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.178 > 0.15 peak > 0.25 in ['flexion', 'LB_right', 'LB_left']"
  },
  "p060": {
   "sustained": 0.047650450091318255,
   "windows": {
    "flexion": {
-    "peak": 0.16683027777432777,
+    "peak": 0.15554161420941448,
     "reached": true,
-    "t_eval": 3.97635482,
+    "t_eval": 3.9330385541421338,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.023645179999999932,
+     "monotonic": true,
+     "rb_res_max": 11.943521753618525,
+     "rb_fres_max": 2.4189954192589527,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p060_gpu3/w_flexion"
    },
    "extension": {
-    "peak": 0.18343548930428225,
+    "peak": 0.17612068108203072,
     "reached": true,
-    "t_eval": 3.92383621,
+    "t_eval": 3.9148312389658524,
+    "window_check": {
+     "n_rows": 22,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.003849750000000096,
+     "monotonic": true,
+     "rb_res_max": 10.761710583522582,
+     "rb_fres_max": 1.0313657010514246,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p060_gpu3/w_extension"
    },
    "LB_right": {
-    "peak": 0.1492979714744977,
+    "peak": 0.14774320433408292,
     "reached": true,
-    "t_eval": 3.96852658,
+    "t_eval": 3.9617655529776985,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.0028612200000002197,
+     "monotonic": true,
+     "rb_res_max": 18.545140194279842,
+     "rb_fres_max": 1.943133422375723,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p060_gpu3/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.151100247722794,
+    "peak": 0.14812852886524897,
     "reached": true,
-    "t_eval": 3.97739865,
+    "t_eval": 3.9640632744691024,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.022601349999999965,
+     "monotonic": true,
+     "rb_res_max": 10.566064942966111,
+     "rb_fres_max": 1.5249065830499522,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p060_gpu3/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.13932962878065222,
+    "peak": 0.1325891006492963,
     "reached": true,
-    "t_eval": 3.987184,
+    "t_eval": 3.966741731116542,
+    "window_check": {
+     "n_rows": 17,
+     "n_invalid": 7,
+     "n_dyn": 7,
+     "dt_min": 0.012815999999999939,
+     "monotonic": true,
+     "rb_res_max": 28.486426836621956,
+     "rb_fres_max": 0.4919223236141681,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p060_gpu3/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.13864954732950183,
+    "peak": 0.1319827655084839,
     "reached": true,
-    "t_eval": 3.98120715,
+    "t_eval": 3.961311300679718,
+    "window_check": {
+     "n_rows": 17,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.010209579999999718,
+     "monotonic": true,
+     "rb_res_max": 9.036031224594494,
+     "rb_fres_max": 0.15415443211537025,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p060_gpu3/w_AR_right"
    }
   },
   "source": "physio_rot_split2/p060_gpu3/w_AR_right",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p075": {
   "sustained": 0.04598830824759839,
@@ -366,7 +614,9 @@
    }
   },
   "source": "physio_rot_r2/p075_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p017": {
   "sustained": 0.23741591083218688,
@@ -379,7 +629,9 @@
    }
   },
   "source": "physio_rot/p017_gpu2",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.237 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p001": {
   "sustained": 0.1290026383984991,
@@ -422,7 +674,9 @@
    }
   },
   "source": "physio_rot_dyn/p001_gpu5",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-peak-lowerbound",
+  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left'] (lower bound: window(s) ['LB_right', 'LB_left'] did not reach the target)"
  },
  "p025": {
   "sustained": 0.2943478566043612,
@@ -435,50 +689,108 @@
    }
   },
   "source": "physio_rot/p025_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.294 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p112": {
   "sustained": 0.011757760343722735,
   "windows": {
    "flexion": {
-    "peak": 0.039972954843954335,
+    "peak": 0.03892986607302806,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.934417189186432,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p112_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.04387985657736795,
+    "peak": 0.042296385580110986,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9774395698476743,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 16.451605652572244,
+     "rb_fres_max": 4.269813221384796,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p112_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.04037431271538899,
+    "peak": 0.038743554809900875,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.973562880419475,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p112_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.040650814776089755,
+    "peak": 0.03879572513481695,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9702347006872936,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p112_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.04396364241201096,
+    "peak": 0.04174466123559511,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.976038079408688,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.029992280000000093,
+     "monotonic": true,
+     "rb_res_max": 8.344401558300646,
+     "rb_fres_max": 0.31633109276915367,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p112_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.041629825931506256,
+    "peak": 0.04131956392803319,
     "reached": true,
-    "t_eval": 3.97876669,
+    "t_eval": 3.9749047708274596,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.02123330999999995,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p112_gpu1/w_AR_right"
    }
   },
   "source": "physio_rot_split3/p112_gpu1/w_flexion",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p120": {
   "sustained": 0.03317184230072565,
@@ -521,93 +833,210 @@
    }
   },
   "source": "physio_rot_dyn/p120_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p100": {
   "sustained": 0.0366368790912782,
   "windows": {
    "flexion": {
-    "peak": 0.12306706256382764,
+    "peak": 0.11477545075543012,
     "reached": true,
-    "t_eval": 3.98025396,
+    "t_eval": 3.9344893802133836,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.019746039999999798,
+     "monotonic": true,
+     "rb_res_max": 19.340899402833784,
+     "rb_fres_max": 4.82864340354188,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p100_gpu3/w_flexion"
    },
    "extension": {
-    "peak": 0.13486969596074225,
+    "peak": 0.12612960248685506,
     "reached": true,
-    "t_eval": 3.99561823,
+    "t_eval": 3.971042384865314,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.004381770000000174,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p100_gpu3/w_extension"
    },
    "LB_right": {
-    "peak": 0.11961834050263619,
+    "peak": 0.10605829517849523,
     "reached": true,
-    "t_eval": 3.59545455,
+    "t_eval": 3.9461458177061295,
+    "window_check": {
+     "n_rows": 14,
+     "n_invalid": 6,
+     "n_dyn": 6,
+     "dt_min": 0.016899519999999946,
+     "monotonic": true,
+     "rb_res_max": 18.172424967834573,
+     "rb_fres_max": 2.17032773154682,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p100_gpu3/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.10757277065532056,
+    "peak": 0.10616765895433135,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9909107916242355,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p100_gpu3/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.09296912999999411,
+    "peak": 0.09208607430751638,
     "reached": true,
-    "t_eval": 3.94643627,
+    "t_eval": 3.9428676903812248,
+    "window_check": {
+     "n_rows": 17,
+     "n_invalid": 0,
+     "dt_min": 0.007737249999999918,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p100_gpu3/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.09553147012750601,
+    "peak": 0.09201783464945101,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9856979717337597,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.02634705000000004,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p100_gpu3/w_AR_right"
    }
   },
   "source": "physio_rot_split3/p100_gpu3/w_LB_left",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
+  "duplicates": [
+   "p142"
+  ]
  },
  "p036": {
   "sustained": 0.024066425091979093,
   "windows": {
    "flexion": {
-    "peak": 0.02537927138291862,
+    "peak": 0.025067116079939413,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.928705061064225,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 23.997627933923567,
+     "rb_fres_max": 0.4405825568670004,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p036_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.04438777876313605,
+    "peak": 0.043715807860772816,
     "reached": true,
-    "t_eval": 3.98035048,
+    "t_eval": 3.970967049775071,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.019649520000000198,
+     "monotonic": false,
+     "rb_res_max": 24.86898814097794,
+     "rb_fres_max": 6.5075862438403345,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p036_gpu2/w_extension"
    },
    "LB_right": {
-    "peak": 0.03765114371421421,
+    "peak": 0.03525770516408936,
     "reached": true,
-    "t_eval": 3.85,
+    "t_eval": 3.808797178900441,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p036_gpu2/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.03785990942499036,
+    "peak": 0.03526931268929875,
     "reached": true,
-    "t_eval": 3.85,
+    "t_eval": 3.8067373987754585,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p036_gpu2/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.04636836060403031,
+    "peak": 0.04275040812941679,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.901673056275314,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p036_gpu2/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.04649527072511755,
+    "peak": 0.04288734544181825,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.901076549184639,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p036_gpu2/w_AR_right"
    }
   },
   "source": "physio_rot_split4/p036_gpu2/w_AR_left",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p121": {
   "sustained": 0.042189333008314706,
@@ -650,93 +1079,225 @@
    }
   },
   "source": "physio_rot_dyn/p121_gpu4",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p145": {
-  "sustained": 0.030839828957038868,
+  "sustained": 0.03083981205555337,
   "windows": {
    "flexion": {
-    "peak": 0.1203797161561447,
+    "peak": 0.11724745332597063,
     "reached": true,
-    "t_eval": 3.95,
-    "source": "physio_rot_split2/p145_gpu1/w_flexion"
+    "t_eval": 3.934683872950357,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 26.12573741043694,
+     "rb_fres_max": 6.397478393891007,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p093_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.09949164441681534,
+    "peak": 0.10522076460494907,
     "reached": true,
-    "t_eval": 3.90928976,
-    "source": "physio_rot_split2/p145_gpu1/w_extension"
+    "t_eval": 3.7468870664890863,
+    "window_check": {
+     "n_rows": 19,
+     "n_invalid": 4,
+     "n_dyn": 4,
+     "dt_min": 0.010633259999999645,
+     "monotonic": true,
+     "rb_res_max": 15.137772881526505,
+     "rb_fres_max": 1.4571001659058445,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p093_gpu2/w_extension"
    },
    "LB_right": {
-    "peak": 0.1114098014087182,
+    "peak": 0.10886077045410679,
     "reached": true,
-    "t_eval": 4.0,
-    "source": "physio_rot_split2/p145_gpu1/w_LB_right"
+    "t_eval": 3.9850944664506156,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p093_gpu2/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.10967827677089344,
+    "peak": 0.1088968427675023,
     "reached": true,
-    "t_eval": 3.98701446,
-    "source": "physio_rot_split2/p145_gpu1/w_LB_left"
+    "t_eval": 3.985670208861603,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p093_gpu2/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.10379358437133929,
+    "peak": 0.10002036634262866,
     "reached": true,
-    "t_eval": 4.0,
-    "source": "physio_rot_split2/p145_gpu1/w_AR_left"
+    "t_eval": 3.9848493490647843,
+    "window_check": {
+     "n_rows": 15,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.01751580999999991,
+     "monotonic": true,
+     "rb_res_max": 13.21782028308805,
+     "rb_fres_max": 0.5437472744491915,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p093_gpu2/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.10036512875089697,
+    "peak": 0.10011136393960696,
     "reached": true,
-    "t_eval": 3.98587519,
-    "source": "physio_rot_split2/p145_gpu1/w_AR_right"
+    "t_eval": 3.9843735740382495,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.028074919999999892,
+     "monotonic": true,
+     "rb_res_max": 9.718352245973326,
+     "rb_fres_max": 0.7709233898025905,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p093_gpu2/w_AR_right"
    }
   },
-  "source": "physio_rot_split2/p145_gpu1/w_flexion",
-  "verdict": "pass"
+  "source": "physio_rot_split4/p093_gpu2/w_AR_right",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
+  "duplicates": [
+   "p093"
+  ]
  },
  "p015": {
   "sustained": 0.07451870764570172,
   "windows": {
    "flexion": {
-    "peak": 0.15206409831017081,
+    "peak": 0.1489271257711274,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.934488852101161,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 24.19800580514647,
+     "rb_fres_max": 5.044425323985791,
+     "t_last": 3.95,
+     "complete": false
+    },
     "source": "physio_rot_split3/p015_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.25890552144935264,
+    "peak": 0.25562311255573567,
     "reached": true,
-    "t_eval": 3.98280079,
+    "t_eval": 3.973801616929162,
+    "window_check": {
+     "n_rows": 17,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.006191600000000186,
+     "monotonic": false,
+     "rb_res_max": 25.439516786664562,
+     "rb_fres_max": 2.7735404560683405,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p015_gpu2/w_extension"
    },
    "LB_right": {
     "peak": 0.12490731322788287,
     "reached": false,
     "t_eval": 4.0,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p015_gpu2/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.15374574258753324,
+    "peak": 0.15163300901190352,
     "reached": true,
-    "t_eval": 3.98827573,
+    "t_eval": 3.9782497235802907,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.011724270000000203,
+     "monotonic": true,
+     "rb_res_max": 24.521064431129382,
+     "rb_fres_max": 3.4173198978275057,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p015_gpu2/w_LB_left"
    },
    "AR_left": {
     "peak": 0.09579748997929535,
     "reached": false,
     "t_eval": 4.0,
+    "window_check": {
+     "n_rows": 14,
+     "n_invalid": 0,
+     "dt_min": 0.013141159999999985,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p015_gpu2/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.14177048019596983,
-    "reached": true,
-    "t_eval": 3.64545455,
+    "peak": 0.11402066614279364,
+    "reached": false,
+    "t_eval": 3.96183295,
+    "window_check": {
+     "n_rows": 18,
+     "n_invalid": 6,
+     "n_dyn": 6,
+     "dt_min": 0.012370250000000027,
+     "monotonic": true,
+     "rb_res_max": 27.54171092620977,
+     "rb_fres_max": 0.30426028233677793,
+     "t_last": 3.96183295,
+     "complete": false
+    },
     "source": "physio_rot_split3/p015_gpu2/w_AR_right"
    }
   },
   "source": "physio_rot_split3/p015_gpu2/w_AR_left",
-  "verdict": "fail"
+  "verdict": "fail",
+  "unstable_windows": [
+   "AR_right"
+  ],
+  "class": "DESIGN/compression-peak",
+  "reason": " peak > 0.25 in ['extension']"
  },
  "p039": {
   "sustained": 0.07680704944103003,
@@ -779,7 +1340,9 @@
    }
   },
   "source": "physio_rot_dyn2/p039_gpu2",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p124": {
   "sustained": 0.018186700277487918,
@@ -822,56 +1385,113 @@
    }
   },
   "source": "physio_rot/p124_gpu4",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p044": {
   "sustained": 0.3603869375359104,
   "windows": {},
   "source": "physio_rot_split2/p044_gpu1/w_extension",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.360 > 0.15"
  },
  "p129": {
   "sustained": 0.040096791492860565,
   "windows": {
    "flexion": {
-    "peak": 0.1140671407765381,
+    "peak": 0.11134078357575869,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9340016865345357,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 17.196749582175297,
+     "rb_fres_max": 0.39976504666947776,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p129_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.14409841116756536,
+    "peak": 0.13551412625221484,
     "reached": true,
-    "t_eval": 3.99842817,
+    "t_eval": 3.9800552782990537,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.0015718300000000518,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p129_gpu2/w_extension"
    },
    "LB_right": {
-    "peak": 0.10597150314578277,
+    "peak": 0.10462733834475346,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9910950493246284,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p129_gpu2/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.10583279756482938,
+    "peak": 0.1046008503020289,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.992005361274388,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p129_gpu2/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.09246102456587467,
+    "peak": 0.08895823603869941,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9843648674738543,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.016108200000000128,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p129_gpu2/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.09240105575758506,
+    "peak": 0.08891093054223088,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9841453955750152,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 0,
+     "dt_min": 0.01695144000000015,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p129_gpu2/w_AR_right"
    }
   },
   "source": "physio_rot_split2/p129_gpu2/w_flexion",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p135": {
   "sustained": 0.034464471412447024,
@@ -914,7 +1534,9 @@
    }
   },
   "source": "physio_rot/p135_gpu4",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p144": {
   "sustained": 0.17289915547640858,
@@ -957,7 +1579,9 @@
    }
   },
   "source": "physio_rot_dyn/p144_gpu3",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.173 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']"
  },
  "p008": {
   "sustained": 0.35980116281692925,
@@ -970,50 +1594,105 @@
    }
   },
   "source": "physio_rot/p008_gpu3",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.360 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p130": {
   "sustained": 0.014406553269853961,
   "windows": {
    "flexion": {
-    "peak": 0.027409826117512637,
+    "peak": 0.02679159369080263,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.933690069282451,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p130_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.03555531441322671,
+    "peak": 0.03491854738811712,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.988500262360817,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": false,
+     "rb_res_max": 29.317378914654057,
+     "rb_fres_max": 7.226299582437941,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p130_gpu2/w_extension"
    },
    "LB_right": {
-    "peak": 0.03131038501680583,
+    "peak": 0.03000146451974967,
     "reached": true,
-    "t_eval": 3.9,
+    "t_eval": 3.8751254847981835,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p130_gpu2/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.03152967597250386,
+    "peak": 0.03011376742469714,
     "reached": true,
-    "t_eval": 3.9,
+    "t_eval": 3.872307604702958,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p130_gpu2/w_LB_left"
    },
    "AR_right": {
-    "peak": 0.03845089246938532,
+    "peak": 0.03646792240070614,
     "reached": true,
-    "t_eval": 3.97926637,
+    "t_eval": 3.9518430578671335,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.02073363000000006,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p130_gpu2/w_AR_right"
    },
    "AR_left": {
-    "peak": 0.03892226152684666,
+    "peak": 0.03667540724244307,
     "reached": true,
-    "t_eval": 3.98776487,
+    "t_eval": 3.954005846370691,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.012235130000000094,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p130_gpu2/w_AR_left"
    }
   },
   "source": "physio_rot_split2/p130_gpu2/w_flexion",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p115": {
   "sustained": 0.050815110190585676,
@@ -1056,12 +1735,16 @@
    }
   },
   "source": "physio_rot_dyn/p115_gpu4",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p021": {
   "sustained": null,
   "windows": {},
-  "verdict": "open"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained-lowerbound",
+  "reason": "insertion run stopped at t 3.233 under the follower load, soft z-compression 33 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
  },
  "p149": {
   "sustained": 0.1394654892085261,
@@ -1104,7 +1787,9 @@
    }
   },
   "source": "physio_rot_dyn2/p149_gpu2",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-peak",
+  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']"
  },
  "p122": {
   "sustained": 0.01165629126276625,
@@ -1147,50 +1832,111 @@
    }
   },
   "source": "physio_rot/p122_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p142": {
   "sustained": 0.0366368790912782,
   "windows": {
    "flexion": {
-    "peak": 0.12200338790661312,
+    "peak": 0.11477545075543012,
     "reached": true,
-    "t_eval": 3.97475839,
-    "source": "physio_rot_split2/p142_gpu2/w_flexion"
+    "t_eval": 3.9344893802133836,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.019746039999999798,
+     "monotonic": true,
+     "rb_res_max": 19.340899402833784,
+     "rb_fres_max": 4.82864340354188,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p100_gpu3/w_flexion"
    },
    "extension": {
-    "peak": 0.12719851479717242,
+    "peak": 0.12612960248685506,
     "reached": true,
-    "t_eval": 3.97762336,
-    "source": "physio_rot_split2/p142_gpu2/w_extension"
+    "t_eval": 3.971042384865314,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.004381770000000174,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p100_gpu3/w_extension"
    },
    "LB_right": {
-    "peak": 0.11261005323584716,
+    "peak": 0.10605829517849523,
     "reached": true,
-    "t_eval": 3.98203898,
-    "source": "physio_rot_split2/p142_gpu2/w_LB_right"
+    "t_eval": 3.9461458177061295,
+    "window_check": {
+     "n_rows": 14,
+     "n_invalid": 6,
+     "n_dyn": 6,
+     "dt_min": 0.016899519999999946,
+     "monotonic": true,
+     "rb_res_max": 18.172424967834573,
+     "rb_fres_max": 2.17032773154682,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p100_gpu3/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.10801009302691914,
+    "peak": 0.10616765895433135,
     "reached": true,
-    "t_eval": 4.0,
-    "source": "physio_rot_split2/p142_gpu2/w_LB_left"
+    "t_eval": 3.9909107916242355,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p100_gpu3/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.09225441752093887,
+    "peak": 0.09208607430751638,
     "reached": true,
-    "t_eval": 3.9898767,
-    "source": "physio_rot_split2/p142_gpu2/w_AR_left"
+    "t_eval": 3.9428676903812248,
+    "window_check": {
+     "n_rows": 17,
+     "n_invalid": 0,
+     "dt_min": 0.007737249999999918,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p100_gpu3/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.09355996325799923,
+    "peak": 0.09201783464945101,
     "reached": true,
-    "t_eval": 3.99409109,
-    "source": "physio_rot_split2/p142_gpu2/w_AR_right"
+    "t_eval": 3.9856979717337597,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.02634705000000004,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p100_gpu3/w_AR_right"
    }
   },
-  "source": "physio_rot_split2/p142_gpu2/w_AR_right",
-  "verdict": "pass"
+  "source": "physio_rot_split3/p100_gpu3/w_LB_left",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
+  "duplicates": [
+   "p100"
+  ]
  },
  "p041": {
   "sustained": 0.18476310904302748,
@@ -1198,42 +1944,104 @@
    "flexion": {
     "peak": 0.34332900411565426,
     "reached": false,
-    "t_eval": 3.8608371,
+    "t_eval": 3.83763775,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.01649918000000028,
+     "monotonic": true,
+     "rb_res_max": 19.32046869952376,
+     "rb_fres_max": 4.927720586034265,
+     "t_last": 3.83763775,
+     "complete": false
+    },
     "source": "physio_rot_split2/p041_gpu1/w_flexion"
    },
    "AR_left": {
     "peak": 0.26013500003958584,
     "reached": false,
     "t_eval": 4.0,
+    "window_check": {
+     "n_rows": 16,
+     "n_invalid": 0,
+     "dt_min": 0.004733920000000058,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p041_gpu1/w_AR_left"
    },
    "LB_right": {
     "peak": 0.23348628197746593,
     "reached": false,
     "t_eval": 4.0,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.003488649999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p041_gpu1/w_LB_right"
    },
    "extension": {
     "peak": 0.20455031590455197,
     "reached": false,
     "t_eval": 4.0,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.037036099999999905,
+     "monotonic": true,
+     "rb_res_max": 17.944066688418054,
+     "rb_fres_max": 4.546208188628112,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p041_gpu1/w_extension"
    },
    "AR_right": {
     "peak": 0.2598682673744794,
     "reached": false,
     "t_eval": 4.0,
+    "window_check": {
+     "n_rows": 14,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.009378270000000022,
+     "monotonic": true,
+     "rb_res_max": 23.89258136599483,
+     "rb_fres_max": 1.560828246306337,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p041_gpu1/w_AR_right"
    },
    "LB_left": {
     "peak": 0.23546495915600085,
     "reached": false,
     "t_eval": 4.0,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.013261959999999906,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p041_gpu1/w_LB_left"
    }
   },
   "source": "physio_rot_split2/p041_gpu1/w_AR_left",
-  "verdict": "fail"
+  "verdict": "fail",
+  "unstable_windows": [
+   "flexion"
+  ],
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.185 > 0.15 peak > 0.25 in ['AR_left', 'AR_right'] (lower bound: window(s) ['AR_left', 'AR_right'] did not reach the target)"
  },
  "p109": {
   "sustained": 0.019285240764072804,
@@ -1276,7 +2084,9 @@
    }
   },
   "source": "physio_rot_r2/p109_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p013": {
   "sustained": 0.16020840959180335,
@@ -1319,7 +2129,9 @@
    }
   },
   "source": "physio_rot_dyn/p013_gpu3",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.160 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] did not reach the target)"
  },
  "p085": {
   "sustained": 0.22026795033305713,
@@ -1362,7 +2174,9 @@
    }
   },
   "source": "physio_rot_dyn/p085_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.220 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['LB_right', 'LB_left', 'AR_left', 'AR_right'] did not reach the target)"
  },
  "p071": {
   "sustained": 0.013781674215317313,
@@ -1405,13 +2219,17 @@
    }
   },
   "source": "physio_rot_dyn/p071_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p020": {
   "sustained": 0.34178192387765793,
   "windows": {},
   "source": "physio_rot/p020_gpu3",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.342 > 0.15"
  },
  "p147": {
   "sustained": 0.14387159146085954,
@@ -1454,7 +2272,9 @@
    }
   },
   "source": "physio_rot_dyn2/p147_gpu2",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-peak",
+  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']"
  },
  "p094": {
   "sustained": 0.012533264063410958,
@@ -1497,50 +2317,108 @@
    }
   },
   "source": "physio_rot_dyn/p094_gpu2",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p116": {
   "sustained": 0.017578382797991465,
   "windows": {
    "flexion": {
-    "peak": 0.019517798485281485,
+    "peak": 0.01921641590399131,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9316723492396446,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 21.01346524748855,
+     "rb_fres_max": 0.32781238369634313,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p116_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.03236653875637664,
+    "peak": 0.032246440682792074,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9974959532739103,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": false,
+     "rb_res_max": 27.145447823384323,
+     "rb_fres_max": 1.850889451575466,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p116_gpu2/w_extension"
    },
    "LB_right": {
-    "peak": 0.02988772823176988,
+    "peak": 0.028439846639859104,
     "reached": true,
-    "t_eval": 3.85,
+    "t_eval": 3.8148195626805523,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p116_gpu2/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.03004208698622177,
+    "peak": 0.028474518352878512,
     "reached": true,
-    "t_eval": 3.85,
+    "t_eval": 3.8124546573125455,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p116_gpu2/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.03603278682801438,
+    "peak": 0.033963956001269904,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9126434706608295,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p116_gpu2/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.03605232448382584,
+    "peak": 0.034066576066196334,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9120449819069916,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.0015718300000000518,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p116_gpu2/w_AR_right"
    }
   },
   "source": "physio_rot_split2/p116_gpu2/w_extension",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p010": {
   "sustained": 0.28556321621202563,
@@ -1553,39 +2431,87 @@
    }
   },
   "source": "physio_rot/p010_gpu4",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.286 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p146": {
   "sustained": 0.069266645382791,
   "windows": {
    "flexion": {
-    "peak": 0.11622582495988118,
+    "peak": 0.11346048424955194,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9266598175508105,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p146_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.1638606929214708,
+    "peak": 0.15915294653099896,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9795920335706723,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": false,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p146_gpu2/w_extension"
    },
    "LB_right": {
-    "peak": 0.15117842950808077,
+    "peak": 0.14856788983896452,
     "reached": true,
-    "t_eval": 3.9,
+    "t_eval": 3.888294311012994,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p146_gpu2/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.15489754151725513,
+    "peak": 0.1477591893305656,
     "reached": true,
-    "t_eval": 3.91861039,
+    "t_eval": 3.8860340084221794,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.031198600000000187,
+     "monotonic": true,
+     "rb_res_max": 6.0269532568776345,
+     "rb_fres_max": 0.1696509985162382,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p146_gpu2/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.18081673507639529,
+    "peak": 0.17362310041566498,
     "reached": true,
-    "t_eval": 3.97217543,
+    "t_eval": 3.942188055630348,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.0009807999999997818,
+     "monotonic": true,
+     "rb_res_max": 13.305373317652895,
+     "rb_fres_max": 0.7592242587809704,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p146_gpu2/w_AR_left"
    },
    "AR_right": {
@@ -1596,7 +2522,9 @@
    }
   },
   "source": "physio_rot_split2/p146_gpu2/w_flexion",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p108": {
   "sustained": 0.38969755834837133,
@@ -1609,7 +2537,9 @@
    }
   },
   "source": "physio_rot/p108_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.390 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p131": {
   "sustained": 0.01953449195167904,
@@ -1652,7 +2582,9 @@
    }
   },
   "source": "physio_rot/p131_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p128": {
   "sustained": 0.01862015860083659,
@@ -1695,12 +2627,16 @@
    }
   },
   "source": "physio_rot_dyn/p128_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p053": {
   "sustained": null,
   "windows": {},
-  "verdict": "open"
+  "verdict": "open",
+  "class": "[\u591a\u5143]/computability",
+  "reason": "insertion run stopped at t 2.007 (compression 5 %): not computable in any solve mode"
  },
  "p143": {
   "sustained": 0.03253923533508101,
@@ -1743,7 +2679,9 @@
    }
   },
   "source": "physio_rot_dyn2/p143_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p069": {
   "sustained": 0.2150612557003548,
@@ -1786,50 +2724,100 @@
    }
   },
   "source": "physio_rot_dyn/p069_gpu3",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.215 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']"
  },
  "p088": {
   "sustained": 0.040200489723199166,
   "windows": {
    "flexion": {
-    "peak": 0.07469010557705427,
+    "peak": 0.07321773338504256,
     "reached": true,
-    "t_eval": 3.95,
-    "source": "physio_rot_split2/p088_gpu1/w_flexion"
+    "t_eval": 3.9336313783201367,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p082_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.11472089477790202,
+    "peak": 0.09833107147699818,
     "reached": true,
-    "t_eval": 3.98481555,
-    "source": "physio_rot_split2/p088_gpu1/w_extension"
+    "t_eval": 3.992552370244135,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.018670109999999962,
+     "monotonic": false,
+     "rb_res_max": 27.798505269736964,
+     "rb_fres_max": 7.10776866675139,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p082_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.08145765146416802,
+    "peak": 0.07682213375302589,
     "reached": true,
-    "t_eval": 3.95,
-    "source": "physio_rot_split2/p088_gpu1/w_LB_right"
+    "t_eval": 3.9078786855760863,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p082_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.08180619485562382,
+    "peak": 0.0767103403042444,
     "reached": true,
-    "t_eval": 3.95,
-    "source": "physio_rot_split2/p088_gpu1/w_LB_left"
+    "t_eval": 3.9051291342899286,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p082_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.10620688225537095,
+    "peak": 0.07304856391604883,
     "reached": true,
-    "t_eval": 3.95760355,
-    "source": "physio_rot_split2/p088_gpu1/w_AR_left"
+    "t_eval": 7.95985851,
+    "source": "physio_rot_r2/p088_gpu2"
    },
    "AR_right": {
-    "peak": 0.07647871720389313,
+    "peak": 0.07283283455230176,
     "reached": true,
-    "t_eval": 3.98993934,
-    "source": "physio_rot_split2/p088_gpu1/w_AR_right"
+    "t_eval": 3.9547465133735074,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.010060660000000166,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p082_gpu1/w_AR_right"
    }
   },
-  "source": "physio_rot_split2/p088_gpu1/w_AR_left",
-  "verdict": "pass"
+  "source": "physio_rot_split4/p082_gpu1/w_flexion",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
+  "duplicates": [
+   "p082"
+  ]
  },
  "p079": {
   "sustained": 0.008519797690148066,
@@ -1872,7 +2860,9 @@
    }
   },
   "source": "physio_rot_dyn/p079_gpu4",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p028": {
   "sustained": 0.20831262054929617,
@@ -1915,12 +2905,16 @@
    }
   },
   "source": "physio_rot_dyn/p028_gpu4",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.208 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['LB_right'] did not reach the target)"
  },
  "p058": {
   "sustained": null,
   "windows": {},
-  "verdict": "open"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained-lowerbound",
+  "reason": "insertion run stopped at t 3.0 under the follower load, soft z-compression 37 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
  },
  "p134": {
   "sustained": 0.13644144615994844,
@@ -1963,98 +2957,226 @@
    }
   },
   "source": "physio_rot_dyn/p134_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-peak",
+  "reason": " peak > 0.25 in ['flexion']"
  },
  "p035": {
   "sustained": null,
   "windows": {},
-  "verdict": "open"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained-lowerbound",
+  "reason": "insertion run stopped at t 3.152 under the follower load, soft z-compression 32 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
  },
  "p003": {
   "sustained": 0.0978950654990757,
   "windows": {
    "flexion": {
-    "peak": 0.17550188759227822,
+    "peak": 0.17345060495913536,
     "reached": true,
-    "t_eval": 3.94345939,
+    "t_eval": 3.934683834492105,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.006804320000000086,
+     "monotonic": true,
+     "rb_res_max": 14.46874420130089,
+     "rb_fres_max": 3.77950574398369,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p003_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.29258151157575074,
+    "peak": 0.28956285644217533,
     "reached": false,
-    "t_eval": 4.0,
+    "t_eval": 3.98890829,
+    "window_check": {
+     "n_rows": 20,
+     "n_invalid": 4,
+     "n_dyn": 4,
+     "dt_min": 0.009144910000000284,
+     "monotonic": true,
+     "rb_res_max": 11.351464225240834,
+     "rb_fres_max": 2.0496489191911937,
+     "t_last": 3.98890829,
+     "complete": false
+    },
     "source": "physio_rot_split3/p003_gpu1/w_extension"
    },
    "LB_right": {
     "peak": 0.14588380140912682,
     "reached": false,
     "t_eval": 4.0,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 10.391805301270594,
+     "rb_fres_max": 0.8286178974912601,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p003_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.18567190990057056,
+    "peak": 0.18101960969402234,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9803078105149687,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 18.310267314742767,
+     "rb_fres_max": 2.3050997813504415,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p003_gpu1/w_LB_left"
    },
    "AR_left": {
     "peak": 0.11013367081594334,
     "reached": false,
     "t_eval": 4.0,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.012235130000000094,
+     "monotonic": true,
+     "rb_res_max": 3.0508420978528927,
+     "rb_fres_max": 0.15125336341748336,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p003_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.1408589194748179,
+    "peak": 0.13444508812374342,
     "reached": true,
-    "t_eval": 3.96422843,
+    "t_eval": 3.946398690660609,
+    "window_check": {
+     "n_rows": 16,
+     "n_invalid": 0,
+     "dt_min": 0.014755350000000167,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p003_gpu1/w_AR_right"
    }
   },
   "source": "physio_rot_split3/p003_gpu1/w_LB_right",
-  "verdict": "fail"
+  "verdict": "open",
+  "unstable_windows": [
+   "extension"
+  ],
+  "class": "[\u6578\u503c]/unstable-window",
+  "reason": "window(s) ['extension']: spurious states dropped and the moment is not monotonic or the ramp did not end in a valid state (contact / element instability); recompute before any verdict"
  },
  "p117": {
   "sustained": 0.03253923533508101,
   "windows": {
    "flexion": {
-    "peak": 0.12031256317419568,
+    "peak": 0.11713115304335915,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9343270354315134,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 29.054863679556078,
+     "rb_fres_max": 7.220891689932225,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p117_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.11141846594486608,
+    "peak": 0.1107255360086446,
     "reached": true,
-    "t_eval": 3.96596071,
+    "t_eval": 3.961153390856133,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.010841820000000002,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p117_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.10954179837578637,
+    "peak": 0.10728025786520373,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.986179971949101,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p117_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.10767634308895234,
+    "peak": 0.10681971222174613,
     "reached": true,
-    "t_eval": 3.99459488,
+    "t_eval": 3.98900607035442,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.005405119999999819,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p117_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.098768128102825,
+    "peak": 0.09632383714629861,
     "reached": true,
-    "t_eval": 3.99686759,
+    "t_eval": 3.9869512529726774,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 0,
+     "dt_min": 0.0031324100000000854,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p117_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.09912608121793703,
+    "peak": 0.09651720956175183,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.989234030427019,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.03034681000000017,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p117_gpu1/w_AR_right"
    }
   },
   "source": "physio_rot_split3/p117_gpu1/w_LB_left",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
+  "duplicates": [
+   "p092"
+  ]
  },
  "p072": {
   "sustained": 0.04758399891707384,
@@ -2097,12 +3219,16 @@
    }
   },
   "source": "physio_rot_dyn/p072_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p045": {
   "sustained": null,
   "windows": {},
-  "verdict": "open"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained-lowerbound",
+  "reason": "insertion run stopped at t 3.146 under the follower load, soft z-compression 32 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
  },
  "p063": {
   "sustained": 0.012076680408910809,
@@ -2145,7 +3271,9 @@
    }
   },
   "source": "physio_rot/p063_gpu4",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p074": {
   "sustained": 0.016089358511982482,
@@ -2188,99 +3316,224 @@
    }
   },
   "source": "physio_rot/p074_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p095": {
   "sustained": 0.018527021559831575,
   "windows": {
    "flexion": {
-    "peak": 0.02444908653821673,
+    "peak": 0.024016265333612948,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9327656197209637,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 0.062092648788170564,
+     "rb_fres_max": 0.01852660924223438,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p095_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.037599123905228723,
+    "peak": 0.03657777261262114,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9819695204073198,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": false,
+     "rb_res_max": 24.292416823359556,
+     "rb_fres_max": 4.8888281354038465,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p095_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.03411003075067964,
+    "peak": 0.03189797996065498,
     "reached": true,
-    "t_eval": 3.9,
+    "t_eval": 3.8517064371054737,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p095_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.03207756335935787,
+    "peak": 0.03203825133083358,
     "reached": true,
-    "t_eval": 3.85,
+    "t_eval": 3.8491640442142234,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p095_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.04002928403106321,
+    "peak": 0.03808946242269892,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.959537951381254,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p095_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.03980413597690757,
+    "peak": 0.038069595108260114,
     "reached": true,
-    "t_eval": 3.9944819,
+    "t_eval": 3.9580589524021095,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.005518100000000192,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p095_gpu1/w_AR_right"
    }
   },
   "source": "physio_rot_split2/p095_gpu1/w_LB_right",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p018": {
   "sustained": 0.43221964894132053,
   "windows": {},
   "source": "physio_rot/p018_gpu3",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.432 > 0.15"
  },
  "p052": {
   "sustained": 0.060335740553946055,
   "windows": {
    "flexion": {
-    "peak": 0.14435630495181367,
+    "peak": 0.1412154883833664,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.934387132319506,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 25.722001834640935,
+     "rb_fres_max": 5.771016244475382,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p052_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.10549654872841505,
+    "peak": 0.21034988603903879,
     "reached": true,
-    "t_eval": 3.74545455,
+    "t_eval": 3.9744226493484964,
+    "window_check": {
+     "n_rows": 18,
+     "n_invalid": 1,
+     "dt_min": 0.006992900000000191,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p052_gpu2/w_extension"
    },
    "LB_right": {
-    "peak": 0.14410207548936987,
+    "peak": 0.14269384220993173,
     "reached": true,
-    "t_eval": 3.97926857,
+    "t_eval": 3.9724405538278487,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.020731430000000106,
+     "monotonic": true,
+     "rb_res_max": 16.109209170064773,
+     "rb_fres_max": 1.3449580077581706,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p052_gpu2/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.14575390904336913,
+    "peak": 0.142501200373022,
     "reached": true,
-    "t_eval": 3.99137328,
+    "t_eval": 3.9753333982973786,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.008626720000000088,
+     "monotonic": true,
+     "rb_res_max": 7.547750948176864,
+     "rb_fres_max": 0.6470830504495625,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p052_gpu2/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.12781408102305877,
+    "peak": 0.11812118389424209,
     "reached": true,
-    "t_eval": 3.98489372,
+    "t_eval": 3.9542262926194884,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.015106279999999916,
+     "monotonic": true,
+     "rb_res_max": 10.883383502650863,
+     "rb_fres_max": 0.43357472560486854,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p052_gpu2/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.12760048069309587,
+    "peak": 0.11839123763762466,
     "reached": true,
-    "t_eval": 3.96728661,
+    "t_eval": 3.938744253532169,
+    "window_check": {
+     "n_rows": 18,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.0025545999999998514,
+     "monotonic": true,
+     "rb_res_max": 7.779998361748314,
+     "rb_fres_max": 0.4892376460554468,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p052_gpu2/w_AR_right"
    }
   },
   "source": "physio_rot_split2/p052_gpu2/w_LB_left",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p102": {
   "sustained": 0.14699015485879094,
@@ -2323,7 +3576,9 @@
    }
   },
   "source": "physio_rot_dyn/p102_gpu4",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-peak-lowerbound",
+  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['AR_left', 'AR_right'] did not reach the target)"
  },
  "p070": {
   "sustained": 0.1954561081071488,
@@ -2366,7 +3621,9 @@
    }
   },
   "source": "physio_rot_dyn2/p070_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.195 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']"
  },
  "p118": {
   "sustained": 0.16913286883062895,
@@ -2397,7 +3654,9 @@
    }
   },
   "source": "physio_rot_dyn/p118_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.169 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left'] did not reach the target)"
  },
  "p007": {
   "sustained": 0.40858684035282883,
@@ -2410,50 +3669,105 @@
    }
   },
   "source": "physio_rot/p007_gpu2",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.409 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p097": {
   "sustained": 0.029423353878115347,
   "windows": {
    "flexion": {
-    "peak": 0.032754800770187394,
+    "peak": 0.03231903458663405,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.931871421339142,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 28.928029049839687,
+     "rb_fres_max": 0.360776598171199,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p097_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.054311409765207035,
+    "peak": 0.052069941199100404,
     "reached": true,
-    "t_eval": 3.979376,
+    "t_eval": 3.9519711339272128,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.020624000000000198,
+     "monotonic": false,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p097_gpu2/w_extension"
    },
    "LB_right": {
-    "peak": 0.04843862221456795,
+    "peak": 0.04594728960755635,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9034891459204952,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p097_gpu2/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.04872035931554459,
+    "peak": 0.04614421425058696,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.900940662088525,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p097_gpu2/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.04952334136586239,
+    "peak": 0.04945566983529976,
     "reached": true,
-    "t_eval": 3.98878415,
+    "t_eval": 3.986923982720419,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.011215850000000138,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p097_gpu2/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.04982068106675175,
+    "peak": 0.04937599346482004,
     "reached": true,
-    "t_eval": 3.99633166,
+    "t_eval": 3.9835410068712043,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 0,
+     "dt_min": 0.0036683399999999367,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p097_gpu2/w_AR_right"
    }
   },
   "source": "physio_rot_split2/p097_gpu2/w_AR_left",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p066": {
   "sustained": 0.024280340161665578,
@@ -2496,7 +3810,9 @@
    }
   },
   "source": "physio_rot/p066_gpu4",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p114": {
   "sustained": 0.03539806264297437,
@@ -2539,7 +3855,9 @@
    }
   },
   "source": "physio_rot_dyn2/p114",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p081": {
   "sustained": 0.007474184924821791,
@@ -2582,7 +3900,9 @@
    }
   },
   "source": "physio_rot/p081_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p004": {
   "sustained": 0.23259468821896226,
@@ -2625,50 +3945,105 @@
    }
   },
   "source": "physio_rot/p004",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.233 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] did not reach the target)"
  },
  "p062": {
   "sustained": 0.011716933383426546,
   "windows": {
    "flexion": {
-    "peak": 0.04546927598939916,
+    "peak": 0.044276826445785546,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.934254670775841,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p062/w_flexion"
    },
    "extension": {
-    "peak": 0.05152748880794172,
+    "peak": 0.046642026757817936,
     "reached": true,
-    "t_eval": 3.99181818,
+    "t_eval": 3.935067613418608,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.008181819999999895,
+     "monotonic": true,
+     "rb_res_max": 9.479306507537911,
+     "rb_fres_max": 2.413577491115584,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p062/w_extension"
    },
    "LB_right": {
-    "peak": 0.04727115476258599,
+    "peak": 0.04596753267633615,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.934388617516862,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p062/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.04709659086434227,
+    "peak": 0.04578365700053658,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.934403202226635,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p062/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.05040399157869812,
+    "peak": 0.048622867741535195,
     "reached": true,
-    "t_eval": 3.95833689,
+    "t_eval": 3.942477798712233,
+    "window_check": {
+     "n_rows": 14,
+     "n_invalid": 0,
+     "dt_min": 0.012615770000000026,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p062/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.0516740823876456,
+    "peak": 0.04889161283549142,
     "reached": true,
-    "t_eval": 3.96631615,
+    "t_eval": 3.9402074276612806,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 0,
+     "dt_min": 0.0017649400000001592,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p062/w_AR_right"
    }
   },
   "source": "physio_rot_split2/p062/w_LB_right",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p090": {
   "sustained": 0.4144272760296575,
@@ -2681,7 +4056,9 @@
    }
   },
   "source": "physio_rot/p090_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.414 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p084": {
   "sustained": 0.01921325787359497,
@@ -2724,7 +4101,9 @@
    }
   },
   "source": "physio_rot_r2/p084_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p014": {
   "sustained": 0.01038400781758597,
@@ -2767,50 +4146,108 @@
    }
   },
   "source": "physio_rot/p014_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p048": {
   "sustained": 0.06588249060113352,
   "windows": {
    "flexion": {
-    "peak": 0.08005723058742169,
+    "peak": 0.07809153083539616,
     "reached": true,
-    "t_eval": 3.96407796,
+    "t_eval": 3.9320313913762526,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.03592203999999999,
+     "monotonic": true,
+     "rb_res_max": 13.780620336960911,
+     "rb_fres_max": 0.21417038866526444,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p048_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.235683324089947,
+    "peak": 0.21786815028772613,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9570801630778774,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 4,
+     "n_dyn": 4,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 6.124410276407439,
+     "rb_fres_max": 1.3571888776045318,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p048_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.09612875945546528,
+    "peak": 0.09583617131844357,
     "reached": true,
-    "t_eval": 3.9,
+    "t_eval": 3.897529631551582,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p048_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.09670607343175935,
+    "peak": 0.09605587952714965,
     "reached": true,
-    "t_eval": 3.9,
+    "t_eval": 3.894878050930724,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p048_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.09067765766481274,
+    "peak": 0.08962437049437225,
     "reached": true,
-    "t_eval": 3.94568711,
+    "t_eval": 3.934954643223372,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.006287889999999852,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p048_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.09000467256027662,
+    "peak": 0.0895098241254144,
     "reached": true,
-    "t_eval": 3.98349914,
+    "t_eval": 3.977264748380124,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.01650085999999984,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p048_gpu1/w_AR_right"
    }
   },
   "source": "physio_rot_split2/p048_gpu1/w_AR_right",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p037": {
   "sustained": 0.15283049454929165,
@@ -2823,7 +4260,9 @@
    }
   },
   "source": "physio_rot/p037_gpu3",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.153 > 0.15 peak > 0.25 in ['flexion']"
  },
  "p038": {
   "sustained": 0.012374608439197427,
@@ -2866,7 +4305,9 @@
    }
   },
   "source": "physio_rot_dyn/p038_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p024": {
   "sustained": 0.2035085668013561,
@@ -2909,17 +4350,23 @@
    }
   },
   "source": "physio_rot_dyn/p024_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.204 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['extension', 'AR_left', 'AR_right'] did not reach the target)"
  },
  "p047": {
   "sustained": null,
   "windows": {},
-  "verdict": "open"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained-lowerbound",
+  "reason": "insertion run stopped at t 3.13 under the follower load, soft z-compression 33 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
  },
  "p055": {
   "sustained": null,
   "windows": {},
-  "verdict": "open"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained-lowerbound",
+  "reason": "insertion run stopped at t 3.0 under the follower load, soft z-compression 33 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
  },
  "p123": {
   "sustained": 0.13688503065234123,
@@ -2962,7 +4409,9 @@
    }
   },
   "source": "physio_rot_dyn2/p123_gpu2",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-peak",
+  "reason": " peak > 0.25 in ['flexion']"
  },
  "p091": {
   "sustained": 0.4295260487144306,
@@ -2975,7 +4424,9 @@
    }
   },
   "source": "physio_rot/p091_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.430 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p126": {
   "sustained": 0.29044605902223203,
@@ -2988,82 +4439,201 @@
    }
   },
   "source": "physio_rot/p126_gpu3",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.290 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p051": {
   "sustained": 0.04598382166198212,
   "windows": {
    "flexion": {
-    "peak": 0.16953396216116184,
+    "peak": 0.1575775514960482,
     "reached": true,
-    "t_eval": 3.97855047,
+    "t_eval": 3.9347706867312238,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.02144952999999994,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p051_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.07462363034427058,
+    "peak": 0.15264415952872176,
     "reached": true,
-    "t_eval": 3.64545455,
+    "t_eval": 3.9313248190280543,
+    "window_check": {
+     "n_rows": 20,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.012025369999999924,
+     "monotonic": true,
+     "rb_res_max": 16.720752534769904,
+     "rb_fres_max": 0.41235454093516244,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p051_gpu1/w_extension"
    },
    "LB_left": {
-    "peak": 0.14858497478884056,
+    "peak": 0.14652374515451988,
     "reached": true,
-    "t_eval": 3.95078663,
+    "t_eval": 3.9427976690760453,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.01872120999999982,
+     "monotonic": true,
+     "rb_res_max": 10.740449902778028,
+     "rb_fres_max": 1.4859546286927077,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p051_gpu1/w_LB_left"
    },
    "AR_right": {
-    "peak": 0.1451766872189632,
+    "peak": 0.13733947625506798,
     "reached": true,
-    "t_eval": 3.98932658,
+    "t_eval": 3.9655590947960198,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 0,
+     "dt_min": 0.010673419999999822,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p051_gpu1/w_AR_right"
    },
    "LB_right": {
-    "peak": 0.15335240144047488,
+    "peak": 0.14671158945839077,
     "reached": true,
-    "t_eval": 3.97015203,
+    "t_eval": 3.9441245560875156,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.026732560000000127,
+     "monotonic": true,
+     "rb_res_max": 13.844524556800932,
+     "rb_fres_max": 1.7211724879476646,
+     "t_last": 3.99983074,
+     "complete": false
+    },
     "source": "physio_rot_split4/p051_gpu1/w_LB_right"
    },
    "AR_left": {
-    "peak": 0.13984459368110008,
+    "peak": 0.13780884339864607,
     "reached": true,
-    "t_eval": 3.97157502,
+    "t_eval": 3.9654339928326148,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.002584090000000039,
+     "monotonic": true,
+     "rb_res_max": 9.598812003396977,
+     "rb_fres_max": 0.687837575867403,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p051_gpu1/w_AR_left"
    }
   },
   "source": "physio_rot_split4/p051_gpu1/w_extension",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p027": {
   "sustained": 0.12517835438784602,
   "windows": {
    "flexion": {
-    "peak": 0.19787831928032182,
+    "peak": 0.18066534021286534,
     "reached": true,
-    "t_eval": 3.76230882,
+    "t_eval": 3.7186382857494733,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.004880749999999878,
+     "monotonic": true,
+     "rb_res_max": 22.936785378663046,
+     "rb_fres_max": 11.027454282923951,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p027/w_flexion"
    },
    "extension": {
-    "peak": 0.24454135329790394,
-    "reached": true,
-    "t_eval": 3.80283567,
+    "peak": 0.3153584290285161,
+    "reached": false,
+    "t_eval": 3.97895828,
+    "window_check": {
+     "n_rows": 17,
+     "n_invalid": 9,
+     "n_dyn": 9,
+     "dt_min": 0.018203590000000158,
+     "monotonic": false,
+     "rb_res_max": 18.17406916720724,
+     "rb_fres_max": 2.668313540499318,
+     "t_last": 3.97895828,
+     "complete": false
+    },
     "source": "physio_rot_split2/p027/w_extension"
    },
    "LB_right": {
-    "peak": 0.21426173568031948,
+    "peak": 0.21022919402789567,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.986950904168935,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 24.448805104537506,
+     "rb_fres_max": 1.3792099695417517,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p027/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.21354897508055798,
+    "peak": 0.20939578297972694,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9887082521968704,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 26.994604433339756,
+     "rb_fres_max": 2.8290133876870613,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p027/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.16608754837719877,
+    "peak": 0.15283844010750036,
     "reached": true,
-    "t_eval": 3.96672075,
+    "t_eval": 3.956421951096363,
+    "window_check": {
+     "n_rows": 17,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.011890670000000103,
+     "monotonic": true,
+     "rb_res_max": 16.868085030246856,
+     "rb_fres_max": 0.20783112838024237,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p027/w_AR_left"
    },
    "AR_right": {
@@ -3074,7 +4644,12 @@
    }
   },
   "source": "physio_rot_split2/p027/w_LB_right",
-  "verdict": "pass"
+  "verdict": "open",
+  "unstable_windows": [
+   "extension"
+  ],
+  "class": "[\u6578\u503c]/unstable-window",
+  "reason": "window(s) ['extension']: spurious states dropped and the moment is not monotonic or the ramp did not end in a valid state (contact / element instability); recompute before any verdict"
  },
  "p073": {
   "sustained": 0.16855250372728717,
@@ -3117,7 +4692,9 @@
    }
   },
   "source": "physio_rot_dyn2/p073_gpu4",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.169 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['LB_left', 'AR_left', 'AR_right'] did not reach the target)"
  },
  "p125": {
   "sustained": 0.01027443502795195,
@@ -3160,7 +4737,9 @@
    }
   },
   "source": "physio_rot_dyn/p125_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p106": {
   "sustained": 0.181510627974813,
@@ -3173,50 +4752,100 @@
    }
   },
   "source": "physio_rot/p106_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.182 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p082": {
   "sustained": 0.040200489723199166,
   "windows": {
    "flexion": {
-    "peak": 0.07469010557705427,
+    "peak": 0.07321773338504256,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9336313783201367,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p082_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.10019312249831404,
+    "peak": 0.09833107147699818,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.992552370244135,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.018670109999999962,
+     "monotonic": false,
+     "rb_res_max": 27.798505269736964,
+     "rb_fres_max": 7.10776866675139,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p082_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.08145765146416802,
+    "peak": 0.07682213375302589,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9078786855760863,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p082_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.08180619485562382,
+    "peak": 0.0767103403042444,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9051291342899286,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p082_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.13374594582859167,
+    "peak": 0.07304856391604883,
     "reached": true,
-    "t_eval": 3.97702512,
-    "source": "physio_rot_split4/p082_gpu1/w_AR_left"
+    "t_eval": 7.95985851,
+    "source": "physio_rot_r2/p088_gpu2"
    },
    "AR_right": {
-    "peak": 0.07647871720389313,
+    "peak": 0.07283283455230176,
     "reached": true,
-    "t_eval": 3.98993934,
+    "t_eval": 3.9547465133735074,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.010060660000000166,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split4/p082_gpu1/w_AR_right"
    }
   },
   "source": "physio_rot_split4/p082_gpu1/w_flexion",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
+  "duplicates": [
+   "p088"
+  ]
  },
  "p105": {
   "sustained": 0.008265997053420225,
@@ -3259,7 +4888,9 @@
    }
   },
   "source": "physio_rot/p105_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p136": {
   "sustained": 0.3908525856842951,
@@ -3272,7 +4903,9 @@
    }
   },
   "source": "physio_rot/p136_gpu3",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.391 > 0.15 peak > 0.25 in ['flexion']"
  },
  "p050": {
   "sustained": 0.019149546892102905,
@@ -3315,13 +4948,17 @@
    }
   },
   "source": "physio_rot_r2/p050_gpu6",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p031": {
   "sustained": 0.3655459910018067,
   "windows": {},
   "source": "physio_rot/p031_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.366 > 0.15"
  },
  "p133": {
   "sustained": 0.009067946444447458,
@@ -3364,7 +5001,9 @@
    }
   },
   "source": "physio_rot/p133_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p002": {
   "sustained": 0.008893867879163443,
@@ -3407,141 +5046,325 @@
    }
   },
   "source": "physio_rot_dyn/p002_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p064": {
   "sustained": 0.056237991950809633,
   "windows": {
    "flexion": {
-    "peak": 0.08535597255986395,
+    "peak": 0.0837674569457653,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.933180847241048,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 23.577379041555822,
+     "rb_fres_max": 0.3206681739676082,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p064_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.21292417155937657,
+    "peak": 0.2102089177799228,
     "reached": true,
-    "t_eval": 4.0,
+    "t_eval": 3.9934029836659932,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.015197940000000187,
+     "monotonic": false,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p064_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.09520958182893899,
+    "peak": 0.09055086773391147,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.914759004014575,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p064_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.09523299437058172,
+    "peak": 0.090344679644576,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.912034571426659,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p064_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.08697484969930484,
+    "peak": 0.08562998118372216,
     "reached": true,
-    "t_eval": 3.99364794,
+    "t_eval": 3.978236589112559,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 0,
+     "dt_min": 0.006352060000000215,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p064_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.08581440301834108,
+    "peak": 0.08558179055328874,
     "reached": true,
-    "t_eval": 3.97996037,
+    "t_eval": 3.976765589612093,
+    "window_check": {
+     "n_rows": 14,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.003764229999999813,
+     "monotonic": true,
+     "rb_res_max": 27.090699638808818,
+     "rb_fres_max": 0.9905247215286328,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p064_gpu1/w_AR_right"
    }
   },
   "source": "physio_rot_split2/p064_gpu1/w_flexion",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p092": {
   "sustained": 0.03253923533508101,
   "windows": {
    "flexion": {
-    "peak": 0.12031256317419568,
+    "peak": 0.11713115304335915,
     "reached": true,
-    "t_eval": 3.95,
-    "source": "physio_rot_split2/p092_gpu1/w_flexion"
+    "t_eval": 3.9343270354315134,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 29.054863679556078,
+     "rb_fres_max": 7.220891689932225,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p117_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.11215100155628707,
+    "peak": 0.1107255360086446,
     "reached": true,
-    "t_eval": 3.97111183,
-    "source": "physio_rot_split2/p092_gpu1/w_extension"
+    "t_eval": 3.961153390856133,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.010841820000000002,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p117_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.10918017642746548,
+    "peak": 0.10728025786520373,
     "reached": true,
-    "t_eval": 4.0,
-    "source": "physio_rot_split2/p092_gpu1/w_LB_right"
+    "t_eval": 3.986179971949101,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p117_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.10767634308895234,
+    "peak": 0.10681971222174613,
     "reached": true,
-    "t_eval": 3.99459488,
-    "source": "physio_rot_split2/p092_gpu1/w_LB_left"
+    "t_eval": 3.98900607035442,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.005405119999999819,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p117_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.14624468372360663,
+    "peak": 0.09632383714629861,
     "reached": true,
-    "t_eval": 3.82318575,
-    "source": "physio_rot_split2/p092_gpu1/w_AR_left"
+    "t_eval": 3.9869512529726774,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 0,
+     "dt_min": 0.0031324100000000854,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p117_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.09766228597820448,
+    "peak": 0.09651720956175183,
     "reached": true,
-    "t_eval": 3.95106933,
-    "source": "physio_rot_split2/p092_gpu1/w_AR_right"
+    "t_eval": 3.989234030427019,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.03034681000000017,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p117_gpu1/w_AR_right"
    }
   },
-  "source": "physio_rot_split2/p092_gpu1/w_flexion",
-  "verdict": "pass"
+  "source": "physio_rot_split3/p117_gpu1/w_LB_left",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
+  "duplicates": [
+   "p117"
+  ]
  },
  "p033": {
   "sustained": null,
   "windows": {},
-  "verdict": "open"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained-lowerbound",
+  "reason": "insertion run stopped at t 3.119 under the follower load, soft z-compression 34 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
  },
  "p061": {
   "sustained": 0.05181943407034647,
   "windows": {
    "flexion": {
-    "peak": 0.15702417043636688,
+    "peak": 0.15325074832525631,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9344578887265076,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 15.413003273818953,
+     "rb_fres_max": 1.5962834160354946,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p061_gpu2/w_flexion"
    },
    "extension": {
-    "peak": 0.12532868812377704,
+    "peak": 0.15804190220569492,
     "reached": true,
-    "t_eval": 3.80751249,
+    "t_eval": 3.9185112862983082,
+    "window_check": {
+     "n_rows": 18,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.004521210000000053,
+     "monotonic": true,
+     "rb_res_max": 25.750811906584527,
+     "rb_fres_max": 0.771309580718637,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p061_gpu2/w_extension"
    },
    "LB_right": {
-    "peak": 0.14990440844616357,
+    "peak": 0.14696431232169951,
     "reached": true,
-    "t_eval": 3.98472,
+    "t_eval": 3.9684197036448006,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.015280000000000182,
+     "monotonic": true,
+     "rb_res_max": 17.665965317207956,
+     "rb_fres_max": 1.571424144388005,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p061_gpu2/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.1486790535404259,
+    "peak": 0.14758460917056568,
     "reached": true,
-    "t_eval": 3.97612902,
+    "t_eval": 3.971328140512792,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.023870979999999875,
+     "monotonic": true,
+     "rb_res_max": 28.268720494194117,
+     "rb_fres_max": 3.6031190070767725,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p061_gpu2/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.13386668631259319,
+    "peak": 0.1270099926608716,
     "reached": true,
-    "t_eval": 3.97855026,
+    "t_eval": 3.957511131582839,
+    "window_check": {
+     "n_rows": 15,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.021449739999999995,
+     "monotonic": true,
+     "rb_res_max": 5.099051965249607,
+     "rb_fres_max": 0.11722031615840817,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p061_gpu2/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.1335677619627258,
+    "peak": 0.1269770110273982,
     "reached": true,
-    "t_eval": 3.97051283,
+    "t_eval": 3.9516860219439414,
+    "window_check": {
+     "n_rows": 16,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.01581803000000015,
+     "monotonic": true,
+     "rb_res_max": 3.7550725027827108,
+     "rb_fres_max": 0.07113193311151432,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p061_gpu2/w_AR_right"
    }
   },
   "source": "physio_rot_split2/p061_gpu2/w_LB_left",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p030": {
   "sustained": 0.38859698209459054,
@@ -3554,7 +5377,9 @@
    }
   },
   "source": "physio_rot/p030_gpu2",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.389 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p056": {
   "sustained": 0.4164359296964916,
@@ -3567,14 +5392,18 @@
    }
   },
   "source": "physio_rot/p056_gpu3",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.416 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p141": {
   "sustained": 0.3956446070178272,
   "windows": {},
   "source": "e05 on human_study/al_v2/physio_rot_split/p141_gpu2/w_LB_right (split v1 insertion state t 3.5)",
   "override_reason": "same as p049 (duplicate design point in the AL set)",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.396 > 0.15"
  },
  "p138": {
   "sustained": 0.14414077576680617,
@@ -3617,50 +5446,111 @@
    }
   },
   "source": "physio_rot/p138",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-peak-lowerbound",
+  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] did not reach the target)"
  },
  "p068": {
   "sustained": 0.019149575100703423,
   "windows": {
    "flexion": {
-    "peak": 0.018438646072551208,
+    "peak": 0.018403472062702174,
     "reached": true,
-    "t_eval": 3.93323055,
+    "t_eval": 3.9300881646241055,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.017961019999999994,
+     "monotonic": true,
+     "rb_res_max": 23.64395000768693,
+     "rb_fres_max": 0.34392442268565415,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p068_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.0337674708696905,
+    "peak": 0.03326162829839675,
     "reached": true,
-    "t_eval": 3.98108573,
+    "t_eval": 3.9713649308899055,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.01891426999999979,
+     "monotonic": false,
+     "rb_res_max": 17.032589496895667,
+     "rb_fres_max": 2.782342777340711,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p068_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.03125182610052991,
+    "peak": 0.029516258642876384,
     "reached": true,
-    "t_eval": 3.85,
+    "t_eval": 3.8082498651411822,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p068_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.031451355885818794,
+    "peak": 0.029604998991136233,
     "reached": true,
-    "t_eval": 3.85,
+    "t_eval": 3.8059609846217537,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p068_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.03686809771438689,
+    "peak": 0.03484607799396655,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.910950948939822,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p068_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.03689180386309726,
+    "peak": 0.03487112487887566,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9104419512110558,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 3.7062108173070087,
+     "rb_fres_max": 0.08205715839402652,
+     "t_last": 3.95,
+     "complete": false
+    },
     "source": "physio_rot_split3/p068_gpu1/w_AR_right"
    }
   },
   "source": "physio_rot_split3/p068_gpu1/w_AR_left",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p065": {
   "sustained": 0.04064664980655966,
@@ -3703,12 +5593,16 @@
    }
   },
   "source": "physio_rot/p065_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p023": {
   "sustained": null,
   "windows": {},
-  "verdict": "open"
+  "verdict": "open",
+  "class": "[\u591a\u5143]/computability",
+  "reason": "insertion run stopped at t 1.99 (compression 0 %): not computable in any solve mode"
  },
  "p099": {
   "sustained": 0.2491846199381616,
@@ -3721,7 +5615,9 @@
    }
   },
   "source": "physio_rot/p099_gpu4",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.249 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p140": {
   "sustained": 0.04000741665010667,
@@ -3764,13 +5660,17 @@
    }
   },
   "source": "physio_rot_r2/p140_gpu5",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p016": {
   "sustained": 0.3635741619462565,
   "windows": {},
   "source": "physio_rot/p016_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.364 > 0.15"
  },
  "p119": {
   "sustained": 0.21690416614993976,
@@ -3783,7 +5683,9 @@
    }
   },
   "source": "physio_rot/p119_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.217 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p139": {
   "sustained": 0.041016130693966715,
@@ -3826,7 +5728,9 @@
    }
   },
   "source": "physio_rot_dyn/p139_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p096": {
   "sustained": 0.24642897312804374,
@@ -3839,7 +5743,9 @@
    }
   },
   "source": "physio_rot/p096_gpu2",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.246 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p000": {
   "sustained": 0.3415283468950472,
@@ -3852,7 +5758,9 @@
    }
   },
   "source": "physio_rot/p000_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.342 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p110": {
   "sustained": 0.013143928820446914,
@@ -3895,50 +5803,117 @@
    }
   },
   "source": "physio_rot/p110_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p107": {
   "sustained": 0.024993007434265763,
   "windows": {
    "flexion": {
-    "peak": 0.03560914322803184,
+    "peak": 0.034974043316307324,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.933298533077694,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 22.807474803847462,
+     "rb_fres_max": 0.30058966896830425,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p107_gpu3/w_flexion"
    },
    "extension": {
-    "peak": 0.0526725367200968,
+    "peak": 0.050329834891371744,
     "reached": true,
-    "t_eval": 3.97478891,
+    "t_eval": 3.9462769845177004,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.04545454999999965,
+     "monotonic": false,
+     "rb_res_max": 25.71015501993346,
+     "rb_fres_max": 2.2229295866716017,
+     "t_last": 3.97478891,
+     "complete": false
+    },
     "source": "physio_rot_split2/p107_gpu3/w_extension"
    },
    "LB_right": {
-    "peak": 0.04507138988975261,
+    "peak": 0.04382627684406859,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9271905495537087,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p107_gpu3/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.04540538173203772,
+    "peak": 0.0439898564779084,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9244031135139754,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p107_gpu3/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.04834499766785095,
+    "peak": 0.04722194925750431,
     "reached": true,
-    "t_eval": 3.7785233,
+    "t_eval": 3.7679131201162743,
+    "window_check": {
+     "n_rows": 17,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.01677798000000008,
+     "monotonic": true,
+     "rb_res_max": 9.71192043966312,
+     "rb_fres_max": 0.46870797918273016,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split2/p107_gpu3/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.04451520616066424,
-    "reached": true,
-    "t_eval": 3.99153374,
+    "peak": 0.04333695808718508,
+    "reached": false,
+    "t_eval": 3.95,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 8.854333777507778,
+     "rb_fres_max": 0.6060623949143417,
+     "t_last": 3.95,
+     "complete": false
+    },
     "source": "physio_rot_split2/p107_gpu3/w_AR_right"
    }
   },
   "source": "physio_rot_split2/p107_gpu3/w_AR_left",
-  "verdict": "pass"
+  "verdict": "open",
+  "unstable_windows": [
+   "AR_right"
+  ],
+  "class": "[\u6578\u503c]/unstable-window",
+  "reason": "window(s) ['AR_right']: spurious states dropped and the moment is not monotonic or the ramp did not end in a valid state (contact / element instability); recompute before any verdict"
  },
  "p006": {
   "sustained": 0.35081917946913466,
@@ -3951,7 +5926,9 @@
    }
   },
   "source": "physio_rot/p006_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.351 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p148": {
   "sustained": 0.00783578125500806,
@@ -3994,7 +5971,9 @@
    }
   },
   "source": "physio_rot/p148_gpu2",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p104": {
   "sustained": 0.017884834661329584,
@@ -4037,7 +6016,9 @@
    }
   },
   "source": "physio_rot_r2/p104_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p022": {
   "sustained": 0.3051904047384124,
@@ -4050,7 +6031,9 @@
    }
   },
   "source": "physio_rot/p022_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.305 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p137": {
   "sustained": 0.13794624761228924,
@@ -4093,7 +6076,9 @@
    }
   },
   "source": "physio_rot/p137_gpu4",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-peak-lowerbound",
+  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left'] did not reach the target)"
  },
  "p040": {
   "sustained": 0.32610531200788756,
@@ -4106,13 +6091,17 @@
    }
   },
   "source": "physio_rot/p040_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.326 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p034": {
   "sustained": 0.36483253344652006,
   "windows": {},
   "source": "physio_rot/p034_gpu3",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.365 > 0.15"
  },
  "p077": {
   "sustained": 0.041015965585226064,
@@ -4155,7 +6144,9 @@
    }
   },
   "source": "physio_rot/p077_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p026": {
   "sustained": 0.008612102476470878,
@@ -4198,12 +6189,16 @@
    }
   },
   "source": "physio_rot/p026_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p011": {
   "sustained": null,
   "windows": {},
-  "verdict": "open"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained-lowerbound",
+  "reason": "insertion run stopped at t 3.11 under the follower load, soft z-compression 34 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
  },
  "p089": {
   "sustained": 0.395117435942318,
@@ -4222,7 +6217,9 @@
    }
   },
   "source": "physio_rot_dyn/p089_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.395 > 0.15 peak > 0.25 in ['flexion', 'extension']"
  },
  "p103": {
   "sustained": 0.2112687953887403,
@@ -4235,19 +6232,25 @@
    }
   },
   "source": "physio_rot/p103_gpu3",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.211 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p087": {
   "sustained": 0.42064500972764785,
   "windows": {},
   "source": "physio_rot/p087_gpu2",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.421 > 0.15"
  },
  "p042": {
   "sustained": 0.4491807253235773,
   "windows": {},
   "source": "physio_rot/p042_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.449 > 0.15"
  },
  "p078": {
   "sustained": 0.011140669321669404,
@@ -4290,57 +6293,117 @@
    }
   },
   "source": "physio_rot/p078_gpu4",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p049": {
   "sustained": 0.3956446070178272,
   "windows": {},
   "source": "e05 on human_study/al_v2/physio_rot_split/p049_gpu2/w_LB_right (split v1 insertion state t 3.5; the v1 window rotation was not applied, so only the insertion state is used)",
   "override_reason": "sequential physio_rot runs stop at t 3.05 (before the t 3.5 state), so e05 by_design has sustained = null; the split v1 insertion run is physically identical to split2 (bug affected only the window load curves). Computed 2026-10-31 by the integrator; p049 and p141 are the same design point (identical parameters), hence identical values.",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.396 > 0.15"
  },
  "p101": {
   "sustained": 0.03828149010616076,
   "windows": {
    "flexion": {
-    "peak": 0.08113800262285771,
+    "peak": 0.07941017710156041,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9339121637816543,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 23.032340155857792,
+     "rb_fres_max": 0.34270086869232314,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p101_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.0893853564579207,
+    "peak": 0.09268842493318068,
     "reached": true,
-    "t_eval": 3.96421643,
+    "t_eval": 3.9892663755363778,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.03578356999999999,
+     "monotonic": true,
+     "rb_res_max": 24.288724493374225,
+     "rb_fres_max": 6.268225002586243,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p101_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.08128021671010183,
+    "peak": 0.08053555329132575,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.9434763232727623,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p101_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.08157209727451212,
+    "peak": 0.08044984984478717,
     "reached": true,
-    "t_eval": 3.95,
+    "t_eval": 3.94040481349533,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p101_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.07477931465482382,
+    "peak": 0.07275795918745517,
     "reached": true,
-    "t_eval": 3.99233514,
+    "t_eval": 3.9705386970665857,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.007664860000000218,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p101_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.07319246573476805,
+    "peak": 0.0726793153288047,
     "reached": true,
-    "t_eval": 3.97447375,
+    "t_eval": 3.9691981337834497,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.025526249999999973,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
     "source": "physio_rot_split3/p101_gpu1/w_AR_right"
    }
   },
   "source": "physio_rot_split3/p101_gpu1/w_AR_left",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p067": {
   "sustained": 0.02082396817529269,
@@ -4383,7 +6446,9 @@
    }
   },
   "source": "physio_rot/p067_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p076": {
   "sustained": 0.041356637696126214,
@@ -4426,7 +6491,9 @@
    }
   },
   "source": "physio_rot/p076_gpu3",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p127": {
   "sustained": 0.019149575100703423,
@@ -4469,7 +6536,9 @@
    }
   },
   "source": "physio_rot_dyn/p127_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p019": {
   "sustained": 0.2830687668693769,
@@ -4482,7 +6551,9 @@
    }
   },
   "source": "physio_rot/p019_gpu2",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.283 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p043": {
   "sustained": 0.2989188877696257,
@@ -4495,7 +6566,9 @@
    }
   },
   "source": "physio_rot/p043_gpu2",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.299 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p111": {
   "sustained": 0.015321656702960441,
@@ -4538,7 +6611,9 @@
    }
   },
   "source": "physio_rot/p111_gpu1",
-  "verdict": "pass"
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": ""
  },
  "p012": {
   "sustained": 0.3429271522557263,
@@ -4563,7 +6638,9 @@
    }
   },
   "source": "physio_rot/p012_gpu1",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.343 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right'] (lower bound: window(s) ['extension', 'LB_right'] did not reach the target)"
  },
  "p032": {
   "sustained": 0.28299169129746277,
@@ -4576,7 +6653,9 @@
    }
   },
   "source": "physio_rot/p032_gpu2",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.283 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p046": {
   "sustained": 0.2740005895529878,
@@ -4589,16 +6668,22 @@
    }
   },
   "source": "physio_rot/p046_gpu3",
-  "verdict": "fail"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained",
+  "reason": "sustained 0.274 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
  },
  "p057": {
   "sustained": null,
   "windows": {},
-  "verdict": "open"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained-lowerbound",
+  "reason": "insertion run stopped at t 3.0 under the follower load, soft z-compression 36 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
  },
  "p009": {
   "sustained": null,
   "windows": {},
-  "verdict": "open"
+  "verdict": "fail",
+  "class": "DESIGN/compression-sustained-lowerbound",
+  "reason": "insertion run stopped at t 3.184 under the follower load, soft z-compression 34 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
  }
 }

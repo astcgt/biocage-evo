@@ -1,26 +1,71 @@
 {
- "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/human_study/al_v2/physio_rot_split3/p003_gpu1/w_LB_left",
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split3/p003_gpu1/w_LB_left",
  "windows": {
   "LB_left": {
-   "t": 4.0,
+   "t": 3.9803078105149687,
    "target_reached": true,
-   "M_at_target": 1558.29683628,
-   "mu_squeeze": 0.08863880333355553,
-   "net_push_N": 18.974724826777774,
-   "net_twist_Nmm": 44.70870752653725,
-   "N_total": 262.1649556743687,
-   "one_face_slip_bound_mm": 0.2932315789586034,
+   "M_at_target": 1500.0,
+   "mu_squeeze": 0.08626773808822859,
+   "net_push_N": 18.426260621622244,
+   "net_twist_Nmm": 43.5307888076562,
+   "N_total": 260.68666990399385,
+   "one_face_slip_bound_mm": 0.28250422976379946,
    "cage_translation_tied_mm": [
-    0.0076475193361498954,
-    0.06983507851662353,
-    -0.07609835934207179
-   ]
+    0.0087352261381978,
+    0.06692161460929004,
+    -0.07546131055952297
+   ],
+   "eval": {
+    "t_a": 3.95,
+    "M_a": 1410.27663689,
+    "t_b": 4.0,
+    "M_b": 1558.29683628,
+    "frac": 0.6061562102993734,
+    "coarse": false,
+    "invalid": [
+     [
+      3.55,
+      0.04999999999999982,
+      173.968541096,
+      "dyn",
+      58.3,
+      8.0
+     ],
+     [
+      3.8,
+      0.04999999999999982,
+      953.389168778,
+      "dyn",
+      86.0,
+      12.39
+     ],
+     [
+      3.85,
+      0.050000000000000266,
+      1105.56207278,
+      "dyn",
+      42.2,
+      2.69
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 10,
+    "n_invalid": 3,
+    "n_dyn": 3,
+    "dt_min": 0.04999999999999982,
+    "monotonic": true,
+    "rb_res_max": 18.310267314742767,
+    "rb_fres_max": 2.3050997813504415,
+    "t_last": 4.0,
+    "complete": true
+   }
   }
  },
  "provenance": {
-  "git": "6227405ffc7635080c156f7a5941210a9d88f3cc",
-  "script_dirty": false,
-  "script_sha256": "f6580ee1300fdd0024b8f55ef5c960061c3d8e445805cd2549f7b0439730e1ce",
+  "git": "3b41de29d4f047f81781146531e0b02e0c093a8b",
+  "script_dirty": true,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
   "case_feb": "55cbda0d61985d5015e1521c320470b398f90e31e0a5c662d0262bc920f06a92",
   "case_xplt": "48113b6095518ccd4a5b272f64d28549b822a5b0bbaae3ab887f357cd8b200eb"
  }

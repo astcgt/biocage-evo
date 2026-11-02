@@ -1,0 +1,74 @@
+[
+ {
+  "hard_fraction": 0.2,
+  "hard_core_posterior_move_mm": 0.6,
+  "bestfit_all_nodes_translation_x_mm": -0.12,
+  "centroid_shift_x_mm": -0.12,
+  "bestfit_rotation_deg": 0.016,
+  "passes_0p5mm_posterior_limit": true
+ },
+ {
+  "hard_fraction": 0.2,
+  "hard_core_posterior_move_mm": 1.0,
+  "bestfit_all_nodes_translation_x_mm": -0.2,
+  "centroid_shift_x_mm": -0.2,
+  "bestfit_rotation_deg": 0.027,
+  "passes_0p5mm_posterior_limit": true
+ },
+ {
+  "hard_fraction": 0.2,
+  "hard_core_posterior_move_mm": 1.5,
+  "bestfit_all_nodes_translation_x_mm": -0.3,
+  "centroid_shift_x_mm": -0.3,
+  "bestfit_rotation_deg": 0.039,
+  "passes_0p5mm_posterior_limit": true
+ },
+ {
+  "hard_fraction": 0.35,
+  "hard_core_posterior_move_mm": 0.6,
+  "bestfit_all_nodes_translation_x_mm": -0.21,
+  "centroid_shift_x_mm": -0.21,
+  "bestfit_rotation_deg": 0.012,
+  "passes_0p5mm_posterior_limit": true
+ },
+ {
+  "hard_fraction": 0.35,
+  "hard_core_posterior_move_mm": 1.0,
+  "bestfit_all_nodes_translation_x_mm": -0.35,
+  "centroid_shift_x_mm": -0.35,
+  "bestfit_rotation_deg": 0.019,
+  "passes_0p5mm_posterior_limit": true
+ },
+ {
+  "hard_fraction": 0.35,
+  "hard_core_posterior_move_mm": 1.5,
+  "bestfit_all_nodes_translation_x_mm": -0.525,
+  "centroid_shift_x_mm": -0.525,
+  "bestfit_rotation_deg": 0.027,
+  "passes_0p5mm_posterior_limit": false
+ },
+ {
+  "hard_fraction": 0.5,
+  "hard_core_posterior_move_mm": 0.6,
+  "bestfit_all_nodes_translation_x_mm": -0.3,
+  "centroid_shift_x_mm": -0.3,
+  "bestfit_rotation_deg": 0.014,
+  "passes_0p5mm_posterior_limit": true
+ },
+ {
+  "hard_fraction": 0.5,
+  "hard_core_posterior_move_mm": 1.0,
+  "bestfit_all_nodes_translation_x_mm": -0.5,
+  "centroid_shift_x_mm": -0.5,
+  "bestfit_rotation_deg": 0.022,
+  "passes_0p5mm_posterior_limit": true
+ },
+ {
+  "hard_fraction": 0.5,
+  "hard_core_posterior_move_mm": 1.5,
+  "bestfit_all_nodes_translation_x_mm": -0.75,
+  "centroid_shift_x_mm": -0.75,
+  "bestfit_rotation_deg": 0.032,
+  "passes_0p5mm_posterior_limit": false
+ }
+]

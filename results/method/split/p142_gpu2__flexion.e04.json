@@ -1,26 +1,55 @@
 {
- "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/human_study/al_v2/physio_rot_split2/p142_gpu2/w_flexion",
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split2/p142_gpu2/w_flexion",
  "windows": {
   "flexion": {
-   "t": 3.9747583866119385,
+   "t": 3.9347816650109544,
    "target_reached": true,
-   "M_at_target": -1640.81906093,
-   "mu_squeeze": 0.030178250675988096,
-   "net_push_N": 9.123432305253253,
-   "net_twist_Nmm": 0.28152262844959064,
-   "N_total": 296.553183268873,
-   "one_face_slip_bound_mm": 0.2331385082536548,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.030094391271184115,
+   "net_push_N": 8.820858906082773,
+   "net_twist_Nmm": 0.28089031026490946,
+   "N_total": 288.6534532141628,
+   "one_face_slip_bound_mm": 0.21498229326561866,
    "cage_translation_tied_mm": [
-    0.10293956060470269,
-    0.0003030208187156029,
-    -0.031184084428260123
-   ]
+    0.09598522713090961,
+    0.0003062122350328568,
+    -0.030623935903017277
+   ],
+   "eval": {
+    "t_a": 3.92648615,
+    "M_a": -1470.77883108,
+    "t_b": 3.97475839,
+    "M_b": -1640.81906093,
+    "frac": 0.17184856163613374,
+    "coarse": false,
+    "invalid": [
+     [
+      3.59545455,
+      0.045454550000000093,
+      -759.68509753,
+      "dyn",
+      325.8,
+      0.22
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 11,
+    "n_invalid": 1,
+    "n_dyn": 1,
+    "dt_min": 0.025241610000000136,
+    "monotonic": true,
+    "rb_res_max": 19.189343615704583,
+    "rb_fres_max": 4.825381682403783,
+    "t_last": 4.0,
+    "complete": true
+   }
   }
  },
  "provenance": {
-  "git": "e3b05f877123f2f0f6736c6d4af804fc682c61b9",
-  "script_dirty": false,
-  "script_sha256": "f6580ee1300fdd0024b8f55ef5c960061c3d8e445805cd2549f7b0439730e1ce",
+  "git": "3b41de29d4f047f81781146531e0b02e0c093a8b",
+  "script_dirty": true,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
   "case_feb": "28666bf7fac53c8510936a9f0f46e0b7ed51232d3fb18be46e2b57d0144e47f2",
   "case_xplt": "723f5fc07c5e54a9e6ffc7c0f6fea672ccd9e0bb469e0231d55652db53f86d3a"
  }

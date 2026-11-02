@@ -7,7 +7,7 @@ Scope (two repositories on this machine):
   run by ops/task_runner.py (called every 5 min by ops/evo_daemon.sh); role rounds by evo_daemon (work/board/schedule.json);
   restart recovery by ops/resume_all.sh (started at every Jupyter server start by ~/.jupyter/jupyter_server_config.py);
   ops/activity_keepalive.py reports activity while real work runs.
-- Old repo "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1": FEBio queue human_study/queue/ run by
+- Old repo "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026": FEBio queue human_study/queue/ run by
   scripts/5_compute/h19_scheduler.py (tmux biocage_sched), watchdog h23 (biocage_watchdog), GPU sampler (biocage_gpusamp).
 
 Each run (you are woken every 60 min):

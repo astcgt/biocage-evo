@@ -1,0 +1,14 @@
+{
+ "name": "gate2_ar_pos_z",
+ "cmd": "python gate2_fsu.py ar_pos_z 20",
+ "cwd": "gpufe",
+ "gpu": 4,
+ "gpu_mem_gb": 4,
+ "host_mem_gb": 6,
+ "max_retries": 0,
+ "log": "work/agents/gate2_ar_pos_z.log",
+ "created": "2026-10-28T02:14:28",
+ "gpu_id": 4,
+ "started": "2026-10-28T02:14:28",
+ "last_exit": "1"
+}

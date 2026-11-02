@@ -1,0 +1,15 @@
+{
+ "name": "gate2_flex_pos_y",
+ "cmd": "python gate2_fsu.py flex_pos_y 20",
+ "cwd": "gpufe",
+ "gpu": 2,
+ "gpu_mem_gb": 4,
+ "host_mem_gb": 6,
+ "max_retries": 0,
+ "log": "work/agents/gate2_flex_pos_y.log",
+ "created": "2026-10-28T02:14:28",
+ "gpu_id": 2,
+ "started": "2026-10-28T02:18:41",
+ "last_exit": "0",
+ "finished": "2026-10-28T02:23:41"
+}

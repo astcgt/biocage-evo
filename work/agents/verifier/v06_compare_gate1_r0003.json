@@ -1,0 +1,85 @@
+{
+ "code_head": "1f09ae2a397491a3e6daedc3522512c5bcd49265",
+ "gpufe_dirty": "M gpufe/contact.py\n M gpufe/newton.py",
+ "reference_report_last_commit": "30e8f95 2026-10-26 11:10:45 +0800",
+ "report_has_provenance_fields": [],
+ "cases": [
+  {
+   "case": "neo_hex",
+   "orig_worst": 1.4785926754674162e-12,
+   "rerun_worst": 1.4784398177525949e-12,
+   "orig_pass": true,
+   "rerun_pass": true,
+   "files_identical": {
+    "case.feb": true,
+    "stress.txt": true,
+    "react.txt": true
+   },
+   "max_abs_diff_of_metrics": 1.528577148213375e-16
+  },
+  {
+   "case": "neo_tet",
+   "orig_worst": 4.134858732274065e-12,
+   "rerun_worst": 4.134858732274065e-12,
+   "orig_pass": true,
+   "rerun_pass": true,
+   "files_identical": {
+    "case.feb": true,
+    "stress.txt": true,
+    "react.txt": true
+   },
+   "max_abs_diff_of_metrics": 0.0
+  },
+  {
+   "case": "ortho_tet",
+   "orig_worst": 1.702533262333577e-12,
+   "rerun_worst": 1.702533262333577e-12,
+   "orig_pass": true,
+   "rerun_pass": true,
+   "files_identical": {
+    "case.feb": true,
+    "stress.txt": true,
+    "react.txt": true
+   },
+   "max_abs_diff_of_metrics": 0.0
+  },
+  {
+   "case": "hm_fiber_hex",
+   "orig_worst": 3.3240875719276614e-12,
+   "rerun_worst": 3.3240875719276614e-12,
+   "orig_pass": true,
+   "rerun_pass": true,
+   "files_identical": {
+    "case.feb": true,
+    "stress.txt": true,
+    "react.txt": true
+   },
+   "max_abs_diff_of_metrics": 0.0
+  },
+  {
+   "case": "gent_prestrain_hex",
+   "orig_worst": 3.3710902908382785e-12,
+   "rerun_worst": 3.3710902908382785e-12,
+   "orig_pass": true,
+   "rerun_pass": true,
+   "files_identical": {
+    "case.feb": true,
+    "stress.txt": true,
+    "react.txt": true
+   },
+   "max_abs_diff_of_metrics": 0.0
+  },
+  {
+   "case": "spring_smooth",
+   "orig_worst": 5.245549254287292e-08,
+   "rerun_worst": 5.245549254287292e-08,
+   "orig_pass": true,
+   "rerun_pass": true,
+   "files_identical": {
+    "case.feb": true,
+    "react.txt": true
+   },
+   "max_abs_diff_of_metrics": 0.0
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "id": "F-0027",
+ "round": 3,
+ "target": "issue I-001 (docs/ISSUES.md:5, twist on the glued cage faces in flexion / extension of a left-right symmetric model)",
+ "severity": "minor",
+ "claim": "I-001 is REFUTED as a model or symmetry problem, re-checked this round. Re-running the round-2 script on the corrected physio reruns reproduces the round-2 result file byte for byte (git shows no change to the committed r0002_i001_result.json after the rerun). Flexion twist on the glued faces is at most 1.1 N mm on the top face and 0.1-0.2 N mm on the bottom; extension 0.4 / 0.1 N mm (was ~170 N mm median with the load-curve bug). Left and right are mirror-equal where they should be: lateral bending p062 bottom 91.1 vs 91.0 N mm and top 25.8 vs 26.6 N mm; axial rotation 1121 vs 1128 N mm. Cage-face mirror gap median 0.0005 mm. Still open: (1) p014_gpu1 ended in ERROR TERMINATION after the extension window (last state t 4.95), so p014 has no lateral bending or axial rotation data, and no one has recorded why it failed. (2) ISSUES.md still shows I-001 as 'physio runs to be redone'. (3) The meaningful 'twist' is now the axial-rotation load itself (about 1.1 N m per face), which drives mu_req to 2.0-2.6 (M3 net; F-0021). Axial rotation, not flexion, is the governing direction for the whole-face shortcut.",
+ "evidence": "work/agents/redteam/r0002_i001.py rerun 2026-10-28 (16 s): output identical to work/agents/redteam/r0002_i001_result.json (committed in 1f09ae2; git status shows it unmodified after the rerun). Printed table: p062_gpu2 flexion max|Mz| top 1.1 bot 0.2; extension 0.4 / 0.1; LB_right 25.8 / 91.1; LB_left 26.6 / 91.0; AR_left 1121.4 / 1099.0; AR_right 1128.1 / 1105.1 N mm; p063_gpu3 and p014_gpu1 flexion top 1.1. p014_gpu1/case.log ends 'E R R O R   T E R M I N A T I O N' (old repo human_study/al_v2/physio_fix/p014_gpu1, elapsed 1117.9 s). AR mu_req: r0003_tension_result.json p062 AR_left top M3 2.208 (e02) / 2.613 (net).",
+ "how_to_reproduce": "python -I work/agents/redteam/r0002_i001.py p062_gpu2 p063_gpu3 p014_gpu1; git status --short work/agents/redteam/r0002_i001_result.json (empty = identical).",
+ "fix_options": [
+  {"option": "Close I-001 in ISSUES.md with these numbers; open a new item for the p014 failure (cause, rerun or drop).", "cost": "low", "risk": "none"},
+  {"option": "Report mu_req per direction so axial rotation (the governing case) is visible to the PI and the designer.", "cost": "low", "risk": "none"}
+ ],
+ "summary_zh": "問題 I-001（左右對稱的模型，前屈與後伸時 cage 黏住的接觸面卻出現扭轉）再次確認不是模型或對稱性的問題。紅隊重跑第二輪的程式，結果與第二輪完全相同：前屈時上表面扭轉最多 1.1 牛頓毫米、下表面 0.1 到 0.2，後伸時 0.4 與 0.1（修正負荷曲線前約 170）。左右對稱的情況數字也左右相同，例如側彎時下表面左右分別是 91.1 與 91.0 牛頓毫米，軸向旋轉時是 1121 與 1128。尚未解決的有三點：p014 重跑在後伸之後異常中止，缺少側彎與軸向旋轉的資料，也沒有人記錄原因；待辦清單仍未更新；目前真正大的扭轉來自軸向旋轉本身（每個接觸面約 1.1 牛頓米），使摩擦需求值達到 2.0 到 2.6，所以決定性的方向是軸向旋轉，不是前屈。"
+}

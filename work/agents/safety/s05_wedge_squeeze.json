@@ -1,0 +1,58 @@
+[
+ {
+  "region": "full footprint",
+  "area_mm2": 92.96,
+  "net_Fx_over_N": -0.1654,
+  "net_Fy_over_N": 0.0008,
+  "top_face_Fx_over_N": -0.0993,
+  "bottom_face_Fx_over_N": -0.0661,
+  "mu_needed_clamp_only": 0.0827,
+  "note": "mu = |net in-plane| / (2 faces x normal force); Fx<0 posterior"
+ },
+ {
+  "region": "posterior half",
+  "area_mm2": 45.92,
+  "net_Fx_over_N": -0.1205,
+  "net_Fy_over_N": 0.0006,
+  "top_face_Fx_over_N": -0.0452,
+  "bottom_face_Fx_over_N": -0.0753,
+  "mu_needed_clamp_only": 0.0603,
+  "note": "mu = |net in-plane| / (2 faces x normal force); Fx<0 posterior"
+ },
+ {
+  "region": "anterior half",
+  "area_mm2": 47.04,
+  "net_Fx_over_N": -0.2093,
+  "net_Fy_over_N": 0.001,
+  "top_face_Fx_over_N": -0.1522,
+  "bottom_face_Fx_over_N": -0.0571,
+  "mu_needed_clamp_only": 0.1046,
+  "note": "mu = |net in-plane| / (2 faces x normal force); Fx<0 posterior"
+ },
+ {
+  "region": "columns taller than 4.0 mm (beyond a hard core at T~1 mm)",
+  "area_mm2": 49.44,
+  "net_Fx_over_N": -0.1673,
+  "net_Fy_over_N": 0.0003,
+  "top_face_Fx_over_N": -0.076,
+  "bottom_face_Fx_over_N": -0.0913,
+  "mu_needed_clamp_only": 0.0837,
+  "note": "mu = |net in-plane| / (2 faces x normal force); Fx<0 posterior"
+ },
+ {
+  "region": "columns taller than 4.95 mm (soft/void under S2 at T 2 mm)",
+  "area_mm2": 12.64,
+  "net_Fx_over_N": -0.0885,
+  "net_Fy_over_N": 0.0001,
+  "top_face_Fx_over_N": -0.0223,
+  "bottom_face_Fx_over_N": -0.0662,
+  "mu_needed_clamp_only": 0.0442,
+  "note": "mu = |net in-plane| / (2 faces x normal force); Fx<0 posterior"
+ },
+ {
+  "local_opening_angle_deg": {
+   "median": 18.99,
+   "p90": 29.74
+  }
+ }
+]

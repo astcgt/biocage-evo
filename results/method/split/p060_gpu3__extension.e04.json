@@ -1,26 +1,63 @@
 {
- "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/human_study/al_v2/physio_rot_split2/p060_gpu3/w_extension",
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split2/p060_gpu3/w_extension",
  "windows": {
   "extension": {
-   "t": 3.9238362312316895,
+   "t": 3.9148312389658524,
    "target_reached": true,
-   "M_at_target": 1539.47758517,
-   "mu_squeeze": 0.015363303514630616,
-   "net_push_N": 1.434065449004889,
-   "net_twist_Nmm": 0.1723265967622561,
-   "N_total": 169.26096774412716,
-   "one_face_slip_bound_mm": 0.4916470565333408,
+   "M_at_target": 1500.0,
+   "mu_squeeze": 0.01572169209230424,
+   "net_push_N": 1.5473885669666514,
+   "net_twist_Nmm": 0.04521530748990217,
+   "N_total": 171.21392090089662,
+   "one_face_slip_bound_mm": 0.47719054184035314,
    "cage_translation_tied_mm": [
-    -0.1750393512426214,
-    0.00032207789138823117,
-    -0.044345554307440804
-   ]
+    -0.16880377684371894,
+    0.00037979358276718674,
+    -0.04396989461000783
+   ],
+   "eval": {
+    "t_a": 3.91479024,
+    "M_a": 1499.82026148,
+    "t_b": 3.92383621,
+    "M_b": 1539.47758517,
+    "frac": 0.004532290716464137,
+    "coarse": false,
+    "invalid": [
+     [
+      3.77448169,
+      0.029027140000000173,
+      905.179453401,
+      "dyn",
+      65.3,
+      1.68
+     ],
+     [
+      3.79297017,
+      0.018488479999999807,
+      1040.1009665,
+      "dyn",
+      50.1,
+      0.26
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 22,
+    "n_invalid": 2,
+    "n_dyn": 2,
+    "dt_min": 0.003849750000000096,
+    "monotonic": true,
+    "rb_res_max": 10.761710583522582,
+    "rb_fres_max": 1.0313657010514246,
+    "t_last": 4.0,
+    "complete": true
+   }
   }
  },
  "provenance": {
-  "git": "e3b05f877123f2f0f6736c6d4af804fc682c61b9",
-  "script_dirty": false,
-  "script_sha256": "f6580ee1300fdd0024b8f55ef5c960061c3d8e445805cd2549f7b0439730e1ce",
+  "git": "3b41de29d4f047f81781146531e0b02e0c093a8b",
+  "script_dirty": true,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
   "case_feb": "28ffc0feccb7f0d4684687a158fb990f54fef0eee43af14bbd5045ff5baa98b3",
   "case_xplt": "3cdbb63f8a005996c7edecde8a5f70695bbe4a9721b376cd0ba749587aeae419"
  }

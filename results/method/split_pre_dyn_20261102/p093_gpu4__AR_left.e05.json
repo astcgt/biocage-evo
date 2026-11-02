@@ -1,0 +1,29 @@
+{
+ "sustained": 0.030839855945289187,
+ "t_last": 4.0,
+ "windows": {
+  "AR_left": {
+   "peak": 0.10001422183915394,
+   "reached": true,
+   "t_eval": 3.9856182494917753,
+   "window_check": {
+    "n_rows": 13,
+    "n_invalid": 0,
+    "dt_min": 0.014615299999999998,
+    "monotonic": true,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "peak": 0.10001422183915394,
+ "pass_sustained": true,
+ "pass_peak": true,
+ "provenance": {
+  "git": "3b41de29d4f047f81781146531e0b02e0c093a8b",
+  "script_dirty": true,
+  "script_sha256": "26b3a6a8bb07d8b6ebde9003f6b3eadd35e0d6d63d3344f8edbe739b03ee83bb",
+  "case_feb": "5578239938c6bace25054317bfcdca72e45fd597fb2424a75875f9c6bb08474b",
+  "case_xplt": "37ab6cbb75945a85a39aa66f64b5e3ed01bebd0a442ce579e64244f2ac3844bb"
+ }
+}

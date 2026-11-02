@@ -1,0 +1,111 @@
+{
+ "n_nodes": 57792,
+ "cases": [
+  {
+   "scenario": "spin_5deg",
+   "note": "whole cage rotates rigidly about Z; corners sweep into the lateral / posterior rim",
+   "rigid_translation_mm": [
+    0.0044,
+    0.0002,
+    0.0
+   ],
+   "rigid_radial_mm": 0.0044,
+   "rigid_posterior_mm": 0.0,
+   "rigid_rotation_deg": 5.0,
+   "max_node_disp_mm": 0.6064,
+   "max_node_posterior_mm": 0.3826,
+   "verdict_1mm_any": true,
+   "verdict_0p5_post": true,
+   "passes_dislocation_rule": true
+  },
+  {
+   "scenario": "spin_10deg",
+   "note": "whole cage rotates rigidly about Z; corners sweep into the lateral / posterior rim",
+   "rigid_translation_mm": [
+    0.0087,
+    0.0008,
+    0.0
+   ],
+   "rigid_radial_mm": 0.0087,
+   "rigid_posterior_mm": 0.0,
+   "rigid_rotation_deg": 10.0,
+   "max_node_disp_mm": 1.2116,
+   "max_node_posterior_mm": 0.8042,
+   "verdict_1mm_any": true,
+   "verdict_0p5_post": true,
+   "passes_dislocation_rule": true
+  },
+  {
+   "scenario": "anterior_lobe_15pct_4.0mm",
+   "note": "outer anterior part extrudes out of the disc space (toward oesophagus); rest anchored",
+   "rigid_translation_mm": [
+    0.6429,
+    0.0,
+    0.0
+   ],
+   "rigid_radial_mm": 0.6429,
+   "rigid_posterior_mm": 0.0,
+   "rigid_rotation_deg": 0.0,
+   "max_node_disp_mm": 4.0,
+   "max_node_posterior_mm": 0.0,
+   "verdict_1mm_any": true,
+   "verdict_0p5_post": true,
+   "passes_dislocation_rule": true
+  },
+  {
+   "scenario": "anterior_lobe_25pct_3.5mm",
+   "note": "outer anterior part extrudes out of the disc space (toward oesophagus); rest anchored",
+   "rigid_translation_mm": [
+    0.875,
+    0.0,
+    0.0
+   ],
+   "rigid_radial_mm": 0.875,
+   "rigid_posterior_mm": 0.0,
+   "rigid_rotation_deg": 0.0,
+   "max_node_disp_mm": 3.5,
+   "max_node_posterior_mm": 0.0,
+   "verdict_1mm_any": true,
+   "verdict_0p5_post": true,
+   "passes_dislocation_rule": true
+  },
+  {
+   "scenario": "posterior_lobe_8pct_4.0mm",
+   "note": "posterior soft part migrates toward the cord; rest anchored",
+   "rigid_translation_mm": [
+    -0.3571,
+    0.0,
+    0.0
+   ],
+   "rigid_radial_mm": 0.3571,
+   "rigid_posterior_mm": 0.3571,
+   "rigid_rotation_deg": 0.0,
+   "max_node_disp_mm": 4.0,
+   "max_node_posterior_mm": 4.0,
+   "verdict_1mm_any": true,
+   "verdict_0p5_post": true,
+   "passes_dislocation_rule": true
+  },
+  {
+   "scenario": "posterior_lobe_10pct_4.5mm",
+   "note": "posterior soft part migrates toward the cord; rest anchored",
+   "rigid_translation_mm": [
+    -0.4821,
+    0.0,
+    0.0
+   ],
+   "rigid_radial_mm": 0.4821,
+   "rigid_posterior_mm": 0.4821,
+   "rigid_rotation_deg": 0.0,
+   "max_node_disp_mm": 4.5,
+   "max_node_posterior_mm": 4.5,
+   "verdict_1mm_any": true,
+   "verdict_0p5_post": true,
+   "passes_dislocation_rule": true
+  },
+  {
+   "scenario": "weighting_note",
+   "note": "the fit weights every node equally: the reported rigid translation is the node-average displacement (centroid shift), so the share of the volume that moves sets the reported value, not the size of the move"
+  }
+ ]
+}

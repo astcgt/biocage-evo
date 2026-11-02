@@ -1,0 +1,288 @@
+{
+ "role": "safety",
+ "round": 3,
+ "date": "2026-10-28",
+ "scope": "No designs exist. Review of S1-S9 after the PI decisions of 2026-10-27 (dislocation definition, mu_req first, insertion rules accepted, expand/latch allowed). Python now runs for this role: all numbers below come from scripts in work/agents/safety/ (s03-s07), notes in r0003_notes.md. Round-2 analysis (work/board/r0002/safety.json) still stands where not repeated.",
+ "evidence_files": [
+  "work/agents/safety/r0003_notes.md (N1-N6)",
+  "work/agents/safety/s03_geometry.py -> s03_geometry.json (footprint, gaps, opening chord, uncinate distance)",
+  "work/agents/safety/s04_midline_profile.py -> s04_midline_profile.json (gap profile anterior -> posterior)",
+  "work/agents/safety/s05_wedge_squeeze.py -> s05_wedge_squeeze.json (clamp-only posterior push)",
+  "work/agents/safety/s06_frame_artifact.py -> s06_frame_artifact.json (apparent translation from vertebral rotation)",
+  "work/agents/safety/s07_bestfit_loophole.py -> s07_bestfit_loophole.json (best-fit rigid motion hides a moving hard core)"
+ ],
+ "correction_of_own_earlier_claim": "r0002 note N4 ('~0.35 mm midline overlap with a posterior lip blocks posterior motion') is WRONG for the FE model: inside the modelled disc space the gap rises monotonically from 2.96 mm (anterior lip, X +3.8) to 5.30 mm (posterior footprint edge) and 5.48 mm (posterior outline); posterior closure = 0.0 on Y = 0 and Y = +/-3 mm (s04_midline_profile.json). I had used the STL value 'posterior 4.1 mm' (DECISIONS_baseline_human_c34.md:15), which does not match the FE disc mesh. Conclusion is stronger, not weaker: there is no geometric stop toward the cord at all.",
+ "headline_findings": [
+  {
+   "id": "H1",
+   "severity": "critical",
+   "finding": "The endplate wedge pushes any contour-matched cage toward the spinal cord under the clamp alone. Uniform clamp pressure on the real C3 / C4 surfaces gives a net posterior force of 0.165 x the normal force; friction needed for the clamp alone = 0.083 (whole footprint), 0.105 (anterior half, where an S2-compliant hard core will bear). This uses 41-52 % of the friction budget at mu 0.2 before any neck motion. Independent support: F-0011, follower load only, p062 corrected rerun, bottom face 11.02 / 105.15 = 0.105.",
+   "evidence": "s05_wedge_squeeze.json; s04_midline_profile.json; work/findings/F-0011.json",
+   "consequence": "posterior safety rests entirely on friction (no shape stop, N2) with a large part of it already spent; the posterior mu_req check must include the clamp-only state (end of release, before moments) and keep margin."
+  },
+  {
+   "id": "H2",
+   "severity": "critical",
+   "finding": "'Translation relative to C3 and C4' measured during the load contains rotation of the vertebra, not cage motion. Cage centroid is 6.15 mm from the ICR; at the gate-2 flexion angle 5.78 deg a cage stuck to C4 shows 0.62 mm relative to C3 (0.86 mm at 8 deg), almost all antero-posterior. This alone breaks the 0.5 mm posterior limit with zero slip (false fail), and in the reverse sign can hide real slip (false pass).",
+   "evidence": "s06_frame_artifact.json; snapshot/model/frame_c3c4.json (origin = ICR)"
+  },
+  {
+   "id": "H3",
+   "severity": "major",
+   "finding": "The PI's dislocation measure (best-fit rigid motion of ALL cage nodes) can hide a hard part moving toward the cord: best fit = (node fraction of the moving part) x (its motion). A hard posterior part with 20 % of the nodes moving 1.5 mm reads 0.30 mm; 35 % moving 1.0 mm reads 0.35 mm; both pass 0.5 mm. Node-count weighting also changes with mesh density.",
+   "evidence": "s07_bestfit_loophole.json (toy model, not FE)"
+  },
+  {
+   "id": "H4",
+   "severity": "major",
+   "finding": "docs/PLAN.md is not updated to the PI decisions of 2026-10-27: S2 (PLAN.md:28) still says 'hard PLCL strain <= 3 %, compliant <= 40 %' although the PI accepted 'hard core no compression, soft <= 30 %, posterior checks at mu 0.2' (DECISIONS.md 2026-10-27 (3)); S9 (PLAN.md:35) still says 'cage-centre translation' and has no mu 0.2 for the posterior checks. The project's own material card gives hard elastic limit 15 / 649.53 = 2.31 % < 3 % (F-0019). Any code written from PLAN.md would implement the rejected rule.",
+   "evidence": "docs/PLAN.md:28, :35; docs/DECISIONS.md 2026-10-27 (3); work/findings/F-0019.json"
+  },
+  {
+   "id": "H5",
+   "severity": "major",
+   "finding": "Still no implementation of S1-S9 (no constraints*.py anywhere; find, 2026-10-28) and still no work/requests/ folder: none of the round-1 / round-2 change requests is tracked. The designer must not start before L0 checks exist.",
+   "evidence": "find . -name 'constraints*.py' -> none; ls work/requests -> absent (2026-10-28); work/findings/F-0017.json (2)"
+  }
+ ],
+ "constraints": [
+  {
+   "id": "S1",
+   "rule_now": "voxels only inside the 1 mm inset footprint and between the endplates (by construction)",
+   "harm_prevented": "cage material against the dura / spinal cord (posterior), nerve roots in the foramen and vertebral artery (lateral, beyond the uncinate processes), oesophagus (anterior)",
+   "necessary": true,
+   "sufficient": false,
+   "why": "as-built only. Margins measured: posterior footprint edge to disc outline 1.00 mm (PLL resected); footprint edge to the first uncinate bone 0.51 mm laterally (|Y| 5.73 vs 6.24 mm) (s03_geometry.json). A soft posterior bulge under load is now explicitly outside S9 (PI 2026-10-27 (b)) but no rule with a number exists for it -> add S1b canal clearance.",
+   "measurable": "yes, L0 (as-built) + L1/L1b/L2 node positions (loaded)",
+   "keep": true,
+   "recommended_value": "S1 unchanged (inset 1.0 mm). ADD S1b canal / foramen clearance: in every loaded state of every test, no cage node may lie posterior of (posterior footprint edge - 0.5 mm) or lateral of (lateral footprint edge + 0.5 mm), measured in the disc-space frame (mean of C3 and C4 motion).",
+   "range": "allowed excursion beyond the footprint 0.3-0.5 mm posterior, 0.5 mm lateral",
+   "references": [
+    "work/agents/safety/s03_geometry.json (posterior_clearance_to_outline_mm 1.00, uncinate_min_abs_Y_mm 6.24, footprint_half_width_mm 5.73)",
+    "docs/DECISIONS.md 2026-10-27 definition of slip-out (b)",
+    "docs/DECISIONS_baseline_human_c34.md:19-22 (PLL resected, rim kept)"
+   ],
+   "severity_of_gap": "major",
+   "plain_zh": "支架只能待在兩節頸椎之間的椎間盤空間裡，四周再往內縮 1 毫米。就像書必須放在書架格子裡、不能凸出來：後面是脊髓，兩側是神經根和椎動脈，前面是食道。新增一條：受力時軟材料也不能被擠到這條界線外超過 0.5 毫米。"
+  },
+  {
+   "id": "S2",
+   "rule_now": "PLAN.md:28 (outdated): hard strain <= 3 %, compliant <= 40 %, transient gain <= 2 mm. PI-accepted 2026-10-27: hard core passes the narrowest anterior gap without compression, soft <= 30 %, transient 2 mm (1.5-2.5).",
+   "harm_prevented": "implant that cannot be inserted without bone removal, is cracked or permanently deformed during insertion, or needs harmful over-distraction (facet / capsule overload, neck pain, subsidence)",
+   "necessary": true,
+   "sufficient": false,
+   "why": "accepted rule is correct but PLAN.md still holds the rejected numbers (H4). Measured: narrowest gap on the midline 2.96 mm at X +3.8 mm (an anterior lip, s04); anterior 120 deg opening chord 11.83 mm vs max footprint width 11.45 mm, so the width condition is met by any footprint-filling part (s03). Expand / latch designs (PI 2026-10-27 (2)) need extra checks (see missing item M14).",
+   "measurable": "yes: L0 geometric path sweep + L1 static FE of the worst pose (r0002 recommendation)",
+   "keep": true,
+   "recommended_value": "as accepted by the PI 2026-10-27 (3) and written out in r0002 safety.json S2 (hard = local E(phi) > 20 MPa; every hard voxel inside the gap at T at every path step, 0.1 mm clearance; compliant column compression <= 30 %; path family straight and +/-15 / +/-30 deg; report insertion force). PLAN.md:28 must be rewritten to this text.",
+   "range": "T 1.5-2.5 mm (surgeon to confirm); compliant compression 20-40 %",
+   "references": [
+    "docs/DECISIONS.md 2026-10-27 (3)",
+    "work/board/r0002/safety.json S2",
+    "work/findings/F-0019.json (hard elastic limit 2.31 % on the model's own card)",
+    "Hsueh LL et al. 2023 Sci Rep, doi:10.1038/s41598-023-44998-4 (final over-distraction >= 2 mm harmful; not a transient limit)"
+   ],
+   "severity_of_gap": "major",
+   "plain_zh": "支架必須能從脖子前方一次整塊放進去，而且不能削骨頭。就像把床墊搬進一扇比較矮的門：硬骨架本身就要比門口（最窄約 2.96 毫米，加上手術時暫時撐開最多 2 毫米）矮，完全不壓；只有軟的部分可以被壓，最多壓三成。"
+  },
+  {
+   "id": "S3",
+   "rule_now": "single solid component, 6-connectivity",
+   "harm_prevented": "loose fragments migrating toward the cord or foramen",
+   "necessary": true,
+   "sufficient": false,
+   "why": "time-zero topology only; thin bridges and single-voxel soft flaps can tear during insertion (S2 compresses and slides soft parts on bone). Debris / delamination deferred by the PI (2026-10-27 (7)); a minimum bridge size is cheap at L0 and should stay.",
+   "measurable": "yes, L0",
+   "keep": true,
+   "recommended_value": "one 6-connected component AND every bridge >= 0.8 x 0.4 mm; compliant regions bonded to the hard core over >= 2 voxels",
+   "range": "min bridge 0.4-0.8 mm",
+   "references": [
+    "Wuisman PIJM, Smit TH 2005, Eur Spine J 15:133-148, https://pmc.ncbi.nlm.nih.gov/articles/PMC3489405 (volume/pages unverified)"
+   ],
+   "severity_of_gap": "minor",
+   "plain_zh": "支架必須是完整一塊，不能有分開的小碎塊。就像一串鑰匙都要掛在同一個環上；掉下來的碎片可能跑到脊髓旁邊。"
+  },
+  {
+   "id": "S4",
+   "rule_now": "void connected to both endplates, >= 50 % of disc-space volume (PI 2026-10-26)",
+   "harm_prevented": "loss of the purpose: no room and no nutrient path for the tissue-engineered biodisc",
+   "necessary": true,
+   "sufficient": false,
+   "why": "disc-space volume = 380.3 mm3 -> floor 190 mm3 void (s03). Volume alone can be met by a fine sponge with tiny endplate contact (F-0009 item 7).",
+   "measurable": "yes, L0",
+   "keep": true,
+   "recommended_value": ">= 50 % void (PI) AND void contact area >= 30 % of the footprint on EACH endplate AND minimum channel width >= 1.0 mm",
+   "range": "contact area 20-40 %; channel 1-2 mm",
+   "references": [
+    "docs/PLAN.md:30",
+    "work/agents/safety/s03_geometry.json (disc_space_volume_mm3 380.3)",
+    "Urban JPG, Smith S, Fairbank JCT 2004 Spine 29:2700-2709 (endplate nutrition route; not re-read, unverified)"
+   ],
+   "severity_of_gap": "major",
+   "plain_zh": "支架裡至少一半空間要留給生物椎間盤，而且空洞要同時貼到上下兩塊骨頭。就像花盆要有足夠的土，也要有底孔讓水進來：養分從骨頭表面滲入，不能只是很細的海綿孔。"
+  },
+  {
+   "id": "S5",
+   "rule_now": "min feature 0.4 mm X-Y, 0.2 mm layers, 45 deg overhang (PI kept 2026-10-26)",
+   "harm_prevented": "designs that cannot be printed or print with defects",
+   "necessary": true,
+   "sufficient": false,
+   "why": "single 0.4 mm line in a load path is fragile; inter-layer strength 0.8 x bulk (DECISIONS_baseline_human_c34.md:116) with layers parallel to the slip plane",
+   "measurable": "yes, L0",
+   "keep": true,
+   "recommended_value": "as PI decided PLUS load-path struts >= 0.8 mm (2 lines)",
+   "range": "load-bearing min 0.8-1.2 mm",
+   "references": [
+    "ISO/ASTM 52910:2018 (design for additive manufacturing)",
+    "docs/DECISIONS_baseline_human_c34.md:116"
+   ],
+   "severity_of_gap": "minor",
+   "plain_zh": "設計必須能用 3D 列印機印出來：線寬 0.4 毫米、每層 0.2 毫米、懸空不超過 45 度。就像疊積木，上一層不能伸出太多。承重柱建議至少兩條線寬。"
+  },
+  {
+   "id": "S6",
+   "rule_now": ">= 1164 N compression before failure (Moroney 1988)",
+   "harm_prevented": "cage collapse under maximal neck effort",
+   "necessary": true,
+   "sufficient": false,
+   "why": "1164 N exceeds mean endplate failure 1084 N (Schroder 2006), so it must mean CAGE failure (bone is S8). Time-dependent strength deferred by the PI (2026-10-27 (7)).",
+   "measurable": "yes, L2 compression with post-processed damage (DECISIONS_baseline_human_c34.md:93)",
+   "keep": true,
+   "recommended_value": ">= 1164 N before cage damage at the LOW strength set (hard 15, soft 3 MPa, inter-layer 0.8x); cite Moroney SP, Schultz AB, Miller JAA 1988 J Orthop Res 6:713-720",
+   "range": "800-1164 N (lower only with collar / restricted activity, PI decision)",
+   "references": [
+    "Moroney SP, Schultz AB, Miller JAA 1988, J Orthop Res 6:713-720",
+    "Schroder J et al. 2006 Cent Eur Neurosurg 67:188, doi:10.1055/s-2006-942279"
+   ],
+   "severity_of_gap": "minor",
+   "plain_zh": "支架要撐得住約 1164 牛頓（約 119 公斤重）的壓力而不壞，這是用力繃緊脖子時頸椎受到的最大壓力。就像椅子要撐住一個人重重坐下。"
+  },
+  {
+   "id": "S7",
+   "rule_now": "height loss <= d/2 at 150 N",
+   "harm_prevented": "loss of distraction -> narrower foramen (nerve root) and loss of clamp force (fixation)",
+   "necessary": true,
+   "sufficient": false,
+   "why": "150 N has no cited source (unverified). Under S2 the tallest (posterior) columns must be mostly soft or void (gap there 5.30 + d vs hard core <= 2.96 + T), so S7 becomes binding and also sets the clamp that S9 relies on.",
+   "measurable": "yes, L1/L2 (elastic); creep deferred",
+   "keep": true,
+   "recommended_value": "height loss <= d/2 at 150 N (keep); report clamp force after release for every design (needed for S9 push-out)",
+   "range": "d/3 - d/2",
+   "references": [
+    "docs/DECISIONS_baseline_human_c34.md:33",
+    "work/agents/safety/s04_midline_profile.json"
+   ],
+   "severity_of_gap": "minor",
+   "plain_zh": "在約 15 公斤重的壓力下，支架高度下降不能超過撐開量的一半。就像千斤頂撐住車子不能往下沉；高度一掉，神經出口變窄，支架也夾不緊。"
+  },
+  {
+   "id": "S8",
+   "rule_now": "peak 1 mm2-averaged contact pressure below a subsidence proxy (no number)",
+   "harm_prevented": "subsidence into the vertebral body; contact hot spots that crack the cage",
+   "necessary": true,
+   "sufficient": false,
+   "why": "still no number (PLAN.md:34) -> not testable; third round without a value",
+   "measurable": "yes, L1 contact pressure; L2 yielded trabecular volume",
+   "keep": true,
+   "recommended_value": "peak 1 mm2-averaged pressure <= 5 MPa in all physiological states (100 N follower + 1.5 N m, 6 directions) and at 150 N; L2: yielded trabecular volume < 10 % within 3 mm of the endplate",
+   "range": "3-10 MPa",
+   "references": [
+    "Cheng CC et al. 2007 Spine, doi:10.1097/BRS.0b013e31811ece5a",
+    "Schroder J et al. 2006 (mean endplate failure pressure 10.5 MPa)",
+    "Morgan EF, Keaveny TM 2001 J Biomech 34:569-577"
+   ],
+   "severity_of_gap": "major",
+   "plain_zh": "支架壓在骨頭上的力量不能太集中，否則會像高跟鞋踩進草地一樣陷進骨頭。建議日常姿勢下任何一平方毫米上的壓力不超過 5 百萬帕（約每平方公分 50 公斤重）。"
+  },
+  {
+   "id": "S9",
+   "rule_now": "PLAN.md:35 + PI 2026-10-27: dislocation = rigid-body (best-fit) radial outward motion of the whole cage relative to C3 and C4, <= 1 mm any direction, <= 0.5 mm posterior; posterior push-out >= 135 N; judged first by mu_req (whole-face limit, e02), frictional simulation checks the shortcut; mu 0.3 (0.2 / 0.45), posterior at mu 0.2",
+   "harm_prevented": "migration into the canal (cord injury) or anteriorly (oesophagus, loss of support) - main goal",
+   "necessary": true,
+   "sufficient": false,
+   "why": "(1) No shape stop toward the cord in the FE disc space and the clamp alone already pushes posteriorly with mu 0.08-0.10 (H1). (2) 'Relative to C3 / C4' during load includes vertebral rotation: 0.62 mm false motion at 5.78 deg flexion (H2). (3) Whole-cage best fit hides a hard part moving toward the cord (H3). (4) mu_req has no pass mark for the posterior criterion; at mu 0.2 with zero margin any small error in e02 (F-0011: flat faces under-read up to 7.5x) or in the friction value goes straight to the cord. (5) 135 N push-out with friction only needs clamp >= 225 N (mu 0.3) / 338 N (mu 0.2) (r0002); v2 clamps were 18-115 N (DECISIONS_baseline_human_c34.md:584-585). (6) Friction re-anchoring makes soft contact layers creep ~0.74 mm spuriously over the protocol (F-0015) -> frictional check is not yet trustworthy for soft contact layers.",
+   "measurable": "mu_req: yes once e02 handles curved faces (F-0011) and runs on the corrected physio data; frictional check: not yet (gates 2-4 not passed, F-0014)",
+   "keep": true,
+   "recommended_value": {
+    "posterior_mu_req": "mu_req of every state with a posterior in-plane resultant, INCLUDING the clamp-only state after release, <= 0.15 (= 0.2 / 1.33 margin); computed with the full tangential traction on curved faces (F-0011 fix)",
+    "any_direction_mu_req": "report; <= 0.3 / 1.33 = 0.23 recommended for ranking, no hard pass mark (PI)",
+    "dislocation_measure": "report the maximum of (a) volume-weighted best-fit rigid translation of all cage voxels and (b) best-fit rigid translation of the hard voxels (E > 20 MPa); radial outward component; limits 1 mm any / 0.5 mm posterior",
+    "reference_frame": "net (permanent) dislocation measured at the zero-load point after each cycle, relative to C3 AND to C4 (rotation artefact vanishes); in-cycle peaks measured in the disc-space mid-frame (mean of C3 and C4 rigid motions) with the same limits",
+    "ratcheting": "net dislocation increment from cycle 2 to cycle 3 <= 1 um per cycle in every direction",
+    "push_out": "135 N posterior AND an anterior push-out along the reversed insertion path reported; both at mu 0.2",
+    "canal_clearance": "see S1b"
+   },
+   "range": "posterior mu_req limit 0.13-0.20; ratchet 0.5-5 um per cycle",
+   "references": [
+    "Moroney SP, Schultz AB, Miller JAA 1988 J Orthop Res 6:713-720 (AP shear up to 135 N)",
+    "work/agents/safety/s05_wedge_squeeze.json, s06_frame_artifact.json, s07_bestfit_loophole.json, s04_midline_profile.json",
+    "work/findings/F-0011.json, F-0014.json, F-0015.json, F-0016.json",
+    "docs/DECISIONS.md 2026-10-27 (two entries)"
+   ],
+   "severity_of_gap": "critical",
+   "plain_zh": "最重要的一條：支架整體不能滑出來，尤其不能往後滑向脊髓（最多 0.5 毫米）。就像放在斜坡上的磚頭：這節椎間盤的空間前窄後寬，上下骨頭一夾，本身就會把支架往後擠，只剩摩擦力擋著，所以往後方向要用比較滑的情況來算，而且要留餘裕。另外量「有沒有滑」時，要扣掉頸椎本身轉動造成的假移動，也不能讓軟材料把硬骨架的移動平均掉。"
+  }
+ ],
+ "missing_items": [
+  {
+   "id": "M13",
+   "item": "posterior wedge squeeze (clamp pushes the cage toward the cord) not in any rule",
+   "severity": "critical",
+   "why": "H1: clamp alone needs mu 0.083-0.105; no geometric posterior stop exists in the FE disc space (H2 correction / s04)",
+   "proposal": "include the clamp-only state (after release, before moments) in mu_req and in the posterior check; designers may use the anterior lip and posterior soft bumpers, but posterior protection must be shown by calculation at mu 0.2",
+   "references": ["work/agents/safety/s05_wedge_squeeze.json", "work/findings/F-0011.json"]
+  },
+  {
+   "id": "M14",
+   "item": "expand-after-insertion / latch designs (allowed by the PI 2026-10-27 (2)) have no check list",
+   "severity": "major",
+   "why": "a mechanism that deploys inside the disc space can fail to deploy, deploy partly, deploy toward the canal, or un-latch under cyclic load; PLCL creeps at 37 C",
+   "proposal": "for every such design: (1) both the undeployed and the deployed state must pass S1, S1b, S3, S5; (2) the undeployed state alone must pass the posterior S9 check (failure to deploy must not endanger the cord); (3) deployment moves material only anteriorly, laterally inside the footprint or vertically, never posteriorly; (4) deployment force and instrument stated; (5) latch holds with hard-part stress <= 0.5 x low strength and does not open under the 6 directions x 3 cycles; (6) no part separates during deployment (S3 at every intermediate state)",
+   "references": ["docs/DECISIONS.md 2026-10-27 (2)"]
+  },
+  {
+   "id": "M15",
+   "item": "geometry source mismatch: STL posterior disc height 4.1 mm vs FE disc mesh 5.48 mm at the posterior outline",
+   "severity": "major",
+   "why": "whether a posterior bony lip exists decides whether any shape stop toward the cord is possible; the two sources disagree",
+   "proposal": "integrator: measure the bony gap from the C3 / C4 bone surfaces (not the disc mesh) along the midline to the posterior vertebral wall; report the difference",
+   "references": ["docs/DECISIONS_baseline_human_c34.md:15", "work/agents/safety/s04_midline_profile.json"]
+  },
+  {
+   "id": "M16",
+   "item": "facet over-distraction during insertion is not computed",
+   "severity": "minor",
+   "why": "S2 transient 2 mm is a technique default; facet capsule load at that pose is unknown",
+   "proposal": "one FSU run: parallel distraction 2.0 mm, report facet capsule spring forces vs physiological flexion peaks",
+   "references": ["docs/DECISIONS.md 2026-10-26 transient distraction"]
+  },
+  {
+   "id": "deferred_by_PI_2026-10-27",
+   "item": "M1 16-week degradation / creep, M10 insertion depth stop, M11 fatigue at posterior hot spots (Lintz 2021), M12 soft debris / delamination, M4 acid load, M5 sterilisation",
+   "severity": "recorded",
+   "why": "PI decision 2026-10-27 (7): applied once a prototype exists. Kept here so they are not lost; no action this round.",
+   "proposal": "re-open when the first archive elite exists",
+   "references": ["work/board/r0002/safety.json missing_items", "docs/PRIOR_FAILURES_Lintz2021.md"]
+  }
+ ],
+ "friction_literature": [
+  {"pair": "PEEK on cortical bone, reciprocating tribology, lubricants SBF / calf serum / hyaluronic acid / mucin", "mu": "not in abstract (full text not read: unverified)", "ref": "Zhang X, Ma X, Lin Q, Xiao L, Wang S, Yang H, Liao L, Liu Y, Zhang C, Song ? 2023, Macromol Biosci 23(5), doi:10.1002/mabi.202200548 (Crossref abstract read 2026-10-28). Only direct polymer-on-bone friction study found; sliding wear, not static stick."},
+  {"pair": "polished vs porous implant surfaces on trabecular bone (push-in / pull-out)", "mu": "polished: independent of contact stress, much lower than porous (no number in abstract)", "ref": "Damm NB, Morlock MM, Bishop NE 2015, J Biomech 48:3517-3521, doi:10.1016/j.jbiomech.2015.07.012 (abstract read 2026-10-28)"},
+  {"pair": "smooth 3D-printed titanium on human cadaveric bone, dry", "mu": "0.41 +/- 0.08", "ref": "Min X, Heath D, Marks L, Murray D, Mellon S 2026, Front Mech Eng 12:1788600, doi:10.3389/fmech.2026.1788600 (r0001)"},
+  {"pair": "porous metal and smooth stainless steel on tibial cancellous bone", "mu": "0.3-1.3 overall, smooth lowest", "ref": "Rancourt D, Shirazi-Adl A, Drouin G, Paiement G 1990, J Biomed Mater Res 24:1503-1519, doi:10.1002/jbm.820241107"},
+  {"pair": "cage-endplate in FE studies", "mu": "0.2-0.4 assumed (not measured)", "ref": "e.g. BMC Musculoskelet Disord 2020, doi:10.1186/s12891-020-03411-1 (0.2); web search 2026-10-28"},
+  {"pair": "PLCL, PLA / PLLA on vertebral endplate", "mu": "NO measurement found (Europe PMC 2026-10-27 and 2026-10-28; service partly down 2026-10-28, search incomplete)", "ref": "-"},
+  {"recommendation": "Keep mu 0.3 main, 0.2 / 0.45 sensitivity (PI). Because the clamp alone already needs ~0.08-0.10 posteriorly (H1), the posterior criterion should be mu_req <= 0.15 so that a true mu of 0.2 still leaves margin. Coupon test (later, PI 2026-10-27 (5)): printed PLCL 85:15 and 50:50 on wet endplate, 37 C, 0.25-2 MPa, static and kinetic mu."}
+ ],
+ "change_requests": [
+  {"id": "CR-S9c", "owner": "PI (rule) + integrator (code)", "severity": "critical", "request": "S9: (a) posterior mu_req <= 0.15 including the clamp-only state; (b) dislocation = max(volume-weighted best fit of all voxels, best fit of hard voxels); (c) net dislocation at zero-load points between cycles relative to C3 and C4, in-cycle peaks in the mid-frame; (d) ratchet <= 1 um per cycle", "reason": "H1-H3: wedge squeeze toward the cord, rotation artefact 0.62 mm, best-fit hides a moving hard part", "evidence": "work/agents/safety/s05_wedge_squeeze.json, s06_frame_artifact.json, s07_bestfit_loophole.json"},
+  {"id": "CR-S1b", "owner": "PI", "severity": "major", "request": "add S1b canal / foramen clearance: no cage node beyond the footprint by more than 0.5 mm posteriorly or laterally in any loaded state (mid-frame)", "reason": "PI 2026-10-27 (b) moved posterior bulge out of S9 into a nerve check that has no number", "evidence": "docs/DECISIONS.md 2026-10-27 (b); s03_geometry.json"},
+  {"id": "CR-PLAN", "owner": "integrator", "severity": "major", "request": "update docs/PLAN.md S2 (line 28) and S9 (line 35) to the PI decisions of 2026-10-27 (hard core no compression, soft <= 30 %, posterior at mu 0.2, rigid-body dislocation)", "reason": "PLAN.md still carries the rejected 3 % / 40 % rule and 'cage-centre translation'", "evidence": "docs/PLAN.md:28, :35; docs/DECISIONS.md 2026-10-27 (3)"},
+  {"id": "CR-1", "owner": "integrator", "severity": "major", "request": "(third time) create constraints.py with L0 checks S1-S5 before the designer starts; create work/requests/ and register all CRs from r0001-r0003", "reason": "no implementation, no CR tracking", "evidence": "find constraints*.py -> none; work/requests absent, 2026-10-28"},
+  {"id": "CR-M14", "owner": "PI", "severity": "major", "request": "adopt the expand / latch check list (missing_items M14), especially: undeployed state alone must pass the posterior check", "reason": "PI asked the safety guard to verify such designs carefully", "evidence": "docs/DECISIONS.md 2026-10-27 (2)"},
+  {"id": "CR-M15", "owner": "integrator", "severity": "major", "request": "measure the bony C3-C4 gap to the posterior vertebral wall from the bone surfaces and explain the STL 4.1 mm vs FE 5.48 mm difference", "reason": "decides whether any posterior shape stop is possible", "evidence": "docs/DECISIONS_baseline_human_c34.md:15; s04_midline_profile.json"},
+  {"id": "CR-S8", "owner": "PI", "severity": "major", "request": "(repeat) S8 = peak 1 mm2 pressure <= 5 MPa (3-10)", "reason": "still no number", "evidence": "docs/PLAN.md:34"},
+  {"id": "CR-S6b", "owner": "integrator", "severity": "minor", "request": "(repeat) PLAN.md:32: full Moroney citation and 'cage failure (bone -> S8)'", "reason": "ambiguous", "evidence": "docs/PLAN.md:32"}
+ ],
+ "summary_zh": "安全守門員第 3 輪結論（還沒有任何設計，只審查規則；本輪終於可以自己執行程式，所有數字都有計算腳本，放在 work/agents/safety/）：\n1. 最重要的新發現：在目前的頸椎模型裡，椎間盤空間是「前面窄、後面寬」（前方最窄約 2.96 毫米，往後一路變高到約 5.3 毫米），所以骨頭形狀本身完全沒有東西擋住支架往後（往脊髓方向）移動。我上一輪說「後方有約 0.35 毫米的骨頭邊緣可以卡住」是錯的，在此更正。\n2. 更嚴重的是：上下骨頭夾住支架時，因為空間前窄後寬，夾力本身就會把支架往後擠，就像用兩根手指捏西瓜子，種子會被擠出去。算出來光是夾住、脖子還沒動，就需要摩擦係數約 0.08 到 0.10 來抵抗，等於在比較滑的情況（摩擦係數 0.2）下已經用掉四到五成的摩擦力。紅隊的發現 F-0011 用模擬算出 0.105，互相吻合。因此我建議：往後方向需要的摩擦係數必須不超過 0.15，並且要把「剛夾住、還沒動脖子」的狀態也算進去。\n3. 量「支架有沒有滑動」的方法有兩個漏洞：(a) 頸椎彎曲時上面那節骨頭本身會轉動，支架明明沒滑，相對於上面那節骨頭看起來也會移動約 0.6 毫米，已超過往後 0.5 毫米的上限；應改在每次動作回到不受力時量，或用上下兩節骨頭的平均位置當基準。(b) 主持人訂的「整個支架的整體移動」是所有點的平均，如果硬骨架往脊髓方向移動 1.5 毫米、但軟材料留在原地，平均起來只顯示 0.3 毫米，會被誤判為安全；應另外單獨量硬骨架的移動，取兩者中較大的。\n4. 建議新增一條規則（S1b）：受力時任何支架材料都不能超出原本範圍往後或往兩側超過 0.5 毫米，以保護脊髓和神經根。\n5. 主持人允許「放進去後再撐開或卡住」的設計；我列出檢查清單，最重要的一條是：就算撐開機構失敗、沒有打開，支架也不能往脊髓方向滑。\n6. 文件問題：計畫文件 PLAN.md 的插入規則仍寫著舊的「硬材料可壓 3%、軟材料 40%」，沒有改成主持人已核准的「硬骨架完全不壓、軟材料最多三成」；檢查規則的程式仍然不存在，修改請求也仍然沒有地方追蹤。設計者開始之前必須先補上。\n7. 摩擦係數：仍然找不到聚乳酸類材料直接在椎骨上的實測值；只找到一篇 2023 年聚醚醚酮（PEEK，一種常用的硬塑膠）對皮質骨的磨耗研究，摘要沒有數字。維持主持人訂的 0.3（0.2 和 0.45 做比較），往後方向用 0.2 並留餘裕。\n8. 主持人決定延後的項目（16 週材料變弱、插入深度限制、疲勞裂開、軟材料碎屑、酸性分解物、消毒）已記錄保留，本輪不再處理。\n所有數值都只是建議，需主持人核准才會改動。"
+}

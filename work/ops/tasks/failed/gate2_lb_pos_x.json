@@ -1,0 +1,14 @@
+{
+ "name": "gate2_lb_pos_x",
+ "cmd": "python gate2_fsu.py lb_pos_x 20",
+ "cwd": "gpufe",
+ "gpu": 1,
+ "gpu_mem_gb": 4,
+ "host_mem_gb": 6,
+ "max_retries": 0,
+ "log": "work/agents/gate2_lb_pos_x.log",
+ "created": "2026-10-28T02:14:28",
+ "gpu_id": 1,
+ "started": "2026-10-28T02:14:28",
+ "last_exit": "1"
+}

@@ -1,26 +1,79 @@
 {
- "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/human_study/al_v2/physio_rot_split3/p003_gpu1/w_extension",
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split3/p003_gpu1/w_extension",
  "windows": {
   "extension": {
-   "t": 4.0,
+   "t": 3.98890829,
    "target_reached": false,
-   "M_at_target": 1483.95457666,
-   "mu_squeeze": 0.017876144957186434,
-   "net_push_N": 1.697162135237307,
-   "net_twist_Nmm": 0.011710753810729772,
-   "N_total": 164.00887947616198,
-   "one_face_slip_bound_mm": 0.7660741792802357,
+   "M_at_target": 1437.15691618,
+   "mu_squeeze": 0.017677219555828908,
+   "net_push_N": 1.7142273297759913,
+   "net_twist_Nmm": 0.014185667095768031,
+   "N_total": 165.58363622505038,
+   "one_face_slip_bound_mm": 0.7394085922627363,
    "cage_translation_tied_mm": [
-    -0.24476680819652172,
-    0.00019391703249769282,
-    -0.07537026938257493
-   ]
+    -0.23447891904839246,
+    0.00037430197378251974,
+    -0.07466341556427153
+   ],
+   "eval": {
+    "t_a": 3.98890829,
+    "M_a": 1437.15691618,
+    "t_b": 3.98890829,
+    "M_b": 1437.15691618,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": [
+     [
+      3.6,
+      0.050000000000000266,
+      110.274586029,
+      "dyn",
+      32.8,
+      0.4
+     ],
+     [
+      3.76239118,
+      0.04068930999999987,
+      694.052468839,
+      "dyn",
+      34.2,
+      3.4
+     ],
+     [
+      3.84713844,
+      0.015306119999999979,
+      938.410166606,
+      "dyn",
+      148.9,
+      37.57
+     ],
+     [
+      4.0,
+      0.011091710000000088,
+      1483.95457666,
+      "dyn",
+      50.0,
+      12.71
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 20,
+    "n_invalid": 4,
+    "n_dyn": 4,
+    "dt_min": 0.009144910000000284,
+    "monotonic": true,
+    "rb_res_max": 11.351464225240834,
+    "rb_fres_max": 2.0496489191911937,
+    "t_last": 3.98890829,
+    "complete": false
+   }
   }
  },
  "provenance": {
-  "git": "6227405ffc7635080c156f7a5941210a9d88f3cc",
-  "script_dirty": false,
-  "script_sha256": "f6580ee1300fdd0024b8f55ef5c960061c3d8e445805cd2549f7b0439730e1ce",
+  "git": "3b41de29d4f047f81781146531e0b02e0c093a8b",
+  "script_dirty": true,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
   "case_feb": "f7f7a3617ffa26b8ee608f303af8a002977c5b07a429c2c49f90bfb454396c7c",
   "case_xplt": "df4a1031ff88021223a0dab7ea20eb5c5ad1c432a3bf3648d50f27d0ed3caf96"
  }

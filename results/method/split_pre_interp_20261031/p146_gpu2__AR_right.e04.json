@@ -1,0 +1,13 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/human_study/al_v2/physio_rot_split2/p146_gpu2/w_AR_right",
+ "windows": {
+  "AR_right": "missing"
+ },
+ "provenance": {
+  "git": "e3b05f877123f2f0f6736c6d4af804fc682c61b9",
+  "script_dirty": false,
+  "script_sha256": "f6580ee1300fdd0024b8f55ef5c960061c3d8e445805cd2549f7b0439730e1ce",
+  "case_feb": "b5c416c2f54cc9e23b203ab2ddacd6e0627af91edbf036aec1a833bf93df61a2",
+  "case_xplt": "37079def8e52e28ae2939e1b6d979b827bdc7d86a9ab2b75893536dfb9ae690b"
+ }
+}

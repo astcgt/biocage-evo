@@ -1,0 +1,28 @@
+{
+ "cage_centroid_frame": [
+  -1.0201124973599818,
+  -0.0013375622835757738,
+  6.069509150405077
+ ],
+ "r_to_ICR_mm": 6.1546381562298995,
+ "rows": [
+  {
+   "rotation_deg": 3.0,
+   "apparent_translation_vs_C3_mm": 0.322,
+   "apparent_AP_component_mm": 0.319,
+   "with_mean_C3C4_reference_mm": 0.161
+  },
+  {
+   "rotation_deg": 5.78,
+   "apparent_translation_vs_C3_mm": 0.621,
+   "apparent_AP_component_mm": 0.616,
+   "with_mean_C3C4_reference_mm": 0.31
+  },
+  {
+   "rotation_deg": 8.0,
+   "apparent_translation_vs_C3_mm": 0.859,
+   "apparent_AP_component_mm": 0.855,
+   "with_mean_C3C4_reference_mm": 0.429
+  }
+ ]
+}

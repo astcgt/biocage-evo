@@ -3,18 +3,26 @@
  "t_last": 4.0,
  "windows": {
   "flexion": {
-   "peak": 0.0419352087028036,
+   "peak": 0.0407991130158581,
    "reached": true,
-   "t_eval": 3.95
+   "t_eval": 3.93445001408143,
+   "window_check": {
+    "n_rows": 10,
+    "n_invalid": 0,
+    "dt_min": 0.04999999999999982,
+    "monotonic": true,
+    "t_last": 4.0,
+    "complete": true
+   }
   }
  },
- "peak": 0.0419352087028036,
+ "peak": 0.0407991130158581,
  "pass_sustained": true,
  "pass_peak": true,
  "provenance": {
-  "git": "e3b05f877123f2f0f6736c6d4af804fc682c61b9",
-  "script_dirty": false,
-  "script_sha256": "f6580ee1300fdd0024b8f55ef5c960061c3d8e445805cd2549f7b0439730e1ce",
+  "git": "3b41de29d4f047f81781146531e0b02e0c093a8b",
+  "script_dirty": true,
+  "script_sha256": "26b3a6a8bb07d8b6ebde9003f6b3eadd35e0d6d63d3344f8edbe739b03ee83bb",
   "case_feb": "55e375c65a2e599ae9bb9eda8c572490e8bb765bf54ea7d854528168fbbd6b0e",
   "case_xplt": "fdca78724c8f694595c35f402aa32ac24bca2b65843975a4c5bc5878ad3d8b52"
  }

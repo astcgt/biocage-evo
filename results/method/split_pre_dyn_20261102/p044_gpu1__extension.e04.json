@@ -1,0 +1,13 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split2/p044_gpu1/w_extension",
+ "windows": {
+  "extension": "missing"
+ },
+ "provenance": {
+  "git": "3b41de29d4f047f81781146531e0b02e0c093a8b",
+  "script_dirty": true,
+  "script_sha256": "26b3a6a8bb07d8b6ebde9003f6b3eadd35e0d6d63d3344f8edbe739b03ee83bb",
+  "case_feb": "4f4d0685bc6698708cfac87c4ca91c408e37b5e02659c59e2e07e36338c677b8",
+  "case_xplt": "eca9110d9383a55f3c3c86dfa8cc03fc04bacd5b4509b946d8f8984af303c679"
+ }
+}

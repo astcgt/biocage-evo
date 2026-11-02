@@ -1,0 +1,14 @@
+{
+ "id": "F-0012",
+ "round": 2,
+ "target": "docs/ISSUES.md I-001 / I-002 status; human_study/al_v2/physio_fix reruns (old repository); results/method/fl_*.json",
+ "severity": "minor",
+ "claim": "I-001 is resolved by the load-curve fix, measured on the corrected reruns. The twist on the glued faces in flexion is now at most 1.1 N mm (top) and 0.2 N mm (bottom), and in extension at most 0.4 / 0.1 N mm, for p062, p063 and p014. Before the fix it was ~170 N mm (ISSUES.md). The applied C3 load at the flexion peak is now a pure moment: My 1499.7 N mm with Mx -0.66 and Mz -0.41 N mm (before the fix: Rx 299 / Rz 166 N mm), and the coupled axial rotation is -4.9e-6 rad. The cage-face mesh mirrors within 0.0005 mm (median; max 0.201 mm = one voxel). Three loose ends remain. (1) Nobody re-measured this: ISSUES.md still says 'remaining mesh asymmetry small' without a number, and e02 has not been re-run on the corrected cases (results/method holds only pre-fix fl_*.json). (2) The p014 rerun stopped at t 4.95, inside extension (summary.json completed_time 4.95), so p014 has no LB / AR data; this is recorded nowhere. (3) Axial rotation is now the dominant twist case: about 1.1 N m of the 1.5 N m applied moment passes through each glued face (p062 AR max |Mz| top 1121-1128, bottom 1099-1105 N mm). M3 (friction limit with twist) will therefore be largest in axial rotation, the direction that had no valid data before.",
+ "evidence": "work/agents/redteam/r0002_i001.py output (work/agents/redteam/r0002_i001_result.json): p062_gpu2 flexion max|Mz| top 1.1 bot 0.2, extension 0.4 / 0.1, LB 25.8-26.6 / 91.0-91.1, AR 1121-1128 / 1099-1105 N mm; p063_gpu3 flexion 1.1 / 0.2, extension 0.4 / 0.1; p014_gpu1 flexion 1.1 / 0.1, extension 0.4 / 0.1; mirror gap median 0.0005 max 0.2010 mm. physio_fix/p062_gpu2/C3pot.txt line 588 (t 4: thz -4.95e-6, Mx -0.656, My 1499.74, Mz -0.411) and line 668 (t 5: Mx -0.660, My -1499.36, Mz -0.484). physio_fix/p014_gpu1/summary.json completed_time 4.95. docs/ISSUES.md I-001 row.",
+ "how_to_reproduce": "python -I work/agents/redteam/r0002_i001.py p062_gpu2 p063_gpu3 p014_gpu1",
+ "fix_options": [
+  {"option": "Close I-001 with these numbers in ISSUES.md; re-run e02 (after F-0011) on physio_fix cases and replace the invalid table in METHODS_COMPARISON.md", "cost": "~1 h", "risk": "low"},
+  {"option": "Find out why p014 stopped at t 4.95 and rerun it, or record it as failed in the old repository's log", "cost": "~1 h + run time", "risk": "low"}
+ ],
+ "summary_zh": "I-001（cage 黏合面在前屈與後伸時出現扭轉）已用修正後重跑的結果量化確認解決：前屈時扭轉最多 1.1 牛頓毫米，後伸時最多 0.4 牛頓毫米；修正前大約是 170 牛頓毫米。前屈最大時，上方椎骨承受的就是單純的前屈力矩（1499.7 牛頓毫米），其他方向的力矩小於 1 牛頓毫米。尚未處理的部分有三點：（一）問題清單還沒有寫上這些數字，摩擦需求程式（e02）也還沒有用修正後的結果重算；（二）p014 這個設計的重跑在後伸途中（時間 4.95）就停止了，沒有側彎和旋轉的資料，而且沒有任何地方記錄這件事；（三）現在扭轉最大的情況是軸向旋轉：施加的 1.5 牛頓米旋轉力矩中，大約 1.1 牛頓米經過 cage 的黏合面，所以旋轉方向會是最難固定的方向。"
+}

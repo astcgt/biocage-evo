@@ -15,7 +15,7 @@ usage: python ops/activity_keepalive.py
 import os, glob, time, subprocess, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OLD_QUEUE = '/raid/jupyter-alz.ee09/projects/claude-work/biocage stimulation test 1/human_study/queue'
+OLD_QUEUE = '/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/queue'
 LOG = os.path.join(ROOT, 'work/agents/keepalive.log')
 INTERVAL = 600
 UID = str(os.getuid())
