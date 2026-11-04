@@ -5,7 +5,8 @@ Each ended window dir w_<name> is a self-contained case (single-window physio_sc
 Per design and window the split result replaces the earlier one when it reached the target moment (or when there was none).
 Compression rule (user, 2026-10-31): sustained after insertion <= 15 %, peak during each motion <= 25 %, 99th percentile.
 2026-11-02: every design gets 'class' / 'reason' (PASS, DESIGN/compression-*, [觀測]/amplitude, [觀測]/integrity,
-[多元]/computability, DECISION/T05-lowerbound) -> verdict_classes_merged.json; windows without a valid logged state are
+[多元]/computability, DESIGN/compression-sustained-lowerbound; 2026-11-04 after the tied screening: DESIGN/dislocation-friction,
+DESIGN/interface-shear-provisional, DESIGN/radial-mix-excluded, [多元]/friction-computability, [觀測]/friction-window, [觀測]/friction-not-run) -> verdict_classes_merged.json; windows without a valid logged state are
 rejected (window_check from e04); old folder names in result files are normalised.
 usage: python ops/collect_split.py [workers]   (incremental: windows already processed are skipped)
 """
@@ -81,12 +82,25 @@ for f in glob.glob(os.path.join(E, 'results/method/e05/*.json')) + glob.glob(os.
 # p092=p117, p093=p145, p100=p142; only the h28 amplitudes differ). Their window and insertion evidence is pooled, so every
 # id of a group is judged on the union; the record says which ids it shares evidence with.
 def signature(case_json):
-    p = dict(json.load(open(case_json)).get('params', {})); p.pop('physio_rot_rad', None)
-    return json.dumps(p, sort_keys=True)
-sig = {}
-for f in glob.glob(R + 'physio_rot_split*/p*/case.json'):
-    if not valid(f): continue
-    q = pid(f); sig.setdefault(q, signature(f))
+    # 2026-11-04: only the parameters that define the design, so identical designs are found across sets (the full parameter
+    # dict differs between solver classes, and designs without a split run were never compared: p077 = p139, p143 = p092 = p117,
+    # p086 = p100 = p142, p051 = p075, p095 = p128 were missed)
+    p = json.load(open(case_json)).get('params', {})
+    return json.dumps([os.path.basename(p.get('cage_npz', '')), *(p.get(k) for k in ('E_hard', 'E_soft', 'theta', 'sig_hard', 'sig_soft', 'nu_soft', 'cage_mat'))], sort_keys=True)
+sig, feat = {}, {}
+for f in sorted(glob.glob(R + '*/p*/case.json')):
+    if not valid(f) or 'degr' in f: continue        # degr* rescale E_soft on purpose
+    q = pid(f)
+    if q: sig.setdefault(q, signature(f))
+# design features for the design-level rules (2026-11-04): from any valid al_v2 case.json (the tied evidence of some designs,
+# e.g. p050, comes from sets other than the split runs); the cage block, else the mesh name cage_<A|B>_<grad>_<fab>_d<d>.npz
+for f in sorted(glob.glob(R + '*/p*/case.json')):
+    q = pid(f)
+    if not q or q in feat or not valid(f): continue
+    j = json.load(open(f)); cg = j.get('cage') or {}
+    mm = re.match(r'cage_([AB])_([a-z]+)_([a-z]+)_d', os.path.basename((j.get('params') or {}).get('cage_npz', '')))
+    if cg.get('gradient') or mm:
+        feat[q] = dict(design=cg.get('design') or mm.group(1), gradient=cg.get('gradient') or mm.group(2), fabrication=cg.get('fabrication') or mm.group(3))
 groups = {}
 for q, s in sig.items(): groups.setdefault(s, []).append(q)
 dup = {q: sorted(g) for g in groups.values() if len(g) > 1 for q in g}
@@ -123,6 +137,10 @@ lastj = {}
 for t_, J_, cz_, Es_, fam_, run_ in (json.load(open(LASTJ)) if os.path.exists(LASTJ) else []):
     q = pid('/' + run_)
     if q and (q not in lastj or t_ > lastj[q][0]): lastj[q] = (t_, cz_)
+FRICV = os.path.join(E, 'results/method/fric/verdicts.json'); fricv = {k: v for k, v in (json.load(open(FRICV)) if os.path.exists(FRICV) else {}).items() if not k.startswith('_')}
+SHEARV = os.path.join(E, 'results/method/fric/e07_verdicts.json'); _sh = json.load(open(SHEARV)) if os.path.exists(SHEARV) else {}
+shearv, shear_meta = _sh.get('designs', {}), _sh.get('meta', {})
+EXCLUDED = {('radial', 'mix'): 'PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)'}
 lists = {'both': [], 'comp_pass_slip_open': [], 'open': [], 'fail': []}; classes = {}
 for p in sorted(set(best) | set(comp) | set(lastj)):
     c = comp.setdefault(p, {'sustained': None, 'windows': {}}); b = best.get(p, {})
@@ -167,6 +185,50 @@ for p in sorted(set(best) | set(comp) | set(lastj)):
             elif miss: c['class'] = '[觀測]/integrity'; c['reason'] = f'window(s) {miss} missing' + (f'; rejected: {rejected[p]}' if p in rejected else '')
             else: c['class'] = '[觀測]/amplitude'; c['reason'] = f'window(s) {low} below the target moment (R02: never a design verdict)'
     if p in dup: c['duplicates'] = [q for q in dup[p] if q != p]
+    # ---- design-level gates after the tied screening (2026-11-04). Every gate's result is recorded in c['gates'] (evidence is
+    # kept even when an earlier gate already decided); the class is the FIRST cause: tied screening (compression, computability)
+    # -> radial-mix exclusion (PI 2026-11-04, moved first 2026-11-05) -> gate 4 dislocation under friction (PI 2026-11-03)
+    # -> interface shear 3 MPa provisional (PI 2026-11-04). A tied PASS that a friction gate could not evaluate becomes open (no pass by absence).
+    fq = feat.get(p, {}); g = c['gates'] = {}
+    g['tied_screening'] = dict(verdict=c['verdict'], cls=c['class'])
+    # PI 2026-11-03 (T26): identical designs are judged on the union of their evidence. A gate fails if any id of the group fails,
+    # else passes if any id passes (it completed both windows); otherwise the design's own record stands.
+    def pooled(table):
+        grp = [q for q in dup.get(p, [p]) if q in table]
+        if not grp: return None
+        bad = [q for q in grp if table[q]['verdict'] == 'fail']
+        if bad: return dict(table[bad[0]], verdict='fail', reasons=[f'{q}: {x}' for q in bad for x in table[q].get('reasons', [])], pooled=grp)
+        good = [q for q in grp if table[q]['verdict'] == 'pass']
+        if good: return dict(table[good[0]], pooled=grp)
+        return dict(table.get(p) or table[grp[0]], pooled=grp)
+    fv = pooled(fricv); shv = pooled(shearv)
+    g['dislocation_friction'] = dict(verdict=fv['verdict'], reasons=fv.get('reasons', []), open_reason=fv.get('open_reason')) if fv else dict(verdict='not run')
+    g['interface_shear'] = (dict(verdict=shv['verdict'], reasons=shv.get('reasons', []), open_reason=shv.get('open_reason'), threshold_MPa=shear_meta.get('threshold_MPa'),
+                                 provisional=shear_meta.get('provisional'), shear_p99_at_rom={w: x['shear_p99_at_rom'] for w, x in shv.get('windows', {}).items()})
+                            if shv else dict(verdict='not run'))
+    exc = EXCLUDED.get((fq.get('gradient'), fq.get('fabrication')))
+    g['design_rule'] = dict(verdict='excluded', reason=exc, gradient=fq.get('gradient'), fabrication=fq.get('fabrication')) if exc else dict(verdict='pass', gradient=fq.get('gradient'), fabrication=fq.get('fabrication'))
+    def move(to, cls, reason):
+        for k in ('both', 'comp_pass_slip_open', 'open', 'fail'):
+            if p in lists[k]: lists[k].remove(p)
+        lists[to].append(p); c['verdict'] = 'fail' if to == 'fail' else ('pass' if to == 'both' else 'open'); c['class'] = cls; c['reason'] = reason
+    if c['verdict'] != 'fail':
+        # PI 2026-11-05 (item 2): the design-level exclusion is applied FIRST, so an excluded concept is not counted as evidence
+        # in the dislocation / shear statistics (before 2026-11-05 it was the last cause: 11 radial-mix designs sat under
+        # dislocation-friction and 2 under interface-shear). Gate evidence is still recorded in c['gates'] for every design.
+        if exc:
+            move('fail', 'DESIGN/radial-mix-excluded', exc)
+        elif fv and fv['verdict'] == 'fail':
+            move('fail', 'DESIGN/dislocation-friction', 'real-friction run (gate 4) exceeds the dislocation limit: ' + '; '.join(fv['reasons']))
+        elif shv and shv['verdict'] == 'fail':
+            move('fail', 'DESIGN/interface-shear-provisional', f"interface shear above {shear_meta.get('threshold_MPa')} MPa (provisional, pending bond-strength test): " + '; '.join(shv['reasons']))
+        elif c['verdict'] == 'pass' and p in lists['both']:
+            if not fv:
+                move('open', '[觀測]/friction-not-run', 'tied screening passed; no frictional run (gate 4 / interface shear not evaluated)')
+            elif fv['verdict'] == 'open':
+                move('open', '[多元]/friction-computability' if fv.get('computability') else '[觀測]/friction-window', 'tied screening passed; gate 4: ' + (fv.get('open_reason') or ''))
+            elif not shv or shv['verdict'] == 'open':
+                move('open', '[觀測]/friction-window', 'tied screening passed, gate 4 passed; interface shear: ' + ((shv or {}).get('open_reason') or 'not evaluated'))
     classes.setdefault(c['class'], []).append(p)
 json.dump(best, open(os.path.join(OUT, 'best_by_design_merged.json'), 'w'), indent=1)
 json.dump(comp, open(os.path.join(OUT, 'comp_by_design_merged.json'), 'w'), indent=1)

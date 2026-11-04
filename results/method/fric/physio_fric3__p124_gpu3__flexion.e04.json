@@ -1,0 +1,88 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric3/p124_gpu3/w_flexion",
+ "windows": {
+  "flexion": {
+   "t": 3.610759955430514,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.03097883443192755,
+   "net_push_N": 10.223780583805762,
+   "net_twist_Nmm": 0.5460816174059545,
+   "N_total": 332.59993688184665,
+   "one_face_slip_bound_mm": 0.3495090938017951,
+   "cage_translation_tied_mm": [
+    0.15529107105987552,
+    0.0007965440491378255,
+    0.006553601833326862
+   ],
+   "eval": {
+    "t_a": 3.60412072,
+    "M_a": -1453.68090447,
+    "t_b": 3.6274652,
+    "M_b": -1616.54532019,
+    "frac": 0.28440279802822444,
+    "coarse": false,
+    "invalid": [
+     [
+      3.54090909,
+      0.04090908999999998,
+      3881.46822459,
+      "dyn",
+      4815.5,
+      1.44
+     ],
+     [
+      3.57047111,
+      0.02956202000000019,
+      -1148.48331686,
+      "dyn",
+      613.2,
+      125.61
+     ],
+     [
+      3.65008429,
+      0.022619090000000064,
+      -1820.48573054,
+      "dyn",
+      108.3,
+      27.8
+     ],
+     [
+      3.67064709,
+      0.020562799999999992,
+      -2455.35826263,
+      "dyn",
+      425.0,
+      0.52
+     ],
+     [
+      3.72898218,
+      0.017494810000000083,
+      -3114.08575568,
+      "dyn",
+      462.7,
+      0.83
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 61,
+    "n_invalid": 5,
+    "n_dyn": 5,
+    "dt_min": 0.00157980000000002,
+    "monotonic": true,
+    "rb_res_max": 17.62884407912809,
+    "rb_fres_max": 4.148888528506651,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "9091b3ef34637b1c9ead58231b7588941cd89390",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "8766833c1214d9c3c2ed161ad2a9209166d16ee756b280c7bdcef02d03509cad",
+  "case_xplt": "b9b3b6b956cd03d509cf65de753e011fe09b7fb15d0018bcb23d13e085a6674a"
+ }
+}

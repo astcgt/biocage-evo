@@ -17,7 +17,8 @@ OUT = os.path.join(E, 'results/method/numconv'); os.makedirs(OUT, exist_ok=True)
 MU_ABS = 0.005                                   # 提案 (PI to confirm)
 WIN = ('flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right')
 SETS = {'numconv_dt': ('NUM-03 time step x0.5', 0.02), 'numconv_pen05': ('NUM-05 penalty x0.5', 0.05), 'numconv_pen20': ('NUM-05 penalty x2', 0.05),
-        'numconv_hz01': ('NUM-01 cage HZ 0.1 mm (penalty 5)', 0.05), 'physio_fric2': ('PHY-05 real friction, retargeted', None)}
+        'numconv_hz01': ('NUM-01 cage HZ 0.1 mm (penalty 5)', 0.05), 'physio_fric2': ('PHY-05 real friction, retargeted', None),
+        'pilot_tie3': ('pilot 2026-11-03: fixes 4+2+3 (tie on converged state, geometric retries, dt windows, follower in release)', 0.02)}
 ended = lambda log: os.path.exists(log) and any(k in open(log, errors='ignore').read()[-4000:] for k in ('N O R M A L', 'E R R O R'))
 design = sys.argv[1] if len(sys.argv) > 1 else 'p062'
 

@@ -40,54 +40,171 @@
    }
   },
   "source": "physio_rot_dyn/p132_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p132: flexion@ROM shear p99 13.7 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.28,
+     "flexion": 13.691
+    }
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p086": {
   "sustained": 0.0366368790912782,
   "windows": {
    "flexion": {
-    "peak": 0.11869266596223961,
+    "peak": 0.11477545075543012,
     "reached": true,
-    "t_eval": 3.95759621,
-    "source": "physio_rot_dyn/p086_gpu1"
+    "t_eval": 3.9344893802133836,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.019746039999999798,
+     "monotonic": true,
+     "rb_res_max": 19.340899402833784,
+     "rb_fres_max": 4.82864340354188,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p100_gpu3/w_flexion"
    },
    "extension": {
-    "peak": 0.12561097994481313,
+    "peak": 0.12612960248685506,
     "reached": true,
-    "t_eval": 4.9749743,
-    "source": "physio_rot_dyn/p086_gpu1"
+    "t_eval": 3.971042384865314,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.004381770000000174,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p100_gpu3/w_extension"
    },
    "LB_right": {
-    "peak": 0.11315511164806265,
+    "peak": 0.10605829517849523,
     "reached": true,
-    "t_eval": 5.98750474,
-    "source": "physio_rot_dyn/p086_gpu1"
+    "t_eval": 3.9461458177061295,
+    "window_check": {
+     "n_rows": 14,
+     "n_invalid": 6,
+     "n_dyn": 6,
+     "dt_min": 0.016899519999999946,
+     "monotonic": true,
+     "rb_res_max": 18.172424967834573,
+     "rb_fres_max": 2.17032773154682,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p100_gpu3/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.11242462969666726,
+    "peak": 0.10616765895433135,
     "reached": true,
-    "t_eval": 6.98385651,
-    "source": "physio_rot_dyn/p086_gpu1"
+    "t_eval": 3.9909107916242355,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p100_gpu3/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.0924384517963305,
+    "peak": 0.09208607430751638,
     "reached": true,
-    "t_eval": 7.99049895,
-    "source": "physio_rot_dyn/p086_gpu1"
+    "t_eval": 3.9428676903812248,
+    "window_check": {
+     "n_rows": 17,
+     "n_invalid": 0,
+     "dt_min": 0.007737249999999918,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p100_gpu3/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.09201852724397674,
+    "peak": 0.09201783464945101,
     "reached": true,
-    "t_eval": 8.98751499,
-    "source": "physio_rot_dyn/p086_gpu1"
+    "t_eval": 3.9856979717337597,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.02634705000000004,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p100_gpu3/w_AR_right"
    }
   },
-  "source": "physio_rot_dyn/p086_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "source": "physio_rot_split3/p100_gpu3/w_LB_left",
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p142: extension@ROM u_h 0.57 post 0.57",
+  "duplicates": [
+   "p100",
+   "p142"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p142: extension@ROM u_h 0.57 post 0.57"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.29,
+     "flexion": 2.73
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p005": {
   "sustained": 0.3586366420693121,
@@ -102,7 +219,24 @@
   "source": "physio_rot/p005_gpu5",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.359 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.359 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p113": {
   "sustained": 0.01053511969284081,
@@ -196,9 +330,39 @@
    }
   },
   "source": "physio_rot_split4/p113_gpu2/w_AR_left",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p113: flexion@ROM shear p99 10.7 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.605,
+     "flexion": 10.704
+    }
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p098": {
   "sustained": 0.4930187570656839,
@@ -206,7 +370,24 @@
   "source": "physio_rot/p098",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.493 > 0.15"
+  "reason": "sustained 0.493 > 0.15",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p093": {
   "sustained": 0.03083981205555337,
@@ -309,12 +490,42 @@
    }
   },
   "source": "physio_rot_split4/p093_gpu2/w_AR_right",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": "",
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p093: extension@ROM u_h 0.61 post 0.61; p145: extension@ROM u_h 0.57 post 0.57",
   "duplicates": [
    "p145"
-  ]
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p093: extension@ROM u_h 0.61 post 0.61",
+     "p145: extension@ROM u_h 0.57 post 0.57"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.341,
+     "flexion": 1.706
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p080": {
   "sustained": 0.48752895627866666,
@@ -322,7 +533,24 @@
   "source": "physio_rot/p080_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.488 > 0.15"
+  "reason": "sustained 0.488 > 0.15",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p083": {
   "sustained": 0.043682715652964735,
@@ -413,9 +641,28 @@
    }
   },
   "source": "physio_rot_split2/p083_gpu1/w_LB_right",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p029": {
   "sustained": 0.17791230538893896,
@@ -460,7 +707,24 @@
   "source": "physio_rot_dyn/p029_gpu5",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.178 > 0.15 peak > 0.25 in ['flexion', 'LB_right', 'LB_left']"
+  "reason": "sustained 0.178 > 0.15 peak > 0.25 in ['flexion', 'LB_right', 'LB_left']",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p060": {
   "sustained": 0.047650450091318255,
@@ -569,54 +833,180 @@
    }
   },
   "source": "physio_rot_split2/p060_gpu3/w_AR_right",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p060: extension@ROM u_h 0.54 post 0.54; p072: extension@ROM u_h 0.55 post 0.55",
+  "duplicates": [
+   "p072"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p060: extension@ROM u_h 0.54 post 0.54",
+     "p072: extension@ROM u_h 0.55 post 0.55"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.461,
+     "flexion": 2.396
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p075": {
-  "sustained": 0.04598830824759839,
+  "sustained": 0.04598382166198212,
   "windows": {
    "flexion": {
-    "peak": 0.16165332140294222,
+    "peak": 0.1575775514960482,
     "reached": true,
-    "t_eval": 3.95,
-    "source": "physio_rot_r2/p075_gpu3"
+    "t_eval": 3.9347706867312238,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.02144952999999994,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p051_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.161378063691006,
+    "peak": 0.15264415952872176,
     "reached": true,
-    "t_eval": 4.92131665,
-    "source": "physio_rot_r2/p075_gpu3"
+    "t_eval": 3.9313248190280543,
+    "window_check": {
+     "n_rows": 20,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.012025369999999924,
+     "monotonic": true,
+     "rb_res_max": 16.720752534769904,
+     "rb_fres_max": 0.41235454093516244,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p051_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.1542597829477115,
+    "peak": 0.14671158945839077,
     "reached": true,
-    "t_eval": 5.97412999,
-    "source": "physio_rot_r2/p075_gpu3"
+    "t_eval": 3.9441245560875156,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.026732560000000127,
+     "monotonic": true,
+     "rb_res_max": 13.844524556800932,
+     "rb_fres_max": 1.7211724879476646,
+     "t_last": 3.99983074,
+     "complete": false
+    },
+    "source": "physio_rot_split4/p051_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.15155296508474245,
+    "peak": 0.14652374515451988,
     "reached": true,
-    "t_eval": 6.96288586,
-    "source": "physio_rot_r2/p075_gpu3"
+    "t_eval": 3.9427976690760453,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.01872120999999982,
+     "monotonic": true,
+     "rb_res_max": 10.740449902778028,
+     "rb_fres_max": 1.4859546286927077,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p051_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.13962598346734306,
+    "peak": 0.13780884339864607,
     "reached": true,
-    "t_eval": 7.97532752,
-    "source": "physio_rot_r2/p075_gpu3"
+    "t_eval": 3.9654339928326148,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.002584090000000039,
+     "monotonic": true,
+     "rb_res_max": 9.598812003396977,
+     "rb_fres_max": 0.687837575867403,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p051_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.14681180375631184,
+    "peak": 0.13733947625506798,
     "reached": true,
-    "t_eval": 8.99318854,
-    "source": "physio_rot_r2/p075_gpu3"
+    "t_eval": 3.9655590947960198,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 0,
+     "dt_min": 0.010673419999999822,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split4/p051_gpu1/w_AR_right"
    }
   },
-  "source": "physio_rot_r2/p075_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "source": "physio_rot_split4/p051_gpu1/w_extension",
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p051: extension@ROM u_h 0.61 post 0.61; p075: extension@ROM u_h 0.60 post 0.60",
+  "duplicates": [
+   "p051"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p051: extension@ROM u_h 0.61 post 0.61",
+     "p075: extension@ROM u_h 0.60 post 0.60"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.506,
+     "flexion": 2.004
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p017": {
   "sustained": 0.23741591083218688,
@@ -631,7 +1021,24 @@
   "source": "physio_rot/p017_gpu2",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.237 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.237 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p001": {
   "sustained": 0.1290026383984991,
@@ -676,7 +1083,24 @@
   "source": "physio_rot_dyn/p001_gpu5",
   "verdict": "fail",
   "class": "DESIGN/compression-peak-lowerbound",
-  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left'] (lower bound: window(s) ['LB_right', 'LB_left'] did not reach the target)"
+  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left'] (lower bound: window(s) ['LB_right', 'LB_left'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-peak-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p025": {
   "sustained": 0.2943478566043612,
@@ -691,7 +1115,24 @@
   "source": "physio_rot/p025_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.294 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.294 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p112": {
   "sustained": 0.011757760343722735,
@@ -788,9 +1229,39 @@
    }
   },
   "source": "physio_rot_split3/p112_gpu1/w_flexion",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p112: flexion@ROM shear p99 11.7 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.405,
+     "flexion": 11.737
+    }
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p120": {
   "sustained": 0.03317184230072565,
@@ -833,9 +1304,28 @@
    }
   },
   "source": "physio_rot_dyn/p120_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p100": {
   "sustained": 0.0366368790912782,
@@ -932,12 +1422,42 @@
    }
   },
   "source": "physio_rot_split3/p100_gpu3/w_LB_left",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": "",
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p142: extension@ROM u_h 0.57 post 0.57",
   "duplicates": [
+   "p086",
    "p142"
-  ]
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p142: extension@ROM u_h 0.57 post 0.57"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.29,
+     "flexion": 2.73
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p036": {
   "sustained": 0.024066425091979093,
@@ -1034,9 +1554,39 @@
    }
   },
   "source": "physio_rot_split4/p036_gpu2/w_AR_left",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p036: extension@ROM shear p99 4.4 MPa > 3.0; p036: flexion@ROM shear p99 14.8 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p036: extension@ROM shear p99 4.4 MPa > 3.0",
+     "p036: flexion@ROM shear p99 14.8 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 4.439,
+     "flexion": 14.762
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p121": {
   "sustained": 0.042189333008314706,
@@ -1079,9 +1629,28 @@
    }
   },
   "source": "physio_rot_dyn/p121_gpu4",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.023 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.023 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p145": {
   "sustained": 0.03083981205555337,
@@ -1184,12 +1753,42 @@
    }
   },
   "source": "physio_rot_split4/p093_gpu2/w_AR_right",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": "",
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p093: extension@ROM u_h 0.61 post 0.61; p145: extension@ROM u_h 0.57 post 0.57",
   "duplicates": [
    "p093"
-  ]
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p093: extension@ROM u_h 0.61 post 0.61",
+     "p145: extension@ROM u_h 0.57 post 0.57"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.341,
+     "flexion": 1.706
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p015": {
   "sustained": 0.07451870764570172,
@@ -1297,7 +1896,24 @@
    "AR_right"
   ],
   "class": "DESIGN/compression-peak",
-  "reason": " peak > 0.25 in ['extension']"
+  "reason": " peak > 0.25 in ['extension']",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-peak"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p039": {
   "sustained": 0.07680704944103003,
@@ -1340,9 +1956,28 @@
    }
   },
   "source": "physio_rot_dyn2/p039_gpu2",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 2.233 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 2.233 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p124": {
   "sustained": 0.018186700277487918,
@@ -1385,9 +2020,39 @@
    }
   },
   "source": "physio_rot/p124_gpu4",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p124: extension@ROM shear p99 4.9 MPa > 3.0; p124: flexion@ROM shear p99 13.5 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p124: extension@ROM shear p99 4.9 MPa > 3.0",
+     "p124: flexion@ROM shear p99 13.5 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 4.909,
+     "flexion": 13.472
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p044": {
   "sustained": 0.3603869375359104,
@@ -1395,7 +2060,25 @@
   "source": "physio_rot_split2/p044_gpu1/w_extension",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.360 > 0.15"
+  "reason": "sustained 0.360 > 0.15",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p129": {
   "sustained": 0.040096791492860565,
@@ -1489,9 +2172,28 @@
    }
   },
   "source": "physio_rot_split2/p129_gpu2/w_flexion",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p135": {
   "sustained": 0.034464471412447024,
@@ -1534,9 +2236,41 @@
    }
   },
   "source": "physio_rot/p135_gpu4",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p135: extension@ROM u_h 0.50 post 0.50",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p135: extension@ROM u_h 0.50 post 0.50"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p135: extension@ROM shear p99 3.6 MPa > 3.0",
+     "p135: flexion@ROM shear p99 10.5 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 3.62,
+     "flexion": 10.537
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p144": {
   "sustained": 0.17289915547640858,
@@ -1581,7 +2315,24 @@
   "source": "physio_rot_dyn/p144_gpu3",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.173 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']"
+  "reason": "sustained 0.173 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p008": {
   "sustained": 0.35980116281692925,
@@ -1596,7 +2347,25 @@
   "source": "physio_rot/p008_gpu3",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.360 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.360 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p130": {
   "sustained": 0.014406553269853961,
@@ -1690,9 +2459,29 @@
    }
   },
   "source": "physio_rot_split2/p130_gpu2/w_flexion",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p115": {
   "sustained": 0.050815110190585676,
@@ -1735,16 +2524,52 @@
    }
   },
   "source": "physio_rot_dyn/p115_gpu4",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p021": {
   "sustained": null,
   "windows": {},
   "verdict": "fail",
   "class": "DESIGN/compression-sustained-lowerbound",
-  "reason": "insertion run stopped at t 3.233 under the follower load, soft z-compression 33 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
+  "reason": "insertion run stopped at t 3.233 under the follower load, soft z-compression 33 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p149": {
   "sustained": 0.1394654892085261,
@@ -1789,7 +2614,24 @@
   "source": "physio_rot_dyn2/p149_gpu2",
   "verdict": "fail",
   "class": "DESIGN/compression-peak",
-  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']"
+  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-peak"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p122": {
   "sustained": 0.01165629126276625,
@@ -1832,9 +2674,39 @@
    }
   },
   "source": "physio_rot/p122_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p122: extension@ROM shear p99 6.3 MPa > 3.0; p122: flexion@ROM shear p99 11.0 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p122: extension@ROM shear p99 6.3 MPa > 3.0",
+     "p122: flexion@ROM shear p99 11.0 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 6.287,
+     "flexion": 10.976
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p142": {
   "sustained": 0.0366368790912782,
@@ -1931,12 +2803,42 @@
    }
   },
   "source": "physio_rot_split3/p100_gpu3/w_LB_left",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": "",
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p142: extension@ROM u_h 0.57 post 0.57",
   "duplicates": [
+   "p086",
    "p100"
-  ]
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p142: extension@ROM u_h 0.57 post 0.57"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.29,
+     "flexion": 2.73
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p041": {
   "sustained": 0.18476310904302748,
@@ -2041,7 +2943,24 @@
    "flexion"
   ],
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.185 > 0.15 peak > 0.25 in ['AR_left', 'AR_right'] (lower bound: window(s) ['AR_left', 'AR_right'] did not reach the target)"
+  "reason": "sustained 0.185 > 0.15 peak > 0.25 in ['AR_left', 'AR_right'] (lower bound: window(s) ['AR_left', 'AR_right'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p109": {
   "sustained": 0.019285240764072804,
@@ -2084,9 +3003,29 @@
    }
   },
   "source": "physio_rot_r2/p109_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.339 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p013": {
   "sustained": 0.16020840959180335,
@@ -2131,7 +3070,24 @@
   "source": "physio_rot_dyn/p013_gpu3",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.160 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] did not reach the target)"
+  "reason": "sustained 0.160 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p085": {
   "sustained": 0.22026795033305713,
@@ -2176,7 +3132,24 @@
   "source": "physio_rot_dyn/p085_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.220 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['LB_right', 'LB_left', 'AR_left', 'AR_right'] did not reach the target)"
+  "reason": "sustained 0.220 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['LB_right', 'LB_left', 'AR_left', 'AR_right'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p071": {
   "sustained": 0.013781674215317313,
@@ -2219,9 +3192,29 @@
    }
   },
   "source": "physio_rot_dyn/p071_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.061 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p020": {
   "sustained": 0.34178192387765793,
@@ -2229,7 +3222,25 @@
   "source": "physio_rot/p020_gpu3",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.342 > 0.15"
+  "reason": "sustained 0.342 > 0.15",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p147": {
   "sustained": 0.14387159146085954,
@@ -2274,7 +3285,24 @@
   "source": "physio_rot_dyn2/p147_gpu2",
   "verdict": "fail",
   "class": "DESIGN/compression-peak",
-  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']"
+  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-peak"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p094": {
   "sustained": 0.012533264063410958,
@@ -2317,9 +3345,39 @@
    }
   },
   "source": "physio_rot_dyn/p094_gpu2",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p094: extension@ROM shear p99 6.1 MPa > 3.0; p094: flexion@ROM shear p99 13.4 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p094: extension@ROM shear p99 6.1 MPa > 3.0",
+     "p094: flexion@ROM shear p99 13.4 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 6.115,
+     "flexion": 13.353
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p116": {
   "sustained": 0.017578382797991465,
@@ -2416,9 +3474,29 @@
    }
   },
   "source": "physio_rot_split2/p116_gpu2/w_extension",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p010": {
   "sustained": 0.28556321621202563,
@@ -2433,7 +3511,24 @@
   "source": "physio_rot/p010_gpu4",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.286 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.286 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "mix"
+   }
+  }
  },
  "p146": {
   "sustained": 0.069266645382791,
@@ -2522,9 +3617,37 @@
    }
   },
   "source": "physio_rot_split2/p146_gpu2/w_flexion",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p146: extension@ROM shear p99 3.2 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "flexion stopped at 1.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)"
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p146: extension@ROM shear p99 3.2 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 3.231
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p108": {
   "sustained": 0.38969755834837133,
@@ -2539,7 +3662,24 @@
   "source": "physio_rot/p108_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.390 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.390 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p131": {
   "sustained": 0.01953449195167904,
@@ -2582,106 +3722,316 @@
    }
   },
   "source": "physio_rot/p131_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p131: extension@ROM shear p99 5.2 MPa > 3.0; p131: flexion@ROM shear p99 15.7 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p131: extension@ROM shear p99 5.2 MPa > 3.0",
+     "p131: flexion@ROM shear p99 15.7 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 5.184,
+     "flexion": 15.745
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p128": {
-  "sustained": 0.01862015860083659,
+  "sustained": 0.018527021559831575,
   "windows": {
    "flexion": {
-    "peak": 0.02533141037906916,
+    "peak": 0.024016265333612948,
     "reached": true,
-    "t_eval": 3.97971305,
-    "source": "physio_rot_dyn/p128_gpu1"
+    "t_eval": 3.9327656197209637,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 0.062092648788170564,
+     "rb_fres_max": 0.01852660924223438,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split2/p095_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.03773224716638137,
+    "peak": 0.03657777261262114,
     "reached": true,
-    "t_eval": 5.0,
-    "source": "physio_rot_dyn/p128_gpu1"
+    "t_eval": 3.9819695204073198,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": false,
+     "rb_res_max": 24.292416823359556,
+     "rb_fres_max": 4.8888281354038465,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split2/p095_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.034135069008274906,
+    "peak": 0.03189797996065498,
     "reached": true,
-    "t_eval": 5.9,
-    "source": "physio_rot_dyn/p128_gpu1"
+    "t_eval": 3.8517064371054737,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split2/p095_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.03214803198296165,
+    "peak": 0.03203825133083358,
     "reached": true,
-    "t_eval": 6.85,
-    "source": "physio_rot_dyn/p128_gpu1"
+    "t_eval": 3.8491640442142234,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split2/p095_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.04024859120679323,
+    "peak": 0.03808946242269892,
     "reached": true,
-    "t_eval": 8.0,
-    "source": "physio_rot_dyn/p128_gpu1"
+    "t_eval": 3.959537951381254,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split2/p095_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.04011433617025597,
+    "peak": 0.038069595108260114,
     "reached": true,
-    "t_eval": 8.99568711,
-    "source": "physio_rot_dyn/p128_gpu1"
+    "t_eval": 3.9580589524021095,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.005518100000000192,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split2/p095_gpu1/w_AR_right"
    }
   },
-  "source": "physio_rot_dyn/p128_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "source": "physio_rot_split2/p095_gpu1/w_LB_right",
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "duplicates": [
+   "p095"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.069 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p053": {
   "sustained": null,
   "windows": {},
   "verdict": "open",
   "class": "[\u591a\u5143]/computability",
-  "reason": "insertion run stopped at t 2.007 (compression 5 %): not computable in any solve mode"
+  "reason": "insertion run stopped at t 2.007 (compression 5 %): not computable in any solve mode",
+  "gates": {
+   "tied_screening": {
+    "verdict": "open",
+    "cls": "[\u591a\u5143]/computability"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p143": {
   "sustained": 0.03253923533508101,
   "windows": {
    "flexion": {
-    "peak": 0.11860150986748187,
+    "peak": 0.11713115304335915,
     "reached": true,
-    "t_eval": 3.94307914,
-    "source": "physio_rot_dyn2/p143_gpu1"
+    "t_eval": 3.9343270354315134,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 29.054863679556078,
+     "rb_fres_max": 7.220891689932225,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p117_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.1130205460554381,
+    "peak": 0.1107255360086446,
     "reached": true,
-    "t_eval": 4.97924609,
-    "source": "physio_rot_dyn2/p143_gpu1"
+    "t_eval": 3.961153390856133,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.010841820000000002,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p117_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.11293061137025151,
+    "peak": 0.10728025786520373,
     "reached": true,
-    "t_eval": 5.97657847,
-    "source": "physio_rot_dyn2/p143_gpu1"
+    "t_eval": 3.986179971949101,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p117_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.10857158744107867,
+    "peak": 0.10681971222174613,
     "reached": true,
-    "t_eval": 7.0,
-    "source": "physio_rot_dyn2/p143_gpu1"
+    "t_eval": 3.98900607035442,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 0,
+     "dt_min": 0.005405119999999819,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p117_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.10433076733746081,
+    "peak": 0.09632383714629861,
     "reached": true,
-    "t_eval": 7.97212908,
-    "source": "physio_rot_dyn2/p143_gpu1"
+    "t_eval": 3.9869512529726774,
+    "window_check": {
+     "n_rows": 13,
+     "n_invalid": 0,
+     "dt_min": 0.0031324100000000854,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p117_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.10412531767523311,
+    "peak": 0.09651720956175183,
     "reached": true,
-    "t_eval": 8.97650132,
-    "source": "physio_rot_dyn2/p143_gpu1"
+    "t_eval": 3.989234030427019,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 0,
+     "dt_min": 0.03034681000000017,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p117_gpu1/w_AR_right"
    }
   },
-  "source": "physio_rot_dyn2/p143_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "source": "physio_rot_split3/p117_gpu1/w_LB_left",
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p092: extension@ROM u_h 0.52 post 0.52; p117: extension@ROM u_h 0.51 post 0.51; p143: extension@ROM u_h 0.51 post 0.51",
+  "duplicates": [
+   "p092",
+   "p117"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p092: extension@ROM u_h 0.52 post 0.52",
+     "p117: extension@ROM u_h 0.51 post 0.51",
+     "p143: extension@ROM u_h 0.51 post 0.51"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.322,
+     "flexion": 2.291
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p069": {
   "sustained": 0.2150612557003548,
@@ -2726,7 +4076,24 @@
   "source": "physio_rot_dyn/p069_gpu3",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.215 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']"
+  "reason": "sustained 0.215 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p088": {
   "sustained": 0.040200489723199166,
@@ -2812,12 +4179,31 @@
    }
   },
   "source": "physio_rot_split4/p082_gpu1/w_flexion",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": "",
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "duplicates": [
    "p082"
-  ]
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p079": {
   "sustained": 0.008519797690148066,
@@ -2860,9 +4246,39 @@
    }
   },
   "source": "physio_rot_dyn/p079_gpu4",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p079: flexion@ROM shear p99 16.3 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.703,
+     "flexion": 16.345
+    }
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p028": {
   "sustained": 0.20831262054929617,
@@ -2907,47 +4323,81 @@
   "source": "physio_rot_dyn/p028_gpu4",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.208 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['LB_right'] did not reach the target)"
+  "reason": "sustained 0.208 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['LB_right'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "mix"
+   }
+  }
  },
  "p058": {
   "sustained": null,
   "windows": {},
   "verdict": "fail",
   "class": "DESIGN/compression-sustained-lowerbound",
-  "reason": "insertion run stopped at t 3.0 under the follower load, soft z-compression 37 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
+  "reason": "insertion run stopped at t 3.0 under the follower load, soft z-compression 37 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p134": {
-  "sustained": 0.13644144615994844,
+  "sustained": 0.13688503065234123,
   "windows": {
    "flexion": {
-    "peak": 0.289679891911803,
+    "peak": 0.2939449130143126,
     "reached": true,
-    "t_eval": 3.94288761,
-    "source": "physio_rot_dyn/p134_gpu1"
+    "t_eval": 3.95977035,
+    "source": "physio_rot_dyn2/p123_gpu2"
    },
    "extension": {
-    "peak": 0.2129370750145494,
+    "peak": 0.218345929925817,
     "reached": true,
-    "t_eval": 4.90557863,
-    "source": "physio_rot_dyn/p134_gpu1"
+    "t_eval": 4.92770783,
+    "source": "physio_rot_dyn2/p123_gpu2"
    },
    "LB_right": {
-    "peak": 0.2051614595871248,
+    "peak": 0.2120951304056372,
     "reached": true,
-    "t_eval": 5.96087261,
-    "source": "physio_rot_dyn/p134_gpu1"
+    "t_eval": 5.99379772,
+    "source": "physio_rot_dyn2/p123_gpu2"
    },
    "LB_left": {
-    "peak": 0.2098487679244597,
+    "peak": 0.21082173925462977,
     "reached": true,
-    "t_eval": 6.98393404,
-    "source": "physio_rot_dyn/p134_gpu1"
+    "t_eval": 6.98890909,
+    "source": "physio_rot_dyn2/p123_gpu2"
    },
    "AR_left": {
-    "peak": 0.23106038972392776,
+    "peak": 0.2155527494564741,
     "reached": true,
-    "t_eval": 7.98376117,
-    "source": "physio_rot_dyn/p134_gpu1"
+    "t_eval": 7.86219477,
+    "source": "physio_rot_dyn2/p123_gpu2"
    },
    "AR_right": {
     "peak": 0.18973846201825034,
@@ -2956,17 +4406,54 @@
     "source": "physio_rot_dyn/p134_gpu1"
    }
   },
-  "source": "physio_rot_dyn/p134_gpu1",
+  "source": "physio_rot_dyn2/p123_gpu2",
   "verdict": "fail",
   "class": "DESIGN/compression-peak",
-  "reason": " peak > 0.25 in ['flexion']"
+  "reason": " peak > 0.25 in ['flexion']",
+  "duplicates": [
+   "p123"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-peak"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p035": {
   "sustained": null,
   "windows": {},
   "verdict": "fail",
   "class": "DESIGN/compression-sustained-lowerbound",
-  "reason": "insertion run stopped at t 3.152 under the follower load, soft z-compression 32 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
+  "reason": "insertion run stopped at t 3.152 under the follower load, soft z-compression 32 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p003": {
   "sustained": 0.0978950654990757,
@@ -3077,7 +4564,24 @@
    "extension"
   ],
   "class": "[\u6578\u503c]/unstable-window",
-  "reason": "window(s) ['extension']: spurious states dropped and the moment is not monotonic or the ramp did not end in a valid state (contact / element instability); recompute before any verdict"
+  "reason": "window(s) ['extension']: spurious states dropped and the moment is not monotonic or the ramp did not end in a valid state (contact / element instability); recompute before any verdict",
+  "gates": {
+   "tied_screening": {
+    "verdict": "open",
+    "cls": "[\u6578\u503c]/unstable-window"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p117": {
   "sustained": 0.03253923533508101,
@@ -3171,64 +4675,212 @@
    }
   },
   "source": "physio_rot_split3/p117_gpu1/w_LB_left",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": "",
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p092: extension@ROM u_h 0.52 post 0.52; p117: extension@ROM u_h 0.51 post 0.51; p143: extension@ROM u_h 0.51 post 0.51",
   "duplicates": [
-   "p092"
-  ]
+   "p092",
+   "p143"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p092: extension@ROM u_h 0.52 post 0.52",
+     "p117: extension@ROM u_h 0.51 post 0.51",
+     "p143: extension@ROM u_h 0.51 post 0.51"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.322,
+     "flexion": 2.291
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p072": {
-  "sustained": 0.04758399891707384,
+  "sustained": 0.047650450091318255,
   "windows": {
    "flexion": {
-    "peak": 0.16558148565349806,
+    "peak": 0.15554161420941448,
     "reached": true,
-    "t_eval": 3.97157272,
-    "source": "physio_rot_dyn/p072_gpu3"
+    "t_eval": 3.9330385541421338,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.023645179999999932,
+     "monotonic": true,
+     "rb_res_max": 11.943521753618525,
+     "rb_fres_max": 2.4189954192589527,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split2/p060_gpu3/w_flexion"
    },
    "extension": {
-    "peak": 0.05232169610491947,
+    "peak": 0.17612068108203072,
     "reached": true,
-    "t_eval": 4.54545455,
-    "source": "physio_rot_dyn/p072_gpu3"
+    "t_eval": 3.9148312389658524,
+    "window_check": {
+     "n_rows": 22,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.003849750000000096,
+     "monotonic": true,
+     "rb_res_max": 10.761710583522582,
+     "rb_fres_max": 1.0313657010514246,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split2/p060_gpu3/w_extension"
    },
    "LB_right": {
-    "peak": 0.1509308297013037,
+    "peak": 0.14774320433408292,
     "reached": true,
-    "t_eval": 5.9764329,
-    "source": "physio_rot_dyn/p072_gpu3"
+    "t_eval": 3.9617655529776985,
+    "window_check": {
+     "n_rows": 12,
+     "n_invalid": 3,
+     "n_dyn": 3,
+     "dt_min": 0.0028612200000002197,
+     "monotonic": true,
+     "rb_res_max": 18.545140194279842,
+     "rb_fres_max": 1.943133422375723,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split2/p060_gpu3/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.14972238417899983,
+    "peak": 0.14812852886524897,
     "reached": true,
-    "t_eval": 6.97236131,
-    "source": "physio_rot_dyn/p072_gpu3"
+    "t_eval": 3.9640632744691024,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 2,
+     "n_dyn": 2,
+     "dt_min": 0.022601349999999965,
+     "monotonic": true,
+     "rb_res_max": 10.566064942966111,
+     "rb_fres_max": 1.5249065830499522,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split2/p060_gpu3/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.13821963338604246,
+    "peak": 0.1325891006492963,
     "reached": true,
-    "t_eval": 7.98393632,
-    "source": "physio_rot_dyn/p072_gpu3"
+    "t_eval": 3.966741731116542,
+    "window_check": {
+     "n_rows": 17,
+     "n_invalid": 7,
+     "n_dyn": 7,
+     "dt_min": 0.012815999999999939,
+     "monotonic": true,
+     "rb_res_max": 28.486426836621956,
+     "rb_fres_max": 0.4919223236141681,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split2/p060_gpu3/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.09497425912394325,
+    "peak": 0.1319827655084839,
     "reached": true,
-    "t_eval": 8.69451176,
-    "source": "physio_rot_dyn/p072_gpu3"
+    "t_eval": 3.961311300679718,
+    "window_check": {
+     "n_rows": 17,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.010209579999999718,
+     "monotonic": true,
+     "rb_res_max": 9.036031224594494,
+     "rb_fres_max": 0.15415443211537025,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split2/p060_gpu3/w_AR_right"
    }
   },
-  "source": "physio_rot_dyn/p072_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "source": "physio_rot_split2/p060_gpu3/w_AR_right",
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p060: extension@ROM u_h 0.54 post 0.54; p072: extension@ROM u_h 0.55 post 0.55",
+  "duplicates": [
+   "p060"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p060: extension@ROM u_h 0.54 post 0.54",
+     "p072: extension@ROM u_h 0.55 post 0.55"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.461,
+     "flexion": 2.396
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p045": {
   "sustained": null,
   "windows": {},
   "verdict": "fail",
   "class": "DESIGN/compression-sustained-lowerbound",
-  "reason": "insertion run stopped at t 3.146 under the follower load, soft z-compression 32 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
+  "reason": "insertion run stopped at t 3.146 under the follower load, soft z-compression 32 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p063": {
   "sustained": 0.012076680408910809,
@@ -3271,9 +4923,37 @@
    }
   },
   "source": "physio_rot/p063_gpu4",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p063: extension@ROM shear p99 6.0 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "flexion stopped at 1.6 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)"
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p063: extension@ROM shear p99 6.0 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 6.026
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p074": {
   "sustained": 0.016089358511982482,
@@ -3316,9 +4996,32 @@
    }
   },
   "source": "physio_rot/p074_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "duplicates": [
+   "p059"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.036 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p095": {
   "sustained": 0.018527021559831575,
@@ -3415,9 +5118,32 @@
    }
   },
   "source": "physio_rot_split2/p095_gpu1/w_LB_right",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "duplicates": [
+   "p128"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p018": {
   "sustained": 0.43221964894132053,
@@ -3425,7 +5151,24 @@
   "source": "physio_rot/p018_gpu3",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.432 > 0.15"
+  "reason": "sustained 0.432 > 0.15",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p052": {
   "sustained": 0.060335740553946055,
@@ -3531,9 +5274,28 @@
    }
   },
   "source": "physio_rot_split2/p052_gpu2/w_LB_left",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 2.450 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 2.450 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p102": {
   "sustained": 0.14699015485879094,
@@ -3578,7 +5340,24 @@
   "source": "physio_rot_dyn/p102_gpu4",
   "verdict": "fail",
   "class": "DESIGN/compression-peak-lowerbound",
-  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['AR_left', 'AR_right'] did not reach the target)"
+  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['AR_left', 'AR_right'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-peak-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p070": {
   "sustained": 0.1954561081071488,
@@ -3623,7 +5402,24 @@
   "source": "physio_rot_dyn2/p070_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.195 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']"
+  "reason": "sustained 0.195 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right']",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p118": {
   "sustained": 0.16913286883062895,
@@ -3656,7 +5452,24 @@
   "source": "physio_rot_dyn/p118_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.169 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left'] did not reach the target)"
+  "reason": "sustained 0.169 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p007": {
   "sustained": 0.40858684035282883,
@@ -3671,7 +5484,24 @@
   "source": "physio_rot/p007_gpu2",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.409 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.409 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p097": {
   "sustained": 0.029423353878115347,
@@ -3765,9 +5595,29 @@
    }
   },
   "source": "physio_rot_split2/p097_gpu2/w_AR_left",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 2.642 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p066": {
   "sustained": 0.024280340161665578,
@@ -3810,9 +5660,37 @@
    }
   },
   "source": "physio_rot/p066_gpu4",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p066: extension@ROM shear p99 4.3 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)"
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p066: extension@ROM shear p99 4.3 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 4.26
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p114": {
   "sustained": 0.03539806264297437,
@@ -3855,9 +5733,38 @@
    }
   },
   "source": "physio_rot_dyn2/p114",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p114: extension@ROM u_h 0.59 post 0.59",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p114: extension@ROM u_h 0.59 post 0.59"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.38,
+     "flexion": 1.812
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p081": {
   "sustained": 0.007474184924821791,
@@ -3900,9 +5807,38 @@
    }
   },
   "source": "physio_rot/p081_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p081: extension@ROM shear p99 3.1 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 3.146
+    }
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p004": {
   "sustained": 0.23259468821896226,
@@ -3947,7 +5883,24 @@
   "source": "physio_rot/p004",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.233 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] did not reach the target)"
+  "reason": "sustained 0.233 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "mix"
+   }
+  }
  },
  "p062": {
   "sustained": 0.011716933383426546,
@@ -4041,9 +5994,39 @@
    }
   },
   "source": "physio_rot_split2/p062/w_LB_right",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p062: extension@ROM shear p99 6.2 MPa > 3.0; p062: flexion@ROM shear p99 10.6 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p062: extension@ROM shear p99 6.2 MPa > 3.0",
+     "p062: flexion@ROM shear p99 10.6 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 6.225,
+     "flexion": 10.65
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p090": {
   "sustained": 0.4144272760296575,
@@ -4058,52 +6041,151 @@
   "source": "physio_rot/p090_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.414 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.414 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "mix"
+   }
+  }
  },
  "p084": {
-  "sustained": 0.01921325787359497,
+  "sustained": 0.019149575100703423,
   "windows": {
    "flexion": {
-    "peak": 0.018547256032139636,
+    "peak": 0.018403472062702174,
     "reached": true,
-    "t_eval": 3.93624585,
-    "source": "physio_rot_r2/p084_gpu1"
+    "t_eval": 3.9300881646241055,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.017961019999999994,
+     "monotonic": true,
+     "rb_res_max": 23.64395000768693,
+     "rb_fres_max": 0.34392442268565415,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.03447167244532535,
+    "peak": 0.03326162829839675,
     "reached": true,
-    "t_eval": 4.99274665,
-    "source": "physio_rot_r2/p084_gpu1"
+    "t_eval": 3.9713649308899055,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.01891426999999979,
+     "monotonic": false,
+     "rb_res_max": 17.032589496895667,
+     "rb_fres_max": 2.782342777340711,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.031168372911681386,
+    "peak": 0.029516258642876384,
     "reached": true,
-    "t_eval": 5.84670151,
-    "source": "physio_rot_r2/p084_gpu1"
+    "t_eval": 3.8082498651411822,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.02974530457819847,
+    "peak": 0.029604998991136233,
     "reached": true,
-    "t_eval": 6.80782813,
-    "source": "physio_rot_r2/p084_gpu1"
+    "t_eval": 3.8059609846217537,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.036861763024616766,
+    "peak": 0.03484607799396655,
     "reached": true,
-    "t_eval": 7.94661701,
-    "source": "physio_rot_r2/p084_gpu1"
+    "t_eval": 3.910950948939822,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.037178959607773995,
+    "peak": 0.03487112487887566,
     "reached": true,
-    "t_eval": 8.95,
-    "source": "physio_rot_r2/p084_gpu1"
+    "t_eval": 3.9104419512110558,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 3.7062108173070087,
+     "rb_fres_max": 0.08205715839402652,
+     "t_last": 3.95,
+     "complete": false
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_AR_right"
    }
   },
-  "source": "physio_rot_r2/p084_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "source": "physio_rot_split3/p068_gpu1/w_AR_left",
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "duplicates": [
+   "p050",
+   "p068",
+   "p127"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p014": {
   "sustained": 0.01038400781758597,
@@ -4146,9 +6228,38 @@
    }
   },
   "source": "physio_rot/p014_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "extension stopped at 0.0 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)"
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p014: flexion@ROM shear p99 14.5 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "flexion": 14.49
+    }
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p048": {
   "sustained": 0.06588249060113352,
@@ -4245,9 +6356,28 @@
    }
   },
   "source": "physio_rot_split2/p048_gpu1/w_AR_right",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 2.931 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 2.931 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p037": {
   "sustained": 0.15283049454929165,
@@ -4262,7 +6392,24 @@
   "source": "physio_rot/p037_gpu3",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.153 > 0.15 peak > 0.25 in ['flexion']"
+  "reason": "sustained 0.153 > 0.15 peak > 0.25 in ['flexion']",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p038": {
   "sustained": 0.012374608439197427,
@@ -4305,9 +6452,39 @@
    }
   },
   "source": "physio_rot_dyn/p038_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p038: flexion@ROM shear p99 15.7 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.286,
+     "flexion": 15.704
+    }
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p024": {
   "sustained": 0.2035085668013561,
@@ -4352,21 +6529,72 @@
   "source": "physio_rot_dyn/p024_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.204 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['extension', 'AR_left', 'AR_right'] did not reach the target)"
+  "reason": "sustained 0.204 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['extension', 'AR_left', 'AR_right'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p047": {
   "sustained": null,
   "windows": {},
   "verdict": "fail",
   "class": "DESIGN/compression-sustained-lowerbound",
-  "reason": "insertion run stopped at t 3.13 under the follower load, soft z-compression 33 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
+  "reason": "insertion run stopped at t 3.13 under the follower load, soft z-compression 33 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p055": {
   "sustained": null,
   "windows": {},
   "verdict": "fail",
   "class": "DESIGN/compression-sustained-lowerbound",
-  "reason": "insertion run stopped at t 3.0 under the follower load, soft z-compression 33 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
+  "reason": "insertion run stopped at t 3.0 under the follower load, soft z-compression 33 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p123": {
   "sustained": 0.13688503065234123,
@@ -4402,16 +6630,36 @@
     "source": "physio_rot_dyn2/p123_gpu2"
    },
    "AR_right": {
-    "peak": 0.1964196801544583,
-    "reached": false,
-    "t_eval": 8.99997773,
-    "source": "physio_rot_dyn2/p123_gpu2"
+    "peak": 0.18973846201825034,
+    "reached": true,
+    "t_eval": 8.93875544,
+    "source": "physio_rot_dyn/p134_gpu1"
    }
   },
   "source": "physio_rot_dyn2/p123_gpu2",
   "verdict": "fail",
   "class": "DESIGN/compression-peak",
-  "reason": " peak > 0.25 in ['flexion']"
+  "reason": " peak > 0.25 in ['flexion']",
+  "duplicates": [
+   "p134"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-peak"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p091": {
   "sustained": 0.4295260487144306,
@@ -4426,7 +6674,24 @@
   "source": "physio_rot/p091_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.430 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.430 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p126": {
   "sustained": 0.29044605902223203,
@@ -4441,7 +6706,24 @@
   "source": "physio_rot/p126_gpu3",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.290 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.290 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p051": {
   "sustained": 0.04598382166198212,
@@ -4544,9 +6826,42 @@
    }
   },
   "source": "physio_rot_split4/p051_gpu1/w_extension",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p051: extension@ROM u_h 0.61 post 0.61; p075: extension@ROM u_h 0.60 post 0.60",
+  "duplicates": [
+   "p075"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p051: extension@ROM u_h 0.61 post 0.61",
+     "p075: extension@ROM u_h 0.60 post 0.60"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.506,
+     "flexion": 2.004
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p027": {
   "sustained": 0.12517835438784602,
@@ -4649,7 +6964,24 @@
    "extension"
   ],
   "class": "[\u6578\u503c]/unstable-window",
-  "reason": "window(s) ['extension']: spurious states dropped and the moment is not monotonic or the ramp did not end in a valid state (contact / element instability); recompute before any verdict"
+  "reason": "window(s) ['extension']: spurious states dropped and the moment is not monotonic or the ramp did not end in a valid state (contact / element instability); recompute before any verdict",
+  "gates": {
+   "tied_screening": {
+    "verdict": "open",
+    "cls": "[\u6578\u503c]/unstable-window"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p073": {
   "sustained": 0.16855250372728717,
@@ -4694,7 +7026,24 @@
   "source": "physio_rot_dyn2/p073_gpu4",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.169 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['LB_left', 'AR_left', 'AR_right'] did not reach the target)"
+  "reason": "sustained 0.169 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['LB_left', 'AR_left', 'AR_right'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p125": {
   "sustained": 0.01027443502795195,
@@ -4737,9 +7086,39 @@
    }
   },
   "source": "physio_rot_dyn/p125_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p125: flexion@ROM shear p99 14.1 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.504,
+     "flexion": 14.055
+    }
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p106": {
   "sustained": 0.181510627974813,
@@ -4754,7 +7133,24 @@
   "source": "physio_rot/p106_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.182 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.182 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p082": {
   "sustained": 0.040200489723199166,
@@ -4840,12 +7236,31 @@
    }
   },
   "source": "physio_rot_split4/p082_gpu1/w_flexion",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": "",
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "duplicates": [
    "p088"
-  ]
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p105": {
   "sustained": 0.008265997053420225,
@@ -4888,9 +7303,39 @@
    }
   },
   "source": "physio_rot/p105_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p105: extension@ROM shear p99 7.4 MPa > 3.0; p105: flexion@ROM shear p99 12.6 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p105: extension@ROM shear p99 7.4 MPa > 3.0",
+     "p105: flexion@ROM shear p99 12.6 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 7.406,
+     "flexion": 12.623
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p136": {
   "sustained": 0.3908525856842951,
@@ -4905,52 +7350,151 @@
   "source": "physio_rot/p136_gpu3",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.391 > 0.15 peak > 0.25 in ['flexion']"
+  "reason": "sustained 0.391 > 0.15 peak > 0.25 in ['flexion']",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p050": {
-  "sustained": 0.019149546892102905,
+  "sustained": 0.019149575100703423,
   "windows": {
    "flexion": {
-    "peak": 0.018610381685031048,
+    "peak": 0.018403472062702174,
     "reached": true,
-    "t_eval": 3.95,
-    "source": "physio_rot_r2/p050_gpu6"
+    "t_eval": 3.9300881646241055,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.017961019999999994,
+     "monotonic": true,
+     "rb_res_max": 23.64395000768693,
+     "rb_fres_max": 0.34392442268565415,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.03485034338373686,
+    "peak": 0.03326162829839675,
     "reached": true,
-    "t_eval": 5.0,
-    "source": "physio_rot_r2/p050_gpu6"
+    "t_eval": 3.9713649308899055,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.01891426999999979,
+     "monotonic": false,
+     "rb_res_max": 17.032589496895667,
+     "rb_fres_max": 2.782342777340711,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.03130218219136881,
+    "peak": 0.029516258642876384,
     "reached": true,
-    "t_eval": 5.85,
-    "source": "physio_rot_r2/p050_gpu6"
+    "t_eval": 3.8082498651411822,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.03148565183805621,
+    "peak": 0.029604998991136233,
     "reached": true,
-    "t_eval": 6.85,
-    "source": "physio_rot_r2/p050_gpu6"
+    "t_eval": 3.8059609846217537,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.036865946723187513,
+    "peak": 0.03484607799396655,
     "reached": true,
-    "t_eval": 7.95,
-    "source": "physio_rot_r2/p050_gpu6"
+    "t_eval": 3.910950948939822,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.03698917234683367,
+    "peak": 0.03487112487887566,
     "reached": true,
-    "t_eval": 8.95,
-    "source": "physio_rot_r2/p050_gpu6"
+    "t_eval": 3.9104419512110558,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 3.7062108173070087,
+     "rb_fres_max": 0.08205715839402652,
+     "t_last": 3.95,
+     "complete": false
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_AR_right"
    }
   },
-  "source": "physio_rot_r2/p050_gpu6",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "source": "physio_rot_split3/p068_gpu1/w_AR_left",
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "duplicates": [
+   "p068",
+   "p084",
+   "p127"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 2.518 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p031": {
   "sustained": 0.3655459910018067,
@@ -4958,7 +7502,24 @@
   "source": "physio_rot/p031_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.366 > 0.15"
+  "reason": "sustained 0.366 > 0.15",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p133": {
   "sustained": 0.009067946444447458,
@@ -5001,9 +7562,39 @@
    }
   },
   "source": "physio_rot/p133_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p133: flexion@ROM shear p99 13.4 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.876,
+     "flexion": 13.437
+    }
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p002": {
   "sustained": 0.008893867879163443,
@@ -5046,9 +7637,39 @@
    }
   },
   "source": "physio_rot_dyn/p002_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p002: flexion@ROM shear p99 16.6 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.669,
+     "flexion": 16.556
+    }
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p064": {
   "sustained": 0.056237991950809633,
@@ -5145,9 +7766,28 @@
    }
   },
   "source": "physio_rot_split2/p064_gpu1/w_flexion",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 2.443 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 2.443 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p092": {
   "sustained": 0.03253923533508101,
@@ -5241,19 +7881,68 @@
    }
   },
   "source": "physio_rot_split3/p117_gpu1/w_LB_left",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": "",
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p092: extension@ROM u_h 0.52 post 0.52; p117: extension@ROM u_h 0.51 post 0.51; p143: extension@ROM u_h 0.51 post 0.51",
   "duplicates": [
-   "p117"
-  ]
+   "p117",
+   "p143"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p092: extension@ROM u_h 0.52 post 0.52",
+     "p117: extension@ROM u_h 0.51 post 0.51",
+     "p143: extension@ROM u_h 0.51 post 0.51"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.322,
+     "flexion": 2.291
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p033": {
   "sustained": null,
   "windows": {},
   "verdict": "fail",
   "class": "DESIGN/compression-sustained-lowerbound",
-  "reason": "insertion run stopped at t 3.119 under the follower load, soft z-compression 34 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
+  "reason": "insertion run stopped at t 3.119 under the follower load, soft z-compression 34 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p061": {
   "sustained": 0.05181943407034647,
@@ -5362,9 +8051,28 @@
    }
   },
   "source": "physio_rot_split2/p061_gpu2/w_LB_left",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p030": {
   "sustained": 0.38859698209459054,
@@ -5379,7 +8087,24 @@
   "source": "physio_rot/p030_gpu2",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.389 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.389 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p056": {
   "sustained": 0.4164359296964916,
@@ -5394,16 +8119,66 @@
   "source": "physio_rot/p056_gpu3",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.416 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.416 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p141": {
-  "sustained": 0.3956446070178272,
-  "windows": {},
-  "source": "e05 on human_study/al_v2/physio_rot_split/p141_gpu2/w_LB_right (split v1 insertion state t 3.5)",
-  "override_reason": "same as p049 (duplicate design point in the AL set)",
+  "sustained": 0.395117435942318,
+  "windows": {
+   "flexion": {
+    "peak": 0.3245835339672734,
+    "reached": true,
+    "t_eval": 3.51818182,
+    "source": "physio_rot_dyn/p089_gpu1"
+   },
+   "extension": {
+    "peak": 0.45375698360244343,
+    "reached": true,
+    "t_eval": 4.94329667,
+    "source": "physio_rot_dyn/p089_gpu1"
+   }
+  },
+  "source": "physio_rot_dyn/p089_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.396 > 0.15"
+  "reason": "sustained 0.395 > 0.15 peak > 0.25 in ['flexion', 'extension']",
+  "duplicates": [
+   "p049",
+   "p089"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p138": {
   "sustained": 0.14414077576680617,
@@ -5448,7 +8223,24 @@
   "source": "physio_rot/p138",
   "verdict": "fail",
   "class": "DESIGN/compression-peak-lowerbound",
-  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] did not reach the target)"
+  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-peak-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p068": {
   "sustained": 0.019149575100703423,
@@ -5548,9 +8340,34 @@
    }
   },
   "source": "physio_rot_split3/p068_gpu1/w_AR_left",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "duplicates": [
+   "p050",
+   "p084",
+   "p127"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p065": {
   "sustained": 0.04064664980655966,
@@ -5593,16 +8410,63 @@
    }
   },
   "source": "physio_rot/p065_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p065: extension@ROM shear p99 3.6 MPa > 3.0; p065: flexion@ROM shear p99 13.4 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p065: extension@ROM shear p99 3.6 MPa > 3.0",
+     "p065: flexion@ROM shear p99 13.4 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 3.637,
+     "flexion": 13.356
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p023": {
   "sustained": null,
   "windows": {},
   "verdict": "open",
   "class": "[\u591a\u5143]/computability",
-  "reason": "insertion run stopped at t 1.99 (compression 0 %): not computable in any solve mode"
+  "reason": "insertion run stopped at t 1.99 (compression 0 %): not computable in any solve mode",
+  "gates": {
+   "tied_screening": {
+    "verdict": "open",
+    "cls": "[\u591a\u5143]/computability"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p099": {
   "sustained": 0.2491846199381616,
@@ -5617,7 +8481,24 @@
   "source": "physio_rot/p099_gpu4",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.249 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.249 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p140": {
   "sustained": 0.04000741665010667,
@@ -5660,9 +8541,28 @@
    }
   },
   "source": "physio_rot_r2/p140_gpu5",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p016": {
   "sustained": 0.3635741619462565,
@@ -5670,7 +8570,24 @@
   "source": "physio_rot/p016_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.364 > 0.15"
+  "reason": "sustained 0.364 > 0.15",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "mix"
+   }
+  }
  },
  "p119": {
   "sustained": 0.21690416614993976,
@@ -5685,7 +8602,24 @@
   "source": "physio_rot/p119_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.217 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.217 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p139": {
   "sustained": 0.041016130693966715,
@@ -5728,9 +8662,46 @@
    }
   },
   "source": "physio_rot_dyn/p139_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p139: extension@ROM u_h 0.64 post 0.63",
+  "duplicates": [
+   "p077"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p139: extension@ROM u_h 0.64 post 0.63"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p077: extension@ROM shear p99 3.5 MPa > 3.0",
+     "p077: flexion@ROM shear p99 13.6 MPa > 3.0",
+     "p139: extension@ROM shear p99 3.6 MPa > 3.0",
+     "p139: flexion@ROM shear p99 13.6 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 3.468,
+     "flexion": 13.611
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p096": {
   "sustained": 0.24642897312804374,
@@ -5745,7 +8716,24 @@
   "source": "physio_rot/p096_gpu2",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.246 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.246 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p000": {
   "sustained": 0.3415283468950472,
@@ -5760,7 +8748,24 @@
   "source": "physio_rot/p000_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.342 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.342 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p110": {
   "sustained": 0.013143928820446914,
@@ -5803,9 +8808,39 @@
    }
   },
   "source": "physio_rot/p110_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p110: extension@ROM shear p99 5.9 MPa > 3.0; p110: flexion@ROM shear p99 14.4 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p110: extension@ROM shear p99 5.9 MPa > 3.0",
+     "p110: flexion@ROM shear p99 14.4 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 5.877,
+     "flexion": 14.363
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p107": {
   "sustained": 0.024993007434265763,
@@ -5908,12 +8943,30 @@
    }
   },
   "source": "physio_rot_split2/p107_gpu3/w_AR_left",
-  "verdict": "open",
+  "verdict": "fail",
   "unstable_windows": [
    "AR_right"
   ],
-  "class": "[\u6578\u503c]/unstable-window",
-  "reason": "window(s) ['AR_right']: spurious states dropped and the moment is not monotonic or the ramp did not end in a valid state (contact / element instability); recompute before any verdict"
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "open",
+    "cls": "[\u6578\u503c]/unstable-window"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p006": {
   "sustained": 0.35081917946913466,
@@ -5928,7 +8981,24 @@
   "source": "physio_rot/p006_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.351 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.351 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p148": {
   "sustained": 0.00783578125500806,
@@ -5971,9 +9041,39 @@
    }
   },
   "source": "physio_rot/p148_gpu2",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p148: flexion@ROM shear p99 15.4 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.916,
+     "flexion": 15.401
+    }
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p104": {
   "sustained": 0.017884834661329584,
@@ -6016,9 +9116,29 @@
    }
   },
   "source": "physio_rot_r2/p104_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p022": {
   "sustained": 0.3051904047384124,
@@ -6033,7 +9153,24 @@
   "source": "physio_rot/p022_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.305 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.305 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "mix"
+   }
+  }
  },
  "p137": {
   "sustained": 0.13794624761228924,
@@ -6078,7 +9215,24 @@
   "source": "physio_rot/p137_gpu4",
   "verdict": "fail",
   "class": "DESIGN/compression-peak-lowerbound",
-  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left'] did not reach the target)"
+  "reason": " peak > 0.25 in ['flexion', 'extension', 'LB_right', 'LB_left'] (lower bound: window(s) ['extension', 'LB_right', 'LB_left'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-peak-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p040": {
   "sustained": 0.32610531200788756,
@@ -6093,7 +9247,24 @@
   "source": "physio_rot/p040_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.326 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.326 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "mix"
+   }
+  }
  },
  "p034": {
   "sustained": 0.36483253344652006,
@@ -6101,52 +9272,106 @@
   "source": "physio_rot/p034_gpu3",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.365 > 0.15"
+  "reason": "sustained 0.365 > 0.15",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "mix"
+   }
+  }
  },
  "p077": {
-  "sustained": 0.041015965585226064,
+  "sustained": 0.041016130693966715,
   "windows": {
    "flexion": {
-    "peak": 0.13151294622148985,
+    "peak": 0.13449359526405566,
     "reached": true,
     "t_eval": 3.95,
-    "source": "physio_rot/p077_gpu1"
+    "source": "physio_rot_dyn/p139_gpu1"
    },
    "extension": {
-    "peak": 0.15834399313744832,
+    "peak": 0.15829951683050802,
     "reached": true,
     "t_eval": 5.0,
-    "source": "physio_rot/p077_gpu1"
+    "source": "physio_rot_dyn/p139_gpu1"
    },
    "LB_right": {
-    "peak": 0.161530549101285,
+    "peak": 0.15550904022248113,
     "reached": true,
-    "t_eval": 6.0,
-    "source": "physio_rot/p077_gpu1"
+    "t_eval": 5.97211743,
+    "source": "physio_rot_dyn/p139_gpu1"
    },
    "LB_left": {
-    "peak": 0.15184923647535667,
+    "peak": 0.15589281887968703,
     "reached": true,
-    "t_eval": 6.95,
-    "source": "physio_rot/p077_gpu1"
+    "t_eval": 6.96871784,
+    "source": "physio_rot_dyn/p139_gpu1"
    },
    "AR_left": {
-    "peak": 0.16872264223359223,
+    "peak": 0.16537191643353363,
     "reached": true,
-    "t_eval": 7.98077941,
-    "source": "physio_rot/p077_gpu1"
+    "t_eval": 7.96706188,
+    "source": "physio_rot_dyn/p139_gpu1"
    },
    "AR_right": {
-    "peak": 0.16856773544254758,
+    "peak": 0.1661677947783148,
     "reached": true,
-    "t_eval": 8.97784922,
-    "source": "physio_rot/p077_gpu1"
+    "t_eval": 8.96706945,
+    "source": "physio_rot_dyn/p139_gpu1"
    }
   },
-  "source": "physio_rot/p077_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "source": "physio_rot_dyn/p139_gpu1",
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p139: extension@ROM u_h 0.64 post 0.63",
+  "duplicates": [
+   "p139"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p139: extension@ROM u_h 0.64 post 0.63"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p077: extension@ROM shear p99 3.5 MPa > 3.0",
+     "p077: flexion@ROM shear p99 13.6 MPa > 3.0",
+     "p139: extension@ROM shear p99 3.6 MPa > 3.0",
+     "p139: flexion@ROM shear p99 13.6 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 3.468,
+     "flexion": 13.611
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p026": {
   "sustained": 0.008612102476470878,
@@ -6189,16 +9414,63 @@
    }
   },
   "source": "physio_rot/p026_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p026: flexion@ROM shear p99 13.8 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.931,
+     "flexion": 13.794
+    }
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p011": {
   "sustained": null,
   "windows": {},
   "verdict": "fail",
   "class": "DESIGN/compression-sustained-lowerbound",
-  "reason": "insertion run stopped at t 3.11 under the follower load, soft z-compression 34 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
+  "reason": "insertion run stopped at t 3.11 under the follower load, soft z-compression 34 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p089": {
   "sustained": 0.395117435942318,
@@ -6219,7 +9491,28 @@
   "source": "physio_rot_dyn/p089_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.395 > 0.15 peak > 0.25 in ['flexion', 'extension']"
+  "reason": "sustained 0.395 > 0.15 peak > 0.25 in ['flexion', 'extension']",
+  "duplicates": [
+   "p049",
+   "p141"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p103": {
   "sustained": 0.2112687953887403,
@@ -6234,7 +9527,24 @@
   "source": "physio_rot/p103_gpu3",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.211 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.211 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p087": {
   "sustained": 0.42064500972764785,
@@ -6242,7 +9552,24 @@
   "source": "physio_rot/p087_gpu2",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.421 > 0.15"
+  "reason": "sustained 0.421 > 0.15",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "mix"
+   }
+  }
  },
  "p042": {
   "sustained": 0.4491807253235773,
@@ -6250,7 +9577,24 @@
   "source": "physio_rot/p042_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.449 > 0.15"
+  "reason": "sustained 0.449 > 0.15",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p078": {
   "sustained": 0.011140669321669404,
@@ -6293,18 +9637,80 @@
    }
   },
   "source": "physio_rot/p078_gpu4",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "extension stopped at 4.2 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)"
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p078: flexion@ROM shear p99 16.2 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "flexion": 16.216
+    }
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p049": {
-  "sustained": 0.3956446070178272,
-  "windows": {},
-  "source": "e05 on human_study/al_v2/physio_rot_split/p049_gpu2/w_LB_right (split v1 insertion state t 3.5; the v1 window rotation was not applied, so only the insertion state is used)",
-  "override_reason": "sequential physio_rot runs stop at t 3.05 (before the t 3.5 state), so e05 by_design has sustained = null; the split v1 insertion run is physically identical to split2 (bug affected only the window load curves). Computed 2026-10-31 by the integrator; p049 and p141 are the same design point (identical parameters), hence identical values.",
+  "sustained": 0.395117435942318,
+  "windows": {
+   "flexion": {
+    "peak": 0.3245835339672734,
+    "reached": true,
+    "t_eval": 3.51818182,
+    "source": "physio_rot_dyn/p089_gpu1"
+   },
+   "extension": {
+    "peak": 0.45375698360244343,
+    "reached": true,
+    "t_eval": 4.94329667,
+    "source": "physio_rot_dyn/p089_gpu1"
+   }
+  },
+  "source": "physio_rot_dyn/p089_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.396 > 0.15"
+  "reason": "sustained 0.395 > 0.15 peak > 0.25 in ['flexion', 'extension']",
+  "duplicates": [
+   "p089",
+   "p141"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p101": {
   "sustained": 0.03828149010616076,
@@ -6401,9 +9807,28 @@
    }
   },
   "source": "physio_rot_split3/p101_gpu1/w_AR_left",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "open",
+  "class": "[\u591a\u5143]/friction-computability",
+  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p067": {
   "sustained": 0.02082396817529269,
@@ -6446,9 +9871,39 @@
    }
   },
   "source": "physio_rot/p067_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p067: extension@ROM shear p99 4.6 MPa > 3.0; p067: flexion@ROM shear p99 12.4 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p067: extension@ROM shear p99 4.6 MPa > 3.0",
+     "p067: flexion@ROM shear p99 12.4 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 4.609,
+     "flexion": 12.375
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p076": {
   "sustained": 0.041356637696126214,
@@ -6491,54 +9946,168 @@
    }
   },
   "source": "physio_rot/p076_gpu3",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/dislocation-friction",
+  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p076: extension@ROM u_h 0.50 post 0.50",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "fail",
+    "reasons": [
+     "p076: extension@ROM u_h 0.50 post 0.50"
+    ],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p076: extension@ROM shear p99 3.5 MPa > 3.0",
+     "p076: flexion@ROM shear p99 11.6 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 3.48,
+     "flexion": 11.594
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p127": {
   "sustained": 0.019149575100703423,
   "windows": {
    "flexion": {
-    "peak": 0.01896529739588315,
+    "peak": 0.018403472062702174,
     "reached": true,
-    "t_eval": 3.98203898,
-    "source": "physio_rot_dyn/p127_gpu1"
+    "t_eval": 3.9300881646241055,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.017961019999999994,
+     "monotonic": true,
+     "rb_res_max": 23.64395000768693,
+     "rb_fres_max": 0.34392442268565415,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_flexion"
    },
    "extension": {
-    "peak": 0.03484126445401295,
+    "peak": 0.03326162829839675,
     "reached": true,
-    "t_eval": 5.0,
-    "source": "physio_rot_dyn/p127_gpu1"
+    "t_eval": 3.9713649308899055,
+    "window_check": {
+     "n_rows": 11,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.01891426999999979,
+     "monotonic": false,
+     "rb_res_max": 17.032589496895667,
+     "rb_fres_max": 2.782342777340711,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_extension"
    },
    "LB_right": {
-    "peak": 0.02996974877367142,
+    "peak": 0.029516258642876384,
     "reached": true,
-    "t_eval": 5.81862404,
-    "source": "physio_rot_dyn/p127_gpu1"
+    "t_eval": 3.8082498651411822,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_LB_right"
    },
    "LB_left": {
-    "peak": 0.03148473938207755,
+    "peak": 0.029604998991136233,
     "reached": true,
-    "t_eval": 6.85,
-    "source": "physio_rot_dyn/p127_gpu1"
+    "t_eval": 3.8059609846217537,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_LB_left"
    },
    "AR_left": {
-    "peak": 0.0368664076388711,
+    "peak": 0.03484607799396655,
     "reached": true,
-    "t_eval": 7.95,
-    "source": "physio_rot_dyn/p127_gpu1"
+    "t_eval": 3.910950948939822,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 0,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "t_last": 4.0,
+     "complete": true
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_AR_left"
    },
    "AR_right": {
-    "peak": 0.036988044464094996,
+    "peak": 0.03487112487887566,
     "reached": true,
-    "t_eval": 8.95,
-    "source": "physio_rot_dyn/p127_gpu1"
+    "t_eval": 3.9104419512110558,
+    "window_check": {
+     "n_rows": 10,
+     "n_invalid": 1,
+     "n_dyn": 1,
+     "dt_min": 0.04999999999999982,
+     "monotonic": true,
+     "rb_res_max": 3.7062108173070087,
+     "rb_fres_max": 0.08205715839402652,
+     "t_last": 3.95,
+     "complete": false
+    },
+    "source": "physio_rot_split3/p068_gpu1/w_AR_right"
    }
   },
-  "source": "physio_rot_dyn/p127_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "source": "physio_rot_split3/p068_gpu1/w_AR_left",
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "duplicates": [
+   "p050",
+   "p068",
+   "p084"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.032 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p019": {
   "sustained": 0.2830687668693769,
@@ -6553,7 +10122,24 @@
   "source": "physio_rot/p019_gpu2",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.283 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.283 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p043": {
   "sustained": 0.2989188877696257,
@@ -6568,7 +10154,24 @@
   "source": "physio_rot/p043_gpu2",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.299 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.299 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "interleave"
+   }
+  }
  },
  "p111": {
   "sustained": 0.015321656702960441,
@@ -6611,9 +10214,39 @@
    }
   },
   "source": "physio_rot/p111_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": ""
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p111: extension@ROM shear p99 5.7 MPa > 3.0; p111: flexion@ROM shear p99 12.8 MPa > 3.0",
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null
+   },
+   "interface_shear": {
+    "verdict": "fail",
+    "reasons": [
+     "p111: extension@ROM shear p99 5.7 MPa > 3.0",
+     "p111: flexion@ROM shear p99 12.8 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 5.701,
+     "flexion": 12.846
+    }
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p012": {
   "sustained": 0.3429271522557263,
@@ -6640,7 +10273,24 @@
   "source": "physio_rot/p012_gpu1",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.343 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right'] (lower bound: window(s) ['extension', 'LB_right'] did not reach the target)"
+  "reason": "sustained 0.343 > 0.15 peak > 0.25 in ['flexion', 'extension', 'LB_right'] (lower bound: window(s) ['extension', 'LB_right'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "axial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p032": {
   "sustained": 0.28299169129746277,
@@ -6655,7 +10305,25 @@
   "source": "physio_rot/p032_gpu2",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.283 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.283 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  },
  "p046": {
   "sustained": 0.2740005895529878,
@@ -6670,20 +10338,139 @@
   "source": "physio_rot/p046_gpu3",
   "verdict": "fail",
   "class": "DESIGN/compression-sustained",
-  "reason": "sustained 0.274 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)"
+  "reason": "sustained 0.274 > 0.15 peak > 0.25 in ['flexion'] (lower bound: window(s) ['flexion'] did not reach the target)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "mix"
+   }
+  }
  },
  "p057": {
   "sustained": null,
   "windows": {},
   "verdict": "fail",
   "class": "DESIGN/compression-sustained-lowerbound",
-  "reason": "insertion run stopped at t 3.0 under the follower load, soft z-compression 36 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
+  "reason": "insertion run stopped at t 3.0 under the follower load, soft z-compression 36 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "both",
+    "fabrication": "mix"
+   }
+  }
  },
  "p009": {
   "sustained": null,
   "windows": {},
   "verdict": "fail",
   "class": "DESIGN/compression-sustained-lowerbound",
-  "reason": "insertion run stopped at t 3.184 under the follower load, soft z-compression 34 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)"
+  "reason": "insertion run stopped at t 3.184 under the follower load, soft z-compression 34 % > 15 % at the last state: fail by lower bound (PI decision 2026-11-03)",
+  "gates": {
+   "tied_screening": {
+    "verdict": "fail",
+    "cls": "DESIGN/compression-sustained-lowerbound"
+   },
+   "dislocation_friction": {
+    "verdict": "not run"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "pass",
+    "gradient": "radial",
+    "fabrication": "interleave"
+   }
+  }
+ },
+ "p059": {
+  "sustained": 0.016089358511982482,
+  "windows": {
+   "flexion": {
+    "peak": 0.02047908807351196,
+    "reached": true,
+    "t_eval": 3.95,
+    "source": "physio_rot/p074_gpu3"
+   },
+   "extension": {
+    "peak": 0.03256892414638831,
+    "reached": true,
+    "t_eval": 5.0,
+    "source": "physio_rot/p074_gpu3"
+   },
+   "LB_right": {
+    "peak": 0.028645241617591067,
+    "reached": true,
+    "t_eval": 5.85,
+    "source": "physio_rot/p074_gpu3"
+   },
+   "LB_left": {
+    "peak": 0.028926665369015746,
+    "reached": true,
+    "t_eval": 6.85,
+    "source": "physio_rot/p074_gpu3"
+   },
+   "AR_left": {
+    "peak": 0.035340892786092336,
+    "reached": true,
+    "t_eval": 7.94545455,
+    "source": "physio_rot/p074_gpu3"
+   },
+   "AR_right": {
+    "peak": 0.03568743150165575,
+    "reached": true,
+    "t_eval": 8.95,
+    "source": "physio_rot/p074_gpu3"
+   }
+  },
+  "source": "physio_rot/p074_gpu3",
+  "verdict": "fail",
+  "class": "DESIGN/radial-mix-excluded",
+  "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+  "duplicates": [
+   "p074"
+  ],
+  "gates": {
+   "tied_screening": {
+    "verdict": "pass",
+    "cls": "PASS"
+   },
+   "dislocation_friction": {
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.036 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+   },
+   "interface_shear": {
+    "verdict": "not run"
+   },
+   "design_rule": {
+    "verdict": "excluded",
+    "reason": "PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)",
+    "gradient": "radial",
+    "fabrication": "mix"
+   }
+  }
  }
 }

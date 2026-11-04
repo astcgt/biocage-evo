@@ -13,7 +13,7 @@ Per window peak state:
      no rigid-body slip relative to both endplates is possible.
   2. one-face slip bound: horizontal relative displacement between C3 (rigid potting motion) and C4 (endplate nodes) over
      the cage footprint (max over the top-face element centres) -> the most a face can slip if the cage sticks to the
-     other vertebra; plus the cage's own rigid-body translation in the tied run (best fit of all cage nodes, vs C4).
+     other vertebra; plus the cage's own rigid-body translation in the tied run (mean of all cage nodes (not a best fit), vs C4).
 Evaluation state (2026-11-02): the metrics are computed at the two logged states bracketing the target moment and
 interpolated linearly to it (e03.target_bracket; T07 overshoot removed); states with a micro time step, a rigid-body dynamic
 residual above 2 % (retried / chattering steps, NUM-14) or a moment jump are never used (T02). Output per window adds 'eval'

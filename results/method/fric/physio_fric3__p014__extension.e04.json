@@ -1,0 +1,13 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric3/p014/w_extension",
+ "windows": {
+  "extension": "missing"
+ },
+ "provenance": {
+  "git": "9091b3ef34637b1c9ead58231b7588941cd89390",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "594224218d08b82f00ccf9f56ba76f529d372c3b82a30c624f5a700c05893792",
+  "case_xplt": "06f825d06a71a54ece895e7ea88650224dd254dc267a2ba86a5b1e9fa5eb81c7"
+ }
+}

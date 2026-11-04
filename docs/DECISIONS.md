@@ -143,3 +143,29 @@ constraints = surgery-compatible + no nerve / bone harm; maximum freedom otherwi
   paper/LITERATURE.md (5 topics, verification flags), paper/ABSTRACT_OUTLINE.md, paper/figures/F1-F7. ops/collect_split.py
   rewritten to aggregate from all per-run files (see OLD DECISIONS 2026-10-31 10:40). Merged verdicts 62/62/24.
   Pending PI: fitness definition (e04 vs e03), verdict rule for follower-load inversions, S8, designer start.
+- 2026-11-04 PI (design gates after the tied screening, applied in ops/collect_split.py): (1) gate 4 dislocation under real
+  friction judged at the intact-ROM state (1 mm any / 0.5 mm posterior), no pass by absence - both flexion and extension must
+  reach an evaluation point (ops/fric_compare.py); (2) S10 interface shear <= 3 MPa, soft-side p99 at the ROM state,
+  PROVISIONAL pending a bond-strength test (ops/e07_batch.py -> results/method/fric/e07_verdicts.json); (3) radial-gradient
+  mixing-nozzle designs (A and B) excluded at design level; old-repo sampler h22 no longer proposes them.
+  Result: of the 71 tied passes, 0 pass all gates - 26 dislocation-friction, 15 interface-shear (every axial design: flexion
+  10-14 MPa), 13 radial-mix-excluded, 14 radial-interleave friction-computability (pending the c3_release_ramp pilot), 3
+  friction-window (flexion did not reach ROM). Trade-off seen: whole-layer soft pads (axial) hold (0.50-0.64 mm) but load the
+  layer interface; hard-rich interleave faces keep the interface at 1.7-2.7 MPa but slide ~1 mm.
+  Lesson for the free-form designer (not a constraint, the PI excluded a design class, not a voxel pattern): soft voxels in
+  bands on the endplate contact face, interleaved with hard voxels, are the pattern that failed both gates; any free-form
+  design with mixed phi on the contact face must be checked against S9 and S10 under real friction.
+- 2026-11-04 11:30 correction: e07 first version used the mesh flag 'hard' (interleave pattern only) as the interface for every
+  design, so all mix-design interface values in the entry above were on faces that are no material boundary. Fixed (FEBio block
+  = material), rerun. Corrected classes of the 71 tied passes: dislocation-friction 26, interface-shear 17, radial-mix 13,
+  friction-computability 15. Corrected metric does NOT pass the mesh tolerance (HZ 0.1: layer -15.9 %, band +16.7 %). Flexion
+  at the intact ROM needs 1.9-6.1 N m (target 1.5), see old-repo DECISIONS 2026-11-04 11:30; evaluation point goes back to the PI.
+- 2026-11-04 13:50 merged classes after duplicate pooling (supersedes the counts above): tied passes 72 (p059 = p074 added,
+  inherits pooled evidence). dislocation-friction 28, interface-shear-provisional 16, radial-mix-excluded 14,
+  friction-computability 14 (radial interleave). 0 pass all gates. Evaluation point and 3 MPa threshold unchanged, PI pending.
+
+## 2026-11-05 04:10 — PI decisions applied (see biocage_simulation_test_oct2026/human_study/DECISIONS.md 04:10)
+- Evaluation point (PI item 1 = 04:30 wording): 1.5 N m state when transmitted, else intact ROM (fric_compare, eval_point per window).
+  Gate 4: 14 fail / 24 pass / 7 open (was 26 / 14 / 5). Radial-mix exclusion first (collect_split, PI item 2).
+- Merged classes: radial-mix-excluded 28, dislocation-friction 17, interface-shear-provisional 14, friction-computability 14; PASS 0; tied passes 72.
+- All friction verdicts provisional (R03 superseded; NUM-16 / NUM-17; density reference -> physio_fric4 at 1e-9, item 8).

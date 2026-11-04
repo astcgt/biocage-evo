@@ -14,6 +14,14 @@ tmux has-session -t evo_daemon 2>/dev/null || tmux new-session -d -s evo_daemon 
 # physio_rot pass chain (slow dynamic passes, 2026-10-30): queues the next pass when one ends, then exits
 [ -f "$OLD/human_study/rot_chain.done" ] || tmux has-session -t rot_chain 2>/dev/null || \
   tmux new-session -d -s rot_chain "cd '$OLD' && python scripts/6_active_learning/h29_rot_chain.py 2>> human_study/rot_chain.err && touch human_study/rot_chain.done"
+# h36 NAS archive (PI 2026-11-03), started by hand 02:14 outside tmux: re-run is safe (rsync --partial, archived sets are symlinks
+# and skipped, source removed only after a clean verify) (foreman 11-03 04:35)
+[ -f "$OLD/human_study/nas_archive.done" ] || tmux has-session -t nas_archive 2>/dev/null || pgrep -u "$USER" -f h36_nas_archive >/dev/null || \
+  tmux new-session -d -s nas_archive "cd '$OLD' && bash scripts/5_compute/h36_nas_archive.sh cases_invalid physio_rot_split_test physio_rot_invalid_overshoot physio_rot_invalid_rigidpresc physio_rot_invalid_symstiff physio_fix physio_rot_facet0 physio_rot_facet3 physio_rot_split physio_rot_dyn2 physio_rot_r2 physio_rot_dyn physio_rot physio_v3 cases && touch human_study/nas_archive.done"
+# h37 QA regression check every 6 h (PI 2026-11-04, human_study/qa/QA_SYSTEM.md), started by hand 11-04 14:02, not in h23 DAEMONS:
+# report-only, re-run is safe (foreman 11-04 14:27)
+[ -f "$OLD/scripts/8_audit/h37_qa_check.py" ] && ! tmux has-session -t biocage_qa 2>/dev/null && ! pgrep -u "$USER" -f 'h37_qa_check.py --daemon' >/dev/null && \
+  tmux new-session -d -s biocage_qa "cd '$OLD' && python scripts/8_audit/h37_qa_check.py --daemon 6 2>> human_study/qa/qa.err"
 # report real work as Jupyter activity so the idle culler does not stop a computing server (PI-authorised 2026-10-26)
 tmux has-session -t evo_keepalive 2>/dev/null || tmux new-session -d -s evo_keepalive "cd '$EVO' && python ops/activity_keepalive.py"
 echo "$(date -Is) resume_all" >> "$EVO/work/agents/resume_all.log"

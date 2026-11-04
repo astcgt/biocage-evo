@@ -1,0 +1,88 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric3/p063/w_flexion",
+ "windows": {
+  "flexion": {
+   "t": 3.61551946,
+   "target_reached": false,
+   "M_at_target": -984.668263407,
+   "mu_squeeze": 0.043971734175751453,
+   "net_push_N": 11.608697371408725,
+   "net_twist_Nmm": 10.642246040946288,
+   "N_total": 271.14608397787526,
+   "one_face_slip_bound_mm": 0.20549501654968746,
+   "cage_translation_tied_mm": [
+    0.08764833332786202,
+    0.0011255202161495534,
+    0.034966961758009625
+   ],
+   "eval": {
+    "t_a": 3.61551946,
+    "M_a": -984.668263407,
+    "t_b": 3.61551946,
+    "M_b": -984.668263407,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": [
+     [
+      3.55,
+      0.04999999999999982,
+      -659.876385852,
+      "dyn",
+      281.2,
+      54.21
+     ],
+     [
+      3.58235048,
+      0.03235048000000029,
+      -767.500721057,
+      "dyn",
+      84.9,
+      34.46
+     ],
+     [
+      3.60632862,
+      0.023978140000000092,
+      -937.371339505,
+      "dyn",
+      104.0,
+      14.62
+     ],
+     [
+      3.61163453,
+      0.005305909999999692,
+      -967.708623922,
+      "dyn",
+      104.2,
+      15.05
+     ],
+     [
+      3.62624413,
+      0.010724670000000103,
+      -1329.96805712,
+      "dyn",
+      215.7,
+      10.32
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 6,
+    "n_invalid": 5,
+    "n_dyn": 5,
+    "dt_min": 0.0038849299999998976,
+    "monotonic": true,
+    "rb_res_max": 29.512822484489412,
+    "rb_fres_max": 8.591001731452408,
+    "t_last": 3.61551946,
+    "complete": false
+   }
+  }
+ },
+ "provenance": {
+  "git": "9091b3ef34637b1c9ead58231b7588941cd89390",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "689241318bc354f6b463562bc4a5403d3fdef534014b25da816b6204870fa5fa",
+  "case_xplt": "b276df03c14c9ac9a391fe1ab2eb0cf7737b02a8cffd5f697b68ca65631a96c9"
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric3/p112_gpu1/w_flexion",
+ "windows": {
+  "flexion": {
+   "t": 3.7234169043059953,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.011323052776188574,
+   "net_push_N": 3.4798104831914056,
+   "net_twist_Nmm": 0.41177949935342295,
+   "N_total": 311.5052057657323,
+   "one_face_slip_bound_mm": 0.7710262471445695,
+   "cage_translation_tied_mm": [
+    0.41439485929588665,
+    -0.00019782069720190103,
+    0.06042888189143756
+   ],
+   "eval": {
+    "t_a": 3.72205782,
+    "M_a": -1491.48987026,
+    "t_b": 3.73336471,
+    "M_b": -1562.28982022,
+    "frac": 0.12019965755354232,
+    "coarse": false,
+    "invalid": [
+     [
+      3.55,
+      0.04999999999999982,
+      -578.706897835,
+      "dyn",
+      99.9,
+      21.12
+     ],
+     [
+      3.58884254,
+      0.03884254000000009,
+      -703.627509382,
+      "dyn",
+      45.3,
+      7.01
+     ],
+     [
+      3.65233089,
+      0.014566129999999955,
+      -1577.19280383,
+      "dyn",
+      503.4,
+      0.04
+     ],
+     [
+      3.669375,
+      0.017044110000000057,
+      -1214.37966521,
+      "dyn",
+      40.2,
+      0.08
+     ],
+     [
+      3.9391797,
+      0.009629959999999826,
+      -3392.16743052,
+      "dyn",
+      118.9,
+      0.17
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 69,
+    "n_invalid": 5,
+    "n_dyn": 5,
+    "dt_min": 0.0005450599999998751,
+    "monotonic": true,
+    "rb_res_max": 6.755206233764426,
+    "rb_fres_max": 2.8510751442605504,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "9091b3ef34637b1c9ead58231b7588941cd89390",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "0f8f7a2f6f55ee015c9e61554d31f2e899f6d5cf00c0841297a1c7b6a73869dd",
+  "case_xplt": "cde841a7986098cd9b36914e5257f069f861d5a82578dfd34e2100630744c6ec"
+ }
+}

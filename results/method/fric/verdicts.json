@@ -1,0 +1,2051 @@
+{
+ "p002": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p002",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.40157249294515907,
+    "post_at_rom": 0.40157071245591114,
+    "u_h_at_1p5Nm": 0.6320678877362852,
+    "post_at_1p5Nm": 0.6320667870757751,
+    "rot_max_deg": 9.224635600173976,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p002",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1497749496054182,
+    "post_at_rom": -1.1497743785738244,
+    "u_h_at_1p5Nm": 0.3181613623081233,
+    "post_at_1p5Nm": -0.3181610174216321,
+    "rot_max_deg": 7.21929996475645,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p014": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p014",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1300282912042163,
+    "post_at_rom": -1.1300276582783746,
+    "u_h_at_1p5Nm": 0.34891486118711773,
+    "post_at_1p5Nm": -0.34891479201912984,
+    "rot_max_deg": 6.916614098738242,
+    "bad": []
+   }
+  },
+  "missing": [
+   "extension"
+  ],
+  "open_reason": "extension stopped at 0.0 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
+  "computability": true
+ },
+ "p026": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p026",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4558230683649701,
+    "post_at_rom": 0.4558230664223954,
+    "u_h_at_1p5Nm": 0.6981017287093245,
+    "post_at_1p5Nm": 0.6981012680011742,
+    "rot_max_deg": 9.224636323078123,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p026",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0853752855248593,
+    "post_at_rom": -1.0853732630252677,
+    "u_h_at_1p5Nm": 0.3676704326283433,
+    "post_at_1p5Nm": -0.3676655608388954,
+    "rot_max_deg": 7.21927347508726,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p036": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p036",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.19566093947302227,
+    "post_at_rom": 0.19566011440277684,
+    "u_h_at_1p5Nm": 0.37385952788691307,
+    "post_at_1p5Nm": 0.37385942333144945,
+    "rot_max_deg": 9.224629866646808,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p036",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": false,
+    "u_h_at_rom": 0.6409363475986963,
+    "post_at_rom": -0.6409292532096555,
+    "u_h_at_1p5Nm": 0.16897746129832728,
+    "post_at_1p5Nm": -0.16892892793463266,
+    "rot_max_deg": 7.219311478429389,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p038": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p038",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.35883668269640834,
+    "post_at_rom": 0.35883511210911156,
+    "u_h_at_1p5Nm": 0.5671846259552371,
+    "post_at_1p5Nm": 0.567180599347179,
+    "rot_max_deg": 9.224653327848207,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p038",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1735732001678658,
+    "post_at_rom": -1.1735729353873976,
+    "u_h_at_1p5Nm": 0.35338320868876827,
+    "post_at_1p5Nm": -0.3533831531255172,
+    "rot_max_deg": 7.219270939953923,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p051": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.61 post 0.61"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p051",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.6070221494299309,
+    "post_at_rom": 0.607020227988774,
+    "u_h_at_1p5Nm": 0.8835964804355398,
+    "post_at_1p5Nm": 0.8835911573855643,
+    "rot_max_deg": 9.224621076405928,
+    "bad": [
+     "extension@ROM u_h 0.61 post 0.61"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p051",
+    "usable": false,
+    "eval_point": null,
+    "monotonic": true,
+    "u_h_at_rom": 0.19179161165357975,
+    "post_at_rom": -0.19179146616882342,
+    "u_h_at_1p5Nm": 0.19179161165357975,
+    "post_at_1p5Nm": -0.19179146616882342,
+    "rot_max_deg": 1.8690648428397967,
+    "bad": []
+   }
+  },
+  "missing": [
+   "flexion"
+  ]
+ },
+ "p060": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.54 post 0.54"
+  ],
+  "windows": {
+   "AR_left": {
+    "set": "physio_fric2",
+    "case_dir": "p060",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.11551745502817104,
+    "post_at_rom": 0.11325045642386157,
+    "u_h_at_1p5Nm": 0.08682581454024496,
+    "post_at_1p5Nm": 0.07697714841510479,
+    "rot_max_deg": 7.657886005205845,
+    "bad": []
+   },
+   "AR_right": {
+    "set": "physio_fric2",
+    "case_dir": "p060",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.0853334557712124,
+    "post_at_rom": 0.07647984582751335,
+    "u_h_at_1p5Nm": 0.08300786362923183,
+    "post_at_1p5Nm": 0.07340891297679016,
+    "rot_max_deg": 4.510795736787212,
+    "bad": []
+   },
+   "LB_left": {
+    "set": "physio_fric2",
+    "case_dir": "p060",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.11634705303347179,
+    "post_at_rom": -0.11280632603769121,
+    "u_h_at_1p5Nm": 0.07799561123234869,
+    "post_at_1p5Nm": -0.028430574847278147,
+    "rot_max_deg": 6.101855947649632,
+    "bad": []
+   },
+   "LB_right": {
+    "set": "physio_fric2",
+    "case_dir": "p060",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.11578869683876646,
+    "post_at_rom": -0.1110813242269205,
+    "u_h_at_1p5Nm": 0.09253468599773035,
+    "post_at_1p5Nm": -0.01938708836041382,
+    "rot_max_deg": 7.884495547756008,
+    "bad": []
+   },
+   "extension": {
+    "set": "physio_fric2",
+    "case_dir": "p060",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.5413270293059436,
+    "post_at_rom": 0.5413171224341372,
+    "u_h_at_1p5Nm": 1.401794524438749,
+    "post_at_1p5Nm": 1.401791651990622,
+    "rot_max_deg": 15.686094266054528,
+    "bad": [
+     "extension@ROM u_h 0.54 post 0.54"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric2",
+    "case_dir": "p060",
+    "usable": false,
+    "eval_point": null,
+    "monotonic": true,
+    "u_h_at_rom": 0.7867307655579606,
+    "post_at_rom": -0.7867303308749333,
+    "u_h_at_1p5Nm": 0.7867307655579606,
+    "post_at_1p5Nm": -0.7867303308749333,
+    "rot_max_deg": 4.266903614204519,
+    "bad": []
+   }
+  },
+  "missing": [
+   "flexion"
+  ]
+ },
+ "p062": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "AR_left": {
+    "set": "physio_fric2",
+    "case_dir": "p062",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.13506833535677756,
+    "post_at_rom": 0.10823353635313898,
+    "u_h_at_1p5Nm": 0.09220526907291665,
+    "post_at_1p5Nm": 0.06832685092099355,
+    "rot_max_deg": 4.618781705354806,
+    "bad": []
+   },
+   "AR_right": {
+    "set": "physio_fric2",
+    "case_dir": "p062",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.17733461502235584,
+    "post_at_rom": 0.14874254896290348,
+    "u_h_at_1p5Nm": 0.09030670188475647,
+    "post_at_1p5Nm": 0.06387468216374631,
+    "rot_max_deg": 5.2290214649596045,
+    "bad": []
+   },
+   "LB_left": {
+    "set": "physio_fric2",
+    "case_dir": "p062",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.0922068297185016,
+    "post_at_rom": -0.052439462286219984,
+    "u_h_at_1p5Nm": 0.09870895264417023,
+    "post_at_1p5Nm": -0.062018819181548016,
+    "rot_max_deg": 4.942005810781472,
+    "bad": []
+   },
+   "LB_right": {
+    "set": "physio_fric2",
+    "case_dir": "p062",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.09451319699896171,
+    "post_at_rom": -0.05415454108587669,
+    "u_h_at_1p5Nm": 0.10255766334721089,
+    "post_at_1p5Nm": -0.06314012697894444,
+    "rot_max_deg": 4.959090372525859,
+    "bad": []
+   },
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p062",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.44753885013544875,
+    "post_at_rom": 0.44753865157603573,
+    "u_h_at_1p5Nm": 0.649966600576751,
+    "post_at_1p5Nm": 0.649755336307725,
+    "rot_max_deg": 9.228969769832762,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p062",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5030216203893774,
+    "post_at_rom": -0.5030211921989982,
+    "u_h_at_1p5Nm": 0.16403525626201604,
+    "post_at_1p5Nm": -0.16403524756376817,
+    "rot_max_deg": 7.219281145348246,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p063": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p063",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.39991521022163967,
+    "post_at_rom": 0.39991474786619424,
+    "u_h_at_1p5Nm": 0.5630015212826309,
+    "post_at_1p5Nm": 0.5630012891958402,
+    "rot_max_deg": 8.768780409316587,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p063",
+    "usable": false,
+    "eval_point": null,
+    "monotonic": true,
+    "u_h_at_rom": 0.08765555961209175,
+    "post_at_rom": -0.08764833332786202,
+    "u_h_at_1p5Nm": 0.08765555961209175,
+    "post_at_1p5Nm": -0.08764833332786202,
+    "rot_max_deg": 1.647333938192416,
+    "bad": []
+   }
+  },
+  "missing": [
+   "flexion"
+  ],
+  "open_reason": "flexion stopped at 1.6 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+  "computability": true
+ },
+ "p065": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p065",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.4066179167169299,
+    "post_at_rom": 0.4066177056304612,
+    "u_h_at_1p5Nm": 0.6114779006838486,
+    "post_at_1p5Nm": 0.6114655056109538,
+    "rot_max_deg": 9.213967063908257,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p065",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.636647819673189,
+    "post_at_rom": -0.6366476652236368,
+    "u_h_at_1p5Nm": 0.2109878971504882,
+    "post_at_1p5Nm": -0.2109863485897089,
+    "rot_max_deg": 7.21922211518975,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p066": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p066",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.2513805046895842,
+    "post_at_rom": 0.25137910528637236,
+    "u_h_at_1p5Nm": 0.4305062656386963,
+    "post_at_1p5Nm": 0.4305050546517308,
+    "rot_max_deg": 9.224633918280084,
+    "bad": []
+   }
+  },
+  "missing": [
+   "flexion"
+  ],
+  "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+  "computability": true
+ },
+ "p067": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p067",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.2880915863382075,
+    "post_at_rom": 0.2880911857681684,
+    "u_h_at_1p5Nm": 0.46313002845553647,
+    "post_at_1p5Nm": 0.46312888989630036,
+    "rot_max_deg": 9.22464062706862,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p067",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.6078147191038972,
+    "post_at_rom": -0.6078139070178991,
+    "u_h_at_1p5Nm": 0.17757832947479477,
+    "post_at_1p5Nm": -0.17757618282176715,
+    "rot_max_deg": 7.219270121950742,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p072": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.55 post 0.55"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p072",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.5484222849020396,
+    "post_at_rom": 0.5484179152614417,
+    "u_h_at_1p5Nm": 0.8241710696441653,
+    "post_at_1p5Nm": 0.8241669713552743,
+    "rot_max_deg": 9.224625238215278,
+    "bad": [
+     "extension@ROM u_h 0.55 post 0.55"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p072",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.9995848739612953,
+    "post_at_rom": -0.9995841548822323,
+    "u_h_at_1p5Nm": 0.8075563694837719,
+    "post_at_1p5Nm": -0.8075559533503525,
+    "rot_max_deg": 7.21483337182395,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p075": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.60 post 0.60"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p075_gpu5",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.6018981528393089,
+    "post_at_rom": 0.6018933662266776,
+    "u_h_at_1p5Nm": 0.9091377708306884,
+    "post_at_1p5Nm": 0.9091350620551234,
+    "rot_max_deg": 9.22462874695189,
+    "bad": [
+     "extension@ROM u_h 0.60 post 0.60"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p075_gpu5",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": false,
+    "u_h_at_rom": 0.9323989726046122,
+    "post_at_rom": -0.9323980122540966,
+    "u_h_at_1p5Nm": 0.8327197046812732,
+    "post_at_1p5Nm": -0.832719287519544,
+    "rot_max_deg": 7.21133311285459,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p076": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.50 post 0.50"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p076_gpu5",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.5000620114736626,
+    "post_at_rom": 0.5000597527106262,
+    "u_h_at_1p5Nm": 0.7146196031383614,
+    "post_at_1p5Nm": 0.7146191789221195,
+    "rot_max_deg": 9.22464305567666,
+    "bad": [
+     "extension@ROM u_h 0.50 post 0.50"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p076_gpu5",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5568727007334978,
+    "post_at_rom": -0.5568726700743628,
+    "u_h_at_1p5Nm": 0.23693710355273892,
+    "post_at_1p5Nm": -0.23693702216130394,
+    "rot_max_deg": 7.219269011549652,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p077": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p077_gpu3",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.45615824934620275,
+    "post_at_rom": 0.4561582214589306,
+    "u_h_at_1p5Nm": 0.6676555041901503,
+    "post_at_1p5Nm": 0.6676550581718302,
+    "rot_max_deg": 9.224622501665058,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p077_gpu3",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5800740092065569,
+    "post_at_rom": -0.5800739923311776,
+    "u_h_at_1p5Nm": 0.21775587128187338,
+    "post_at_1p5Nm": -0.21775556823630263,
+    "rot_max_deg": 7.2192693960837016,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p078": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p078_gpu3",
+    "usable": false,
+    "eval_point": null,
+    "monotonic": true,
+    "u_h_at_rom": 0.09035827837789863,
+    "post_at_rom": 0.09035329902128542,
+    "u_h_at_1p5Nm": 0.09035827837789863,
+    "post_at_1p5Nm": 0.09035329902128542,
+    "rot_max_deg": 4.213232290610458,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p078_gpu3",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1885859520234738,
+    "post_at_rom": -1.1885854748499012,
+    "u_h_at_1p5Nm": 0.3216050843139367,
+    "post_at_1p5Nm": -0.32160485226201224,
+    "rot_max_deg": 7.218816762206044,
+    "bad": []
+   }
+  },
+  "missing": [
+   "extension"
+  ],
+  "open_reason": "extension stopped at 4.2 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
+  "computability": true
+ },
+ "p079": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p079_gpu3",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4029833501970582,
+    "post_at_rom": 0.4029822364864121,
+    "u_h_at_1p5Nm": 0.6231118975420323,
+    "post_at_1p5Nm": 0.6231109222473361,
+    "rot_max_deg": 9.224620905928242,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p079_gpu3",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1579563428574278,
+    "post_at_rom": -1.1579533899113146,
+    "u_h_at_1p5Nm": 0.323894849287547,
+    "post_at_1p5Nm": -0.32380167390222087,
+    "rot_max_deg": 7.219152168239987,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p081": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p081_gpu3",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.484706596968633,
+    "post_at_rom": 0.48470647221544455,
+    "u_h_at_1p5Nm": 0.7389898753161369,
+    "post_at_1p5Nm": 0.7389892129137772,
+    "rot_max_deg": 9.224657270174205,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p081_gpu3",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.594957291933047,
+    "post_at_rom": -0.594955577761382,
+    "u_h_at_1p5Nm": 0.36316154932233163,
+    "post_at_1p5Nm": -0.36315808558758034,
+    "rot_max_deg": 4.222100237204966,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p086": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p086_gpu3",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4660937236147406,
+    "post_at_rom": 0.4659929198857296,
+    "u_h_at_1p5Nm": 0.8014941615093936,
+    "post_at_1p5Nm": 0.8014692160434528,
+    "rot_max_deg": 9.226273445119142,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p086_gpu3",
+    "usable": false,
+    "eval_point": null,
+    "monotonic": true,
+    "u_h_at_rom": 0.17904615102180957,
+    "post_at_rom": -0.17904499773101556,
+    "u_h_at_1p5Nm": 0.17904615102180957,
+    "post_at_1p5Nm": -0.17904499773101556,
+    "rot_max_deg": 1.312383318679429,
+    "bad": []
+   }
+  },
+  "missing": [
+   "flexion"
+  ],
+  "open_reason": "flexion stopped at 1.3 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+  "computability": true
+ },
+ "p092": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.52 post 0.52"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p092_gpu5",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.5231386808195717,
+    "post_at_rom": 0.5230945145509349,
+    "u_h_at_1p5Nm": 0.8959038407173884,
+    "post_at_1p5Nm": 0.895901068650531,
+    "rot_max_deg": 9.224916677156655,
+    "bad": [
+     "extension@ROM u_h 0.52 post 0.52"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p092_gpu5",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1209857424505463,
+    "post_at_rom": -1.1209856979385542,
+    "u_h_at_1p5Nm": 0.8560651179576889,
+    "post_at_1p5Nm": -0.856065046924511,
+    "rot_max_deg": 7.219278947473729,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p093": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.61 post 0.61"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p093_gpu5",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.6058373849671501,
+    "post_at_rom": 0.6058372418866674,
+    "u_h_at_1p5Nm": 1.0211877385184192,
+    "post_at_1p5Nm": 1.0211814763486702,
+    "rot_max_deg": 9.224636808190953,
+    "bad": [
+     "extension@ROM u_h 0.61 post 0.61"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p093_gpu5",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0436433217934755,
+    "post_at_rom": -1.043643316579095,
+    "u_h_at_1p5Nm": 0.8827876157166187,
+    "post_at_1p5Nm": -0.8827875021612741,
+    "rot_max_deg": 6.425080681649985,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p094": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p094_gpu5",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.3129598734612191,
+    "post_at_rom": 0.3129598696736357,
+    "u_h_at_1p5Nm": 0.4925908975044044,
+    "post_at_1p5Nm": 0.4925907392321115,
+    "rot_max_deg": 9.224624586674064,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p094_gpu5",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.523146100106717,
+    "post_at_rom": -0.5231456013966425,
+    "u_h_at_1p5Nm": 0.14689700282737664,
+    "post_at_1p5Nm": -0.14689266896160014,
+    "rot_max_deg": 7.21939298805445,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p100": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p100",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.45695243969631316,
+    "post_at_rom": 0.4569489241167159,
+    "u_h_at_1p5Nm": 0.7173030312488444,
+    "post_at_1p5Nm": 0.717300051858084,
+    "rot_max_deg": 9.224648904188674,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p100",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1780439479939855,
+    "post_at_rom": -1.1780439455458154,
+    "u_h_at_1p5Nm": 0.8325322450474604,
+    "post_at_1p5Nm": -0.8325319919159844,
+    "rot_max_deg": 7.219274219202473,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p105": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p105_gpu2",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.43945122783590856,
+    "post_at_rom": 0.4394429397597383,
+    "u_h_at_1p5Nm": 0.6477151586548292,
+    "post_at_1p5Nm": 0.6477139644976196,
+    "rot_max_deg": 9.224652836667579,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p105_gpu2",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5447704658086856,
+    "post_at_rom": -0.5447700365605641,
+    "u_h_at_1p5Nm": 0.15934775603938267,
+    "post_at_1p5Nm": -0.15934727828978573,
+    "rot_max_deg": 7.219258613564118,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p109": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.33913243,
+  "case_dir": "p109_gpu3",
+  "open_reason": "frictional insertion run stopped at t 3.339 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p110": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p110_gpu3",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.30464177821370614,
+    "post_at_rom": 0.3046416220113126,
+    "u_h_at_1p5Nm": 0.48262972926451386,
+    "post_at_1p5Nm": 0.48262933498264377,
+    "rot_max_deg": 9.224613724722275,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p110_gpu3",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5601012499254757,
+    "post_at_rom": -0.5601012359565157,
+    "u_h_at_1p5Nm": 0.16868766545932926,
+    "post_at_1p5Nm": -0.16868641168911033,
+    "rot_max_deg": 7.219272450789723,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p111": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p111_gpu3",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.40640599989873866,
+    "post_at_rom": 0.40640353088401204,
+    "u_h_at_1p5Nm": 0.6213395587289869,
+    "post_at_1p5Nm": 0.6213384790029797,
+    "rot_max_deg": 9.224682427313155,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p111_gpu3",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5915048155683637,
+    "post_at_rom": -0.5914805902869886,
+    "u_h_at_1p5Nm": 0.18788303227417769,
+    "post_at_1p5Nm": -0.18695366725014276,
+    "rot_max_deg": 7.21927095455258,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p112": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p112_gpu1",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.44832469818306037,
+    "post_at_rom": 0.4483244486648079,
+    "u_h_at_1p5Nm": 0.6722777744802682,
+    "post_at_1p5Nm": 0.6722771315176654,
+    "rot_max_deg": 9.22463845752935,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p112_gpu1",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0380771171239322,
+    "post_at_rom": -1.0380763582943027,
+    "u_h_at_1p5Nm": 0.4143949065129613,
+    "post_at_1p5Nm": -0.41439485929588665,
+    "rot_max_deg": 7.21928301094914,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p113": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p113_gpu2",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4853258075006821,
+    "post_at_rom": 0.48532080451080806,
+    "u_h_at_1p5Nm": 0.7469496715905931,
+    "post_at_1p5Nm": 0.7469495314078549,
+    "rot_max_deg": 9.22464822928982,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p113_gpu2",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.9990003712033821,
+    "post_at_rom": -0.9989995301526621,
+    "u_h_at_1p5Nm": 0.4923217601864672,
+    "post_at_1p5Nm": -0.4923215392639764,
+    "rot_max_deg": 7.2192738335841184,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p114": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.59 post 0.59"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p114_gpu1",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.5877788182843625,
+    "post_at_rom": 0.5877780507974159,
+    "u_h_at_1p5Nm": 0.9562860160667677,
+    "post_at_1p5Nm": 0.9562824044610441,
+    "rot_max_deg": 9.224622511736518,
+    "bad": [
+     "extension@ROM u_h 0.59 post 0.59"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p114_gpu1",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0124453309497647,
+    "post_at_rom": -1.012445278147147,
+    "u_h_at_1p5Nm": 0.8746268478883612,
+    "post_at_1p5Nm": -0.874626847255924,
+    "rot_max_deg": 6.901894969410798,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p117": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.51 post 0.51"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p117_gpu2",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.5146366117436023,
+    "post_at_rom": 0.5146334529223296,
+    "u_h_at_1p5Nm": 0.8786238814071217,
+    "post_at_1p5Nm": 0.8786233553628798,
+    "rot_max_deg": 9.224628258652682,
+    "bad": [
+     "extension@ROM u_h 0.51 post 0.51"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p117_gpu2",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1097059136258896,
+    "post_at_rom": -1.1097059123226154,
+    "u_h_at_1p5Nm": 0.8533415462632397,
+    "post_at_1p5Nm": -0.853341501849188,
+    "rot_max_deg": 7.21927947553695,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p122": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p122_gpu1",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.44811506879287677,
+    "post_at_rom": 0.44811448139983084,
+    "u_h_at_1p5Nm": 0.6562419885285685,
+    "post_at_1p5Nm": 0.6562419841636375,
+    "rot_max_deg": 9.224623691304398,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p122_gpu1",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5652917278676393,
+    "post_at_rom": -0.5652911353607003,
+    "u_h_at_1p5Nm": 0.1773856609140753,
+    "post_at_1p5Nm": -0.1773845326097173,
+    "rot_max_deg": 7.219254903284291,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p124": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p124_gpu3",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.30797329804154866,
+    "post_at_rom": 0.3079732919486327,
+    "u_h_at_1p5Nm": 0.4887751234533828,
+    "post_at_1p5Nm": 0.48877491887566843,
+    "rot_max_deg": 9.22462810460847,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p124_gpu3",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5809945552113562,
+    "post_at_rom": -0.5809944920153713,
+    "u_h_at_1p5Nm": 0.15529311392764822,
+    "post_at_1p5Nm": -0.15529107105987552,
+    "rot_max_deg": 7.219546529570822,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p125": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "AR_left": {
+    "set": "physio_fric2",
+    "case_dir": "p125",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.0592121647717177,
+    "post_at_rom": 0.048595597492060584,
+    "u_h_at_1p5Nm": 0.030480213691500387,
+    "post_at_1p5Nm": 0.01886913743116744,
+    "rot_max_deg": 4.493600592982304,
+    "bad": []
+   },
+   "AR_right": {
+    "set": "physio_fric2",
+    "case_dir": "p125",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.028755948620059698,
+    "post_at_rom": 0.013868615844629228,
+    "u_h_at_1p5Nm": 0.026964686109477182,
+    "post_at_1p5Nm": 0.012137309371623316,
+    "rot_max_deg": 3.95467202758716,
+    "bad": []
+   },
+   "LB_left": {
+    "set": "physio_fric2",
+    "case_dir": "p125",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.08414801856324772,
+    "post_at_rom": -0.08335451386769588,
+    "u_h_at_1p5Nm": 0.07003538648063228,
+    "post_at_1p5Nm": -0.06948196806478996,
+    "rot_max_deg": 5.704193029543576,
+    "bad": []
+   },
+   "LB_right": {
+    "set": "physio_fric2",
+    "case_dir": "p125",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.09177233122045293,
+    "post_at_rom": -0.09169069708054485,
+    "u_h_at_1p5Nm": 0.10077209085629663,
+    "post_at_1p5Nm": -0.10057408902105278,
+    "rot_max_deg": 5.682331820718874,
+    "bad": []
+   },
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p125_gpu2",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4153166035002732,
+    "post_at_rom": 0.41531574565007673,
+    "u_h_at_1p5Nm": 0.6307704162601119,
+    "post_at_1p5Nm": 0.6307703781640128,
+    "rot_max_deg": 9.22462998457573,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p125_gpu2",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1150161813701103,
+    "post_at_rom": -1.115015504316152,
+    "u_h_at_1p5Nm": 0.35299967905980245,
+    "post_at_1p5Nm": -0.3529996441168576,
+    "rot_max_deg": 5.79417316085951,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p131": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p131_gpu1",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.3501444522839832,
+    "post_at_rom": 0.35014414840309266,
+    "u_h_at_1p5Nm": 0.5418286317834566,
+    "post_at_1p5Nm": 0.54182861864525,
+    "rot_max_deg": 9.224622908135682,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p131_gpu1",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5643544946251511,
+    "post_at_rom": -0.5643542654289295,
+    "u_h_at_1p5Nm": 0.16239388199028723,
+    "post_at_1p5Nm": -0.16239246582038855,
+    "rot_max_deg": 7.219319405248157,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p132": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p132_gpu2",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.36645270558361415,
+    "post_at_rom": 0.36645245457064,
+    "u_h_at_1p5Nm": 0.5838821791114622,
+    "post_at_1p5Nm": 0.5838820660114177,
+    "rot_max_deg": 9.2246293118299,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p132_gpu2",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1312524935153099,
+    "post_at_rom": -1.1312517806091271,
+    "u_h_at_1p5Nm": 0.3429010469426205,
+    "post_at_1p5Nm": -0.3429002636233634,
+    "rot_max_deg": 7.219272127151815,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p133": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p133_gpu3",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.48736100377180547,
+    "post_at_rom": 0.48736099917147646,
+    "u_h_at_1p5Nm": 0.7469553671859958,
+    "post_at_1p5Nm": 0.746955351192589,
+    "rot_max_deg": 9.224634650437697,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p133_gpu3",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0583233828677507,
+    "post_at_rom": -1.0583196173715927,
+    "u_h_at_1p5Nm": 0.35286526634751153,
+    "post_at_1p5Nm": -0.35284679244797296,
+    "rot_max_deg": 7.219188042062157,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p135": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.50 post 0.50"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p135_gpu1",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.5014599489307489,
+    "post_at_rom": 0.5014439346524868,
+    "u_h_at_1p5Nm": 0.7182017741906047,
+    "post_at_1p5Nm": 0.7181844152678187,
+    "rot_max_deg": 9.22535040323852,
+    "bad": [
+     "extension@ROM u_h 0.50 post 0.50"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p135_gpu1",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5841092318799571,
+    "post_at_rom": -0.5841089934327903,
+    "u_h_at_1p5Nm": 0.2319892458121969,
+    "post_at_1p5Nm": -0.23198909246104382,
+    "rot_max_deg": 7.2192710227901,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p139": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.64 post 0.63"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p139_gpu3",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.6372776144578791,
+    "post_at_rom": 0.6343513507368572,
+    "u_h_at_1p5Nm": 0.8240503268997403,
+    "post_at_1p5Nm": 0.8240427986145376,
+    "rot_max_deg": 9.25382726896297,
+    "bad": [
+     "extension@ROM u_h 0.64 post 0.63"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p139_gpu3",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5758205388458182,
+    "post_at_rom": -0.5758204064084874,
+    "u_h_at_1p5Nm": 0.22180209576501395,
+    "post_at_1p5Nm": -0.22180195541665,
+    "rot_max_deg": 7.21926860638401,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p142": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.57 post 0.57"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p142_gpu2",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.5749775294624212,
+    "post_at_rom": 0.5746638859923446,
+    "u_h_at_1p5Nm": 0.8378272323787778,
+    "post_at_1p5Nm": 0.8376668287525474,
+    "rot_max_deg": 9.227926499431591,
+    "bad": [
+     "extension@ROM u_h 0.57 post 0.57"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p142_gpu2",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1678797693745662,
+    "post_at_rom": -1.1678797612133511,
+    "u_h_at_1p5Nm": 0.8221896194782017,
+    "post_at_1p5Nm": -0.8221892677256458,
+    "rot_max_deg": 7.21930216986887,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p143": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.51 post 0.51"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p143_gpu3",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.5057095604750648,
+    "post_at_rom": 0.5057053516236293,
+    "u_h_at_1p5Nm": 0.9116680338936204,
+    "post_at_1p5Nm": 0.9116673142259497,
+    "rot_max_deg": 9.224630765149966,
+    "bad": [
+     "extension@ROM u_h 0.51 post 0.51"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p143_gpu3",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.11317073250343,
+    "post_at_rom": -1.113170721881056,
+    "u_h_at_1p5Nm": 0.8475511866821374,
+    "post_at_1p5Nm": -0.8475511637401385,
+    "rot_max_deg": 7.219278490147654,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p145": {
+  "verdict": "fail",
+  "reasons": [
+   "extension@ROM u_h 0.57 post 0.57"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p145_gpu1",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.5691794497416818,
+    "post_at_rom": 0.5691793482394312,
+    "u_h_at_1p5Nm": 1.000177530722638,
+    "post_at_1p5Nm": 1.0001722939176596,
+    "rot_max_deg": 9.22464000680988,
+    "bad": [
+     "extension@ROM u_h 0.57 post 0.57"
+    ]
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p145_gpu1",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0611501824677556,
+    "post_at_rom": -1.0611500790684276,
+    "u_h_at_1p5Nm": 0.8738530368119797,
+    "post_at_1p5Nm": -0.873852854910114,
+    "rot_max_deg": 7.219284357377243,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p146": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p146_gpu1",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.32962857877961405,
+    "post_at_rom": 0.3296282010388012,
+    "u_h_at_1p5Nm": 0.5230931468219756,
+    "post_at_1p5Nm": 0.5230931086032088,
+    "rot_max_deg": 9.224623099619626,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p146_gpu1",
+    "usable": false,
+    "eval_point": null,
+    "monotonic": true,
+    "u_h_at_rom": 0.14002161641878957,
+    "post_at_rom": -0.14002127814551676,
+    "u_h_at_1p5Nm": 0.14002161641878957,
+    "post_at_1p5Nm": -0.14002127814551676,
+    "rot_max_deg": 0.9853069272386059,
+    "bad": []
+   }
+  },
+  "missing": [
+   "flexion"
+  ],
+  "open_reason": "flexion stopped at 1.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+  "computability": true
+ },
+ "p148": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric3",
+    "case_dir": "p148_gpu1",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.42528586990984435,
+    "post_at_rom": 0.4252856841622899,
+    "u_h_at_1p5Nm": 0.6651717968061831,
+    "post_at_1p5Nm": 0.6651716204304601,
+    "rot_max_deg": 9.224622047578148,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p148_gpu1",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1163481520053515,
+    "post_at_rom": -1.116346867464,
+    "u_h_at_1p5Nm": 0.3108157533202361,
+    "post_at_1p5Nm": -0.3108140402522804,
+    "rot_max_deg": 7.219273739848452,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p039": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 2.23295295,
+  "case_dir": "p039",
+  "open_reason": "frictional insertion run stopped at t 2.233 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "computability": true,
+  "stop_phase": "static_release"
+ },
+ "p048": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 2.93053634,
+  "case_dir": "p048",
+  "open_reason": "frictional insertion run stopped at t 2.931 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "computability": true,
+  "stop_phase": "static_release"
+ },
+ "p050": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 2.51766347,
+  "case_dir": "p050",
+  "open_reason": "frictional insertion run stopped at t 2.518 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "computability": true,
+  "stop_phase": "static_release"
+ },
+ "p052": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 2.44985883,
+  "case_dir": "p052",
+  "open_reason": "frictional insertion run stopped at t 2.450 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "computability": true,
+  "stop_phase": "static_release"
+ },
+ "p061": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.05,
+  "case_dir": "p061",
+  "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p064": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 2.44268306,
+  "case_dir": "p064",
+  "open_reason": "frictional insertion run stopped at t 2.443 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "computability": true,
+  "stop_phase": "static_release"
+ },
+ "p068": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.01363636,
+  "case_dir": "p068_gpu5",
+  "open_reason": "frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p071": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.06144167,
+  "case_dir": "p071",
+  "open_reason": "frictional insertion run stopped at t 3.061 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p074": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.03636364,
+  "case_dir": "p074_gpu3",
+  "open_reason": "frictional insertion run stopped at t 3.036 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p082": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.04090909,
+  "case_dir": "p082",
+  "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p083": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.05,
+  "case_dir": "p083",
+  "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p084": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.04090909,
+  "case_dir": "p084_gpu5",
+  "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p088": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.04090909,
+  "case_dir": "p088_gpu5",
+  "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p095": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.04545455,
+  "case_dir": "p095_gpu5",
+  "open_reason": "frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p097": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 2.64221361,
+  "case_dir": "p097_gpu2",
+  "open_reason": "frictional insertion run stopped at t 2.642 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "computability": true,
+  "stop_phase": "static_release"
+ },
+ "p101": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.05,
+  "case_dir": "p101_gpu2",
+  "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p104": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.05,
+  "case_dir": "p104_gpu5",
+  "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p115": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.01363636,
+  "case_dir": "p115_gpu1",
+  "open_reason": "frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p116": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.05,
+  "case_dir": "p116_gpu1",
+  "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p120": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.05,
+  "case_dir": "p120_gpu2",
+  "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p121": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.02272727,
+  "case_dir": "p121_gpu3",
+  "open_reason": "frictional insertion run stopped at t 3.023 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p127": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.03181818,
+  "case_dir": "p127_gpu1",
+  "open_reason": "frictional insertion run stopped at t 3.032 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p128": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.06901574,
+  "case_dir": "p128_gpu1",
+  "open_reason": "frictional insertion run stopped at t 3.069 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p129": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.05,
+  "case_dir": "p129_gpu2",
+  "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p130": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.05,
+  "case_dir": "p130_gpu2",
+  "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "p140": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {},
+  "missing": [
+   "flexion",
+   "extension"
+  ],
+  "t_end": 3.04545455,
+  "case_dir": "p140_gpu1",
+  "open_reason": "frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "computability": true,
+  "stop_phase": "c3_release_impact"
+ },
+ "_meta": {
+  "rule": "PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior",
+  "provisional": "verdicts provisional until NUM-16 / NUM-17 (numerical convergence of the friction results) and the density reference (DECISIONS 2026-11-05 item 8) are settled",
+  "generated": "2026-11-05 03:41"
+ }
+}

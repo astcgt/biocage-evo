@@ -1,0 +1,136 @@
+{
+ "A_3": {
+  "axial_pass": 0,
+  "interleave_pass": 0,
+  "names": []
+ },
+ "A_5": {
+  "axial_pass": 0,
+  "interleave_pass": 0,
+  "names": []
+ },
+ "A_6.4": {
+  "axial_pass": 0,
+  "interleave_pass": 0,
+  "names": []
+ },
+ "A_7.5": {
+  "axial_pass": 0,
+  "interleave_pass": 0,
+  "names": []
+ },
+ "A_10": {
+  "axial_pass": 0,
+  "interleave_pass": 0,
+  "names": []
+ },
+ "A_16": {
+  "axial_pass": 12,
+  "interleave_pass": 0,
+  "names": [
+   "p036",
+   "p062",
+   "p065",
+   "p067",
+   "p077",
+   "p094",
+   "p105",
+   "p110",
+   "p111",
+   "p122",
+   "p124",
+   "p131"
+  ]
+ },
+ "B_3": {
+  "axial_pass": 0,
+  "interleave_pass": 1,
+  "names": [
+   "p100"
+  ]
+ },
+ "B_5": {
+  "axial_pass": 3,
+  "interleave_pass": 1,
+  "names": [
+   "p036",
+   "p065",
+   "p077",
+   "p100"
+  ]
+ },
+ "B_6.4": {
+  "axial_pass": 10,
+  "interleave_pass": 1,
+  "names": [
+   "p036",
+   "p062",
+   "p065",
+   "p067",
+   "p077",
+   "p094",
+   "p100",
+   "p111",
+   "p122",
+   "p124",
+   "p131"
+  ]
+ },
+ "B_7.5": {
+  "axial_pass": 12,
+  "interleave_pass": 1,
+  "names": [
+   "p036",
+   "p062",
+   "p065",
+   "p067",
+   "p077",
+   "p094",
+   "p100",
+   "p105",
+   "p110",
+   "p111",
+   "p122",
+   "p124",
+   "p131"
+  ]
+ },
+ "B_10": {
+  "axial_pass": 12,
+  "interleave_pass": 1,
+  "names": [
+   "p036",
+   "p062",
+   "p065",
+   "p067",
+   "p077",
+   "p094",
+   "p100",
+   "p105",
+   "p110",
+   "p111",
+   "p122",
+   "p124",
+   "p131"
+  ]
+ },
+ "B_16": {
+  "axial_pass": 12,
+  "interleave_pass": 1,
+  "names": [
+   "p036",
+   "p062",
+   "p065",
+   "p067",
+   "p077",
+   "p094",
+   "p100",
+   "p105",
+   "p110",
+   "p111",
+   "p122",
+   "p124",
+   "p131"
+  ]
+ }
+}

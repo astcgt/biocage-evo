@@ -1,0 +1,56 @@
+{
+ "p039": {
+  "case_dir": "p039",
+  "t_last": 2.0,
+  "n_states": 3,
+  "max_soft_z_compression_pct": 1.5707850456237793,
+  "p99_soft_z_compression_pct": 0.4815758466720581,
+  "p99_principal_compression_pct": 0.645120519377501,
+  "n_soft_elems": 11531
+ },
+ "p048": {
+  "case_dir": "p048",
+  "t_last": 2.0,
+  "n_states": 3,
+  "max_soft_z_compression_pct": 1.8665850162506104,
+  "p99_soft_z_compression_pct": 0.71260005235672,
+  "p99_principal_compression_pct": 0.9897689064769489,
+  "n_soft_elems": 12418
+ },
+ "p050": {
+  "case_dir": "p050",
+  "t_last": 2.0,
+  "n_states": 3,
+  "max_soft_z_compression_pct": 1.2801110744476318,
+  "p99_soft_z_compression_pct": 0.309846431016922,
+  "p99_principal_compression_pct": 0.4475028981247519,
+  "n_soft_elems": 16828
+ },
+ "p052": {
+  "case_dir": "p052",
+  "t_last": 2.0,
+  "n_states": 3,
+  "max_soft_z_compression_pct": 1.5623629093170166,
+  "p99_soft_z_compression_pct": 0.4539974331855774,
+  "p99_principal_compression_pct": 0.6053511272456346,
+  "n_soft_elems": 11531
+ },
+ "p064": {
+  "case_dir": "p064",
+  "t_last": 2.0,
+  "n_states": 3,
+  "max_soft_z_compression_pct": 1.3643264770507812,
+  "p99_soft_z_compression_pct": 0.613336443901062,
+  "p99_principal_compression_pct": 0.7980333113647948,
+  "n_soft_elems": 12132
+ },
+ "p097": {
+  "case_dir": "p097_gpu2",
+  "t_last": 2.6422226428985596,
+  "n_states": 4,
+  "max_soft_z_compression_pct": 2.1438121795654297,
+  "p99_soft_z_compression_pct": 1.1305946111679077,
+  "p99_principal_compression_pct": 1.498876068187972,
+  "n_soft_elems": 16828
+ }
+}

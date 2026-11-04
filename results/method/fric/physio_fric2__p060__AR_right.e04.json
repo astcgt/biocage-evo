@@ -1,0 +1,56 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric2/p060/w_AR_right",
+ "windows": {
+  "AR_right": {
+   "t": 3.9933132718957736,
+   "target_reached": true,
+   "M_at_target": 1500.0,
+   "mu_squeeze": 0.025011943197874958,
+   "net_push_N": 2.0943681010806445,
+   "net_twist_Nmm": 25.450044489253337,
+   "N_total": 221.1135965450571,
+   "one_face_slip_bound_mm": 0.5817434385345783,
+   "cage_translation_tied_mm": [
+    -0.07340891297679016,
+    0.038748379577153935,
+    -0.08187091861689921
+   ],
+   "eval": {
+    "t_a": 3.98708821,
+    "M_a": 1454.05529489,
+    "t_b": 3.99415875,
+    "M_b": 1506.2401375,
+    "frac": 0.8804224140976107,
+    "coarse": false,
+    "invalid": [
+     [
+      3.55,
+      0.04999999999999982,
+      99.4980221094,
+      "dyn",
+      100.3,
+      2.56
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 91,
+    "n_invalid": 1,
+    "n_dyn": 1,
+    "dt_min": 0.0008098599999999401,
+    "monotonic": true,
+    "rb_res_max": 11.773850966375576,
+    "rb_fres_max": 0.39985451561098495,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "9091b3ef34637b1c9ead58231b7588941cd89390",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "c2b0f24adc25d0611d8b7fc752f11aa568cd42dacef54047b75e2cf21da68c7a",
+  "case_xplt": "cae19689269589d62085922ad83d29e5df01746efded2f53f7f342e78c689e3c"
+ }
+}

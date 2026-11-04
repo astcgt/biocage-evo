@@ -1,0 +1,88 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric3/p078_gpu3/w_flexion",
+ "windows": {
+  "flexion": {
+   "t": 3.6454827692501066,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.012207892281288274,
+   "net_push_N": 3.934423705744102,
+   "net_twist_Nmm": 0.34681463317339445,
+   "N_total": 324.459149428453,
+   "one_face_slip_bound_mm": 0.5796453124887294,
+   "cage_translation_tied_mm": [
+    0.32160485226201224,
+    0.0003863393632792387,
+    0.026986932040239525
+   ],
+   "eval": {
+    "t_a": 3.64129456,
+    "M_a": -1467.74973583,
+    "t_b": 3.64778814,
+    "M_b": -1517.75193436,
+    "frac": 0.6449769233776939,
+    "coarse": false,
+    "invalid": [
+     [
+      3.51818182,
+      0.018181820000000126,
+      -658.964483202,
+      "dyn",
+      210.2,
+      32.28
+     ],
+     [
+      3.53636364,
+      0.018181819999999682,
+      -537.167579492,
+      "dyn",
+      87.0,
+      3.69
+     ],
+     [
+      3.54553157,
+      0.009167930000000268,
+      -809.383708073,
+      "dyn",
+      33.0,
+      2.51
+     ],
+     [
+      3.59123446,
+      0.009952559999999888,
+      -976.023236625,
+      "dyn",
+      136.6,
+      0.12
+     ],
+     [
+      3.8787447,
+      0.009958199999999806,
+      -3655.17372669,
+      "dyn",
+      32.0,
+      2.31
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 118,
+    "n_invalid": 5,
+    "n_dyn": 5,
+    "dt_min": 0.0005006699999996478,
+    "monotonic": true,
+    "rb_res_max": 12.817957546244715,
+    "rb_fres_max": 3.6332609162403102,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "9091b3ef34637b1c9ead58231b7588941cd89390",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "368ce8f7aef10dd8351c678b756b0a5e174b123e9ba1be35a508b8e3dae64e30",
+  "case_xplt": "d5ca4698bb2fd411f5273a8ec1eff9c7788ee713491812d19e22e0d99287c3fd"
+ }
+}

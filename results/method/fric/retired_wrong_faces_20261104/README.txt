@@ -1,0 +1,1 @@
+e07 first version (mesh flag 'hard' used as the material interface) outputs, 2026-11-04 03:21-03:22; INVALID for mix designs; retired 2026-11-04 14:30 after the QA audit (DECISIONS 2026-11-04 11:30 / 14:20)

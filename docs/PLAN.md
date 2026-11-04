@@ -33,6 +33,7 @@ Sources of method:
 | S7 | Height | height loss <= d/2 at 150 N | keep distraction, foramen height |
 | S8 | Bone | no endplate overload: peak 1 mm2-averaged contact pressure below the subsidence proxy (calibrated on FEBio) | subsidence |
 | S9 | No slip-out (dislocation: rigid-body radial outward migration of the whole cage; local squash / micro-slip allowed, PI 2026-10-27) | at mu 0.3 (sensitivity 0.2 / 0.45): cage-centre translation <= 1 mm relative to C3 and C4 in every direction, 6 directions x 3 cycles, no ratcheting; posterior (toward the cord) net migration <= 0.5 mm and posterior push-out >= 135 N (PI 2026-10-26) | main goal + cord safety |
+| S10 | No hard / soft delamination (PI 2026-11-04) | soft-side p99 shear traction on the hard / soft material interfaces <= 3 MPa at the state where the segment reaches the intact ROM (flexion and extension, real friction); PROVISIONAL until the bond strength of the co-printed PLCL interface is measured (methods/e07_interface_shear.py) | integrity: a delaminated pad is debris near the cord |
 
 ## Objectives
 - Fixation: minimise mu_req = worst friction coefficient needed to hold over the 6 physiological directions (1.5 N m + 100 N follower).

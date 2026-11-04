@@ -1,0 +1,88 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric3/p062/w_flexion",
+ "windows": {
+  "flexion": {
+   "t": 3.7098875654425174,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.03929776148829394,
+   "net_push_N": 12.030744944926427,
+   "net_twist_Nmm": 0.44754857556913374,
+   "N_total": 307.50952940977834,
+   "one_face_slip_bound_mm": 0.4140239024916473,
+   "cage_translation_tied_mm": [
+    0.16403524756376817,
+    -5.341945865276019e-05,
+    0.10016821398204277
+   ],
+   "eval": {
+    "t_a": 3.68126902,
+    "M_a": -1255.67279925,
+    "t_b": 3.72799387,
+    "M_b": -1654.58027793,
+    "frac": 0.612490900292188,
+    "coarse": false,
+    "invalid": [
+     [
+      3.55,
+      0.04999999999999982,
+      -764.563525207,
+      "dyn",
+      1979.7,
+      494.71
+     ],
+     [
+      3.70167172,
+      0.02040270000000044,
+      -1333.8658505,
+      "dyn",
+      510.6,
+      125.09
+     ],
+     [
+      3.78760994,
+      0.013847900000000024,
+      44.7328490271,
+      "dyn",
+      2218.0,
+      13.28
+     ],
+     [
+      3.92374929,
+      0.012702539999999818,
+      -3428.49087182,
+      "dyn",
+      287.9,
+      8.62
+     ],
+     [
+      3.95192657,
+      0.009218149999999703,
+      -3267.38981686,
+      "dyn",
+      140.9,
+      0.42
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 74,
+    "n_invalid": 5,
+    "n_dyn": 5,
+    "dt_min": 0.0005013699999998344,
+    "monotonic": true,
+    "rb_res_max": 29.88136786026634,
+    "rb_fres_max": 2.1124564574007776,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "9091b3ef34637b1c9ead58231b7588941cd89390",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "7db47619449e3a4aa8ccafda1d1a5ae764ef52fca203380de221e5bb920f613c",
+  "case_xplt": "45418f1099f475766a712d3adb70f9a800b7a1fdc1fcda75478c0fa6ced561a8"
+ }
+}
