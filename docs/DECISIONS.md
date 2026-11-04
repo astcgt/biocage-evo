@@ -166,6 +166,6 @@ constraints = surgery-compatible + no nerve / bone harm; maximum freedom otherwi
 
 ## 2026-11-05 04:10 — PI decisions applied (see biocage_simulation_test_oct2026/human_study/DECISIONS.md 04:10)
 - Evaluation point (PI item 1 = 04:30 wording): 1.5 N m state when transmitted, else intact ROM (fric_compare, eval_point per window).
-  Gate 4: 14 fail / 24 pass / 7 open (was 26 / 14 / 5). Radial-mix exclusion first (collect_split, PI item 2).
+  Gate 4: 14 fail / 24 pass / 33 open (was 26 / 14 / 31; open = 27 insertion stops + 6 window-level). Radial-mix exclusion first (collect_split, PI item 2).
 - Merged classes: radial-mix-excluded 28, dislocation-friction 17, interface-shear-provisional 14, friction-computability 14; PASS 0; tied passes 72.
 - All friction verdicts provisional (R03 superseded; NUM-16 / NUM-17; density reference -> physio_fric4 at 1e-9, item 8).
