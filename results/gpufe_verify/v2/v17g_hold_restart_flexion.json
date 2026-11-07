@@ -1,7 +1,7 @@
 {
  "prov": {
-  "time": "2026-11-08 04:43:54",
-  "git": "be188c6",
+  "time": "2026-11-08 04:57:22",
+  "git": "e970c56",
   "dirty_gpufe": true,
   "inputs": {},
   "opts": {},
@@ -68,11 +68,11 @@
    "t_last": 4.4,
    "env": {
     "CUDA_VISIBLE_DEVICES": "3",
-    "OMP_NUM_THREADS": "3",
+    "OMP_NUM_THREADS": "5",
     "OMP_STACKSIZE": "1G"
    },
    "febio_sha256": "88c24a0d06811eaf5c1637a649998b49eddb11b154ba24dd89c2a83e9e7c6700",
-   "lib_sha256": null,
+   "lib_sha256": "a1dca424dcb2487a18bd7e0777afbf50b32896cfcda5006813948c40a3838f72",
    "u_ramp_end": 0.5691,
    "n_hold": 344,
    "u_start": 0.5691,
@@ -101,7 +101,7 @@
     "BIOCAGE_STICK_MEMORY": "1"
    },
    "febio_sha256": "88c24a0d06811eaf5c1637a649998b49eddb11b154ba24dd89c2a83e9e7c6700",
-   "lib_sha256": null,
+   "lib_sha256": "a1dca424dcb2487a18bd7e0777afbf50b32896cfcda5006813948c40a3838f72",
    "u_ramp_end": 0.4341,
    "n_hold": 27,
    "u_start": 0.4341,
@@ -117,6 +117,35 @@
   },
   {
    "set": "pilot_holdH",
+   "dir": "p062_smR",
+   "state": "NORMAL",
+   "iters": 860,
+   "augs": 88,
+   "retries": 2,
+   "t_last": 4.4,
+   "env": {
+    "CUDA_VISIBLE_DEVICES": "3",
+    "OMP_NUM_THREADS": "5",
+    "OMP_STACKSIZE": "1G",
+    "BIOCAGE_STICK_MEMORY": "1"
+   },
+   "febio_sha256": "88c24a0d06811eaf5c1637a649998b49eddb11b154ba24dd89c2a83e9e7c6700",
+   "lib_sha256": "a1dca424dcb2487a18bd7e0777afbf50b32896cfcda5006813948c40a3838f72",
+   "u_ramp_end": 0.4402,
+   "n_hold": 19,
+   "u_start": 0.4402,
+   "u_end": 0.4404,
+   "drift_start_end": 0.0002,
+   "trend_per_hold": 0.001,
+   "mean_first_q": 0.4396,
+   "mean_last_q": 0.4404,
+   "peak_to_peak": 0.0031,
+   "std": 0.0007,
+   "steps_up": 7,
+   "steps_down": 5
+  },
+  {
+   "set": "pilot_holdH",
    "dir": "p139_ctl",
    "state": "NORMAL",
    "iters": 5863,
@@ -125,11 +154,11 @@
    "t_last": 4.4,
    "env": {
     "CUDA_VISIBLE_DEVICES": "4",
-    "OMP_NUM_THREADS": "3",
+    "OMP_NUM_THREADS": "5",
     "OMP_STACKSIZE": "1G"
    },
    "febio_sha256": "88c24a0d06811eaf5c1637a649998b49eddb11b154ba24dd89c2a83e9e7c6700",
-   "lib_sha256": null,
+   "lib_sha256": "a1dca424dcb2487a18bd7e0777afbf50b32896cfcda5006813948c40a3838f72",
    "u_ramp_end": 0.5909,
    "n_hold": 209,
    "u_start": 0.5909,
@@ -158,7 +187,7 @@
     "BIOCAGE_STICK_MEMORY": "1"
    },
    "febio_sha256": "88c24a0d06811eaf5c1637a649998b49eddb11b154ba24dd89c2a83e9e7c6700",
-   "lib_sha256": null,
+   "lib_sha256": "a1dca424dcb2487a18bd7e0777afbf50b32896cfcda5006813948c40a3838f72",
    "u_ramp_end": 0.5752,
    "n_hold": 11,
    "u_start": 0.5752,
@@ -171,6 +200,35 @@
    "std": 0.0006,
    "steps_up": 3,
    "steps_down": 5
+  },
+  {
+   "set": "pilot_holdH",
+   "dir": "p139_smR",
+   "state": "NORMAL",
+   "iters": 663,
+   "augs": 78,
+   "retries": 5,
+   "t_last": 4.4,
+   "env": {
+    "CUDA_VISIBLE_DEVICES": "4",
+    "OMP_NUM_THREADS": "5",
+    "OMP_STACKSIZE": "1G",
+    "BIOCAGE_STICK_MEMORY": "1"
+   },
+   "febio_sha256": "88c24a0d06811eaf5c1637a649998b49eddb11b154ba24dd89c2a83e9e7c6700",
+   "lib_sha256": "a1dca424dcb2487a18bd7e0777afbf50b32896cfcda5006813948c40a3838f72",
+   "u_ramp_end": 0.5656,
+   "n_hold": 21,
+   "u_start": 0.5656,
+   "u_end": 0.5772,
+   "drift_start_end": 0.0116,
+   "trend_per_hold": -0.0001,
+   "mean_first_q": 0.5775,
+   "mean_last_q": 0.5772,
+   "peak_to_peak": 0.0034,
+   "std": 0.0007,
+   "steps_up": 6,
+   "steps_down": 7
   }
  ]
 }

@@ -21,7 +21,7 @@ for c, dn in REF + ARMS:
     cd = os.path.join(AL, c, dn, 'w_' + WIN); log = cd + '/case.log'
     if not os.path.exists(log) or os.path.getsize(log) == 0 or not os.path.exists(cd + '/cage_nodes.txt'): continue
     txt = open(log, errors='ignore').read(); st = 'NORMAL' if 'N O R M A L' in txt[-4000:] else ('ERROR' if 'E R R O R' in txt[-4000:] else 'running')
-    lj = os.path.join(AL, c, dn, 'launch.json'); lj = json.load(open(lj)) if os.path.exists(lj) else {}
+    lj = os.path.join(AL, c, dn, 'launch' + ('' if WIN == 'extension' else '_' + WIN) + '.json'); lj = json.load(open(lj)) if os.path.exists(lj) else {}   # h47 writes launch_<window>.json per window
     cn = e4.read_log(cd + '/cage_nodes.txt'); c4 = e4.read_log(cd + '/C4_endplate_nodes.txt'); ts = sorted(cn.keys())
     U = {t: np.array(list(e4.nearest(cn, t)[0].values())).mean(0) - np.array(list(e4.nearest(c4, t)[0].values())).mean(0) for t in ts}
     H = {t: float(np.hypot(*U[t][:2])) for t in ts}
