@@ -2044,8 +2044,8 @@
   "stop_phase": "c3_release_impact"
  },
  "_meta": {
-  "rule": "PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior",
+  "rule": "PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn",
   "provisional": "verdicts provisional until NUM-16 / NUM-17 (numerical convergence of the friction results) and the density reference (DECISIONS 2026-11-05 item 8) are settled",
-  "generated": "2026-11-05 03:41"
+  "generated": "2026-11-08 02:15"
  }
 }

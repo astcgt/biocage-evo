@@ -118,11 +118,11 @@ for cdir in sorted(glob.glob(R + 'physio_fric3/p*')):
         verd[p] = dict(verdict='open', reasons=[], windows={}, missing=list(REQ), t_end=t_end, case_dir=os.path.basename(cdir),
                        open_reason=(f'frictional insertion run stopped at t {t_end:.3f} in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)' if t_end < 3.0 else
                                     f'frictional insertion run stopped at t {t_end:.3f} in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)'), computability=True, stop_phase='static_release' if t_end < 3.0 else 'c3_release_impact')
-verd['_meta'] = dict(rule='PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior',
+verd['_meta'] = dict(rule='PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn',
                      provisional='verdicts provisional until NUM-16 / NUM-17 (numerical convergence of the friction results) and the density reference (DECISIONS 2026-11-05 item 8) are settled', generated=__import__('time').strftime('%Y-%m-%d %H:%M'))
 json.dump(verd, open(os.path.join(OUT, 'verdicts.json'), 'w'), indent=1)
 import collections as _c; print('\nfriction verdicts (PI rule 2026-11-03 / 2026-11-05, no pass by absence 2026-11-04):', dict(_c.Counter(v['verdict'] for p, v in verd.items() if p != '_meta')))
-for p, v in sorted(verd.items()): print(f"  {p} {v['verdict']:5s} {'; '.join(v['reasons']) or v.get('open_reason', '')}")
+for p, v in sorted((k, x) for k, x in verd.items() if not k.startswith('_')): print(f"  {p} {v['verdict']:5s} {'; '.join(v['reasons']) or v.get('open_reason', '')}")
 print(f"{'set':12s} {'design':6s} {'window':9s} {'reached':7s} {'|M|':>6s} {'fric u_h':>9s} {'fric post':>9s} {'tied bound':>10s} {'tied mu':>8s}  window_check")
 for r in rows:
     if 'note' in r: print(f"{r['set']:12s} {r['design']:6s} {r['window']:9s} {r['note']}"); continue
