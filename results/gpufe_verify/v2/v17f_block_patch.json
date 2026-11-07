@@ -1,7 +1,7 @@
 {
  "prov": {
-  "time": "2026-11-06 23:57:04",
-  "git": "a30c002",
+  "time": "2026-11-08 05:05:20",
+  "git": "72e1a59",
   "dirty_gpufe": true,
   "inputs": {
    "biocage_simulation_test_oct2026/third_party/FEBio/cbuild_fric/bin/febio4": "88c24a0d06811eaf5c1637a649998b49eddb11b154ba24dd89c2a83e9e7c6700"
