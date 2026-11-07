@@ -51,7 +51,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -169,9 +170,9 @@
    }
   },
   "source": "physio_rot_split3/p100_gpu3/w_LB_left",
-  "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p142: extension@ROM u_h 0.57 post 0.57",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p100",
    "p142"
@@ -186,7 +187,8 @@
     "reasons": [
      "p142: extension@ROM u_h 0.57 post 0.57"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "pass",
@@ -204,6 +206,14 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p142: extension@ROM u_h 0.57 post 0.57"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p005": {
@@ -226,7 +236,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -341,7 +352,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -377,7 +389,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -490,9 +503,9 @@
    }
   },
   "source": "physio_rot_split4/p093_gpu2/w_AR_right",
-  "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p093: extension@ROM u_h 0.61 post 0.61; p145: extension@ROM u_h 0.57 post 0.57",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p145"
   ],
@@ -507,7 +520,8 @@
      "p093: extension@ROM u_h 0.61 post 0.61",
      "p145: extension@ROM u_h 0.57 post 0.57"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "pass",
@@ -525,6 +539,15 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p093: extension@ROM u_h 0.61 post 0.61",
+    "p145: extension@ROM u_h 0.57 post 0.57"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p080": {
@@ -540,7 +563,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -652,7 +676,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -714,7 +739,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -833,9 +859,9 @@
    }
   },
   "source": "physio_rot_split2/p060_gpu3/w_AR_right",
-  "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p060: extension@ROM u_h 0.54 post 0.54; p072: extension@ROM u_h 0.55 post 0.55",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p072"
   ],
@@ -850,7 +876,8 @@
      "p060: extension@ROM u_h 0.54 post 0.54",
      "p072: extension@ROM u_h 0.55 post 0.55"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "pass",
@@ -868,6 +895,15 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p060: extension@ROM u_h 0.54 post 0.54",
+    "p072: extension@ROM u_h 0.55 post 0.55"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p075": {
@@ -971,9 +1007,9 @@
    }
   },
   "source": "physio_rot_split4/p051_gpu1/w_extension",
-  "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p051: extension@ROM u_h 0.61 post 0.61; p075: extension@ROM u_h 0.60 post 0.60",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p051"
   ],
@@ -988,7 +1024,8 @@
      "p051: extension@ROM u_h 0.61 post 0.61",
      "p075: extension@ROM u_h 0.60 post 0.60"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "pass",
@@ -1006,6 +1043,15 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p051: extension@ROM u_h 0.61 post 0.61",
+    "p075: extension@ROM u_h 0.60 post 0.60"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p017": {
@@ -1028,7 +1074,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -1090,7 +1137,8 @@
     "cls": "DESIGN/compression-peak-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -1122,7 +1170,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -1240,7 +1289,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -1315,7 +1365,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -1422,9 +1473,9 @@
    }
   },
   "source": "physio_rot_split3/p100_gpu3/w_LB_left",
-  "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p142: extension@ROM u_h 0.57 post 0.57",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p086",
    "p142"
@@ -1439,7 +1490,8 @@
     "reasons": [
      "p142: extension@ROM u_h 0.57 post 0.57"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "pass",
@@ -1457,6 +1509,14 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p142: extension@ROM u_h 0.57 post 0.57"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p036": {
@@ -1565,7 +1625,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -1640,7 +1701,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.023 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.023 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -1753,9 +1815,9 @@
    }
   },
   "source": "physio_rot_split4/p093_gpu2/w_AR_right",
-  "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p093: extension@ROM u_h 0.61 post 0.61; p145: extension@ROM u_h 0.57 post 0.57",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p093"
   ],
@@ -1770,7 +1832,8 @@
      "p093: extension@ROM u_h 0.61 post 0.61",
      "p145: extension@ROM u_h 0.57 post 0.57"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "pass",
@@ -1788,6 +1851,15 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p093: extension@ROM u_h 0.61 post 0.61",
+    "p145: extension@ROM u_h 0.57 post 0.57"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p015": {
@@ -1903,7 +1975,8 @@
     "cls": "DESIGN/compression-peak"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -1967,7 +2040,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 2.233 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)"
+    "open_reason": "frictional insertion run stopped at t 2.233 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -2031,7 +2105,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -2067,7 +2142,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -2183,7 +2259,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -2237,8 +2314,8 @@
   },
   "source": "physio_rot/p135_gpu4",
   "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p135: extension@ROM u_h 0.50 post 0.50",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p135: extension@ROM shear p99 3.6 MPa > 3.0; p135: flexion@ROM shear p99 10.5 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -2249,7 +2326,8 @@
     "reasons": [
      "p135: extension@ROM u_h 0.50 post 0.50"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -2270,6 +2348,14 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p135: extension@ROM u_h 0.50 post 0.50"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p144": {
@@ -2322,7 +2408,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -2354,7 +2441,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -2470,7 +2558,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -2535,7 +2624,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -2559,7 +2649,8 @@
     "cls": "DESIGN/compression-sustained-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -2621,7 +2712,8 @@
     "cls": "DESIGN/compression-peak"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -2685,7 +2777,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -2803,9 +2896,9 @@
    }
   },
   "source": "physio_rot_split3/p100_gpu3/w_LB_left",
-  "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p142: extension@ROM u_h 0.57 post 0.57",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p086",
    "p100"
@@ -2820,7 +2913,8 @@
     "reasons": [
      "p142: extension@ROM u_h 0.57 post 0.57"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "pass",
@@ -2838,6 +2932,14 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p142: extension@ROM u_h 0.57 post 0.57"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p041": {
@@ -2950,7 +3052,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -3014,7 +3117,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.339 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.339 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -3077,7 +3181,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -3139,7 +3244,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -3203,7 +3309,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.061 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.061 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -3229,7 +3336,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -3292,7 +3400,8 @@
     "cls": "DESIGN/compression-peak"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -3356,7 +3465,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -3485,7 +3595,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -3518,7 +3629,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -3628,7 +3740,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "flexion stopped at 1.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)"
+    "open_reason": "flexion stopped at 1.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -3669,7 +3782,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -3733,7 +3847,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -3865,7 +3980,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.069 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.069 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -3890,7 +4006,8 @@
     "cls": "[\u591a\u5143]/computability"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -3994,9 +4111,9 @@
    }
   },
   "source": "physio_rot_split3/p117_gpu1/w_LB_left",
-  "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p092: extension@ROM u_h 0.52 post 0.52; p117: extension@ROM u_h 0.51 post 0.51; p143: extension@ROM u_h 0.51 post 0.51",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p092",
    "p117"
@@ -4013,7 +4130,8 @@
      "p117: extension@ROM u_h 0.51 post 0.51",
      "p143: extension@ROM u_h 0.51 post 0.51"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "pass",
@@ -4031,6 +4149,16 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p092: extension@ROM u_h 0.52 post 0.52",
+    "p117: extension@ROM u_h 0.51 post 0.51",
+    "p143: extension@ROM u_h 0.51 post 0.51"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p069": {
@@ -4083,7 +4211,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -4193,7 +4322,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -4257,7 +4387,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -4330,7 +4461,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -4354,7 +4486,8 @@
     "cls": "DESIGN/compression-sustained-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -4419,7 +4552,8 @@
     "cls": "DESIGN/compression-peak"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -4443,7 +4577,8 @@
     "cls": "DESIGN/compression-sustained-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -4571,7 +4706,8 @@
     "cls": "[\u6578\u503c]/unstable-window"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -4675,9 +4811,9 @@
    }
   },
   "source": "physio_rot_split3/p117_gpu1/w_LB_left",
-  "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p092: extension@ROM u_h 0.52 post 0.52; p117: extension@ROM u_h 0.51 post 0.51; p143: extension@ROM u_h 0.51 post 0.51",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p092",
    "p143"
@@ -4694,7 +4830,8 @@
      "p117: extension@ROM u_h 0.51 post 0.51",
      "p143: extension@ROM u_h 0.51 post 0.51"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "pass",
@@ -4712,6 +4849,16 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p092: extension@ROM u_h 0.52 post 0.52",
+    "p117: extension@ROM u_h 0.51 post 0.51",
+    "p143: extension@ROM u_h 0.51 post 0.51"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p072": {
@@ -4821,9 +4968,9 @@
    }
   },
   "source": "physio_rot_split2/p060_gpu3/w_AR_right",
-  "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p060: extension@ROM u_h 0.54 post 0.54; p072: extension@ROM u_h 0.55 post 0.55",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p060"
   ],
@@ -4838,7 +4985,8 @@
      "p060: extension@ROM u_h 0.54 post 0.54",
      "p072: extension@ROM u_h 0.55 post 0.55"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "pass",
@@ -4856,6 +5004,15 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p060: extension@ROM u_h 0.54 post 0.54",
+    "p072: extension@ROM u_h 0.55 post 0.55"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p045": {
@@ -4870,7 +5027,8 @@
     "cls": "DESIGN/compression-sustained-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -4934,7 +5092,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "flexion stopped at 1.6 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)"
+    "open_reason": "flexion stopped at 1.6 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -5010,7 +5169,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.036 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.036 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -5132,7 +5292,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -5158,7 +5319,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -5285,7 +5447,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 2.450 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)"
+    "open_reason": "frictional insertion run stopped at t 2.450 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -5347,7 +5510,8 @@
     "cls": "DESIGN/compression-peak-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -5409,7 +5573,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -5459,7 +5624,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -5491,7 +5657,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -5606,7 +5773,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 2.642 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)"
+    "open_reason": "frictional insertion run stopped at t 2.642 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -5671,7 +5839,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)"
+    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -5733,9 +5902,9 @@
    }
   },
   "source": "physio_rot_dyn2/p114",
-  "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p114: extension@ROM u_h 0.59 post 0.59",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -5746,7 +5915,8 @@
     "reasons": [
      "p114: extension@ROM u_h 0.59 post 0.59"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "pass",
@@ -5764,6 +5934,14 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p114: extension@ROM u_h 0.59 post 0.59"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p081": {
@@ -5818,7 +5996,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -5890,7 +6069,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -6005,7 +6185,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -6048,7 +6229,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -6174,7 +6356,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -6239,7 +6422,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "extension stopped at 0.0 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)"
+    "open_reason": "extension stopped at 0.0 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -6367,7 +6551,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 2.931 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)"
+    "open_reason": "frictional insertion run stopped at t 2.931 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -6399,7 +6584,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -6463,7 +6649,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -6536,7 +6723,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -6560,7 +6748,8 @@
     "cls": "DESIGN/compression-sustained-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -6584,7 +6773,8 @@
     "cls": "DESIGN/compression-sustained-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -6649,7 +6839,8 @@
     "cls": "DESIGN/compression-peak"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -6681,7 +6872,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -6713,7 +6905,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -6826,9 +7019,9 @@
    }
   },
   "source": "physio_rot_split4/p051_gpu1/w_extension",
-  "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p051: extension@ROM u_h 0.61 post 0.61; p075: extension@ROM u_h 0.60 post 0.60",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p075"
   ],
@@ -6843,7 +7036,8 @@
      "p051: extension@ROM u_h 0.61 post 0.61",
      "p075: extension@ROM u_h 0.60 post 0.60"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "pass",
@@ -6861,6 +7055,15 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p051: extension@ROM u_h 0.61 post 0.61",
+    "p075: extension@ROM u_h 0.60 post 0.60"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p027": {
@@ -6971,7 +7174,8 @@
     "cls": "[\u6578\u503c]/unstable-window"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -7033,7 +7237,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -7097,7 +7302,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -7140,7 +7346,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -7250,7 +7457,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -7314,7 +7522,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -7357,7 +7566,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -7483,7 +7693,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 2.518 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)"
+    "open_reason": "frictional insertion run stopped at t 2.518 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -7509,7 +7720,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -7573,7 +7785,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -7648,7 +7861,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -7777,7 +7991,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 2.443 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)"
+    "open_reason": "frictional insertion run stopped at t 2.443 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -7881,9 +8096,9 @@
    }
   },
   "source": "physio_rot_split3/p117_gpu1/w_LB_left",
-  "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p092: extension@ROM u_h 0.52 post 0.52; p117: extension@ROM u_h 0.51 post 0.51; p143: extension@ROM u_h 0.51 post 0.51",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p117",
    "p143"
@@ -7900,7 +8115,8 @@
      "p117: extension@ROM u_h 0.51 post 0.51",
      "p143: extension@ROM u_h 0.51 post 0.51"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "pass",
@@ -7918,6 +8134,16 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p092: extension@ROM u_h 0.52 post 0.52",
+    "p117: extension@ROM u_h 0.51 post 0.51",
+    "p143: extension@ROM u_h 0.51 post 0.51"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p033": {
@@ -7932,7 +8158,8 @@
     "cls": "DESIGN/compression-sustained-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8062,7 +8289,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8094,7 +8322,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8126,7 +8355,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8168,7 +8398,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8230,7 +8461,8 @@
     "cls": "DESIGN/compression-peak-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8356,7 +8588,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8421,7 +8654,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -8456,7 +8690,8 @@
     "cls": "[\u591a\u5143]/computability"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8488,7 +8723,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8552,7 +8788,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8577,7 +8814,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8609,7 +8847,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8663,8 +8902,8 @@
   },
   "source": "physio_rot_dyn/p139_gpu1",
   "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p139: extension@ROM u_h 0.64 post 0.63",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p077: extension@ROM shear p99 3.5 MPa > 3.0; p077: flexion@ROM shear p99 13.6 MPa > 3.0; p139: extension@ROM shear p99 3.6 MPa > 3.0; p139: flexion@ROM shear p99 13.6 MPa > 3.0",
   "duplicates": [
    "p077"
   ],
@@ -8678,7 +8917,8 @@
     "reasons": [
      "p139: extension@ROM u_h 0.64 post 0.63"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -8701,6 +8941,14 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p139: extension@ROM u_h 0.64 post 0.63"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p096": {
@@ -8723,7 +8971,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8755,7 +9004,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8819,7 +9069,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -8955,7 +9206,8 @@
     "cls": "[\u6578\u503c]/unstable-window"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -8988,7 +9240,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -9052,7 +9305,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -9127,7 +9381,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -9160,7 +9415,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -9222,7 +9478,8 @@
     "cls": "DESIGN/compression-peak-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -9254,7 +9511,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -9279,7 +9537,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -9333,8 +9592,8 @@
   },
   "source": "physio_rot_dyn/p139_gpu1",
   "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p139: extension@ROM u_h 0.64 post 0.63",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p077: extension@ROM shear p99 3.5 MPa > 3.0; p077: flexion@ROM shear p99 13.6 MPa > 3.0; p139: extension@ROM shear p99 3.6 MPa > 3.0; p139: flexion@ROM shear p99 13.6 MPa > 3.0",
   "duplicates": [
    "p139"
   ],
@@ -9348,7 +9607,8 @@
     "reasons": [
      "p139: extension@ROM u_h 0.64 post 0.63"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -9371,6 +9631,14 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p139: extension@ROM u_h 0.64 post 0.63"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p026": {
@@ -9425,7 +9693,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -9460,7 +9729,8 @@
     "cls": "DESIGN/compression-sustained-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -9502,7 +9772,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -9534,7 +9805,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -9559,7 +9831,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -9584,7 +9857,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -9648,7 +9922,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "extension stopped at 4.2 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)"
+    "open_reason": "extension stopped at 4.2 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -9700,7 +9975,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -9818,7 +10094,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -9882,7 +10159,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -9947,8 +10225,8 @@
   },
   "source": "physio_rot/p076_gpu3",
   "verdict": "fail",
-  "class": "DESIGN/dislocation-friction",
-  "reason": "real-friction run (gate 4) exceeds the dislocation limit: p076: extension@ROM u_h 0.50 post 0.50",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p076: extension@ROM shear p99 3.5 MPa > 3.0; p076: flexion@ROM shear p99 11.6 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -9959,7 +10237,8 @@
     "reasons": [
      "p076: extension@ROM u_h 0.50 post 0.50"
     ],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -9980,6 +10259,14 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "friction_check": {
+   "verdict": "exceeded",
+   "provisional": true,
+   "reasons": [
+    "p076: extension@ROM u_h 0.50 post 0.50"
+   ],
+   "rule": "PI 2026-11-07: check, not a gate"
   }
  },
  "p127": {
@@ -10096,7 +10383,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.032 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.032 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -10129,7 +10417,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -10161,7 +10450,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -10225,7 +10515,8 @@
    "dislocation_friction": {
     "verdict": "pass",
     "reasons": [],
-    "open_reason": null
+    "open_reason": null,
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -10280,7 +10571,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -10312,7 +10604,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -10345,7 +10638,8 @@
     "cls": "DESIGN/compression-sustained"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -10369,7 +10663,8 @@
     "cls": "DESIGN/compression-sustained-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -10393,7 +10688,8 @@
     "cls": "DESIGN/compression-sustained-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -10460,7 +10756,8 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.036 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)"
+    "open_reason": "frictional insertion run stopped at t 3.036 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check"
    },
    "interface_shear": {
     "verdict": "not run"

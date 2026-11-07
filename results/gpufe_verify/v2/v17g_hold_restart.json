@@ -1,0 +1,336 @@
+[
+ {
+  "set": "pilot_holdA",
+  "dir": "p062_gpu1",
+  "state": "NORMAL",
+  "iters": 1978,
+  "augs": 196,
+  "retries": 3,
+  "t_last": 4.4,
+  "n_hold": 55,
+  "u_start": 0.4522,
+  "u_end": 0.5115,
+  "drift": 0.0594,
+  "u_at": [
+   [
+    3.6,
+    0.029
+   ],
+   [
+    3.9,
+    0.452
+   ],
+   [
+    4.4,
+    0.512
+   ]
+  ]
+ },
+ {
+  "set": "pilot_holdA",
+  "dir": "p139_gpu2",
+  "state": "NORMAL",
+  "iters": 2072,
+  "augs": 280,
+  "retries": 1,
+  "t_last": 4.4,
+  "n_hold": 71,
+  "u_start": 0.4619,
+  "u_end": 0.6418,
+  "drift": 0.1799,
+  "u_at": [
+   [
+    3.9,
+    0.462
+   ],
+   [
+    4.4,
+    0.642
+   ]
+  ]
+ },
+ {
+  "set": "pilot_holdE",
+  "dir": "p062_gpu1",
+  "state": "NORMAL",
+  "iters": 6288,
+  "augs": 870,
+  "retries": 1,
+  "t_last": 4.4,
+  "n_hold": 356,
+  "u_start": 0.4489,
+  "u_end": 0.764,
+  "drift": 0.3151,
+  "u_at": [
+   [
+    3.9,
+    0.449
+   ],
+   [
+    4.4,
+    0.764
+   ]
+  ]
+ },
+ {
+  "set": "pilot_holdE",
+  "dir": "p139_gpu2",
+  "state": "NORMAL",
+  "iters": 3542,
+  "augs": 666,
+  "retries": 1,
+  "t_last": 4.4,
+  "n_hold": 252,
+  "u_start": 0.4634,
+  "u_end": 0.9364,
+  "drift": 0.473,
+  "u_at": [
+   [
+    3.6,
+    0.023
+   ],
+   [
+    3.9,
+    0.463
+   ],
+   [
+    4.4,
+    0.936
+   ]
+  ]
+ },
+ {
+  "set": "pilot_holdH",
+  "dir": "p062_al",
+  "state": "NORMAL",
+  "iters": 21262,
+  "augs": 5456,
+  "retries": 3,
+  "t_last": 4.4,
+  "n_hold": 229,
+  "u_start": 0.4577,
+  "u_end": 0.4909,
+  "drift": 0.0332,
+  "u_at": [
+   [
+    3.9,
+    0.458
+   ],
+   [
+    4.4,
+    0.491
+   ]
+  ]
+ },
+ {
+  "set": "pilot_holdH",
+  "dir": "p062_ctl",
+  "state": "NORMAL",
+  "iters": 2062,
+  "augs": 196,
+  "retries": 4,
+  "t_last": 4.4,
+  "n_hold": 51,
+  "u_start": 0.4518,
+  "u_end": 0.5086,
+  "drift": 0.0568,
+  "u_at": [
+   [
+    3.6,
+    0.029
+   ],
+   [
+    3.9,
+    0.452
+   ],
+   [
+    4.4,
+    0.509
+   ]
+  ]
+ },
+ {
+  "set": "pilot_holdH",
+  "dir": "p062_sm",
+  "state": "NORMAL",
+  "iters": 862,
+  "augs": 182,
+  "retries": 1,
+  "t_last": 4.4,
+  "n_hold": 18,
+  "u_start": 0.4453,
+  "u_end": 0.4526,
+  "drift": 0.0073,
+  "u_at": [
+   [
+    3.9,
+    0.445
+   ],
+   [
+    4.4,
+    0.453
+   ]
+  ]
+ },
+ {
+  "set": "pilot_holdH",
+  "dir": "p062_smR",
+  "state": "NORMAL",
+  "iters": 599,
+  "augs": 100,
+  "retries": 1,
+  "t_last": 4.4,
+  "n_hold": 15,
+  "u_start": 0.4469,
+  "u_end": 0.4515,
+  "drift": 0.0046,
+  "u_at": [
+   [
+    3.9,
+    0.447
+   ],
+   [
+    4.4,
+    0.451
+   ]
+  ]
+ },
+ {
+  "set": "pilot_holdH",
+  "dir": "p139_al",
+  "state": "NORMAL",
+  "iters": 20713,
+  "augs": 5112,
+  "retries": 1,
+  "t_last": 4.4,
+  "n_hold": 185,
+  "u_start": 0.49,
+  "u_end": 0.5073,
+  "drift": 0.0173,
+  "u_at": [
+   [
+    3.9,
+    0.49
+   ],
+   [
+    4.4,
+    0.507
+   ]
+  ]
+ },
+ {
+  "set": "pilot_holdH",
+  "dir": "p139_ctl",
+  "state": "NORMAL",
+  "iters": 1472,
+  "augs": 274,
+  "retries": 4,
+  "t_last": 4.4,
+  "n_hold": 41,
+  "u_start": 0.4646,
+  "u_end": 0.5892,
+  "drift": 0.1246,
+  "u_at": [
+   [
+    3.9,
+    0.465
+   ],
+   [
+    4.4,
+    0.589
+   ]
+  ]
+ },
+ {
+  "set": "pilot_holdH",
+  "dir": "p139_sm",
+  "state": "NORMAL",
+  "iters": 488,
+  "augs": 94,
+  "retries": 5,
+  "t_last": 4.4,
+  "n_hold": 14,
+  "u_start": 0.4401,
+  "u_end": 0.4497,
+  "drift": 0.0097,
+  "u_at": [
+   [
+    3.9,
+    0.44
+   ],
+   [
+    4.4,
+    0.45
+   ]
+  ]
+ },
+ {
+  "set": "pilot_holdH",
+  "dir": "p139_smR",
+  "state": "NORMAL",
+  "iters": 473,
+  "augs": 90,
+  "retries": 6,
+  "t_last": 4.4,
+  "n_hold": 13,
+  "u_start": 0.4426,
+  "u_end": 0.4503,
+  "drift": 0.0077,
+  "u_at": [
+   [
+    3.9,
+    0.443
+   ],
+   [
+    4.4,
+    0.45
+   ]
+  ]
+ },
+ {
+  "set": "pilot_holdHf",
+  "dir": "p062_sm",
+  "state": "running",
+  "iters": 925,
+  "augs": 166,
+  "retries": 4,
+  "t_last": 3.9914,
+  "n_hold": 43,
+  "u_start": 0.4439,
+  "u_end": 0.4486,
+  "drift": 0.0048,
+  "u_at": [
+   [
+    3.6,
+    0.029
+   ],
+   [
+    3.9,
+    0.444
+   ]
+  ]
+ },
+ {
+  "set": "pilot_holdHf",
+  "dir": "p139_sm",
+  "state": "running",
+  "iters": 1152,
+  "augs": 272,
+  "retries": 0,
+  "t_last": 4.1183,
+  "n_hold": 122,
+  "u_start": 0.4414,
+  "u_end": 0.4662,
+  "drift": 0.0248,
+  "u_at": [
+   [
+    3.9,
+    0.441
+   ],
+   [
+    4.0,
+    0.445
+   ]
+  ]
+ }
+]

@@ -1,0 +1,111 @@
+{
+ "prov": {
+  "time": "2026-11-05 18:29:12",
+  "git": "a30c002",
+  "dirty_gpufe": true,
+  "inputs": {
+   "biocage_simulation_test_oct2026/human_study/al_v2/physio_fric3/p062/w_extension/case.feb": "6fb1bde2ba402bd9651c7049de6ab30552183ff79c0e6710933568a79325db02",
+   "biocage_simulation_test_oct2026/human_study/al_v2/physio_fix/p062_gpu2/case.feb": "e6dfada165076bd0c41d581401d0ad5edeca20ce54afcf94e6c9c9dd4ae77cd0"
+  },
+  "opts": {},
+  "gpu": null
+ },
+ "decks": {
+  "physio_fric3/p062/w_extension/case.feb": {
+   "USED": {
+    "Contact/laugon": 4,
+    "Contact/tolerance": 2,
+    "Contact/penalty": 4,
+    "Contact/auto_penalty": 4,
+    "Contact/two_pass": 4,
+    "Contact/search_radius": 4,
+    "Contact/minaug": 2,
+    "Contact/maxaug": 2,
+    "Contact/fric_coeff": 2,
+    "Boundary/rigid_body": 6,
+    "Boundary/fixed": 21,
+    "Boundary/fix": 8,
+    "Step/Control": 5,
+    "Control/time_steps": 5,
+    "Control/step_size": 5,
+    "Control/dtol": 5,
+    "Control/etol": 5,
+    "Control/rtol": 5,
+    "Control/lstol": 5,
+    "Control/time_stepper": 5,
+    "Control/dtmax": 5,
+    "Step/Boundary": 5,
+    "Boundary/prescribed": 2,
+    "Boundary/force": 3
+   },
+   "IGNORED": {
+    "Contact/gaptol: FEBio default off (0)": 2,
+    "Contact/search_tol: gpufe searches by nearest centroids, compared in V8 / V2": 4,
+    "Contact/seg_up: segment update policy, numerical": 2,
+    "Contact/tension: 0 everywhere in production": 4,
+    "Contact/symmetric_stiffness: solver matrix storage": 2,
+    "Contact/knmult: tangent only; residual term scales with the gap": 2,
+    "Control/max_refs: iteration limit": 5,
+    "Control/max_ups: iteration limit": 5,
+    "Control/ls_check_jacobians: numerical": 5,
+    "Control/dtmin: stepper": 5,
+    "Control/max_retries: stepper": 5,
+    "Control/opt_iter: stepper": 5,
+    "Control/analysis type=static: static is what gpufe solves": 3,
+    "Control/symmetric_stiffness: solver matrix storage": 5,
+    "Control/plot_level: output": 4
+   },
+   "DEFECT": {
+    "Contact/fric_coeff@lc: friction load curve dropped: gpufe has mu from t 0, FEBio ramps it": 2,
+    "Control/analysis type=dynamic: analysis type dropped: FEBio window steps are type='dynamic' (density term), gpufe solves static": 2,
+    "Control/rhoi: time-integration parameter of the dynamic step dropped": 2,
+    "Step/Constraints: prescribed rotation drive (generic rigid joint) dropped: the window applies no rotation": 1
+   }
+  },
+  "physio_fix/p062_gpu2/case.feb": {
+   "USED": {
+    "Contact/laugon": 6,
+    "Contact/tolerance": 2,
+    "Contact/penalty": 6,
+    "Contact/auto_penalty": 6,
+    "Contact/two_pass": 6,
+    "Contact/search_radius": 6,
+    "Contact/minaug": 2,
+    "Contact/maxaug": 2,
+    "Contact/fric_coeff": 2,
+    "Contact/init_time": 2,
+    "Boundary/rigid_body": 5,
+    "Boundary/fixed": 21,
+    "Boundary/fix": 8,
+    "Step/Control": 4,
+    "Control/time_steps": 4,
+    "Control/step_size": 4,
+    "Control/dtol": 4,
+    "Control/etol": 4,
+    "Control/rtol": 4,
+    "Control/lstol": 4,
+    "Control/time_stepper": 4,
+    "Control/dtmax": 4,
+    "Step/Boundary": 4,
+    "Boundary/prescribed": 2,
+    "Boundary/force": 5
+   },
+   "IGNORED": {
+    "Contact/gaptol: FEBio default off (0)": 2,
+    "Contact/search_tol: gpufe searches by nearest centroids, compared in V8 / V2": 6,
+    "Contact/seg_up: segment update policy, numerical": 2,
+    "Contact/tension: 0 everywhere in production": 4,
+    "Contact/symmetric_stiffness: solver matrix storage": 4,
+    "Contact/knmult: tangent only; residual term scales with the gap": 4,
+    "Control/max_refs: iteration limit": 4,
+    "Control/max_ups: iteration limit": 4,
+    "Control/ls_check_jacobians: numerical": 4,
+    "Control/dtmin: stepper": 4,
+    "Control/max_retries: stepper": 4,
+    "Control/opt_iter: stepper": 4,
+    "Control/analysis type=static: static is what gpufe solves": 4
+   }
+  }
+ },
+ "PASS": false
+}

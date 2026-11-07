@@ -141,7 +141,7 @@ FRICV = os.path.join(E, 'results/method/fric/verdicts.json'); fricv = {k: v for 
 SHEARV = os.path.join(E, 'results/method/fric/e07_verdicts.json'); _sh = json.load(open(SHEARV)) if os.path.exists(SHEARV) else {}
 shearv, shear_meta = _sh.get('designs', {}), _sh.get('meta', {})
 EXCLUDED = {('radial', 'mix'): 'PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)'}
-lists = {'both': [], 'comp_pass_slip_open': [], 'open': [], 'fail': []}; classes = {}
+lists = {'both': [], 'comp_pass_slip_open': [], 'open': [], 'fail': []}; classes = {}; fcx = []   # fcx: passes whose friction check exceeded the limit (PI 2026-11-07)
 for p in sorted(set(best) | set(comp) | set(lastj)):
     c = comp.setdefault(p, {'sustained': None, 'windows': {}}); b = best.get(p, {})
     # an UNSTABLE window (2026-11-02): spurious states were dropped AND |M| is not monotonic, i.e. the moment collapsed or
@@ -202,7 +202,7 @@ for p in sorted(set(best) | set(comp) | set(lastj)):
         if good: return dict(table[good[0]], pooled=grp)
         return dict(table.get(p) or table[grp[0]], pooled=grp)
     fv = pooled(fricv); shv = pooled(shearv)
-    g['dislocation_friction'] = dict(verdict=fv['verdict'], reasons=fv.get('reasons', []), open_reason=fv.get('open_reason')) if fv else dict(verdict='not run')
+    g['dislocation_friction'] = dict(verdict=fv['verdict'], reasons=fv.get('reasons', []), open_reason=fv.get('open_reason'), role='check') if fv else dict(verdict='not run', role='check')   # role check: PI 2026-11-07
     g['interface_shear'] = (dict(verdict=shv['verdict'], reasons=shv.get('reasons', []), open_reason=shv.get('open_reason'), threshold_MPa=shear_meta.get('threshold_MPa'),
                                  provisional=shear_meta.get('provisional'), shear_p99_at_rom={w: x['shear_p99_at_rom'] for w, x in shv.get('windows', {}).items()})
                             if shv else dict(verdict='not run'))
@@ -218,8 +218,10 @@ for p in sorted(set(best) | set(comp) | set(lastj)):
         # dislocation-friction and 2 under interface-shear). Gate evidence is still recorded in c['gates'] for every design.
         if exc:
             move('fail', 'DESIGN/radial-mix-excluded', exc)
-        elif fv and fv['verdict'] == 'fail':
-            move('fail', 'DESIGN/dislocation-friction', 'real-friction run (gate 4) exceeds the dislocation limit: ' + '; '.join(fv['reasons']))
+        # PI 2026-11-07 (decision 1, back to the 2026-10-27 rule): the slip-out verdict is the tied screening's mu_req; the real-friction
+        # run is a CHECK that is recorded, not a gate (the 2026-11-03 gate 4 rested on FEBio's stick-point reset, DECISIONS 2026-11-06).
+        # A friction run above the dislocation limit is flagged (friction_check_exceeded, provisional) and the design goes on to the
+        # shear gate. Before 2026-11-07 these 17 designs were DESIGN/dislocation-friction fails.
         elif shv and shv['verdict'] == 'fail':
             move('fail', 'DESIGN/interface-shear-provisional', f"interface shear above {shear_meta.get('threshold_MPa')} MPa (provisional, pending bond-strength test): " + '; '.join(shv['reasons']))
         elif c['verdict'] == 'pass' and p in lists['both']:
@@ -229,11 +231,14 @@ for p in sorted(set(best) | set(comp) | set(lastj)):
                 move('open', '[多元]/friction-computability' if fv.get('computability') else '[觀測]/friction-window', 'tied screening passed; gate 4: ' + (fv.get('open_reason') or ''))
             elif not shv or shv['verdict'] == 'open':
                 move('open', '[觀測]/friction-window', 'tied screening passed, gate 4 passed; interface shear: ' + ((shv or {}).get('open_reason') or 'not evaluated'))
+    if fv and fv['verdict'] == 'fail':
+        c['friction_check'] = dict(verdict='exceeded', provisional=True, reasons=fv['reasons'], rule='PI 2026-11-07: check, not a gate')
+        if c['verdict'] == 'pass': fcx.append(p)
     classes.setdefault(c['class'], []).append(p)
 json.dump(best, open(os.path.join(OUT, 'best_by_design_merged.json'), 'w'), indent=1)
 json.dump(comp, open(os.path.join(OUT, 'comp_by_design_merged.json'), 'w'), indent=1)
 json.dump(lists, open(os.path.join(OUT, 'verdict_lists_merged.json'), 'w'), indent=1)
-json.dump(dict(classes=classes, rejected_windows=rejected), open(os.path.join(OUT, 'verdict_classes_merged.json'), 'w'), indent=1)
+json.dump(dict(classes=classes, rejected_windows=rejected, friction_check_exceeded=sorted(fcx)), open(os.path.join(OUT, 'verdict_classes_merged.json'), 'w'), indent=1)
 bo = [p for p in lists['both']]
 mu = max((best[p][w]['mu_squeeze'] for p in bo for w in WIN), default=None)
 sl = max((best[p][w]['one_face_slip_bound_mm'] for p in bo for w in WIN), default=None)
