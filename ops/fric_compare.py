@@ -15,7 +15,8 @@ R = '/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026
 OUT = os.path.join(E, 'results/method/fric'); os.makedirs(OUT, exist_ok=True)
 WIN = ('flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right')
 ended = lambda log: os.path.exists(log) and any(k in open(log, errors='ignore').read()[-4000:] for k in ('N O R M A L', 'E R R O R'))
-SETS = ('physio_fric', 'physio_fric2', 'physio_fric3')     # fric3: flexion + extension only, every passing design (PI 2026-11-03)             # 2026-11-03: second pass (physrotFr2_, amplitudes retargeted from physio_fric) added
+SETS = ('physio_fric', 'physio_fric2', 'physio_fric3', 'physio_fric5')   # 2026-11-09 PI decision 1: fric5 = fric3 windows recomputed from the same checkpoints with the stick-memory law; it SUPERSEDES fric3 per window (RANK)
+RANK = {s: i for i, s in enumerate(SETS)}     # fric3: flexion + extension only, every passing design (PI 2026-11-03)             # 2026-11-03: second pass (physrotFr2_, amplitudes retargeted from physio_fric) added
 wds = [w for s_ in SETS for w in sorted(glob.glob(R + s_ + '/p*/w_*')) if ended(w + '/case.log') and os.path.exists(w + '/case.xplt')]
 
 def one(w):
@@ -77,7 +78,7 @@ best = {}
 for r in rows:
     if 'note' in r: continue
     k = (r['design'], r['window'])
-    if k not in best or r['set'] > best[k]['set']: best[k] = r
+    if k not in best or RANK[r['set']] > RANK[best[k]['set']]: best[k] = r     # later set in SETS wins (fric5 over fric3), not string order
 verd = {}
 for (p, wn), r in sorted(best.items()):
     d = verd.setdefault(p, dict(verdict=None, reasons=[], windows={}, missing=[]))
@@ -118,7 +119,7 @@ for cdir in sorted(glob.glob(R + 'physio_fric3/p*')):
         verd[p] = dict(verdict='open', reasons=[], windows={}, missing=list(REQ), t_end=t_end, case_dir=os.path.basename(cdir),
                        open_reason=(f'frictional insertion run stopped at t {t_end:.3f} in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)' if t_end < 3.0 else
                                     f'frictional insertion run stopped at t {t_end:.3f} in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)'), computability=True, stop_phase='static_release' if t_end < 3.0 else 'c3_release_impact')
-verd['_meta'] = dict(rule='PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn',
+verd['_meta'] = dict(set_precedence='per window the highest-ranked set in SETS wins: physio_fric5 (stick-memory law, PI 2026-11-09) supersedes physio_fric3 (production law, NUM-13 artefact); the insertion-stopped scan stays on physio_fric3', rule='PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn',
                      provisional='verdicts provisional until NUM-16 / NUM-17 (numerical convergence of the friction results) and the density reference (DECISIONS 2026-11-05 item 8) are settled', generated=__import__('time').strftime('%Y-%m-%d %H:%M'))
 json.dump(verd, open(os.path.join(OUT, 'verdicts.json'), 'w'), indent=1)
 import collections as _c; print('\nfriction verdicts (PI rule 2026-11-03 / 2026-11-05, no pass by absence 2026-11-04):', dict(_c.Counter(v['verdict'] for p, v in verd.items() if p != '_meta')))
