@@ -1,0 +1,435 @@
+{
+ "generated": "2026-11-09T18:50",
+ "note": "soft-side p99 interface shear at the intact-ROM state, same design/window, physio_fric3 (production law) vs physio_fric5 (stick-memory law); from e07_verdicts.json HEAD~1 vs current",
+ "n": 71,
+ "fric5_greater": 64,
+ "median_ratio": 1.0578778135048232,
+ "rows": [
+  {
+   "design": "p002",
+   "window": "extension",
+   "fric3_MPa": 2.669,
+   "fric5_MPa": 2.713
+  },
+  {
+   "design": "p014",
+   "window": "flexion",
+   "fric3_MPa": 14.49,
+   "fric5_MPa": 15.796
+  },
+  {
+   "design": "p026",
+   "window": "extension",
+   "fric3_MPa": 2.931,
+   "fric5_MPa": 3.003
+  },
+  {
+   "design": "p026",
+   "window": "flexion",
+   "fric3_MPa": 13.794,
+   "fric5_MPa": 15.6
+  },
+  {
+   "design": "p036",
+   "window": "extension",
+   "fric3_MPa": 4.439,
+   "fric5_MPa": 4.865
+  },
+  {
+   "design": "p038",
+   "window": "extension",
+   "fric3_MPa": 2.286,
+   "fric5_MPa": 2.358
+  },
+  {
+   "design": "p038",
+   "window": "flexion",
+   "fric3_MPa": 15.704,
+   "fric5_MPa": 16.882
+  },
+  {
+   "design": "p051",
+   "window": "extension",
+   "fric3_MPa": 0.513,
+   "fric5_MPa": 0.499
+  },
+  {
+   "design": "p062",
+   "window": "extension",
+   "fric3_MPa": 6.225,
+   "fric5_MPa": 6.534
+  },
+  {
+   "design": "p062",
+   "window": "flexion",
+   "fric3_MPa": 10.65,
+   "fric5_MPa": 11.372
+  },
+  {
+   "design": "p063",
+   "window": "extension",
+   "fric3_MPa": 6.026,
+   "fric5_MPa": 6.353
+  },
+  {
+   "design": "p065",
+   "window": "extension",
+   "fric3_MPa": 3.637,
+   "fric5_MPa": 4.412
+  },
+  {
+   "design": "p065",
+   "window": "flexion",
+   "fric3_MPa": 13.356,
+   "fric5_MPa": 13.105
+  },
+  {
+   "design": "p066",
+   "window": "extension",
+   "fric3_MPa": 4.26,
+   "fric5_MPa": 4.696
+  },
+  {
+   "design": "p067",
+   "window": "extension",
+   "fric3_MPa": 4.609,
+   "fric5_MPa": 5.267
+  },
+  {
+   "design": "p067",
+   "window": "flexion",
+   "fric3_MPa": 12.375,
+   "fric5_MPa": 12.487
+  },
+  {
+   "design": "p072",
+   "window": "extension",
+   "fric3_MPa": 0.461,
+   "fric5_MPa": 0.493
+  },
+  {
+   "design": "p072",
+   "window": "flexion",
+   "fric3_MPa": 2.396,
+   "fric5_MPa": 2.392
+  },
+  {
+   "design": "p075",
+   "window": "extension",
+   "fric3_MPa": 0.506,
+   "fric5_MPa": 0.495
+  },
+  {
+   "design": "p075",
+   "window": "flexion",
+   "fric3_MPa": 2.004,
+   "fric5_MPa": 2.159
+  },
+  {
+   "design": "p076",
+   "window": "extension",
+   "fric3_MPa": 3.48,
+   "fric5_MPa": 4.485
+  },
+  {
+   "design": "p076",
+   "window": "flexion",
+   "fric3_MPa": 11.594,
+   "fric5_MPa": 12.02
+  },
+  {
+   "design": "p077",
+   "window": "extension",
+   "fric3_MPa": 3.468,
+   "fric5_MPa": 4.383
+  },
+  {
+   "design": "p077",
+   "window": "flexion",
+   "fric3_MPa": 13.611,
+   "fric5_MPa": 13.829
+  },
+  {
+   "design": "p078",
+   "window": "flexion",
+   "fric3_MPa": 16.216,
+   "fric5_MPa": 17.885
+  },
+  {
+   "design": "p079",
+   "window": "extension",
+   "fric3_MPa": 2.703,
+   "fric5_MPa": 2.831
+  },
+  {
+   "design": "p079",
+   "window": "flexion",
+   "fric3_MPa": 16.345,
+   "fric5_MPa": 18.15
+  },
+  {
+   "design": "p081",
+   "window": "extension",
+   "fric3_MPa": 3.146,
+   "fric5_MPa": 3.287
+  },
+  {
+   "design": "p086",
+   "window": "extension",
+   "fric3_MPa": 0.298,
+   "fric5_MPa": 0.305
+  },
+  {
+   "design": "p092",
+   "window": "extension",
+   "fric3_MPa": 0.322,
+   "fric5_MPa": 0.328
+  },
+  {
+   "design": "p092",
+   "window": "flexion",
+   "fric3_MPa": 2.291,
+   "fric5_MPa": 2.328
+  },
+  {
+   "design": "p093",
+   "window": "extension",
+   "fric3_MPa": 0.341,
+   "fric5_MPa": 0.35
+  },
+  {
+   "design": "p093",
+   "window": "flexion",
+   "fric3_MPa": 1.706,
+   "fric5_MPa": 1.949
+  },
+  {
+   "design": "p094",
+   "window": "extension",
+   "fric3_MPa": 6.115,
+   "fric5_MPa": 6.647
+  },
+  {
+   "design": "p094",
+   "window": "flexion",
+   "fric3_MPa": 13.353,
+   "fric5_MPa": 14.172
+  },
+  {
+   "design": "p100",
+   "window": "flexion",
+   "fric3_MPa": 2.73,
+   "fric5_MPa": 2.678
+  },
+  {
+   "design": "p105",
+   "window": "extension",
+   "fric3_MPa": 7.406,
+   "fric5_MPa": 7.887
+  },
+  {
+   "design": "p105",
+   "window": "flexion",
+   "fric3_MPa": 12.623,
+   "fric5_MPa": 13.677
+  },
+  {
+   "design": "p110",
+   "window": "extension",
+   "fric3_MPa": 5.877,
+   "fric5_MPa": 6.593
+  },
+  {
+   "design": "p110",
+   "window": "flexion",
+   "fric3_MPa": 14.363,
+   "fric5_MPa": 14.947
+  },
+  {
+   "design": "p111",
+   "window": "extension",
+   "fric3_MPa": 5.701,
+   "fric5_MPa": 6.105
+  },
+  {
+   "design": "p111",
+   "window": "flexion",
+   "fric3_MPa": 12.846,
+   "fric5_MPa": 12.709
+  },
+  {
+   "design": "p112",
+   "window": "extension",
+   "fric3_MPa": 2.405,
+   "fric5_MPa": 2.502
+  },
+  {
+   "design": "p112",
+   "window": "flexion",
+   "fric3_MPa": 11.737,
+   "fric5_MPa": 12.835
+  },
+  {
+   "design": "p113",
+   "window": "extension",
+   "fric3_MPa": 2.605,
+   "fric5_MPa": 2.789
+  },
+  {
+   "design": "p113",
+   "window": "flexion",
+   "fric3_MPa": 10.704,
+   "fric5_MPa": 12.229
+  },
+  {
+   "design": "p114",
+   "window": "extension",
+   "fric3_MPa": 0.38,
+   "fric5_MPa": 0.387
+  },
+  {
+   "design": "p114",
+   "window": "flexion",
+   "fric3_MPa": 1.812,
+   "fric5_MPa": 2.051
+  },
+  {
+   "design": "p117",
+   "window": "extension",
+   "fric3_MPa": 0.317,
+   "fric5_MPa": 0.328
+  },
+  {
+   "design": "p117",
+   "window": "flexion",
+   "fric3_MPa": 2.254,
+   "fric5_MPa": 2.309
+  },
+  {
+   "design": "p122",
+   "window": "extension",
+   "fric3_MPa": 6.287,
+   "fric5_MPa": 6.65
+  },
+  {
+   "design": "p122",
+   "window": "flexion",
+   "fric3_MPa": 10.976,
+   "fric5_MPa": 11.858
+  },
+  {
+   "design": "p124",
+   "window": "extension",
+   "fric3_MPa": 4.909,
+   "fric5_MPa": 5.575
+  },
+  {
+   "design": "p124",
+   "window": "flexion",
+   "fric3_MPa": 13.472,
+   "fric5_MPa": 13.925
+  },
+  {
+   "design": "p125",
+   "window": "extension",
+   "fric3_MPa": 2.504,
+   "fric5_MPa": 2.701
+  },
+  {
+   "design": "p125",
+   "window": "flexion",
+   "fric3_MPa": 14.055,
+   "fric5_MPa": 15.742
+  },
+  {
+   "design": "p131",
+   "window": "extension",
+   "fric3_MPa": 5.184,
+   "fric5_MPa": 5.795
+  },
+  {
+   "design": "p131",
+   "window": "flexion",
+   "fric3_MPa": 15.745,
+   "fric5_MPa": 16.181
+  },
+  {
+   "design": "p132",
+   "window": "extension",
+   "fric3_MPa": 2.28,
+   "fric5_MPa": 2.379
+  },
+  {
+   "design": "p133",
+   "window": "extension",
+   "fric3_MPa": 2.876,
+   "fric5_MPa": 3.123
+  },
+  {
+   "design": "p135",
+   "window": "extension",
+   "fric3_MPa": 3.62,
+   "fric5_MPa": 4.737
+  },
+  {
+   "design": "p135",
+   "window": "flexion",
+   "fric3_MPa": 10.537,
+   "fric5_MPa": 11.112
+  },
+  {
+   "design": "p139",
+   "window": "extension",
+   "fric3_MPa": 3.586,
+   "fric5_MPa": 4.374
+  },
+  {
+   "design": "p139",
+   "window": "flexion",
+   "fric3_MPa": 13.6,
+   "fric5_MPa": 14.007
+  },
+  {
+   "design": "p142",
+   "window": "extension",
+   "fric3_MPa": 0.354,
+   "fric5_MPa": 0.312
+  },
+  {
+   "design": "p143",
+   "window": "extension",
+   "fric3_MPa": 0.311,
+   "fric5_MPa": 0.329
+  },
+  {
+   "design": "p143",
+   "window": "flexion",
+   "fric3_MPa": 2.252,
+   "fric5_MPa": 2.323
+  },
+  {
+   "design": "p145",
+   "window": "extension",
+   "fric3_MPa": 0.338,
+   "fric5_MPa": 0.354
+  },
+  {
+   "design": "p145",
+   "window": "flexion",
+   "fric3_MPa": 1.781,
+   "fric5_MPa": 1.96
+  },
+  {
+   "design": "p146",
+   "window": "extension",
+   "fric3_MPa": 3.231,
+   "fric5_MPa": 3.902
+  },
+  {
+   "design": "p148",
+   "window": "extension",
+   "fric3_MPa": 2.916,
+   "fric5_MPa": 2.955
+  }
+ ]
+}
