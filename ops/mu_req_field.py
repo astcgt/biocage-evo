@@ -14,9 +14,12 @@ SKIP = {'fsu', 'fsu_info', 'frame', 'cage_npz', 'test', 'physio_windows', 'resta
 best = json.load(open(os.path.join(E, 'results/method/split/best_by_design_merged.json')))
 cls = json.load(open(os.path.join(E, 'results/method/split/verdict_classes_merged.json')))['classes']; cls_of = {p: c for c, ps in cls.items() for p in ps}
 fv = os.path.join(E, 'results/method/fric/verdicts.json'); fric = {k: v for k, v in (json.load(open(fv)) if os.path.exists(fv) else {}).items() if not k.startswith('_')}
+comp = json.load(open(os.path.join(E, 'results/method/split/comp_by_design_merged.json')))
+designs = sorted(set(best) | set(cls_of) | set(comp))   # QA 2026-11-09 不符 #4: the field must have a row for EVERY design of the merged verdict (149), not only the 94 with a tied-screening row
 rows = []; allprm = {}
-for p, wins in sorted(best.items()):
-    src = next((r['source'] for r in wins.values() if isinstance(r, dict) and r.get('source')), None)
+for p in designs:
+    wins = best.get(p, {})
+    src = next((r['source'] for r in wins.values() if isinstance(r, dict) and r.get('source')), None) or comp.get(p, {}).get('source')
     prm = {}
     if src:
         pj = os.path.join(R, src.split('/')[0], src.split('/')[1][:4] + '_params.json')
@@ -34,6 +37,7 @@ for p, wins in sorted(best.items()):
     row['over_max'] = bool(mus) and max(mus) > MU_MAX
     row['lower_bound'] = any(isinstance(r, dict) and not r.get('target_reached') for r in wins.values())
     row['computable'] = bool(mus)
+    row['no_mu_req_reason'] = None if mus else (cls_of.get(p) or 'no tied-screening row')   # e.g. DESIGN/compression-sustained: the compression gate failed before the slip screen
     row['ratio_to_mu_real'] = round(max(mus) / MU_REAL, 3) if mus else None
     f = fric.get(p); row['friction_check'] = f['verdict'] if f else None
     rows.append(row)
@@ -46,7 +50,7 @@ meta = dict(generated=__import__('time').strftime('%Y-%m-%d %H:%M'), n_designs=l
             rule='mu_req per window = tied-screening mu_squeeze (e03) at the evaluation moment; mu_req_max over the six windows governs; over_max: mu_req_max > mu_max (value kept, point labelled); lower_bound: a window did not reach its evaluation moment; computable: at least one window gave a value; friction_check: real-friction run verdict (fric_compare, check role)',
             counts=dict(over_max=sum(r['over_max'] for r in rows), lower_bound=sum(r['lower_bound'] for r in rows), not_computable=sum(not r['computable'] for r in rows), with_friction_check=sum(1 for r in rows if r['friction_check'])))
 out = os.path.join(E, 'results/method/mu_req_field'); json.dump(dict(_meta=meta, rows=rows), open(out + '.json', 'w'), indent=1)
-cols = list(rows[0].keys())
+cols = list(dict.fromkeys(k for r in rows for k in r))   # union, first-seen order (designs without a tied row lack the per-window keys)
 with open(out + '.csv', 'w', newline='') as f:
     w = csv.DictWriter(f, fieldnames=cols); w.writeheader(); [w.writerow(r) for r in rows]
 print(json.dumps(meta, indent=1, ensure_ascii=False)[:1500])
