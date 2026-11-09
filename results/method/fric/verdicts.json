@@ -4,86 +4,95 @@
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p002",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.40157249294515907,
-    "post_at_rom": 0.40157071245591114,
-    "u_h_at_1p5Nm": 0.6320678877362852,
-    "post_at_1p5Nm": 0.6320667870757751,
-    "rot_max_deg": 9.224635600173976,
+    "u_h_at_rom": 0.3895328066515719,
+    "post_at_rom": 0.38928217424998923,
+    "u_h_at_1p5Nm": 0.5886554737743311,
+    "post_at_1p5Nm": 0.5885508923762813,
+    "rot_max_deg": 9.052516529268326,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p002",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.1497749496054182,
-    "post_at_rom": -1.1497743785738244,
-    "u_h_at_1p5Nm": 0.3181613623081233,
-    "post_at_1p5Nm": -0.3181610174216321,
-    "rot_max_deg": 7.21929996475645,
+    "u_h_at_rom": 0.6821216211717048,
+    "post_at_rom": -0.682097615411488,
+    "u_h_at_1p5Nm": 0.3199633073325288,
+    "post_at_1p5Nm": -0.3199506362721941,
+    "rot_max_deg": 4.194511870443235,
     "bad": []
    }
   },
   "missing": []
  },
  "p014": {
-  "verdict": "open",
+  "verdict": "pass",
   "reasons": [],
   "windows": {
+   "extension": {
+    "set": "physio_fric5",
+    "case_dir": "p014",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.40030731469145214,
+    "post_at_rom": 0.4003068807596324,
+    "u_h_at_1p5Nm": 0.6247565242315064,
+    "post_at_1p5Nm": 0.6247564991682387,
+    "rot_max_deg": 9.22463030764744,
+    "bad": []
+   },
    "flexion": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p014",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.1300282912042163,
-    "post_at_rom": -1.1300276582783746,
-    "u_h_at_1p5Nm": 0.34891486118711773,
-    "post_at_1p5Nm": -0.34891479201912984,
-    "rot_max_deg": 6.916614098738242,
+    "u_h_at_rom": 1.1295965851076546,
+    "post_at_rom": -1.1295963446592452,
+    "u_h_at_1p5Nm": 0.34671450527630093,
+    "post_at_1p5Nm": -0.3467143675796676,
+    "rot_max_deg": 7.21927067188431,
     "bad": []
    }
   },
-  "missing": [
-   "extension"
-  ],
-  "open_reason": "extension stopped at 0.0 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
-  "computability": true
+  "missing": []
  },
  "p026": {
   "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p026",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.4558230683649701,
-    "post_at_rom": 0.4558230664223954,
-    "u_h_at_1p5Nm": 0.6981017287093245,
-    "post_at_1p5Nm": 0.6981012680011742,
-    "rot_max_deg": 9.224636323078123,
+    "u_h_at_rom": 0.45252539192594066,
+    "post_at_rom": 0.4525049737741153,
+    "u_h_at_1p5Nm": 0.6879841336941837,
+    "post_at_1p5Nm": 0.6879819252703904,
+    "rot_max_deg": 9.224699283523242,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p026",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.0853752855248593,
-    "post_at_rom": -1.0853732630252677,
-    "u_h_at_1p5Nm": 0.3676704326283433,
-    "post_at_1p5Nm": -0.3676655608388954,
-    "rot_max_deg": 7.21927347508726,
+    "u_h_at_rom": 1.071608055113324,
+    "post_at_rom": -1.0716075631173227,
+    "u_h_at_1p5Nm": 0.34580341532952946,
+    "post_at_1p5Nm": -0.3458009739735734,
+    "rot_max_deg": 7.219270412189975,
     "bad": []
    }
   },
@@ -94,16 +103,16 @@
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p036",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.19566093947302227,
-    "post_at_rom": 0.19566011440277684,
-    "u_h_at_1p5Nm": 0.37385952788691307,
-    "post_at_1p5Nm": 0.37385942333144945,
-    "rot_max_deg": 9.224629866646808,
+    "u_h_at_rom": 0.1946965231500928,
+    "post_at_rom": 0.1946935735990701,
+    "u_h_at_1p5Nm": 0.3700879545345023,
+    "post_at_1p5Nm": 0.3700874441987474,
+    "rot_max_deg": 9.224629191531372,
     "bad": []
    },
    "flexion": {
@@ -127,29 +136,29 @@
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p038",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.35883668269640834,
-    "post_at_rom": 0.35883511210911156,
-    "u_h_at_1p5Nm": 0.5671846259552371,
-    "post_at_1p5Nm": 0.567180599347179,
-    "rot_max_deg": 9.224653327848207,
+    "u_h_at_rom": 0.3528160303373347,
+    "post_at_rom": 0.3528158729834887,
+    "u_h_at_1p5Nm": 0.5633634828285594,
+    "post_at_1p5Nm": 0.56336123476407,
+    "rot_max_deg": 9.224634252602081,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p038",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.1735732001678658,
-    "post_at_rom": -1.1735729353873976,
-    "u_h_at_1p5Nm": 0.35338320868876827,
-    "post_at_1p5Nm": -0.3533831531255172,
-    "rot_max_deg": 7.219270939953923,
+    "u_h_at_rom": 1.1664826383477045,
+    "post_at_rom": -1.1664825921840438,
+    "u_h_at_1p5Nm": 0.3523331330249961,
+    "post_at_1p5Nm": -0.35233247420547764,
+    "rot_max_deg": 7.219270819805651,
     "bad": []
    }
   },
@@ -158,41 +167,39 @@
  "p051": {
   "verdict": "fail",
   "reasons": [
-   "extension@ROM u_h 0.61 post 0.61"
+   "extension@ROM u_h 0.50 post 0.50"
   ],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p051",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": true,
-    "u_h_at_rom": 0.6070221494299309,
-    "post_at_rom": 0.607020227988774,
-    "u_h_at_1p5Nm": 0.8835964804355398,
-    "post_at_1p5Nm": 0.8835911573855643,
-    "rot_max_deg": 9.224621076405928,
+    "monotonic": false,
+    "u_h_at_rom": 0.5041615440014039,
+    "post_at_rom": 0.5041579252596333,
+    "u_h_at_1p5Nm": 0.8417233218761024,
+    "post_at_1p5Nm": 0.8417161263092489,
+    "rot_max_deg": 9.224621973343776,
     "bad": [
-     "extension@ROM u_h 0.61 post 0.61"
+     "extension@ROM u_h 0.50 post 0.50"
     ]
    },
    "flexion": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p051",
-    "usable": false,
-    "eval_point": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.19179161165357975,
-    "post_at_rom": -0.19179146616882342,
-    "u_h_at_1p5Nm": 0.19179161165357975,
-    "post_at_1p5Nm": -0.19179146616882342,
-    "rot_max_deg": 1.8690648428397967,
+    "u_h_at_rom": 0.9545329998044747,
+    "post_at_rom": -0.9545322073103059,
+    "u_h_at_1p5Nm": 0.8450812988942333,
+    "post_at_1p5Nm": -0.8450807353404926,
+    "rot_max_deg": 7.219277524528791,
     "bad": []
    }
   },
-  "missing": [
-   "flexion"
-  ]
+  "missing": []
  },
  "p060": {
   "verdict": "fail",
@@ -342,193 +349,194 @@
     "bad": []
    },
    "extension": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p062",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.44753885013544875,
-    "post_at_rom": 0.44753865157603573,
-    "u_h_at_1p5Nm": 0.649966600576751,
-    "post_at_1p5Nm": 0.649755336307725,
-    "rot_max_deg": 9.228969769832762,
+    "u_h_at_rom": 0.441003918967743,
+    "post_at_rom": 0.44100313457241663,
+    "u_h_at_1p5Nm": 0.6501465788975351,
+    "post_at_1p5Nm": 0.6501465487832984,
+    "rot_max_deg": 9.22465803057378,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p062",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.5030216203893774,
-    "post_at_rom": -0.5030211921989982,
-    "u_h_at_1p5Nm": 0.16403525626201604,
-    "post_at_1p5Nm": -0.16403524756376817,
-    "rot_max_deg": 7.219281145348246,
+    "u_h_at_rom": 0.43518204392451015,
+    "post_at_rom": -0.43518039616669124,
+    "u_h_at_1p5Nm": 0.17605436409245842,
+    "post_at_1p5Nm": -0.17605353977322602,
+    "rot_max_deg": 7.219268505945807,
     "bad": []
    }
   },
   "missing": []
  },
  "p063": {
-  "verdict": "open",
+  "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p063",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.39991521022163967,
-    "post_at_rom": 0.39991474786619424,
-    "u_h_at_1p5Nm": 0.5630015212826309,
-    "post_at_1p5Nm": 0.5630012891958402,
-    "rot_max_deg": 8.768780409316587,
+    "u_h_at_rom": 0.3959484399425021,
+    "post_at_rom": 0.3959482940396603,
+    "u_h_at_1p5Nm": 0.6062888607889607,
+    "post_at_1p5Nm": 0.6062888596177358,
+    "rot_max_deg": 9.224620577927592,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p063",
-    "usable": false,
-    "eval_point": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.08765555961209175,
-    "post_at_rom": -0.08764833332786202,
-    "u_h_at_1p5Nm": 0.08765555961209175,
-    "post_at_1p5Nm": -0.08764833332786202,
-    "rot_max_deg": 1.647333938192416,
+    "u_h_at_rom": 0.4476121339708758,
+    "post_at_rom": -0.4476117148027886,
+    "u_h_at_1p5Nm": 0.17362525130996356,
+    "post_at_1p5Nm": -0.17362465587497078,
+    "rot_max_deg": 7.219268362801451,
     "bad": []
    }
   },
-  "missing": [
-   "flexion"
-  ],
-  "open_reason": "flexion stopped at 1.6 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
-  "computability": true
+  "missing": []
  },
  "p065": {
   "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p065",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": false,
-    "u_h_at_rom": 0.4066179167169299,
-    "post_at_rom": 0.4066177056304612,
-    "u_h_at_1p5Nm": 0.6114779006838486,
-    "post_at_1p5Nm": 0.6114655056109538,
-    "rot_max_deg": 9.213967063908257,
+    "monotonic": true,
+    "u_h_at_rom": 0.38891177358807993,
+    "post_at_rom": 0.38888736736668506,
+    "u_h_at_1p5Nm": 0.5928108924336394,
+    "post_at_1p5Nm": 0.5928104455761658,
+    "rot_max_deg": 9.224622288381227,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p065",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.636647819673189,
-    "post_at_rom": -0.6366476652236368,
-    "u_h_at_1p5Nm": 0.2109878971504882,
-    "post_at_1p5Nm": -0.2109863485897089,
-    "rot_max_deg": 7.21922211518975,
+    "u_h_at_rom": 0.5632441839716271,
+    "post_at_rom": -0.5632435981754919,
+    "u_h_at_1p5Nm": 0.20477521064306617,
+    "post_at_1p5Nm": -0.20477338439764092,
+    "rot_max_deg": 7.219686295310167,
     "bad": []
    }
   },
   "missing": []
  },
  "p066": {
-  "verdict": "open",
+  "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p066",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": false,
-    "u_h_at_rom": 0.2513805046895842,
-    "post_at_rom": 0.25137910528637236,
-    "u_h_at_1p5Nm": 0.4305062656386963,
-    "post_at_1p5Nm": 0.4305050546517308,
-    "rot_max_deg": 9.224633918280084,
+    "monotonic": true,
+    "u_h_at_rom": 0.24754552242691572,
+    "post_at_rom": 0.24754366095685024,
+    "u_h_at_1p5Nm": 0.41891122840037337,
+    "post_at_1p5Nm": 0.41891112244484124,
+    "rot_max_deg": 9.224629255084144,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric5",
+    "case_dir": "p066",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.606084272719358,
+    "post_at_rom": -0.6060842535688219,
+    "u_h_at_1p5Nm": 0.1479196048786477,
+    "post_at_1p5Nm": -0.14791581787803687,
+    "rot_max_deg": 7.21927134394521,
     "bad": []
    }
   },
-  "missing": [
-   "flexion"
-  ],
-  "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
-  "computability": true
+  "missing": []
  },
  "p067": {
   "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p067",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.2880915863382075,
-    "post_at_rom": 0.2880911857681684,
-    "u_h_at_1p5Nm": 0.46313002845553647,
-    "post_at_1p5Nm": 0.46312888989630036,
-    "rot_max_deg": 9.22464062706862,
+    "u_h_at_rom": 0.2810111999722146,
+    "post_at_rom": 0.28101107634858546,
+    "u_h_at_1p5Nm": 0.4539895774728759,
+    "post_at_1p5Nm": 0.45398891514802325,
+    "rot_max_deg": 9.22464141874163,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p067",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.6078147191038972,
-    "post_at_rom": -0.6078139070178991,
-    "u_h_at_1p5Nm": 0.17757832947479477,
-    "post_at_1p5Nm": -0.17757618282176715,
-    "rot_max_deg": 7.219270121950742,
+    "u_h_at_rom": 0.5647247585241867,
+    "post_at_rom": -0.5647238707270043,
+    "u_h_at_1p5Nm": 0.15993086583937954,
+    "post_at_1p5Nm": -0.15992913130281683,
+    "rot_max_deg": 7.101414878674127,
     "bad": []
    }
   },
   "missing": []
  },
  "p072": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.55 post 0.55"
-  ],
+  "verdict": "pass",
+  "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p072",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": false,
-    "u_h_at_rom": 0.5484222849020396,
-    "post_at_rom": 0.5484179152614417,
-    "u_h_at_1p5Nm": 0.8241710696441653,
-    "post_at_1p5Nm": 0.8241669713552743,
-    "rot_max_deg": 9.224625238215278,
-    "bad": [
-     "extension@ROM u_h 0.55 post 0.55"
-    ]
+    "monotonic": true,
+    "u_h_at_rom": 0.47646188383898136,
+    "post_at_rom": 0.4764599911626524,
+    "u_h_at_1p5Nm": 0.7133705566210773,
+    "post_at_1p5Nm": 0.7133704950608184,
+    "rot_max_deg": 9.224627448676099,
+    "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p072",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.9995848739612953,
-    "post_at_rom": -0.9995841548822323,
-    "u_h_at_1p5Nm": 0.8075563694837719,
-    "post_at_1p5Nm": -0.8075559533503525,
-    "rot_max_deg": 7.21483337182395,
+    "u_h_at_rom": 1.0052921317259143,
+    "post_at_rom": -1.005291629774959,
+    "u_h_at_1p5Nm": 0.8201491472445724,
+    "post_at_1p5Nm": -0.8201485518050393,
+    "rot_max_deg": 7.219311464476604,
     "bad": []
    }
   },
@@ -537,72 +545,68 @@
  "p075": {
   "verdict": "fail",
   "reasons": [
-   "extension@ROM u_h 0.60 post 0.60"
+   "extension@ROM u_h 0.51 post 0.51"
   ],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p075_gpu5",
+    "set": "physio_fric5",
+    "case_dir": "p075",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.6018981528393089,
-    "post_at_rom": 0.6018933662266776,
-    "u_h_at_1p5Nm": 0.9091377708306884,
-    "post_at_1p5Nm": 0.9091350620551234,
-    "rot_max_deg": 9.22462874695189,
+    "u_h_at_rom": 0.5057548547101922,
+    "post_at_rom": 0.5057460571969142,
+    "u_h_at_1p5Nm": 0.8501441408053565,
+    "post_at_1p5Nm": 0.8501336573204388,
+    "rot_max_deg": 9.222975606206079,
     "bad": [
-     "extension@ROM u_h 0.60 post 0.60"
+     "extension@ROM u_h 0.51 post 0.51"
     ]
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p075_gpu5",
+    "set": "physio_fric5",
+    "case_dir": "p075",
     "usable": true,
     "eval_point": "1.5Nm",
-    "monotonic": false,
-    "u_h_at_rom": 0.9323989726046122,
-    "post_at_rom": -0.9323980122540966,
-    "u_h_at_1p5Nm": 0.8327197046812732,
-    "post_at_1p5Nm": -0.832719287519544,
-    "rot_max_deg": 7.21133311285459,
+    "monotonic": true,
+    "u_h_at_rom": 0.9571291893295112,
+    "post_at_rom": -0.9571283798025891,
+    "u_h_at_1p5Nm": 0.8487707121328115,
+    "post_at_1p5Nm": -0.8487701431108671,
+    "rot_max_deg": 7.21665585926322,
     "bad": []
    }
   },
   "missing": []
  },
  "p076": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.50 post 0.50"
-  ],
+  "verdict": "pass",
+  "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p076_gpu5",
+    "set": "physio_fric5",
+    "case_dir": "p076",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.5000620114736626,
-    "post_at_rom": 0.5000597527106262,
-    "u_h_at_1p5Nm": 0.7146196031383614,
-    "post_at_1p5Nm": 0.7146191789221195,
-    "rot_max_deg": 9.22464305567666,
-    "bad": [
-     "extension@ROM u_h 0.50 post 0.50"
-    ]
+    "u_h_at_rom": 0.47695447092270543,
+    "post_at_rom": 0.47695401036595414,
+    "u_h_at_1p5Nm": 0.6884228454017294,
+    "post_at_1p5Nm": 0.6884223367228632,
+    "rot_max_deg": 9.224624032609599,
+    "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p076_gpu5",
+    "set": "physio_fric5",
+    "case_dir": "p076",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.5568727007334978,
-    "post_at_rom": -0.5568726700743628,
-    "u_h_at_1p5Nm": 0.23693710355273892,
-    "post_at_1p5Nm": -0.23693702216130394,
-    "rot_max_deg": 7.219269011549652,
+    "u_h_at_rom": 0.5357876085038804,
+    "post_at_rom": -0.5357875725244123,
+    "u_h_at_1p5Nm": 0.2336400663341434,
+    "post_at_1p5Nm": -0.23363974000693108,
+    "rot_max_deg": 7.219266022599281,
     "bad": []
    }
   },
@@ -613,99 +617,95 @@
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p077_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p077",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.45615824934620275,
-    "post_at_rom": 0.4561582214589306,
-    "u_h_at_1p5Nm": 0.6676555041901503,
-    "post_at_1p5Nm": 0.6676550581718302,
-    "rot_max_deg": 9.224622501665058,
+    "u_h_at_rom": 0.4352294138348182,
+    "post_at_rom": 0.43522910299490336,
+    "u_h_at_1p5Nm": 0.6431578024019996,
+    "post_at_1p5Nm": 0.6431576990920526,
+    "rot_max_deg": 9.22463977418491,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p077_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p077",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.5800740092065569,
-    "post_at_rom": -0.5800739923311776,
-    "u_h_at_1p5Nm": 0.21775587128187338,
-    "post_at_1p5Nm": -0.21775556823630263,
-    "rot_max_deg": 7.2192693960837016,
+    "u_h_at_rom": 0.5565719159828328,
+    "post_at_rom": -0.5565715198226121,
+    "u_h_at_1p5Nm": 0.2179679281633667,
+    "post_at_1p5Nm": -0.21796791024903706,
+    "rot_max_deg": 7.219269353098292,
     "bad": []
    }
   },
   "missing": []
  },
  "p078": {
-  "verdict": "open",
+  "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p078_gpu3",
-    "usable": false,
-    "eval_point": null,
+    "set": "physio_fric5",
+    "case_dir": "p078",
+    "usable": true,
+    "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.09035827837789863,
-    "post_at_rom": 0.09035329902128542,
-    "u_h_at_1p5Nm": 0.09035827837789863,
-    "post_at_1p5Nm": 0.09035329902128542,
-    "rot_max_deg": 4.213232290610458,
+    "u_h_at_rom": 0.3463632386544409,
+    "post_at_rom": 0.34636318237617786,
+    "u_h_at_1p5Nm": 0.5601092076039783,
+    "post_at_1p5Nm": 0.560107139848283,
+    "rot_max_deg": 9.224628538577365,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p078_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p078",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.1885859520234738,
-    "post_at_rom": -1.1885854748499012,
-    "u_h_at_1p5Nm": 0.3216050843139367,
-    "post_at_1p5Nm": -0.32160485226201224,
-    "rot_max_deg": 7.218816762206044,
+    "u_h_at_rom": 1.1712777042251443,
+    "post_at_rom": -1.1712776616666984,
+    "u_h_at_1p5Nm": 0.3199400553857998,
+    "post_at_1p5Nm": -0.3199398404467068,
+    "rot_max_deg": 7.219271131426306,
     "bad": []
    }
   },
-  "missing": [
-   "extension"
-  ],
-  "open_reason": "extension stopped at 4.2 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
-  "computability": true
+  "missing": []
  },
  "p079": {
   "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p079_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p079",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.4029833501970582,
-    "post_at_rom": 0.4029822364864121,
-    "u_h_at_1p5Nm": 0.6231118975420323,
-    "post_at_1p5Nm": 0.6231109222473361,
-    "rot_max_deg": 9.224620905928242,
+    "u_h_at_rom": 0.39480868638980443,
+    "post_at_rom": 0.3948083662757504,
+    "u_h_at_1p5Nm": 0.6182425074345719,
+    "post_at_1p5Nm": 0.6182424006117913,
+    "rot_max_deg": 9.224642741745614,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p079_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p079",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.1579563428574278,
-    "post_at_rom": -1.1579533899113146,
-    "u_h_at_1p5Nm": 0.323894849287547,
-    "post_at_1p5Nm": -0.32380167390222087,
-    "rot_max_deg": 7.219152168239987,
+    "u_h_at_rom": 1.1400939975776783,
+    "post_at_rom": -1.1400937617802727,
+    "u_h_at_1p5Nm": 0.2915808199282966,
+    "post_at_1p5Nm": -0.2915802450128872,
+    "rot_max_deg": 7.219270096770365,
     "bad": []
    }
   },
@@ -716,103 +716,95 @@
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p081_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p081",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.484706596968633,
-    "post_at_rom": 0.48470647221544455,
-    "u_h_at_1p5Nm": 0.7389898753161369,
-    "post_at_1p5Nm": 0.7389892129137772,
-    "rot_max_deg": 9.224657270174205,
+    "u_h_at_rom": 0.48165614335422424,
+    "post_at_rom": 0.481656091676114,
+    "u_h_at_1p5Nm": 0.726547173219131,
+    "post_at_1p5Nm": 0.7265470356992753,
+    "rot_max_deg": 9.22464304065668,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p081_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p081",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.594957291933047,
-    "post_at_rom": -0.594955577761382,
-    "u_h_at_1p5Nm": 0.36316154932233163,
-    "post_at_1p5Nm": -0.36315808558758034,
-    "rot_max_deg": 4.222100237204966,
+    "u_h_at_rom": 0.7433951194852003,
+    "post_at_rom": -0.7433937420911447,
+    "u_h_at_1p5Nm": 0.3585625765910458,
+    "post_at_1p5Nm": -0.35855713203588485,
+    "rot_max_deg": 4.6107022738513095,
     "bad": []
    }
   },
   "missing": []
  },
  "p086": {
-  "verdict": "open",
+  "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p086_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p086",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.4660937236147406,
-    "post_at_rom": 0.4659929198857296,
-    "u_h_at_1p5Nm": 0.8014941615093936,
-    "post_at_1p5Nm": 0.8014692160434528,
-    "rot_max_deg": 9.226273445119142,
+    "u_h_at_rom": 0.439745930264123,
+    "post_at_rom": 0.4397458615013331,
+    "u_h_at_1p5Nm": 0.7184613687898458,
+    "post_at_1p5Nm": 0.7184612007624459,
+    "rot_max_deg": 9.224650031366968,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p086_gpu3",
-    "usable": false,
-    "eval_point": null,
-    "monotonic": true,
-    "u_h_at_rom": 0.17904615102180957,
-    "post_at_rom": -0.17904499773101556,
-    "u_h_at_1p5Nm": 0.17904615102180957,
-    "post_at_1p5Nm": -0.17904499773101556,
-    "rot_max_deg": 1.312383318679429,
-    "bad": []
-   }
-  },
-  "missing": [
-   "flexion"
-  ],
-  "open_reason": "flexion stopped at 1.3 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
-  "computability": true
- },
- "p092": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.52 post 0.52"
-  ],
-  "windows": {
-   "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p092_gpu5",
-    "usable": true,
-    "eval_point": "ROM",
-    "monotonic": true,
-    "u_h_at_rom": 0.5231386808195717,
-    "post_at_rom": 0.5230945145509349,
-    "u_h_at_1p5Nm": 0.8959038407173884,
-    "post_at_1p5Nm": 0.895901068650531,
-    "rot_max_deg": 9.224916677156655,
-    "bad": [
-     "extension@ROM u_h 0.52 post 0.52"
-    ]
-   },
-   "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p092_gpu5",
+    "set": "physio_fric5",
+    "case_dir": "p086",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.1209857424505463,
-    "post_at_rom": -1.1209856979385542,
-    "u_h_at_1p5Nm": 0.8560651179576889,
-    "post_at_1p5Nm": -0.856065046924511,
-    "rot_max_deg": 7.219278947473729,
+    "u_h_at_rom": 1.1848903957327381,
+    "post_at_rom": -1.1848903906162507,
+    "u_h_at_1p5Nm": 0.8215444800122392,
+    "post_at_1p5Nm": -0.8215444293458046,
+    "rot_max_deg": 6.785787067261011,
+    "bad": []
+   }
+  },
+  "missing": []
+ },
+ "p092": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5",
+    "case_dir": "p092",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.47995319666565134,
+    "post_at_rom": 0.47995184520199924,
+    "u_h_at_1p5Nm": 0.8378541587449811,
+    "post_at_1p5Nm": 0.8378515004996429,
+    "rot_max_deg": 9.22504977729889,
+    "bad": []
+   },
+   "flexion": {
+    "set": "physio_fric5",
+    "case_dir": "p092",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.127262171244587,
+    "post_at_rom": -1.1272621487047378,
+    "u_h_at_1p5Nm": 0.8916378409551221,
+    "post_at_1p5Nm": -0.8916378275657691,
+    "rot_max_deg": 7.219284225727578,
     "bad": []
    }
   },
@@ -821,35 +813,35 @@
  "p093": {
   "verdict": "fail",
   "reasons": [
-   "extension@ROM u_h 0.61 post 0.61"
+   "extension@ROM u_h 0.55 post 0.55"
   ],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p093_gpu5",
+    "set": "physio_fric5",
+    "case_dir": "p093",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": false,
-    "u_h_at_rom": 0.6058373849671501,
-    "post_at_rom": 0.6058372418866674,
-    "u_h_at_1p5Nm": 1.0211877385184192,
-    "post_at_1p5Nm": 1.0211814763486702,
-    "rot_max_deg": 9.224636808190953,
+    "monotonic": true,
+    "u_h_at_rom": 0.5452325695959405,
+    "post_at_rom": 0.5452310801127171,
+    "u_h_at_1p5Nm": 1.0314253371611115,
+    "post_at_1p5Nm": 1.031424825040658,
+    "rot_max_deg": 9.22466275895226,
     "bad": [
-     "extension@ROM u_h 0.61 post 0.61"
+     "extension@ROM u_h 0.55 post 0.55"
     ]
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p093_gpu5",
+    "set": "physio_fric5",
+    "case_dir": "p093",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.0436433217934755,
-    "post_at_rom": -1.043643316579095,
-    "u_h_at_1p5Nm": 0.8827876157166187,
-    "post_at_1p5Nm": -0.8827875021612741,
-    "rot_max_deg": 6.425080681649985,
+    "u_h_at_rom": 1.0663473999306115,
+    "post_at_rom": -1.0663473966597115,
+    "u_h_at_1p5Nm": 0.8719201859906114,
+    "post_at_1p5Nm": -0.8719201773200093,
+    "rot_max_deg": 7.219274266069382,
     "bad": []
    }
   },
@@ -860,95 +852,99 @@
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p094_gpu5",
+    "set": "physio_fric5",
+    "case_dir": "p094",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.3129598734612191,
-    "post_at_rom": 0.3129598696736357,
-    "u_h_at_1p5Nm": 0.4925908975044044,
-    "post_at_1p5Nm": 0.4925907392321115,
-    "rot_max_deg": 9.224624586674064,
+    "u_h_at_rom": 0.3066526414940439,
+    "post_at_rom": 0.30665262440876306,
+    "u_h_at_1p5Nm": 0.4862443040217005,
+    "post_at_1p5Nm": 0.48624422657706245,
+    "rot_max_deg": 9.22462612670058,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p094_gpu5",
+    "set": "physio_fric5",
+    "case_dir": "p094",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.523146100106717,
-    "post_at_rom": -0.5231456013966425,
-    "u_h_at_1p5Nm": 0.14689700282737664,
-    "post_at_1p5Nm": -0.14689266896160014,
-    "rot_max_deg": 7.21939298805445,
+    "u_h_at_rom": 0.4992161488306851,
+    "post_at_rom": -0.49921568759469576,
+    "u_h_at_1p5Nm": 0.14304233354728021,
+    "post_at_1p5Nm": -0.1430418730362897,
+    "rot_max_deg": 7.219268966127408,
     "bad": []
    }
   },
   "missing": []
  },
  "p100": {
-  "verdict": "pass",
+  "verdict": "open",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p100",
-    "usable": true,
-    "eval_point": "ROM",
+    "usable": false,
+    "eval_point": null,
     "monotonic": true,
-    "u_h_at_rom": 0.45695243969631316,
-    "post_at_rom": 0.4569489241167159,
-    "u_h_at_1p5Nm": 0.7173030312488444,
-    "post_at_1p5Nm": 0.717300051858084,
-    "rot_max_deg": 9.224648904188674,
+    "u_h_at_rom": 0.012563241034397106,
+    "post_at_rom": -0.012560597817483657,
+    "u_h_at_1p5Nm": 0.012563241034397106,
+    "post_at_1p5Nm": -0.012560597817483657,
+    "rot_max_deg": 2.937724509626991,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
+    "set": "physio_fric5",
     "case_dir": "p100",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.1780439479939855,
-    "post_at_rom": -1.1780439455458154,
-    "u_h_at_1p5Nm": 0.8325322450474604,
-    "post_at_1p5Nm": -0.8325319919159844,
-    "rot_max_deg": 7.219274219202473,
+    "u_h_at_rom": 1.1801119370806998,
+    "post_at_rom": -1.180076427410144,
+    "u_h_at_1p5Nm": 0.8120044881083908,
+    "post_at_1p5Nm": -0.8120042805358338,
+    "rot_max_deg": 6.800062181285108,
     "bad": []
    }
   },
-  "missing": []
+  "missing": [
+   "extension"
+  ],
+  "open_reason": "extension stopped at 2.9 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
+  "computability": true
  },
  "p105": {
   "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p105_gpu2",
+    "set": "physio_fric5",
+    "case_dir": "p105",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.43945122783590856,
-    "post_at_rom": 0.4394429397597383,
-    "u_h_at_1p5Nm": 0.6477151586548292,
-    "post_at_1p5Nm": 0.6477139644976196,
-    "rot_max_deg": 9.224652836667579,
+    "u_h_at_rom": 0.4309254815496756,
+    "post_at_rom": 0.4309235791372874,
+    "u_h_at_1p5Nm": 0.5107309648753691,
+    "post_at_1p5Nm": 0.5107282587576442,
+    "rot_max_deg": 8.112465912141655,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p105_gpu2",
+    "set": "physio_fric5",
+    "case_dir": "p105",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.5447704658086856,
-    "post_at_rom": -0.5447700365605641,
-    "u_h_at_1p5Nm": 0.15934775603938267,
-    "post_at_1p5Nm": -0.15934727828978573,
-    "rot_max_deg": 7.219258613564118,
+    "u_h_at_rom": 0.42675204534490707,
+    "post_at_rom": -0.4265165650045632,
+    "u_h_at_1p5Nm": 0.1643005381614658,
+    "post_at_1p5Nm": -0.16398684172847974,
+    "rot_max_deg": 6.906836048769165,
     "bad": []
    }
   },
@@ -973,29 +969,29 @@
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p110_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p110",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": true,
-    "u_h_at_rom": 0.30464177821370614,
-    "post_at_rom": 0.3046416220113126,
-    "u_h_at_1p5Nm": 0.48262972926451386,
-    "post_at_1p5Nm": 0.48262933498264377,
-    "rot_max_deg": 9.224613724722275,
+    "monotonic": false,
+    "u_h_at_rom": 0.29759944103662633,
+    "post_at_rom": 0.29754732540384726,
+    "u_h_at_1p5Nm": 0.4761110096752157,
+    "post_at_1p5Nm": 0.47606473105420694,
+    "rot_max_deg": 9.22522302504622,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p110_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p110",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.5601012499254757,
-    "post_at_rom": -0.5601012359565157,
-    "u_h_at_1p5Nm": 0.16868766545932926,
-    "post_at_1p5Nm": -0.16868641168911033,
-    "rot_max_deg": 7.219272450789723,
+    "u_h_at_rom": 0.5142701987915398,
+    "post_at_rom": -0.5142697813693122,
+    "u_h_at_1p5Nm": 0.1471284300499784,
+    "post_at_1p5Nm": -0.14712754257554658,
+    "rot_max_deg": 7.219268574286056,
     "bad": []
    }
   },
@@ -1006,29 +1002,29 @@
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p111_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p111",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": true,
-    "u_h_at_rom": 0.40640599989873866,
-    "post_at_rom": 0.40640353088401204,
-    "u_h_at_1p5Nm": 0.6213395587289869,
-    "post_at_1p5Nm": 0.6213384790029797,
-    "rot_max_deg": 9.224682427313155,
+    "monotonic": false,
+    "u_h_at_rom": 0.3994914142144175,
+    "post_at_rom": 0.39949099826427337,
+    "u_h_at_1p5Nm": 0.6048371739383825,
+    "post_at_1p5Nm": 0.6048356373614736,
+    "rot_max_deg": 9.224636248914578,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p111_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p111",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.5915048155683637,
-    "post_at_rom": -0.5914805902869886,
-    "u_h_at_1p5Nm": 0.18788303227417769,
-    "post_at_1p5Nm": -0.18695366725014276,
-    "rot_max_deg": 7.21927095455258,
+    "u_h_at_rom": 0.4629580787873453,
+    "post_at_rom": -0.46295783636755516,
+    "u_h_at_1p5Nm": 0.16684073422770257,
+    "post_at_1p5Nm": -0.16684015655139275,
+    "rot_max_deg": 7.219268574242034,
     "bad": []
    }
   },
@@ -1039,29 +1035,29 @@
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p112_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p112",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.44832469818306037,
-    "post_at_rom": 0.4483244486648079,
-    "u_h_at_1p5Nm": 0.6722777744802682,
-    "post_at_1p5Nm": 0.6722771315176654,
-    "rot_max_deg": 9.22463845752935,
+    "u_h_at_rom": 0.43415596713123006,
+    "post_at_rom": 0.4341559388909073,
+    "u_h_at_1p5Nm": 0.6618463928278239,
+    "post_at_1p5Nm": 0.6618463847492766,
+    "rot_max_deg": 9.224622447797376,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p112_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p112",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.0380771171239322,
-    "post_at_rom": -1.0380763582943027,
-    "u_h_at_1p5Nm": 0.4143949065129613,
-    "post_at_1p5Nm": -0.41439485929588665,
-    "rot_max_deg": 7.21928301094914,
+    "u_h_at_rom": 1.04630371558771,
+    "post_at_rom": -1.0462894163724983,
+    "u_h_at_1p5Nm": 0.41783742068573754,
+    "post_at_1p5Nm": -0.4177041746459014,
+    "rot_max_deg": 7.219270088647365,
     "bad": []
    }
   },
@@ -1072,29 +1068,29 @@
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p113_gpu2",
+    "set": "physio_fric5",
+    "case_dir": "p113",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.4853258075006821,
-    "post_at_rom": 0.48532080451080806,
-    "u_h_at_1p5Nm": 0.7469496715905931,
-    "post_at_1p5Nm": 0.7469495314078549,
-    "rot_max_deg": 9.22464822928982,
+    "u_h_at_rom": 0.4850368161317962,
+    "post_at_rom": 0.4850355914878912,
+    "u_h_at_1p5Nm": 0.7356068486034766,
+    "post_at_1p5Nm": 0.7356015301117353,
+    "rot_max_deg": 9.225369976740758,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p113_gpu2",
+    "set": "physio_fric5",
+    "case_dir": "p113",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.9990003712033821,
-    "post_at_rom": -0.9989995301526621,
-    "u_h_at_1p5Nm": 0.4923217601864672,
-    "post_at_1p5Nm": -0.4923215392639764,
-    "rot_max_deg": 7.2192738335841184,
+    "u_h_at_rom": 1.0081569760646862,
+    "post_at_rom": -1.0081568177486135,
+    "u_h_at_1p5Nm": 0.4750486804086095,
+    "post_at_1p5Nm": -0.4750485942622066,
+    "rot_max_deg": 7.21927170143448,
     "bad": []
    }
   },
@@ -1103,72 +1099,68 @@
  "p114": {
   "verdict": "fail",
   "reasons": [
-   "extension@ROM u_h 0.59 post 0.59"
+   "extension@ROM u_h 0.55 post 0.55"
   ],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p114_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p114",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.5877788182843625,
-    "post_at_rom": 0.5877780507974159,
-    "u_h_at_1p5Nm": 0.9562860160667677,
-    "post_at_1p5Nm": 0.9562824044610441,
-    "rot_max_deg": 9.224622511736518,
+    "u_h_at_rom": 0.5475921092416909,
+    "post_at_rom": 0.5472791684841896,
+    "u_h_at_1p5Nm": 0.9748391544411452,
+    "post_at_1p5Nm": 0.9748244167870481,
+    "rot_max_deg": 9.230563770352356,
     "bad": [
-     "extension@ROM u_h 0.59 post 0.59"
+     "extension@ROM u_h 0.55 post 0.55"
     ]
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p114_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p114",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.0124453309497647,
-    "post_at_rom": -1.012445278147147,
-    "u_h_at_1p5Nm": 0.8746268478883612,
-    "post_at_1p5Nm": -0.874626847255924,
-    "rot_max_deg": 6.901894969410798,
+    "u_h_at_rom": 1.0322366895726969,
+    "post_at_rom": -1.03223668174303,
+    "u_h_at_1p5Nm": 0.8942213873587591,
+    "post_at_1p5Nm": -0.8942213041718939,
+    "rot_max_deg": 7.219276594043856,
     "bad": []
    }
   },
   "missing": []
  },
  "p117": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.51 post 0.51"
-  ],
+  "verdict": "pass",
+  "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p117_gpu2",
+    "set": "physio_fric5",
+    "case_dir": "p117",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.5146366117436023,
-    "post_at_rom": 0.5146334529223296,
-    "u_h_at_1p5Nm": 0.8786238814071217,
-    "post_at_1p5Nm": 0.8786233553628798,
-    "rot_max_deg": 9.224628258652682,
-    "bad": [
-     "extension@ROM u_h 0.51 post 0.51"
-    ]
+    "u_h_at_rom": 0.4800376941293815,
+    "post_at_rom": 0.48003390403680307,
+    "u_h_at_1p5Nm": 0.8377893108951316,
+    "post_at_1p5Nm": 0.8377893035269305,
+    "rot_max_deg": 9.224733709963333,
+    "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p117_gpu2",
+    "set": "physio_fric5",
+    "case_dir": "p117",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.1097059136258896,
-    "post_at_rom": -1.1097059123226154,
-    "u_h_at_1p5Nm": 0.8533415462632397,
-    "post_at_1p5Nm": -0.853341501849188,
-    "rot_max_deg": 7.21927947553695,
+    "u_h_at_rom": 1.126258120689592,
+    "post_at_rom": -1.1262581181046145,
+    "u_h_at_1p5Nm": 0.8890224901655983,
+    "post_at_1p5Nm": -0.8890224723573926,
+    "rot_max_deg": 7.040418378479247,
     "bad": []
    }
   },
@@ -1179,29 +1171,29 @@
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p122_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p122",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": false,
-    "u_h_at_rom": 0.44811506879287677,
-    "post_at_rom": 0.44811448139983084,
-    "u_h_at_1p5Nm": 0.6562419885285685,
-    "post_at_1p5Nm": 0.6562419841636375,
-    "rot_max_deg": 9.224623691304398,
+    "u_h_at_rom": 0.4421890750665791,
+    "post_at_rom": 0.4421879751148375,
+    "u_h_at_1p5Nm": 0.6481511959328063,
+    "post_at_1p5Nm": 0.6481504168632658,
+    "rot_max_deg": 9.224642587145398,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p122_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p122",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.5652917278676393,
-    "post_at_rom": -0.5652911353607003,
-    "u_h_at_1p5Nm": 0.1773856609140753,
-    "post_at_1p5Nm": -0.1773845326097173,
-    "rot_max_deg": 7.219254903284291,
+    "u_h_at_rom": 0.43165778429122065,
+    "post_at_rom": -0.4316575131287332,
+    "u_h_at_1p5Nm": 0.17216375159738645,
+    "post_at_1p5Nm": -0.17216249938131667,
+    "rot_max_deg": 7.219320378547089,
     "bad": []
    }
   },
@@ -1212,29 +1204,29 @@
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p124_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p124",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": true,
-    "u_h_at_rom": 0.30797329804154866,
-    "post_at_rom": 0.3079732919486327,
-    "u_h_at_1p5Nm": 0.4887751234533828,
-    "post_at_1p5Nm": 0.48877491887566843,
-    "rot_max_deg": 9.22462810460847,
+    "monotonic": false,
+    "u_h_at_rom": 0.301555102795599,
+    "post_at_rom": 0.3014842956645249,
+    "u_h_at_1p5Nm": 0.48152867783234166,
+    "post_at_1p5Nm": 0.48150688621704085,
+    "rot_max_deg": 9.2248332690163,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p124_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p124",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.5809945552113562,
-    "post_at_rom": -0.5809944920153713,
-    "u_h_at_1p5Nm": 0.15529311392764822,
-    "post_at_1p5Nm": -0.15529107105987552,
-    "rot_max_deg": 7.219546529570822,
+    "u_h_at_rom": 0.535964234439724,
+    "post_at_rom": -0.5359639047110722,
+    "u_h_at_1p5Nm": 0.1619894911509693,
+    "post_at_1p5Nm": -0.16198843338866434,
+    "rot_max_deg": 7.219281356841539,
     "bad": []
    }
   },
@@ -1297,29 +1289,29 @@
     "bad": []
    },
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p125_gpu2",
+    "set": "physio_fric5",
+    "case_dir": "p125",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.4153166035002732,
-    "post_at_rom": 0.41531574565007673,
-    "u_h_at_1p5Nm": 0.6307704162601119,
-    "post_at_1p5Nm": 0.6307703781640128,
-    "rot_max_deg": 9.22462998457573,
+    "u_h_at_rom": 0.41650197045887455,
+    "post_at_rom": 0.4164961213312576,
+    "u_h_at_1p5Nm": 0.6322432069679199,
+    "post_at_1p5Nm": 0.6322079709467342,
+    "rot_max_deg": 9.15554617010606,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p125_gpu2",
+    "set": "physio_fric5",
+    "case_dir": "p125",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.1150161813701103,
-    "post_at_rom": -1.115015504316152,
-    "u_h_at_1p5Nm": 0.35299967905980245,
-    "post_at_1p5Nm": -0.3529996441168576,
-    "rot_max_deg": 5.79417316085951,
+    "u_h_at_rom": 1.1277636180768733,
+    "post_at_rom": -1.127763389729129,
+    "u_h_at_1p5Nm": 0.33700057940189865,
+    "post_at_1p5Nm": -0.3370002358823399,
+    "rot_max_deg": 7.219279135971985,
     "bad": []
    }
   },
@@ -1330,243 +1322,235 @@
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p131_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p131",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.3501444522839832,
-    "post_at_rom": 0.35014414840309266,
-    "u_h_at_1p5Nm": 0.5418286317834566,
-    "post_at_1p5Nm": 0.54182861864525,
-    "rot_max_deg": 9.224622908135682,
+    "u_h_at_rom": 0.3380695846928886,
+    "post_at_rom": 0.33806953389102684,
+    "u_h_at_1p5Nm": 0.5288130504020615,
+    "post_at_1p5Nm": 0.5288121851550135,
+    "rot_max_deg": 9.22459886520871,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p131_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p131",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.5643544946251511,
-    "post_at_rom": -0.5643542654289295,
-    "u_h_at_1p5Nm": 0.16239388199028723,
-    "post_at_1p5Nm": -0.16239246582038855,
-    "rot_max_deg": 7.219319405248157,
+    "u_h_at_rom": 0.5167427280803938,
+    "post_at_rom": -0.5167423158748472,
+    "u_h_at_1p5Nm": 0.16121623356039783,
+    "post_at_1p5Nm": -0.161215000092329,
+    "rot_max_deg": 7.219274921004431,
     "bad": []
    }
   },
   "missing": []
  },
  "p132": {
-  "verdict": "pass",
+  "verdict": "open",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p132_gpu2",
+    "set": "physio_fric5",
+    "case_dir": "p132",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.36645270558361415,
-    "post_at_rom": 0.36645245457064,
-    "u_h_at_1p5Nm": 0.5838821791114622,
-    "post_at_1p5Nm": 0.5838820660114177,
-    "rot_max_deg": 9.2246293118299,
+    "u_h_at_rom": 0.3626652697792234,
+    "post_at_rom": 0.36266525891613616,
+    "u_h_at_1p5Nm": 0.5725375301667587,
+    "post_at_1p5Nm": 0.5725375138033753,
+    "rot_max_deg": 9.224622894974065,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p132_gpu2",
-    "usable": true,
-    "eval_point": "1.5Nm",
+    "set": "physio_fric5",
+    "case_dir": "p132",
+    "usable": false,
+    "eval_point": null,
     "monotonic": true,
-    "u_h_at_rom": 1.1312524935153099,
-    "post_at_rom": -1.1312517806091271,
-    "u_h_at_1p5Nm": 0.3429010469426205,
-    "post_at_1p5Nm": -0.3429002636233634,
-    "rot_max_deg": 7.219272127151815,
+    "u_h_at_rom": 0.30423577143038966,
+    "post_at_rom": -0.30423544927719026,
+    "u_h_at_1p5Nm": 0.30423577143038966,
+    "post_at_1p5Nm": -0.30423544927719026,
+    "rot_max_deg": 2.0254784912165524,
     "bad": []
    }
   },
-  "missing": []
+  "missing": [
+   "flexion"
+  ],
+  "open_reason": "flexion stopped at 2.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+  "computability": true
  },
  "p133": {
   "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p133_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p133",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.48736100377180547,
-    "post_at_rom": 0.48736099917147646,
-    "u_h_at_1p5Nm": 0.7469553671859958,
-    "post_at_1p5Nm": 0.746955351192589,
-    "rot_max_deg": 9.224634650437697,
+    "u_h_at_rom": 0.48834844691430257,
+    "post_at_rom": 0.48834840627445747,
+    "u_h_at_1p5Nm": 0.7427670638881163,
+    "post_at_1p5Nm": 0.7427670437983294,
+    "rot_max_deg": 9.224635155301565,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p133_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p133",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.0583233828677507,
-    "post_at_rom": -1.0583196173715927,
-    "u_h_at_1p5Nm": 0.35286526634751153,
-    "post_at_1p5Nm": -0.35284679244797296,
-    "rot_max_deg": 7.219188042062157,
+    "u_h_at_rom": 0.649435319534159,
+    "post_at_rom": -0.6494338276616035,
+    "u_h_at_1p5Nm": 0.39430618030725545,
+    "post_at_1p5Nm": -0.39430167840655606,
+    "rot_max_deg": 4.286134391170414,
     "bad": []
    }
   },
   "missing": []
  },
  "p135": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.50 post 0.50"
-  ],
+  "verdict": "pass",
+  "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p135_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p135",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": true,
-    "u_h_at_rom": 0.5014599489307489,
-    "post_at_rom": 0.5014439346524868,
-    "u_h_at_1p5Nm": 0.7182017741906047,
-    "post_at_1p5Nm": 0.7181844152678187,
-    "rot_max_deg": 9.22535040323852,
-    "bad": [
-     "extension@ROM u_h 0.50 post 0.50"
-    ]
+    "monotonic": false,
+    "u_h_at_rom": 0.47185852066452316,
+    "post_at_rom": 0.47185429332631457,
+    "u_h_at_1p5Nm": 0.6822425753878035,
+    "post_at_1p5Nm": 0.682241037944562,
+    "rot_max_deg": 9.22484210492385,
+    "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p135_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p135",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.5841092318799571,
-    "post_at_rom": -0.5841089934327903,
-    "u_h_at_1p5Nm": 0.2319892458121969,
-    "post_at_1p5Nm": -0.23198909246104382,
-    "rot_max_deg": 7.2192710227901,
+    "u_h_at_rom": 0.517173049079746,
+    "post_at_rom": -0.5171724076399902,
+    "u_h_at_1p5Nm": 0.2287759667181078,
+    "post_at_1p5Nm": -0.22877594667710502,
+    "rot_max_deg": 7.1345921580321345,
     "bad": []
    }
   },
   "missing": []
  },
  "p139": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.64 post 0.63"
-  ],
+  "verdict": "pass",
+  "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p139_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p139",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.6372776144578791,
-    "post_at_rom": 0.6343513507368572,
-    "u_h_at_1p5Nm": 0.8240503268997403,
-    "post_at_1p5Nm": 0.8240427986145376,
-    "rot_max_deg": 9.25382726896297,
-    "bad": [
-     "extension@ROM u_h 0.64 post 0.63"
-    ]
+    "u_h_at_rom": 0.4345858589936475,
+    "post_at_rom": 0.4345858309733751,
+    "u_h_at_1p5Nm": 0.6415788538806819,
+    "post_at_1p5Nm": 0.6415786462563603,
+    "rot_max_deg": 9.22463085885728,
+    "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p139_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p139",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.5758205388458182,
-    "post_at_rom": -0.5758204064084874,
-    "u_h_at_1p5Nm": 0.22180209576501395,
-    "post_at_1p5Nm": -0.22180195541665,
-    "rot_max_deg": 7.21926860638401,
+    "u_h_at_rom": 0.557418789806023,
+    "post_at_rom": -0.557417143376606,
+    "u_h_at_1p5Nm": 0.21812924070968984,
+    "post_at_1p5Nm": -0.2181278467083609,
+    "rot_max_deg": 7.219266674401815,
     "bad": []
    }
   },
   "missing": []
  },
  "p142": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.57 post 0.57"
-  ],
+  "verdict": "open",
+  "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p142_gpu2",
+    "set": "physio_fric5",
+    "case_dir": "p142",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": false,
-    "u_h_at_rom": 0.5749775294624212,
-    "post_at_rom": 0.5746638859923446,
-    "u_h_at_1p5Nm": 0.8378272323787778,
-    "post_at_1p5Nm": 0.8376668287525474,
-    "rot_max_deg": 9.227926499431591,
-    "bad": [
-     "extension@ROM u_h 0.57 post 0.57"
-    ]
+    "monotonic": true,
+    "u_h_at_rom": 0.44215043396643083,
+    "post_at_rom": 0.44214613732598373,
+    "u_h_at_1p5Nm": 0.6985353934791895,
+    "post_at_1p5Nm": 0.6985024440847764,
+    "rot_max_deg": 9.225736299181007,
+    "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p142_gpu2",
-    "usable": true,
-    "eval_point": "1.5Nm",
+    "set": "physio_fric5",
+    "case_dir": "p142",
+    "usable": false,
+    "eval_point": null,
     "monotonic": true,
-    "u_h_at_rom": 1.1678797693745662,
-    "post_at_rom": -1.1678797612133511,
-    "u_h_at_1p5Nm": 0.8221896194782017,
-    "post_at_1p5Nm": -0.8221892677256458,
-    "rot_max_deg": 7.21930216986887,
+    "u_h_at_rom": 0.1598301892684095,
+    "post_at_rom": -0.15982996590909054,
+    "u_h_at_1p5Nm": 0.1598301892684095,
+    "post_at_1p5Nm": -0.15982996590909054,
+    "rot_max_deg": 1.1473351026031093,
     "bad": []
    }
   },
-  "missing": []
+  "missing": [
+   "flexion"
+  ],
+  "open_reason": "flexion stopped at 1.1 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+  "computability": true
  },
  "p143": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.51 post 0.51"
-  ],
+  "verdict": "pass",
+  "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p143_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p143",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": false,
-    "u_h_at_rom": 0.5057095604750648,
-    "post_at_rom": 0.5057053516236293,
-    "u_h_at_1p5Nm": 0.9116680338936204,
-    "post_at_1p5Nm": 0.9116673142259497,
-    "rot_max_deg": 9.224630765149966,
-    "bad": [
-     "extension@ROM u_h 0.51 post 0.51"
-    ]
+    "monotonic": true,
+    "u_h_at_rom": 0.4787720171501903,
+    "post_at_rom": 0.478768632450526,
+    "u_h_at_1p5Nm": 0.836371087795808,
+    "post_at_1p5Nm": 0.836371074871032,
+    "rot_max_deg": 9.224685284164371,
+    "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p143_gpu3",
+    "set": "physio_fric5",
+    "case_dir": "p143",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.11317073250343,
-    "post_at_rom": -1.113170721881056,
-    "u_h_at_1p5Nm": 0.8475511866821374,
-    "post_at_1p5Nm": -0.8475511637401385,
-    "rot_max_deg": 7.219278490147654,
+    "u_h_at_rom": 1.1291031821903397,
+    "post_at_rom": -1.1291031703295118,
+    "u_h_at_1p5Nm": 0.8927371856934893,
+    "post_at_1p5Nm": -0.8927370225069606,
+    "rot_max_deg": 7.120387094562942,
     "bad": []
    }
   },
@@ -1575,92 +1559,88 @@
  "p145": {
   "verdict": "fail",
   "reasons": [
-   "extension@ROM u_h 0.57 post 0.57"
+   "extension@ROM u_h 0.55 post 0.55"
   ],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p145_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p145",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": false,
-    "u_h_at_rom": 0.5691794497416818,
-    "post_at_rom": 0.5691793482394312,
-    "u_h_at_1p5Nm": 1.000177530722638,
-    "post_at_1p5Nm": 1.0001722939176596,
-    "rot_max_deg": 9.22464000680988,
+    "monotonic": true,
+    "u_h_at_rom": 0.5485273808625623,
+    "post_at_rom": 0.5485262745121431,
+    "u_h_at_1p5Nm": 1.0220037654672067,
+    "post_at_1p5Nm": 1.0220030019473756,
+    "rot_max_deg": 9.22463725290815,
     "bad": [
-     "extension@ROM u_h 0.57 post 0.57"
+     "extension@ROM u_h 0.55 post 0.55"
     ]
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p145_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p145",
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.0611501824677556,
-    "post_at_rom": -1.0611500790684276,
-    "u_h_at_1p5Nm": 0.8738530368119797,
-    "post_at_1p5Nm": -0.873852854910114,
-    "rot_max_deg": 7.219284357377243,
+    "u_h_at_rom": 1.063206544622378,
+    "post_at_rom": -1.0632063156744964,
+    "u_h_at_1p5Nm": 0.8863747717017076,
+    "post_at_1p5Nm": -0.8863746727499839,
+    "rot_max_deg": 7.21927728095834,
     "bad": []
    }
   },
   "missing": []
  },
  "p146": {
-  "verdict": "open",
+  "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p146_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p146",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": false,
-    "u_h_at_rom": 0.32962857877961405,
-    "post_at_rom": 0.3296282010388012,
-    "u_h_at_1p5Nm": 0.5230931468219756,
-    "post_at_1p5Nm": 0.5230931086032088,
-    "rot_max_deg": 9.224623099619626,
+    "monotonic": true,
+    "u_h_at_rom": 0.31748818394433076,
+    "post_at_rom": 0.3174878636983691,
+    "u_h_at_1p5Nm": 0.5005791042160638,
+    "post_at_1p5Nm": 0.5005790013456257,
+    "rot_max_deg": 9.224644865665194,
     "bad": []
    },
    "flexion": {
-    "set": "physio_fric3",
-    "case_dir": "p146_gpu1",
-    "usable": false,
-    "eval_point": null,
+    "set": "physio_fric5",
+    "case_dir": "p146",
+    "usable": true,
+    "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.14002161641878957,
-    "post_at_rom": -0.14002127814551676,
-    "u_h_at_1p5Nm": 0.14002161641878957,
-    "post_at_1p5Nm": -0.14002127814551676,
-    "rot_max_deg": 0.9853069272386059,
+    "u_h_at_rom": 0.6832248432492363,
+    "post_at_rom": -0.6832248322641481,
+    "u_h_at_1p5Nm": 0.20938168346075928,
+    "post_at_1p5Nm": -0.2093806373247059,
+    "rot_max_deg": 7.219269371846811,
     "bad": []
    }
   },
-  "missing": [
-   "flexion"
-  ],
-  "open_reason": "flexion stopped at 1.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
-  "computability": true
+  "missing": []
  },
  "p148": {
   "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric3",
-    "case_dir": "p148_gpu1",
+    "set": "physio_fric5",
+    "case_dir": "p148",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.42528586990984435,
-    "post_at_rom": 0.4252856841622899,
-    "u_h_at_1p5Nm": 0.6651717968061831,
-    "post_at_1p5Nm": 0.6651716204304601,
-    "rot_max_deg": 9.224622047578148,
+    "u_h_at_rom": 0.41848798141538074,
+    "post_at_rom": 0.4184879758841848,
+    "u_h_at_1p5Nm": 0.6455718093028598,
+    "post_at_1p5Nm": 0.6455717687953249,
+    "rot_max_deg": 9.224635470020415,
     "bad": []
    },
    "flexion": {
@@ -2044,8 +2024,9 @@
   "stop_phase": "c3_release_impact"
  },
  "_meta": {
+  "set_precedence": "per window the highest-ranked set in SETS wins: physio_fric5 (stick-memory law, PI 2026-11-09) supersedes physio_fric3 (production law, NUM-13 artefact); the insertion-stopped scan stays on physio_fric3",
   "rule": "PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn",
-  "provisional": "verdicts provisional until NUM-16 / NUM-17 (numerical convergence of the friction results) and the density reference (DECISIONS 2026-11-05 item 8) are settled",
-  "generated": "2026-11-08 02:15"
+  "provisional": "verdicts provisional: physio_fric3 windows carry the FEBio stick-point artefact (NUM-13); PI 2026-11-09 decision 1 recomputes them as physio_fric5 (stick-memory law, same checkpoints) which supersedes fric3 per window here; NUM-17 (0.5 mm grey zone) and the density reference (DECISIONS 2026-11-05 item 8) still open",
+  "generated": "2026-11-09 17:57"
  }
 }

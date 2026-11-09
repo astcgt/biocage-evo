@@ -1,132 +1,22 @@
 {
  "meta": {
   "threshold_MPa": 3.0,
-  "metric": "soft-side p99 interface shear at the intact-ROM state, max of layer and band-boundary interfaces, flexion and extension (frictional runs, physio_fric3)",
+  "metric": "soft-side p99 interface shear at the intact-ROM state, max of layer and band-boundary interfaces, flexion and extension (frictional runs; physio_fric5 stick-memory windows supersede physio_fric3 per design and window, PI 2026-11-09 decision 1)",
   "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
   "decided": "PI 2026-11-04"
  },
  "designs": {
   "p002": {
-   "verdict": "fail",
-   "reasons": [
-    "flexion@ROM shear p99 16.6 MPa > 3.0"
-   ],
-   "windows": {
-    "extension": {
-     "case_dir": "p002",
-     "shear_p99_at_rom": 2.669,
-     "horizontal": null,
-     "vertical": 2.6687645402804767,
-     "peel_max_at_rom": 3.799727566370239
-    },
-    "flexion": {
-     "case_dir": "p002",
-     "shear_p99_at_rom": 16.556,
-     "horizontal": null,
-     "vertical": 16.555838073982162,
-     "peel_max_at_rom": 59.03430082493369
-    }
-   },
-   "missing": []
-  },
-  "p014": {
-   "verdict": "fail",
-   "reasons": [
-    "flexion@ROM shear p99 14.5 MPa > 3.0"
-   ],
-   "windows": {
-    "flexion": {
-     "case_dir": "p014",
-     "shear_p99_at_rom": 14.49,
-     "horizontal": null,
-     "vertical": 14.489675586735713,
-     "peel_max_at_rom": 52.86510654146711
-    }
-   },
-   "missing": [
-    "extension"
-   ]
-  },
-  "p026": {
-   "verdict": "fail",
-   "reasons": [
-    "flexion@ROM shear p99 13.8 MPa > 3.0"
-   ],
-   "windows": {
-    "extension": {
-     "case_dir": "p026",
-     "shear_p99_at_rom": 2.931,
-     "horizontal": null,
-     "vertical": 2.9312404273267654,
-     "peel_max_at_rom": 3.818489937546861
-    },
-    "flexion": {
-     "case_dir": "p026",
-     "shear_p99_at_rom": 13.794,
-     "horizontal": null,
-     "vertical": 13.793944828388529,
-     "peel_max_at_rom": 52.54218875811772
-    }
-   },
-   "missing": []
-  },
-  "p036": {
-   "verdict": "fail",
-   "reasons": [
-    "extension@ROM shear p99 4.4 MPa > 3.0",
-    "flexion@ROM shear p99 14.8 MPa > 3.0"
-   ],
-   "windows": {
-    "extension": {
-     "case_dir": "p036",
-     "shear_p99_at_rom": 4.439,
-     "horizontal": 4.439259521106036,
-     "vertical": 0.7975125768709577,
-     "peel_max_at_rom": 2.5987906998675965
-    },
-    "flexion": {
-     "case_dir": "p036",
-     "shear_p99_at_rom": 14.762,
-     "horizontal": 13.734738071109442,
-     "vertical": 14.76247666800512,
-     "peel_max_at_rom": 34.59137110777886
-    }
-   },
-   "missing": []
-  },
-  "p038": {
-   "verdict": "fail",
-   "reasons": [
-    "flexion@ROM shear p99 15.7 MPa > 3.0"
-   ],
-   "windows": {
-    "extension": {
-     "case_dir": "p038",
-     "shear_p99_at_rom": 2.286,
-     "horizontal": null,
-     "vertical": 2.2860786194177702,
-     "peel_max_at_rom": 3.2072009077168717
-    },
-    "flexion": {
-     "case_dir": "p038",
-     "shear_p99_at_rom": 15.704,
-     "horizontal": null,
-     "vertical": 15.70420874749122,
-     "peel_max_at_rom": 52.63894963158272
-    }
-   },
-   "missing": []
-  },
-  "p051": {
    "verdict": "open",
    "reasons": [],
    "windows": {
     "extension": {
-     "case_dir": "p051",
-     "shear_p99_at_rom": 0.513,
-     "horizontal": 0.5005319930435964,
-     "vertical": 0.5130649737631167,
-     "peel_max_at_rom": 0.7522240069275397
+     "set": "physio_fric5",
+     "case_dir": "p002",
+     "shear_p99_at_rom": 2.713,
+     "horizontal": null,
+     "vertical": 2.7134650491252654,
+     "peel_max_at_rom": 3.972673770370051
     }
    },
    "missing": [
@@ -134,26 +24,146 @@
    ],
    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
   },
-  "p062": {
+  "p014": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 6.2 MPa > 3.0",
-    "flexion@ROM shear p99 10.6 MPa > 3.0"
+    "flexion@ROM shear p99 15.8 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p062",
-     "shear_p99_at_rom": 6.225,
-     "horizontal": 6.224813023551132,
-     "vertical": 1.7473650738758537,
-     "peel_max_at_rom": 2.2118301759527075
+     "set": "physio_fric5",
+     "case_dir": "p014",
+     "shear_p99_at_rom": 2.643,
+     "horizontal": null,
+     "vertical": 2.6426330136056504,
+     "peel_max_at_rom": 3.5430380890472715
     },
     "flexion": {
+     "set": "physio_fric5",
+     "case_dir": "p014",
+     "shear_p99_at_rom": 15.796,
+     "horizontal": null,
+     "vertical": 15.795903214708785,
+     "peel_max_at_rom": 51.546608146623505
+    }
+   },
+   "missing": []
+  },
+  "p026": {
+   "verdict": "fail",
+   "reasons": [
+    "extension@ROM shear p99 3.0 MPa > 3.0",
+    "flexion@ROM shear p99 15.6 MPa > 3.0"
+   ],
+   "windows": {
+    "extension": {
+     "set": "physio_fric5",
+     "case_dir": "p026",
+     "shear_p99_at_rom": 3.003,
+     "horizontal": null,
+     "vertical": 3.0030101410648045,
+     "peel_max_at_rom": 3.8838592473528237
+    },
+    "flexion": {
+     "set": "physio_fric5",
+     "case_dir": "p026",
+     "shear_p99_at_rom": 15.6,
+     "horizontal": null,
+     "vertical": 15.599547490579406,
+     "peel_max_at_rom": 51.524463608911006
+    }
+   },
+   "missing": []
+  },
+  "p036": {
+   "verdict": "fail",
+   "reasons": [
+    "extension@ROM shear p99 4.9 MPa > 3.0"
+   ],
+   "windows": {
+    "extension": {
+     "set": "physio_fric5",
+     "case_dir": "p036",
+     "shear_p99_at_rom": 4.865,
+     "horizontal": 4.864804536473638,
+     "vertical": 0.7807711363231715,
+     "peel_max_at_rom": 2.7011080645435253
+    }
+   },
+   "missing": [
+    "flexion"
+   ]
+  },
+  "p038": {
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 16.9 MPa > 3.0"
+   ],
+   "windows": {
+    "extension": {
+     "set": "physio_fric5",
+     "case_dir": "p038",
+     "shear_p99_at_rom": 2.358,
+     "horizontal": null,
+     "vertical": 2.358172193654084,
+     "peel_max_at_rom": 3.5269313282494807
+    },
+    "flexion": {
+     "set": "physio_fric5",
+     "case_dir": "p038",
+     "shear_p99_at_rom": 16.882,
+     "horizontal": null,
+     "vertical": 16.882097490838714,
+     "peel_max_at_rom": 54.95015387524875
+    }
+   },
+   "missing": []
+  },
+  "p051": {
+   "verdict": "pass",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_fric5",
+     "case_dir": "p051",
+     "shear_p99_at_rom": 0.499,
+     "horizontal": 0.49879991803498425,
+     "vertical": 0.3654711181710479,
+     "peel_max_at_rom": 0.735163235904629
+    },
+    "flexion": {
+     "set": "physio_fric5",
+     "case_dir": "p051",
+     "shear_p99_at_rom": 2.158,
+     "horizontal": 2.157563510640442,
+     "vertical": 1.535795080635832,
+     "peel_max_at_rom": 2.4509021432684603
+    }
+   },
+   "missing": []
+  },
+  "p062": {
+   "verdict": "fail",
+   "reasons": [
+    "extension@ROM shear p99 6.5 MPa > 3.0",
+    "flexion@ROM shear p99 11.4 MPa > 3.0"
+   ],
+   "windows": {
+    "extension": {
+     "set": "physio_fric5",
      "case_dir": "p062",
-     "shear_p99_at_rom": 10.65,
-     "horizontal": 10.649591106248762,
-     "vertical": 10.09256984662463,
-     "peel_max_at_rom": 18.259809111083108
+     "shear_p99_at_rom": 6.534,
+     "horizontal": 6.534219999452549,
+     "vertical": 1.9091362589641143,
+     "peel_max_at_rom": 2.5641364969962983
+    },
+    "flexion": {
+     "set": "physio_fric5",
+     "case_dir": "p062",
+     "shear_p99_at_rom": 11.372,
+     "horizontal": 11.371996574553625,
+     "vertical": 10.219073619895006,
+     "peel_max_at_rom": 17.239480712630616
     }
    },
    "missing": []
@@ -161,41 +171,51 @@
   "p063": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 6.0 MPa > 3.0"
+    "extension@ROM shear p99 6.4 MPa > 3.0",
+    "flexion@ROM shear p99 11.5 MPa > 3.0"
    ],
    "windows": {
     "extension": {
+     "set": "physio_fric5",
      "case_dir": "p063",
-     "shear_p99_at_rom": 6.026,
-     "horizontal": 6.025999738648147,
-     "vertical": 1.189716011624706,
-     "peel_max_at_rom": 2.413207150246771
+     "shear_p99_at_rom": 6.353,
+     "horizontal": 6.353073796959979,
+     "vertical": 1.378158492772408,
+     "peel_max_at_rom": 2.5446208233459795
+    },
+    "flexion": {
+     "set": "physio_fric5",
+     "case_dir": "p063",
+     "shear_p99_at_rom": 11.535,
+     "horizontal": 11.53488016923611,
+     "vertical": 11.072347539032627,
+     "peel_max_at_rom": 26.38314021188941
     }
    },
-   "missing": [
-    "flexion"
-   ]
+   "missing": []
   },
   "p065": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 3.6 MPa > 3.0",
-    "flexion@ROM shear p99 13.4 MPa > 3.0"
+    "extension@ROM shear p99 4.4 MPa > 3.0",
+    "flexion@ROM shear p99 13.1 MPa > 3.0"
    ],
    "windows": {
     "extension": {
+     "set": "physio_fric5",
      "case_dir": "p065",
-     "shear_p99_at_rom": 3.637,
-     "horizontal": 3.636532660463865,
-     "vertical": 0.5189230168372436,
-     "peel_max_at_rom": 1.7564255314054489
+     "shear_p99_at_rom": 4.412,
+     "horizontal": 4.412327079868059,
+     "vertical": 0.6269395544422378,
+     "peel_max_at_rom": 0.8914830758137027
     },
     "flexion": {
+     "set": "physio_fric5",
      "case_dir": "p065",
-     "shear_p99_at_rom": 13.356,
-     "horizontal": 9.454627362056,
-     "vertical": 13.356467754107285,
-     "peel_max_at_rom": 24.97246285224474
+     "shear_p99_at_rom": 13.105,
+     "horizontal": 10.517399647380168,
+     "vertical": 13.10489320617829,
+     "peel_max_at_rom": 24.606451241856636
     }
    },
    "missing": []
@@ -203,41 +223,51 @@
   "p066": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 4.3 MPa > 3.0"
+    "extension@ROM shear p99 4.7 MPa > 3.0",
+    "flexion@ROM shear p99 14.6 MPa > 3.0"
    ],
    "windows": {
     "extension": {
+     "set": "physio_fric5",
      "case_dir": "p066",
-     "shear_p99_at_rom": 4.26,
-     "horizontal": 4.260338549214269,
-     "vertical": 1.0013417165928469,
-     "peel_max_at_rom": 2.1947744741409827
+     "shear_p99_at_rom": 4.696,
+     "horizontal": 4.696195401893842,
+     "vertical": 0.954550647043766,
+     "peel_max_at_rom": 2.2885689188410154
+    },
+    "flexion": {
+     "set": "physio_fric5",
+     "case_dir": "p066",
+     "shear_p99_at_rom": 14.59,
+     "horizontal": 13.096016984895805,
+     "vertical": 14.590138326037659,
+     "peel_max_at_rom": 43.438049056355275
     }
    },
-   "missing": [
-    "flexion"
-   ]
+   "missing": []
   },
   "p067": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 4.6 MPa > 3.0",
-    "flexion@ROM shear p99 12.4 MPa > 3.0"
+    "extension@ROM shear p99 5.3 MPa > 3.0",
+    "flexion@ROM shear p99 12.5 MPa > 3.0"
    ],
    "windows": {
     "extension": {
+     "set": "physio_fric5",
      "case_dir": "p067",
-     "shear_p99_at_rom": 4.609,
-     "horizontal": 4.609337430391736,
-     "vertical": 1.147321136090125,
-     "peel_max_at_rom": 1.8212142666662623
+     "shear_p99_at_rom": 5.267,
+     "horizontal": 5.267235863382098,
+     "vertical": 1.2577759821335406,
+     "peel_max_at_rom": 1.9139452070661611
     },
     "flexion": {
+     "set": "physio_fric5",
      "case_dir": "p067",
-     "shear_p99_at_rom": 12.375,
-     "horizontal": 11.816742651949168,
-     "vertical": 12.375232022418658,
-     "peel_max_at_rom": 38.798349075473915
+     "shear_p99_at_rom": 12.487,
+     "horizontal": 12.487135784953152,
+     "vertical": 12.048974801309324,
+     "peel_max_at_rom": 39.259210836601156
     }
    },
    "missing": []
@@ -247,18 +277,20 @@
    "reasons": [],
    "windows": {
     "extension": {
+     "set": "physio_fric5",
      "case_dir": "p072",
-     "shear_p99_at_rom": 0.461,
-     "horizontal": 0.460647055704056,
-     "vertical": 0.3570657280722231,
-     "peel_max_at_rom": 0.6252072248274643
+     "shear_p99_at_rom": 0.493,
+     "horizontal": 0.49286082630519146,
+     "vertical": 0.33451041040169777,
+     "peel_max_at_rom": 0.7162408287970192
     },
     "flexion": {
+     "set": "physio_fric5",
      "case_dir": "p072",
-     "shear_p99_at_rom": 2.396,
-     "horizontal": 2.3955858205990004,
-     "vertical": 1.6002789723025892,
-     "peel_max_at_rom": 2.489577537941743
+     "shear_p99_at_rom": 2.392,
+     "horizontal": 2.392496681734119,
+     "vertical": 1.5131424732061227,
+     "peel_max_at_rom": 2.308018428801806
     }
    },
    "missing": []
@@ -268,18 +300,20 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "case_dir": "p075_gpu5",
-     "shear_p99_at_rom": 0.506,
-     "horizontal": 0.4880576723618085,
-     "vertical": 0.506399654332255,
-     "peel_max_at_rom": 0.7301408362575796
+     "set": "physio_fric5",
+     "case_dir": "p075",
+     "shear_p99_at_rom": 0.495,
+     "horizontal": 0.49522835004268384,
+     "vertical": 0.3656681928538423,
+     "peel_max_at_rom": 0.7308788977555515
     },
     "flexion": {
-     "case_dir": "p075_gpu5",
-     "shear_p99_at_rom": 2.004,
-     "horizontal": 2.0036843396359796,
-     "vertical": 1.5786659325544043,
-     "peel_max_at_rom": 3.055592273623995
+     "set": "physio_fric5",
+     "case_dir": "p075",
+     "shear_p99_at_rom": 2.159,
+     "horizontal": 2.159438558187484,
+     "vertical": 1.5385739469755757,
+     "peel_max_at_rom": 2.454516536384151
     }
    },
    "missing": []
@@ -287,23 +321,25 @@
   "p076": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 3.5 MPa > 3.0",
-    "flexion@ROM shear p99 11.6 MPa > 3.0"
+    "extension@ROM shear p99 4.5 MPa > 3.0",
+    "flexion@ROM shear p99 12.0 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p076_gpu5",
-     "shear_p99_at_rom": 3.48,
-     "horizontal": 3.480180293354837,
-     "vertical": 1.3441330128624067,
-     "peel_max_at_rom": 3.4208312428660195
+     "set": "physio_fric5",
+     "case_dir": "p076",
+     "shear_p99_at_rom": 4.485,
+     "horizontal": 4.485125333548392,
+     "vertical": 1.6074288533062147,
+     "peel_max_at_rom": 2.2979131270102204
     },
     "flexion": {
-     "case_dir": "p076_gpu5",
-     "shear_p99_at_rom": 11.594,
-     "horizontal": 9.57423616985994,
-     "vertical": 11.594482452927828,
-     "peel_max_at_rom": 22.018440528408707
+     "set": "physio_fric5",
+     "case_dir": "p076",
+     "shear_p99_at_rom": 12.02,
+     "horizontal": 10.49936659425972,
+     "vertical": 12.019835247034194,
+     "peel_max_at_rom": 22.152360054663124
     }
    },
    "missing": []
@@ -311,23 +347,25 @@
   "p077": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 3.5 MPa > 3.0",
-    "flexion@ROM shear p99 13.6 MPa > 3.0"
+    "extension@ROM shear p99 4.4 MPa > 3.0",
+    "flexion@ROM shear p99 13.8 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p077_gpu3",
-     "shear_p99_at_rom": 3.468,
-     "horizontal": 3.467821048338321,
-     "vertical": 0.9748442253745349,
-     "peel_max_at_rom": 2.8958705922914665
+     "set": "physio_fric5",
+     "case_dir": "p077",
+     "shear_p99_at_rom": 4.383,
+     "horizontal": 4.383047391411411,
+     "vertical": 1.1221918516719211,
+     "peel_max_at_rom": 1.7286351447429205
     },
     "flexion": {
-     "case_dir": "p077_gpu3",
-     "shear_p99_at_rom": 13.611,
-     "horizontal": 9.75143728265762,
-     "vertical": 13.611284336357324,
-     "peel_max_at_rom": 33.250597203637106
+     "set": "physio_fric5",
+     "case_dir": "p077",
+     "shear_p99_at_rom": 13.829,
+     "horizontal": 10.861425103049967,
+     "vertical": 13.829354718456027,
+     "peel_max_at_rom": 32.790992695214335
     }
    },
    "missing": []
@@ -335,40 +373,49 @@
   "p078": {
    "verdict": "fail",
    "reasons": [
-    "flexion@ROM shear p99 16.2 MPa > 3.0"
+    "flexion@ROM shear p99 17.9 MPa > 3.0"
    ],
    "windows": {
-    "flexion": {
-     "case_dir": "p078_gpu3",
-     "shear_p99_at_rom": 16.216,
+    "extension": {
+     "set": "physio_fric5",
+     "case_dir": "p078",
+     "shear_p99_at_rom": 2.425,
      "horizontal": null,
-     "vertical": 16.21631669473793,
-     "peel_max_at_rom": 55.8882680946608
+     "vertical": 2.4253043666321696,
+     "peel_max_at_rom": 3.4846872401836673
+    },
+    "flexion": {
+     "set": "physio_fric5",
+     "case_dir": "p078",
+     "shear_p99_at_rom": 17.885,
+     "horizontal": null,
+     "vertical": 17.885487534621827,
+     "peel_max_at_rom": 58.13885889807433
     }
    },
-   "missing": [
-    "extension"
-   ]
+   "missing": []
   },
   "p079": {
    "verdict": "fail",
    "reasons": [
-    "flexion@ROM shear p99 16.3 MPa > 3.0"
+    "flexion@ROM shear p99 18.2 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p079_gpu3",
-     "shear_p99_at_rom": 2.703,
+     "set": "physio_fric5",
+     "case_dir": "p079",
+     "shear_p99_at_rom": 2.831,
      "horizontal": null,
-     "vertical": 2.70298401377153,
-     "peel_max_at_rom": 3.974483997808127
+     "vertical": 2.831207449699441,
+     "peel_max_at_rom": 3.9882594500469932
     },
     "flexion": {
-     "case_dir": "p079_gpu3",
-     "shear_p99_at_rom": 16.345,
+     "set": "physio_fric5",
+     "case_dir": "p079",
+     "shear_p99_at_rom": 18.15,
      "horizontal": null,
-     "vertical": 16.344863214713314,
-     "peel_max_at_rom": 61.07882464122155
+     "vertical": 18.15031379353343,
+     "peel_max_at_rom": 59.51181674070524
     }
    },
    "missing": []
@@ -376,15 +423,16 @@
   "p081": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 3.1 MPa > 3.0"
+    "extension@ROM shear p99 3.3 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p081_gpu3",
-     "shear_p99_at_rom": 3.146,
+     "set": "physio_fric5",
+     "case_dir": "p081",
+     "shear_p99_at_rom": 3.287,
      "horizontal": null,
-     "vertical": 3.1456252433054765,
-     "peel_max_at_rom": 3.9782024059945127
+     "vertical": 3.2871352231059903,
+     "peel_max_at_rom": 4.087806097900186
     }
    },
    "missing": [
@@ -392,39 +440,47 @@
    ]
   },
   "p086": {
-   "verdict": "open",
+   "verdict": "pass",
    "reasons": [],
    "windows": {
     "extension": {
-     "case_dir": "p086_gpu3",
-     "shear_p99_at_rom": 0.298,
-     "horizontal": 0.2978328117239123,
-     "vertical": 0.23726569232139177,
-     "peel_max_at_rom": 0.43455677450960223
+     "set": "physio_fric5",
+     "case_dir": "p086",
+     "shear_p99_at_rom": 0.305,
+     "horizontal": 0.30460356936663535,
+     "vertical": 0.22063059934503268,
+     "peel_max_at_rom": 0.4485516680272966
+    },
+    "flexion": {
+     "set": "physio_fric5",
+     "case_dir": "p086",
+     "shear_p99_at_rom": 2.725,
+     "horizontal": 2.724800868862582,
+     "vertical": 1.4771209155410432,
+     "peel_max_at_rom": 3.545765931496587
     }
    },
-   "missing": [
-    "flexion"
-   ],
-   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+   "missing": []
   },
   "p092": {
    "verdict": "pass",
    "reasons": [],
    "windows": {
     "extension": {
-     "case_dir": "p092_gpu5",
-     "shear_p99_at_rom": 0.322,
-     "horizontal": 0.3216807252821281,
-     "vertical": 0.21261443710373354,
-     "peel_max_at_rom": 0.5793235071583877
+     "set": "physio_fric5",
+     "case_dir": "p092",
+     "shear_p99_at_rom": 0.328,
+     "horizontal": 0.32802853860048165,
+     "vertical": 0.20290059304818434,
+     "peel_max_at_rom": 0.5079349749138377
     },
     "flexion": {
-     "case_dir": "p092_gpu5",
-     "shear_p99_at_rom": 2.291,
-     "horizontal": 2.291326649198305,
-     "vertical": 1.3592808913715695,
-     "peel_max_at_rom": 3.4322061434605518
+     "set": "physio_fric5",
+     "case_dir": "p092",
+     "shear_p99_at_rom": 2.328,
+     "horizontal": 2.328040819150022,
+     "vertical": 1.2565561931834122,
+     "peel_max_at_rom": 3.322182581902694
     }
    },
    "missing": []
@@ -434,18 +490,20 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "case_dir": "p093_gpu5",
-     "shear_p99_at_rom": 0.341,
-     "horizontal": 0.3410665172855698,
-     "vertical": 0.32400930489837276,
-     "peel_max_at_rom": 0.858711799673255
+     "set": "physio_fric5",
+     "case_dir": "p093",
+     "shear_p99_at_rom": 0.35,
+     "horizontal": 0.35000221925586517,
+     "vertical": 0.22359550770375258,
+     "peel_max_at_rom": 0.7490658251650801
     },
     "flexion": {
-     "case_dir": "p093_gpu5",
-     "shear_p99_at_rom": 1.706,
-     "horizontal": 1.7061199954986699,
-     "vertical": 1.2363558205618421,
-     "peel_max_at_rom": 3.34336680381362
+     "set": "physio_fric5",
+     "case_dir": "p093",
+     "shear_p99_at_rom": 1.949,
+     "horizontal": 1.9488165723424042,
+     "vertical": 1.0714677589589594,
+     "peel_max_at_rom": 3.31190647322959
     }
    },
    "missing": []
@@ -453,68 +511,69 @@
   "p094": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 6.1 MPa > 3.0",
-    "flexion@ROM shear p99 13.4 MPa > 3.0"
+    "extension@ROM shear p99 6.6 MPa > 3.0",
+    "flexion@ROM shear p99 14.2 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p094_gpu5",
-     "shear_p99_at_rom": 6.115,
-     "horizontal": 6.115123084653664,
-     "vertical": 0.7426100326605415,
-     "peel_max_at_rom": 3.3015782022977325
+     "set": "physio_fric5",
+     "case_dir": "p094",
+     "shear_p99_at_rom": 6.647,
+     "horizontal": 6.64714278091666,
+     "vertical": 0.7288079866143403,
+     "peel_max_at_rom": 3.595893228610043
     },
     "flexion": {
-     "case_dir": "p094_gpu5",
-     "shear_p99_at_rom": 13.353,
-     "horizontal": 13.353317704582548,
-     "vertical": 12.713743941119688,
-     "peel_max_at_rom": 20.281876089436512
+     "set": "physio_fric5",
+     "case_dir": "p094",
+     "shear_p99_at_rom": 14.172,
+     "horizontal": 14.171654334226442,
+     "vertical": 12.87071234090823,
+     "peel_max_at_rom": 20.26923525675136
     }
    },
    "missing": []
   },
   "p100": {
-   "verdict": "pass",
+   "verdict": "open",
    "reasons": [],
    "windows": {
-    "extension": {
-     "case_dir": "p100",
-     "shear_p99_at_rom": 0.29,
-     "horizontal": 0.2903382241421466,
-     "vertical": 0.238978547593641,
-     "peel_max_at_rom": 0.43250375212085435
-    },
     "flexion": {
+     "set": "physio_fric5",
      "case_dir": "p100",
-     "shear_p99_at_rom": 2.73,
-     "horizontal": 2.7297504416440432,
-     "vertical": 1.5314218355823521,
-     "peel_max_at_rom": 3.5745456843442382
+     "shear_p99_at_rom": 2.678,
+     "horizontal": 2.6777465631178816,
+     "vertical": 1.4765330663603753,
+     "peel_max_at_rom": 3.532890625767279
     }
    },
-   "missing": []
+   "missing": [
+    "extension"
+   ],
+   "open_reason": "window(s) extension did not reach the intact ROM (or missing)"
   },
   "p105": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 7.4 MPa > 3.0",
-    "flexion@ROM shear p99 12.6 MPa > 3.0"
+    "extension@ROM shear p99 7.9 MPa > 3.0",
+    "flexion@ROM shear p99 13.7 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p105_gpu2",
-     "shear_p99_at_rom": 7.406,
-     "horizontal": 7.405637694327963,
-     "vertical": 2.058177948646061,
-     "peel_max_at_rom": 3.2414086950873946
+     "set": "physio_fric5",
+     "case_dir": "p105",
+     "shear_p99_at_rom": 7.887,
+     "horizontal": 7.8867035171098925,
+     "vertical": 2.233462959000647,
+     "peel_max_at_rom": 3.0931079878972794
     },
     "flexion": {
-     "case_dir": "p105_gpu2",
-     "shear_p99_at_rom": 12.623,
-     "horizontal": 12.623311609649749,
-     "vertical": 11.63239143651956,
-     "peel_max_at_rom": 22.636931081527223
+     "set": "physio_fric5",
+     "case_dir": "p105",
+     "shear_p99_at_rom": 13.677,
+     "horizontal": 13.677096941508285,
+     "vertical": 11.218530649915742,
+     "peel_max_at_rom": 20.643437446262876
     }
    },
    "missing": []
@@ -522,23 +581,25 @@
   "p110": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 5.9 MPa > 3.0",
-    "flexion@ROM shear p99 14.4 MPa > 3.0"
+    "extension@ROM shear p99 6.6 MPa > 3.0",
+    "flexion@ROM shear p99 14.9 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p110_gpu3",
-     "shear_p99_at_rom": 5.877,
-     "horizontal": 5.877386866559955,
-     "vertical": 0.8000380385633757,
-     "peel_max_at_rom": 2.9473362598789485
+     "set": "physio_fric5",
+     "case_dir": "p110",
+     "shear_p99_at_rom": 6.593,
+     "horizontal": 6.593248837098179,
+     "vertical": 0.9179287741194965,
+     "peel_max_at_rom": 3.3149762949309878
     },
     "flexion": {
-     "case_dir": "p110_gpu3",
-     "shear_p99_at_rom": 14.363,
-     "horizontal": 13.360926286869717,
-     "vertical": 14.36273166471507,
-     "peel_max_at_rom": 32.2988363840324
+     "set": "physio_fric5",
+     "case_dir": "p110",
+     "shear_p99_at_rom": 14.947,
+     "horizontal": 14.216648033981256,
+     "vertical": 14.947304792542154,
+     "peel_max_at_rom": 32.096621351618424
     }
    },
    "missing": []
@@ -546,23 +607,25 @@
   "p111": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 5.7 MPa > 3.0",
-    "flexion@ROM shear p99 12.8 MPa > 3.0"
+    "extension@ROM shear p99 6.1 MPa > 3.0",
+    "flexion@ROM shear p99 12.7 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p111_gpu3",
-     "shear_p99_at_rom": 5.701,
-     "horizontal": 5.7007423697559565,
-     "vertical": 1.2342148559076762,
-     "peel_max_at_rom": 1.884205056448795
+     "set": "physio_fric5",
+     "case_dir": "p111",
+     "shear_p99_at_rom": 6.105,
+     "horizontal": 6.105234898272831,
+     "vertical": 1.387680365279199,
+     "peel_max_at_rom": 1.9967022819198141
     },
     "flexion": {
-     "case_dir": "p111_gpu3",
-     "shear_p99_at_rom": 12.846,
-     "horizontal": 11.195720141966582,
-     "vertical": 12.845862322639578,
-     "peel_max_at_rom": 35.896833059434705
+     "set": "physio_fric5",
+     "case_dir": "p111",
+     "shear_p99_at_rom": 12.709,
+     "horizontal": 12.603418847733296,
+     "vertical": 12.708980150407255,
+     "peel_max_at_rom": 32.15341657760867
     }
    },
    "missing": []
@@ -570,22 +633,24 @@
   "p112": {
    "verdict": "fail",
    "reasons": [
-    "flexion@ROM shear p99 11.7 MPa > 3.0"
+    "flexion@ROM shear p99 12.8 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p112_gpu1",
-     "shear_p99_at_rom": 2.405,
+     "set": "physio_fric5",
+     "case_dir": "p112",
+     "shear_p99_at_rom": 2.502,
      "horizontal": null,
-     "vertical": 2.4052839779605915,
-     "peel_max_at_rom": 3.1821931106698846
+     "vertical": 2.5023707172974152,
+     "peel_max_at_rom": 3.47209134080437
     },
     "flexion": {
-     "case_dir": "p112_gpu1",
-     "shear_p99_at_rom": 11.737,
+     "set": "physio_fric5",
+     "case_dir": "p112",
+     "shear_p99_at_rom": 12.835,
      "horizontal": null,
-     "vertical": 11.736973007866577,
-     "peel_max_at_rom": 41.772119012253896
+     "vertical": 12.834935106385869,
+     "peel_max_at_rom": 42.71546085361695
     }
    },
    "missing": []
@@ -593,22 +658,24 @@
   "p113": {
    "verdict": "fail",
    "reasons": [
-    "flexion@ROM shear p99 10.7 MPa > 3.0"
+    "flexion@ROM shear p99 12.2 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p113_gpu2",
-     "shear_p99_at_rom": 2.605,
+     "set": "physio_fric5",
+     "case_dir": "p113",
+     "shear_p99_at_rom": 2.789,
      "horizontal": null,
-     "vertical": 2.604587713476435,
-     "peel_max_at_rom": 3.4643204498284623
+     "vertical": 2.7885898643530123,
+     "peel_max_at_rom": 3.8091547537258297
     },
     "flexion": {
-     "case_dir": "p113_gpu2",
-     "shear_p99_at_rom": 10.704,
+     "set": "physio_fric5",
+     "case_dir": "p113",
+     "shear_p99_at_rom": 12.229,
      "horizontal": null,
-     "vertical": 10.703924293716625,
-     "peel_max_at_rom": 40.09537414093914
+     "vertical": 12.228559485149159,
+     "peel_max_at_rom": 41.54269332215264
     }
    },
    "missing": []
@@ -618,18 +685,20 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "case_dir": "p114_gpu1",
-     "shear_p99_at_rom": 0.38,
-     "horizontal": 0.379994660976379,
-     "vertical": 0.37807169011313346,
-     "peel_max_at_rom": 0.789994035565539
+     "set": "physio_fric5",
+     "case_dir": "p114",
+     "shear_p99_at_rom": 0.387,
+     "horizontal": 0.38722977309193224,
+     "vertical": 0.2531530137429531,
+     "peel_max_at_rom": 0.7171425792737226
     },
     "flexion": {
-     "case_dir": "p114_gpu1",
-     "shear_p99_at_rom": 1.812,
-     "horizontal": 1.8119360640209086,
-     "vertical": 1.3331316930890602,
-     "peel_max_at_rom": 2.9512005333106868
+     "set": "physio_fric5",
+     "case_dir": "p114",
+     "shear_p99_at_rom": 2.051,
+     "horizontal": 2.050940412356459,
+     "vertical": 1.2841403578297053,
+     "peel_max_at_rom": 2.8329756129645918
     }
    },
    "missing": []
@@ -639,18 +708,20 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "case_dir": "p117_gpu2",
-     "shear_p99_at_rom": 0.317,
-     "horizontal": 0.3174119036079045,
-     "vertical": 0.21121253330974682,
-     "peel_max_at_rom": 0.5622922859657487
+     "set": "physio_fric5",
+     "case_dir": "p117",
+     "shear_p99_at_rom": 0.328,
+     "horizontal": 0.3280037203180619,
+     "vertical": 0.2028513833858588,
+     "peel_max_at_rom": 0.5056277376529179
     },
     "flexion": {
-     "case_dir": "p117_gpu2",
-     "shear_p99_at_rom": 2.254,
-     "horizontal": 2.253921900438388,
-     "vertical": 1.3401851065406052,
-     "peel_max_at_rom": 3.3586549947117
+     "set": "physio_fric5",
+     "case_dir": "p117",
+     "shear_p99_at_rom": 2.309,
+     "horizontal": 2.309064101758721,
+     "vertical": 1.247582936657621,
+     "peel_max_at_rom": 3.3679844084474686
     }
    },
    "missing": []
@@ -658,23 +729,25 @@
   "p122": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 6.3 MPa > 3.0",
-    "flexion@ROM shear p99 11.0 MPa > 3.0"
+    "extension@ROM shear p99 6.7 MPa > 3.0",
+    "flexion@ROM shear p99 11.9 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p122_gpu1",
-     "shear_p99_at_rom": 6.287,
-     "horizontal": 6.287007520528026,
-     "vertical": 1.764476661113403,
-     "peel_max_at_rom": 2.254778683976104
+     "set": "physio_fric5",
+     "case_dir": "p122",
+     "shear_p99_at_rom": 6.65,
+     "horizontal": 6.650271731407059,
+     "vertical": 1.941584845124304,
+     "peel_max_at_rom": 2.635000223567705
     },
     "flexion": {
-     "case_dir": "p122_gpu1",
-     "shear_p99_at_rom": 10.976,
-     "horizontal": 10.975873994128666,
-     "vertical": 10.547390048093789,
-     "peel_max_at_rom": 19.7387519324495
+     "set": "physio_fric5",
+     "case_dir": "p122",
+     "shear_p99_at_rom": 11.858,
+     "horizontal": 11.857679068603852,
+     "vertical": 10.454770440446305,
+     "peel_max_at_rom": 18.654261470309418
     }
    },
    "missing": []
@@ -682,23 +755,25 @@
   "p124": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 4.9 MPa > 3.0",
-    "flexion@ROM shear p99 13.5 MPa > 3.0"
+    "extension@ROM shear p99 5.6 MPa > 3.0",
+    "flexion@ROM shear p99 13.9 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p124_gpu3",
-     "shear_p99_at_rom": 4.909,
-     "horizontal": 4.90935579561976,
-     "vertical": 0.7312974700823615,
-     "peel_max_at_rom": 1.7138845945389827
+     "set": "physio_fric5",
+     "case_dir": "p124",
+     "shear_p99_at_rom": 5.575,
+     "horizontal": 5.574959881379377,
+     "vertical": 0.8135158868030439,
+     "peel_max_at_rom": 2.0579536431270893
     },
     "flexion": {
-     "case_dir": "p124_gpu3",
-     "shear_p99_at_rom": 13.472,
-     "horizontal": 11.456741762949191,
-     "vertical": 13.472460750195404,
-     "peel_max_at_rom": 29.743298862114692
+     "set": "physio_fric5",
+     "case_dir": "p124",
+     "shear_p99_at_rom": 13.925,
+     "horizontal": 12.313437926535014,
+     "vertical": 13.92496971856379,
+     "peel_max_at_rom": 29.68867974447987
     }
    },
    "missing": []
@@ -706,22 +781,24 @@
   "p125": {
    "verdict": "fail",
    "reasons": [
-    "flexion@ROM shear p99 14.1 MPa > 3.0"
+    "flexion@ROM shear p99 15.7 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p125_gpu2",
-     "shear_p99_at_rom": 2.504,
+     "set": "physio_fric5",
+     "case_dir": "p125",
+     "shear_p99_at_rom": 2.701,
      "horizontal": null,
-     "vertical": 2.504479889993442,
-     "peel_max_at_rom": 3.4388116867372833
+     "vertical": 2.701280740211407,
+     "peel_max_at_rom": 3.696666270965314
     },
     "flexion": {
-     "case_dir": "p125_gpu2",
-     "shear_p99_at_rom": 14.055,
+     "set": "physio_fric5",
+     "case_dir": "p125",
+     "shear_p99_at_rom": 15.742,
      "horizontal": null,
-     "vertical": 14.055456397731616,
-     "peel_max_at_rom": 50.80802048143478
+     "vertical": 15.741887321565477,
+     "peel_max_at_rom": 51.14140973377835
     }
    },
    "missing": []
@@ -729,93 +806,88 @@
   "p131": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 5.2 MPa > 3.0",
-    "flexion@ROM shear p99 15.7 MPa > 3.0"
+    "extension@ROM shear p99 5.8 MPa > 3.0",
+    "flexion@ROM shear p99 16.2 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p131_gpu1",
-     "shear_p99_at_rom": 5.184,
-     "horizontal": 5.183512978965236,
-     "vertical": 1.0704611144908716,
-     "peel_max_at_rom": 1.419804208023885
+     "set": "physio_fric5",
+     "case_dir": "p131",
+     "shear_p99_at_rom": 5.795,
+     "horizontal": 5.795019028228457,
+     "vertical": 1.3058063967796645,
+     "peel_max_at_rom": 2.1075273960218395
     },
     "flexion": {
-     "case_dir": "p131_gpu1",
-     "shear_p99_at_rom": 15.745,
-     "horizontal": 11.524299029695905,
-     "vertical": 15.7452620032114,
-     "peel_max_at_rom": 30.38211461352438
+     "set": "physio_fric5",
+     "case_dir": "p131",
+     "shear_p99_at_rom": 16.181,
+     "horizontal": 12.84541182976064,
+     "vertical": 16.180610039802414,
+     "peel_max_at_rom": 30.171923344027515
     }
    },
    "missing": []
   },
   "p132": {
-   "verdict": "fail",
-   "reasons": [
-    "flexion@ROM shear p99 13.7 MPa > 3.0"
-   ],
+   "verdict": "open",
+   "reasons": [],
    "windows": {
     "extension": {
-     "case_dir": "p132_gpu2",
-     "shear_p99_at_rom": 2.28,
+     "set": "physio_fric5",
+     "case_dir": "p132",
+     "shear_p99_at_rom": 2.379,
      "horizontal": null,
-     "vertical": 2.2801021173020324,
-     "peel_max_at_rom": 3.033658602804585
-    },
-    "flexion": {
-     "case_dir": "p132_gpu2",
-     "shear_p99_at_rom": 13.691,
-     "horizontal": null,
-     "vertical": 13.690528893738117,
-     "peel_max_at_rom": 47.555778126040714
+     "vertical": 2.3794978137695924,
+     "peel_max_at_rom": 3.198477035322887
     }
    },
-   "missing": []
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
   },
   "p133": {
    "verdict": "fail",
    "reasons": [
-    "flexion@ROM shear p99 13.4 MPa > 3.0"
+    "extension@ROM shear p99 3.1 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p133_gpu3",
-     "shear_p99_at_rom": 2.876,
+     "set": "physio_fric5",
+     "case_dir": "p133",
+     "shear_p99_at_rom": 3.123,
      "horizontal": null,
-     "vertical": 2.8760983027319464,
-     "peel_max_at_rom": 3.805393720445047
-    },
-    "flexion": {
-     "case_dir": "p133_gpu3",
-     "shear_p99_at_rom": 13.437,
-     "horizontal": null,
-     "vertical": 13.43742967681522,
-     "peel_max_at_rom": 50.62829647554237
+     "vertical": 3.1228093837379194,
+     "peel_max_at_rom": 3.9627707948475535
     }
    },
-   "missing": []
+   "missing": [
+    "flexion"
+   ]
   },
   "p135": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 3.6 MPa > 3.0",
-    "flexion@ROM shear p99 10.5 MPa > 3.0"
+    "extension@ROM shear p99 4.7 MPa > 3.0",
+    "flexion@ROM shear p99 11.1 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p135_gpu1",
-     "shear_p99_at_rom": 3.62,
-     "horizontal": 3.6196054346624194,
-     "vertical": 1.3653934590934982,
-     "peel_max_at_rom": 2.953207876224117
+     "set": "physio_fric5",
+     "case_dir": "p135",
+     "shear_p99_at_rom": 4.737,
+     "horizontal": 4.737296990480591,
+     "vertical": 1.6282284254130202,
+     "peel_max_at_rom": 1.9352556808320371
     },
     "flexion": {
-     "case_dir": "p135_gpu1",
-     "shear_p99_at_rom": 10.537,
-     "horizontal": 8.923589704599875,
-     "vertical": 10.53744889504334,
-     "peel_max_at_rom": 20.138284212546335
+     "set": "physio_fric5",
+     "case_dir": "p135",
+     "shear_p99_at_rom": 11.112,
+     "horizontal": 9.979226878141374,
+     "vertical": 11.111883754110933,
+     "peel_max_at_rom": 20.367679004249503
     }
    },
    "missing": []
@@ -823,65 +895,66 @@
   "p139": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 3.6 MPa > 3.0",
-    "flexion@ROM shear p99 13.6 MPa > 3.0"
+    "extension@ROM shear p99 4.4 MPa > 3.0",
+    "flexion@ROM shear p99 14.0 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p139_gpu3",
-     "shear_p99_at_rom": 3.586,
-     "horizontal": 3.5857529836204787,
-     "vertical": 2.9878465469869298,
-     "peel_max_at_rom": 4.324965542753958
+     "set": "physio_fric5",
+     "case_dir": "p139",
+     "shear_p99_at_rom": 4.374,
+     "horizontal": 4.373549731979254,
+     "vertical": 1.110348908040187,
+     "peel_max_at_rom": 1.7206006680714985
     },
     "flexion": {
-     "case_dir": "p139_gpu3",
-     "shear_p99_at_rom": 13.6,
-     "horizontal": 9.691068444555224,
-     "vertical": 13.599535664941232,
-     "peel_max_at_rom": 32.86276651918548
+     "set": "physio_fric5",
+     "case_dir": "p139",
+     "shear_p99_at_rom": 14.007,
+     "horizontal": 10.92345225483223,
+     "vertical": 14.006560557945445,
+     "peel_max_at_rom": 33.33402928732918
     }
    },
    "missing": []
   },
   "p142": {
-   "verdict": "pass",
+   "verdict": "open",
    "reasons": [],
    "windows": {
     "extension": {
-     "case_dir": "p142_gpu2",
-     "shear_p99_at_rom": 0.354,
-     "horizontal": 0.3536478828147184,
-     "vertical": 0.26789701815868894,
-     "peel_max_at_rom": 0.7083072753150162
-    },
-    "flexion": {
-     "case_dir": "p142_gpu2",
-     "shear_p99_at_rom": 2.66,
-     "horizontal": 2.660050484329235,
-     "vertical": 1.4928212270063816,
-     "peel_max_at_rom": 3.5389822228203727
+     "set": "physio_fric5",
+     "case_dir": "p142",
+     "shear_p99_at_rom": 0.312,
+     "horizontal": 0.3123002369500907,
+     "vertical": 0.22127310093721367,
+     "peel_max_at_rom": 0.4461142615865949
     }
    },
-   "missing": []
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
   },
   "p143": {
    "verdict": "pass",
    "reasons": [],
    "windows": {
     "extension": {
-     "case_dir": "p143_gpu3",
-     "shear_p99_at_rom": 0.311,
-     "horizontal": 0.31077169029126916,
-     "vertical": 0.20790846757649814,
-     "peel_max_at_rom": 0.5292282832700548
+     "set": "physio_fric5",
+     "case_dir": "p143",
+     "shear_p99_at_rom": 0.329,
+     "horizontal": 0.32943234786924486,
+     "vertical": 0.20339091018637617,
+     "peel_max_at_rom": 0.511375860718834
     },
     "flexion": {
-     "case_dir": "p143_gpu3",
-     "shear_p99_at_rom": 2.252,
-     "horizontal": 2.2521973748712796,
-     "vertical": 1.3445882191088374,
-     "peel_max_at_rom": 3.3989887531743443
+     "set": "physio_fric5",
+     "case_dir": "p143",
+     "shear_p99_at_rom": 2.323,
+     "horizontal": 2.3231936623511413,
+     "vertical": 1.2530601112247113,
+     "peel_max_at_rom": 3.3466709767095666
     }
    },
    "missing": []
@@ -891,18 +964,20 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "case_dir": "p145_gpu1",
-     "shear_p99_at_rom": 0.338,
-     "horizontal": 0.33838139451393473,
-     "vertical": 0.3138122481782854,
-     "peel_max_at_rom": 0.7924552869960537
+     "set": "physio_fric5",
+     "case_dir": "p145",
+     "shear_p99_at_rom": 0.354,
+     "horizontal": 0.3536546053805721,
+     "vertical": 0.22531849156336084,
+     "peel_max_at_rom": 0.7690862033338476
     },
     "flexion": {
-     "case_dir": "p145_gpu1",
-     "shear_p99_at_rom": 1.781,
-     "horizontal": 1.781461373142278,
-     "vertical": 1.2454290804120425,
-     "peel_max_at_rom": 3.2870906711296826
+     "set": "physio_fric5",
+     "case_dir": "p145",
+     "shear_p99_at_rom": 1.96,
+     "horizontal": 1.9596297750249154,
+     "vertical": 1.1286437091708161,
+     "peel_max_at_rom": 3.3144039520659
     }
    },
    "missing": []
@@ -910,43 +985,46 @@
   "p146": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 3.2 MPa > 3.0"
+    "extension@ROM shear p99 3.9 MPa > 3.0",
+    "flexion@ROM shear p99 14.0 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "case_dir": "p146_gpu1",
-     "shear_p99_at_rom": 3.231,
-     "horizontal": 3.231239348092485,
-     "vertical": 1.0415549386554364,
-     "peel_max_at_rom": 2.0389684956803777
+     "set": "physio_fric5",
+     "case_dir": "p146",
+     "shear_p99_at_rom": 3.902,
+     "horizontal": 3.901513950242059,
+     "vertical": 1.2005033209559315,
+     "peel_max_at_rom": 1.4700346011800107
+    },
+    "flexion": {
+     "set": "physio_fric5",
+     "case_dir": "p146",
+     "shear_p99_at_rom": 14.034,
+     "horizontal": 12.159790999904612,
+     "vertical": 14.034006387096714,
+     "peel_max_at_rom": 44.04001035603656
+    }
+   },
+   "missing": []
+  },
+  "p148": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_fric5",
+     "case_dir": "p148",
+     "shear_p99_at_rom": 2.955,
+     "horizontal": null,
+     "vertical": 2.954844507850925,
+     "peel_max_at_rom": 4.023436300931775
     }
    },
    "missing": [
     "flexion"
-   ]
-  },
-  "p148": {
-   "verdict": "fail",
-   "reasons": [
-    "flexion@ROM shear p99 15.4 MPa > 3.0"
    ],
-   "windows": {
-    "extension": {
-     "case_dir": "p148_gpu1",
-     "shear_p99_at_rom": 2.916,
-     "horizontal": null,
-     "vertical": 2.9157766564021905,
-     "peel_max_at_rom": 3.9641206136624785
-    },
-    "flexion": {
-     "case_dir": "p148_gpu1",
-     "shear_p99_at_rom": 15.401,
-     "horizontal": null,
-     "vertical": 15.401059816294113,
-     "peel_max_at_rom": 57.91643181459867
-    }
-   },
-   "missing": []
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
   }
  }
 }

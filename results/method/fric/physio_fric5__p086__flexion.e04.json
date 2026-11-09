@@ -1,0 +1,88 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric5/p086/w_flexion",
+ "windows": {
+  "flexion": {
+   "t": 3.748330059678505,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.01546781716490638,
+   "net_push_N": 4.817417176628025,
+   "net_twist_Nmm": 0.5903557197864298,
+   "N_total": 314.72655954051766,
+   "one_face_slip_bound_mm": 1.254677031264228,
+   "cage_translation_tied_mm": [
+    0.8215444293458046,
+    -0.00028852981955801535,
+    -0.016715767153590095
+   ],
+   "eval": {
+    "t_a": 3.74157577,
+    "M_a": -1429.43385089,
+    "t_b": 3.74992002,
+    "M_b": -1516.61127705,
+    "frac": 0.8094543761877917,
+    "coarse": false,
+    "invalid": [
+     [
+      3.52272727,
+      0.022727269999999855,
+      -467.183071561,
+      "dyn",
+      73.1,
+      1.91
+     ],
+     [
+      3.97674699,
+      0.0069210200000000555,
+      -3473.55192097,
+      "dyn",
+      101.2,
+      23.27
+     ],
+     [
+      3.98663406,
+      0.009887069999999998,
+      -3556.53113206,
+      "dyn",
+      97.4,
+      21.83
+     ],
+     [
+      3.99341051,
+      0.006776449999999823,
+      -3605.50453933,
+      "dyn",
+      115.1,
+      28.99
+     ],
+     [
+      4.0,
+      0.006589490000000087,
+      -3649.87708207,
+      "dyn",
+      78.3,
+      15.31
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 161,
+    "n_invalid": 5,
+    "n_dyn": 5,
+    "dt_min": 0.0005000299999999847,
+    "monotonic": true,
+    "rb_res_max": 25.360626335587792,
+    "rb_fres_max": 9.865770148890757,
+    "t_last": 3.96982597,
+    "complete": false
+   }
+  }
+ },
+ "provenance": {
+  "git": "8fbb379db2f7ce993425b0c2d0cd8bb3fe44d15d",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "fb2b202b4a91178fb43e31303b3a85cfd058d8365d2c56e3e243f9781881fa68",
+  "case_xplt": "b381bfca160331cac32e42c122c11db21769bfa1916b31b94d1a65c853e02079"
+ }
+}

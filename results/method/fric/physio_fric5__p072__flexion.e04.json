@@ -1,0 +1,88 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric5/p072/w_flexion",
+ "windows": {
+  "flexion": {
+   "t": 3.80535351758779,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.02589263412172284,
+   "net_push_N": 7.736402105055211,
+   "net_twist_Nmm": 0.7797015175645157,
+   "N_total": 301.58450784811015,
+   "one_face_slip_bound_mm": 1.3455399106002894,
+   "cage_translation_tied_mm": [
+    0.8201485518050393,
+    0.0009882803731907255,
+    -0.045776319488422965
+   ],
+   "eval": {
+    "t_a": 3.78543185,
+    "M_a": -1346.0778683,
+    "t_b": 3.810958,
+    "M_b": -1543.30229265,
+    "frac": 0.7804415310491434,
+    "coarse": false,
+    "invalid": [
+     [
+      3.54545455,
+      0.045454550000000093,
+      -357.131638109,
+      "dyn",
+      95.1,
+      32.07
+     ],
+     [
+      3.75724025,
+      0.007750270000000281,
+      -1234.65185771,
+      "dyn",
+      124.0,
+      32.03
+     ],
+     [
+      3.79405749,
+      0.00862563999999999,
+      -1416.38918183,
+      "dyn",
+      150.6,
+      35.84
+     ],
+     [
+      3.84972733,
+      0.008921490000000087,
+      -1825.71968263,
+      "dyn",
+      156.8,
+      37.93
+     ],
+     [
+      3.98317993,
+      0.011854940000000092,
+      -2998.73491708,
+      "dyn",
+      38.3,
+      0.51
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 47,
+    "n_invalid": 5,
+    "n_dyn": 5,
+    "dt_min": 0.0017368199999996392,
+    "monotonic": true,
+    "rb_res_max": 18.510449000158747,
+    "rb_fres_max": 4.041379711867389,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "8fbb379db2f7ce993425b0c2d0cd8bb3fe44d15d",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "42ac5f3e0ad590650a78a22d2dc1442350e079e8d533c62315cfaabb986146a1",
+  "case_xplt": "555fe998f6b4f572282c8909aab18dc3362c5d95e9dfd9ad0130cf56cbf583a2"
+ }
+}

@@ -172,3 +172,6 @@ constraints = surgery-compatible + no nerve / bone harm; maximum freedom otherwi
 
 ## 2026-11-07 — PI decision 1: slip-out verdict = mu_req (tied screening); the real-friction run is a check, not a gate
 Implemented 2026-11-08 in ops/collect_split.py (see ../biocage_simulation_test_oct2026/human_study/DECISIONS.md 2026-11-07 13:00 and 2026-11-08 01:40). Recomputed classes: PASS 13, friction-check-exceeded 13 (recorded, provisional), interface-shear-provisional 18, radial-mix-excluded 28, friction-computability 14. The former DESIGN/dislocation-friction class (17) no longer exists.
+
+## 2026-11-09 18:10 physio_fric5 set complete - precedence applied
+- 43 designs / 86 windows of physio_fric5 (stick-memory reference law) finished; fric_compare / e07_batch / collect_split / mu_req_field rerun with fric5 superseding fric3 per window. fric verdicts pass 35 / fail 6 / open 30 (was 24/14/33); e07 fail 28 / pass 10 / open 5; collect_split PASS 13, friction-check-exceeded 7 (p051 p060 p072 p075 p093 p114 p145). 5 fric5 windows unusable (solver error before the read-out state: p036 p132 p142 p148 flexion, p100 extension) -> those designs open until rerun. Details: old repo human_study/DECISIONS.md 2026-11-09 18:10.

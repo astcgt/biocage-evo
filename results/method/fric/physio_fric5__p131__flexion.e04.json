@@ -1,0 +1,88 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric5/p131/w_flexion",
+ "windows": {
+  "flexion": {
+   "t": 3.6383454002309352,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.03781916193989356,
+   "net_push_N": 12.264173934325878,
+   "net_twist_Nmm": 0.5178009883308319,
+   "N_total": 326.4758306356831,
+   "one_face_slip_bound_mm": 0.36725314322288105,
+   "cage_translation_tied_mm": [
+    0.161215000092329,
+    0.0006306414441695461,
+    0.03981267997184071
+   ],
+   "eval": {
+    "t_a": 3.62835943,
+    "M_a": -1418.67519256,
+    "t_b": 3.64519345,
+    "M_b": -1555.76987673,
+    "frac": 0.5932017563799606,
+    "coarse": false,
+    "invalid": [
+     [
+      3.53181818,
+      0.03181818000000014,
+      -808.21290397,
+      "dyn",
+      89.1,
+      5.11
+     ],
+     [
+      3.55376028,
+      0.021942099999999964,
+      -756.338708421,
+      "dyn",
+      59.9,
+      1.26
+     ],
+     [
+      3.78400264,
+      0.009511230000000204,
+      -2908.99666774,
+      "dyn",
+      54.5,
+      0.13
+     ],
+     [
+      3.90903481,
+      0.005313249999999936,
+      -4394.49229854,
+      "dyn",
+      33.2,
+      9.14
+     ],
+     [
+      3.98601097,
+      0.008940880000000373,
+      -5330.75538745,
+      "dyn",
+      45.4,
+      11.02
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 52,
+    "n_invalid": 5,
+    "n_dyn": 5,
+    "dt_min": 0.0018012900000003995,
+    "monotonic": true,
+    "rb_res_max": 22.121685686250682,
+    "rb_fres_max": 4.6872821724199465,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "8fbb379db2f7ce993425b0c2d0cd8bb3fe44d15d",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "85bf43b04e885bc91f80ed905cfabaa25feacba1009c9567bb283cfd8b464f50",
+  "case_xplt": "3344909f2d54ace2186efd793294018c7afc6e2a8990554582d639bb6b4de9e3"
+ }
+}

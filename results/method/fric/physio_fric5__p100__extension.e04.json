@@ -1,0 +1,88 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric5/p100/w_extension",
+ "windows": {
+  "extension": {
+   "t": 3.65922848,
+   "target_reached": false,
+   "M_at_target": 518.103600914,
+   "mu_squeeze": 0.03391996705495695,
+   "net_push_N": 6.516296289673119,
+   "net_twist_Nmm": 0.15163202290070457,
+   "N_total": 202.7502536874654,
+   "one_face_slip_bound_mm": 0.12384663837013954,
+   "cage_translation_tied_mm": [
+    0.012560597817483657,
+    0.0002576970232347352,
+    0.021268951449207756
+   ],
+   "eval": {
+    "t_a": 3.65922848,
+    "M_a": 518.103600914,
+    "t_b": 3.65922848,
+    "M_b": 518.103600914,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": [
+     [
+      3.55,
+      0.04999999999999982,
+      330.564023116,
+      "dyn",
+      470.9,
+      113.88
+     ],
+     [
+      3.57872718,
+      0.028727180000000185,
+      604.192987524,
+      "dyn",
+      57.7,
+      26.53
+     ],
+     [
+      3.67566414,
+      0.016435659999999963,
+      526.960596564,
+      "dyn",
+      100.4,
+      25.57
+     ],
+     [
+      3.69881267,
+      0.023148530000000278,
+      523.581380535,
+      "dyn",
+      36.9,
+      9.04
+     ],
+     [
+      3.71461378,
+      0.01580110999999995,
+      -11420.54241,
+      "dyn",
+      11746.3,
+      11.69
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 9,
+    "n_invalid": 5,
+    "n_dyn": 5,
+    "dt_min": 0.016435669999999902,
+    "monotonic": true,
+    "rb_res_max": 8.773208222980404,
+    "rb_fres_max": 1.6795625626230324,
+    "t_last": 3.65922848,
+    "complete": false
+   }
+  }
+ },
+ "provenance": {
+  "git": "8fbb379db2f7ce993425b0c2d0cd8bb3fe44d15d",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "cf34cc14df42ec9096f856e9c7d033a7748dc19a40148ee6a62f804ce3844b6c",
+  "case_xplt": "342482f80dfa788c6e6c954f304b8671e17d19ea28c94dd553fe78f0b13bf7f5"
+ }
+}

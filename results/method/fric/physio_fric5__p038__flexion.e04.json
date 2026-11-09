@@ -1,0 +1,88 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric5/p038/w_flexion",
+ "windows": {
+  "flexion": {
+   "t": 3.649462225857477,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.01049202434479961,
+   "net_push_N": 3.3853205810535956,
+   "net_twist_Nmm": 0.24921169188296316,
+   "N_total": 324.8973285657253,
+   "one_face_slip_bound_mm": 0.6356500167324037,
+   "cage_translation_tied_mm": [
+    0.35233247420547764,
+    0.0006813570694034118,
+    0.020425513145174712
+   ],
+   "eval": {
+    "t_a": 3.64639449,
+    "M_a": -1475.84717803,
+    "t_b": 3.64970491,
+    "M_b": -1501.91069478,
+    "frac": 0.9266908300085762,
+    "coarse": false,
+    "invalid": [
+     [
+      3.51363636,
+      0.013636360000000014,
+      509.57523401,
+      "dyn",
+      1157.5,
+      3.3
+     ],
+     [
+      3.52299206,
+      0.009355699999999967,
+      -154.635874637,
+      "dyn",
+      105.3,
+      5.3
+     ],
+     [
+      3.53377431,
+      0.010782250000000104,
+      -797.231833054,
+      "dyn",
+      76.8,
+      3.77
+     ],
+     [
+      3.54901359,
+      0.015239279999999855,
+      -850.249496614,
+      "dyn",
+      44.5,
+      0.91
+     ],
+     [
+      3.66734766,
+      0.008821369999999717,
+      -1648.32759835,
+      "dyn",
+      141.2,
+      35.71
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 63,
+    "n_invalid": 5,
+    "n_dyn": 5,
+    "dt_min": 0.0015347500000002512,
+    "monotonic": true,
+    "rb_res_max": 26.468833128478526,
+    "rb_fres_max": 6.794361997439243,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "8fbb379db2f7ce993425b0c2d0cd8bb3fe44d15d",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "6f35b5f86ea6ffc43a0512fc43a70a2ab82c153ee7c56de6ee243fce0d910fce",
+  "case_xplt": "6c2ad6cc1c9eba483a949bb7ded0083a1ac071e0f6ba76f8738480c4f1c0cdcf"
+ }
+}
