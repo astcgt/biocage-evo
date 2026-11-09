@@ -14,7 +14,7 @@ WIN = sys.argv[1] if len(sys.argv) > 1 else 'extension'
 T0, T1, TS = 3.9, 4.4, 3.95            # hold start / end; settled part starts at TS
 REF = [('pilot_holdA', 'p062_gpu1'), ('pilot_holdA', 'p139_gpu2'), ('pilot_holdE', 'p062_gpu1'), ('pilot_holdE', 'p139_gpu2')]
 ARMS = [(c, d) for c in ('pilot_holdH', 'pilot_holdHf') if os.path.isdir(os.path.join(AL, c))
-        for d in sorted(os.listdir(os.path.join(AL, c))) if re.match(r'p\d+_[a-zA-Z]+$', d)]
+        for d in sorted(os.listdir(os.path.join(AL, c))) if re.match(r'p\d+_[a-zA-Z0-9]+$', d)]
 rep = dict(prov=provenance(), window=WIN, note='trend = linear-fit slope x 0.5 over t 3.95-4.4; fine dynamic holds oscillate (elastic stick contact + '
            '1e-6 density segment, no damping once the friction law stops dissipating), so start/end differences are phase samples', rows=[])
 for c, dn in REF + ARMS:

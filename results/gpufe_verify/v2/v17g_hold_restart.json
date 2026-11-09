@@ -1,7 +1,7 @@
 {
  "prov": {
-  "time": "2026-11-08 05:34:33",
-  "git": "1428c2a",
+  "time": "2026-11-09 11:50:38",
+  "git": "ab89729",
   "dirty_gpufe": true,
   "inputs": {},
   "opts": {},
@@ -364,6 +364,35 @@
    "std": 0.0013,
    "steps_up": 8,
    "steps_down": 2
+  },
+  {
+   "set": "pilot_holdH",
+   "dir": "p139_smR7b",
+   "state": "NORMAL",
+   "iters": 472,
+   "augs": 92,
+   "retries": 5,
+   "t_last": 4.4,
+   "env": {
+    "CUDA_VISIBLE_DEVICES": "4",
+    "OMP_NUM_THREADS": "5",
+    "OMP_STACKSIZE": "1G",
+    "BIOCAGE_STICK_MEMORY": "1"
+   },
+   "febio_sha256": "88c24a0d06811eaf5c1637a649998b49eddb11b154ba24dd89c2a83e9e7c6700",
+   "lib_sha256": "be7b357f71f155e462e1c3e3ca60d60b7bd9308d35d79b5cef5805ca149b2f89",
+   "u_ramp_end": 0.4404,
+   "n_hold": 14,
+   "u_start": 0.4404,
+   "u_end": 0.4498,
+   "drift_start_end": 0.0094,
+   "trend_per_hold": 0.0021,
+   "mean_first_q": 0.4478,
+   "mean_last_q": 0.4497,
+   "peak_to_peak": 0.0038,
+   "std": 0.001,
+   "steps_up": 8,
+   "steps_down": 3
   },
   {
    "set": "pilot_holdH",
