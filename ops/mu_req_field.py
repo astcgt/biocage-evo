@@ -43,7 +43,8 @@ for p in designs:
     f = fric.get(p); row['friction_check'] = f['verdict'] if f else None
     row['insertion_process'] = (f or {}).get('insertion_process')            # provenance (PI 2026-11-10 option a)
     row['grey_band'] = row['mu_req_max'] is not None and abs(row['mu_req_max'] - GREY_MU) <= GREY_MU_TOL   # shortcut tolerance (PI 2026-11-10): within 0.140 +- 0.005 -> friction run required
-    row['soft_face_locking'] = bool((f or {}).get('soft_face_locking'))        # PI 2026-11-10 item 2: physio windows fold at the first increments -> outside the design envelope
+    row['soft_face_locking'] = bool((f or {}).get('soft_face_locking'))        # PI 2026-11-10 item 2 class (key name kept): windows not computable under either friction law; 2026-11-11: no material claim
+    row['replicates'] = ((f or {}).get('replicates') or {}).get('designs')      # 2026-11-11: designs built from the identical deck (their verdicts may differ: run-to-run variability)
     row['friction_fallback'] = any(bool((x or {}).get('fallback')) for x in ((f or {}).get('windows') or {}).values())   # PI 2026-11-10 item 1: production-law read-out + margin
     rows.append(row)
 keys = sorted({k for prm in allprm.values() for k in prm if k not in SKIP})

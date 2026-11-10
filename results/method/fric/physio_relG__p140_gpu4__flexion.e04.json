@@ -1,0 +1,88 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_relG/p140_gpu4/w_flexion",
+ "windows": {
+  "flexion": {
+   "t": 3.6236580268409684,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.025718364547122646,
+   "net_push_N": 8.699637612133959,
+   "net_twist_Nmm": 0.667505064259454,
+   "N_total": 340.90461088582913,
+   "one_face_slip_bound_mm": 0.5308499179687052,
+   "cage_translation_tied_mm": [
+    0.28980036664329595,
+    0.00045559652536272696,
+    -0.029613910794888128
+   ],
+   "eval": {
+    "t_a": 3.61312198,
+    "M_a": -1431.13798398,
+    "t_b": 3.62690219,
+    "M_b": -1521.20336202,
+    "frac": 0.7645781044678112,
+    "coarse": false,
+    "invalid": [
+     [
+      3.54090909,
+      0.04090908999999998,
+      -1078.95259367,
+      "dyn",
+      741.4,
+      202.84
+     ],
+     [
+      3.57098552,
+      0.03007642999999982,
+      -1008.21609807,
+      "dyn",
+      62.9,
+      1.2
+     ],
+     [
+      3.83196688,
+      0.009052539999999887,
+      -2937.36296633,
+      "dyn",
+      63.1,
+      1.35
+     ],
+     [
+      3.9260117,
+      0.01137567000000006,
+      -11430.083597,
+      "dyn",
+      7610.5,
+      10.11
+     ],
+     [
+      3.94511224,
+      0.01910053999999972,
+      -4033.7140513,
+      "dyn",
+      684.7,
+      183.93
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 187,
+    "n_invalid": 5,
+    "n_dyn": 5,
+    "dt_min": 0.00045454999999972046,
+    "monotonic": true,
+    "rb_res_max": 28.590605801830723,
+    "rb_fres_max": 3.1588035203759848,
+    "t_last": 3.91463603,
+    "complete": false
+   }
+  }
+ },
+ "provenance": {
+  "git": "907c4176fd3bb03b44a6147d06d4dd9623bc2b74",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "3187752ddc0a59ffd4efb94e9892a9b454dc4d32ddbcc4c883d9ce1cb4961ecd",
+  "case_xplt": "edb4cf36ea3ef710f9fd9c8d8afa79d17100276d628975b8ae06f584f66d8229"
+ }
+}

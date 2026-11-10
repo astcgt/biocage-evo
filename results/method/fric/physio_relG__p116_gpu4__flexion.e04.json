@@ -1,0 +1,13 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_relG/p116_gpu4/w_flexion",
+ "windows": {
+  "flexion": "missing"
+ },
+ "provenance": {
+  "git": "907c4176fd3bb03b44a6147d06d4dd9623bc2b74",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "6003f6a6c7b9d664825dfcda98c2506487bb4246bb22f164b269123d22998a47",
+  "case_xplt": "e9e43b1194e84d0014af436d5e69ccb52589c2c0a30ec3e7c7bd7387d942730f"
+ }
+}

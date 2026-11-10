@@ -231,8 +231,10 @@ for p in sorted(set(best) | set(comp) | set(lastj)):
             if not fv:
                 move('open', '[觀測]/friction-not-run', 'tied screening passed; no frictional run (gate 4 / interface shear not evaluated)')
             elif fv['verdict'] == 'open' and fv.get('soft_face_locking'):
-                # PI 2026-11-10 item 2: outside the physio-window envelope; the tied mu_req verdict stays in gates.tied_screening
-                move('fail', 'DESIGN/soft-face-locking', '生理窗口算不出：軟面在 100 N 跟隨壓力下鎖死 (windows ' + ', '.join(fv['soft_face_locking']) + '); tied mu_req verdict kept in gates.tied_screening')
+                # PI 2026-11-10 item 2 class (outside the physio-window envelope; the tied mu_req verdict stays in gates.tied_screening). 2026-11-11: renamed from
+                # DESIGN/soft-face-locking - the window is not computable under either friction law from the same checkpoint; the soft-face hypothesis is not
+                # supported (identical decks p050/p068/p084/p127 differ in the outcome); whether this stays a DESIGN class or becomes [數值] is a PI decision
+                move('fail', 'DESIGN/not-computable-both-laws', '生理窗口算不出：兩種摩擦律從同一檔點重啟都在評估點前中止 (windows ' + ', '.join(fv['soft_face_locking']) + '); tied mu_req verdict kept in gates.tied_screening; replicates: ' + json.dumps((fv.get('replicates') or {}).get('verdicts')))
             elif fv['verdict'] == 'open':
                 move('open', '[多元]/friction-computability' if fv.get('computability') else '[觀測]/friction-window', 'tied screening passed; gate 4: ' + (fv.get('open_reason') or ''))
             elif not shv or shv['verdict'] == 'open':

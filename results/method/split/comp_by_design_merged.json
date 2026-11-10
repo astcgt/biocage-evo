@@ -57,13 +57,15 @@
     "soft_face_locking": null,
     "fallback": {
      "flexion": {
-      "source": "physio_fric3 (production law)",
+      "source": "physio_fric3 (production law, same checkpoint)",
       "margin_mm": 0.0431,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+      "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+      "first_increment_pattern": false,
       "superseded": {
        "set": "physio_fric5",
        "case_dir": "p132",
-       "t_last": 3.64030156
+       "t_last": 3.71408
       }
      }
     },
@@ -89,17 +91,19 @@
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
    "extension": "stick memory (patch 6+7)",
-   "flexion": "production"
+   "flexion": "production (fallback)"
   },
   "friction_fallback": {
    "flexion": {
-    "source": "physio_fric3 (production law)",
+    "source": "physio_fric3 (production law, same checkpoint)",
     "margin_mm": 0.0431,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+    "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+    "first_increment_pattern": false,
     "superseded": {
      "set": "physio_fric5",
      "case_dir": "p132",
-     "t_last": 3.64030156
+     "t_last": 3.71408
     }
    }
   }
@@ -222,13 +226,15 @@
     "soft_face_locking": null,
     "fallback": {
      "extension": {
-      "source": "physio_fric3 (production law)",
+      "source": "physio_fric3 (production law, same checkpoint)",
       "margin_mm": 0.0431,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+      "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+      "first_increment_pattern": false,
       "superseded": {
        "set": "physio_fric5",
        "case_dir": "p100",
-       "t_last": 3.65922848
+       "t_last": 3.71578
       }
      }
     },
@@ -261,18 +267,20 @@
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
-   "extension": "production",
+   "extension": "production (fallback)",
    "flexion": "stick memory (patch 6+7)"
   },
   "friction_fallback": {
    "extension": {
-    "source": "physio_fric3 (production law)",
+    "source": "physio_fric3 (production law, same checkpoint)",
     "margin_mm": 0.0431,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+    "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+    "first_increment_pattern": false,
     "superseded": {
      "set": "physio_fric5",
      "case_dir": "p100",
-     "t_last": 3.65922848
+     "t_last": 3.71578
     }
    }
   }
@@ -755,25 +763,45 @@
   },
   "source": "physio_rot_split2/p083_gpu1/w_LB_right",
   "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "class": "[\u89c0\u6e2c]/friction-window",
+  "reason": "tied screening passed, gate 4 passed; interface shear: window(s) flexion did not reach the intact ROM (or missing)",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
-    "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "fallback": {
+     "flexion": {
+      "source": "physio_relG_pl (production law, same checkpoint)",
+      "margin_mm": 0.0581,
+      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+      "first_increment_pattern": false,
+      "superseded": {
+       "set": "physio_relG",
+       "case_dir": "p083_gpu3",
+       "t_last": 3.54479
+      }
+     }
+    },
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.276
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -781,8 +809,25 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "production (fallback)"
+  },
+  "friction_fallback": {
+   "flexion": {
+    "source": "physio_relG_pl (production law, same checkpoint)",
+    "margin_mm": 0.0581,
+    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+    "first_increment_pattern": false,
+    "superseded": {
+     "set": "physio_relG",
+     "case_dir": "p083_gpu3",
+     "t_last": 3.54479
+    }
+   }
+  }
  },
  "p029": {
   "sustained": 0.17791230538893896,
@@ -1475,25 +1520,45 @@
   },
   "source": "physio_rot_dyn/p120_gpu1",
   "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "class": "[\u89c0\u6e2c]/friction-window",
+  "reason": "tied screening passed, gate 4 passed; interface shear: window(s) flexion did not reach the intact ROM (or missing)",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
-    "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "fallback": {
+     "flexion": {
+      "source": "physio_relG_pl (production law, same checkpoint)",
+      "margin_mm": 0.0581,
+      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+      "first_increment_pattern": false,
+      "superseded": {
+       "set": "physio_relG",
+       "case_dir": "p120_gpu2",
+       "t_last": 3.65323
+      }
+     }
+    },
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.155
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -1501,8 +1566,25 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "production (fallback)"
+  },
+  "friction_fallback": {
+   "flexion": {
+    "source": "physio_relG_pl (production law, same checkpoint)",
+    "margin_mm": 0.0581,
+    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+    "first_increment_pattern": false,
+    "superseded": {
+     "set": "physio_relG",
+     "case_dir": "p120_gpu2",
+     "t_last": 3.65323
+    }
+   }
+  }
  },
  "p100": {
   "sustained": 0.0366368790912782,
@@ -1622,13 +1704,15 @@
     "soft_face_locking": null,
     "fallback": {
      "extension": {
-      "source": "physio_fric3 (production law)",
+      "source": "physio_fric3 (production law, same checkpoint)",
       "margin_mm": 0.0431,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+      "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+      "first_increment_pattern": false,
       "superseded": {
        "set": "physio_fric5",
        "case_dir": "p100",
-       "t_last": 3.65922848
+       "t_last": 3.71578
       }
      }
     },
@@ -1661,18 +1745,20 @@
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
-   "extension": "production",
+   "extension": "production (fallback)",
    "flexion": "stick memory (patch 6+7)"
   },
   "friction_fallback": {
    "extension": {
-    "source": "physio_fric3 (production law)",
+    "source": "physio_fric3 (production law, same checkpoint)",
     "margin_mm": 0.0431,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+    "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+    "first_increment_pattern": false,
     "superseded": {
      "set": "physio_fric5",
      "case_dir": "p100",
-     "t_last": 3.65922848
+     "t_last": 3.71578
     }
    }
   }
@@ -1789,13 +1875,15 @@
     "soft_face_locking": null,
     "fallback": {
      "flexion": {
-      "source": "physio_fric3 (production law)",
+      "source": "physio_fric3 (production law, same checkpoint)",
       "margin_mm": 0.0431,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+      "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+      "first_increment_pattern": true,
       "superseded": {
        "set": "physio_fric5",
-       "case_dir": null,
-       "t_last": null
+       "case_dir": "p036",
+       "t_last": 3.50455
       }
      }
     },
@@ -1822,17 +1910,19 @@
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
    "extension": "stick memory (patch 6+7)",
-   "flexion": "production"
+   "flexion": "production (fallback)"
   },
   "friction_fallback": {
    "flexion": {
-    "source": "physio_fric3 (production law)",
+    "source": "physio_fric3 (production law, same checkpoint)",
     "margin_mm": 0.0431,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+    "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+    "first_increment_pattern": true,
     "superseded": {
      "set": "physio_fric5",
-     "case_dir": null,
-     "t_last": null
+     "case_dir": "p036",
+     "t_last": 3.50455
     }
    }
   }
@@ -1879,25 +1969,32 @@
   },
   "source": "physio_rot_dyn/p121_gpu4",
   "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.023 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "class": "[\u89c0\u6e2c]/friction-window",
+  "reason": "tied screening passed, gate 4 passed; interface shear: window(s) flexion did not reach the intact ROM (or missing)",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.023 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.146
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -1905,8 +2002,11 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p145": {
   "sustained": 0.03083981205555337,
@@ -2233,25 +2333,32 @@
   },
   "source": "physio_rot_dyn2/p039_gpu2",
   "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 2.233 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "class": "[\u89c0\u6e2c]/friction-window",
+  "reason": "tied screening passed, gate 4 passed; interface shear: window(s) flexion did not reach the intact ROM (or missing)",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 2.233 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.448
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -2259,8 +2366,11 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p124": {
   "sustained": 0.018186700277487918,
@@ -2466,26 +2576,36 @@
    }
   },
   "source": "physio_rot_split2/p129_gpu2/w_flexion",
-  "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p129: flexion@ROM shear p99 3.2 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "fail",
+    "reasons": [
+     "p129: flexion@ROM shear p99 3.2 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.292,
+     "flexion": 3.199
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -2493,8 +2613,11 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p135": {
   "sustained": 0.034464471412447024,
@@ -2789,17 +2912,27 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "fail",
+    "reasons": [
+     "p130: flexion@ROM shear p99 18.2 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.448,
+     "flexion": 18.15
+    }
    },
    "design_rule": {
     "verdict": "excluded",
@@ -2808,8 +2941,11 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p115": {
   "sustained": 0.050815110190585676,
@@ -2852,9 +2988,9 @@
    }
   },
   "source": "physio_rot_dyn/p115_gpu4",
-  "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "verdict": "fail",
+  "class": "DESIGN/not-computable-both-laws",
+  "reason": "\u751f\u7406\u7a97\u53e3\u7b97\u4e0d\u51fa\uff1a\u5169\u7a2e\u6469\u64e6\u5f8b\u5f9e\u540c\u4e00\u6a94\u9ede\u91cd\u555f\u90fd\u5728\u8a55\u4f30\u9ede\u524d\u4e2d\u6b62 (windows flexion); tied mu_req verdict kept in gates.tied_screening; replicates: null",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -2863,15 +2999,24 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
     "role": "check",
-    "grey": null,
-    "soft_face_locking": null,
+    "grey": [],
+    "soft_face_locking": [
+     "flexion"
+    ],
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.159
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -2879,8 +3024,11 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p021": {
   "sustained": null,
@@ -3173,13 +3321,15 @@
     "soft_face_locking": null,
     "fallback": {
      "extension": {
-      "source": "physio_fric3 (production law)",
+      "source": "physio_fric3 (production law, same checkpoint)",
       "margin_mm": 0.0431,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+      "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+      "first_increment_pattern": false,
       "superseded": {
        "set": "physio_fric5",
        "case_dir": "p100",
-       "t_last": 3.65922848
+       "t_last": 3.71578
       }
      }
     },
@@ -3212,18 +3362,20 @@
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
-   "extension": "production",
+   "extension": "production (fallback)",
    "flexion": "stick memory (patch 6+7)"
   },
   "friction_fallback": {
    "extension": {
-    "source": "physio_fric3 (production law)",
+    "source": "physio_fric3 (production law, same checkpoint)",
     "margin_mm": 0.0431,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+    "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+    "first_increment_pattern": false,
     "superseded": {
      "set": "physio_fric5",
      "case_dir": "p100",
-     "t_last": 3.65922848
+     "t_last": 3.71578
     }
    }
   }
@@ -3403,15 +3555,38 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "window(s) flexion, extension did not reach the intact ROM or 1.5 N m (or missing)",
+    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
     "role": "check",
     "grey": [],
-    "soft_face_locking": null,
-    "fallback": {},
-    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+    "soft_face_locking": [
+     "flexion"
+    ],
+    "fallback": {
+     "extension": {
+      "source": "physio_relG_pl (production law, same checkpoint)",
+      "margin_mm": 0.0581,
+      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+      "first_increment_pattern": true,
+      "superseded": {
+       "set": "physio_relG",
+       "case_dir": "p109_gpu1",
+       "t_last": 3.50455
+      }
+     }
+    },
+    "insertion_process": [
+     "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+     "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+    ]
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {}
    },
    "design_rule": {
     "verdict": "excluded",
@@ -3420,14 +3595,31 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "insertion_process": [
+   "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+   "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+  ],
   "window_law": {
    "AR_left": "production",
    "AR_right": "production",
    "LB_left": "production",
    "LB_right": "production",
-   "extension": null,
-   "flexion": null
+   "extension": "production (fallback)",
+   "flexion": "stick memory (patch 6+7)"
+  },
+  "friction_fallback": {
+   "extension": {
+    "source": "physio_relG_pl (production law, same checkpoint)",
+    "margin_mm": 0.0581,
+    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+    "first_increment_pattern": true,
+    "superseded": {
+     "set": "physio_relG",
+     "case_dir": "p109_gpu1",
+     "t_last": 3.50455
+    }
+   }
   }
  },
  "p013": {
@@ -3606,17 +3798,27 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.061 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "fail",
+    "reasons": [
+     "p071: flexion@ROM shear p99 19.9 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.396,
+     "flexion": 19.873
+    }
    },
    "design_rule": {
     "verdict": "excluded",
@@ -3625,8 +3827,11 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p020": {
   "sustained": 0.34178192387765793,
@@ -3909,15 +4114,24 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
     "role": "check",
-    "grey": null,
-    "soft_face_locking": null,
+    "grey": [],
+    "soft_face_locking": [
+     "flexion"
+    ],
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.353
+    }
    },
    "design_rule": {
     "verdict": "excluded",
@@ -3926,8 +4140,11 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p010": {
   "sustained": 0.28556321621202563,
@@ -4318,17 +4535,37 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.069 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
-    "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "fallback": {
+     "extension": {
+      "source": "physio_relG_pl (production law, same checkpoint)",
+      "margin_mm": 0.0581,
+      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+      "first_increment_pattern": false,
+      "superseded": {
+       "set": "physio_relG",
+       "case_dir": "p095_gpu1",
+       "t_last": 3.63015
+      }
+     }
+    },
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.155
+    }
    },
    "design_rule": {
     "verdict": "excluded",
@@ -4337,8 +4574,25 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "production (fallback)",
+   "flexion": "stick memory (patch 6+7)"
+  },
+  "friction_fallback": {
+   "extension": {
+    "source": "physio_relG_pl (production law, same checkpoint)",
+    "margin_mm": 0.0581,
+    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+    "first_increment_pattern": false,
+    "superseded": {
+     "set": "physio_relG",
+     "case_dir": "p095_gpu1",
+     "t_last": 3.63015
+    }
+   }
+  }
  },
  "p053": {
   "sustained": null,
@@ -4664,8 +4918,8 @@
   },
   "source": "physio_rot_split4/p082_gpu1/w_flexion",
   "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "class": "[\u89c0\u6e2c]/friction-window",
+  "reason": "tied screening passed, gate 4 passed; interface shear: window(s) flexion did not reach the intact ROM (or missing)",
   "duplicates": [
    "p082"
   ],
@@ -4675,17 +4929,24 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.148
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -4693,8 +4954,11 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p079": {
   "sustained": 0.008519797690148066,
@@ -5566,15 +5830,24 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.036 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
     "role": "check",
-    "grey": null,
-    "soft_face_locking": null,
+    "grey": [],
+    "soft_face_locking": [
+     "flexion"
+    ],
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.319
+    }
    },
    "design_rule": {
     "verdict": "excluded",
@@ -5583,8 +5856,11 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p095": {
   "sustained": 0.018527021559831575,
@@ -5693,17 +5969,35 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
-    "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "fallback": {
+     "extension": {
+      "source": "physio_relG_pl (production law, same checkpoint)",
+      "margin_mm": 0.0581,
+      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+      "first_increment_pattern": false,
+      "superseded": {
+       "set": "physio_relG",
+       "case_dir": "p095_gpu1",
+       "t_last": 3.63015
+      }
+     }
+    },
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {}
    },
    "design_rule": {
     "verdict": "excluded",
@@ -5712,8 +6006,25 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "production (fallback)",
+   "flexion": "stick memory (patch 6+7)"
+  },
+  "friction_fallback": {
+   "extension": {
+    "source": "physio_relG_pl (production law, same checkpoint)",
+    "margin_mm": 0.0581,
+    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+    "first_increment_pattern": false,
+    "superseded": {
+     "set": "physio_relG",
+     "case_dir": "p095_gpu1",
+     "t_last": 3.63015
+    }
+   }
+  }
  },
  "p018": {
   "sustained": 0.43221964894132053,
@@ -5845,26 +6156,36 @@
    }
   },
   "source": "physio_rot_split2/p052_gpu2/w_LB_left",
-  "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 2.450 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p052: flexion@ROM shear p99 3.2 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 2.450 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "fail",
+    "reasons": [
+     "p052: flexion@ROM shear p99 3.2 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.424,
+     "flexion": 3.164
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -5872,8 +6193,11 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p102": {
   "sustained": 0.14699015485879094,
@@ -6188,15 +6512,23 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 2.642 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); extension stopped at 2.6 deg (negative jacobians); window(s) flexion, extension did not reach the intact ROM or 1.5 N m (or missing)",
     "role": "check",
-    "grey": null,
-    "soft_face_locking": null,
+    "grey": [],
+    "soft_face_locking": [
+     "flexion",
+     "extension"
+    ],
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {}
    },
    "design_rule": {
     "verdict": "excluded",
@@ -6205,8 +6537,11 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p066": {
   "sustained": 0.024280340161665578,
@@ -6827,17 +7162,28 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "fail",
+    "reasons": [
+     "p068: flexion@ROM shear p99 20.8 MPa > 3.0",
+     "p084: flexion@ROM shear p99 21.9 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.48,
+     "flexion": 20.833
+    }
    },
    "design_rule": {
     "verdict": "excluded",
@@ -6846,8 +7192,11 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p014": {
   "sustained": 0.01038400781758597,
@@ -7029,9 +7378,9 @@
    }
   },
   "source": "physio_rot_split2/p048_gpu1/w_AR_right",
-  "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 2.931 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "verdict": "fail",
+  "class": "DESIGN/not-computable-both-laws",
+  "reason": "\u751f\u7406\u7a97\u53e3\u7b97\u4e0d\u51fa\uff1a\u5169\u7a2e\u6469\u64e6\u5f8b\u5f9e\u540c\u4e00\u6a94\u9ede\u91cd\u555f\u90fd\u5728\u8a55\u4f30\u9ede\u524d\u4e2d\u6b62 (windows flexion, extension); tied mu_req verdict kept in gates.tied_screening; replicates: null",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -7040,15 +7389,23 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 2.931 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); extension stopped at 0.0 deg (negative jacobians); window(s) flexion, extension did not reach the intact ROM or 1.5 N m (or missing)",
     "role": "check",
-    "grey": null,
-    "soft_face_locking": null,
+    "grey": [],
+    "soft_face_locking": [
+     "flexion",
+     "extension"
+    ],
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {}
    },
    "design_rule": {
     "verdict": "pass",
@@ -7056,8 +7413,11 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p037": {
   "sustained": 0.15283049454929165,
@@ -7970,8 +8330,8 @@
   },
   "source": "physio_rot_split4/p082_gpu1/w_flexion",
   "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "class": "[\u89c0\u6e2c]/friction-window",
+  "reason": "tied screening passed, gate 4 passed; interface shear: window(s) flexion did not reach the intact ROM (or missing)",
   "duplicates": [
    "p088"
   ],
@@ -7981,17 +8341,24 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.152
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -7999,8 +8366,11 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p105": {
   "sustained": 0.008265997053420225,
@@ -8232,17 +8602,28 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 2.518 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "fail",
+    "reasons": [
+     "p068: flexion@ROM shear p99 20.8 MPa > 3.0",
+     "p084: flexion@ROM shear p99 21.9 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.48,
+     "flexion": 20.833
+    }
    },
    "design_rule": {
     "verdict": "excluded",
@@ -8251,8 +8632,11 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p031": {
   "sustained": 0.3655459910018067,
@@ -8552,25 +8936,45 @@
   },
   "source": "physio_rot_split2/p064_gpu1/w_flexion",
   "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 2.443 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+  "class": "[\u89c0\u6e2c]/friction-window",
+  "reason": "tied screening passed, gate 4 passed; interface shear: window(s) flexion did not reach the intact ROM (or missing)",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 2.443 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
-    "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "fallback": {
+     "flexion": {
+      "source": "physio_relG_pl (production law, same checkpoint)",
+      "margin_mm": 0.0581,
+      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+      "first_increment_pattern": false,
+      "superseded": {
+       "set": "physio_relG",
+       "case_dir": "p064_gpu3",
+       "t_last": 3.53491
+      }
+     }
+    },
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.082
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -8578,8 +8982,25 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "production (fallback)"
+  },
+  "friction_fallback": {
+   "flexion": {
+    "source": "physio_relG_pl (production law, same checkpoint)",
+    "margin_mm": 0.0581,
+    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+    "first_increment_pattern": false,
+    "superseded": {
+     "set": "physio_relG",
+     "case_dir": "p064_gpu3",
+     "t_last": 3.53491
+    }
+   }
+  }
  },
  "p092": {
   "sustained": 0.03253923533508101,
@@ -8864,26 +9285,34 @@
    }
   },
   "source": "physio_rot_split2/p061_gpu2/w_LB_left",
-  "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "pass",
+    "reasons": [],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.479,
+     "flexion": 2.995
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -8891,8 +9320,11 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p030": {
   "sustained": 0.38859698209459054,
@@ -9178,17 +9610,28 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "fail",
+    "reasons": [
+     "p068: flexion@ROM shear p99 20.8 MPa > 3.0",
+     "p084: flexion@ROM shear p99 21.9 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.48,
+     "flexion": 20.833
+    }
    },
    "design_rule": {
     "verdict": "excluded",
@@ -9197,8 +9640,11 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p065": {
   "sustained": 0.04064664980655966,
@@ -9384,26 +9830,38 @@
    }
   },
   "source": "physio_rot_r2/p140_gpu5",
-  "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p140: flexion@ROM shear p99 4.0 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "grey",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [
+     "p140: extension@ROM post 0.483 in grey zone [0.45, 0.55]"
+    ],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "fail",
+    "reasons": [
+     "p140: flexion@ROM shear p99 4.0 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.289,
+     "flexion": 3.979
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -9411,8 +9869,19 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "friction_check": {
+   "verdict": "grey",
+   "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
+   "reasons": [
+    "p140: extension@ROM post 0.483 in grey zone [0.45, 0.55]"
+   ],
+   "rule": "PI 2026-11-10"
+  },
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p016": {
   "sustained": 0.3635741619462565,
@@ -9932,13 +10401,15 @@
     "soft_face_locking": null,
     "fallback": {
      "flexion": {
-      "source": "physio_fric3 (production law)",
+      "source": "physio_fric3 (production law, same checkpoint)",
       "margin_mm": 0.0431,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+      "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+      "first_increment_pattern": false,
       "superseded": {
        "set": "physio_fric5",
-       "case_dir": null,
-       "t_last": null
+       "case_dir": "p148",
+       "t_last": 3.55398
       }
      }
     },
@@ -9964,17 +10435,19 @@
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
    "extension": "stick memory (patch 6+7)",
-   "flexion": "production"
+   "flexion": "production (fallback)"
   },
   "friction_fallback": {
    "flexion": {
-    "source": "physio_fric3 (production law)",
+    "source": "physio_fric3 (production law, same checkpoint)",
     "margin_mm": 0.0431,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+    "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+    "first_increment_pattern": false,
     "superseded": {
      "set": "physio_fric5",
-     "case_dir": null,
-     "t_last": null
+     "case_dir": "p148",
+     "t_last": 3.55398
     }
    }
   }
@@ -10029,17 +10502,39 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
-    "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "fallback": {
+     "extension": {
+      "source": "physio_relG_pl (production law, same checkpoint)",
+      "margin_mm": 0.0581,
+      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+      "first_increment_pattern": false,
+      "superseded": {
+       "set": "physio_relG",
+       "case_dir": "p104_gpu4",
+       "t_last": 3.59141
+      }
+     }
+    },
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "fail",
+    "reasons": [
+     "p104: flexion@ROM shear p99 14.8 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "flexion": 14.836
+    }
    },
    "design_rule": {
     "verdict": "excluded",
@@ -10048,8 +10543,25 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "production (fallback)",
+   "flexion": "stick memory (patch 6+7)"
+  },
+  "friction_fallback": {
+   "extension": {
+    "source": "physio_relG_pl (production law, same checkpoint)",
+    "margin_mm": 0.0581,
+    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+    "first_increment_pattern": false,
+    "superseded": {
+     "set": "physio_relG",
+     "case_dir": "p104_gpu4",
+     "t_last": 3.59141
+    }
+   }
+  }
  },
  "p022": {
   "sustained": 0.3051904047384124,
@@ -10768,26 +11280,36 @@
    }
   },
   "source": "physio_rot_split3/p101_gpu1/w_AR_left",
-  "verdict": "open",
-  "class": "[\u591a\u5143]/friction-computability",
-  "reason": "tied screening passed; gate 4: frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p101: flexion@ROM shear p99 3.8 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "fail",
+    "reasons": [
+     "p101: flexion@ROM shear p99 3.8 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.219,
+     "flexion": 3.798
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -10795,8 +11317,11 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p067": {
   "sustained": 0.02082396817529269,
@@ -11090,17 +11615,28 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.032 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "fail",
+    "reasons": [
+     "p068: flexion@ROM shear p99 20.8 MPa > 3.0",
+     "p084: flexion@ROM shear p99 21.9 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.48,
+     "flexion": 20.833
+    }
    },
    "design_rule": {
     "verdict": "excluded",
@@ -11109,8 +11645,11 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  },
  "p019": {
   "sustained": 0.2830687668693769,
@@ -11480,15 +12019,24 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.036 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
     "role": "check",
-    "grey": null,
-    "soft_face_locking": null,
+    "grey": [],
+    "soft_face_locking": [
+     "flexion"
+    ],
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 2.319
+    }
    },
    "design_rule": {
     "verdict": "excluded",
@@ -11497,7 +12045,10 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  }
  }
 }

@@ -1,0 +1,88 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_relG_pl/p039/w_flexion",
+ "windows": {
+  "flexion": {
+   "t": 3.7476784404533863,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.014472352620328883,
+   "net_push_N": 4.791871488514302,
+   "net_twist_Nmm": 0.8295753605039689,
+   "N_total": 335.79732252824715,
+   "one_face_slip_bound_mm": 1.338831679841031,
+   "cage_translation_tied_mm": [
+    0.7109001541392936,
+    9.038393420965625e-05,
+    -0.1431818210512159
+   ],
+   "eval": {
+    "t_a": 3.74575995,
+    "M_a": -1482.82865809,
+    "t_b": 3.76161859,
+    "M_b": -1624.77053181,
+    "frac": 0.12097446271473614,
+    "coarse": false,
+    "invalid": [
+     [
+      3.55,
+      0.04999999999999982,
+      -684.591406123,
+      "dyn",
+      32.3,
+      0.33
+     ],
+     [
+      3.58550179,
+      0.03550179000000009,
+      -706.963780708,
+      "dyn",
+      48.5,
+      0.72
+     ],
+     [
+      3.61426828,
+      0.0287664900000002,
+      -1052.07962322,
+      "dyn",
+      50.9,
+      15.62
+     ],
+     [
+      3.67018651,
+      0.022905040000000376,
+      -1910.30467955,
+      "dyn",
+      672.6,
+      2.84
+     ],
+     [
+      3.68708532,
+      0.01689880999999982,
+      -1273.52395316,
+      "dyn",
+      145.4,
+      39.17
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 46,
+    "n_invalid": 5,
+    "n_dyn": 5,
+    "dt_min": 0.0007808499999999441,
+    "monotonic": true,
+    "rb_res_max": 28.72725169220403,
+    "rb_fres_max": 3.082442437872416,
+    "t_last": 3.89054272,
+    "complete": false
+   }
+  }
+ },
+ "provenance": {
+  "git": "907c4176fd3bb03b44a6147d06d4dd9623bc2b74",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "cff4e0e4be6508b0baecfed5f39ff94b8969e218d2b84432c00ce5804888525a",
+  "case_xplt": "8cbcd39dfd13d21ff3a0823f536bde683eaba3ed742caa4b73ae9e52929b1f90"
+ }
+}

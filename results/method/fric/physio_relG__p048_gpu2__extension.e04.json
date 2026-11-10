@@ -1,0 +1,13 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_relG/p048_gpu2/w_extension",
+ "windows": {
+  "extension": "missing"
+ },
+ "provenance": {
+  "git": "f8e769f91d5f88af87ca10597e021befa73fc704",
+  "script_dirty": false,
+  "script_sha256": "d2f2e61f244abae7623aa60c32ebba9a32c95fc35fc71d71d1706e3bf80fc393",
+  "case_feb": "a46956f3dd8c837af9092299bcd1c3c7b00a3e47d875e45664b1dcce68a5f862",
+  "case_xplt": "adb4b89cf06ea358130a409d0ba24d44e23d7383386c6fbd33034cd978ebfc0b"
+ }
+}

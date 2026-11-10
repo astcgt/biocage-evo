@@ -1,0 +1,152 @@
+{
+ "n_faces": 8422,
+ "n_horizontal": 3780,
+ "n_vertical": 4642,
+ "states": [
+  {
+   "time": 0.0,
+   "horizontal": {
+    "shear_max": 0.0,
+    "shear_p99": 0.0,
+    "peel_max": 0.0,
+    "peel_p99": 0.0,
+    "hard_side_shear_max": 0.0,
+    "hard_side_shear_p99": 0.0
+   },
+   "vertical": {
+    "shear_max": 0.0,
+    "shear_p99": 0.0,
+    "peel_max": 0.0,
+    "peel_p99": 0.0,
+    "hard_side_shear_max": 0.0,
+    "hard_side_shear_p99": 0.0
+   }
+  },
+  {
+   "time": 1.0,
+   "horizontal": {
+    "shear_max": 0.0011141090786550404,
+    "shear_p99": 0.0009850419312500708,
+    "peel_max": 0.0007862089766196147,
+    "peel_p99": 0.00038558528226223423,
+    "hard_side_shear_max": 0.004615416234087507,
+    "hard_side_shear_p99": 0.0036110921048441726
+   },
+   "vertical": {
+    "shear_max": 0.0010782437280384461,
+    "shear_p99": 0.0006231571517396098,
+    "peel_max": 0.0027509452775120735,
+    "peel_p99": 0.0010584277100861073,
+    "hard_side_shear_max": 0.012797819708858226,
+    "hard_side_shear_p99": 0.006312152395097713
+   }
+  },
+  {
+   "time": 2.0,
+   "horizontal": {
+    "shear_max": 0.04215472339306116,
+    "shear_p99": 0.02520137277414102,
+    "peel_max": 0.009323762855817458,
+    "peel_p99": 0.002655279170829853,
+    "hard_side_shear_max": 0.5204515593803718,
+    "hard_side_shear_p99": 0.2500632684741525
+   },
+   "vertical": {
+    "shear_max": 0.0586243713667444,
+    "shear_p99": 0.026811027156561015,
+    "peel_max": 0.10430973768234253,
+    "peel_p99": 0.03654341500252488,
+    "hard_side_shear_max": 0.7576558390286245,
+    "hard_side_shear_p99": 0.3074117251799085
+   }
+  },
+  {
+   "time": 3.0,
+   "horizontal": {
+    "shear_max": 0.3073643426361893,
+    "shear_p99": 0.25797478211299546,
+    "peel_max": 0.09452211169860757,
+    "peel_p99": 0.007558246672550474,
+    "hard_side_shear_max": 1.8359085127276282,
+    "hard_side_shear_p99": 1.4169375356348892
+   },
+   "vertical": {
+    "shear_max": 0.2808553127080111,
+    "shear_p99": 0.16422631718344877,
+    "peel_max": 0.42622998356819153,
+    "peel_p99": 0.2533182030916214,
+    "hard_side_shear_max": 3.4641562413268856,
+    "hard_side_shear_p99": 2.2564968972499426
+   }
+  },
+  {
+   "time": 3.5,
+   "horizontal": {
+    "shear_max": 0.3073482591666466,
+    "shear_p99": 0.25795725835773814,
+    "peel_max": 0.09472241039971621,
+    "peel_p99": 0.007810536527328337,
+    "hard_side_shear_max": 1.834283525172275,
+    "hard_side_shear_p99": 1.4169325161133284
+   },
+   "vertical": {
+    "shear_max": 0.280902761359228,
+    "shear_p99": 0.1642589726619182,
+    "peel_max": 0.42615631222724915,
+    "peel_p99": 0.2534683054685593,
+    "hard_side_shear_max": 3.467165570736899,
+    "hard_side_shear_p99": 2.257907015888444
+   }
+  },
+  {
+   "time": 3.5,
+   "horizontal": {
+    "shear_max": 0.3073482591666466,
+    "shear_p99": 0.25795725835773814,
+    "peel_max": 0.09472241039971621,
+    "peel_p99": 0.007810536527328337,
+    "hard_side_shear_max": 1.834283525172275,
+    "hard_side_shear_p99": 1.4169325161133284
+   },
+   "vertical": {
+    "shear_max": 0.280902761359228,
+    "shear_p99": 0.1642589726619182,
+    "peel_max": 0.42615631222724915,
+    "peel_p99": 0.2534683054685593,
+    "hard_side_shear_max": 3.467165570736899,
+    "hard_side_shear_p99": 2.257907015888444
+   }
+  },
+  {
+   "time": 3.545454502105713,
+   "horizontal": {
+    "shear_max": 0.3912515277229324,
+    "shear_p99": 0.3332875511749637,
+    "peel_max": 0.21674401881426475,
+    "peel_p99": 0.06774998063884036,
+    "hard_side_shear_max": 3.307216369631057,
+    "hard_side_shear_p99": 2.073964074077163
+   },
+   "vertical": {
+    "shear_max": 0.46720850039851125,
+    "shear_p99": 0.22377503150026382,
+    "peel_max": 1.5984022617340088,
+    "peel_p99": 0.42861011892557166,
+    "hard_side_shear_max": 4.485079073853146,
+    "hard_side_shear_p99": 2.9874556965908785
+   }
+  }
+ ],
+ "horizontal_max_over_states": {
+  "shear_max": 0.3912515277229324,
+  "shear_p99": 0.3332875511749637,
+  "peel_max": 0.21674401881426475,
+  "t_shear_max": 3.545454502105713
+ },
+ "vertical_max_over_states": {
+  "shear_max": 0.46720850039851125,
+  "shear_p99": 0.22377503150026382,
+  "peel_max": 1.5984022617340088,
+  "t_shear_max": 3.545454502105713
+ }
+}

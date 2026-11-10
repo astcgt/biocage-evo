@@ -120,6 +120,7 @@
   ],
   "DESIGN/interface-shear-provisional": [
    "p036",
+   "p052",
    "p062",
    "p063",
    "p065",
@@ -128,31 +129,31 @@
    "p076",
    "p077",
    "p094",
+   "p101",
    "p105",
    "p110",
    "p111",
    "p122",
    "p124",
+   "p129",
    "p131",
    "p135",
    "p139",
+   "p140",
    "p146"
   ],
-  "[\u591a\u5143]/friction-computability": [
+  "[\u89c0\u6e2c]/friction-window": [
    "p039",
-   "p048",
-   "p052",
-   "p061",
    "p064",
    "p082",
    "p083",
    "p088",
-   "p101",
-   "p115",
    "p120",
-   "p121",
-   "p129",
-   "p140"
+   "p121"
+  ],
+  "DESIGN/not-computable-both-laws": [
+   "p048",
+   "p115"
   ],
   "GREY/friction-posterior-0.45-0.55": [
    "p051",
@@ -168,6 +169,9 @@
    "p142",
    "p143",
    "p145"
+  ],
+  "PASS": [
+   "p061"
   ]
  },
  "rejected_windows": {},

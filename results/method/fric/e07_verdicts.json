@@ -119,6 +119,44 @@
    },
    "missing": []
   },
+  "p039": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p039_gpu1",
+     "shear_p99_at_rom": 0.448,
+     "horizontal": 0.44832912350390286,
+     "vertical": 0.36612025528479436,
+     "peel_max_at_rom": 1.9198258141298112
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+  },
+  "p048": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {},
+   "missing": [
+    "flexion",
+    "extension"
+   ],
+   "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)"
+  },
+  "p050": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {},
+   "missing": [
+    "flexion",
+    "extension"
+   ],
+   "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)"
+  },
   "p051": {
    "verdict": "pass",
    "reasons": [],
@@ -138,6 +176,54 @@
      "horizontal": 2.157563510640442,
      "vertical": 1.535795080635832,
      "peel_max_at_rom": 2.4509021432684603
+    }
+   },
+   "missing": []
+  },
+  "p052": {
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 3.2 MPa > 3.0"
+   ],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p052_gpu4",
+     "shear_p99_at_rom": 0.424,
+     "horizontal": 0.42424151674774313,
+     "vertical": 0.3145638709617151,
+     "peel_max_at_rom": 0.6455938259989968
+    },
+    "flexion": {
+     "set": "physio_relG",
+     "case_dir": "p052_gpu4",
+     "shear_p99_at_rom": 3.164,
+     "horizontal": 3.1639239746912016,
+     "vertical": 1.8710291193487956,
+     "peel_max_at_rom": 3.522316965980484
+    }
+   },
+   "missing": []
+  },
+  "p061": {
+   "verdict": "pass",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p061_gpu4",
+     "shear_p99_at_rom": 0.479,
+     "horizontal": 0.47862766351582275,
+     "vertical": 0.33962209705250784,
+     "peel_max_at_rom": 0.5978337877513883
+    },
+    "flexion": {
+     "set": "physio_relG",
+     "case_dir": "p061_gpu4",
+     "shear_p99_at_rom": 2.995,
+     "horizontal": 2.995268729867241,
+     "vertical": 1.825699498198825,
+     "peel_max_at_rom": 3.333435947080272
     }
    },
    "missing": []
@@ -193,6 +279,24 @@
     }
    },
    "missing": []
+  },
+  "p064": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p064_gpu3",
+     "shear_p99_at_rom": 0.082,
+     "horizontal": 0.08153107062450586,
+     "vertical": 0.06540517389453264,
+     "peel_max_at_rom": 0.37645755229539507
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
   },
   "p065": {
    "verdict": "fail",
@@ -272,6 +376,56 @@
    },
    "missing": []
   },
+  "p068": {
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 20.8 MPa > 3.0"
+   ],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p068_gpu2",
+     "shear_p99_at_rom": 2.48,
+     "horizontal": null,
+     "vertical": 2.480141014181086,
+     "peel_max_at_rom": 9.85600895641769
+    },
+    "flexion": {
+     "set": "physio_relG",
+     "case_dir": "p068_gpu2",
+     "shear_p99_at_rom": 20.833,
+     "horizontal": null,
+     "vertical": 20.83265212579048,
+     "peel_max_at_rom": 64.22119490044734
+    }
+   },
+   "missing": []
+  },
+  "p071": {
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 19.9 MPa > 3.0"
+   ],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p071_gpu1",
+     "shear_p99_at_rom": 2.396,
+     "horizontal": null,
+     "vertical": 2.395736251869518,
+     "peel_max_at_rom": 6.943999357987991
+    },
+    "flexion": {
+     "set": "physio_relG",
+     "case_dir": "p071_gpu1",
+     "shear_p99_at_rom": 19.873,
+     "horizontal": null,
+     "vertical": 19.87323354380853,
+     "peel_max_at_rom": 59.49902264922638
+    }
+   },
+   "missing": []
+  },
   "p072": {
    "verdict": "pass",
    "reasons": [],
@@ -294,6 +448,24 @@
     }
    },
    "missing": []
+  },
+  "p074": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p074_gpu4",
+     "shear_p99_at_rom": 2.319,
+     "horizontal": null,
+     "vertical": 2.3192754713868196,
+     "peel_max_at_rom": 8.358076223895237
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
   },
   "p075": {
    "verdict": "pass",
@@ -439,6 +611,61 @@
     "flexion"
    ]
   },
+  "p082": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p082_gpu4",
+     "shear_p99_at_rom": 0.152,
+     "horizontal": 0.15157667381166978,
+     "vertical": 0.12464470539530577,
+     "peel_max_at_rom": 0.3798181034555386
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+  },
+  "p083": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p083_gpu3",
+     "shear_p99_at_rom": 0.276,
+     "horizontal": 0.27575980150234275,
+     "vertical": 0.17741807016265482,
+     "peel_max_at_rom": 0.4012226731437013
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+  },
+  "p084": {
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 21.9 MPa > 3.0"
+   ],
+   "windows": {
+    "flexion": {
+     "set": "physio_relG",
+     "case_dir": "p084_gpu4",
+     "shear_p99_at_rom": 21.933,
+     "horizontal": null,
+     "vertical": 21.93337579342676,
+     "peel_max_at_rom": 62.267828197201915
+    }
+   },
+   "missing": [
+    "extension"
+   ]
+  },
   "p086": {
    "verdict": "pass",
    "reasons": [],
@@ -461,6 +688,24 @@
     }
    },
    "missing": []
+  },
+  "p088": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p088_gpu2",
+     "shear_p99_at_rom": 0.148,
+     "horizontal": 0.14758058457598902,
+     "vertical": 0.12283697207063064,
+     "peel_max_at_rom": 0.36654128655808266
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
   },
   "p092": {
    "verdict": "pass",
@@ -534,6 +779,26 @@
    },
    "missing": []
   },
+  "p095": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {},
+   "missing": [
+    "flexion",
+    "extension"
+   ],
+   "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)"
+  },
+  "p097": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {},
+   "missing": [
+    "flexion",
+    "extension"
+   ],
+   "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)"
+  },
   "p100": {
    "verdict": "open",
    "reasons": [],
@@ -551,6 +816,50 @@
     "extension"
    ],
    "open_reason": "window(s) extension did not reach the intact ROM (or missing)"
+  },
+  "p101": {
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 3.8 MPa > 3.0"
+   ],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p101_gpu3",
+     "shear_p99_at_rom": 0.219,
+     "horizontal": 0.2191317424878479,
+     "vertical": 0.1455801509759056,
+     "peel_max_at_rom": 0.3095157731163804
+    },
+    "flexion": {
+     "set": "physio_relG",
+     "case_dir": "p101_gpu3",
+     "shear_p99_at_rom": 3.798,
+     "horizontal": 3.798370896252047,
+     "vertical": 1.78739311516057,
+     "peel_max_at_rom": 4.424590903017642
+    }
+   },
+   "missing": []
+  },
+  "p104": {
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 14.8 MPa > 3.0"
+   ],
+   "windows": {
+    "flexion": {
+     "set": "physio_relG",
+     "case_dir": "p104_gpu4",
+     "shear_p99_at_rom": 14.836,
+     "horizontal": null,
+     "vertical": 14.836246025859106,
+     "peel_max_at_rom": 42.240066724449385
+    }
+   },
+   "missing": [
+    "extension"
+   ]
   },
   "p105": {
    "verdict": "fail",
@@ -577,6 +886,16 @@
     }
    },
    "missing": []
+  },
+  "p109": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {},
+   "missing": [
+    "flexion",
+    "extension"
+   ],
+   "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)"
   },
   "p110": {
    "verdict": "fail",
@@ -703,6 +1022,42 @@
    },
    "missing": []
   },
+  "p115": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p115_gpu4",
+     "shear_p99_at_rom": 0.159,
+     "horizontal": 0.15873860544489818,
+     "vertical": 0.11228586550438645,
+     "peel_max_at_rom": 1.520150428429948
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+  },
+  "p116": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p116_gpu4",
+     "shear_p99_at_rom": 2.353,
+     "horizontal": null,
+     "vertical": 2.352991004001264,
+     "peel_max_at_rom": 8.89352482819911
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+  },
   "p117": {
    "verdict": "pass",
    "reasons": [],
@@ -725,6 +1080,42 @@
     }
    },
    "missing": []
+  },
+  "p120": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p120_gpu2",
+     "shear_p99_at_rom": 0.155,
+     "horizontal": 0.15535399838837102,
+     "vertical": 0.11045604167939527,
+     "peel_max_at_rom": 0.3997551714075659
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+  },
+  "p121": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p121_gpu1",
+     "shear_p99_at_rom": 0.146,
+     "horizontal": 0.14558122628825496,
+     "vertical": 0.1220362276080733,
+     "peel_max_at_rom": 0.3648861823313575
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
   },
   "p122": {
    "verdict": "fail",
@@ -799,6 +1190,92 @@
      "horizontal": null,
      "vertical": 15.741887321565477,
      "peel_max_at_rom": 51.14140973377835
+    }
+   },
+   "missing": []
+  },
+  "p127": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p127_gpu3",
+     "shear_p99_at_rom": 2.478,
+     "horizontal": null,
+     "vertical": 2.4781807712605013,
+     "peel_max_at_rom": 9.688630197377506
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+  },
+  "p128": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p128_gpu2",
+     "shear_p99_at_rom": 2.155,
+     "horizontal": null,
+     "vertical": 2.1547297948659683,
+     "peel_max_at_rom": 7.075532496232509
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+  },
+  "p129": {
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 3.2 MPa > 3.0"
+   ],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p129_gpu4",
+     "shear_p99_at_rom": 0.292,
+     "horizontal": 0.2921571553565006,
+     "vertical": 0.21833516606334352,
+     "peel_max_at_rom": 0.40693447650888476
+    },
+    "flexion": {
+     "set": "physio_relG",
+     "case_dir": "p129_gpu4",
+     "shear_p99_at_rom": 3.199,
+     "horizontal": 3.1990630456486038,
+     "vertical": 1.634092746656674,
+     "peel_max_at_rom": 4.164638715317341
+    }
+   },
+   "missing": []
+  },
+  "p130": {
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 18.2 MPa > 3.0"
+   ],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p130_gpu2",
+     "shear_p99_at_rom": 2.448,
+     "horizontal": null,
+     "vertical": 2.44771747841975,
+     "peel_max_at_rom": 5.954532246782737
+    },
+    "flexion": {
+     "set": "physio_relG",
+     "case_dir": "p130_gpu2",
+     "shear_p99_at_rom": 18.15,
+     "horizontal": null,
+     "vertical": 18.150088364415414,
+     "peel_max_at_rom": 53.53390766446701
     }
    },
    "missing": []
@@ -914,6 +1391,31 @@
      "horizontal": 10.92345225483223,
      "vertical": 14.006560557945445,
      "peel_max_at_rom": 33.33402928732918
+    }
+   },
+   "missing": []
+  },
+  "p140": {
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 4.0 MPa > 3.0"
+   ],
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p140_gpu4",
+     "shear_p99_at_rom": 0.289,
+     "horizontal": 0.28917877531265407,
+     "vertical": 0.19075929310622325,
+     "peel_max_at_rom": 0.4945006817283947
+    },
+    "flexion": {
+     "set": "physio_relG",
+     "case_dir": "p140_gpu4",
+     "shear_p99_at_rom": 3.979,
+     "horizontal": 3.9794119147376095,
+     "vertical": 1.8386600899787167,
+     "peel_max_at_rom": 4.418490460568817
     }
    },
    "missing": []
