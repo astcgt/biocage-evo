@@ -1,0 +1,9 @@
+{
+ "generated": "2026-11-10T17:07",
+ "note": "read-out shift production law (physio_relG_pl) -> stick-memory law (physio_relG) on the SAME process-G checkpoint, same design/window, usable in both (h51 controls); transfer check of the fric3->fric5 fallback margin",
+ "n": 0,
+ "abs_median": null,
+ "abs_p90": null,
+ "abs_max": null,
+ "rows": []
+}

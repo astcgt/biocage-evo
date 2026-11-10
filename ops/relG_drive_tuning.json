@@ -1,0 +1,1 @@
+{"MAXRUN": 5, "_note": "foreman 2026-11-10 16:03: keep runs x 6 cores <= 32-core quota; a 6th 6-thread run (36 threads) gave 26-28 % throttled wall time vs 0 with 5. Read by ops/relG_drive.py each pass (from the next driver start)"}

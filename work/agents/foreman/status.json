@@ -1,10 +1,39 @@
-{"time": "2026-11-03T01:27",
- "resources": {"cpu_quota_cores": 32, "cpu_used_cores": 1.3, "host_load": 28.7, "host_cores": 256, "nr_throttled": 4676,
-   "mem_used_gb": 55.9, "mem_max_gb": 137.4, "oom_kill": 0, "gpus_mine": 0,
-   "gpus_other": "GPU0 0% 38.5/40GB; GPU1-6 97-100% 15-33GB", "disk_free_tb": 1.5},
- "queues": {"febio": {"waiting": 0, "running": 1, "done": 2274, "failed": 2, "running_job": "physrotFr2_p060 w_AR_right t=3.92/4", "finished_last_3h": 1},
-   "tasks": {"waiting": 0, "running": 0, "done": 1, "failed": 5}},
- "actions": [],
- "problems": ["30.7/32 cores idle, 0 GPUs mine: no queued work (32/32 idle once p060 finishes, <1 h)", "p109 flexion/extension stopped by watchdog 11-02 (static stall t~3.5)", "5 gate2 tasks failed since 10-28 (unchanged)"],
- "requests": ["queue more FEBio/task work", "science owner: p109 flexion/extension stall in physio_fric2", "pending decisions: T01, T16, T10 h19 disk guard, al_loop gate"],
- "summary_zh": "目前只剩 1 個 FEBio 計算在跑（p060 摩擦組，最後一段，約 1 小時內完成），其他佇列都空了。32 核只用約 1.3 核，GPU 沒有我們的工作，記憶體正常，所有服務正常。本次沒有改動。需要人：排入新的計算工作；查看 p109 屈曲/伸展卡住的問題；決定 T01、T16、T10、al_loop。"}
+{
+ "time": "2026-11-10T17:00",
+ "resources": {
+  "cpu_quota_cores": 32,
+  "cpu_busy_cores": 23.7,
+  "cpu_throttled_ms_per_s": 0,
+  "load1_node": 28.1,
+  "node_cores": 256,
+  "mem_cgroup_gb": {"used": 122.1, "max": 137.4, "anon": 16.3, "file": 103.0},
+  "oom_kill": 0,
+  "gpus": {
+   "mine": {"1": "relG p071", "2": "relG p068", "3": "relG p064", "4": "relG p074 + p082"},
+   "used_gb_total": {"0": 38.5, "1": 2.8, "2": 19.4, "3": 9.3, "4": 10.2, "5": 39.8, "6": 39.8},
+   "util_pct": {"0": 0, "1": 7, "2": 0, "3": 0, "4": 22, "5": 0, "6": 0},
+   "others_full": [0, 5, 6]
+  },
+  "disk_raid_free_tb": 2.4
+ },
+ "queues": {
+  "febio_h19": {"waiting": 0, "running": 0, "done": 2600, "failed": 2},
+  "evo_tasks": {"waiting": 0, "running": 0, "done": 1, "failed": 5},
+  "physio_relG_h50": {"designs": 27, "finished_normal": 5, "running": 5, "waiting": 17,
+   "finished": ["p050 15:36 60 min", "p048 15:48 71 min", "p061 16:21 86 min", "p052 16:29 113 min", "p039 16:45 128 min"],
+   "mean_run_min": 92, "eta": "about 23:30"}
+ },
+ "actions": [
+  "16:52 core overlap fix: p068 febio 3099181 + parent 3015922 mask 12,20,24,27-29 -> 20,24,26-29 (node 1); p082 also had a thread on core 12; all 5 masks now disjoint, no thread stacking"
+ ],
+ "problems": [
+  "binding resource = 32-core quota: 5 runs x 6 cores, 23.7 cores used, throttled 0; a 6th 6-thread run over-subscribes (tested 16:03); ~8 quota cores and most GPU capacity idle",
+  "h06/h18 core assignment again produced an overlapping mask (core 12 shared by p068 and p082)",
+  "h50_relG_batch.py: a single-design call whose run fails in < 2 min is requeued every 10 min with no limit"
+ ],
+ "requests": [
+  "science role (still open): exclude physio_relG/*_gpu5 run dirs (launcher failures, normal:false) from read-outs",
+  "owner of h50_relG_batch.py / h18: cap the < 2 min requeue (for example 3 tries); allow 5-thread runs so 6 fit in the 32-core quota; make h18 core picks disjoint and inside one NUMA node"
+ ],
+ "summary_zh": "目前在跑：physio_relG 批次 5 個 FEBio（GPU 1-4），已完成 5/27（p050、p048、p061、p052、p039 都正常結束，平均約 1.5 小時），還有 17 個在排隊，預計今晚 23:30 左右跑完。CPU 用了 23.7/32 核心，沒有被限速；記憶體 122/137 GB，沒有記憶體不足。我的處理：發現 p068 和 p082 兩個運算擠在同一個 CPU 核心（12 號），把 p068 移到同一節點的空閒核心，現在 5 個運算互不重疊。閒置：約 8 個 CPU 核心和大部分 GPU 沒用到，因為每個運算固定用 6 核心，多開一個會超過配額。需要人處理：讀結果時要排除 *_gpu5 資料夾；h50 程式快速失敗的設計會無限次重排，建議設上限；可考慮改成每個運算 5 核心，才能同時跑 6 個。"
+}

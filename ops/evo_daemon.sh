@@ -18,7 +18,7 @@ P
   # PI 2026-11-07 (decision 6a): the hourly foreman runs only while there is work - a job waiting or running in the FEBio queue
   # (human_study/queue, h19), an evo task, or a FEBio process of this user; an idle queue costs no agent calls.
   HQ=/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/queue
-  work=$(( $(ls "$HQ"/*.job 2>/dev/null | wc -l) + $(ls "$HQ"/running/*.job 2>/dev/null | wc -l) + $(ls work/ops/tasks/*.json 2>/dev/null | wc -l) + $(pgrep -u "$(id -u)" -x febio4 | wc -l) ))
+  work=$(( $(ls "$HQ"/*.job 2>/dev/null | wc -l) + $(ls "$HQ"/running/*.job 2>/dev/null | wc -l) + $(ls work/ops/tasks/queue/*.json work/ops/tasks/running/*.json 2>/dev/null | wc -l) + $(pgrep -u "$(id -u)" -x febio4 | wc -l) ))
   if [ $(( $(date +%s) - last )) -ge 3600 ] && [ "$work" -gt 0 ]; then              # foreman agent every 60 min (PI 2026-10-28), only with work
     touch work/agents/foreman/last_run; ( roles/run_foreman.sh & )
   fi
