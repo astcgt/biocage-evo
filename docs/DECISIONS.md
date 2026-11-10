@@ -176,3 +176,6 @@ Implemented 2026-11-08 in ops/collect_split.py (see ../biocage_simulation_test_o
 ## 2026-11-09 18:10 physio_fric5 set complete - precedence applied
 - 43 designs / 86 windows of physio_fric5 (stick-memory reference law) finished; fric_compare / e07_batch / collect_split / mu_req_field rerun with fric5 superseding fric3 per window. fric verdicts pass 35 / fail 6 / open 30 (was 24/14/33); e07 fail 28 / pass 10 / open 5; collect_split PASS 13, friction-check-exceeded 7 (p051 p060 p072 p075 p093 p114 p145). 5 fric5 windows unusable (solver error before the read-out state: p036 p132 p142 p148 flexion, p100 extension) -> those designs open until rerun. Details: old repo human_study/DECISIONS.md 2026-11-09 18:10.
 - 18:50: results/method/mu_req_vs_fric5.{json,csv} (shortcut vs gold standard, Spearman 0.90, rms 0.032 mm, 0.5 mm boundary at mu_req 0.140) and results/method/fric/e07_fric3_vs_fric5_shear.json (law raises p99 interface shear at ROM by a median 6 %). Details in the old repo DECISIONS 2026-11-09 18:50.
+
+## 2026-11-10 14:4x PI decisions applied (grey zone, fallback, soft-face locking, provenance, tolerance; set physio_relG)
+- verdicts pass 27 / grey 16 / fail 0 / open 28; collect_split PASS 0, GREY/friction-posterior-0.45-0.55 13, friction-check-exceeded 0. Details: old repo DECISIONS 2026-11-10 14:3x-14:4x.

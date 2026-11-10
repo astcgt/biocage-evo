@@ -16,7 +16,7 @@ E = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 R = '/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/'
 OUT = os.path.join(E, 'results/method/fric/e07'); os.makedirs(OUT, exist_ok=True)
 ended = lambda log: os.path.exists(log) and any(k in open(log, errors='ignore').read()[-4000:] for k in ('N O R M A L', 'E R R O R'))
-SETS = ('physio_fric3', 'physio_fric5'); RANK = {s_: i for i, s_ in enumerate(SETS)}   # 2026-11-09 (PI decision 1): fric5 = the same windows recomputed with the stick-memory law; it supersedes fric3 per (design, window) in the shear gate too
+SETS = ('physio_fric3', 'physio_fric5', 'physio_relG'); RANK = {s_: i for i, s_ in enumerate(SETS)}   # 2026-11-09 (PI decision 1): fric5 = the same windows recomputed with the stick-memory law; it supersedes fric3 per (design, window) in the shear gate too
 wds = [w for s_ in SETS for w in sorted(glob.glob(R + s_ + '/p*/w_*')) if ended(w + '/case.log') and os.path.exists(w + '/case.xplt')]
 set_of = lambda w: w.split('/al_v2/')[1].split('/')[0]
 

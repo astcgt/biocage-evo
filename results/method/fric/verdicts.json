@@ -14,7 +14,11 @@
     "u_h_at_1p5Nm": 0.5886554737743311,
     "post_at_1p5Nm": 0.5885508923762813,
     "rot_max_deg": 9.052516529268326,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -27,10 +31,16 @@
     "u_h_at_1p5Nm": 0.3199633073325288,
     "post_at_1p5Nm": -0.3199506362721941,
     "rot_max_deg": 4.194511870443235,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p014": {
   "verdict": "pass",
@@ -47,7 +57,11 @@
     "u_h_at_1p5Nm": 0.6247565242315064,
     "post_at_1p5Nm": 0.6247564991682387,
     "rot_max_deg": 9.22463030764744,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -60,13 +74,19 @@
     "u_h_at_1p5Nm": 0.34671450527630093,
     "post_at_1p5Nm": -0.3467143675796676,
     "rot_max_deg": 7.21927067188431,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p026": {
-  "verdict": "pass",
+  "verdict": "grey",
   "reasons": [],
   "windows": {
    "extension": {
@@ -80,7 +100,13 @@
     "u_h_at_1p5Nm": 0.6879841336941837,
     "post_at_1p5Nm": 0.6879819252703904,
     "rot_max_deg": 9.224699283523242,
-    "bad": []
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.453 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -93,10 +119,19 @@
     "u_h_at_1p5Nm": 0.34580341532952946,
     "post_at_1p5Nm": -0.3458009739735734,
     "rot_max_deg": 7.219270412189975,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.453 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p036": {
   "verdict": "pass",
@@ -113,7 +148,11 @@
     "u_h_at_1p5Nm": 0.3700879545345023,
     "post_at_1p5Nm": 0.3700874441987474,
     "rot_max_deg": 9.224629191531372,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric3",
@@ -121,15 +160,30 @@
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": false,
-    "u_h_at_rom": 0.6409363475986963,
-    "post_at_rom": -0.6409292532096555,
-    "u_h_at_1p5Nm": 0.16897746129832728,
-    "post_at_1p5Nm": -0.16892892793463266,
+    "u_h_at_rom": 0.6840363475986964,
+    "post_at_rom": -0.5978292532096555,
+    "u_h_at_1p5Nm": 0.21207746129832727,
+    "post_at_1p5Nm": -0.12582892793463266,
     "rot_max_deg": 7.219311478429389,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": {
+     "source": "physio_fric3 (production law)",
+     "margin_mm": 0.0431,
+     "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+     "superseded": {
+      "set": "physio_fric5",
+      "case_dir": null,
+      "t_last": null
+     }
+    },
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p038": {
   "verdict": "pass",
@@ -146,7 +200,11 @@
     "u_h_at_1p5Nm": 0.5633634828285594,
     "post_at_1p5Nm": 0.56336123476407,
     "rot_max_deg": 9.224634252602081,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -159,16 +217,20 @@
     "u_h_at_1p5Nm": 0.3523331330249961,
     "post_at_1p5Nm": -0.35233247420547764,
     "rot_max_deg": 7.219270819805651,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p051": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.50 post 0.50"
-  ],
+  "verdict": "grey",
+  "reasons": [],
   "windows": {
    "extension": {
     "set": "physio_fric5",
@@ -181,9 +243,13 @@
     "u_h_at_1p5Nm": 0.8417233218761024,
     "post_at_1p5Nm": 0.8417161263092489,
     "rot_max_deg": 9.224621973343776,
-    "bad": [
-     "extension@ROM u_h 0.50 post 0.50"
-    ]
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.504 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -196,16 +262,23 @@
     "u_h_at_1p5Nm": 0.8450812988942333,
     "post_at_1p5Nm": -0.8450807353404926,
     "rot_max_deg": 7.219277524528791,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.504 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p060": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.54 post 0.54"
-  ],
+  "verdict": "open",
+  "reasons": [],
   "windows": {
    "AR_left": {
     "set": "physio_fric2",
@@ -218,7 +291,11 @@
     "u_h_at_1p5Nm": 0.08682581454024496,
     "post_at_1p5Nm": 0.07697714841510479,
     "rot_max_deg": 7.657886005205845,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "AR_right": {
     "set": "physio_fric2",
@@ -231,7 +308,11 @@
     "u_h_at_1p5Nm": 0.08300786362923183,
     "post_at_1p5Nm": 0.07340891297679016,
     "rot_max_deg": 4.510795736787212,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "LB_left": {
     "set": "physio_fric2",
@@ -244,7 +325,11 @@
     "u_h_at_1p5Nm": 0.07799561123234869,
     "post_at_1p5Nm": -0.028430574847278147,
     "rot_max_deg": 6.101855947649632,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "LB_right": {
     "set": "physio_fric2",
@@ -257,7 +342,11 @@
     "u_h_at_1p5Nm": 0.09253468599773035,
     "post_at_1p5Nm": -0.01938708836041382,
     "rot_max_deg": 7.884495547756008,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "extension": {
     "set": "physio_fric2",
@@ -270,9 +359,13 @@
     "u_h_at_1p5Nm": 1.401794524438749,
     "post_at_1p5Nm": 1.401791651990622,
     "rot_max_deg": 15.686094266054528,
-    "bad": [
-     "extension@ROM u_h 0.54 post 0.54"
-    ]
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.541 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "flexion": {
     "set": "physio_fric2",
@@ -285,12 +378,21 @@
     "u_h_at_1p5Nm": 0.7867307655579606,
     "post_at_1p5Nm": -0.7867303308749333,
     "rot_max_deg": 4.266903614204519,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    }
   },
   "missing": [
    "flexion"
-  ]
+  ],
+  "grey": [
+   "extension@ROM post 0.541 in grey zone [0.45, 0.55]"
+  ],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "open_reason": "window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)"
  },
  "p062": {
   "verdict": "pass",
@@ -307,7 +409,11 @@
     "u_h_at_1p5Nm": 0.09220526907291665,
     "post_at_1p5Nm": 0.06832685092099355,
     "rot_max_deg": 4.618781705354806,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "AR_right": {
     "set": "physio_fric2",
@@ -320,7 +426,11 @@
     "u_h_at_1p5Nm": 0.09030670188475647,
     "post_at_1p5Nm": 0.06387468216374631,
     "rot_max_deg": 5.2290214649596045,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "LB_left": {
     "set": "physio_fric2",
@@ -333,7 +443,11 @@
     "u_h_at_1p5Nm": 0.09870895264417023,
     "post_at_1p5Nm": -0.062018819181548016,
     "rot_max_deg": 4.942005810781472,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "LB_right": {
     "set": "physio_fric2",
@@ -346,7 +460,11 @@
     "u_h_at_1p5Nm": 0.10255766334721089,
     "post_at_1p5Nm": -0.06314012697894444,
     "rot_max_deg": 4.959090372525859,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "extension": {
     "set": "physio_fric5",
@@ -359,7 +477,11 @@
     "u_h_at_1p5Nm": 0.6501465788975351,
     "post_at_1p5Nm": 0.6501465487832984,
     "rot_max_deg": 9.22465803057378,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -372,10 +494,16 @@
     "u_h_at_1p5Nm": 0.17605436409245842,
     "post_at_1p5Nm": -0.17605353977322602,
     "rot_max_deg": 7.219268505945807,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p063": {
   "verdict": "pass",
@@ -392,7 +520,11 @@
     "u_h_at_1p5Nm": 0.6062888607889607,
     "post_at_1p5Nm": 0.6062888596177358,
     "rot_max_deg": 9.224620577927592,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -405,10 +537,16 @@
     "u_h_at_1p5Nm": 0.17362525130996356,
     "post_at_1p5Nm": -0.17362465587497078,
     "rot_max_deg": 7.219268362801451,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p065": {
   "verdict": "pass",
@@ -425,7 +563,11 @@
     "u_h_at_1p5Nm": 0.5928108924336394,
     "post_at_1p5Nm": 0.5928104455761658,
     "rot_max_deg": 9.224622288381227,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -438,10 +580,16 @@
     "u_h_at_1p5Nm": 0.20477521064306617,
     "post_at_1p5Nm": -0.20477338439764092,
     "rot_max_deg": 7.219686295310167,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p066": {
   "verdict": "pass",
@@ -458,7 +606,11 @@
     "u_h_at_1p5Nm": 0.41891122840037337,
     "post_at_1p5Nm": 0.41891112244484124,
     "rot_max_deg": 9.224629255084144,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -471,10 +623,16 @@
     "u_h_at_1p5Nm": 0.1479196048786477,
     "post_at_1p5Nm": -0.14791581787803687,
     "rot_max_deg": 7.21927134394521,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p067": {
   "verdict": "pass",
@@ -491,7 +649,11 @@
     "u_h_at_1p5Nm": 0.4539895774728759,
     "post_at_1p5Nm": 0.45398891514802325,
     "rot_max_deg": 9.22464141874163,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -504,13 +666,19 @@
     "u_h_at_1p5Nm": 0.15993086583937954,
     "post_at_1p5Nm": -0.15992913130281683,
     "rot_max_deg": 7.101414878674127,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p072": {
-  "verdict": "pass",
+  "verdict": "grey",
   "reasons": [],
   "windows": {
    "extension": {
@@ -524,7 +692,13 @@
     "u_h_at_1p5Nm": 0.7133705566210773,
     "post_at_1p5Nm": 0.7133704950608184,
     "rot_max_deg": 9.224627448676099,
-    "bad": []
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.476 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -537,16 +711,23 @@
     "u_h_at_1p5Nm": 0.8201491472445724,
     "post_at_1p5Nm": -0.8201485518050393,
     "rot_max_deg": 7.219311464476604,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.476 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p075": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.51 post 0.51"
-  ],
+  "verdict": "grey",
+  "reasons": [],
   "windows": {
    "extension": {
     "set": "physio_fric5",
@@ -559,9 +740,13 @@
     "u_h_at_1p5Nm": 0.8501441408053565,
     "post_at_1p5Nm": 0.8501336573204388,
     "rot_max_deg": 9.222975606206079,
-    "bad": [
-     "extension@ROM u_h 0.51 post 0.51"
-    ]
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.506 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -574,13 +759,22 @@
     "u_h_at_1p5Nm": 0.8487707121328115,
     "post_at_1p5Nm": -0.8487701431108671,
     "rot_max_deg": 7.21665585926322,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.506 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p076": {
-  "verdict": "pass",
+  "verdict": "grey",
   "reasons": [],
   "windows": {
    "extension": {
@@ -594,7 +788,13 @@
     "u_h_at_1p5Nm": 0.6884228454017294,
     "post_at_1p5Nm": 0.6884223367228632,
     "rot_max_deg": 9.224624032609599,
-    "bad": []
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.477 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -607,10 +807,19 @@
     "u_h_at_1p5Nm": 0.2336400663341434,
     "post_at_1p5Nm": -0.23363974000693108,
     "rot_max_deg": 7.219266022599281,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.477 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p077": {
   "verdict": "pass",
@@ -627,7 +836,11 @@
     "u_h_at_1p5Nm": 0.6431578024019996,
     "post_at_1p5Nm": 0.6431576990920526,
     "rot_max_deg": 9.22463977418491,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -640,10 +853,16 @@
     "u_h_at_1p5Nm": 0.2179679281633667,
     "post_at_1p5Nm": -0.21796791024903706,
     "rot_max_deg": 7.219269353098292,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p078": {
   "verdict": "pass",
@@ -660,7 +879,11 @@
     "u_h_at_1p5Nm": 0.5601092076039783,
     "post_at_1p5Nm": 0.560107139848283,
     "rot_max_deg": 9.224628538577365,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -673,10 +896,16 @@
     "u_h_at_1p5Nm": 0.3199400553857998,
     "post_at_1p5Nm": -0.3199398404467068,
     "rot_max_deg": 7.219271131426306,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p079": {
   "verdict": "pass",
@@ -693,7 +922,11 @@
     "u_h_at_1p5Nm": 0.6182425074345719,
     "post_at_1p5Nm": 0.6182424006117913,
     "rot_max_deg": 9.224642741745614,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -706,13 +939,19 @@
     "u_h_at_1p5Nm": 0.2915808199282966,
     "post_at_1p5Nm": -0.2915802450128872,
     "rot_max_deg": 7.219270096770365,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p081": {
-  "verdict": "pass",
+  "verdict": "grey",
   "reasons": [],
   "windows": {
    "extension": {
@@ -726,7 +965,13 @@
     "u_h_at_1p5Nm": 0.726547173219131,
     "post_at_1p5Nm": 0.7265470356992753,
     "rot_max_deg": 9.22464304065668,
-    "bad": []
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.482 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -739,10 +984,19 @@
     "u_h_at_1p5Nm": 0.3585625765910458,
     "post_at_1p5Nm": -0.35855713203588485,
     "rot_max_deg": 4.6107022738513095,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.482 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p086": {
   "verdict": "pass",
@@ -759,7 +1013,11 @@
     "u_h_at_1p5Nm": 0.7184613687898458,
     "post_at_1p5Nm": 0.7184612007624459,
     "rot_max_deg": 9.224650031366968,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -772,13 +1030,19 @@
     "u_h_at_1p5Nm": 0.8215444800122392,
     "post_at_1p5Nm": -0.8215444293458046,
     "rot_max_deg": 6.785787067261011,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p092": {
-  "verdict": "pass",
+  "verdict": "grey",
   "reasons": [],
   "windows": {
    "extension": {
@@ -792,7 +1056,13 @@
     "u_h_at_1p5Nm": 0.8378541587449811,
     "post_at_1p5Nm": 0.8378515004996429,
     "rot_max_deg": 9.22504977729889,
-    "bad": []
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.480 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -805,16 +1075,23 @@
     "u_h_at_1p5Nm": 0.8916378409551221,
     "post_at_1p5Nm": -0.8916378275657691,
     "rot_max_deg": 7.219284225727578,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.480 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p093": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.55 post 0.55"
-  ],
+  "verdict": "grey",
+  "reasons": [],
   "windows": {
    "extension": {
     "set": "physio_fric5",
@@ -827,9 +1104,13 @@
     "u_h_at_1p5Nm": 1.0314253371611115,
     "post_at_1p5Nm": 1.031424825040658,
     "rot_max_deg": 9.22466275895226,
-    "bad": [
-     "extension@ROM u_h 0.55 post 0.55"
-    ]
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.545 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -842,10 +1123,19 @@
     "u_h_at_1p5Nm": 0.8719201859906114,
     "post_at_1p5Nm": -0.8719201773200093,
     "rot_max_deg": 7.219274266069382,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.545 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p094": {
   "verdict": "pass",
@@ -862,7 +1152,11 @@
     "u_h_at_1p5Nm": 0.4862443040217005,
     "post_at_1p5Nm": 0.48624422657706245,
     "rot_max_deg": 9.22462612670058,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -875,27 +1169,48 @@
     "u_h_at_1p5Nm": 0.14304233354728021,
     "post_at_1p5Nm": -0.1430418730362897,
     "rot_max_deg": 7.219268966127408,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p100": {
-  "verdict": "open",
+  "verdict": "grey",
   "reasons": [],
   "windows": {
    "extension": {
-    "set": "physio_fric5",
+    "set": "physio_fric3",
     "case_dir": "p100",
-    "usable": false,
-    "eval_point": null,
+    "usable": true,
+    "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.012563241034397106,
-    "post_at_rom": -0.012560597817483657,
-    "u_h_at_1p5Nm": 0.012563241034397106,
-    "post_at_1p5Nm": -0.012560597817483657,
-    "rot_max_deg": 2.937724509626991,
-    "bad": []
+    "u_h_at_rom": 0.5000524396963132,
+    "post_at_rom": 0.5000489241167159,
+    "u_h_at_1p5Nm": 0.7604030312488445,
+    "post_at_1p5Nm": 0.760400051858084,
+    "rot_max_deg": 9.224648904188674,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.500 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": {
+     "source": "physio_fric3 (production law)",
+     "margin_mm": 0.0431,
+     "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+     "superseded": {
+      "set": "physio_fric5",
+      "case_dir": "p100",
+      "t_last": 3.65922848
+     }
+    },
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -908,14 +1223,19 @@
     "u_h_at_1p5Nm": 0.8120044881083908,
     "post_at_1p5Nm": -0.8120042805358338,
     "rot_max_deg": 6.800062181285108,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": [
-   "extension"
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.500 in grey zone [0.45, 0.55]"
   ],
-  "open_reason": "extension stopped at 2.9 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
-  "computability": true
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p105": {
   "verdict": "pass",
@@ -932,7 +1252,11 @@
     "u_h_at_1p5Nm": 0.5107309648753691,
     "post_at_1p5Nm": 0.5107282587576442,
     "rot_max_deg": 8.112465912141655,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -945,24 +1269,131 @@
     "u_h_at_1p5Nm": 0.1643005381614658,
     "post_at_1p5Nm": -0.16398684172847974,
     "rot_max_deg": 6.906836048769165,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p109": {
   "verdict": "open",
   "reasons": [],
-  "windows": {},
+  "windows": {
+   "AR_left": {
+    "set": "physio_fric2",
+    "case_dir": "p109",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.09064147244982622,
+    "post_at_rom": -0.018321168174858283,
+    "u_h_at_1p5Nm": 0.133325865279669,
+    "post_at_1p5Nm": -0.11676245328086575,
+    "rot_max_deg": 5.746958649328986,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "AR_right": {
+    "set": "physio_fric2",
+    "case_dir": "p109",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.09223944777883927,
+    "post_at_rom": -0.031700421493347584,
+    "u_h_at_1p5Nm": 0.13155564543658796,
+    "post_at_1p5Nm": -0.11641753846516478,
+    "rot_max_deg": 6.596656596670082,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "LB_left": {
+    "set": "physio_fric2",
+    "case_dir": "p109",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.1938606562602779,
+    "post_at_rom": -0.17795807997530305,
+    "u_h_at_1p5Nm": 0.19351215767577712,
+    "post_at_1p5Nm": -0.17992869853719715,
+    "rot_max_deg": 4.051793917676015,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "LB_right": {
+    "set": "physio_fric2",
+    "case_dir": "p109",
+    "usable": false,
+    "eval_point": null,
+    "monotonic": true,
+    "u_h_at_rom": 0.18481176035074745,
+    "post_at_rom": -0.17714839613849853,
+    "u_h_at_1p5Nm": 0.18481176035074745,
+    "post_at_1p5Nm": -0.17714839613849853,
+    "rot_max_deg": 3.115998074353037,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "extension": {
+    "set": "physio_fric2",
+    "case_dir": null,
+    "usable": false,
+    "eval_point": null,
+    "monotonic": null,
+    "u_h_at_rom": null,
+    "post_at_rom": null,
+    "u_h_at_1p5Nm": null,
+    "post_at_1p5Nm": null,
+    "rot_max_deg": null,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": null,
+    "window_law": null
+   },
+   "flexion": {
+    "set": "physio_fric2",
+    "case_dir": null,
+    "usable": false,
+    "eval_point": null,
+    "monotonic": null,
+    "u_h_at_rom": null,
+    "post_at_rom": null,
+    "u_h_at_1p5Nm": null,
+    "post_at_1p5Nm": null,
+    "rot_max_deg": null,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": null,
+    "window_law": null
+   }
+  },
   "missing": [
    "flexion",
    "extension"
   ],
-  "t_end": 3.33913243,
-  "case_dir": "p109_gpu3",
-  "open_reason": "frictional insertion run stopped at t 3.339 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
-  "computability": true,
-  "stop_phase": "c3_release_impact"
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "open_reason": "window(s) flexion, extension did not reach the intact ROM or 1.5 N m (or missing)"
  },
  "p110": {
   "verdict": "pass",
@@ -979,7 +1410,11 @@
     "u_h_at_1p5Nm": 0.4761110096752157,
     "post_at_1p5Nm": 0.47606473105420694,
     "rot_max_deg": 9.22522302504622,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -992,10 +1427,16 @@
     "u_h_at_1p5Nm": 0.1471284300499784,
     "post_at_1p5Nm": -0.14712754257554658,
     "rot_max_deg": 7.219268574286056,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p111": {
   "verdict": "pass",
@@ -1012,7 +1453,11 @@
     "u_h_at_1p5Nm": 0.6048371739383825,
     "post_at_1p5Nm": 0.6048356373614736,
     "rot_max_deg": 9.224636248914578,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1025,10 +1470,16 @@
     "u_h_at_1p5Nm": 0.16684073422770257,
     "post_at_1p5Nm": -0.16684015655139275,
     "rot_max_deg": 7.219268574242034,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p112": {
   "verdict": "pass",
@@ -1045,7 +1496,11 @@
     "u_h_at_1p5Nm": 0.6618463928278239,
     "post_at_1p5Nm": 0.6618463847492766,
     "rot_max_deg": 9.224622447797376,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1058,13 +1513,19 @@
     "u_h_at_1p5Nm": 0.41783742068573754,
     "post_at_1p5Nm": -0.4177041746459014,
     "rot_max_deg": 7.219270088647365,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p113": {
-  "verdict": "pass",
+  "verdict": "grey",
   "reasons": [],
   "windows": {
    "extension": {
@@ -1078,7 +1539,13 @@
     "u_h_at_1p5Nm": 0.7356068486034766,
     "post_at_1p5Nm": 0.7356015301117353,
     "rot_max_deg": 9.225369976740758,
-    "bad": []
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.485 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1091,16 +1558,23 @@
     "u_h_at_1p5Nm": 0.4750486804086095,
     "post_at_1p5Nm": -0.4750485942622066,
     "rot_max_deg": 7.21927170143448,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.485 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p114": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.55 post 0.55"
-  ],
+  "verdict": "grey",
+  "reasons": [],
   "windows": {
    "extension": {
     "set": "physio_fric5",
@@ -1113,9 +1587,13 @@
     "u_h_at_1p5Nm": 0.9748391544411452,
     "post_at_1p5Nm": 0.9748244167870481,
     "rot_max_deg": 9.230563770352356,
-    "bad": [
-     "extension@ROM u_h 0.55 post 0.55"
-    ]
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.547 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1128,13 +1606,22 @@
     "u_h_at_1p5Nm": 0.8942213873587591,
     "post_at_1p5Nm": -0.8942213041718939,
     "rot_max_deg": 7.219276594043856,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.547 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p117": {
-  "verdict": "pass",
+  "verdict": "grey",
   "reasons": [],
   "windows": {
    "extension": {
@@ -1148,7 +1635,13 @@
     "u_h_at_1p5Nm": 0.8377893108951316,
     "post_at_1p5Nm": 0.8377893035269305,
     "rot_max_deg": 9.224733709963333,
-    "bad": []
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.480 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1161,10 +1654,19 @@
     "u_h_at_1p5Nm": 0.8890224901655983,
     "post_at_1p5Nm": -0.8890224723573926,
     "rot_max_deg": 7.040418378479247,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.480 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p122": {
   "verdict": "pass",
@@ -1181,7 +1683,11 @@
     "u_h_at_1p5Nm": 0.6481511959328063,
     "post_at_1p5Nm": 0.6481504168632658,
     "rot_max_deg": 9.224642587145398,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1194,10 +1700,16 @@
     "u_h_at_1p5Nm": 0.17216375159738645,
     "post_at_1p5Nm": -0.17216249938131667,
     "rot_max_deg": 7.219320378547089,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p124": {
   "verdict": "pass",
@@ -1214,7 +1726,11 @@
     "u_h_at_1p5Nm": 0.48152867783234166,
     "post_at_1p5Nm": 0.48150688621704085,
     "rot_max_deg": 9.2248332690163,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1227,10 +1743,16 @@
     "u_h_at_1p5Nm": 0.1619894911509693,
     "post_at_1p5Nm": -0.16198843338866434,
     "rot_max_deg": 7.219281356841539,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p125": {
   "verdict": "pass",
@@ -1247,7 +1769,11 @@
     "u_h_at_1p5Nm": 0.030480213691500387,
     "post_at_1p5Nm": 0.01886913743116744,
     "rot_max_deg": 4.493600592982304,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "AR_right": {
     "set": "physio_fric2",
@@ -1260,7 +1786,11 @@
     "u_h_at_1p5Nm": 0.026964686109477182,
     "post_at_1p5Nm": 0.012137309371623316,
     "rot_max_deg": 3.95467202758716,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "LB_left": {
     "set": "physio_fric2",
@@ -1273,7 +1803,11 @@
     "u_h_at_1p5Nm": 0.07003538648063228,
     "post_at_1p5Nm": -0.06948196806478996,
     "rot_max_deg": 5.704193029543576,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "LB_right": {
     "set": "physio_fric2",
@@ -1286,7 +1820,11 @@
     "u_h_at_1p5Nm": 0.10077209085629663,
     "post_at_1p5Nm": -0.10057408902105278,
     "rot_max_deg": 5.682331820718874,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    },
    "extension": {
     "set": "physio_fric5",
@@ -1299,7 +1837,11 @@
     "u_h_at_1p5Nm": 0.6322432069679199,
     "post_at_1p5Nm": 0.6322079709467342,
     "rot_max_deg": 9.15554617010606,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1312,10 +1854,16 @@
     "u_h_at_1p5Nm": 0.33700057940189865,
     "post_at_1p5Nm": -0.3370002358823399,
     "rot_max_deg": 7.219279135971985,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p131": {
   "verdict": "pass",
@@ -1332,7 +1880,11 @@
     "u_h_at_1p5Nm": 0.5288130504020615,
     "post_at_1p5Nm": 0.5288121851550135,
     "rot_max_deg": 9.22459886520871,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1345,13 +1897,19 @@
     "u_h_at_1p5Nm": 0.16121623356039783,
     "post_at_1p5Nm": -0.161215000092329,
     "rot_max_deg": 7.219274921004431,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p132": {
-  "verdict": "open",
+  "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
@@ -1365,30 +1923,45 @@
     "u_h_at_1p5Nm": 0.5725375301667587,
     "post_at_1p5Nm": 0.5725375138033753,
     "rot_max_deg": 9.224622894974065,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
-    "set": "physio_fric5",
-    "case_dir": "p132",
-    "usable": false,
-    "eval_point": null,
+    "set": "physio_fric3",
+    "case_dir": "p132_gpu2",
+    "usable": true,
+    "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.30423577143038966,
-    "post_at_rom": -0.30423544927719026,
-    "u_h_at_1p5Nm": 0.30423577143038966,
-    "post_at_1p5Nm": -0.30423544927719026,
-    "rot_max_deg": 2.0254784912165524,
-    "bad": []
+    "u_h_at_rom": 1.1743524935153098,
+    "post_at_rom": -1.0881517806091272,
+    "u_h_at_1p5Nm": 0.3860010469426205,
+    "post_at_1p5Nm": -0.2998002636233634,
+    "rot_max_deg": 7.219272127151815,
+    "bad": [],
+    "grey": [],
+    "fallback": {
+     "source": "physio_fric3 (production law)",
+     "margin_mm": 0.0431,
+     "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+     "superseded": {
+      "set": "physio_fric5",
+      "case_dir": "p132",
+      "t_last": 3.64030156
+     }
+    },
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    }
   },
-  "missing": [
-   "flexion"
-  ],
-  "open_reason": "flexion stopped at 2.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
-  "computability": true
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p133": {
-  "verdict": "pass",
+  "verdict": "grey",
   "reasons": [],
   "windows": {
    "extension": {
@@ -1402,7 +1975,13 @@
     "u_h_at_1p5Nm": 0.7427670638881163,
     "post_at_1p5Nm": 0.7427670437983294,
     "rot_max_deg": 9.224635155301565,
-    "bad": []
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.488 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1415,13 +1994,22 @@
     "u_h_at_1p5Nm": 0.39430618030725545,
     "post_at_1p5Nm": -0.39430167840655606,
     "rot_max_deg": 4.286134391170414,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.488 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p135": {
-  "verdict": "pass",
+  "verdict": "grey",
   "reasons": [],
   "windows": {
    "extension": {
@@ -1435,7 +2023,13 @@
     "u_h_at_1p5Nm": 0.6822425753878035,
     "post_at_1p5Nm": 0.682241037944562,
     "rot_max_deg": 9.22484210492385,
-    "bad": []
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.472 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1448,10 +2042,19 @@
     "u_h_at_1p5Nm": 0.2287759667181078,
     "post_at_1p5Nm": -0.22877594667710502,
     "rot_max_deg": 7.1345921580321345,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.472 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p139": {
   "verdict": "pass",
@@ -1468,7 +2071,11 @@
     "u_h_at_1p5Nm": 0.6415788538806819,
     "post_at_1p5Nm": 0.6415786462563603,
     "rot_max_deg": 9.22463085885728,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1481,13 +2088,19 @@
     "u_h_at_1p5Nm": 0.21812924070968984,
     "post_at_1p5Nm": -0.2181278467083609,
     "rot_max_deg": 7.219266674401815,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p142": {
-  "verdict": "open",
+  "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
@@ -1501,30 +2114,45 @@
     "u_h_at_1p5Nm": 0.6985353934791895,
     "post_at_1p5Nm": 0.6985024440847764,
     "rot_max_deg": 9.225736299181007,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
-    "set": "physio_fric5",
-    "case_dir": "p142",
-    "usable": false,
-    "eval_point": null,
+    "set": "physio_fric3",
+    "case_dir": "p142_gpu2",
+    "usable": true,
+    "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.1598301892684095,
-    "post_at_rom": -0.15982996590909054,
-    "u_h_at_1p5Nm": 0.1598301892684095,
-    "post_at_1p5Nm": -0.15982996590909054,
-    "rot_max_deg": 1.1473351026031093,
-    "bad": []
+    "u_h_at_rom": 1.210979769374566,
+    "post_at_rom": -1.1247797612133512,
+    "u_h_at_1p5Nm": 0.8652896194782017,
+    "post_at_1p5Nm": -0.7790892677256458,
+    "rot_max_deg": 7.21930216986887,
+    "bad": [],
+    "grey": [],
+    "fallback": {
+     "source": "physio_fric3 (production law)",
+     "margin_mm": 0.0431,
+     "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+     "superseded": {
+      "set": "physio_fric5",
+      "case_dir": "p142",
+      "t_last": 3.57946169
+     }
+    },
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    }
   },
-  "missing": [
-   "flexion"
-  ],
-  "open_reason": "flexion stopped at 1.1 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
-  "computability": true
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p143": {
-  "verdict": "pass",
+  "verdict": "grey",
   "reasons": [],
   "windows": {
    "extension": {
@@ -1538,7 +2166,13 @@
     "u_h_at_1p5Nm": 0.836371087795808,
     "post_at_1p5Nm": 0.836371074871032,
     "rot_max_deg": 9.224685284164371,
-    "bad": []
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.479 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1551,16 +2185,23 @@
     "u_h_at_1p5Nm": 0.8927371856934893,
     "post_at_1p5Nm": -0.8927370225069606,
     "rot_max_deg": 7.120387094562942,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.479 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p145": {
-  "verdict": "fail",
-  "reasons": [
-   "extension@ROM u_h 0.55 post 0.55"
-  ],
+  "verdict": "grey",
+  "reasons": [],
   "windows": {
    "extension": {
     "set": "physio_fric5",
@@ -1573,9 +2214,13 @@
     "u_h_at_1p5Nm": 1.0220037654672067,
     "post_at_1p5Nm": 1.0220030019473756,
     "rot_max_deg": 9.22463725290815,
-    "bad": [
-     "extension@ROM u_h 0.55 post 0.55"
-    ]
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.549 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1588,10 +2233,19 @@
     "u_h_at_1p5Nm": 0.8863747717017076,
     "post_at_1p5Nm": -0.8863746727499839,
     "rot_max_deg": 7.21927728095834,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.549 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p146": {
   "verdict": "pass",
@@ -1608,7 +2262,11 @@
     "u_h_at_1p5Nm": 0.5005791042160638,
     "post_at_1p5Nm": 0.5005790013456257,
     "rot_max_deg": 9.224644865665194,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric5",
@@ -1621,10 +2279,16 @@
     "u_h_at_1p5Nm": 0.20938168346075928,
     "post_at_1p5Nm": -0.2093806373247059,
     "rot_max_deg": 7.219269371846811,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p148": {
   "verdict": "pass",
@@ -1641,7 +2305,11 @@
     "u_h_at_1p5Nm": 0.6455718093028598,
     "post_at_1p5Nm": 0.6455717687953249,
     "rot_max_deg": 9.224635470020415,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
     "set": "physio_fric3",
@@ -1649,15 +2317,30 @@
     "usable": true,
     "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 1.1163481520053515,
-    "post_at_rom": -1.116346867464,
-    "u_h_at_1p5Nm": 0.3108157533202361,
-    "post_at_1p5Nm": -0.3108140402522804,
+    "u_h_at_rom": 1.1594481520053515,
+    "post_at_rom": -1.073246867464,
+    "u_h_at_1p5Nm": 0.35391575332023606,
+    "post_at_1p5Nm": -0.2677140402522804,
     "rot_max_deg": 7.219273739848452,
-    "bad": []
+    "bad": [],
+    "grey": [],
+    "fallback": {
+     "source": "physio_fric3 (production law)",
+     "margin_mm": 0.0431,
+     "rule": "PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged",
+     "superseded": {
+      "set": "physio_fric5",
+      "case_dir": null,
+      "t_last": null
+     }
+    },
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
    }
   },
-  "missing": []
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p039": {
   "verdict": "open",
@@ -1669,6 +2352,7 @@
   ],
   "t_end": 2.23295295,
   "case_dir": "p039",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 2.233 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
   "computability": true,
   "stop_phase": "static_release"
@@ -1683,6 +2367,7 @@
   ],
   "t_end": 2.93053634,
   "case_dir": "p048",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 2.931 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
   "computability": true,
   "stop_phase": "static_release"
@@ -1697,6 +2382,7 @@
   ],
   "t_end": 2.51766347,
   "case_dir": "p050",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 2.518 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
   "computability": true,
   "stop_phase": "static_release"
@@ -1711,6 +2397,7 @@
   ],
   "t_end": 2.44985883,
   "case_dir": "p052",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 2.450 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
   "computability": true,
   "stop_phase": "static_release"
@@ -1725,6 +2412,7 @@
   ],
   "t_end": 3.05,
   "case_dir": "p061",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1739,6 +2427,7 @@
   ],
   "t_end": 2.44268306,
   "case_dir": "p064",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 2.443 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
   "computability": true,
   "stop_phase": "static_release"
@@ -1753,6 +2442,7 @@
   ],
   "t_end": 3.01363636,
   "case_dir": "p068_gpu5",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1767,6 +2457,7 @@
   ],
   "t_end": 3.06144167,
   "case_dir": "p071",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.061 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1781,6 +2472,7 @@
   ],
   "t_end": 3.03636364,
   "case_dir": "p074_gpu3",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.036 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1795,6 +2487,7 @@
   ],
   "t_end": 3.04090909,
   "case_dir": "p082",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1809,6 +2502,7 @@
   ],
   "t_end": 3.05,
   "case_dir": "p083",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1823,6 +2517,7 @@
   ],
   "t_end": 3.04090909,
   "case_dir": "p084_gpu5",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1837,6 +2532,7 @@
   ],
   "t_end": 3.04090909,
   "case_dir": "p088_gpu5",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.041 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1851,6 +2547,7 @@
   ],
   "t_end": 3.04545455,
   "case_dir": "p095_gpu5",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1865,6 +2562,7 @@
   ],
   "t_end": 2.64221361,
   "case_dir": "p097_gpu2",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 2.642 in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)",
   "computability": true,
   "stop_phase": "static_release"
@@ -1879,6 +2577,7 @@
   ],
   "t_end": 3.05,
   "case_dir": "p101_gpu2",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1893,6 +2592,7 @@
   ],
   "t_end": 3.05,
   "case_dir": "p104_gpu5",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1907,6 +2607,7 @@
   ],
   "t_end": 3.01363636,
   "case_dir": "p115_gpu1",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.014 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1921,6 +2622,7 @@
   ],
   "t_end": 3.05,
   "case_dir": "p116_gpu1",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1935,6 +2637,7 @@
   ],
   "t_end": 3.05,
   "case_dir": "p120_gpu2",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1949,6 +2652,7 @@
   ],
   "t_end": 3.02272727,
   "case_dir": "p121_gpu3",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.023 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1963,6 +2667,7 @@
   ],
   "t_end": 3.03181818,
   "case_dir": "p127_gpu1",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.032 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1977,6 +2682,7 @@
   ],
   "t_end": 3.06901574,
   "case_dir": "p128_gpu1",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.069 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -1991,6 +2697,7 @@
   ],
   "t_end": 3.05,
   "case_dir": "p129_gpu2",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -2005,6 +2712,7 @@
   ],
   "t_end": 3.05,
   "case_dir": "p130_gpu2",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
@@ -2019,14 +2727,15 @@
   ],
   "t_end": 3.04545455,
   "case_dir": "p140_gpu1",
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
   "open_reason": "frictional insertion run stopped at t 3.045 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
   "computability": true,
   "stop_phase": "c3_release_impact"
  },
  "_meta": {
   "set_precedence": "per window the highest-ranked set in SETS wins: physio_fric5 (stick-memory law, PI 2026-11-09) supersedes physio_fric3 (production law, NUM-13 artefact); the insertion-stopped scan stays on physio_fric3",
-  "rule": "PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn",
+  "rule": "PI 2026-11-10: posterior 0.45-0.55 mm at the evaluation point = grey (analysis only, never a final design), > 0.55 or any-direction > 1 mm = fail; every row/design carries insertion_process and window_law (PI 2026-11-10 option a); PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn",
   "provisional": "verdicts provisional: physio_fric3 windows carry the FEBio stick-point artefact (NUM-13); PI 2026-11-09 decision 1 recomputes them as physio_fric5 (stick-memory law, same checkpoints) which supersedes fric3 per window here; NUM-17 (0.5 mm grey zone) and the density reference (DECISIONS 2026-11-05 item 8) still open",
-  "generated": "2026-11-09 17:57"
+  "generated": "2026-11-10 14:25"
  }
 }

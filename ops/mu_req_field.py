@@ -9,6 +9,7 @@ usage: python ops/mu_req_field.py   -> results/method/mu_req_field.json + .csv""
 import os, re, json, csv, glob, collections
 E = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); R = os.path.join(os.path.dirname(E), 'biocage_simulation_test_oct2026/human_study/al_v2')
 MU_MAX = 1.0        # PLACEHOLDER (PI to set): above this no surface treatment is credible -> the point is labelled over_max, value kept
+GREY_MU, GREY_MU_TOL = 0.140, 0.005   # PI 2026-11-10 (shortcut tolerance accepted): the 0.5 mm posterior limit maps to mu_req 0.140 (mu_req_vs_fric5.json); designs within +-0.005 are grey-band and get a friction run
 MU_REAL = 0.35      # the coefficient the real-friction check runs with (physio_fric3 / fric5 settings)
 SKIP = {'fsu', 'fsu_info', 'frame', 'cage_npz', 'test', 'physio_windows', 'restart_source', 'restart_env', 'window_min_residual', 'physio_split', 'physio_dynamic', 'physio_rot_rad', 'nonsym', 'contact_type'}
 best = json.load(open(os.path.join(E, 'results/method/split/best_by_design_merged.json')))
@@ -40,6 +41,10 @@ for p in designs:
     row['no_mu_req_reason'] = None if mus else (cls_of.get(p) or 'no tied-screening row')   # e.g. DESIGN/compression-sustained: the compression gate failed before the slip screen
     row['ratio_to_mu_real'] = round(max(mus) / MU_REAL, 3) if mus else None
     f = fric.get(p); row['friction_check'] = f['verdict'] if f else None
+    row['insertion_process'] = (f or {}).get('insertion_process')            # provenance (PI 2026-11-10 option a)
+    row['grey_band'] = row['mu_req_max'] is not None and abs(row['mu_req_max'] - GREY_MU) <= GREY_MU_TOL   # shortcut tolerance (PI 2026-11-10): within 0.140 +- 0.005 -> friction run required
+    row['soft_face_locking'] = bool((f or {}).get('soft_face_locking'))        # PI 2026-11-10 item 2: physio windows fold at the first increments -> outside the design envelope
+    row['friction_fallback'] = any(bool((x or {}).get('fallback')) for x in ((f or {}).get('windows') or {}).values())   # PI 2026-11-10 item 1: production-law read-out + margin
     rows.append(row)
 keys = sorted({k for prm in allprm.values() for k in prm if k not in SKIP})
 hyper = [k for k in keys if len({json.dumps(prm.get(k), sort_keys=True) for prm in allprm.values() if prm}) > 1]

@@ -141,7 +141,7 @@ FRICV = os.path.join(E, 'results/method/fric/verdicts.json'); fricv = {k: v for 
 SHEARV = os.path.join(E, 'results/method/fric/e07_verdicts.json'); _sh = json.load(open(SHEARV)) if os.path.exists(SHEARV) else {}
 shearv, shear_meta = _sh.get('designs', {}), _sh.get('meta', {})
 EXCLUDED = {('radial', 'mix'): 'PI 2026-11-04: radial-gradient mixing-nozzle designs excluded at design level (worst in both the frictional dislocation and the interface-shear gates)'}
-lists = {'both': [], 'comp_pass_slip_open': [], 'open': [], 'fail': []}; classes = {}; fcx = []   # fcx: passes whose friction check exceeded the limit (PI 2026-11-07)
+lists = {'both': [], 'comp_pass_slip_open': [], 'open': [], 'fail': [], 'grey': []}; classes = {}; fcx = []; fgrey = []   # grey (PI 2026-11-10): posterior 0.45-0.55 at the friction read-out - analysis only   # fcx: passes whose friction check exceeded the limit (PI 2026-11-07)
 for p in sorted(set(best) | set(comp) | set(lastj)):
     c = comp.setdefault(p, {'sustained': None, 'windows': {}}); b = best.get(p, {})
     # an UNSTABLE window (2026-11-02): spurious states were dropped AND |M| is not monotonic, i.e. the moment collapsed or
@@ -198,20 +198,23 @@ for p in sorted(set(best) | set(comp) | set(lastj)):
         if not grp: return None
         bad = [q for q in grp if table[q]['verdict'] == 'fail']
         if bad: return dict(table[bad[0]], verdict='fail', reasons=[f'{q}: {x}' for q in bad for x in table[q].get('reasons', [])], pooled=grp)
+        grey = [q for q in grp if table[q]['verdict'] == 'grey']            # PI 2026-11-10: fail > grey > pass when ids are pooled
+        if grey: return dict(table[grey[0]], verdict='grey', grey=[f'{q}: {x}' for q in grey for x in table[q].get('grey', [])], pooled=grp)
         good = [q for q in grp if table[q]['verdict'] == 'pass']
         if good: return dict(table[good[0]], pooled=grp)
         return dict(table.get(p) or table[grp[0]], pooled=grp)
     fv = pooled(fricv); shv = pooled(shearv)
-    g['dislocation_friction'] = dict(verdict=fv['verdict'], reasons=fv.get('reasons', []), open_reason=fv.get('open_reason'), role='check') if fv else dict(verdict='not run', role='check')   # role check: PI 2026-11-07
+    g['dislocation_friction'] = dict(verdict=fv['verdict'], reasons=fv.get('reasons', []), open_reason=fv.get('open_reason'), role='check', grey=fv.get('grey'), soft_face_locking=fv.get('soft_face_locking'),
+                                     fallback={w: x.get('fallback') for w, x in (fv.get('windows') or {}).items() if x.get('fallback')}, insertion_process=fv.get('insertion_process')) if fv else dict(verdict='not run', role='check')   # role check: PI 2026-11-07
     g['interface_shear'] = (dict(verdict=shv['verdict'], reasons=shv.get('reasons', []), open_reason=shv.get('open_reason'), threshold_MPa=shear_meta.get('threshold_MPa'),
                                  provisional=shear_meta.get('provisional'), shear_p99_at_rom={w: x['shear_p99_at_rom'] for w, x in shv.get('windows', {}).items()})
                             if shv else dict(verdict='not run'))
     exc = EXCLUDED.get((fq.get('gradient'), fq.get('fabrication')))
     g['design_rule'] = dict(verdict='excluded', reason=exc, gradient=fq.get('gradient'), fabrication=fq.get('fabrication')) if exc else dict(verdict='pass', gradient=fq.get('gradient'), fabrication=fq.get('fabrication'))
     def move(to, cls, reason):
-        for k in ('both', 'comp_pass_slip_open', 'open', 'fail'):
+        for k in ('both', 'comp_pass_slip_open', 'open', 'fail', 'grey'):
             if p in lists[k]: lists[k].remove(p)
-        lists[to].append(p); c['verdict'] = 'fail' if to == 'fail' else ('pass' if to == 'both' else 'open'); c['class'] = cls; c['reason'] = reason
+        lists[to].append(p); c['verdict'] = 'fail' if to == 'fail' else ('pass' if to == 'both' else ('grey' if to == 'grey' else 'open')); c['class'] = cls; c['reason'] = reason
     if c['verdict'] != 'fail':
         # PI 2026-11-05 (item 2): the design-level exclusion is applied FIRST, so an excluded concept is not counted as evidence
         # in the dislocation / shear statistics (before 2026-11-05 it was the last cause: 11 radial-mix designs sat under
@@ -227,6 +230,9 @@ for p in sorted(set(best) | set(comp) | set(lastj)):
         elif c['verdict'] == 'pass' and p in lists['both']:
             if not fv:
                 move('open', '[觀測]/friction-not-run', 'tied screening passed; no frictional run (gate 4 / interface shear not evaluated)')
+            elif fv['verdict'] == 'open' and fv.get('soft_face_locking'):
+                # PI 2026-11-10 item 2: outside the physio-window envelope; the tied mu_req verdict stays in gates.tied_screening
+                move('fail', 'DESIGN/soft-face-locking', '生理窗口算不出：軟面在 100 N 跟隨壓力下鎖死 (windows ' + ', '.join(fv['soft_face_locking']) + '); tied mu_req verdict kept in gates.tied_screening')
             elif fv['verdict'] == 'open':
                 move('open', '[多元]/friction-computability' if fv.get('computability') else '[觀測]/friction-window', 'tied screening passed; gate 4: ' + (fv.get('open_reason') or ''))
             elif not shv or shv['verdict'] == 'open':
@@ -234,11 +240,19 @@ for p in sorted(set(best) | set(comp) | set(lastj)):
     if fv and fv['verdict'] == 'fail':
         c['friction_check'] = dict(verdict='exceeded', provisional=True, reasons=fv['reasons'], rule='PI 2026-11-07: check, not a gate')
         if c['verdict'] == 'pass': fcx.append(p)
+    elif fv and fv['verdict'] == 'grey':
+        # PI 2026-11-10: a friction read-out in the posterior grey zone (0.45-0.55 mm) is recorded as grey - analysis only, never a final design;
+        # a tied PASS whose friction check is grey leaves class PASS so that no grey design is counted as a pass
+        c['friction_check'] = dict(verdict='grey', note='灰區：僅供分析，不得作為 final design', reasons=fv.get('grey', []), rule='PI 2026-11-10')
+        if c['verdict'] == 'pass' and p in lists['both']: move('grey', 'GREY/friction-posterior-0.45-0.55', '灰區：摩擦 run 後方平移 0.45-0.55 mm，僅供分析，不得作為 final design; ' + '; '.join(fv.get('grey', []))); fgrey.append(p)
+    if fv: c['insertion_process'] = fv.get('insertion_process'); c['window_law'] = {w: x.get('window_law') for w, x in (fv.get('windows') or {}).items()}   # provenance (PI 2026-11-10 option a)
+    if fv and any((x or {}).get('fallback') for x in (fv.get('windows') or {}).values()):
+        c['friction_fallback'] = {w: x['fallback'] for w, x in fv['windows'].items() if x.get('fallback')}   # PI 2026-11-10 item 1: production-law read-out + 0.043 mm margin
     classes.setdefault(c['class'], []).append(p)
 json.dump(best, open(os.path.join(OUT, 'best_by_design_merged.json'), 'w'), indent=1)
 json.dump(comp, open(os.path.join(OUT, 'comp_by_design_merged.json'), 'w'), indent=1)
 json.dump(lists, open(os.path.join(OUT, 'verdict_lists_merged.json'), 'w'), indent=1)
-json.dump(dict(classes=classes, rejected_windows=rejected, friction_check_exceeded=sorted(fcx)), open(os.path.join(OUT, 'verdict_classes_merged.json'), 'w'), indent=1)
+json.dump(dict(classes=classes, rejected_windows=rejected, friction_check_exceeded=sorted(fcx), friction_grey=sorted(fgrey), grey_note='GREY/*: 僅供分析，不得作為 final design (PI 2026-11-10)'), open(os.path.join(OUT, 'verdict_classes_merged.json'), 'w'), indent=1)
 bo = [p for p in lists['both']]
 mu = max((best[p][w]['mu_squeeze'] for p in bo for w in WIN), default=None)
 sl = max((best[p][w]['one_face_slip_bound_mm'] for p in bo for w in WIN), default=None)

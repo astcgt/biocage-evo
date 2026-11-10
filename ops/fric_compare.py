@@ -15,7 +15,11 @@ R = '/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026
 OUT = os.path.join(E, 'results/method/fric'); os.makedirs(OUT, exist_ok=True)
 WIN = ('flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right')
 ended = lambda log: os.path.exists(log) and any(k in open(log, errors='ignore').read()[-4000:] for k in ('N O R M A L', 'E R R O R'))
-SETS = ('physio_fric', 'physio_fric2', 'physio_fric3', 'physio_fric5')   # 2026-11-09 PI decision 1: fric5 = fric3 windows recomputed from the same checkpoints with the stick-memory law; it SUPERSEDES fric3 per window (RANK)
+SETS = ('physio_fric', 'physio_fric2', 'physio_fric3', 'physio_fric5', 'physio_relG')   # physio_relG (PI 2026-11-10, issue 2 option a): process-G insertion of the designs whose production insertion stopped; different designs, so it supersedes nothing in practice
+PROCESS = {s: 'production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)' for s in ('physio_fric', 'physio_fric2', 'physio_fric3', 'physio_fric5')}
+PROCESS['physio_relG'] = 'G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)'
+WINDOW_LAW = {'physio_fric': 'production', 'physio_fric2': 'production', 'physio_fric3': 'production', 'physio_fric5': 'stick memory (patch 6+7)', 'physio_relG': 'stick memory (patch 6+7)'}
+GREY_LO, GREY_HI = 0.45, 0.55   # PI 2026-11-10: posterior translation in [0.45, 0.55] mm at the evaluation point is GREY - analysis only, never a final design   # 2026-11-09 PI decision 1: fric5 = fric3 windows recomputed from the same checkpoints with the stick-memory law; it SUPERSEDES fric3 per window (RANK)
 RANK = {s: i for i, s in enumerate(SETS)}     # fric3: flexion + extension only, every passing design (PI 2026-11-03)             # 2026-11-03: second pass (physrotFr2_, amplitudes retargeted from physio_fric) added
 wds = [w for s_ in SETS for w in sorted(glob.glob(R + s_ + '/p*/w_*')) if ended(w + '/case.log') and os.path.exists(w + '/case.xplt')]
 
@@ -36,7 +40,7 @@ for f in sorted(files):
         if not isinstance(r, dict): rows.append(dict(set=set_, design=p, window=wn, note=r)); continue
         t = tied.get(p, {}).get(wn)
         u = r['cage_translation_tied_mm']; horiz = math.hypot(u[0], u[1])
-        rows.append(dict(set=set_, design=p, case_dir=dd, window=wn, fric_reached=r['target_reached'], fric_M=r['M_at_target'], fric_translation_mm=horiz, fric_posterior_mm=-u[0],
+        rows.append(dict(set=set_, design=p, case_dir=dd, window=wn, insertion_process=PROCESS.get(set_), window_law=WINDOW_LAW.get(set_), fric_reached=r['target_reached'], fric_M=r['M_at_target'], fric_translation_mm=horiz, fric_posterior_mm=-u[0],
                          window_check=r.get('window_check'),
                          fric_mu_from_tractions=r['mu_squeeze'], tied_mu_squeeze=t['mu_squeeze'] if t else None, tied_slip_bound_mm=t['one_face_slip_bound_mm'] if t else None,
                          tied_translation_mm=math.hypot(*t['cage_translation_tied_mm'][:2]) if t else None, tied_source=t['source'] if t else None))
@@ -76,9 +80,28 @@ LIM_ANY, LIM_POST = 1.0, 0.5
 REQ = ('flexion', 'extension')                              # physio_fric3 windows (PI 2026-11-03)
 best = {}
 for r in rows:
-    if 'note' in r: continue
+    # QA audit 2026-11-10 不符 #1: a window of a higher-ranked set that produced NO e04 result (note 'missing': the run died before any valid
+    # state) must still occupy its (design, window) slot, otherwise the superseded production-law row silently wins (p036 / p148 flexion
+    # passed on physio_fric3 values without flag or margin). The placeholder is unusable; the PI 2026-11-10 fallback (below) may replace it.
+    if 'note' in r: r = dict(r, fric_reached=False, rom_reached=False, fric_M=None, fric_translation_mm=None, fric_posterior_mm=None, u_h_at_rom=None, post_at_rom=None, placeholder=True)
     k = (r['design'], r['window'])
     if k not in best or RANK[r['set']] > RANK[best[k]['set']]: best[k] = r     # later set in SETS wins (fric5 over fric3), not string order
+# PI 2026-11-10 item 1 (fallback, thin cages): when the stick-memory-law window (physio_fric5) stopped before its evaluation point and the
+# production-law window (physio_fric3) of the same design and window reached one, the verdict uses the production-law read-out PLUS the
+# p90 of the law-change shift (fric3_to_fric5_shift.json abs_p90, 0.043 mm) on every translation, flagged 'fallback' with source and margin.
+_shift = os.path.join(OUT, 'fric3_to_fric5_shift.json')
+FALLBACK_MARGIN = round(json.load(open(_shift)).get('abs_p90', 0.043), 4) if os.path.exists(_shift) else 0.043
+byset = {(r['set'], r['design'], r['window']): r for r in rows if 'note' not in r}
+for k, r in list(best.items()):
+    if r.get('rom_reached') or r['fric_reached'] or r['set'] != 'physio_fric5': continue
+    f3 = byset.get(('physio_fric3',) + k)
+    if f3 and (f3.get('rom_reached') or f3['fric_reached']):
+        fb = dict(f3)
+        for kk in ('fric_translation_mm', 'fric_posterior_mm', 'u_h_at_rom', 'post_at_rom'):
+            if fb.get(kk) is not None: fb[kk] = fb[kk] + FALLBACK_MARGIN
+        fb['fallback'] = dict(source='physio_fric3 (production law)', margin_mm=FALLBACK_MARGIN, rule='PI 2026-11-10 item 1: production-law read-out + p90 law-change shift, flagged',
+                              superseded=dict(set=r['set'], case_dir=r.get('case_dir'), t_last=(r.get('window_check') or {}).get('t_last')))
+        best[k] = fb
 verd = {}
 for (p, wn), r in sorted(best.items()):
     d = verd.setdefault(p, dict(verdict=None, reasons=[], windows={}, missing=[]))
@@ -88,15 +111,21 @@ for (p, wn), r in sorted(best.items()):
     # whenever the window transmits it; ONLY a window that never reaches 1.5 N m is judged at the intact-ROM state. Before
     # 2026-11-05 both points were judged when reached (every fail then came from the ROM point).
     ev_point = '1.5Nm' if r['fric_reached'] else ('ROM' if r.get('rom_reached') else None)
-    if ev_point == '1.5Nm' and (r['fric_translation_mm'] > LIM_ANY or r['fric_posterior_mm'] > LIM_POST): bad.append(f"{wn}@1.5Nm u_h {r['fric_translation_mm']:.2f} post {r['fric_posterior_mm']:.2f}")
-    if ev_point == 'ROM' and (r['u_h_at_rom'] > LIM_ANY or r['post_at_rom'] > LIM_POST): bad.append(f"{wn}@ROM u_h {r['u_h_at_rom']:.2f} post {r['post_at_rom']:.2f}")
+    # PI 2026-11-10 grey zone: posterior in [GREY_LO, GREY_HI] is grey (analysis only, not a final design), posterior > GREY_HI or any-direction
+    # translation > LIM_ANY is a fail; the strict 0.5 mm line (LIM_POST) is kept as the nominal limit inside the grey band.
+    grey = []
+    uh, post = (r['fric_translation_mm'], r['fric_posterior_mm']) if ev_point == '1.5Nm' else ((r['u_h_at_rom'], r['post_at_rom']) if ev_point == 'ROM' else (None, None))
+    if ev_point and (uh > LIM_ANY or post > GREY_HI): bad.append(f'{wn}@{ev_point} u_h {uh:.2f} post {post:.2f}')
+    elif ev_point and GREY_LO <= post <= GREY_HI: grey.append(f'{wn}@{ev_point} post {post:.3f} in grey zone [{GREY_LO}, {GREY_HI}]')
     d['windows'][wn] = dict(set=r['set'], case_dir=r.get('case_dir'), usable=usable, eval_point=ev_point, monotonic=(r.get('window_check') or {}).get('monotonic'),
                             u_h_at_rom=r.get('u_h_at_rom'), post_at_rom=r.get('post_at_rom'), u_h_at_1p5Nm=r.get('fric_translation_mm'), post_at_1p5Nm=r.get('fric_posterior_mm'),
-                            rot_max_deg=r.get('rot_max_deg'), bad=bad)
-    d['reasons'] += bad
+                            rot_max_deg=r.get('rot_max_deg'), bad=bad, grey=grey, fallback=r.get('fallback'), insertion_process=r.get('insertion_process'), window_law=r.get('window_law'))
+    d['reasons'] += bad; d.setdefault('grey', []).extend(grey)
 for p, d in verd.items():
     d['missing'] = [w for w in REQ if not d['windows'].get(w, {}).get('usable')]
-    d['verdict'] = 'fail' if d['reasons'] else ('open' if d['missing'] else 'pass')
+    d['verdict'] = 'fail' if d['reasons'] else ('open' if d['missing'] else ('grey' if d.get('grey') else 'pass'))
+    if d['verdict'] == 'grey': d['grey_note'] = '灰區：僅供分析，不得作為 final design (PI 2026-11-10; posterior 0.45-0.55 mm)'
+    procs = {w.get('insertion_process') for w in d['windows'].values() if w.get('insertion_process')}; d['insertion_process'] = procs.pop() if len(procs) == 1 else (sorted(procs) if procs else None)
     if d['verdict'] == 'open':
         died = []                                   # 2026-11-04: a required window that STOPPED (ERROR) before an evaluation point is a computability gap
         for w in d['missing']:
@@ -105,8 +134,14 @@ for p, d in verd.items():
             if x is not d['windows'].get(w): x = dict(x or {}, rot_max_deg=0.0)
             if lg and os.path.exists(lg) and 'E R R O R' in open(lg, errors='ignore').read()[-4000:]:
                 died.append(f"{w} stopped at {x.get('rot_max_deg') or 0:.1f} deg (negative jacobians)")
+                # PI 2026-11-10 item 2: a window that folds in the first increments (last time < 3.52, > 100 negative-Jacobian warnings) under the
+                # reference law - and, where tested, under the production law too (p068 control) - is the soft cage face locking under the
+                # 100 N follower load: not computable in any friction law, the design is outside the physio-window envelope
+                _t = open(lg, errors='ignore').read(); _tt = re.findall(r'Nonlinear solution status: time= *([0-9.]+)', _t)
+                if _tt and float(_tt[-1]) < 3.52 and _t.count('Negative jacobian') > 100: d.setdefault('soft_face_locking', []).append(w)
         d['open_reason'] = ('; '.join(died) + '; ' if died else '') + 'window(s) ' + ', '.join(d['missing']) + ' did not reach the intact ROM or 1.5 N m (or missing)'
         if died: d['computability'] = True
+        if d.get('soft_face_locking'): d['soft_face_locking_note'] = '生理窗口算不出：軟面在 100 N 跟隨壓力下鎖死 (PI 2026-11-10 item 2; windows ' + ', '.join(d['soft_face_locking']) + ')'
 # designs attempted in physio_fric3 whose insertion run stopped before the windows (largest final time over the run dirs)
 import re
 for cdir in sorted(glob.glob(R + 'physio_fric3/p*')):
@@ -116,10 +151,10 @@ for cdir in sorted(glob.glob(R + 'physio_fric3/p*')):
     if 'E R R O R' not in txt[-4000:] or t_end == 0.0: continue
     prev = verd.get(p, {}).get('t_end', -1)
     if t_end > prev:
-        verd[p] = dict(verdict='open', reasons=[], windows={}, missing=list(REQ), t_end=t_end, case_dir=os.path.basename(cdir),
+        verd[p] = dict(verdict='open', reasons=[], windows={}, missing=list(REQ), t_end=t_end, case_dir=os.path.basename(cdir), insertion_process='production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)',
                        open_reason=(f'frictional insertion run stopped at t {t_end:.3f} in the static release step, before the follower load (platform problem, cluster 1 of DECISIONS 2026-11-03 22:30; not the C3 release impact)' if t_end < 3.0 else
                                     f'frictional insertion run stopped at t {t_end:.3f} in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)'), computability=True, stop_phase='static_release' if t_end < 3.0 else 'c3_release_impact')
-verd['_meta'] = dict(set_precedence='per window the highest-ranked set in SETS wins: physio_fric5 (stick-memory law, PI 2026-11-09) supersedes physio_fric3 (production law, NUM-13 artefact); the insertion-stopped scan stays on physio_fric3', rule='PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn',
+verd['_meta'] = dict(set_precedence='per window the highest-ranked set in SETS wins: physio_fric5 (stick-memory law, PI 2026-11-09) supersedes physio_fric3 (production law, NUM-13 artefact); the insertion-stopped scan stays on physio_fric3', rule='PI 2026-11-10: posterior 0.45-0.55 mm at the evaluation point = grey (analysis only, never a final design), > 0.55 or any-direction > 1 mm = fail; every row/design carries insertion_process and window_law (PI 2026-11-10 option a); PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn',
                      provisional='verdicts provisional: physio_fric3 windows carry the FEBio stick-point artefact (NUM-13); PI 2026-11-09 decision 1 recomputes them as physio_fric5 (stick-memory law, same checkpoints) which supersedes fric3 per window here; NUM-17 (0.5 mm grey zone) and the density reference (DECISIONS 2026-11-05 item 8) still open', generated=__import__('time').strftime('%Y-%m-%d %H:%M'))
 json.dump(verd, open(os.path.join(OUT, 'verdicts.json'), 'w'), indent=1)
 import collections as _c; print('\nfriction verdicts (PI rule 2026-11-03 / 2026-11-05, no pass by absence 2026-11-04):', dict(_c.Counter(v['verdict'] for p, v in verd.items() if p != '_meta')))
@@ -131,8 +166,10 @@ for r in rows:
     print(f"{r['set']:12s} {r['design']:6s} {r['window']:9s} {str(r['fric_reached']):7s} {abs(r['fric_M'] or 0):6.0f} {r['fric_translation_mm']:9.3f} {r['fric_posterior_mm']:9.3f} "
           f"{(r['tied_slip_bound_mm'] if r['tied_slip_bound_mm'] is not None else float('nan')):10.3f} {(r['tied_mu_squeeze'] if r['tied_mu_squeeze'] is not None else float('nan')):8.3f}  "
           f"inv {wc.get('n_invalid')} dyn {wc.get('n_dyn')} mono {wc.get('monotonic')} complete {wc.get('complete')}  | at intact ROM: {'reached' if r.get('rom_reached') else 'NOT reached'} rot_max {r.get('rot_max_deg', float('nan')):.1f} deg u_h {r.get('u_h_at_rom', float('nan')):.3f} post {r.get('post_at_rom', float('nan')):.3f}")
-ok = [r for r in rows if 'note' not in r and r['fric_reached'] and (r.get('window_check') or {}).get('monotonic', True)]
-rom = [r for r in rows if 'note' not in r and r.get('rom_reached')]
+# QA audit 2026-11-10 不符 #2: the summary counts run over the per-window WINNERS (best), not over all rows - the same window used to be
+# counted once per set (89 = fric2 14 + fric3 36 + fric5 39)
+ok = [r for r in best.values() if r.get('fric_reached') and (r.get('window_check') or {}).get('monotonic', True)]
+rom = [r for r in best.values() if r.get('rom_reached')]
 if rom:
     w2 = max(rom, key=lambda r: r['u_h_at_rom']); print(f"{len(rom)} windows reached the intact ROM; largest cage translation there {w2['u_h_at_rom']:.3f} mm ({w2['set']} {w2['design']} {w2['window']}); all <= 1 mm: {all(r['u_h_at_rom'] <= 1.0 for r in rom)}; posterior <= 0.5 mm: {all(r['post_at_rom'] <= 0.5 for r in rom)}")
 if ok:
