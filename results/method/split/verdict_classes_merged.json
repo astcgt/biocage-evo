@@ -146,12 +146,10 @@
    "p039",
    "p064",
    "p082",
-   "p083",
    "p088",
-   "p120",
    "p121"
   ],
-  "DESIGN/not-computable-both-laws": [
+  "[\u6578\u503c]/not-computable-both-laws": [
    "p048",
    "p115"
   ],
@@ -171,7 +169,9 @@
    "p145"
   ],
   "PASS": [
-   "p061"
+   "p061",
+   "p083",
+   "p120"
   ]
  },
  "rejected_windows": {},

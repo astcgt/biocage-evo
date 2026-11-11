@@ -66,16 +66,21 @@ for r in sorted(out, key=lambda r: (r['design'], r['window'])):
 # (stricter than gate 4, which also accepts a window that reached 1.5 N m: implementation choice, PI sign-off pending, QA 2026-11-04);
 # a design passes only if both windows count and neither exceeds the threshold; a missing / unreached window leaves it open. No pass by absence.
 THR = 3.0; REQ = ('flexion', 'extension')
-best = {}
-for r in out:                                    # per (design, window) the highest-ranked set wins (fric5 over fric3), as in fric_compare
-    k = (r['design'], r['window'])
-    if k not in best or RANK[r['set']] > RANK[best[k]['set']]: best[k] = r
+best = {}; sets_of = {}
+for r in out:                                    # per (design, window) the highest-ranked set THAT REACHED THE INTACT ROM wins (fric5 over fric3), as in fric_compare
+    k = (r['design'], r['window']); sets_of.setdefault(k, set()).add(r['set']); cur = best.get(k)
+    # PI 2026-11-11 decision 6: a fallback window (production-law restart of the same checkpoint - physio_relG_pl for process G, physio_fric3 where the
+    # physio_fric5 window stopped) counts in the shear gate when the stick-law window did not reach the intact ROM; it is flagged below. Before, the
+    # higher-ranked stick-law row (not at ROM) blocked the slot and the design stayed open.
+    if cur is None or (bool(r.get('rom_reached')), RANK[r['set']]) > (bool(cur.get('rom_reached')), RANK[cur['set']]): best[k] = r
 ev = {}
 for r in [best[k] for k in sorted(best)]:
     d = ev.setdefault(r['design'], dict(verdict=None, reasons=[], windows={}, missing=[]))
     if not r.get('rom_reached'): continue
     v = max(x for x in (r.get('horizontal_shear_p99_at_rom'), r.get('vertical_shear_p99_at_rom')) if x is not None)
+    k = (r['design'], r['window']); fb = r['set'] == 'physio_relG_pl' or (r['set'] == 'physio_fric3' and 'physio_fric5' in sets_of[k])   # production-law window used because the stick-law one did not reach the ROM
     d['windows'][r['window']] = dict(set=r['set'], case_dir=r['case_dir'], shear_p99_at_rom=round(v, 3), horizontal=r.get('horizontal_shear_p99_at_rom'), vertical=r.get('vertical_shear_p99_at_rom'),
+                                     fallback=fb, **({'fallback_note': 'PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only'} if fb else {}),
                                      peel_max_at_rom=max(x for x in (r.get('horizontal_peel_max_at_rom'), r.get('vertical_peel_max_at_rom')) if x is not None))
     if v > THR: d['reasons'].append(f"{r['window']}@ROM shear p99 {v:.1f} MPa > {THR}")
 for p, d in ev.items():
@@ -83,7 +88,7 @@ for p, d in ev.items():
     d['verdict'] = 'fail' if d['reasons'] else ('open' if d['missing'] else 'pass')
     if d['verdict'] == 'open': d['open_reason'] = 'window(s) ' + ', '.join(d['missing']) + ' did not reach the intact ROM (or missing)'
 meta = dict(threshold_MPa=THR, metric='soft-side p99 interface shear at the intact-ROM state, max of layer and band-boundary interfaces, flexion and extension (frictional runs; physio_fric5 stick-memory windows supersede physio_fric3 per design and window, PI 2026-11-09 decision 1)',
-            provisional='PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface', decided='PI 2026-11-04')
+            provisional='PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface', decided='PI 2026-11-04; PI 2026-11-11 decision 6: fallback (production-law) windows count, flagged fallback=True')
 json.dump(dict(meta=meta, designs=ev), open(os.path.join(E, 'results/method/fric/e07_verdicts.json'), 'w'), indent=1)
 import collections
 print('interface-shear verdicts (3 MPa, provisional):', dict(collections.Counter(d['verdict'] for d in ev.values())))
