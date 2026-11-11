@@ -15,7 +15,7 @@ R = '/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026
 OUT = os.path.join(E, 'results/method/fric'); os.makedirs(OUT, exist_ok=True)
 WIN = ('flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right')
 ended = lambda log: os.path.exists(log) and any(k in open(log, errors='ignore').read()[-4000:] for k in ('N O R M A L', 'E R R O R'))
-SETS = ('physio_fric', 'physio_fric2', 'physio_fric3', 'physio_fric5', 'physio_relG_pl', 'physio_relG')   # physio_relG (PI 2026-11-10, issue 2 option a): process-G insertion of the designs whose production insertion stopped; different designs, so it supersedes nothing in practice
+SETS = ('physio_fric', 'physio_fric2', 'physio_fric3', 'physio_fric5', 'physio_relG_pl', 'physio_relG', 'physio_fric5r', 'physio_relGr')   # physio_relG (PI 2026-11-10, issue 2 option a): process-G insertion of the designs whose production insertion stopped; different designs, so it supersedes nothing in practice
 PROCESS = {s: 'production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)' for s in ('physio_fric', 'physio_fric2', 'physio_fric3', 'physio_fric5')}
 PROCESS['physio_relG'] = 'G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)'
 WINDOW_LAW = {'physio_fric': 'production', 'physio_fric2': 'production', 'physio_fric3': 'production', 'physio_fric5': 'stick memory (patch 6+7)', 'physio_relG': 'stick memory (patch 6+7)'}
@@ -23,6 +23,13 @@ WINDOW_LAW = {'physio_fric': 'production', 'physio_fric2': 'production', 'physio
 # production friction law (BIOCAGE_STICK_MEMORY=0). Fallback SOURCE only: it never wins a (design, window) slot; an unusable physio_relG window
 # that did not fold in the first increments takes its read-out + margin, flagged (PI 2026-11-10 item 1 extended to process G).
 PROCESS['physio_relG_pl'] = PROCESS['physio_relG']; WINDOW_LAW['physio_relG_pl'] = 'production'
+# physio_fric5r / physio_relGr (PI 2026-11-11 decision 1a, route E): the physio_fric5 / physio_relG windows restarted from the SAME checkpoints with the
+# window drive as a RELATIVE prescribed rotation of the C3 pot (h30 window_drive_mode rigid_relative; no rigid joint, no activation snap, Rx/Rz held
+# relative 0); stick-memory law unchanged. Highest rank: they supersede the joint-driven windows per (design, window). Drive provenance in WINDOW_DRIVE.
+PROCESS['physio_fric5r'] = PROCESS['physio_fric5']; PROCESS['physio_relGr'] = PROCESS['physio_relG']
+WINDOW_LAW['physio_fric5r'] = WINDOW_LAW['physio_relGr'] = 'stick memory (patch 6+7)'
+WINDOW_DRIVE = {s: 'absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: G ~1.16 deg, production 0.3-0.4 deg)' for s in SETS}
+WINDOW_DRIVE['physio_fric5r'] = WINDOW_DRIVE['physio_relGr'] = 'relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)'
 FALLBACK_SRC = {'physio_fric5': 'physio_fric3', 'physio_relG': 'physio_relG_pl'}   # stick-law set -> production-law set of the same checkpoints
 FALLBACK_ONLY = ('physio_relG_pl',)                                                 # sets that exist only as a fallback source
 LOCK_T, LOCK_NJ = 3.52, 100   # first-increment pattern (last converged time < 3.52, > 100 negative-Jacobian warnings). 2026-11-11: noted only (first_increment_pattern), no veto - the identical decks p050 / p068 / p084 / p127 differ in this outcome (run-to-run variability, not a design property)
@@ -44,10 +51,10 @@ rows = []
 for f in sorted(files):
     j = json.load(open(f)); parts = os.path.basename(f).split('__'); set_ = parts[0] if len(parts) == 3 else 'physio_fric'; dd = parts[-2]; p = dd[:4]
     for wn, r in j['windows'].items():
-        if not isinstance(r, dict): rows.append(dict(set=set_, design=p, case_dir=dd, window=wn, note=r, insertion_process=PROCESS.get(set_), window_law=WINDOW_LAW.get(set_))); continue   # case_dir kept (2026-11-10 17:xx): the soft-face-locking scan reads this window's log
+        if not isinstance(r, dict): rows.append(dict(set=set_, design=p, case_dir=dd, window=wn, note=r, insertion_process=PROCESS.get(set_), window_law=WINDOW_LAW.get(set_), window_drive=WINDOW_DRIVE.get(set_))); continue   # case_dir kept (2026-11-10 17:xx): the soft-face-locking scan reads this window's log
         t = tied.get(p, {}).get(wn)
         u = r['cage_translation_tied_mm']; horiz = math.hypot(u[0], u[1])
-        rows.append(dict(set=set_, design=p, case_dir=dd, window=wn, insertion_process=PROCESS.get(set_), window_law=WINDOW_LAW.get(set_), fric_reached=r['target_reached'], fric_M=r['M_at_target'], fric_translation_mm=horiz, fric_posterior_mm=-u[0],
+        rows.append(dict(set=set_, design=p, case_dir=dd, window=wn, insertion_process=PROCESS.get(set_), window_law=WINDOW_LAW.get(set_), window_drive=WINDOW_DRIVE.get(set_), fric_reached=r['target_reached'], fric_M=r['M_at_target'], fric_translation_mm=horiz, fric_posterior_mm=-u[0],
                          window_check=r.get('window_check'),
                          fric_mu_from_tractions=r['mu_squeeze'], tied_mu_squeeze=t['mu_squeeze'] if t else None, tied_slip_bound_mm=t['one_face_slip_bound_mm'] if t else None,
                          tied_translation_mm=math.hypot(*t['cage_translation_tied_mm'][:2]) if t else None, tied_source=t['source'] if t else None))
