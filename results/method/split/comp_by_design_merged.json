@@ -55,6 +55,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {
      "flexion": {
       "source": "physio_fric3 (production law, same checkpoint)",
@@ -227,6 +229,10 @@
      "p100: extension@ROM post 0.500 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": [
+     "replicate-inconsistent"
+    ],
+    "verdict_source": null,
     "fallback": {
      "extension": {
       "source": "physio_fric3 (production law, same checkpoint)",
@@ -430,6 +436,8 @@
      "p113: extension@ROM post 0.485 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -615,6 +623,8 @@
      "p145: extension@ROM post 0.549 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -780,6 +790,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {
      "flexion": {
       "source": "physio_relG_pl (production law, same checkpoint)",
@@ -1023,6 +1035,8 @@
      "p072: extension@ROM post 0.476 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -1179,6 +1193,8 @@
      "p075: extension@ROM post 0.506 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -1453,6 +1469,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -1538,6 +1556,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {
      "flexion": {
       "source": "physio_relG_pl (production law, same checkpoint)",
@@ -1707,6 +1727,10 @@
      "p100: extension@ROM post 0.500 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": [
+     "replicate-inconsistent"
+    ],
+    "verdict_source": null,
     "fallback": {
      "extension": {
       "source": "physio_fric3 (production law, same checkpoint)",
@@ -1878,6 +1902,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {
      "flexion": {
       "source": "physio_fric3 (production law, same checkpoint)",
@@ -1990,6 +2016,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -2137,6 +2165,8 @@
      "p145: extension@ROM post 0.549 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -2354,6 +2384,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -2435,6 +2467,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -2598,6 +2632,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -2684,6 +2720,8 @@
      "p135: extension@ROM post 0.472 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -2925,6 +2963,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -3012,6 +3052,8 @@
     "soft_face_locking": [
      "flexion"
     ],
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -3181,6 +3223,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -3326,6 +3370,10 @@
      "p100: extension@ROM post 0.500 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": [
+     "replicate-inconsistent"
+    ],
+    "verdict_source": null,
     "fallback": {
      "extension": {
       "source": "physio_fric3 (production law, same checkpoint)",
@@ -3568,6 +3616,8 @@
     "soft_face_locking": [
      "flexion"
     ],
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {
      "extension": {
       "source": "physio_relG_pl (production law, same checkpoint)",
@@ -3813,6 +3863,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -3988,6 +4040,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -4129,6 +4183,8 @@
     "soft_face_locking": [
      "flexion"
     ],
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -4290,6 +4346,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -4408,6 +4466,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -4550,6 +4610,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {
      "extension": {
       "source": "physio_relG_pl (production law, same checkpoint)",
@@ -4743,6 +4805,8 @@
      "p143: extension@ROM post 0.479 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -4944,6 +5008,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -5025,6 +5091,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -5477,6 +5545,8 @@
      "p143: extension@ROM post 0.479 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -5640,6 +5710,8 @@
      "p072: extension@ROM post 0.476 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -5755,6 +5827,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -5845,6 +5919,8 @@
     "soft_face_locking": [
      "flexion"
     ],
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -5984,6 +6060,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {
      "extension": {
       "source": "physio_relG_pl (production law, same checkpoint)",
@@ -6182,6 +6260,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -6530,6 +6610,8 @@
      "flexion",
      "extension"
     ],
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -6610,6 +6692,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -6697,6 +6781,8 @@
      "p114: extension@ROM post 0.547 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -6789,6 +6875,8 @@
      "p081: extension@ROM post 0.482 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -6995,6 +7083,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -7178,7 +7268,14 @@
     "open_reason": null,
     "role": "check",
     "grey": [],
-    "soft_face_locking": null,
+    "soft_face_locking": [
+     "flexion",
+     "extension"
+    ],
+    "numerical_flags": [
+     "replicate-not-reproduced"
+    ],
+    "verdict_source": "replicate p068 (PI 2026-11-11 decision 4: same deck + same procedure = one design result; own result under own)",
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -7265,6 +7362,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -7407,6 +7506,8 @@
      "flexion",
      "extension"
     ],
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -7519,6 +7620,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -7915,6 +8018,8 @@
      "p075: extension@ROM post 0.506 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -8190,6 +8295,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -8358,6 +8465,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -8439,6 +8548,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -8618,7 +8729,14 @@
     "open_reason": null,
     "role": "check",
     "grey": [],
-    "soft_face_locking": null,
+    "soft_face_locking": [
+     "flexion",
+     "extension"
+    ],
+    "numerical_flags": [
+     "replicate-not-reproduced"
+    ],
+    "verdict_source": "replicate p068 (PI 2026-11-11 decision 4: same deck + same procedure = one design result; own result under own)",
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -8733,6 +8851,8 @@
      "p133: extension@ROM post 0.488 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -8827,6 +8947,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -8966,6 +9088,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {
      "flexion": {
       "source": "physio_relG_pl (production law, same checkpoint)",
@@ -9133,6 +9257,8 @@
      "p143: extension@ROM post 0.479 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -9316,6 +9442,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -9631,7 +9759,14 @@
     "open_reason": null,
     "role": "check",
     "grey": [],
-    "soft_face_locking": null,
+    "soft_face_locking": [
+     "flexion",
+     "extension"
+    ],
+    "numerical_flags": [
+     "replicate-not-reproduced"
+    ],
+    "verdict_source": "replicate p068 (PI 2026-11-11 decision 4: same deck + same procedure = one design result; own result under own)",
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -9718,6 +9853,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -9863,6 +10000,8 @@
      "p140: extension@ROM post 0.483 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -10017,6 +10156,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -10170,6 +10311,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -10415,6 +10558,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {
      "flexion": {
       "source": "physio_fric3 (production law, same checkpoint)",
@@ -10527,6 +10672,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {
      "extension": {
       "source": "physio_relG_pl (production law, same checkpoint)",
@@ -10797,6 +10944,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -10886,6 +11035,8 @@
      "p026: extension@ROM post 0.453 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -11133,6 +11284,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -11315,6 +11468,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -11399,6 +11554,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -11486,6 +11643,8 @@
      "p076: extension@ROM post 0.477 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -11640,7 +11799,14 @@
     "open_reason": null,
     "role": "check",
     "grey": [],
-    "soft_face_locking": null,
+    "soft_face_locking": [
+     "flexion",
+     "extension"
+    ],
+    "numerical_flags": [
+     "replicate-not-reproduced"
+    ],
+    "verdict_source": "replicate p068 (PI 2026-11-11 decision 4: same deck + same procedure = one design result; own result under own)",
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
@@ -11793,6 +11959,8 @@
     "role": "check",
     "grey": [],
     "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -12045,6 +12213,8 @@
     "soft_face_locking": [
      "flexion"
     ],
+    "numerical_flags": null,
+    "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },

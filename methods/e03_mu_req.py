@@ -117,6 +117,26 @@ def filter_rows(rows, t0, Mt, dyn=None, Fref=None):
     return acc, invalid
 
 
+def drive_mode(cd):
+    """2026-11-11 (PI decision 1a, route E): w_<win>/window_drive.json {window_drive_mode: 'rigid_relative'} marks a window driven by a RELATIVE
+    prescribed rotation of the C3 pot (no rigid joint, h30). Its drive moment is the rigid body's reaction on the prescribed DOF, logged in
+    C3pot.txt (Mx;My;Mz); the joint windows log it in drive.txt instead (and C3pot M is then a residual, ~0 when converged)."""
+    f = os.path.join(cd, 'window_drive.json')
+    try: return json.load(open(f)).get('window_drive_mode') if os.path.exists(f) else None
+    except Exception: return None
+
+
+def rigid_drive_rows(cd, sch):
+    """route E: rows in the drive_rows layout built from C3pot.txt - for every window i the joint-equivalent moment is MINUS the rigid-body
+    reaction (reaction = -applied; checked on p068 flexion: joint RCMy -2163 N mm at thy 0.035 vs route-E reaction +2153 at a similar relative
+    rotation, extension saturation +534 vs -534), forces copied as they are."""
+    rb = rb_rows(cd) or {}; rows = []
+    for t in sorted(rb):
+        v = rb[t]; rec = [None, v[6], v[7], v[8], -v[9], -v[10], -v[11]]
+        rows.append((t, {i + 1: [i + 1] + rec[1:] for i in range(len(sch['windows']))}))
+    return rows
+
+
 def drive_rows(cd):
     """drive.txt (rigid_connector_data) -> [(t, {joint_id: [id, RCFx, RCFy, RCFz, RCMx, RCMy, RCMz]})] in file order."""
     rows, t = [], None
@@ -139,13 +159,15 @@ def rb_rows(cd):
     return out
 
 
-def dyn_residuals(rb, times):
+def dyn_residuals(rb, times, exclude=None):
     """rigid-body dynamic residual per logged time -> ({t: (|M_rb| N mm, |F_rb - (0, 0, Fz_ref)| N)}, Fz_ref); Fz_ref = the
-    median logged Fz over the window (the follower force; -100 N in the physio protocol)."""
+    median logged Fz over the window (the follower force; -100 N in the physio protocol). exclude (2026-11-11 route E): index
+    into the 12-value row of the prescribed rotation DOF (9 Mx, 10 My, 11 Mz) whose reaction is the drive moment, left out of |M_rb|."""
     ts = [t for t in times if rb and t in rb]
     if not ts: return {}, None
     fz = float(np.median([rb[t][8] for t in ts]))
-    return {t: (float(np.linalg.norm(rb[t][9:12])), float(np.hypot(rb[t][6], rb[t][7]) + abs(rb[t][8] - fz))) for t in ts}, fz
+    mres = lambda r: float(np.linalg.norm([r[k] for k in (9, 10, 11) if k != exclude]))
+    return {t: (mres(rb[t]), float(np.hypot(rb[t][6], rb[t][7]) + abs(rb[t][8] - fz))) for t in ts}, fz
 
 
 def target_bracket(cd, sch):
@@ -172,10 +194,10 @@ def target_bracket(cd, sch):
             out[w['name']] = dict(t=t, reached=True, M=None, t_a=t, M_a=None, t_b=t, M_b=None, frac=0.0, coarse=False, valid_times=[], invalid=[],
                                   check=dict(n_rows=0, n_invalid=0, dt_min=None, monotonic=True, t_last=t, complete=True))
         return out
-    rows = drive_rows(cd); Mt = sch['target_moment_Nmm']; rb = rb_rows(cd)
+    mode = drive_mode(cd); rows = rigid_drive_rows(cd, sch) if mode == 'rigid_relative' else drive_rows(cd); Mt = sch['target_moment_Nmm']; rb = rb_rows(cd)
     for i, w in enumerate(sch['windows']):
         up = [(tt, d[i + 1][COL[w['dof']]]) for tt, d in rows if (i + 1) in d and w['t0'] + 1e-9 < tt <= w['t_peak'] + 1e-9]
-        dyn, fz = dyn_residuals(rb, [t for t, _ in up])
+        dyn, fz = dyn_residuals(rb, [t for t, _ in up], exclude=(COL[w['dof']] + 5) if mode == 'rigid_relative' else None)   # route E: the prescribed DOF's reaction IS the drive, not a residual
         valid, invalid = filter_rows(up, w['t0'], Mt, dyn, abs(fz) if fz else None)
         mono = all(abs(valid[k][2]) >= 0.98 * abs(valid[k - 1][2]) for k in range(1, len(valid)))
         chk = dict(n_rows=len(up), n_invalid=len(invalid), n_dyn=sum(r[3] == 'dyn' for r in invalid), dt_min=min((v[1] for v in valid), default=None),

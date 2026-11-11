@@ -331,48 +331,47 @@
   "soft_face_locking_note": "\u751f\u7406\u7a97\u53e3\u7b97\u4e0d\u51fa\uff1a\u5169\u7a2e\u6469\u64e6\u5f8b\uff08\u9ecf\u6eef\u8a18\u61b6\u5f8b\u3001\u53c3\u8003\u5f8b\uff09\u5f9e\u540c\u4e00\u6aa2\u67e5\u9ede\u91cd\u555f\u90fd\u5728\u8a55\u4f30\u9ede\u524d\u4e2d\u6b62 (PI 2026-11-10 item 2 class; 2026-11-11: the soft-face-locking hypothesis is not supported by the replicate evidence, see replicates; windows flexion, extension)"
  },
  "p050": {
-  "verdict": "open",
+  "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
     "set": "physio_relG",
-    "case_dir": "p050_gpu3",
-    "usable": false,
-    "eval_point": null,
-    "monotonic": true,
-    "u_h_at_rom": 0.07648146170679346,
-    "post_at_rom": -0.07648069056287062,
-    "u_h_at_1p5Nm": 0.07648146170679346,
-    "post_at_1p5Nm": -0.07648069056287062,
-    "rot_max_deg": 1.2412483648231523,
+    "case_dir": "p068_gpu2",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.20105104761283354,
+    "post_at_rom": 0.2010507540099561,
+    "u_h_at_1p5Nm": 0.38737994768442485,
+    "post_at_1p5Nm": 0.3873784058373265,
+    "rot_max_deg": 9.224638681526981,
     "bad": [],
     "grey": [],
     "fallback": null,
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
-    "window_law": "stick memory (patch 6+7)"
+    "window_law": "stick memory (patch 6+7)",
+    "inherited_from": "p068"
    },
    "flexion": {
     "set": "physio_relG",
-    "case_dir": "p050_gpu3",
-    "usable": false,
-    "eval_point": null,
-    "monotonic": null,
-    "u_h_at_rom": null,
-    "post_at_rom": null,
-    "u_h_at_1p5Nm": null,
-    "post_at_1p5Nm": null,
-    "rot_max_deg": null,
+    "case_dir": "p068_gpu2",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1881285798871855,
+    "post_at_rom": -1.1880926336083362,
+    "u_h_at_1p5Nm": 0.3899663396079821,
+    "post_at_1p5Nm": -0.3899400114946611,
+    "rot_max_deg": 7.219744397974671,
     "bad": [],
     "grey": [],
     "fallback": null,
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
-    "window_law": "stick memory (patch 6+7)"
+    "window_law": "stick memory (patch 6+7)",
+    "inherited_from": "p068"
    }
   },
-  "missing": [
-   "flexion",
-   "extension"
-  ],
+  "missing": [],
   "grey": [],
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "first_increment_pattern": [
@@ -386,8 +385,6 @@
    "flexion": "not computable under either friction law (stick-memory t_last 3.50455, production-law restart t_last 3.50455, first increments)",
    "extension": "not computable under either friction law (stick-memory t_last 3.56918, production-law restart t_last 3.50455)"
   },
-  "open_reason": "flexion stopped at 0.0 deg (negative jacobians); extension stopped at 1.2 deg (negative jacobians); window(s) flexion, extension did not reach the intact ROM or 1.5 N m (or missing)",
-  "computability": true,
   "soft_face_locking_note": "\u751f\u7406\u7a97\u53e3\u7b97\u4e0d\u51fa\uff1a\u5169\u7a2e\u6469\u64e6\u5f8b\uff08\u9ecf\u6eef\u8a18\u61b6\u5f8b\u3001\u53c3\u8003\u5f8b\uff09\u5f9e\u540c\u4e00\u6aa2\u67e5\u9ede\u91cd\u555f\u90fd\u5728\u8a55\u4f30\u9ede\u524d\u4e2d\u6b62 (PI 2026-11-10 item 2 class; 2026-11-11: the soft-face-locking hypothesis is not supported by the replicate evidence, see replicates; windows flexion, extension)",
   "replicates": {
    "deck_sha256": "500c814ead46dec2",
@@ -397,13 +394,73 @@
     "p127"
    ],
    "verdicts": {
-    "p050": "open",
+    "p050": "pass",
     "p068": "pass",
-    "p084": "open",
-    "p127": "open"
+    "p084": "pass",
+    "p127": "pass"
    },
-   "consistent": false
-  }
+   "consistent": true
+  },
+  "own": {
+   "verdict": "open",
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p050_gpu3",
+     "usable": false,
+     "eval_point": null,
+     "monotonic": true,
+     "u_h_at_rom": 0.07648146170679346,
+     "post_at_rom": -0.07648069056287062,
+     "u_h_at_1p5Nm": 0.07648146170679346,
+     "post_at_1p5Nm": -0.07648069056287062,
+     "rot_max_deg": 1.2412483648231523,
+     "bad": [],
+     "grey": [],
+     "fallback": null,
+     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+     "window_law": "stick memory (patch 6+7)"
+    },
+    "flexion": {
+     "set": "physio_relG",
+     "case_dir": "p050_gpu3",
+     "usable": false,
+     "eval_point": null,
+     "monotonic": null,
+     "u_h_at_rom": null,
+     "post_at_rom": null,
+     "u_h_at_1p5Nm": null,
+     "post_at_1p5Nm": null,
+     "rot_max_deg": null,
+     "bad": [],
+     "grey": [],
+     "fallback": null,
+     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+     "window_law": "stick memory (patch 6+7)"
+    }
+   },
+   "missing": [
+    "flexion",
+    "extension"
+   ],
+   "open_reason": "flexion stopped at 0.0 deg (negative jacobians); extension stopped at 1.2 deg (negative jacobians); window(s) flexion, extension did not reach the intact ROM or 1.5 N m (or missing)",
+   "computability": true,
+   "soft_face_locking": [
+    "flexion",
+    "extension"
+   ],
+   "soft_face_locking_evidence": {
+    "flexion": "not computable under either friction law (stick-memory t_last 3.50455, production-law restart t_last 3.50455, first increments)",
+    "extension": "not computable under either friction law (stick-memory t_last 3.56918, production-law restart t_last 3.50455)"
+   },
+   "first_increment_pattern": [
+    "flexion"
+   ]
+  },
+  "verdict_source": "replicate p068 (PI 2026-11-11 decision 4: same deck + same procedure = one design result; own result under own)",
+  "numerical_flags": [
+   "replicate-not-reproduced"
+  ]
  },
  "p051": {
   "verdict": "grey",
@@ -1055,12 +1112,12 @@
     "p127"
    ],
    "verdicts": {
-    "p050": "open",
+    "p050": "pass",
     "p068": "pass",
-    "p084": "open",
-    "p127": "open"
+    "p084": "pass",
+    "p127": "pass"
    },
-   "consistent": false
+   "consistent": true
   }
  },
  "p071": {
@@ -1615,47 +1672,47 @@
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
  },
  "p084": {
-  "verdict": "open",
+  "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
     "set": "physio_relG",
-    "case_dir": "p084_gpu4",
-    "usable": false,
-    "eval_point": null,
-    "monotonic": null,
-    "u_h_at_rom": null,
-    "post_at_rom": null,
-    "u_h_at_1p5Nm": null,
-    "post_at_1p5Nm": null,
-    "rot_max_deg": null,
+    "case_dir": "p068_gpu2",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.20105104761283354,
+    "post_at_rom": 0.2010507540099561,
+    "u_h_at_1p5Nm": 0.38737994768442485,
+    "post_at_1p5Nm": 0.3873784058373265,
+    "rot_max_deg": 9.224638681526981,
     "bad": [],
     "grey": [],
     "fallback": null,
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
-    "window_law": "stick memory (patch 6+7)"
+    "window_law": "stick memory (patch 6+7)",
+    "inherited_from": "p068"
    },
    "flexion": {
     "set": "physio_relG",
-    "case_dir": "p084_gpu4",
+    "case_dir": "p068_gpu2",
     "usable": true,
     "eval_point": "1.5Nm",
-    "monotonic": false,
-    "u_h_at_rom": 1.33158283797756,
-    "post_at_rom": -1.331582579253164,
-    "u_h_at_1p5Nm": 0.14230899827662696,
-    "post_at_1p5Nm": -0.14230890518194983,
-    "rot_max_deg": 7.219270539922462,
+    "monotonic": true,
+    "u_h_at_rom": 1.1881285798871855,
+    "post_at_rom": -1.1880926336083362,
+    "u_h_at_1p5Nm": 0.3899663396079821,
+    "post_at_1p5Nm": -0.3899400114946611,
+    "rot_max_deg": 7.219744397974671,
     "bad": [],
     "grey": [],
     "fallback": null,
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
-    "window_law": "stick memory (patch 6+7)"
+    "window_law": "stick memory (patch 6+7)",
+    "inherited_from": "p068"
    }
   },
-  "missing": [
-   "extension"
-  ],
+  "missing": [],
   "grey": [],
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "first_increment_pattern": [
@@ -1667,8 +1724,6 @@
   "soft_face_locking_evidence": {
    "extension": "not computable under either friction law (stick-memory t_last 3.50455, production-law restart t_last 3.50455, first increments)"
   },
-  "open_reason": "extension stopped at 0.0 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
-  "computability": true,
   "soft_face_locking_note": "\u751f\u7406\u7a97\u53e3\u7b97\u4e0d\u51fa\uff1a\u5169\u7a2e\u6469\u64e6\u5f8b\uff08\u9ecf\u6eef\u8a18\u61b6\u5f8b\u3001\u53c3\u8003\u5f8b\uff09\u5f9e\u540c\u4e00\u6aa2\u67e5\u9ede\u91cd\u555f\u90fd\u5728\u8a55\u4f30\u9ede\u524d\u4e2d\u6b62 (PI 2026-11-10 item 2 class; 2026-11-11: the soft-face-locking hypothesis is not supported by the replicate evidence, see replicates; windows extension)",
   "replicates": {
    "deck_sha256": "500c814ead46dec2",
@@ -1678,13 +1733,70 @@
     "p127"
    ],
    "verdicts": {
-    "p050": "open",
+    "p050": "pass",
     "p068": "pass",
-    "p084": "open",
-    "p127": "open"
+    "p084": "pass",
+    "p127": "pass"
    },
-   "consistent": false
-  }
+   "consistent": true
+  },
+  "own": {
+   "verdict": "open",
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p084_gpu4",
+     "usable": false,
+     "eval_point": null,
+     "monotonic": null,
+     "u_h_at_rom": null,
+     "post_at_rom": null,
+     "u_h_at_1p5Nm": null,
+     "post_at_1p5Nm": null,
+     "rot_max_deg": null,
+     "bad": [],
+     "grey": [],
+     "fallback": null,
+     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+     "window_law": "stick memory (patch 6+7)"
+    },
+    "flexion": {
+     "set": "physio_relG",
+     "case_dir": "p084_gpu4",
+     "usable": true,
+     "eval_point": "1.5Nm",
+     "monotonic": false,
+     "u_h_at_rom": 1.33158283797756,
+     "post_at_rom": -1.331582579253164,
+     "u_h_at_1p5Nm": 0.14230899827662696,
+     "post_at_1p5Nm": -0.14230890518194983,
+     "rot_max_deg": 7.219270539922462,
+     "bad": [],
+     "grey": [],
+     "fallback": null,
+     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+     "window_law": "stick memory (patch 6+7)"
+    }
+   },
+   "missing": [
+    "extension"
+   ],
+   "open_reason": "extension stopped at 0.0 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
+   "computability": true,
+   "soft_face_locking": [
+    "extension"
+   ],
+   "soft_face_locking_evidence": {
+    "extension": "not computable under either friction law (stick-memory t_last 3.50455, production-law restart t_last 3.50455, first increments)"
+   },
+   "first_increment_pattern": [
+    "extension"
+   ]
+  },
+  "verdict_source": "replicate p068 (PI 2026-11-11 decision 4: same deck + same procedure = one design result; own result under own)",
+  "numerical_flags": [
+   "replicate-not-reproduced"
+  ]
  },
  "p086": {
   "verdict": "pass",
@@ -1740,7 +1852,10 @@
     "p142": "pass"
    },
    "consistent": false
-  }
+  },
+  "numerical_flags": [
+   "replicate-inconsistent"
+  ]
  },
  "p088": {
   "verdict": "pass",
@@ -2151,7 +2266,10 @@
     "p142": "pass"
    },
    "consistent": false
-  }
+  },
+  "numerical_flags": [
+   "replicate-inconsistent"
+  ]
  },
  "p101": {
   "verdict": "pass",
@@ -3124,47 +3242,47 @@
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p127": {
-  "verdict": "open",
+  "verdict": "pass",
   "reasons": [],
   "windows": {
    "extension": {
     "set": "physio_relG",
-    "case_dir": "p127_gpu3",
+    "case_dir": "p068_gpu2",
     "usable": true,
     "eval_point": "ROM",
-    "monotonic": true,
-    "u_h_at_rom": 0.20144880646054064,
-    "post_at_rom": 0.20144868396944898,
-    "u_h_at_1p5Nm": 0.38608696875946147,
-    "post_at_1p5Nm": 0.3860860500018471,
-    "rot_max_deg": 9.224633747520956,
+    "monotonic": false,
+    "u_h_at_rom": 0.20105104761283354,
+    "post_at_rom": 0.2010507540099561,
+    "u_h_at_1p5Nm": 0.38737994768442485,
+    "post_at_1p5Nm": 0.3873784058373265,
+    "rot_max_deg": 9.224638681526981,
     "bad": [],
     "grey": [],
     "fallback": null,
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
-    "window_law": "stick memory (patch 6+7)"
+    "window_law": "stick memory (patch 6+7)",
+    "inherited_from": "p068"
    },
    "flexion": {
     "set": "physio_relG",
-    "case_dir": "p127_gpu3",
-    "usable": false,
-    "eval_point": null,
-    "monotonic": null,
-    "u_h_at_rom": null,
-    "post_at_rom": null,
-    "u_h_at_1p5Nm": null,
-    "post_at_1p5Nm": null,
-    "rot_max_deg": null,
+    "case_dir": "p068_gpu2",
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1881285798871855,
+    "post_at_rom": -1.1880926336083362,
+    "u_h_at_1p5Nm": 0.3899663396079821,
+    "post_at_1p5Nm": -0.3899400114946611,
+    "rot_max_deg": 7.219744397974671,
     "bad": [],
     "grey": [],
     "fallback": null,
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
-    "window_law": "stick memory (patch 6+7)"
+    "window_law": "stick memory (patch 6+7)",
+    "inherited_from": "p068"
    }
   },
-  "missing": [
-   "flexion"
-  ],
+  "missing": [],
   "grey": [],
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "first_increment_pattern": [
@@ -3176,8 +3294,6 @@
   "soft_face_locking_evidence": {
    "flexion": "not computable under either friction law (stick-memory t_last 3.50455, production-law restart t_last 3.50455, first increments)"
   },
-  "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
-  "computability": true,
   "soft_face_locking_note": "\u751f\u7406\u7a97\u53e3\u7b97\u4e0d\u51fa\uff1a\u5169\u7a2e\u6469\u64e6\u5f8b\uff08\u9ecf\u6eef\u8a18\u61b6\u5f8b\u3001\u53c3\u8003\u5f8b\uff09\u5f9e\u540c\u4e00\u6aa2\u67e5\u9ede\u91cd\u555f\u90fd\u5728\u8a55\u4f30\u9ede\u524d\u4e2d\u6b62 (PI 2026-11-10 item 2 class; 2026-11-11: the soft-face-locking hypothesis is not supported by the replicate evidence, see replicates; windows flexion)",
   "replicates": {
    "deck_sha256": "500c814ead46dec2",
@@ -3187,13 +3303,70 @@
     "p084"
    ],
    "verdicts": {
-    "p050": "open",
+    "p050": "pass",
     "p068": "pass",
-    "p084": "open",
-    "p127": "open"
+    "p084": "pass",
+    "p127": "pass"
    },
-   "consistent": false
-  }
+   "consistent": true
+  },
+  "own": {
+   "verdict": "open",
+   "windows": {
+    "extension": {
+     "set": "physio_relG",
+     "case_dir": "p127_gpu3",
+     "usable": true,
+     "eval_point": "ROM",
+     "monotonic": true,
+     "u_h_at_rom": 0.20144880646054064,
+     "post_at_rom": 0.20144868396944898,
+     "u_h_at_1p5Nm": 0.38608696875946147,
+     "post_at_1p5Nm": 0.3860860500018471,
+     "rot_max_deg": 9.224633747520956,
+     "bad": [],
+     "grey": [],
+     "fallback": null,
+     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+     "window_law": "stick memory (patch 6+7)"
+    },
+    "flexion": {
+     "set": "physio_relG",
+     "case_dir": "p127_gpu3",
+     "usable": false,
+     "eval_point": null,
+     "monotonic": null,
+     "u_h_at_rom": null,
+     "post_at_rom": null,
+     "u_h_at_1p5Nm": null,
+     "post_at_1p5Nm": null,
+     "rot_max_deg": null,
+     "bad": [],
+     "grey": [],
+     "fallback": null,
+     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+     "window_law": "stick memory (patch 6+7)"
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+   "computability": true,
+   "soft_face_locking": [
+    "flexion"
+   ],
+   "soft_face_locking_evidence": {
+    "flexion": "not computable under either friction law (stick-memory t_last 3.50455, production-law restart t_last 3.50455, first increments)"
+   },
+   "first_increment_pattern": [
+    "flexion"
+   ]
+  },
+  "verdict_source": "replicate p068 (PI 2026-11-11 decision 4: same deck + same procedure = one design result; own result under own)",
+  "numerical_flags": [
+   "replicate-not-reproduced"
+  ]
  },
  "p128": {
   "verdict": "pass",
@@ -3695,7 +3868,10 @@
     "p142": "pass"
    },
    "consistent": false
-  }
+  },
+  "numerical_flags": [
+   "replicate-inconsistent"
+  ]
  },
  "p143": {
   "verdict": "grey",
@@ -3923,10 +4099,11 @@
    "physio_fric3": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
    "physio_relG_pl": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)"
   },
+  "replicate_rule": "PI 2026-11-11 decision 4: a not-computable replicate inherits the computed replicate of the same deck (verdict_source, own); numerical_flags replicate-not-reproduced / replicate-inconsistent mark the platform reproducibility items",
   "not_computable_rule": "2026-11-11: a required window is classed not computable (key soft_face_locking, compatibility name) only when the stick-memory window AND the production-law restart of the same checkpoint both stopped before an evaluation point; the first-increment pattern alone is noted (first_increment_pattern) and no longer vetoes a fallback; designs built from identical decks list each other under replicates",
   "set_precedence": "per window the highest-ranked set in SETS wins: physio_fric5 (stick-memory law, PI 2026-11-09) supersedes physio_fric3 (production law, NUM-13 artefact); physio_relG (process G, PI 2026-11-10 option a) holds the 27 insertion-stopped designs; physio_relG_pl is a fallback source only (production law on the G checkpoint, + margin, flagged); the insertion-stopped scans: physio_fric3 then physio_relG",
   "rule": "PI 2026-11-10: posterior 0.45-0.55 mm at the evaluation point = grey (analysis only, never a final design), > 0.55 or any-direction > 1 mm = fail; every row/design carries insertion_process and window_law (PI 2026-11-10 option a); PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn",
   "provisional": "verdicts provisional: physio_fric3 windows carry the FEBio stick-point artefact (NUM-13); PI 2026-11-09 decision 1 recomputes them as physio_fric5 (stick-memory law, same checkpoints) which supersedes fric3 per window here; NUM-17 (0.5 mm grey zone) and the density reference (DECISIONS 2026-11-05 item 8) still open",
-  "generated": "2026-11-11 01:10"
+  "generated": "2026-11-11 15:03"
  }
 }

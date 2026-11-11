@@ -204,7 +204,7 @@ for p in sorted(set(best) | set(comp) | set(lastj)):
         if good: return dict(table[good[0]], pooled=grp)
         return dict(table.get(p) or table[grp[0]], pooled=grp)
     fv = pooled(fricv); shv = pooled(shearv)
-    g['dislocation_friction'] = dict(verdict=fv['verdict'], reasons=fv.get('reasons', []), open_reason=fv.get('open_reason'), role='check', grey=fv.get('grey'), soft_face_locking=fv.get('soft_face_locking'),
+    g['dislocation_friction'] = dict(verdict=fv['verdict'], reasons=fv.get('reasons', []), open_reason=fv.get('open_reason'), role='check', grey=fv.get('grey'), soft_face_locking=fv.get('soft_face_locking'), numerical_flags=fv.get('numerical_flags'), verdict_source=fv.get('verdict_source'),
                                      fallback={w: x.get('fallback') for w, x in (fv.get('windows') or {}).items() if x.get('fallback')}, insertion_process=fv.get('insertion_process')) if fv else dict(verdict='not run', role='check')   # role check: PI 2026-11-07
     g['interface_shear'] = (dict(verdict=shv['verdict'], reasons=shv.get('reasons', []), open_reason=shv.get('open_reason'), threshold_MPa=shear_meta.get('threshold_MPa'),
                                  provisional=shear_meta.get('provisional'), shear_p99_at_rom={w: x['shear_p99_at_rom'] for w, x in shv.get('windows', {}).items()})

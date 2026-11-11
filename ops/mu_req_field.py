@@ -45,6 +45,8 @@ for p in designs:
     row['grey_band'] = row['mu_req_max'] is not None and abs(row['mu_req_max'] - GREY_MU) <= GREY_MU_TOL   # shortcut tolerance (PI 2026-11-10): within 0.140 +- 0.005 -> friction run required
     row['soft_face_locking'] = bool((f or {}).get('soft_face_locking'))        # PI 2026-11-10 item 2 class (key name kept): windows not computable under either friction law; 2026-11-11: no material claim
     row['replicates'] = ((f or {}).get('replicates') or {}).get('designs')      # 2026-11-11: designs built from the identical deck (their verdicts may differ: run-to-run variability)
+    row['numerical_flags'] = (f or {}).get('numerical_flags')                  # PI 2026-11-11 decision 4: replicate-not-reproduced / replicate-inconsistent (platform layer)
+    row['verdict_source'] = (f or {}).get('verdict_source')                    # 'replicate pXXX ...' when the friction verdict is inherited from the computed replicate
     row['friction_fallback'] = any(bool((x or {}).get('fallback')) for x in ((f or {}).get('windows') or {}).values())   # PI 2026-11-10 item 1: production-law read-out + margin
     rows.append(row)
 keys = sorted({k for prm in allprm.values() for k in prm if k not in SKIP})
