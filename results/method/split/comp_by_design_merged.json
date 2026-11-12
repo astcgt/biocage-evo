@@ -7268,10 +7268,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [],
-    "soft_face_locking": [
-     "flexion",
-     "extension"
-    ],
+    "soft_face_locking": null,
     "numerical_flags": [
      "replicate-not-reproduced"
     ],
@@ -7499,7 +7496,7 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); extension stopped at 0.0 deg (negative jacobians); window(s) flexion, extension did not reach the intact ROM or 1.5 N m (or missing)",
+    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); extension stopped at 1.5 deg (negative jacobians); window(s) flexion, extension did not reach the intact ROM or 1.5 N m (or missing)",
     "role": "check",
     "grey": [],
     "soft_face_locking": [
@@ -8729,10 +8726,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [],
-    "soft_face_locking": [
-     "flexion",
-     "extension"
-    ],
+    "soft_face_locking": null,
     "numerical_flags": [
      "replicate-not-reproduced"
     ],
@@ -9759,10 +9753,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [],
-    "soft_face_locking": [
-     "flexion",
-     "extension"
-    ],
+    "soft_face_locking": null,
     "numerical_flags": [
      "replicate-not-reproduced"
     ],
@@ -11032,7 +11023,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [
-     "p026: extension@ROM post 0.453 in grey zone [0.45, 0.55]"
+     "p026: extension@ROM post 0.455 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
     "numerical_flags": null,
@@ -11065,7 +11056,7 @@
    "verdict": "grey",
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
-    "p026: extension@ROM post 0.453 in grey zone [0.45, 0.55]"
+    "p026: extension@ROM post 0.455 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
   },
@@ -11799,10 +11790,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [],
-    "soft_face_locking": [
-     "flexion",
-     "extension"
-    ],
+    "soft_face_locking": null,
     "numerical_flags": [
      "replicate-not-reproduced"
     ],

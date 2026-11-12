@@ -1,0 +1,172 @@
+{
+ "sets": [
+  "physio_fric5r",
+  "physio_relGr"
+ ],
+ "groups": [
+  {
+   "deck_sha256": "140e86114a6694a9",
+   "designs": [
+    "p092",
+    "p117",
+    "p143"
+   ],
+   "windows": {
+    "flexion": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    },
+    "extension": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    }
+   }
+  },
+  {
+   "deck_sha256": "17f7470a3e22834c",
+   "designs": [
+    "p093",
+    "p145"
+   ],
+   "windows": {
+    "flexion": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    },
+    "extension": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    }
+   }
+  },
+  {
+   "deck_sha256": "2c07583af40432eb",
+   "designs": [
+    "p082",
+    "p088"
+   ],
+   "windows": {
+    "flexion": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    },
+    "extension": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    }
+   }
+  },
+  {
+   "deck_sha256": "4d02bd61097bef12",
+   "designs": [
+    "p095",
+    "p128"
+   ],
+   "windows": {
+    "flexion": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    },
+    "extension": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    }
+   }
+  },
+  {
+   "deck_sha256": "500c814ead46dec2",
+   "designs": [
+    "p050",
+    "p068",
+    "p084",
+    "p127"
+   ],
+   "windows": {
+    "flexion": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    },
+    "extension": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    }
+   }
+  },
+  {
+   "deck_sha256": "557bf57bb136f57e",
+   "designs": [
+    "p077",
+    "p139"
+   ],
+   "windows": {
+    "flexion": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    },
+    "extension": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    }
+   }
+  },
+  {
+   "deck_sha256": "9343badac8255ab1",
+   "designs": [
+    "p086",
+    "p100",
+    "p142"
+   ],
+   "windows": {
+    "flexion": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    },
+    "extension": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    }
+   }
+  },
+  {
+   "deck_sha256": "becf8bb3940ec3d4",
+   "designs": [
+    "p051",
+    "p075"
+   ],
+   "windows": {
+    "flexion": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    },
+    "extension": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    }
+   }
+  }
+ ],
+ "note": "Replicate agreement under one window set (PI 2026-11-11 decision 4, platform layer: \u300c\u540c\u4e00\u500b\u8a2d\u8a08\u80fd\u6709\u7a69\u5b9a\u7684\u6a21\u64ec\u7d50\u679c\u6578\u503c\u300d).",
+ "summary": {
+  "groups": 8,
+  "windows_with_two_or_more": 0,
+  "windows_disagreeing_over_0p005_or_mixed_eval_point": 0,
+  "worst_spread_u_h_mm": 0.0,
+  "criterion": "same evaluation point and |spread| <= 0.005 mm (read-out noise seen in the validation); larger spreads are platform [\u6578\u503c] items, not design results"
+ }
+}

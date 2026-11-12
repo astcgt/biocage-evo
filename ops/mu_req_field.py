@@ -8,7 +8,7 @@ value differs between designs (bookkeeping keys excluded); cage family / thickne
 usage: python ops/mu_req_field.py   -> results/method/mu_req_field.json + .csv"""
 import os, re, json, csv, glob, collections
 E = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); R = os.path.join(os.path.dirname(E), 'biocage_simulation_test_oct2026/human_study/al_v2')
-MU_MAX = 1.0        # PLACEHOLDER (PI to set): above this no surface treatment is credible -> the point is labelled over_max, value kept
+MU_MAX = 0.60   # 2026-11-13 授權自決 (DECISIONS 04:07): about 1.7x the design friction coefficient 0.35; 無外部依據，為本案推論 - the PI may replace it with a measured PLCL-bone value (was the placeholder 1.0; all mu_req so far <= 0.166)
 GREY_MU, GREY_MU_TOL = 0.140, 0.005   # PI 2026-11-10 (shortcut tolerance accepted): the 0.5 mm posterior limit maps to mu_req 0.140 (mu_req_vs_fric5.json); designs within +-0.005 are grey-band and get a friction run
 MU_REAL = 0.35      # the coefficient the real-friction check runs with (physio_fric3 / fric5 settings)
 SKIP = {'fsu', 'fsu_info', 'frame', 'cage_npz', 'test', 'physio_windows', 'restart_source', 'restart_env', 'window_min_residual', 'physio_split', 'physio_dynamic', 'physio_rot_rad', 'nonsym', 'contact_type'}

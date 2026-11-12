@@ -28,9 +28,10 @@ PROCESS['physio_relG_pl'] = PROCESS['physio_relG']; WINDOW_LAW['physio_relG_pl']
 # relative 0); stick-memory law unchanged. Highest rank: they supersede the joint-driven windows per (design, window). Drive provenance in WINDOW_DRIVE.
 PROCESS['physio_fric5r'] = PROCESS['physio_fric5']; PROCESS['physio_relGr'] = PROCESS['physio_relG']
 WINDOW_LAW['physio_fric5r'] = WINDOW_LAW['physio_relGr'] = 'stick memory (patch 6+7)'
-WINDOW_DRIVE = {s: 'absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: G ~1.16 deg, production 0.3-0.4 deg)' for s in SETS}
+WINDOW_DRIVE = {s: 'absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)' for s in SETS}
 WINDOW_DRIVE['physio_fric5r'] = WINDOW_DRIVE['physio_relGr'] = 'relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)'
-FALLBACK_SRC = {'physio_fric5': 'physio_fric3', 'physio_relG': 'physio_relG_pl'}   # stick-law set -> production-law set of the same checkpoints
+STICK_SETS = ('physio_fric5', 'physio_relG', 'physio_fric5r', 'physio_relGr')   # stick-memory-law sets (joint drive and route-E drive)
+FALLBACK_SRC = {'physio_fric5': 'physio_fric3', 'physio_relG': 'physio_relG_pl', 'physio_fric5r': 'physio_fric3', 'physio_relGr': 'physio_relG_pl'}   # stick-law set -> production-law set of the same checkpoints (route-E sets: the production-law windows are joint-driven; the margin was measured on joint pairs - approximation, flagged in margin_basis)
 FALLBACK_ONLY = ('physio_relG_pl',)                                                 # sets that exist only as a fallback source
 LOCK_T, LOCK_NJ = 3.52, 100   # first-increment pattern (last converged time < 3.52, > 100 negative-Jacobian warnings). 2026-11-11: noted only (first_increment_pattern), no veto - the identical decks p050 / p068 / p084 / p127 differ in this outcome (run-to-run variability, not a design property)
 GREY_LO, GREY_HI = 0.45, 0.55   # PI 2026-11-10: posterior translation in [0.45, 0.55] mm at the evaluation point is GREY - analysis only, never a final design   # 2026-11-09 PI decision 1: fric5 = fric3 windows recomputed from the same checkpoints with the stick-memory law; it SUPERSEDES fric3 per window (RANK)
@@ -100,7 +101,14 @@ for r in rows:
     if 'note' in r: r = dict(r, fric_reached=False, rom_reached=False, fric_M=None, fric_translation_mm=None, fric_posterior_mm=None, u_h_at_rom=None, post_at_rom=None, placeholder=True)
     k = (r['design'], r['window'])
     if r['set'] in FALLBACK_ONLY: continue                                        # fallback source only (below)
-    if k not in best or RANK[r['set']] > RANK[best[k]['set']]: best[k] = r     # later set in SETS wins (fric5 over fric3), not string order
+    # 2026-11-13 (audit 不符 D-20261113-6): per (design, window) the STICK-LAW rows (fric5 / relG / fric5r / relGr) always beat the production-law rows
+    # (so the fallback + margin logic below still governs when the stick-law window stopped); among stick-law rows one that REACHED an evaluation point
+    # beats one that did not, then the later set in SETS wins (route E over the joint drive) - a route-E window that failed keeps the joint-driven row.
+    _usable = bool(r.get('fric_reached') or r.get('rom_reached')); _key = (r['set'] in STICK_SETS, _usable if r['set'] in STICK_SETS else False, RANK[r['set']])
+    if k not in best: best[k] = r; _bk = {}
+    else:
+        b = best[k]; _bkey = (b['set'] in STICK_SETS, bool(b.get('fric_reached') or b.get('rom_reached')) if b['set'] in STICK_SETS else False, RANK[b['set']])
+        if _key > _bkey: best[k] = r
 # PI 2026-11-10 item 1 (fallback, thin cages): when the stick-memory-law window (physio_fric5) stopped before its evaluation point and the
 # production-law window (physio_fric3) of the same design and window reached one, the verdict uses the production-law read-out PLUS the
 # p90 of the law-change shift (fric3_to_fric5_shift.json abs_p90, 0.043 mm) on every translation, flagged 'fallback' with source and margin.
@@ -109,7 +117,7 @@ _m35 = round(json.load(open(_shift)).get('abs_p90', 0.043), 4) if os.path.exists
 _rs = json.load(open(_rshift)) if os.path.exists(_rshift) else {}
 # 2026-11-11: the margin is per fallback source. Production-inserted checkpoints (fric5 <- fric3): abs_p90 of the 74 fric3/fric5 pairs (0.0431).
 # Process-G checkpoints (relG <- relG_pl): the control pairs (p039, p052 both windows; p061 has none, its production-law restarts died early)
-# shift by up to 0.0581 > 0.0431, so the larger of the two is used: max(abs_p90 fric3->fric5, abs_max relG pairs). PI confirmation pending.
+# shift by up to 0.0581 > 0.0431, so the larger of the two is used: max(abs_p90 fric3->fric5, abs_max relG pairs). PI confirmed 2026-11-11 (「3確認」).
 FALLBACK_MARGIN = {'physio_fric3': _m35, 'physio_relG_pl': round(max(_m35, _rs.get('abs_max') or 0.0), 4)}
 MARGIN_BASIS = {'physio_fric3': 'abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)',
                 'physio_relG_pl': f"max(abs_p90 fric3_to_fric5_shift.json {_m35}, abs_max relG_law_shift.json {_rs.get('abs_max')}) over n {_rs.get('n')} process-G control pairs (ops/law_shift.py)"}
@@ -134,7 +142,7 @@ for k, r in list(best.items()):
             if fb.get(kk) is not None: fb[kk] = fb[kk] + FALLBACK_MARGIN[src]
         fb['window_law'] = (fb.get('window_law') or 'production') + ' (fallback)'
         fb['fallback'] = dict(source=f'{src} (production law, same checkpoint)', margin_mm=FALLBACK_MARGIN[src], rule='PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged',
-                              margin_basis=MARGIN_BASIS[src], first_increment_pattern=folded_early(r),
+                              margin_basis=MARGIN_BASIS[src] + ('; applied to a route-E (relative-drive) stick-law window although the margin was measured on joint-driven pairs - approximation (audit 2026-11-13 S5)' if r['set'] in ('physio_fric5r', 'physio_relGr') else ''), first_increment_pattern=folded_early(r),
                               superseded=dict(set=r['set'], case_dir=r.get('case_dir'), t_last=log_tail(r['set'], r.get('case_dir'), r['window'])[1]))
         best[k] = fb
 verd = {}
@@ -152,7 +160,7 @@ for (p, wn), r in sorted(best.items()):
     uh, post = (r['fric_translation_mm'], r['fric_posterior_mm']) if ev_point == '1.5Nm' else ((r['u_h_at_rom'], r['post_at_rom']) if ev_point == 'ROM' else (None, None))
     if ev_point and (uh > LIM_ANY or post > GREY_HI): bad.append(f'{wn}@{ev_point} u_h {uh:.2f} post {post:.2f}')
     elif ev_point and GREY_LO <= post <= GREY_HI: grey.append(f'{wn}@{ev_point} post {post:.3f} in grey zone [{GREY_LO}, {GREY_HI}]')
-    d['windows'][wn] = dict(set=r['set'], case_dir=r.get('case_dir'), usable=usable, eval_point=ev_point, monotonic=(r.get('window_check') or {}).get('monotonic'),
+    d['windows'][wn] = dict(set=r['set'], case_dir=r.get('case_dir'), window_drive=r.get('window_drive'), grey_sub=(None if post is None else ('grey-low' if GREY_LO <= post < 0.50 else 'grey-high' if 0.50 <= post <= GREY_HI else None)), usable=usable, eval_point=ev_point, monotonic=(r.get('window_check') or {}).get('monotonic'),
                             u_h_at_rom=r.get('u_h_at_rom'), post_at_rom=r.get('post_at_rom'), u_h_at_1p5Nm=r.get('fric_translation_mm'), post_at_1p5Nm=r.get('fric_posterior_mm'),
                             rot_max_deg=r.get('rot_max_deg'), bad=bad, grey=grey, fallback=r.get('fallback'), insertion_process=r.get('insertion_process'), window_law=r.get('window_law'))
     d['reasons'] += bad; d.setdefault('grey', []).extend(grey)
@@ -236,16 +244,16 @@ for h, ps in _groups.items():
         d = verd[p]
         if d['verdict'] == 'open' and d.get('soft_face_locking') and computed:
             src = min(computed, key=lambda q: _order[verd[q]['verdict']])
-            d['own'] = {k: d.get(k) for k in ('verdict', 'windows', 'missing', 'open_reason', 'computability', 'soft_face_locking', 'soft_face_locking_evidence', 'first_increment_pattern') if d.get(k) is not None}
+            d['own'] = {k: d.get(k) for k in ('verdict', 'windows', 'missing', 'open_reason', 'computability', 'soft_face_locking', 'soft_face_locking_evidence', 'soft_face_locking_note', 'first_increment_pattern') if d.get(k) is not None}
             d['windows'] = {w: dict(r, inherited_from=src) for w, r in verd[src]['windows'].items()}
             d['verdict'] = verd[src]['verdict']; d['reasons'] = list(verd[src].get('reasons', [])); d['missing'] = []; d['grey'] = list(verd[src].get('grey') or [])
-            for k in ('open_reason', 'computability'): d.pop(k, None)
+            for k in ('open_reason', 'computability', 'soft_face_locking', 'soft_face_locking_evidence', 'soft_face_locking_note', 'first_increment_pattern'): d.pop(k, None)   # 2026-11-13 audit D-20261111-31: the design-level result is the inherited one; the own result keeps these
             d['verdict_source'] = f'replicate {src} (PI 2026-11-11 decision 4: same deck + same procedure = one design result; own result under own)'
             d.setdefault('numerical_flags', []).append('replicate-not-reproduced')
     if len({verd[q]['verdict'] for q in computed}) > 1:
         for q in computed: verd[q].setdefault('numerical_flags', []).append('replicate-inconsistent')
     for q in ps: verd[q]['replicates']['verdicts'] = {r: verd[r]['verdict'] for r in ps}; verd[q]['replicates']['consistent'] = len({verd[r]['verdict'] for r in ps}) == 1
-verd['_meta'] = dict(fallback_margin_mm=FALLBACK_MARGIN, margin_basis=MARGIN_BASIS, replicate_rule='PI 2026-11-11 decision 4: a not-computable replicate inherits the computed replicate of the same deck (verdict_source, own); numerical_flags replicate-not-reproduced / replicate-inconsistent mark the platform reproducibility items', not_computable_rule='2026-11-11: a required window is classed not computable (key soft_face_locking, compatibility name) only when the stick-memory window AND the production-law restart of the same checkpoint both stopped before an evaluation point; the first-increment pattern alone is noted (first_increment_pattern) and no longer vetoes a fallback; designs built from identical decks list each other under replicates', set_precedence='per window the highest-ranked set in SETS wins: physio_fric5 (stick-memory law, PI 2026-11-09) supersedes physio_fric3 (production law, NUM-13 artefact); physio_relG (process G, PI 2026-11-10 option a) holds the 27 insertion-stopped designs; physio_relG_pl is a fallback source only (production law on the G checkpoint, + margin, flagged); the insertion-stopped scans: physio_fric3 then physio_relG', rule='PI 2026-11-10: posterior 0.45-0.55 mm at the evaluation point = grey (analysis only, never a final design), > 0.55 or any-direction > 1 mm = fail; every row/design carries insertion_process and window_law (PI 2026-11-10 option a); PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn',
+verd['_meta'] = dict(fallback_margin_mm=FALLBACK_MARGIN, margin_basis=MARGIN_BASIS, window_drive_disclosure='every joint-driven window (sets physio_fric*, physio_relG, physio_relG_pl) starts with a snap of C3 back to its t=0 orientation (insertion tilt: production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87; DECISIONS 2026-11-11 01:00) - its read-outs are superseded per window by the route-E sets physio_fric5r / physio_relGr (PI 2026-11-11 1a) where those reached an evaluation point; each window row carries window_drive', grey_sub_rule='analysis only (授權自決 2026-11-13): posterior 0.45-0.50 grey-low, 0.50-0.55 grey-high; verdict unchanged', replicate_rule='PI 2026-11-11 decision 4: a not-computable replicate inherits the computed replicate of the same deck (verdict_source, own); numerical_flags replicate-not-reproduced / replicate-inconsistent mark the platform reproducibility items', not_computable_rule='2026-11-11: a required window is classed not computable (key soft_face_locking, compatibility name) only when the stick-memory window AND the production-law restart of the same checkpoint both stopped before an evaluation point; the first-increment pattern alone is noted (first_increment_pattern) and no longer vetoes a fallback; designs built from identical decks list each other under replicates', set_precedence='per window the highest-ranked set in SETS wins: physio_fric5 (stick-memory law, PI 2026-11-09) supersedes physio_fric3 (production law, NUM-13 artefact); physio_relG (process G, PI 2026-11-10 option a) holds the 27 insertion-stopped designs; physio_relG_pl is a fallback source only (production law on the G checkpoint, + margin, flagged); the insertion-stopped scans: physio_fric3 then physio_relG', rule='PI 2026-11-10: posterior 0.45-0.55 mm at the evaluation point = grey (analysis only, never a final design), > 0.55 or any-direction > 1 mm = fail; every row/design carries insertion_process and window_law (PI 2026-11-10 option a); PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn',
                      provisional='verdicts provisional: physio_fric3 windows carry the FEBio stick-point artefact (NUM-13); PI 2026-11-09 decision 1 recomputes them as physio_fric5 (stick-memory law, same checkpoints) which supersedes fric3 per window here; NUM-17 (0.5 mm grey zone) and the density reference (DECISIONS 2026-11-05 item 8) still open', generated=__import__('time').strftime('%Y-%m-%d %H:%M'))
 json.dump(verd, open(os.path.join(OUT, 'verdicts.json'), 'w'), indent=1)
 import collections as _c; print('\nfriction verdicts (PI rule 2026-11-03 / 2026-11-05, no pass by absence 2026-11-04):', dict(_c.Counter(v['verdict'] for p, v in verd.items() if p != '_meta')))

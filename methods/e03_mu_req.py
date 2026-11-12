@@ -166,7 +166,7 @@ def dyn_residuals(rb, times, exclude=None):
     ts = [t for t in times if rb and t in rb]
     if not ts: return {}, None
     fz = float(np.median([rb[t][8] for t in ts]))
-    mres = lambda r: float(np.linalg.norm([r[k] for k in (9, 10, 11) if k != exclude]))
+    mres = (lambda r: 0.0) if exclude == 'all' else (lambda r: float(np.linalg.norm([r[k] for k in (9, 10, 11) if k != exclude])))   # 'all': every rotation is prescribed (route E: Ry driven, Rx/Rz held relative 0) -> no moment residual exists
     return {t: (mres(rb[t]), float(np.hypot(rb[t][6], rb[t][7]) + abs(rb[t][8] - fz))) for t in ts}, fz
 
 
@@ -197,7 +197,7 @@ def target_bracket(cd, sch):
     mode = drive_mode(cd); rows = rigid_drive_rows(cd, sch) if mode == 'rigid_relative' else drive_rows(cd); Mt = sch['target_moment_Nmm']; rb = rb_rows(cd)
     for i, w in enumerate(sch['windows']):
         up = [(tt, d[i + 1][COL[w['dof']]]) for tt, d in rows if (i + 1) in d and w['t0'] + 1e-9 < tt <= w['t_peak'] + 1e-9]
-        dyn, fz = dyn_residuals(rb, [t for t, _ in up], exclude=(COL[w['dof']] + 5) if mode == 'rigid_relative' else None)   # route E: the prescribed DOF's reaction IS the drive, not a residual
+        dyn, fz = dyn_residuals(rb, [t for t, _ in up], exclude='all' if mode == 'rigid_relative' else None)   # route E: all three rotations are prescribed (Ry driven, Rx/Rz relative 0): their reactions are not residuals (audit 2026-11-13 D-20261111-32); the force residual still filters
         valid, invalid = filter_rows(up, w['t0'], Mt, dyn, abs(fz) if fz else None)
         mono = all(abs(valid[k][2]) >= 0.98 * abs(valid[k - 1][2]) for k in range(1, len(valid)))
         chk = dict(n_rows=len(up), n_invalid=len(invalid), n_dyn=sum(r[3] == 'dyn' for r in invalid), dt_min=min((v[1] for v in valid), default=None),
