@@ -9,27 +9,26 @@
   "p002": {
    "verdict": "fail",
    "reasons": [
-    "flexion@ROM shear p99 16.6 MPa > 3.0"
+    "flexion@ROM shear p99 17.7 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p002",
-     "shear_p99_at_rom": 2.713,
+     "shear_p99_at_rom": 2.76,
      "horizontal": null,
-     "vertical": 2.7134650491252654,
+     "vertical": 2.759628553361484,
      "fallback": false,
-     "peel_max_at_rom": 3.972673770370051
+     "peel_max_at_rom": 3.81978257719365
     },
     "flexion": {
-     "set": "physio_fric3",
+     "set": "physio_fric5r",
      "case_dir": "p002",
-     "shear_p99_at_rom": 16.556,
+     "shear_p99_at_rom": 17.735,
      "horizontal": null,
-     "vertical": 16.555838073982162,
-     "fallback": true,
-     "fallback_note": "PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only",
-     "peel_max_at_rom": 59.03430082493369
+     "vertical": 17.7345092667592,
+     "fallback": false,
+     "peel_max_at_rom": 56.550145359145645
     }
    },
    "missing": []
@@ -41,13 +40,13 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p014",
-     "shear_p99_at_rom": 2.643,
+     "shear_p99_at_rom": 2.642,
      "horizontal": null,
-     "vertical": 2.6426330136056504,
+     "vertical": 2.642373643496901,
      "fallback": false,
-     "peel_max_at_rom": 3.5430380890472715
+     "peel_max_at_rom": 3.525127365916451
     },
     "flexion": {
      "set": "physio_fric5",
@@ -65,26 +64,26 @@
    "verdict": "fail",
    "reasons": [
     "extension@ROM shear p99 3.0 MPa > 3.0",
-    "flexion@ROM shear p99 15.6 MPa > 3.0"
+    "flexion@ROM shear p99 15.7 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p026",
-     "shear_p99_at_rom": 3.003,
+     "shear_p99_at_rom": 3.015,
      "horizontal": null,
-     "vertical": 3.0030101410648045,
+     "vertical": 3.0146471093861846,
      "fallback": false,
-     "peel_max_at_rom": 3.8838592473528237
+     "peel_max_at_rom": 3.8840941306031507
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p026",
-     "shear_p99_at_rom": 15.6,
+     "shear_p99_at_rom": 15.749,
      "horizontal": null,
-     "vertical": 15.599547490579406,
+     "vertical": 15.749216863923802,
      "fallback": false,
-     "peel_max_at_rom": 51.524463608911006
+     "peel_max_at_rom": 51.664228744525424
     }
    },
    "missing": []
@@ -92,18 +91,18 @@
   "p036": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 4.9 MPa > 3.0",
+    "extension@ROM shear p99 5.0 MPa > 3.0",
     "flexion@ROM shear p99 14.8 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p036",
-     "shear_p99_at_rom": 4.865,
-     "horizontal": 4.864804536473638,
-     "vertical": 0.7807711363231715,
+     "shear_p99_at_rom": 5.04,
+     "horizontal": 5.040133185912128,
+     "vertical": 0.7716585663854943,
      "fallback": false,
-     "peel_max_at_rom": 2.7011080645435253
+     "peel_max_at_rom": 2.639396306769782
     },
     "flexion": {
      "set": "physio_fric3",
@@ -125,44 +124,52 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p038",
-     "shear_p99_at_rom": 2.358,
+     "shear_p99_at_rom": 2.349,
      "horizontal": null,
-     "vertical": 2.358172193654084,
+     "vertical": 2.34880857022539,
      "fallback": false,
-     "peel_max_at_rom": 3.5269313282494807
+     "peel_max_at_rom": 3.4752256399721384
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p038",
-     "shear_p99_at_rom": 16.882,
+     "shear_p99_at_rom": 16.909,
      "horizontal": null,
-     "vertical": 16.882097490838714,
+     "vertical": 16.909047110885187,
      "fallback": false,
-     "peel_max_at_rom": 54.95015387524875
+     "peel_max_at_rom": 55.049037818252586
     }
    },
    "missing": []
   },
   "p039": {
-   "verdict": "open",
-   "reasons": [],
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 3.4 MPa > 3.0"
+   ],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p039_gpu1",
-     "shear_p99_at_rom": 0.448,
-     "horizontal": 0.44832912350390286,
-     "vertical": 0.36612025528479436,
+     "set": "physio_relGr",
+     "case_dir": "p039",
+     "shear_p99_at_rom": 0.442,
+     "horizontal": 0.4423930988253032,
+     "vertical": 0.3626232097434784,
      "fallback": false,
-     "peel_max_at_rom": 1.9198258141298112
+     "peel_max_at_rom": 1.8877484422279023
+    },
+    "flexion": {
+     "set": "physio_relGr",
+     "case_dir": "p039",
+     "shear_p99_at_rom": 3.359,
+     "horizontal": 3.358510015357976,
+     "vertical": 1.610424389930071,
+     "fallback": false,
+     "peel_max_at_rom": 3.0713483563156827
     }
    },
-   "missing": [
-    "flexion"
-   ],
-   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+   "missing": []
   },
   "p048": {
    "verdict": "open",
@@ -175,36 +182,46 @@
    "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)"
   },
   "p050": {
-   "verdict": "open",
-   "reasons": [],
-   "windows": {},
-   "missing": [
-    "flexion",
-    "extension"
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 21.9 MPa > 3.0"
    ],
-   "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)"
+   "windows": {
+    "flexion": {
+     "set": "physio_relGr",
+     "case_dir": "p050",
+     "shear_p99_at_rom": 21.894,
+     "horizontal": null,
+     "vertical": 21.893660735484026,
+     "fallback": false,
+     "peel_max_at_rom": 62.41475112713315
+    }
+   },
+   "missing": [
+    "extension"
+   ]
   },
   "p051": {
    "verdict": "pass",
    "reasons": [],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p051",
-     "shear_p99_at_rom": 0.499,
-     "horizontal": 0.49879991803498425,
-     "vertical": 0.3654711181710479,
+     "shear_p99_at_rom": 0.497,
+     "horizontal": 0.49737543214532404,
+     "vertical": 0.36430365201587395,
      "fallback": false,
-     "peel_max_at_rom": 0.735163235904629
+     "peel_max_at_rom": 0.7332540394306049
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p051",
-     "shear_p99_at_rom": 2.158,
-     "horizontal": 2.157563510640442,
-     "vertical": 1.535795080635832,
+     "shear_p99_at_rom": 2.153,
+     "horizontal": 2.153285866360214,
+     "vertical": 1.5316148309870312,
      "fallback": false,
-     "peel_max_at_rom": 2.4509021432684603
+     "peel_max_at_rom": 2.478163391771729
     }
    },
    "missing": []
@@ -216,47 +233,49 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p052_gpu4",
-     "shear_p99_at_rom": 0.424,
-     "horizontal": 0.42424151674774313,
-     "vertical": 0.3145638709617151,
+     "set": "physio_relGr",
+     "case_dir": "p052",
+     "shear_p99_at_rom": 0.426,
+     "horizontal": 0.4258374012532969,
+     "vertical": 0.313262695482653,
      "fallback": false,
-     "peel_max_at_rom": 0.6455938259989968
+     "peel_max_at_rom": 0.647977936655532
     },
     "flexion": {
-     "set": "physio_relG",
-     "case_dir": "p052_gpu4",
-     "shear_p99_at_rom": 3.164,
-     "horizontal": 3.1639239746912016,
-     "vertical": 1.8710291193487956,
+     "set": "physio_relGr",
+     "case_dir": "p052",
+     "shear_p99_at_rom": 3.169,
+     "horizontal": 3.169088433894874,
+     "vertical": 1.8672154166822272,
      "fallback": false,
-     "peel_max_at_rom": 3.522316965980484
+     "peel_max_at_rom": 3.5158369408781547
     }
    },
    "missing": []
   },
   "p061": {
-   "verdict": "pass",
-   "reasons": [],
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 3.0 MPa > 3.0"
+   ],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p061_gpu4",
-     "shear_p99_at_rom": 0.479,
-     "horizontal": 0.47862766351582275,
-     "vertical": 0.33962209705250784,
+     "set": "physio_relGr",
+     "case_dir": "p061",
+     "shear_p99_at_rom": 0.482,
+     "horizontal": 0.4820080853083929,
+     "vertical": 0.3432932191989989,
      "fallback": false,
-     "peel_max_at_rom": 0.5978337877513883
+     "peel_max_at_rom": 0.6031628212310038
     },
     "flexion": {
-     "set": "physio_relG",
-     "case_dir": "p061_gpu4",
-     "shear_p99_at_rom": 2.995,
-     "horizontal": 2.995268729867241,
-     "vertical": 1.825699498198825,
+     "set": "physio_relGr",
+     "case_dir": "p061",
+     "shear_p99_at_rom": 3.011,
+     "horizontal": 3.0105711238249193,
+     "vertical": 1.8165916793354218,
      "fallback": false,
-     "peel_max_at_rom": 3.333435947080272
+     "peel_max_at_rom": 3.3042514040948348
     }
    },
    "missing": []
@@ -269,22 +288,22 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p062",
-     "shear_p99_at_rom": 6.534,
-     "horizontal": 6.534219999452549,
-     "vertical": 1.9091362589641143,
+     "shear_p99_at_rom": 6.542,
+     "horizontal": 6.541731450583695,
+     "vertical": 1.9084580126489037,
      "fallback": false,
-     "peel_max_at_rom": 2.5641364969962983
+     "peel_max_at_rom": 2.5841730550326116
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p062",
-     "shear_p99_at_rom": 11.372,
-     "horizontal": 11.371996574553625,
-     "vertical": 10.219073619895006,
+     "shear_p99_at_rom": 11.409,
+     "horizontal": 11.409117321612609,
+     "vertical": 10.168369679232192,
      "fallback": false,
-     "peel_max_at_rom": 17.239480712630616
+     "peel_max_at_rom": 17.257169954134568
     }
    },
    "missing": []
@@ -297,22 +316,22 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p063",
-     "shear_p99_at_rom": 6.353,
-     "horizontal": 6.353073796959979,
-     "vertical": 1.378158492772408,
+     "shear_p99_at_rom": 6.384,
+     "horizontal": 6.384195570990065,
+     "vertical": 1.3835791284869934,
      "fallback": false,
-     "peel_max_at_rom": 2.5446208233459795
+     "peel_max_at_rom": 2.5180068159155446
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p063",
-     "shear_p99_at_rom": 11.535,
-     "horizontal": 11.53488016923611,
-     "vertical": 11.072347539032627,
+     "shear_p99_at_rom": 11.541,
+     "horizontal": 11.541161536169048,
+     "vertical": 11.088046663659998,
      "fallback": false,
-     "peel_max_at_rom": 26.38314021188941
+     "peel_max_at_rom": 26.53022186979207
     }
    },
    "missing": []
@@ -322,13 +341,13 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p064_gpu3",
+     "set": "physio_relGr",
+     "case_dir": "p064",
      "shear_p99_at_rom": 0.082,
-     "horizontal": 0.08153107062450586,
-     "vertical": 0.06540517389453264,
+     "horizontal": 0.08174139154809328,
+     "vertical": 0.06555701199450595,
      "fallback": false,
-     "peel_max_at_rom": 0.37645755229539507
+     "peel_max_at_rom": 0.3766978086544984
     }
    },
    "missing": [
@@ -344,13 +363,13 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p065",
-     "shear_p99_at_rom": 4.412,
-     "horizontal": 4.412327079868059,
-     "vertical": 0.6269395544422378,
+     "shear_p99_at_rom": 4.443,
+     "horizontal": 4.442751727971622,
+     "vertical": 0.6255469062416884,
      "fallback": false,
-     "peel_max_at_rom": 0.8914830758137027
+     "peel_max_at_rom": 0.8596675578051524
     },
     "flexion": {
      "set": "physio_fric5",
@@ -372,22 +391,22 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p066",
-     "shear_p99_at_rom": 4.696,
-     "horizontal": 4.696195401893842,
-     "vertical": 0.954550647043766,
+     "shear_p99_at_rom": 4.721,
+     "horizontal": 4.721269188446118,
+     "vertical": 0.9590925066881284,
      "fallback": false,
-     "peel_max_at_rom": 2.2885689188410154
+     "peel_max_at_rom": 2.261296536662752
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p066",
-     "shear_p99_at_rom": 14.59,
-     "horizontal": 13.096016984895805,
-     "vertical": 14.590138326037659,
+     "shear_p99_at_rom": 14.593,
+     "horizontal": 13.002825437845576,
+     "vertical": 14.593151742782352,
      "fallback": false,
-     "peel_max_at_rom": 43.438049056355275
+     "peel_max_at_rom": 43.34736594482629
     }
    },
    "missing": []
@@ -400,13 +419,13 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p067",
-     "shear_p99_at_rom": 5.267,
-     "horizontal": 5.267235863382098,
-     "vertical": 1.2577759821335406,
+     "shear_p99_at_rom": 5.26,
+     "horizontal": 5.260359654108698,
+     "vertical": 1.2588333170759756,
      "fallback": false,
-     "peel_max_at_rom": 1.9139452070661611
+     "peel_max_at_rom": 1.966795080911471
     },
     "flexion": {
      "set": "physio_fric5",
@@ -423,7 +442,7 @@
   "p068": {
    "verdict": "fail",
    "reasons": [
-    "flexion@ROM shear p99 20.8 MPa > 3.0"
+    "flexion@ROM shear p99 21.9 MPa > 3.0"
    ],
    "windows": {
     "extension": {
@@ -436,13 +455,13 @@
      "peel_max_at_rom": 9.85600895641769
     },
     "flexion": {
-     "set": "physio_relG",
-     "case_dir": "p068_gpu2",
-     "shear_p99_at_rom": 20.833,
+     "set": "physio_relGr",
+     "case_dir": "p068",
+     "shear_p99_at_rom": 21.877,
      "horizontal": null,
-     "vertical": 20.83265212579048,
+     "vertical": 21.876623445732882,
      "fallback": false,
-     "peel_max_at_rom": 64.22119490044734
+     "peel_max_at_rom": 62.347282815447535
     }
    },
    "missing": []
@@ -454,22 +473,22 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p071_gpu1",
-     "shear_p99_at_rom": 2.396,
+     "set": "physio_relGr",
+     "case_dir": "p071",
+     "shear_p99_at_rom": 2.392,
      "horizontal": null,
-     "vertical": 2.395736251869518,
+     "vertical": 2.391837231233038,
      "fallback": false,
-     "peel_max_at_rom": 6.943999357987991
+     "peel_max_at_rom": 6.862608194186894
     },
     "flexion": {
-     "set": "physio_relG",
-     "case_dir": "p071_gpu1",
-     "shear_p99_at_rom": 19.873,
+     "set": "physio_relGr",
+     "case_dir": "p071",
+     "shear_p99_at_rom": 19.874,
      "horizontal": null,
-     "vertical": 19.87323354380853,
+     "vertical": 19.87353997867985,
      "fallback": false,
-     "peel_max_at_rom": 59.49902264922638
+     "peel_max_at_rom": 59.42044533197601
     }
    },
    "missing": []
@@ -479,22 +498,22 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p072",
-     "shear_p99_at_rom": 0.493,
-     "horizontal": 0.49286082630519146,
-     "vertical": 0.33451041040169777,
+     "shear_p99_at_rom": 0.488,
+     "horizontal": 0.48849470168878173,
+     "vertical": 0.33282074307077925,
      "fallback": false,
-     "peel_max_at_rom": 0.7162408287970192
+     "peel_max_at_rom": 0.710370347962919
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p072",
-     "shear_p99_at_rom": 2.392,
-     "horizontal": 2.392496681734119,
-     "vertical": 1.5131424732061227,
+     "shear_p99_at_rom": 2.382,
+     "horizontal": 2.382137259509263,
+     "vertical": 1.5175639818613893,
      "fallback": false,
-     "peel_max_at_rom": 2.308018428801806
+     "peel_max_at_rom": 2.362132475950087
     }
    },
    "missing": []
@@ -523,22 +542,22 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p075",
      "shear_p99_at_rom": 0.495,
-     "horizontal": 0.49522835004268384,
-     "vertical": 0.3656681928538423,
+     "horizontal": 0.4952468809244611,
+     "vertical": 0.3671665982092783,
      "fallback": false,
-     "peel_max_at_rom": 0.7308788977555515
+     "peel_max_at_rom": 0.7281694894060963
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p075",
-     "shear_p99_at_rom": 2.159,
-     "horizontal": 2.159438558187484,
-     "vertical": 1.5385739469755757,
+     "shear_p99_at_rom": 2.151,
+     "horizontal": 2.1514808335596762,
+     "vertical": 1.5283855569631266,
      "fallback": false,
-     "peel_max_at_rom": 2.454516536384151
+     "peel_max_at_rom": 2.44448039546275
     }
    },
    "missing": []
@@ -551,22 +570,22 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p076",
-     "shear_p99_at_rom": 4.485,
-     "horizontal": 4.485125333548392,
-     "vertical": 1.6074288533062147,
+     "shear_p99_at_rom": 4.532,
+     "horizontal": 4.531699319751201,
+     "vertical": 1.6083273205347353,
      "fallback": false,
-     "peel_max_at_rom": 2.2979131270102204
+     "peel_max_at_rom": 2.3031995838668964
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p076",
-     "shear_p99_at_rom": 12.02,
-     "horizontal": 10.49936659425972,
-     "vertical": 12.019835247034194,
+     "shear_p99_at_rom": 11.985,
+     "horizontal": 10.439432276614093,
+     "vertical": 11.98465834365355,
      "fallback": false,
-     "peel_max_at_rom": 22.152360054663124
+     "peel_max_at_rom": 22.18735124129639
     }
    },
    "missing": []
@@ -579,22 +598,22 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p077",
-     "shear_p99_at_rom": 4.383,
-     "horizontal": 4.383047391411411,
-     "vertical": 1.1221918516719211,
+     "shear_p99_at_rom": 4.433,
+     "horizontal": 4.433113481058853,
+     "vertical": 1.1137762747906723,
      "fallback": false,
-     "peel_max_at_rom": 1.7286351447429205
+     "peel_max_at_rom": 1.7270259650153945
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p077",
-     "shear_p99_at_rom": 13.829,
-     "horizontal": 10.861425103049967,
-     "vertical": 13.829354718456027,
+     "shear_p99_at_rom": 13.847,
+     "horizontal": 10.821952735239819,
+     "vertical": 13.84706348954583,
      "fallback": false,
-     "peel_max_at_rom": 32.790992695214335
+     "peel_max_at_rom": 32.825510593291646
     }
    },
    "missing": []
@@ -615,13 +634,13 @@
      "peel_max_at_rom": 3.4846872401836673
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p078",
-     "shear_p99_at_rom": 17.885,
+     "shear_p99_at_rom": 17.939,
      "horizontal": null,
-     "vertical": 17.885487534621827,
+     "vertical": 17.93865006829993,
      "fallback": false,
-     "peel_max_at_rom": 58.13885889807433
+     "peel_max_at_rom": 58.13432885720222
     }
    },
    "missing": []
@@ -629,26 +648,26 @@
   "p079": {
    "verdict": "fail",
    "reasons": [
-    "flexion@ROM shear p99 18.2 MPa > 3.0"
+    "flexion@ROM shear p99 18.4 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p079",
-     "shear_p99_at_rom": 2.831,
+     "shear_p99_at_rom": 2.813,
      "horizontal": null,
-     "vertical": 2.831207449699441,
+     "vertical": 2.8127893988295023,
      "fallback": false,
-     "peel_max_at_rom": 3.9882594500469932
+     "peel_max_at_rom": 3.966920155994323
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p079",
-     "shear_p99_at_rom": 18.15,
+     "shear_p99_at_rom": 18.394,
      "horizontal": null,
-     "vertical": 18.15031379353343,
+     "vertical": 18.39393122477903,
      "fallback": false,
-     "peel_max_at_rom": 59.51181674070524
+     "peel_max_at_rom": 59.78153811547323
     }
    },
    "missing": []
@@ -656,7 +675,8 @@
   "p081": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 3.3 MPa > 3.0"
+    "extension@ROM shear p99 3.3 MPa > 3.0",
+    "flexion@ROM shear p99 15.8 MPa > 3.0"
    ],
    "windows": {
     "extension": {
@@ -667,34 +687,51 @@
      "vertical": 3.2871352231059903,
      "fallback": false,
      "peel_max_at_rom": 4.087806097900186
+    },
+    "flexion": {
+     "set": "physio_fric5r",
+     "case_dir": "p081",
+     "shear_p99_at_rom": 15.844,
+     "horizontal": null,
+     "vertical": 15.843529984026981,
+     "fallback": false,
+     "peel_max_at_rom": 53.252644416072584
     }
    },
-   "missing": [
-    "flexion"
-   ]
+   "missing": []
   },
   "p082": {
-   "verdict": "open",
-   "reasons": [],
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 4.0 MPa > 3.0"
+   ],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p082_gpu4",
-     "shear_p99_at_rom": 0.152,
-     "horizontal": 0.15157667381166978,
-     "vertical": 0.12464470539530577,
+     "set": "physio_relGr",
+     "case_dir": "p082",
+     "shear_p99_at_rom": 0.147,
+     "horizontal": 0.14677898148313323,
+     "vertical": 0.12192660466381658,
      "fallback": false,
-     "peel_max_at_rom": 0.3798181034555386
+     "peel_max_at_rom": 0.3560454144435425
+    },
+    "flexion": {
+     "set": "physio_relGr",
+     "case_dir": "p082",
+     "shear_p99_at_rom": 4.04,
+     "horizontal": 4.039505205285666,
+     "vertical": 1.4392511370787961,
+     "fallback": false,
+     "peel_max_at_rom": 2.8178592668483433
     }
    },
-   "missing": [
-    "flexion"
-   ],
-   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+   "missing": []
   },
   "p083": {
-   "verdict": "pass",
-   "reasons": [],
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 3.2 MPa > 3.0"
+   ],
    "windows": {
     "extension": {
      "set": "physio_relG",
@@ -706,14 +743,13 @@
      "peel_max_at_rom": 0.4012226731437013
     },
     "flexion": {
-     "set": "physio_relG_pl",
+     "set": "physio_relGr",
      "case_dir": "p083",
-     "shear_p99_at_rom": 2.683,
-     "horizontal": 2.683084104710348,
-     "vertical": 1.4129677180619118,
-     "fallback": true,
-     "fallback_note": "PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only",
-     "peel_max_at_rom": 4.005129305280715
+     "shear_p99_at_rom": 3.176,
+     "horizontal": 3.1757730702635745,
+     "vertical": 1.645895609249444,
+     "fallback": false,
+     "peel_max_at_rom": 4.343034353027266
     }
    },
    "missing": []
@@ -725,13 +761,13 @@
    ],
    "windows": {
     "flexion": {
-     "set": "physio_relG",
-     "case_dir": "p084_gpu4",
-     "shear_p99_at_rom": 21.933,
+     "set": "physio_relGr",
+     "case_dir": "p084",
+     "shear_p99_at_rom": 21.868,
      "horizontal": null,
-     "vertical": 21.93337579342676,
+     "vertical": 21.867801978371457,
      "fallback": false,
-     "peel_max_at_rom": 62.267828197201915
+     "peel_max_at_rom": 62.33619955222509
     }
    },
    "missing": [
@@ -752,57 +788,65 @@
      "peel_max_at_rom": 0.4485516680272966
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p086",
-     "shear_p99_at_rom": 2.725,
-     "horizontal": 2.724800868862582,
-     "vertical": 1.4771209155410432,
+     "shear_p99_at_rom": 2.718,
+     "horizontal": 2.717604234927874,
+     "vertical": 1.4680240034140102,
      "fallback": false,
-     "peel_max_at_rom": 3.545765931496587
+     "peel_max_at_rom": 3.557635719687709
     }
    },
    "missing": []
   },
   "p088": {
-   "verdict": "open",
-   "reasons": [],
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 4.1 MPa > 3.0"
+   ],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p088_gpu2",
-     "shear_p99_at_rom": 0.148,
-     "horizontal": 0.14758058457598902,
-     "vertical": 0.12283697207063064,
+     "set": "physio_relGr",
+     "case_dir": "p088",
+     "shear_p99_at_rom": 0.147,
+     "horizontal": 0.1469480793142506,
+     "vertical": 0.12219723147299728,
      "fallback": false,
-     "peel_max_at_rom": 0.36654128655808266
+     "peel_max_at_rom": 0.358777139430989
+    },
+    "flexion": {
+     "set": "physio_relGr",
+     "case_dir": "p088",
+     "shear_p99_at_rom": 4.128,
+     "horizontal": 4.127775702898034,
+     "vertical": 1.449852196052821,
+     "fallback": false,
+     "peel_max_at_rom": 2.917653685279358
     }
    },
-   "missing": [
-    "flexion"
-   ],
-   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+   "missing": []
   },
   "p092": {
    "verdict": "pass",
    "reasons": [],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p092",
-     "shear_p99_at_rom": 0.328,
-     "horizontal": 0.32802853860048165,
-     "vertical": 0.20290059304818434,
+     "shear_p99_at_rom": 0.327,
+     "horizontal": 0.3267752456091432,
+     "vertical": 0.2013227184879501,
      "fallback": false,
-     "peel_max_at_rom": 0.5079349749138377
+     "peel_max_at_rom": 0.4966431116045417
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p092",
      "shear_p99_at_rom": 2.328,
-     "horizontal": 2.328040819150022,
-     "vertical": 1.2565561931834122,
+     "horizontal": 2.32755068100741,
+     "vertical": 1.2615463934303308,
      "fallback": false,
-     "peel_max_at_rom": 3.322182581902694
+     "peel_max_at_rom": 3.285795311621051
     }
    },
    "missing": []
@@ -812,22 +856,22 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p093",
-     "shear_p99_at_rom": 0.35,
-     "horizontal": 0.35000221925586517,
-     "vertical": 0.22359550770375258,
+     "shear_p99_at_rom": 0.354,
+     "horizontal": 0.35373336107176206,
+     "vertical": 0.2245261907067335,
      "fallback": false,
-     "peel_max_at_rom": 0.7490658251650801
+     "peel_max_at_rom": 0.7655684582936946
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p093",
-     "shear_p99_at_rom": 1.949,
-     "horizontal": 1.9488165723424042,
-     "vertical": 1.0714677589589594,
+     "shear_p99_at_rom": 1.963,
+     "horizontal": 1.9630852916281487,
+     "vertical": 1.0763883704327437,
      "fallback": false,
-     "peel_max_at_rom": 3.31190647322959
+     "peel_max_at_rom": 3.3008959234896964
     }
    },
    "missing": []
@@ -835,34 +879,36 @@
   "p094": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 6.6 MPa > 3.0",
+    "extension@ROM shear p99 6.7 MPa > 3.0",
     "flexion@ROM shear p99 14.2 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p094",
-     "shear_p99_at_rom": 6.647,
-     "horizontal": 6.64714278091666,
-     "vertical": 0.7288079866143403,
+     "shear_p99_at_rom": 6.726,
+     "horizontal": 6.726286209032026,
+     "vertical": 0.7377077309135117,
      "fallback": false,
-     "peel_max_at_rom": 3.595893228610043
+     "peel_max_at_rom": 3.600056819057781
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p094",
-     "shear_p99_at_rom": 14.172,
-     "horizontal": 14.171654334226442,
-     "vertical": 12.87071234090823,
+     "shear_p99_at_rom": 14.195,
+     "horizontal": 14.19527848990218,
+     "vertical": 12.903748455041486,
      "fallback": false,
-     "peel_max_at_rom": 20.26923525675136
+     "peel_max_at_rom": 20.345828609613875
     }
    },
    "missing": []
   },
   "p095": {
-   "verdict": "open",
-   "reasons": [],
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 19.2 MPa > 3.0"
+   ],
    "windows": {
     "extension": {
      "set": "physio_relG_pl",
@@ -873,45 +919,67 @@
      "fallback": true,
      "fallback_note": "PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only",
      "peel_max_at_rom": 6.655119697637813
+    },
+    "flexion": {
+     "set": "physio_relGr",
+     "case_dir": "p095",
+     "shear_p99_at_rom": 19.176,
+     "horizontal": null,
+     "vertical": 19.176120791121807,
+     "fallback": false,
+     "peel_max_at_rom": 55.54567016065986
     }
    },
-   "missing": [
-    "flexion"
-   ],
-   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+   "missing": []
   },
   "p097": {
-   "verdict": "open",
-   "reasons": [],
-   "windows": {},
-   "missing": [
-    "flexion",
-    "extension"
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 18.4 MPa > 3.0"
    ],
-   "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)"
+   "windows": {
+    "extension": {
+     "set": "physio_relGr",
+     "case_dir": "p097",
+     "shear_p99_at_rom": 1.836,
+     "horizontal": null,
+     "vertical": 1.8358460416448845,
+     "fallback": false,
+     "peel_max_at_rom": 8.360421344506458
+    },
+    "flexion": {
+     "set": "physio_relGr",
+     "case_dir": "p097",
+     "shear_p99_at_rom": 18.368,
+     "horizontal": null,
+     "vertical": 18.368256656067874,
+     "fallback": false,
+     "peel_max_at_rom": 39.60815334488721
+    }
+   },
+   "missing": []
   },
   "p100": {
    "verdict": "pass",
    "reasons": [],
    "windows": {
     "extension": {
-     "set": "physio_fric3",
+     "set": "physio_fric5r",
      "case_dir": "p100",
-     "shear_p99_at_rom": 0.29,
-     "horizontal": 0.2903382241421466,
-     "vertical": 0.238978547593641,
-     "fallback": true,
-     "fallback_note": "PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only",
-     "peel_max_at_rom": 0.43250375212085435
+     "shear_p99_at_rom": 0.303,
+     "horizontal": 0.3029839390866018,
+     "vertical": 0.22026136406712574,
+     "fallback": false,
+     "peel_max_at_rom": 0.44806298739278727
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p100",
-     "shear_p99_at_rom": 2.678,
-     "horizontal": 2.6777465631178816,
-     "vertical": 1.4765330663603753,
+     "shear_p99_at_rom": 2.73,
+     "horizontal": 2.73001595350383,
+     "vertical": 1.4678044427170156,
      "fallback": false,
-     "peel_max_at_rom": 3.532890625767279
+     "peel_max_at_rom": 3.5155768125301474
     }
    },
    "missing": []
@@ -923,13 +991,13 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p101_gpu3",
-     "shear_p99_at_rom": 0.219,
-     "horizontal": 0.2191317424878479,
-     "vertical": 0.1455801509759056,
+     "set": "physio_relGr",
+     "case_dir": "p101",
+     "shear_p99_at_rom": 0.22,
+     "horizontal": 0.21967752838939236,
+     "vertical": 0.14528399207080686,
      "fallback": false,
-     "peel_max_at_rom": 0.3095157731163804
+     "peel_max_at_rom": 0.30985082673611036
     },
     "flexion": {
      "set": "physio_relG",
@@ -946,7 +1014,7 @@
   "p104": {
    "verdict": "fail",
    "reasons": [
-    "flexion@ROM shear p99 14.8 MPa > 3.0"
+    "flexion@ROM shear p99 15.0 MPa > 3.0"
    ],
    "windows": {
     "extension": {
@@ -960,13 +1028,13 @@
      "peel_max_at_rom": 2.6283701518085554
     },
     "flexion": {
-     "set": "physio_relG",
-     "case_dir": "p104_gpu4",
-     "shear_p99_at_rom": 14.836,
+     "set": "physio_relGr",
+     "case_dir": "p104",
+     "shear_p99_at_rom": 15.025,
      "horizontal": null,
-     "vertical": 14.836246025859106,
+     "vertical": 15.024744295404405,
      "fallback": false,
-     "peel_max_at_rom": 42.240066724449385
+     "peel_max_at_rom": 42.35270490906377
     }
    },
    "missing": []
@@ -979,45 +1047,52 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p105",
-     "shear_p99_at_rom": 7.887,
-     "horizontal": 7.8867035171098925,
-     "vertical": 2.233462959000647,
+     "shear_p99_at_rom": 7.892,
+     "horizontal": 7.8915581012958755,
+     "vertical": 2.3346024647145245,
      "fallback": false,
-     "peel_max_at_rom": 3.0931079878972794
+     "peel_max_at_rom": 3.1461092732860645
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p105",
-     "shear_p99_at_rom": 13.677,
-     "horizontal": 13.677096941508285,
-     "vertical": 11.218530649915742,
+     "shear_p99_at_rom": 13.736,
+     "horizontal": 13.735800960084829,
+     "vertical": 11.195935471813083,
      "fallback": false,
-     "peel_max_at_rom": 20.643437446262876
+     "peel_max_at_rom": 20.12263991150306
     }
    },
    "missing": []
   },
   "p109": {
-   "verdict": "open",
-   "reasons": [],
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 21.2 MPa > 3.0"
+   ],
    "windows": {
     "extension": {
-     "set": "physio_relG_pl",
+     "set": "physio_relGr",
      "case_dir": "p109",
-     "shear_p99_at_rom": 2.507,
+     "shear_p99_at_rom": 2.436,
      "horizontal": null,
-     "vertical": 2.5066739478906896,
-     "fallback": true,
-     "fallback_note": "PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only",
-     "peel_max_at_rom": 9.351626828409456
+     "vertical": 2.435926973082162,
+     "fallback": false,
+     "peel_max_at_rom": 9.83394312317619
+    },
+    "flexion": {
+     "set": "physio_relGr",
+     "case_dir": "p109",
+     "shear_p99_at_rom": 21.21,
+     "horizontal": null,
+     "vertical": 21.21049962538342,
+     "fallback": false,
+     "peel_max_at_rom": 61.34390704783014
     }
    },
-   "missing": [
-    "flexion"
-   ],
-   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+   "missing": []
   },
   "p110": {
    "verdict": "fail",
@@ -1027,22 +1102,22 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p110",
-     "shear_p99_at_rom": 6.593,
-     "horizontal": 6.593248837098179,
-     "vertical": 0.9179287741194965,
+     "shear_p99_at_rom": 6.564,
+     "horizontal": 6.564099083070829,
+     "vertical": 0.8862313921966195,
      "fallback": false,
-     "peel_max_at_rom": 3.3149762949309878
+     "peel_max_at_rom": 3.3103500783981112
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p110",
-     "shear_p99_at_rom": 14.947,
-     "horizontal": 14.216648033981256,
-     "vertical": 14.947304792542154,
+     "shear_p99_at_rom": 14.864,
+     "horizontal": 14.280755103645618,
+     "vertical": 14.864028859955853,
      "fallback": false,
-     "peel_max_at_rom": 32.096621351618424
+     "peel_max_at_rom": 31.67244775970772
     }
    },
    "missing": []
@@ -1055,22 +1130,22 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p111",
-     "shear_p99_at_rom": 6.105,
-     "horizontal": 6.105234898272831,
-     "vertical": 1.387680365279199,
+     "shear_p99_at_rom": 6.112,
+     "horizontal": 6.112358250228314,
+     "vertical": 1.3956476319484996,
      "fallback": false,
-     "peel_max_at_rom": 1.9967022819198141
+     "peel_max_at_rom": 1.9969125156921441
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p111",
-     "shear_p99_at_rom": 12.709,
-     "horizontal": 12.603418847733296,
-     "vertical": 12.708980150407255,
+     "shear_p99_at_rom": 12.678,
+     "horizontal": 12.54056685153685,
+     "vertical": 12.677592761969189,
      "fallback": false,
-     "peel_max_at_rom": 32.15341657760867
+     "peel_max_at_rom": 31.854924555611838
     }
    },
    "missing": []
@@ -1078,26 +1153,26 @@
   "p112": {
    "verdict": "fail",
    "reasons": [
-    "flexion@ROM shear p99 12.8 MPa > 3.0"
+    "flexion@ROM shear p99 12.9 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p112",
-     "shear_p99_at_rom": 2.502,
+     "shear_p99_at_rom": 2.523,
      "horizontal": null,
-     "vertical": 2.5023707172974152,
+     "vertical": 2.5227652801375977,
      "fallback": false,
-     "peel_max_at_rom": 3.47209134080437
+     "peel_max_at_rom": 3.4734915578141776
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p112",
-     "shear_p99_at_rom": 12.835,
+     "shear_p99_at_rom": 12.935,
      "horizontal": null,
-     "vertical": 12.834935106385869,
+     "vertical": 12.934881983517151,
      "fallback": false,
-     "peel_max_at_rom": 42.71546085361695
+     "peel_max_at_rom": 42.914270637122634
     }
    },
    "missing": []
@@ -1109,22 +1184,22 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p113",
-     "shear_p99_at_rom": 2.789,
+     "shear_p99_at_rom": 2.809,
      "horizontal": null,
-     "vertical": 2.7885898643530123,
+     "vertical": 2.809475661951162,
      "fallback": false,
-     "peel_max_at_rom": 3.8091547537258297
+     "peel_max_at_rom": 3.679399670620441
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p113",
-     "shear_p99_at_rom": 12.229,
+     "shear_p99_at_rom": 12.221,
      "horizontal": null,
-     "vertical": 12.228559485149159,
+     "vertical": 12.220887717334216,
      "fallback": false,
-     "peel_max_at_rom": 41.54269332215264
+     "peel_max_at_rom": 41.560632707677875
     }
    },
    "missing": []
@@ -1134,22 +1209,22 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p114",
-     "shear_p99_at_rom": 0.387,
-     "horizontal": 0.38722977309193224,
-     "vertical": 0.2531530137429531,
+     "shear_p99_at_rom": 0.384,
+     "horizontal": 0.3840802638244187,
+     "vertical": 0.25603209542395017,
      "fallback": false,
-     "peel_max_at_rom": 0.7171425792737226
+     "peel_max_at_rom": 0.6531679737261898
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p114",
-     "shear_p99_at_rom": 2.051,
-     "horizontal": 2.050940412356459,
-     "vertical": 1.2841403578297053,
+     "shear_p99_at_rom": 2.045,
+     "horizontal": 2.0452137761109537,
+     "vertical": 1.2837193579386594,
      "fallback": false,
-     "peel_max_at_rom": 2.8329756129645918
+     "peel_max_at_rom": 2.829522064979863
     }
    },
    "missing": []
@@ -1174,8 +1249,10 @@
    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
   },
   "p116": {
-   "verdict": "open",
-   "reasons": [],
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 21.3 MPa > 3.0"
+   ],
    "windows": {
     "extension": {
      "set": "physio_relG",
@@ -1185,60 +1262,67 @@
      "vertical": 2.352991004001264,
      "fallback": false,
      "peel_max_at_rom": 8.89352482819911
+    },
+    "flexion": {
+     "set": "physio_relGr",
+     "case_dir": "p116",
+     "shear_p99_at_rom": 21.326,
+     "horizontal": null,
+     "vertical": 21.325813458659827,
+     "fallback": false,
+     "peel_max_at_rom": 61.85589138565629
     }
    },
-   "missing": [
-    "flexion"
-   ],
-   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+   "missing": []
   },
   "p117": {
    "verdict": "pass",
    "reasons": [],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p117",
-     "shear_p99_at_rom": 0.328,
-     "horizontal": 0.3280037203180619,
-     "vertical": 0.2028513833858588,
+     "shear_p99_at_rom": 0.326,
+     "horizontal": 0.3257417860309095,
+     "vertical": 0.2015440305388855,
      "fallback": false,
-     "peel_max_at_rom": 0.5056277376529179
+     "peel_max_at_rom": 0.4921040904964731
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p117",
-     "shear_p99_at_rom": 2.309,
-     "horizontal": 2.309064101758721,
-     "vertical": 1.247582936657621,
+     "shear_p99_at_rom": 2.322,
+     "horizontal": 2.322102390450643,
+     "vertical": 1.2540523815066267,
      "fallback": false,
-     "peel_max_at_rom": 3.3679844084474686
+     "peel_max_at_rom": 3.32253365579261
     }
    },
    "missing": []
   },
   "p120": {
-   "verdict": "pass",
-   "reasons": [],
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 3.2 MPa > 3.0"
+   ],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p120_gpu2",
+     "set": "physio_relGr",
+     "case_dir": "p120",
      "shear_p99_at_rom": 0.155,
-     "horizontal": 0.15535399838837102,
-     "vertical": 0.11045604167939527,
+     "horizontal": 0.1554161419984117,
+     "vertical": 0.10996864137040038,
      "fallback": false,
-     "peel_max_at_rom": 0.3997551714075659
+     "peel_max_at_rom": 0.40105113739134435
     },
     "flexion": {
-     "set": "physio_relG_pl",
+     "set": "physio_relGr",
      "case_dir": "p120",
-     "shear_p99_at_rom": 2.275,
-     "horizontal": 2.274607659725859,
-     "vertical": 1.0980135591751632,
-     "fallback": true,
-     "fallback_note": "PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only",
-     "peel_max_at_rom": 3.5541581657929178
+     "shear_p99_at_rom": 3.228,
+     "horizontal": 3.2284683012267723,
+     "vertical": 1.30362542881033,
+     "fallback": false,
+     "peel_max_at_rom": 3.466388686278549
     }
    },
    "missing": []
@@ -1248,13 +1332,13 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p121_gpu1",
-     "shear_p99_at_rom": 0.146,
-     "horizontal": 0.14558122628825496,
-     "vertical": 0.1220362276080733,
+     "set": "physio_relGr",
+     "case_dir": "p121",
+     "shear_p99_at_rom": 0.145,
+     "horizontal": 0.14458683100646266,
+     "vertical": 0.12141128745886255,
      "fallback": false,
-     "peel_max_at_rom": 0.3648861823313575
+     "peel_max_at_rom": 0.37389200516586635
     }
    },
    "missing": [
@@ -1265,27 +1349,27 @@
   "p122": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 6.7 MPa > 3.0",
-    "flexion@ROM shear p99 11.9 MPa > 3.0"
+    "extension@ROM shear p99 6.6 MPa > 3.0",
+    "flexion@ROM shear p99 11.7 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p122",
-     "shear_p99_at_rom": 6.65,
-     "horizontal": 6.650271731407059,
-     "vertical": 1.941584845124304,
+     "shear_p99_at_rom": 6.636,
+     "horizontal": 6.636452197353044,
+     "vertical": 1.9261490661373104,
      "fallback": false,
-     "peel_max_at_rom": 2.635000223567705
+     "peel_max_at_rom": 2.597207445013072
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p122",
-     "shear_p99_at_rom": 11.858,
-     "horizontal": 11.857679068603852,
-     "vertical": 10.454770440446305,
+     "shear_p99_at_rom": 11.72,
+     "horizontal": 11.719995067558434,
+     "vertical": 10.434260875100243,
      "fallback": false,
-     "peel_max_at_rom": 18.654261470309418
+     "peel_max_at_rom": 17.890697118842226
     }
    },
    "missing": []
@@ -1293,27 +1377,27 @@
   "p124": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 5.6 MPa > 3.0",
+    "extension@ROM shear p99 5.5 MPa > 3.0",
     "flexion@ROM shear p99 13.9 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p124",
-     "shear_p99_at_rom": 5.575,
-     "horizontal": 5.574959881379377,
-     "vertical": 0.8135158868030439,
+     "shear_p99_at_rom": 5.474,
+     "horizontal": 5.47365536260998,
+     "vertical": 0.8169483431539036,
      "fallback": false,
-     "peel_max_at_rom": 2.0579536431270893
+     "peel_max_at_rom": 2.1014725113420836
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p124",
-     "shear_p99_at_rom": 13.925,
-     "horizontal": 12.313437926535014,
-     "vertical": 13.92496971856379,
+     "shear_p99_at_rom": 13.873,
+     "horizontal": 12.241987117217377,
+     "vertical": 13.87327710137695,
      "fallback": false,
-     "peel_max_at_rom": 29.68867974447987
+     "peel_max_at_rom": 29.769150066793166
     }
    },
    "missing": []
@@ -1325,13 +1409,13 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p125",
-     "shear_p99_at_rom": 2.701,
+     "shear_p99_at_rom": 2.636,
      "horizontal": null,
-     "vertical": 2.701280740211407,
+     "vertical": 2.635787909698075,
      "fallback": false,
-     "peel_max_at_rom": 3.696666270965314
+     "peel_max_at_rom": 3.5289731082944096
     },
     "flexion": {
      "set": "physio_fric5",
@@ -1346,27 +1430,37 @@
    "missing": []
   },
   "p127": {
-   "verdict": "open",
-   "reasons": [],
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 21.9 MPa > 3.0"
+   ],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p127_gpu3",
-     "shear_p99_at_rom": 2.478,
+     "set": "physio_relGr",
+     "case_dir": "p127",
+     "shear_p99_at_rom": 2.487,
      "horizontal": null,
-     "vertical": 2.4781807712605013,
+     "vertical": 2.486892935539446,
      "fallback": false,
-     "peel_max_at_rom": 9.688630197377506
+     "peel_max_at_rom": 9.758287155009286
+    },
+    "flexion": {
+     "set": "physio_relGr",
+     "case_dir": "p127",
+     "shear_p99_at_rom": 21.887,
+     "horizontal": null,
+     "vertical": 21.886540079752713,
+     "fallback": false,
+     "peel_max_at_rom": 62.363448540425104
     }
    },
-   "missing": [
-    "flexion"
-   ],
-   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+   "missing": []
   },
   "p128": {
-   "verdict": "open",
-   "reasons": [],
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 19.2 MPa > 3.0"
+   ],
    "windows": {
     "extension": {
      "set": "physio_relG",
@@ -1376,12 +1470,18 @@
      "vertical": 2.1547297948659683,
      "fallback": false,
      "peel_max_at_rom": 7.075532496232509
+    },
+    "flexion": {
+     "set": "physio_relGr",
+     "case_dir": "p128",
+     "shear_p99_at_rom": 19.203,
+     "horizontal": null,
+     "vertical": 19.202713772999623,
+     "fallback": false,
+     "peel_max_at_rom": 55.55280815464358
     }
    },
-   "missing": [
-    "flexion"
-   ],
-   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
+   "missing": []
   },
   "p129": {
    "verdict": "fail",
@@ -1390,22 +1490,22 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p129_gpu4",
-     "shear_p99_at_rom": 0.292,
-     "horizontal": 0.2921571553565006,
-     "vertical": 0.21833516606334352,
+     "set": "physio_relGr",
+     "case_dir": "p129",
+     "shear_p99_at_rom": 0.288,
+     "horizontal": 0.2881806465884793,
+     "vertical": 0.21637822069853133,
      "fallback": false,
-     "peel_max_at_rom": 0.40693447650888476
+     "peel_max_at_rom": 0.40496239317788085
     },
     "flexion": {
-     "set": "physio_relG",
-     "case_dir": "p129_gpu4",
-     "shear_p99_at_rom": 3.199,
-     "horizontal": 3.1990630456486038,
-     "vertical": 1.634092746656674,
+     "set": "physio_relGr",
+     "case_dir": "p129",
+     "shear_p99_at_rom": 3.228,
+     "horizontal": 3.2278275900127484,
+     "vertical": 1.6410206358923978,
      "fallback": false,
-     "peel_max_at_rom": 4.164638715317341
+     "peel_max_at_rom": 4.106211635816537
     }
    },
    "missing": []
@@ -1413,26 +1513,26 @@
   "p130": {
    "verdict": "fail",
    "reasons": [
-    "flexion@ROM shear p99 18.2 MPa > 3.0"
+    "flexion@ROM shear p99 18.1 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p130_gpu2",
-     "shear_p99_at_rom": 2.448,
+     "set": "physio_relGr",
+     "case_dir": "p130",
+     "shear_p99_at_rom": 2.195,
      "horizontal": null,
-     "vertical": 2.44771747841975,
+     "vertical": 2.1947808530173916,
      "fallback": false,
-     "peel_max_at_rom": 5.954532246782737
+     "peel_max_at_rom": 3.6405772423051346
     },
     "flexion": {
-     "set": "physio_relG",
-     "case_dir": "p130_gpu2",
-     "shear_p99_at_rom": 18.15,
+     "set": "physio_relGr",
+     "case_dir": "p130",
+     "shear_p99_at_rom": 18.124,
      "horizontal": null,
-     "vertical": 18.150088364415414,
+     "vertical": 18.1240063306467,
      "fallback": false,
-     "peel_max_at_rom": 53.53390766446701
+     "peel_max_at_rom": 53.636425044298306
     }
    },
    "missing": []
@@ -1445,22 +1545,22 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p131",
-     "shear_p99_at_rom": 5.795,
-     "horizontal": 5.795019028228457,
-     "vertical": 1.3058063967796645,
+     "shear_p99_at_rom": 5.752,
+     "horizontal": 5.752443142826857,
+     "vertical": 1.3125194916815373,
      "fallback": false,
-     "peel_max_at_rom": 2.1075273960218395
+     "peel_max_at_rom": 2.1090037796549295
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p131",
-     "shear_p99_at_rom": 16.181,
-     "horizontal": 12.84541182976064,
-     "vertical": 16.180610039802414,
+     "shear_p99_at_rom": 16.22,
+     "horizontal": 12.752428449592799,
+     "vertical": 16.220449330688,
      "fallback": false,
-     "peel_max_at_rom": 30.171923344027515
+     "peel_max_at_rom": 30.244239852408064
     }
    },
    "missing": []
@@ -1468,27 +1568,26 @@
   "p132": {
    "verdict": "fail",
    "reasons": [
-    "flexion@ROM shear p99 13.7 MPa > 3.0"
+    "flexion@ROM shear p99 16.3 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p132",
-     "shear_p99_at_rom": 2.379,
+     "shear_p99_at_rom": 2.372,
      "horizontal": null,
-     "vertical": 2.3794978137695924,
+     "vertical": 2.37187995677368,
      "fallback": false,
-     "peel_max_at_rom": 3.198477035322887
+     "peel_max_at_rom": 3.207711686660233
     },
     "flexion": {
-     "set": "physio_fric3",
-     "case_dir": "p132_gpu2",
-     "shear_p99_at_rom": 13.691,
+     "set": "physio_fric5r",
+     "case_dir": "p132",
+     "shear_p99_at_rom": 16.255,
      "horizontal": null,
-     "vertical": 13.690528893738117,
-     "fallback": true,
-     "fallback_note": "PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only",
-     "peel_max_at_rom": 47.555778126040714
+     "vertical": 16.25490285779986,
+     "fallback": false,
+     "peel_max_at_rom": 53.04478555950706
     }
    },
    "missing": []
@@ -1497,27 +1596,26 @@
    "verdict": "fail",
    "reasons": [
     "extension@ROM shear p99 3.1 MPa > 3.0",
-    "flexion@ROM shear p99 13.4 MPa > 3.0"
+    "flexion@ROM shear p99 14.8 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p133",
-     "shear_p99_at_rom": 3.123,
+     "shear_p99_at_rom": 3.086,
      "horizontal": null,
-     "vertical": 3.1228093837379194,
+     "vertical": 3.085522997767531,
      "fallback": false,
-     "peel_max_at_rom": 3.9627707948475535
+     "peel_max_at_rom": 3.928561970568442
     },
     "flexion": {
-     "set": "physio_fric3",
-     "case_dir": "p133_gpu3",
-     "shear_p99_at_rom": 13.437,
+     "set": "physio_fric5r",
+     "case_dir": "p133",
+     "shear_p99_at_rom": 14.825,
      "horizontal": null,
-     "vertical": 13.43742967681522,
-     "fallback": true,
-     "fallback_note": "PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only",
-     "peel_max_at_rom": 50.62829647554237
+     "vertical": 14.82458766203784,
+     "fallback": false,
+     "peel_max_at_rom": 49.03069463025149
     }
    },
    "missing": []
@@ -1525,27 +1623,27 @@
   "p135": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 4.7 MPa > 3.0",
+    "extension@ROM shear p99 4.8 MPa > 3.0",
     "flexion@ROM shear p99 11.1 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p135",
-     "shear_p99_at_rom": 4.737,
-     "horizontal": 4.737296990480591,
-     "vertical": 1.6282284254130202,
+     "shear_p99_at_rom": 4.75,
+     "horizontal": 4.750298628385394,
+     "vertical": 1.6230704897632513,
      "fallback": false,
-     "peel_max_at_rom": 1.9352556808320371
+     "peel_max_at_rom": 1.9297087694482526
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p135",
-     "shear_p99_at_rom": 11.112,
-     "horizontal": 9.979226878141374,
-     "vertical": 11.111883754110933,
+     "shear_p99_at_rom": 11.111,
+     "horizontal": 9.98654224683823,
+     "vertical": 11.111167108397051,
      "fallback": false,
-     "peel_max_at_rom": 20.367679004249503
+     "peel_max_at_rom": 20.30782606487205
     }
    },
    "missing": []
@@ -1554,26 +1652,26 @@
    "verdict": "fail",
    "reasons": [
     "extension@ROM shear p99 4.4 MPa > 3.0",
-    "flexion@ROM shear p99 14.0 MPa > 3.0"
+    "flexion@ROM shear p99 13.8 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p139",
-     "shear_p99_at_rom": 4.374,
-     "horizontal": 4.373549731979254,
-     "vertical": 1.110348908040187,
+     "shear_p99_at_rom": 4.433,
+     "horizontal": 4.433113481058853,
+     "vertical": 1.1137762747906723,
      "fallback": false,
-     "peel_max_at_rom": 1.7206006680714985
+     "peel_max_at_rom": 1.7270259650153945
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p139",
-     "shear_p99_at_rom": 14.007,
-     "horizontal": 10.92345225483223,
-     "vertical": 14.006560557945445,
+     "shear_p99_at_rom": 13.847,
+     "horizontal": 10.822278592034195,
+     "vertical": 13.847261062690457,
      "fallback": false,
-     "peel_max_at_rom": 33.33402928732918
+     "peel_max_at_rom": 32.82717588304357
     }
    },
    "missing": []
@@ -1585,22 +1683,22 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_relG",
-     "case_dir": "p140_gpu4",
-     "shear_p99_at_rom": 0.289,
-     "horizontal": 0.28917877531265407,
-     "vertical": 0.19075929310622325,
+     "set": "physio_relGr",
+     "case_dir": "p140",
+     "shear_p99_at_rom": 0.216,
+     "horizontal": 0.21556809491591422,
+     "vertical": 0.1463944121609785,
      "fallback": false,
-     "peel_max_at_rom": 0.4945006817283947
+     "peel_max_at_rom": 0.3480348939467678
     },
     "flexion": {
-     "set": "physio_relG",
-     "case_dir": "p140_gpu4",
-     "shear_p99_at_rom": 3.979,
-     "horizontal": 3.9794119147376095,
-     "vertical": 1.8386600899787167,
+     "set": "physio_relGr",
+     "case_dir": "p140",
+     "shear_p99_at_rom": 4.0,
+     "horizontal": 4.000237152943347,
+     "vertical": 1.8595010160605772,
      "fallback": false,
-     "peel_max_at_rom": 4.418490460568817
+     "peel_max_at_rom": 4.38828722232173
     }
    },
    "missing": []
@@ -1610,23 +1708,22 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p142",
-     "shear_p99_at_rom": 0.312,
-     "horizontal": 0.3123002369500907,
-     "vertical": 0.22127310093721367,
+     "shear_p99_at_rom": 0.304,
+     "horizontal": 0.30418043039353604,
+     "vertical": 0.21973605149063172,
      "fallback": false,
-     "peel_max_at_rom": 0.4461142615865949
+     "peel_max_at_rom": 0.45275268350530234
     },
     "flexion": {
-     "set": "physio_fric3",
-     "case_dir": "p142_gpu2",
-     "shear_p99_at_rom": 2.66,
-     "horizontal": 2.660050484329235,
-     "vertical": 1.4928212270063816,
-     "fallback": true,
-     "fallback_note": "PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only",
-     "peel_max_at_rom": 3.5389822228203727
+     "set": "physio_fric5r",
+     "case_dir": "p142",
+     "shear_p99_at_rom": 2.704,
+     "horizontal": 2.704318774115586,
+     "vertical": 1.4676097285575906,
+     "fallback": false,
+     "peel_max_at_rom": 3.5724439464299316
     }
    },
    "missing": []
@@ -1636,13 +1733,13 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p143",
-     "shear_p99_at_rom": 0.329,
-     "horizontal": 0.32943234786924486,
-     "vertical": 0.20339091018637617,
+     "shear_p99_at_rom": 0.327,
+     "horizontal": 0.3272482465422465,
+     "vertical": 0.20153111048081018,
      "fallback": false,
-     "peel_max_at_rom": 0.511375860718834
+     "peel_max_at_rom": 0.4985692569363925
     },
     "flexion": {
      "set": "physio_fric5",
@@ -1661,22 +1758,22 @@
    "reasons": [],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p145",
-     "shear_p99_at_rom": 0.354,
-     "horizontal": 0.3536546053805721,
-     "vertical": 0.22531849156336084,
+     "shear_p99_at_rom": 0.35,
+     "horizontal": 0.35029312025457165,
+     "vertical": 0.22365966699100484,
      "fallback": false,
-     "peel_max_at_rom": 0.7690862033338476
+     "peel_max_at_rom": 0.744521081996223
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p145",
-     "shear_p99_at_rom": 1.96,
-     "horizontal": 1.9596297750249154,
-     "vertical": 1.1286437091708161,
+     "shear_p99_at_rom": 1.959,
+     "horizontal": 1.9592372368843267,
+     "vertical": 1.0758147002209386,
      "fallback": false,
-     "peel_max_at_rom": 3.3144039520659
+     "peel_max_at_rom": 3.3074346236340744
     }
    },
    "missing": []
@@ -1684,27 +1781,27 @@
   "p146": {
    "verdict": "fail",
    "reasons": [
-    "extension@ROM shear p99 3.9 MPa > 3.0",
+    "extension@ROM shear p99 3.8 MPa > 3.0",
     "flexion@ROM shear p99 14.0 MPa > 3.0"
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p146",
-     "shear_p99_at_rom": 3.902,
-     "horizontal": 3.901513950242059,
-     "vertical": 1.2005033209559315,
+     "shear_p99_at_rom": 3.847,
+     "horizontal": 3.846581590720888,
+     "vertical": 1.1963294366860764,
      "fallback": false,
-     "peel_max_at_rom": 1.4700346011800107
+     "peel_max_at_rom": 1.4747554688191178
     },
     "flexion": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p146",
-     "shear_p99_at_rom": 14.034,
-     "horizontal": 12.159790999904612,
-     "vertical": 14.034006387096714,
+     "shear_p99_at_rom": 14.031,
+     "horizontal": 12.209356894644545,
+     "vertical": 14.03120944138053,
      "fallback": false,
-     "peel_max_at_rom": 44.04001035603656
+     "peel_max_at_rom": 44.253815781688616
     }
    },
    "missing": []
@@ -1716,13 +1813,13 @@
    ],
    "windows": {
     "extension": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p148",
-     "shear_p99_at_rom": 2.955,
+     "shear_p99_at_rom": 2.983,
      "horizontal": null,
-     "vertical": 2.954844507850925,
+     "vertical": 2.982593455455044,
      "fallback": false,
-     "peel_max_at_rom": 4.023436300931775
+     "peel_max_at_rom": 4.028493115526001
     },
     "flexion": {
      "set": "physio_fric3",

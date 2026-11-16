@@ -13,14 +13,48 @@
    ],
    "windows": {
     "flexion": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p092": {
+       "set": "physio_fric5r",
+       "eval_point": "fric",
+       "u_h": 0.880253976375649,
+       "post": -0.8802539734885607
+      },
+      "p117": {
+       "set": "physio_fric5r",
+       "eval_point": "fric",
+       "u_h": 0.8775176613783161,
+       "post": -0.8775176605037425
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.002736314997332845,
+     "spread_post_mm": 0.0027363129848182455
     },
     "extension": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p092": {
+       "set": "physio_fric5r",
+       "eval_point": "rom",
+       "u_h": 0.47711378975743524,
+       "post": 0.4771126473032327
+      },
+      "p117": {
+       "set": "physio_fric5r",
+       "eval_point": "rom",
+       "u_h": 0.4759626153515569,
+       "post": 0.4759613824910321
+      },
+      "p143": {
+       "set": "physio_fric5r",
+       "eval_point": "rom",
+       "u_h": 0.4747250393660063,
+       "post": 0.47472387840853136
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.00238875039142894,
+     "spread_post_mm": 0.002388768894701354
     }
    }
   },
@@ -32,14 +66,42 @@
    ],
    "windows": {
     "flexion": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p093": {
+       "set": "physio_fric5r",
+       "eval_point": "fric",
+       "u_h": 0.9058101340912623,
+       "post": -0.9058098915521968
+      },
+      "p145": {
+       "set": "physio_fric5r",
+       "eval_point": "fric",
+       "u_h": 0.9098068690613095,
+       "post": -0.9098067284173498
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0039967349700471555,
+     "spread_post_mm": 0.003996836865152953
     },
     "extension": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p093": {
+       "set": "physio_fric5r",
+       "eval_point": "rom",
+       "u_h": 0.5517407189437596,
+       "post": 0.5517397705651959
+      },
+      "p145": {
+       "set": "physio_fric5r",
+       "eval_point": "rom",
+       "u_h": 0.5393250460036939,
+       "post": 0.5393241536016605
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.012415672940065736,
+     "spread_post_mm": 0.012415616963535325
     }
    }
   },
@@ -51,14 +113,42 @@
    ],
    "windows": {
     "flexion": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p082": {
+       "set": "physio_relGr",
+       "eval_point": "fric",
+       "u_h": 0.2608299431692259,
+       "post": -0.26082945589417805
+      },
+      "p088": {
+       "set": "physio_relGr",
+       "eval_point": "fric",
+       "u_h": 0.2610040100969982,
+       "post": -0.26100359022471165
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.00017406692777227617,
+     "spread_post_mm": 0.00017413433053359295
     },
     "extension": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p082": {
+       "set": "physio_relGr",
+       "eval_point": "rom",
+       "u_h": 0.2863321479320779,
+       "post": 0.28633200393983954
+      },
+      "p088": {
+       "set": "physio_relGr",
+       "eval_point": "rom",
+       "u_h": 0.28725232086737285,
+       "post": 0.28725226610232185
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0009201729352949495,
+     "spread_post_mm": 0.0009202621624823104
     }
    }
   },
@@ -70,9 +160,23 @@
    ],
    "windows": {
     "flexion": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p095": {
+       "set": "physio_relGr",
+       "eval_point": "fric",
+       "u_h": 0.14968303017176365,
+       "post": -0.14968274314207636
+      },
+      "p128": {
+       "set": "physio_relGr",
+       "eval_point": "fric",
+       "u_h": 0.15045517626448504,
+       "post": -0.15045479865730174
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0007721460927213875,
+     "spread_post_mm": 0.0007720555152253838
     },
     "extension": {
      "values": {},
@@ -91,13 +195,46 @@
    ],
    "windows": {
     "flexion": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p050": {
+       "set": "physio_relGr",
+       "eval_point": "fric",
+       "u_h": 0.1621074633798316,
+       "post": -0.16210745978024316
+      },
+      "p068": {
+       "set": "physio_relGr",
+       "eval_point": "fric",
+       "u_h": 0.16219863226970163,
+       "post": -0.16219862670328591
+      },
+      "p084": {
+       "set": "physio_relGr",
+       "eval_point": "fric",
+       "u_h": 0.16218266249939317,
+       "post": -0.16218266218872232
+      },
+      "p127": {
+       "set": "physio_relGr",
+       "eval_point": "fric",
+       "u_h": 0.16204925188086228,
+       "post": -0.16204924666392612
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.00014938038883935412,
+     "spread_post_mm": 0.0001493800393597977
     },
     "extension": {
-     "values": {},
-     "computed": 0,
+     "values": {
+      "p127": {
+       "set": "physio_relGr",
+       "eval_point": "rom",
+       "u_h": 0.20395275929721673,
+       "post": 0.20395102832840553
+      }
+     },
+     "computed": 1,
      "note": "fewer than two replicates computed in these sets"
     }
    }
@@ -110,14 +247,42 @@
    ],
    "windows": {
     "flexion": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p077": {
+       "set": "physio_fric5r",
+       "eval_point": "fric",
+       "u_h": 0.21741073490718127,
+       "post": -0.21741062677418707
+      },
+      "p139": {
+       "set": "physio_fric5r",
+       "eval_point": "fric",
+       "u_h": 0.21741073492404162,
+       "post": -0.21741062679101458
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 1.686034645231871e-11,
+     "spread_post_mm": 1.682751160636542e-11
     },
     "extension": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p077": {
+       "set": "physio_fric5r",
+       "eval_point": "rom",
+       "u_h": 0.43529088153594164,
+       "post": 0.43529087464923116
+      },
+      "p139": {
+       "set": "physio_fric5r",
+       "eval_point": "rom",
+       "u_h": 0.4352908815375501,
+       "post": 0.4352908746508395
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 1.6084356069256955e-12,
+     "spread_post_mm": 1.608324584623233e-12
     }
    }
   },
@@ -130,14 +295,48 @@
    ],
    "windows": {
     "flexion": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p086": {
+       "set": "physio_fric5r",
+       "eval_point": "fric",
+       "u_h": 0.817378431398996,
+       "post": -0.8173783717425411
+      },
+      "p100": {
+       "set": "physio_fric5r",
+       "eval_point": "fric",
+       "u_h": 0.8185020768780595,
+       "post": -0.8185019553728535
+      },
+      "p142": {
+       "set": "physio_fric5r",
+       "eval_point": "fric",
+       "u_h": 0.8171552355902066,
+       "post": -0.8171550906089897
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0013468412878528957,
+     "spread_post_mm": 0.0013468647638638087
     },
     "extension": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p100": {
+       "set": "physio_fric5r",
+       "eval_point": "rom",
+       "u_h": 0.4364955165969882,
+       "post": 0.43649535323795813
+      },
+      "p142": {
+       "set": "physio_fric5r",
+       "eval_point": "rom",
+       "u_h": 0.4363389455912537,
+       "post": 0.43633879091174776
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0001565710057345182,
+     "spread_post_mm": 0.00015656232621036326
     }
    }
   },
@@ -149,14 +348,42 @@
    ],
    "windows": {
     "flexion": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p051": {
+       "set": "physio_fric5r",
+       "eval_point": "fric",
+       "u_h": 0.8275413863344497,
+       "post": -0.8275410560322489
+      },
+      "p075": {
+       "set": "physio_fric5r",
+       "eval_point": "fric",
+       "u_h": 0.8207835927675761,
+       "post": -0.8207832577783144
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.006757793566873671,
+     "spread_post_mm": 0.006757798253934522
     },
     "extension": {
-     "values": {},
-     "computed": 0,
-     "note": "fewer than two replicates computed in these sets"
+     "values": {
+      "p051": {
+       "set": "physio_fric5r",
+       "eval_point": "rom",
+       "u_h": 0.5028554232208061,
+       "post": 0.5028498566157731
+      },
+      "p075": {
+       "set": "physio_fric5r",
+       "eval_point": "rom",
+       "u_h": 0.5059593513732047,
+       "post": 0.5059541011998048
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0031039281523985718,
+     "spread_post_mm": 0.00310424458403169
     }
    }
   }
@@ -164,9 +391,9 @@
  "note": "Replicate agreement under one window set (PI 2026-11-11 decision 4, platform layer: \u300c\u540c\u4e00\u500b\u8a2d\u8a08\u80fd\u6709\u7a69\u5b9a\u7684\u6a21\u64ec\u7d50\u679c\u6578\u503c\u300d).",
  "summary": {
   "groups": 8,
-  "windows_with_two_or_more": 0,
-  "windows_disagreeing_over_0p005_or_mixed_eval_point": 0,
-  "worst_spread_u_h_mm": 0.0,
+  "windows_with_two_or_more": 14,
+  "windows_disagreeing_over_0p005_or_mixed_eval_point": 2,
+  "worst_spread_u_h_mm": 0.012415672940065736,
   "criterion": "same evaluation point and |spread| <= 0.005 mm (read-out noise seen in the validation); larger spreads are platform [\u6578\u503c] items, not design results"
  }
 }

@@ -57,33 +57,20 @@
     "soft_face_locking": null,
     "numerical_flags": null,
     "verdict_source": null,
-    "fallback": {
-     "flexion": {
-      "source": "physio_fric3 (production law, same checkpoint)",
-      "margin_mm": 0.0431,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-      "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
-      "first_increment_pattern": false,
-      "superseded": {
-       "set": "physio_fric5",
-       "case_dir": "p132",
-       "t_last": 3.71408
-      }
-     }
-    },
+    "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p132: flexion@ROM shear p99 13.7 MPa > 3.0"
+     "p132: flexion@ROM shear p99 16.3 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.379,
-     "flexion": 13.691
+     "extension": 2.372,
+     "flexion": 16.255
     }
    },
    "design_rule": {
@@ -96,21 +83,7 @@
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
    "extension": "stick memory (patch 6+7)",
-   "flexion": "production (fallback)"
-  },
-  "friction_fallback": {
-   "flexion": {
-    "source": "physio_fric3 (production law, same checkpoint)",
-    "margin_mm": 0.0431,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-    "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
-    "first_increment_pattern": false,
-    "superseded": {
-     "set": "physio_fric5",
-     "case_dir": "p132",
-     "t_last": 3.71408
-    }
-   }
+   "flexion": "stick memory (patch 6+7)"
   }
  },
  "p086": {
@@ -208,9 +181,9 @@
    }
   },
   "source": "physio_rot_split3/p100_gpu3/w_LB_left",
-  "verdict": "grey",
-  "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p100: extension@ROM post 0.500 in grey zone [0.45, 0.55]",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p100",
    "p142"
@@ -221,32 +194,15 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "grey",
+    "verdict": "pass",
     "reasons": [],
     "open_reason": null,
     "role": "check",
-    "grey": [
-     "p100: extension@ROM post 0.500 in grey zone [0.45, 0.55]"
-    ],
+    "grey": [],
     "soft_face_locking": null,
-    "numerical_flags": [
-     "replicate-inconsistent"
-    ],
+    "numerical_flags": null,
     "verdict_source": null,
-    "fallback": {
-     "extension": {
-      "source": "physio_fric3 (production law, same checkpoint)",
-      "margin_mm": 0.0431,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-      "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
-      "first_increment_pattern": false,
-      "superseded": {
-       "set": "physio_fric5",
-       "case_dir": "p100",
-       "t_last": 3.71578
-      }
-     }
-    },
+    "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
    "interface_shear": {
@@ -257,7 +213,7 @@
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
      "extension": 0.305,
-     "flexion": 2.725
+     "flexion": 2.718
     }
    },
    "design_rule": {
@@ -266,32 +222,10 @@
     "fabrication": "interleave"
    }
   },
-  "friction_check": {
-   "verdict": "grey",
-   "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
-   "reasons": [
-    "p100: extension@ROM post 0.500 in grey zone [0.45, 0.55]"
-   ],
-   "rule": "PI 2026-11-10"
-  },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
-   "extension": "production (fallback)",
+   "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
-  },
-  "friction_fallback": {
-   "extension": {
-    "source": "physio_fric3 (production law, same checkpoint)",
-    "margin_mm": 0.0431,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-    "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
-    "first_increment_pattern": false,
-    "superseded": {
-     "set": "physio_fric5",
-     "case_dir": "p100",
-     "t_last": 3.71578
-    }
-   }
   }
  },
  "p005": {
@@ -450,8 +384,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.789,
-     "flexion": 12.229
+     "extension": 2.809,
+     "flexion": 12.221
     }
    },
    "design_rule": {
@@ -602,9 +536,9 @@
    }
   },
   "source": "physio_rot_split4/p093_gpu2/w_AR_right",
-  "verdict": "grey",
-  "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p093: extension@ROM post 0.545 in grey zone [0.45, 0.55]; p145: extension@ROM post 0.549 in grey zone [0.45, 0.55]",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p145"
   ],
@@ -614,16 +548,19 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "grey",
-    "reasons": [],
+    "verdict": "fail",
+    "reasons": [
+     "p093: extension@ROM u_h 0.55 post 0.55",
+     "p145: extension@ROM u_h 0.55 post 0.55",
+     "p145: unified to replicate p093 (most conservative of the deck group)"
+    ],
     "open_reason": null,
     "role": "check",
-    "grey": [
-     "p093: extension@ROM post 0.545 in grey zone [0.45, 0.55]",
-     "p145: extension@ROM post 0.549 in grey zone [0.45, 0.55]"
-    ],
+    "grey": [],
     "soft_face_locking": null,
-    "numerical_flags": null,
+    "numerical_flags": [
+     "replicate-inconsistent"
+    ],
     "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
@@ -635,8 +572,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.35,
-     "flexion": 1.949
+     "extension": 0.354,
+     "flexion": 1.963
     }
    },
    "design_rule": {
@@ -646,13 +583,14 @@
    }
   },
   "friction_check": {
-   "verdict": "grey",
-   "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
+   "verdict": "exceeded",
+   "provisional": true,
    "reasons": [
-    "p093: extension@ROM post 0.545 in grey zone [0.45, 0.55]",
-    "p145: extension@ROM post 0.549 in grey zone [0.45, 0.55]"
+    "p093: extension@ROM u_h 0.55 post 0.55",
+    "p145: extension@ROM u_h 0.55 post 0.55",
+    "p145: unified to replicate p093 (most conservative of the deck group)"
    ],
-   "rule": "PI 2026-11-10"
+   "rule": "PI 2026-11-07: check, not a gate"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -775,9 +713,9 @@
    }
   },
   "source": "physio_rot_split2/p083_gpu1/w_LB_right",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": "",
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p083: flexion@ROM shear p99 3.2 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -792,31 +730,20 @@
     "soft_face_locking": null,
     "numerical_flags": null,
     "verdict_source": null,
-    "fallback": {
-     "flexion": {
-      "source": "physio_relG_pl (production law, same checkpoint)",
-      "margin_mm": 0.0581,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
-      "first_increment_pattern": false,
-      "superseded": {
-       "set": "physio_relG",
-       "case_dir": "p083_gpu3",
-       "t_last": 3.54479
-      }
-     }
-    },
+    "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "pass",
-    "reasons": [],
+    "verdict": "fail",
+    "reasons": [
+     "p083: flexion@ROM shear p99 3.2 MPa > 3.0"
+    ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
      "extension": 0.276,
-     "flexion": 2.683
+     "flexion": 3.176
     }
    },
    "design_rule": {
@@ -828,21 +755,7 @@
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
    "extension": "stick memory (patch 6+7)",
-   "flexion": "production (fallback)"
-  },
-  "friction_fallback": {
-   "flexion": {
-    "source": "physio_relG_pl (production law, same checkpoint)",
-    "margin_mm": 0.0581,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
-    "first_increment_pattern": false,
-    "superseded": {
-     "set": "physio_relG",
-     "case_dir": "p083_gpu3",
-     "t_last": 3.54479
-    }
-   }
+   "flexion": "stick memory (patch 6+7)"
   }
  },
  "p029": {
@@ -1017,7 +930,7 @@
   "source": "physio_rot_split2/p060_gpu3/w_AR_right",
   "verdict": "grey",
   "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p072: extension@ROM post 0.476 in grey zone [0.45, 0.55]",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]",
   "duplicates": [
    "p072"
   ],
@@ -1032,7 +945,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [
-     "p072: extension@ROM post 0.476 in grey zone [0.45, 0.55]"
+     "p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
     "numerical_flags": null,
@@ -1047,8 +960,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.493,
-     "flexion": 2.392
+     "extension": 0.488,
+     "flexion": 2.382
     }
    },
    "design_rule": {
@@ -1061,7 +974,7 @@
    "verdict": "grey",
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
-    "p072: extension@ROM post 0.476 in grey zone [0.45, 0.55]"
+    "p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
   },
@@ -1174,7 +1087,7 @@
   "source": "physio_rot_split4/p051_gpu1/w_extension",
   "verdict": "grey",
   "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p051: extension@ROM post 0.504 in grey zone [0.45, 0.55]; p075: extension@ROM post 0.506 in grey zone [0.45, 0.55]",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p051: extension@ROM post 0.503 in grey zone [0.45, 0.55]; p075: extension@ROM post 0.506 in grey zone [0.45, 0.55]",
   "duplicates": [
    "p051"
   ],
@@ -1189,7 +1102,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [
-     "p051: extension@ROM post 0.504 in grey zone [0.45, 0.55]",
+     "p051: extension@ROM post 0.503 in grey zone [0.45, 0.55]",
      "p075: extension@ROM post 0.506 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
@@ -1205,8 +1118,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.499,
-     "flexion": 2.158
+     "extension": 0.497,
+     "flexion": 2.153
     }
    },
    "design_rule": {
@@ -1219,7 +1132,7 @@
    "verdict": "grey",
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
-    "p051: extension@ROM post 0.504 in grey zone [0.45, 0.55]",
+    "p051: extension@ROM post 0.503 in grey zone [0.45, 0.55]",
     "p075: extension@ROM post 0.506 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
@@ -1477,14 +1390,14 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p112: flexion@ROM shear p99 12.8 MPa > 3.0"
+     "p112: flexion@ROM shear p99 12.9 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.502,
-     "flexion": 12.835
+     "extension": 2.523,
+     "flexion": 12.935
     }
    },
    "design_rule": {
@@ -1541,9 +1454,9 @@
    }
   },
   "source": "physio_rot_dyn/p120_gpu1",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": "",
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p120: flexion@ROM shear p99 3.2 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -1558,31 +1471,20 @@
     "soft_face_locking": null,
     "numerical_flags": null,
     "verdict_source": null,
-    "fallback": {
-     "flexion": {
-      "source": "physio_relG_pl (production law, same checkpoint)",
-      "margin_mm": 0.0581,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
-      "first_increment_pattern": false,
-      "superseded": {
-       "set": "physio_relG",
-       "case_dir": "p120_gpu2",
-       "t_last": 3.65323
-      }
-     }
-    },
+    "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "pass",
-    "reasons": [],
+    "verdict": "fail",
+    "reasons": [
+     "p120: flexion@ROM shear p99 3.2 MPa > 3.0"
+    ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
      "extension": 0.155,
-     "flexion": 2.275
+     "flexion": 3.228
     }
    },
    "design_rule": {
@@ -1594,21 +1496,7 @@
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
    "extension": "stick memory (patch 6+7)",
-   "flexion": "production (fallback)"
-  },
-  "friction_fallback": {
-   "flexion": {
-    "source": "physio_relG_pl (production law, same checkpoint)",
-    "margin_mm": 0.0581,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
-    "first_increment_pattern": false,
-    "superseded": {
-     "set": "physio_relG",
-     "case_dir": "p120_gpu2",
-     "t_last": 3.65323
-    }
-   }
+   "flexion": "stick memory (patch 6+7)"
   }
  },
  "p100": {
@@ -1706,9 +1594,9 @@
    }
   },
   "source": "physio_rot_split3/p100_gpu3/w_LB_left",
-  "verdict": "grey",
-  "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p100: extension@ROM post 0.500 in grey zone [0.45, 0.55]",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p086",
    "p142"
@@ -1719,32 +1607,15 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "grey",
+    "verdict": "pass",
     "reasons": [],
     "open_reason": null,
     "role": "check",
-    "grey": [
-     "p100: extension@ROM post 0.500 in grey zone [0.45, 0.55]"
-    ],
+    "grey": [],
     "soft_face_locking": null,
-    "numerical_flags": [
-     "replicate-inconsistent"
-    ],
+    "numerical_flags": null,
     "verdict_source": null,
-    "fallback": {
-     "extension": {
-      "source": "physio_fric3 (production law, same checkpoint)",
-      "margin_mm": 0.0431,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-      "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
-      "first_increment_pattern": false,
-      "superseded": {
-       "set": "physio_fric5",
-       "case_dir": "p100",
-       "t_last": 3.71578
-      }
-     }
-    },
+    "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
    "interface_shear": {
@@ -1755,7 +1626,7 @@
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
      "extension": 0.305,
-     "flexion": 2.725
+     "flexion": 2.718
     }
    },
    "design_rule": {
@@ -1764,32 +1635,10 @@
     "fabrication": "interleave"
    }
   },
-  "friction_check": {
-   "verdict": "grey",
-   "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
-   "reasons": [
-    "p100: extension@ROM post 0.500 in grey zone [0.45, 0.55]"
-   ],
-   "rule": "PI 2026-11-10"
-  },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
-   "extension": "production (fallback)",
+   "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
-  },
-  "friction_fallback": {
-   "extension": {
-    "source": "physio_fric3 (production law, same checkpoint)",
-    "margin_mm": 0.0431,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-    "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
-    "first_increment_pattern": false,
-    "superseded": {
-     "set": "physio_fric5",
-     "case_dir": "p100",
-     "t_last": 3.71578
-    }
-   }
   }
  },
  "p036": {
@@ -1889,7 +1738,7 @@
   "source": "physio_rot_split4/p036_gpu2/w_AR_left",
   "verdict": "fail",
   "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p036: extension@ROM shear p99 4.9 MPa > 3.0; p036: flexion@ROM shear p99 14.8 MPa > 3.0",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p036: extension@ROM shear p99 5.0 MPa > 3.0; p036: flexion@ROM shear p99 14.8 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -1904,33 +1753,20 @@
     "soft_face_locking": null,
     "numerical_flags": null,
     "verdict_source": null,
-    "fallback": {
-     "flexion": {
-      "source": "physio_fric3 (production law, same checkpoint)",
-      "margin_mm": 0.0431,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-      "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
-      "first_increment_pattern": true,
-      "superseded": {
-       "set": "physio_fric5",
-       "case_dir": "p036",
-       "t_last": 3.50455
-      }
-     }
-    },
+    "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p036: extension@ROM shear p99 4.9 MPa > 3.0",
+     "p036: extension@ROM shear p99 5.0 MPa > 3.0",
      "p036: flexion@ROM shear p99 14.8 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 4.865,
+     "extension": 5.04,
      "flexion": 14.762
     }
    },
@@ -1943,21 +1779,7 @@
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
    "extension": "stick memory (patch 6+7)",
-   "flexion": "production (fallback)"
-  },
-  "friction_fallback": {
-   "flexion": {
-    "source": "physio_fric3 (production law, same checkpoint)",
-    "margin_mm": 0.0431,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-    "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
-    "first_increment_pattern": true,
-    "superseded": {
-     "set": "physio_fric5",
-     "case_dir": "p036",
-     "t_last": 3.50455
-    }
-   }
+   "flexion": "stick memory (patch 6+7)"
   }
  },
  "p121": {
@@ -2028,7 +1850,7 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.146
+     "extension": 0.145
     }
    },
    "design_rule": {
@@ -2144,9 +1966,9 @@
    }
   },
   "source": "physio_rot_split4/p093_gpu2/w_AR_right",
-  "verdict": "grey",
-  "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p093: extension@ROM post 0.545 in grey zone [0.45, 0.55]; p145: extension@ROM post 0.549 in grey zone [0.45, 0.55]",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p093"
   ],
@@ -2156,16 +1978,19 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "grey",
-    "reasons": [],
+    "verdict": "fail",
+    "reasons": [
+     "p093: extension@ROM u_h 0.55 post 0.55",
+     "p145: extension@ROM u_h 0.55 post 0.55",
+     "p145: unified to replicate p093 (most conservative of the deck group)"
+    ],
     "open_reason": null,
     "role": "check",
-    "grey": [
-     "p093: extension@ROM post 0.545 in grey zone [0.45, 0.55]",
-     "p145: extension@ROM post 0.549 in grey zone [0.45, 0.55]"
-    ],
+    "grey": [],
     "soft_face_locking": null,
-    "numerical_flags": null,
+    "numerical_flags": [
+     "replicate-inconsistent"
+    ],
     "verdict_source": null,
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
@@ -2177,8 +2002,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.35,
-     "flexion": 1.949
+     "extension": 0.354,
+     "flexion": 1.963
     }
    },
    "design_rule": {
@@ -2188,13 +2013,14 @@
    }
   },
   "friction_check": {
-   "verdict": "grey",
-   "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
+   "verdict": "exceeded",
+   "provisional": true,
    "reasons": [
-    "p093: extension@ROM post 0.545 in grey zone [0.45, 0.55]",
-    "p145: extension@ROM post 0.549 in grey zone [0.45, 0.55]"
+    "p093: extension@ROM u_h 0.55 post 0.55",
+    "p145: extension@ROM u_h 0.55 post 0.55",
+    "p145: unified to replicate p093 (most conservative of the deck group)"
    ],
-   "rule": "PI 2026-11-10"
+   "rule": "PI 2026-11-07: check, not a gate"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -2369,9 +2195,9 @@
    }
   },
   "source": "physio_rot_dyn2/p039_gpu2",
-  "verdict": "open",
-  "class": "[\u89c0\u6e2c]/friction-window",
-  "reason": "tied screening passed, gate 4 passed; interface shear: window(s) flexion did not reach the intact ROM (or missing)",
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p039: flexion@ROM shear p99 3.4 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -2390,13 +2216,16 @@
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "open",
-    "reasons": [],
-    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "verdict": "fail",
+    "reasons": [
+     "p039: flexion@ROM shear p99 3.4 MPa > 3.0"
+    ],
+    "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.448
+     "extension": 0.442,
+     "flexion": 3.359
     }
    },
    "design_rule": {
@@ -2454,7 +2283,7 @@
   "source": "physio_rot/p124_gpu4",
   "verdict": "fail",
   "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p124: extension@ROM shear p99 5.6 MPa > 3.0; p124: flexion@ROM shear p99 13.9 MPa > 3.0",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p124: extension@ROM shear p99 5.5 MPa > 3.0; p124: flexion@ROM shear p99 13.9 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -2475,15 +2304,15 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p124: extension@ROM shear p99 5.6 MPa > 3.0",
+     "p124: extension@ROM shear p99 5.5 MPa > 3.0",
      "p124: flexion@ROM shear p99 13.9 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 5.575,
-     "flexion": 13.925
+     "extension": 5.474,
+     "flexion": 13.873
     }
    },
    "design_rule": {
@@ -2646,8 +2475,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.292,
-     "flexion": 3.199
+     "extension": 0.288,
+     "flexion": 3.228
     }
    },
    "design_rule": {
@@ -2705,7 +2534,7 @@
   "source": "physio_rot/p135_gpu4",
   "verdict": "fail",
   "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p135: extension@ROM shear p99 4.7 MPa > 3.0; p135: flexion@ROM shear p99 11.1 MPa > 3.0",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p135: extension@ROM shear p99 4.8 MPa > 3.0; p135: flexion@ROM shear p99 11.1 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -2728,15 +2557,15 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p135: extension@ROM shear p99 4.7 MPa > 3.0",
+     "p135: extension@ROM shear p99 4.8 MPa > 3.0",
      "p135: flexion@ROM shear p99 11.1 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 4.737,
-     "flexion": 11.112
+     "extension": 4.75,
+     "flexion": 11.111
     }
    },
    "design_rule": {
@@ -2971,14 +2800,14 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p130: flexion@ROM shear p99 18.2 MPa > 3.0"
+     "p130: flexion@ROM shear p99 18.1 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.448,
-     "flexion": 18.15
+     "extension": 2.195,
+     "flexion": 18.124
     }
    },
    "design_rule": {
@@ -3046,7 +2875,7 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+    "open_reason": "flexion stopped at 0.8 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
     "role": "check",
     "grey": [],
     "soft_face_locking": [
@@ -3210,7 +3039,7 @@
   "source": "physio_rot/p122_gpu3",
   "verdict": "fail",
   "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p122: extension@ROM shear p99 6.7 MPa > 3.0; p122: flexion@ROM shear p99 11.9 MPa > 3.0",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p122: extension@ROM shear p99 6.6 MPa > 3.0; p122: flexion@ROM shear p99 11.7 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -3231,15 +3060,15 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p122: extension@ROM shear p99 6.7 MPa > 3.0",
-     "p122: flexion@ROM shear p99 11.9 MPa > 3.0"
+     "p122: extension@ROM shear p99 6.6 MPa > 3.0",
+     "p122: flexion@ROM shear p99 11.7 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 6.65,
-     "flexion": 11.858
+     "extension": 6.636,
+     "flexion": 11.72
     }
    },
    "design_rule": {
@@ -3349,9 +3178,9 @@
    }
   },
   "source": "physio_rot_split3/p100_gpu3/w_LB_left",
-  "verdict": "grey",
-  "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p100: extension@ROM post 0.500 in grey zone [0.45, 0.55]",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p086",
    "p100"
@@ -3362,32 +3191,15 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "grey",
+    "verdict": "pass",
     "reasons": [],
     "open_reason": null,
     "role": "check",
-    "grey": [
-     "p100: extension@ROM post 0.500 in grey zone [0.45, 0.55]"
-    ],
+    "grey": [],
     "soft_face_locking": null,
-    "numerical_flags": [
-     "replicate-inconsistent"
-    ],
+    "numerical_flags": null,
     "verdict_source": null,
-    "fallback": {
-     "extension": {
-      "source": "physio_fric3 (production law, same checkpoint)",
-      "margin_mm": 0.0431,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-      "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
-      "first_increment_pattern": false,
-      "superseded": {
-       "set": "physio_fric5",
-       "case_dir": "p100",
-       "t_last": 3.71578
-      }
-     }
-    },
+    "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
    "interface_shear": {
@@ -3398,7 +3210,7 @@
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
      "extension": 0.305,
-     "flexion": 2.725
+     "flexion": 2.718
     }
    },
    "design_rule": {
@@ -3407,32 +3219,10 @@
     "fabrication": "interleave"
    }
   },
-  "friction_check": {
-   "verdict": "grey",
-   "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
-   "reasons": [
-    "p100: extension@ROM post 0.500 in grey zone [0.45, 0.55]"
-   ],
-   "rule": "PI 2026-11-10"
-  },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
-   "extension": "production (fallback)",
+   "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
-  },
-  "friction_fallback": {
-   "extension": {
-    "source": "physio_fric3 (production law, same checkpoint)",
-    "margin_mm": 0.0431,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-    "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
-    "first_increment_pattern": false,
-    "superseded": {
-     "set": "physio_fric5",
-     "case_dir": "p100",
-     "t_last": 3.71578
-    }
-   }
   }
  },
  "p041": {
@@ -3608,43 +3398,31 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+    "open_reason": null,
     "role": "check",
     "grey": [],
-    "soft_face_locking": [
-     "flexion"
-    ],
+    "soft_face_locking": null,
     "numerical_flags": null,
     "verdict_source": null,
-    "fallback": {
-     "extension": {
-      "source": "physio_relG_pl (production law, same checkpoint)",
-      "margin_mm": 0.0581,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
-      "first_increment_pattern": true,
-      "superseded": {
-       "set": "physio_relG",
-       "case_dir": "p109_gpu1",
-       "t_last": 3.50455
-      }
-     }
-    },
+    "fallback": {},
     "insertion_process": [
      "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
      "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
     ]
    },
    "interface_shear": {
-    "verdict": "open",
-    "reasons": [],
-    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "verdict": "fail",
+    "reasons": [
+     "p109: flexion@ROM shear p99 21.2 MPa > 3.0"
+    ],
+    "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.507
+     "extension": 2.436,
+     "flexion": 21.21
     }
    },
    "design_rule": {
@@ -3663,22 +3441,8 @@
    "AR_right": "production",
    "LB_left": "production",
    "LB_right": "production",
-   "extension": "production (fallback)",
+   "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
-  },
-  "friction_fallback": {
-   "extension": {
-    "source": "physio_relG_pl (production law, same checkpoint)",
-    "margin_mm": 0.0581,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
-    "first_increment_pattern": true,
-    "superseded": {
-     "set": "physio_relG",
-     "case_dir": "p109_gpu1",
-     "t_last": 3.50455
-    }
-   }
   }
  },
  "p013": {
@@ -3877,8 +3641,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.396,
-     "flexion": 19.873
+     "extension": 2.392,
+     "flexion": 19.874
     }
    },
    "design_rule": {
@@ -4027,7 +3791,7 @@
   "source": "physio_rot_dyn/p094_gpu2",
   "verdict": "fail",
   "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p094: extension@ROM shear p99 6.6 MPa > 3.0; p094: flexion@ROM shear p99 14.2 MPa > 3.0",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p094: extension@ROM shear p99 6.7 MPa > 3.0; p094: flexion@ROM shear p99 14.2 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -4048,15 +3812,15 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p094: extension@ROM shear p99 6.6 MPa > 3.0",
+     "p094: extension@ROM shear p99 6.7 MPa > 3.0",
      "p094: flexion@ROM shear p99 14.2 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 6.647,
-     "flexion": 14.172
+     "extension": 6.726,
+     "flexion": 14.195
     }
    },
    "design_rule": {
@@ -4175,27 +3939,28 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+    "open_reason": null,
     "role": "check",
     "grey": [],
-    "soft_face_locking": [
-     "flexion"
-    ],
+    "soft_face_locking": null,
     "numerical_flags": null,
     "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "open",
-    "reasons": [],
-    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "verdict": "fail",
+    "reasons": [
+     "p116: flexion@ROM shear p99 21.3 MPa > 3.0"
+    ],
+    "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.353
+     "extension": 2.353,
+     "flexion": 21.326
     }
    },
    "design_rule": {
@@ -4333,7 +4098,7 @@
   "source": "physio_rot_split2/p146_gpu2/w_flexion",
   "verdict": "fail",
   "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p146: extension@ROM shear p99 3.9 MPa > 3.0; p146: flexion@ROM shear p99 14.0 MPa > 3.0",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p146: extension@ROM shear p99 3.8 MPa > 3.0; p146: flexion@ROM shear p99 14.0 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -4354,15 +4119,15 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p146: extension@ROM shear p99 3.9 MPa > 3.0",
+     "p146: extension@ROM shear p99 3.8 MPa > 3.0",
      "p146: flexion@ROM shear p99 14.0 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 3.902,
-     "flexion": 14.034
+     "extension": 3.847,
+     "flexion": 14.031
     }
    },
    "design_rule": {
@@ -4481,8 +4246,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 5.795,
-     "flexion": 16.181
+     "extension": 5.752,
+     "flexion": 16.22
     }
    },
    "design_rule": {
@@ -4617,25 +4382,29 @@
       "source": "physio_relG_pl (production law, same checkpoint)",
       "margin_mm": 0.0581,
       "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py); applied to a route-E (relative-drive) stick-law window although the margin was measured on joint-driven pairs - approximation (audit 2026-11-13 S5)",
       "first_increment_pattern": false,
       "superseded": {
-       "set": "physio_relG",
-       "case_dir": "p095_gpu1",
-       "t_last": 3.63015
+       "set": "physio_relGr",
+       "case_dir": "p095",
+       "t_last": 3.54466
       }
      }
     },
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "open",
-    "reasons": [],
-    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "verdict": "fail",
+    "reasons": [
+     "p095: flexion@ROM shear p99 19.2 MPa > 3.0",
+     "p128: flexion@ROM shear p99 19.2 MPa > 3.0"
+    ],
+    "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.155
+     "extension": 2.091,
+     "flexion": 19.176
     }
    },
    "design_rule": {
@@ -4655,12 +4424,12 @@
     "source": "physio_relG_pl (production law, same checkpoint)",
     "margin_mm": 0.0581,
     "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py); applied to a route-E (relative-drive) stick-law window although the margin was measured on joint-driven pairs - approximation (audit 2026-11-13 S5)",
     "first_increment_pattern": false,
     "superseded": {
-     "set": "physio_relG",
-     "case_dir": "p095_gpu1",
-     "t_last": 3.63015
+     "set": "physio_relGr",
+     "case_dir": "p095",
+     "t_last": 3.54466
     }
    }
   }
@@ -4784,7 +4553,7 @@
   "source": "physio_rot_split3/p117_gpu1/w_LB_left",
   "verdict": "grey",
   "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p092: extension@ROM post 0.480 in grey zone [0.45, 0.55]; p117: extension@ROM post 0.480 in grey zone [0.45, 0.55]; p143: extension@ROM post 0.479 in grey zone [0.45, 0.55]",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p092: extension@ROM post 0.477 in grey zone [0.45, 0.55]; p117: extension@ROM post 0.476 in grey zone [0.45, 0.55]; p143: extension@ROM post 0.475 in grey zone [0.45, 0.55]",
   "duplicates": [
    "p092",
    "p117"
@@ -4800,9 +4569,9 @@
     "open_reason": null,
     "role": "check",
     "grey": [
-     "p092: extension@ROM post 0.480 in grey zone [0.45, 0.55]",
-     "p117: extension@ROM post 0.480 in grey zone [0.45, 0.55]",
-     "p143: extension@ROM post 0.479 in grey zone [0.45, 0.55]"
+     "p092: extension@ROM post 0.477 in grey zone [0.45, 0.55]",
+     "p117: extension@ROM post 0.476 in grey zone [0.45, 0.55]",
+     "p143: extension@ROM post 0.475 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
     "numerical_flags": null,
@@ -4817,7 +4586,7 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.328,
+     "extension": 0.327,
      "flexion": 2.328
     }
    },
@@ -4831,9 +4600,9 @@
    "verdict": "grey",
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
-    "p092: extension@ROM post 0.480 in grey zone [0.45, 0.55]",
-    "p117: extension@ROM post 0.480 in grey zone [0.45, 0.55]",
-    "p143: extension@ROM post 0.479 in grey zone [0.45, 0.55]"
+    "p092: extension@ROM post 0.477 in grey zone [0.45, 0.55]",
+    "p117: extension@ROM post 0.476 in grey zone [0.45, 0.55]",
+    "p143: extension@ROM post 0.475 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
   },
@@ -4990,9 +4759,9 @@
    }
   },
   "source": "physio_rot_split4/p082_gpu1/w_flexion",
-  "verdict": "open",
-  "class": "[\u89c0\u6e2c]/friction-window",
-  "reason": "tied screening passed, gate 4 passed; interface shear: window(s) flexion did not reach the intact ROM (or missing)",
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p082: flexion@ROM shear p99 4.0 MPa > 3.0; p088: flexion@ROM shear p99 4.1 MPa > 3.0",
   "duplicates": [
    "p082"
   ],
@@ -5014,13 +4783,17 @@
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "open",
-    "reasons": [],
-    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "verdict": "fail",
+    "reasons": [
+     "p082: flexion@ROM shear p99 4.0 MPa > 3.0",
+     "p088: flexion@ROM shear p99 4.1 MPa > 3.0"
+    ],
+    "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.148
+     "extension": 0.147,
+     "flexion": 4.04
     }
    },
    "design_rule": {
@@ -5099,14 +4872,14 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p079: flexion@ROM shear p99 18.2 MPa > 3.0"
+     "p079: flexion@ROM shear p99 18.4 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.831,
-     "flexion": 18.15
+     "extension": 2.813,
+     "flexion": 18.394
     }
    },
    "design_rule": {
@@ -5524,7 +5297,7 @@
   "source": "physio_rot_split3/p117_gpu1/w_LB_left",
   "verdict": "grey",
   "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p092: extension@ROM post 0.480 in grey zone [0.45, 0.55]; p117: extension@ROM post 0.480 in grey zone [0.45, 0.55]; p143: extension@ROM post 0.479 in grey zone [0.45, 0.55]",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p092: extension@ROM post 0.477 in grey zone [0.45, 0.55]; p117: extension@ROM post 0.476 in grey zone [0.45, 0.55]; p143: extension@ROM post 0.475 in grey zone [0.45, 0.55]",
   "duplicates": [
    "p092",
    "p143"
@@ -5540,9 +5313,9 @@
     "open_reason": null,
     "role": "check",
     "grey": [
-     "p092: extension@ROM post 0.480 in grey zone [0.45, 0.55]",
-     "p117: extension@ROM post 0.480 in grey zone [0.45, 0.55]",
-     "p143: extension@ROM post 0.479 in grey zone [0.45, 0.55]"
+     "p092: extension@ROM post 0.477 in grey zone [0.45, 0.55]",
+     "p117: extension@ROM post 0.476 in grey zone [0.45, 0.55]",
+     "p143: extension@ROM post 0.475 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
     "numerical_flags": null,
@@ -5557,7 +5330,7 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.328,
+     "extension": 0.327,
      "flexion": 2.328
     }
    },
@@ -5571,9 +5344,9 @@
    "verdict": "grey",
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
-    "p092: extension@ROM post 0.480 in grey zone [0.45, 0.55]",
-    "p117: extension@ROM post 0.480 in grey zone [0.45, 0.55]",
-    "p143: extension@ROM post 0.479 in grey zone [0.45, 0.55]"
+    "p092: extension@ROM post 0.477 in grey zone [0.45, 0.55]",
+    "p117: extension@ROM post 0.476 in grey zone [0.45, 0.55]",
+    "p143: extension@ROM post 0.475 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
   },
@@ -5692,7 +5465,7 @@
   "source": "physio_rot_split2/p060_gpu3/w_AR_right",
   "verdict": "grey",
   "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p072: extension@ROM post 0.476 in grey zone [0.45, 0.55]",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]",
   "duplicates": [
    "p060"
   ],
@@ -5707,7 +5480,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [
-     "p072: extension@ROM post 0.476 in grey zone [0.45, 0.55]"
+     "p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
     "numerical_flags": null,
@@ -5722,8 +5495,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.493,
-     "flexion": 2.392
+     "extension": 0.488,
+     "flexion": 2.382
     }
    },
    "design_rule": {
@@ -5736,7 +5509,7 @@
    "verdict": "grey",
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
-    "p072: extension@ROM post 0.476 in grey zone [0.45, 0.55]"
+    "p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
   },
@@ -5842,8 +5615,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 6.353,
-     "flexion": 11.535
+     "extension": 6.384,
+     "flexion": 11.541
     }
    },
    "design_rule": {
@@ -5913,7 +5686,7 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+    "open_reason": "flexion stopped at 0.4 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
     "role": "check",
     "grey": [],
     "soft_face_locking": [
@@ -6067,25 +5840,29 @@
       "source": "physio_relG_pl (production law, same checkpoint)",
       "margin_mm": 0.0581,
       "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py); applied to a route-E (relative-drive) stick-law window although the margin was measured on joint-driven pairs - approximation (audit 2026-11-13 S5)",
       "first_increment_pattern": false,
       "superseded": {
-       "set": "physio_relG",
-       "case_dir": "p095_gpu1",
-       "t_last": 3.63015
+       "set": "physio_relGr",
+       "case_dir": "p095",
+       "t_last": 3.54466
       }
      }
     },
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "open",
-    "reasons": [],
-    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "verdict": "fail",
+    "reasons": [
+     "p095: flexion@ROM shear p99 19.2 MPa > 3.0",
+     "p128: flexion@ROM shear p99 19.2 MPa > 3.0"
+    ],
+    "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.091
+     "extension": 2.091,
+     "flexion": 19.176
     }
    },
    "design_rule": {
@@ -6105,12 +5882,12 @@
     "source": "physio_relG_pl (production law, same checkpoint)",
     "margin_mm": 0.0581,
     "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py); applied to a route-E (relative-drive) stick-law window although the margin was measured on joint-driven pairs - approximation (audit 2026-11-13 S5)",
     "first_increment_pattern": false,
     "superseded": {
-     "set": "physio_relG",
-     "case_dir": "p095_gpu1",
-     "t_last": 3.63015
+     "set": "physio_relGr",
+     "case_dir": "p095",
+     "t_last": 3.54466
     }
    }
   }
@@ -6274,8 +6051,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.424,
-     "flexion": 3.164
+     "extension": 0.426,
+     "flexion": 3.169
     }
    },
    "design_rule": {
@@ -6601,27 +6378,29 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); extension stopped at 2.6 deg (negative jacobians); window(s) flexion, extension did not reach the intact ROM or 1.5 N m (or missing)",
+    "open_reason": null,
     "role": "check",
     "grey": [],
-    "soft_face_locking": [
-     "flexion",
-     "extension"
-    ],
+    "soft_face_locking": null,
     "numerical_flags": null,
     "verdict_source": null,
     "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "open",
-    "reasons": [],
-    "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)",
+    "verdict": "fail",
+    "reasons": [
+     "p097: flexion@ROM shear p99 18.4 MPa > 3.0"
+    ],
+    "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
-    "shear_p99_at_rom": {}
+    "shear_p99_at_rom": {
+     "extension": 1.836,
+     "flexion": 18.368
+    }
    },
    "design_rule": {
     "verdict": "excluded",
@@ -6707,8 +6486,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 4.696,
-     "flexion": 14.59
+     "extension": 4.721,
+     "flexion": 14.593
     }
    },
    "design_rule": {
@@ -6766,7 +6545,7 @@
   "source": "physio_rot_dyn2/p114",
   "verdict": "grey",
   "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p114: extension@ROM post 0.547 in grey zone [0.45, 0.55]",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p114: extension@ROM post 0.525 in grey zone [0.45, 0.55]",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -6778,7 +6557,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [
-     "p114: extension@ROM post 0.547 in grey zone [0.45, 0.55]"
+     "p114: extension@ROM post 0.525 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
     "numerical_flags": null,
@@ -6793,8 +6572,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.387,
-     "flexion": 2.051
+     "extension": 0.384,
+     "flexion": 2.045
     }
    },
    "design_rule": {
@@ -6807,7 +6586,7 @@
    "verdict": "grey",
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
-    "p114: extension@ROM post 0.547 in grey zone [0.45, 0.55]"
+    "p114: extension@ROM post 0.525 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
   },
@@ -6883,13 +6662,15 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p081: extension@ROM shear p99 3.3 MPa > 3.0"
+     "p081: extension@ROM shear p99 3.3 MPa > 3.0",
+     "p081: flexion@ROM shear p99 15.8 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 3.287
+     "extension": 3.287,
+     "flexion": 15.844
     }
    },
    "design_rule": {
@@ -7098,8 +6879,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 6.534,
-     "flexion": 11.372
+     "extension": 6.542,
+     "flexion": 11.409
     }
    },
    "design_rule": {
@@ -7279,15 +7060,16 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p068: flexion@ROM shear p99 20.8 MPa > 3.0",
-     "p084: flexion@ROM shear p99 21.9 MPa > 3.0"
+     "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
+     "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
+     "p084: flexion@ROM shear p99 21.9 MPa > 3.0",
+     "p127: flexion@ROM shear p99 21.9 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.48,
-     "flexion": 20.833
+     "flexion": 21.894
     }
    },
    "design_rule": {
@@ -7373,7 +7155,7 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.643,
+     "extension": 2.642,
      "flexion": 15.796
     }
    },
@@ -7487,7 +7269,7 @@
   "source": "physio_rot_split2/p048_gpu1/w_AR_right",
   "verdict": "open",
   "class": "[\u6578\u503c]/not-computable-both-laws",
-  "reason": "\u751f\u7406\u7a97\u53e3\u7b97\u4e0d\u51fa\uff1a\u5169\u7a2e\u6469\u64e6\u5f8b\u5f9e\u540c\u4e00\u6a94\u9ede\u91cd\u555f\u90fd\u5728\u8a55\u4f30\u9ede\u524d\u4e2d\u6b62 (windows flexion, extension); tied mu_req verdict kept in gates.tied_screening; replicates: null",
+  "reason": "\u751f\u7406\u7a97\u53e3\u7b97\u4e0d\u51fa\uff1a\u5169\u7a2e\u6469\u64e6\u5f8b\u5f9e\u540c\u4e00\u6a94\u9ede\u91cd\u555f\u90fd\u5728\u8a55\u4f30\u9ede\u524d\u4e2d\u6b62 (windows extension); tied mu_req verdict kept in gates.tied_screening; replicates: null",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -7496,11 +7278,10 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); extension stopped at 1.5 deg (negative jacobians); window(s) flexion, extension did not reach the intact ROM or 1.5 N m (or missing)",
+    "open_reason": "extension stopped at 1.5 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
     "role": "check",
     "grey": [],
     "soft_face_locking": [
-     "flexion",
      "extension"
     ],
     "numerical_flags": null,
@@ -7631,8 +7412,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.358,
-     "flexion": 16.882
+     "extension": 2.349,
+     "flexion": 16.909
     }
    },
    "design_rule": {
@@ -7996,7 +7777,7 @@
   "source": "physio_rot_split4/p051_gpu1/w_extension",
   "verdict": "grey",
   "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p051: extension@ROM post 0.504 in grey zone [0.45, 0.55]; p075: extension@ROM post 0.506 in grey zone [0.45, 0.55]",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p051: extension@ROM post 0.503 in grey zone [0.45, 0.55]; p075: extension@ROM post 0.506 in grey zone [0.45, 0.55]",
   "duplicates": [
    "p075"
   ],
@@ -8011,7 +7792,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [
-     "p051: extension@ROM post 0.504 in grey zone [0.45, 0.55]",
+     "p051: extension@ROM post 0.503 in grey zone [0.45, 0.55]",
      "p075: extension@ROM post 0.506 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
@@ -8027,8 +7808,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.499,
-     "flexion": 2.158
+     "extension": 0.497,
+     "flexion": 2.153
     }
    },
    "design_rule": {
@@ -8041,7 +7822,7 @@
    "verdict": "grey",
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
-    "p051: extension@ROM post 0.504 in grey zone [0.45, 0.55]",
+    "p051: extension@ROM post 0.503 in grey zone [0.45, 0.55]",
     "p075: extension@ROM post 0.506 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
@@ -8306,7 +8087,7 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.701,
+     "extension": 2.636,
      "flexion": 15.742
     }
    },
@@ -8444,9 +8225,9 @@
    }
   },
   "source": "physio_rot_split4/p082_gpu1/w_flexion",
-  "verdict": "open",
-  "class": "[\u89c0\u6e2c]/friction-window",
-  "reason": "tied screening passed, gate 4 passed; interface shear: window(s) flexion did not reach the intact ROM (or missing)",
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p082: flexion@ROM shear p99 4.0 MPa > 3.0; p088: flexion@ROM shear p99 4.1 MPa > 3.0",
   "duplicates": [
    "p088"
   ],
@@ -8468,13 +8249,17 @@
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "open",
-    "reasons": [],
-    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "verdict": "fail",
+    "reasons": [
+     "p082: flexion@ROM shear p99 4.0 MPa > 3.0",
+     "p088: flexion@ROM shear p99 4.1 MPa > 3.0"
+    ],
+    "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.152
+     "extension": 0.147,
+     "flexion": 4.04
     }
    },
    "design_rule": {
@@ -8560,8 +8345,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 7.887,
-     "flexion": 13.677
+     "extension": 7.892,
+     "flexion": 13.736
     }
    },
    "design_rule": {
@@ -8737,15 +8522,16 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p068: flexion@ROM shear p99 20.8 MPa > 3.0",
-     "p084: flexion@ROM shear p99 21.9 MPa > 3.0"
+     "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
+     "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
+     "p084: flexion@ROM shear p99 21.9 MPa > 3.0",
+     "p127: flexion@ROM shear p99 21.9 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.48,
-     "flexion": 20.833
+     "flexion": 21.894
     }
    },
    "design_rule": {
@@ -8842,7 +8628,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [
-     "p133: extension@ROM post 0.488 in grey zone [0.45, 0.55]"
+     "p133: extension@ROM post 0.483 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
     "numerical_flags": null,
@@ -8854,14 +8640,14 @@
     "verdict": "fail",
     "reasons": [
      "p133: extension@ROM shear p99 3.1 MPa > 3.0",
-     "p133: flexion@ROM shear p99 13.4 MPa > 3.0"
+     "p133: flexion@ROM shear p99 14.8 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 3.123,
-     "flexion": 13.437
+     "extension": 3.086,
+     "flexion": 14.825
     }
    },
    "design_rule": {
@@ -8875,7 +8661,7 @@
    "verdict": "grey",
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
-    "p133: extension@ROM post 0.488 in grey zone [0.45, 0.55]"
+    "p133: extension@ROM post 0.483 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
   },
@@ -8949,14 +8735,14 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p002: flexion@ROM shear p99 16.6 MPa > 3.0"
+     "p002: flexion@ROM shear p99 17.7 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.713,
-     "flexion": 16.556
+     "extension": 2.76,
+     "flexion": 17.735
     }
    },
    "design_rule": {
@@ -9084,20 +8870,7 @@
     "soft_face_locking": null,
     "numerical_flags": null,
     "verdict_source": null,
-    "fallback": {
-     "flexion": {
-      "source": "physio_relG_pl (production law, same checkpoint)",
-      "margin_mm": 0.0581,
-      "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
-      "first_increment_pattern": false,
-      "superseded": {
-       "set": "physio_relG",
-       "case_dir": "p064_gpu3",
-       "t_last": 3.53491
-      }
-     }
-    },
+    "fallback": {},
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
@@ -9119,21 +8892,7 @@
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
    "extension": "stick memory (patch 6+7)",
-   "flexion": "production (fallback)"
-  },
-  "friction_fallback": {
-   "flexion": {
-    "source": "physio_relG_pl (production law, same checkpoint)",
-    "margin_mm": 0.0581,
-    "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
-    "first_increment_pattern": false,
-    "superseded": {
-     "set": "physio_relG",
-     "case_dir": "p064_gpu3",
-     "t_last": 3.53491
-    }
-   }
+   "flexion": "stick memory (patch 6+7)"
   }
  },
  "p092": {
@@ -9230,7 +8989,7 @@
   "source": "physio_rot_split3/p117_gpu1/w_LB_left",
   "verdict": "grey",
   "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p092: extension@ROM post 0.480 in grey zone [0.45, 0.55]; p117: extension@ROM post 0.480 in grey zone [0.45, 0.55]; p143: extension@ROM post 0.479 in grey zone [0.45, 0.55]",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p092: extension@ROM post 0.477 in grey zone [0.45, 0.55]; p117: extension@ROM post 0.476 in grey zone [0.45, 0.55]; p143: extension@ROM post 0.475 in grey zone [0.45, 0.55]",
   "duplicates": [
    "p117",
    "p143"
@@ -9246,9 +9005,9 @@
     "open_reason": null,
     "role": "check",
     "grey": [
-     "p092: extension@ROM post 0.480 in grey zone [0.45, 0.55]",
-     "p117: extension@ROM post 0.480 in grey zone [0.45, 0.55]",
-     "p143: extension@ROM post 0.479 in grey zone [0.45, 0.55]"
+     "p092: extension@ROM post 0.477 in grey zone [0.45, 0.55]",
+     "p117: extension@ROM post 0.476 in grey zone [0.45, 0.55]",
+     "p143: extension@ROM post 0.475 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
     "numerical_flags": null,
@@ -9263,7 +9022,7 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.328,
+     "extension": 0.327,
      "flexion": 2.328
     }
    },
@@ -9277,9 +9036,9 @@
    "verdict": "grey",
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
-    "p092: extension@ROM post 0.480 in grey zone [0.45, 0.55]",
-    "p117: extension@ROM post 0.480 in grey zone [0.45, 0.55]",
-    "p143: extension@ROM post 0.479 in grey zone [0.45, 0.55]"
+    "p092: extension@ROM post 0.477 in grey zone [0.45, 0.55]",
+    "p117: extension@ROM post 0.476 in grey zone [0.45, 0.55]",
+    "p143: extension@ROM post 0.475 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
   },
@@ -9421,9 +9180,9 @@
    }
   },
   "source": "physio_rot_split2/p061_gpu2/w_LB_left",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": "",
+  "verdict": "fail",
+  "class": "DESIGN/interface-shear-provisional",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p061: flexion@ROM shear p99 3.0 MPa > 3.0",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -9442,14 +9201,16 @@
     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "pass",
-    "reasons": [],
+    "verdict": "fail",
+    "reasons": [
+     "p061: flexion@ROM shear p99 3.0 MPa > 3.0"
+    ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.479,
-     "flexion": 2.995
+     "extension": 0.482,
+     "flexion": 3.011
     }
    },
    "design_rule": {
@@ -9764,15 +9525,16 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p068: flexion@ROM shear p99 20.8 MPa > 3.0",
-     "p084: flexion@ROM shear p99 21.9 MPa > 3.0"
+     "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
+     "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
+     "p084: flexion@ROM shear p99 21.9 MPa > 3.0",
+     "p127: flexion@ROM shear p99 21.9 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.48,
-     "flexion": 20.833
+     "flexion": 21.894
     }
    },
    "design_rule": {
@@ -9859,7 +9621,7 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 4.412,
+     "extension": 4.443,
      "flexion": 13.105
     }
    },
@@ -9983,13 +9745,11 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "grey",
+    "verdict": "pass",
     "reasons": [],
     "open_reason": null,
     "role": "check",
-    "grey": [
-     "p140: extension@ROM post 0.483 in grey zone [0.45, 0.55]"
-    ],
+    "grey": [],
     "soft_face_locking": null,
     "numerical_flags": null,
     "verdict_source": null,
@@ -10005,8 +9765,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.289,
-     "flexion": 3.979
+     "extension": 0.216,
+     "flexion": 4.0
     }
    },
    "design_rule": {
@@ -10014,14 +9774,6 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
-  },
-  "friction_check": {
-   "verdict": "grey",
-   "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
-   "reasons": [
-    "p140: extension@ROM post 0.483 in grey zone [0.45, 0.55]"
-   ],
-   "rule": "PI 2026-11-10"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -10131,7 +9883,7 @@
   "source": "physio_rot_dyn/p139_gpu1",
   "verdict": "fail",
   "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p077: extension@ROM shear p99 4.4 MPa > 3.0; p077: flexion@ROM shear p99 13.8 MPa > 3.0; p139: extension@ROM shear p99 4.4 MPa > 3.0; p139: flexion@ROM shear p99 14.0 MPa > 3.0",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p077: extension@ROM shear p99 4.4 MPa > 3.0; p077: flexion@ROM shear p99 13.8 MPa > 3.0; p139: extension@ROM shear p99 4.4 MPa > 3.0; p139: flexion@ROM shear p99 13.8 MPa > 3.0",
   "duplicates": [
    "p077"
   ],
@@ -10158,14 +9910,14 @@
      "p077: extension@ROM shear p99 4.4 MPa > 3.0",
      "p077: flexion@ROM shear p99 13.8 MPa > 3.0",
      "p139: extension@ROM shear p99 4.4 MPa > 3.0",
-     "p139: flexion@ROM shear p99 14.0 MPa > 3.0"
+     "p139: flexion@ROM shear p99 13.8 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 4.383,
-     "flexion": 13.829
+     "extension": 4.433,
+     "flexion": 13.847
     }
    },
    "design_rule": {
@@ -10317,8 +10069,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 6.593,
-     "flexion": 14.947
+     "extension": 6.564,
+     "flexion": 14.864
     }
    },
    "design_rule": {
@@ -10556,12 +10308,12 @@
       "source": "physio_fric3 (production law, same checkpoint)",
       "margin_mm": 0.0431,
       "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-      "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+      "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs); applied to a route-E (relative-drive) stick-law window although the margin was measured on joint-driven pairs - approximation (audit 2026-11-13 S5)",
       "first_increment_pattern": false,
       "superseded": {
-       "set": "physio_fric5",
+       "set": "physio_fric5r",
        "case_dir": "p148",
-       "t_last": 3.55398
+       "t_last": 3.58214
       }
      }
     },
@@ -10576,7 +10328,7 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.955,
+     "extension": 2.983,
      "flexion": 15.401
     }
    },
@@ -10597,12 +10349,12 @@
     "source": "physio_fric3 (production law, same checkpoint)",
     "margin_mm": 0.0431,
     "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-    "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+    "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs); applied to a route-E (relative-drive) stick-law window although the margin was measured on joint-driven pairs - approximation (audit 2026-11-13 S5)",
     "first_increment_pattern": false,
     "superseded": {
-     "set": "physio_fric5",
+     "set": "physio_fric5r",
      "case_dir": "p148",
-     "t_last": 3.55398
+     "t_last": 3.58214
     }
    }
   }
@@ -10670,12 +10422,12 @@
       "source": "physio_relG_pl (production law, same checkpoint)",
       "margin_mm": 0.0581,
       "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+      "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py); applied to a route-E (relative-drive) stick-law window although the margin was measured on joint-driven pairs - approximation (audit 2026-11-13 S5)",
       "first_increment_pattern": false,
       "superseded": {
-       "set": "physio_relG",
-       "case_dir": "p104_gpu4",
-       "t_last": 3.59141
+       "set": "physio_relGr",
+       "case_dir": "p104",
+       "t_last": 3.55455
       }
      }
     },
@@ -10684,14 +10436,14 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p104: flexion@ROM shear p99 14.8 MPa > 3.0"
+     "p104: flexion@ROM shear p99 15.0 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
      "extension": 2.05,
-     "flexion": 14.836
+     "flexion": 15.025
     }
    },
    "design_rule": {
@@ -10711,12 +10463,12 @@
     "source": "physio_relG_pl (production law, same checkpoint)",
     "margin_mm": 0.0581,
     "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
-    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)",
+    "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py); applied to a route-E (relative-drive) stick-law window although the margin was measured on joint-driven pairs - approximation (audit 2026-11-13 S5)",
     "first_increment_pattern": false,
     "superseded": {
-     "set": "physio_relG",
-     "case_dir": "p104_gpu4",
-     "t_last": 3.59141
+     "set": "physio_relGr",
+     "case_dir": "p104",
+     "t_last": 3.55455
     }
    }
   }
@@ -10919,7 +10671,7 @@
   "source": "physio_rot_dyn/p139_gpu1",
   "verdict": "fail",
   "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p077: extension@ROM shear p99 4.4 MPa > 3.0; p077: flexion@ROM shear p99 13.8 MPa > 3.0; p139: extension@ROM shear p99 4.4 MPa > 3.0; p139: flexion@ROM shear p99 14.0 MPa > 3.0",
+  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p077: extension@ROM shear p99 4.4 MPa > 3.0; p077: flexion@ROM shear p99 13.8 MPa > 3.0; p139: extension@ROM shear p99 4.4 MPa > 3.0; p139: flexion@ROM shear p99 13.8 MPa > 3.0",
   "duplicates": [
    "p139"
   ],
@@ -10946,14 +10698,14 @@
      "p077: extension@ROM shear p99 4.4 MPa > 3.0",
      "p077: flexion@ROM shear p99 13.8 MPa > 3.0",
      "p139: extension@ROM shear p99 4.4 MPa > 3.0",
-     "p139: flexion@ROM shear p99 14.0 MPa > 3.0"
+     "p139: flexion@ROM shear p99 13.8 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 4.383,
-     "flexion": 13.829
+     "extension": 4.433,
+     "flexion": 13.847
     }
    },
    "design_rule": {
@@ -11035,14 +10787,14 @@
     "verdict": "fail",
     "reasons": [
      "p026: extension@ROM shear p99 3.0 MPa > 3.0",
-     "p026: flexion@ROM shear p99 15.6 MPa > 3.0"
+     "p026: flexion@ROM shear p99 15.7 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 3.003,
-     "flexion": 15.6
+     "extension": 3.015,
+     "flexion": 15.749
     }
    },
    "design_rule": {
@@ -11290,7 +11042,7 @@
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
      "extension": 2.425,
-     "flexion": 17.885
+     "flexion": 17.939
     }
    },
    "design_rule": {
@@ -11473,7 +11225,7 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 0.219,
+     "extension": 0.22,
      "flexion": 3.798
     }
    },
@@ -11560,7 +11312,7 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 5.267,
+     "extension": 5.26,
      "flexion": 12.487
     }
    },
@@ -11631,7 +11383,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [
-     "p076: extension@ROM post 0.477 in grey zone [0.45, 0.55]"
+     "p076: extension@ROM post 0.478 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
     "numerical_flags": null,
@@ -11649,8 +11401,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 4.485,
-     "flexion": 12.02
+     "extension": 4.532,
+     "flexion": 11.985
     }
    },
    "design_rule": {
@@ -11663,7 +11415,7 @@
    "verdict": "grey",
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
-    "p076: extension@ROM post 0.477 in grey zone [0.45, 0.55]"
+    "p076: extension@ROM post 0.478 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
   },
@@ -11801,15 +11553,16 @@
    "interface_shear": {
     "verdict": "fail",
     "reasons": [
-     "p068: flexion@ROM shear p99 20.8 MPa > 3.0",
-     "p084: flexion@ROM shear p99 21.9 MPa > 3.0"
+     "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
+     "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
+     "p084: flexion@ROM shear p99 21.9 MPa > 3.0",
+     "p127: flexion@ROM shear p99 21.9 MPa > 3.0"
     ],
     "open_reason": null,
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 2.48,
-     "flexion": 20.833
+     "flexion": 21.894
     }
    },
    "design_rule": {
@@ -11962,8 +11715,8 @@
     "threshold_MPa": 3.0,
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
-     "extension": 6.105,
-     "flexion": 12.709
+     "extension": 6.112,
+     "flexion": 12.678
     }
    },
    "design_rule": {
@@ -12195,7 +11948,7 @@
    "dislocation_friction": {
     "verdict": "open",
     "reasons": [],
-    "open_reason": "flexion stopped at 0.0 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+    "open_reason": "flexion stopped at 0.4 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
     "role": "check",
     "grey": [],
     "soft_face_locking": [
