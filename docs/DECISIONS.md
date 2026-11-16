@@ -187,3 +187,5 @@ Implemented 2026-11-08 in ops/collect_split.py (see ../biocage_simulation_test_o
 - Foreman items: relGpl_handoff.sh (22:02, workers 2 -> 5), febio_pin.sh (tmux febio_pin, NUMA re-pin once per run) kept; h51 now logs the FEBio normal flag; NUMA-aware core pick in h06/h18/h47 still a request.
 
 ## 2026-11-13 13:52 route-E re-run final: verdicts pass 52 / grey 13 / open 4 / fail 2; classes interface-shear-provisional 28, radial-mix-excluded 28, friction-computability 0, friction-check-exceeded 2, PASS 5, GREY 8; e07 pass 12 / fail 53 / open 5; replicate agreement 12/14 within 0.005 mm. Details: old repo DECISIONS 2026-11-13 13:52.
+
+## 2026-11-17 04:4x PI boundary-grey rule (p093 / p145 fail -> grey): verdicts pass 52 / grey 15 / open 4 / fail 0 (71); classes interface-shear-provisional 28, radial-mix-excluded 28, friction-computability 0, friction-check-exceeded 0, GREY 10, PASS 3.

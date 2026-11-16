@@ -158,9 +158,11 @@
    "p072",
    "p075",
    "p092",
+   "p093",
    "p114",
    "p117",
-   "p143"
+   "p143",
+   "p145"
   ],
   "[\u89c0\u6e2c]/friction-window": [
    "p064",
@@ -168,26 +170,23 @@
   ],
   "PASS": [
    "p086",
-   "p093",
    "p100",
-   "p142",
-   "p145"
+   "p142"
   ]
  },
  "rejected_windows": {},
- "friction_check_exceeded": [
-  "p093",
-  "p145"
- ],
+ "friction_check_exceeded": [],
  "friction_grey": [
   "p051",
   "p060",
   "p072",
   "p075",
   "p092",
+  "p093",
   "p114",
   "p117",
-  "p143"
+  "p143",
+  "p145"
  ],
  "grey_note": "GREY/*: \u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10)"
 }

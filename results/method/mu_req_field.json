@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "generated": "2026-11-17 04:19",
+  "generated": "2026-11-17 04:37",
   "n_designs": 149,
   "mu_max": 0.6,
   "mu_real": 0.35,
@@ -3148,7 +3148,7 @@
    "d_mm": 0.5,
    "mesh": "cage_A_radial_interleave_d0.500.npz",
    "source": "physio_rot_split4/p093_gpu2/w_flexion",
-   "verdict_class": "PASS",
+   "verdict_class": "GREY/friction-posterior-0.45-0.55",
    "mu_req_flexion": 0.031,
    "reached_flexion": true,
    "mu_req_extension": 0.016,
@@ -3168,7 +3168,7 @@
    "computable": true,
    "no_mu_req_reason": null,
    "ratio_to_mu_real": 0.396,
-   "friction_check": "fail",
+   "friction_check": "grey",
    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
    "grey_band": true,
    "soft_face_locking": false,
@@ -3178,7 +3178,7 @@
    "numerical_flags": [
     "replicate-inconsistent"
    ],
-   "verdict_source": null,
+   "verdict_source": "replicate group on the limit -> grey (PI 2026-11-17; own verdict under own_verdict)",
    "friction_fallback": false,
    "hp_E_hard": 576.06,
    "hp_E_soft": 10.346,
@@ -3492,7 +3492,7 @@
    "computable": true,
    "no_mu_req_reason": null,
    "ratio_to_mu_real": 0.408,
-   "friction_check": "open",
+   "friction_check": "grey",
    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
    "grey_band": true,
    "soft_face_locking": false,
@@ -5058,7 +5058,7 @@
    "d_mm": 0.5,
    "mesh": "cage_A_radial_interleave_d0.500.npz",
    "source": "physio_rot_split4/p093_gpu2/w_flexion",
-   "verdict_class": "PASS",
+   "verdict_class": "GREY/friction-posterior-0.45-0.55",
    "mu_req_flexion": 0.031,
    "reached_flexion": true,
    "mu_req_extension": 0.016,
@@ -5078,7 +5078,7 @@
    "computable": true,
    "no_mu_req_reason": null,
    "ratio_to_mu_real": 0.396,
-   "friction_check": "fail",
+   "friction_check": "grey",
    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
    "grey_band": true,
    "soft_face_locking": false,
@@ -5088,7 +5088,7 @@
    "numerical_flags": [
     "replicate-inconsistent"
    ],
-   "verdict_source": "replicate group, most conservative member p093 (PI 2026-11-11 decision 4; own verdict under own_verdict)",
+   "verdict_source": null,
    "friction_fallback": false,
    "hp_E_hard": 576.06,
    "hp_E_soft": 10.346,

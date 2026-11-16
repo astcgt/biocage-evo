@@ -2065,9 +2065,9 @@
   }
  },
  "p093": {
-  "verdict": "fail",
+  "verdict": "grey",
   "reasons": [
-   "extension@ROM u_h 0.55 post 0.55"
+   "replicate group on the limit (spread 0.0124 mm <= 0.02): grey by PI 2026-11-17"
   ],
   "windows": {
    "extension": {
@@ -2112,7 +2112,10 @@
    }
   },
   "missing": [],
-  "grey": [],
+  "grey": [
+   "extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
+   "flexion: own posterior 0.906 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)"
+  ],
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "replicates": {
    "deck_sha256": "17f7470a3e22834c",
@@ -2120,14 +2123,21 @@
     "p145"
    ],
    "verdicts": {
-    "p093": "fail",
-    "p145": "fail"
+    "p093": "grey",
+    "p145": "grey"
    },
    "consistent": true
   },
   "numerical_flags": [
    "replicate-inconsistent"
-  ]
+  ],
+  "own_verdict": "fail",
+  "own_reasons": [
+   "extension@ROM u_h 0.55 post 0.55"
+  ],
+  "own_grey": [],
+  "grey_note": "\u7070\u5340\uff08\u9650\u503c\u908a\u754c\uff09\uff1a\u540c\u6a21\u578b\u8907\u672c\u8b80\u503c\u8de8\u5728\u9650\u503c\u5169\u5074\u3001\u5dee\u8ddd\u5728\u6578\u503c\u96dc\u8a0a\u5167\uff0cPI 2026-11-17 \u5217\u70ba\u7070\u5340\uff1b\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
+  "verdict_source": "replicate group on the limit -> grey (PI 2026-11-17; own verdict under own_verdict)"
  },
  "p094": {
   "verdict": "pass",
@@ -2400,9 +2410,30 @@
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
  },
  "p102": {
-  "verdict": "open",
+  "verdict": "grey",
   "reasons": [],
   "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p102",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-low",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4581757354639172,
+    "post_at_rom": 0.45817529425987924,
+    "u_h_at_1p5Nm": 0.6838283195440085,
+    "post_at_1p5Nm": 0.6838281498138278,
+    "rot_max_deg": 9.232662370202942,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.458 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
    "flexion": {
     "set": "physio_fric3",
     "case_dir": "p102_gpu1",
@@ -2423,12 +2454,12 @@
     "window_law": "production"
    }
   },
-  "missing": [
-   "extension"
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.458 in grey zone [0.45, 0.55]"
   ],
-  "grey": [],
-  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
-  "open_reason": "window(s) extension did not reach the intact ROM or 1.5 N m (or missing)"
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
  },
  "p104": {
   "verdict": "pass",
@@ -4027,10 +4058,8 @@
   }
  },
  "p145": {
-  "verdict": "fail",
-  "reasons": [
-   "unified to replicate p093 (most conservative of the deck group; its reasons: extension@ROM u_h 0.55 post 0.55)"
-  ],
+  "verdict": "grey",
+  "reasons": [],
   "windows": {
    "extension": {
     "set": "physio_fric5r",
@@ -4074,7 +4103,10 @@
    }
   },
   "missing": [],
-  "grey": [],
+  "grey": [
+   "extension@ROM post 0.539 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "replicates": {
    "deck_sha256": "17f7470a3e22834c",
@@ -4082,20 +4114,14 @@
     "p093"
    ],
    "verdicts": {
-    "p093": "fail",
-    "p145": "fail"
+    "p093": "grey",
+    "p145": "grey"
    },
    "consistent": true
   },
   "numerical_flags": [
    "replicate-inconsistent"
-  ],
-  "own_verdict": "grey",
-  "own_reasons": [],
-  "own_grey": [
-   "extension@ROM post 0.539 in grey zone [0.45, 0.55]"
-  ],
-  "verdict_source": "replicate group, most conservative member p093 (PI 2026-11-11 decision 4; own verdict under own_verdict)"
+  ]
  },
  "p146": {
   "verdict": "pass",
@@ -4233,6 +4259,6 @@
   "set_precedence": "per window the highest-ranked set in SETS wins: physio_fric5 (stick-memory law, PI 2026-11-09) supersedes physio_fric3 (production law, NUM-13 artefact); physio_relG (process G, PI 2026-11-10 option a) holds the 27 insertion-stopped designs; physio_relG_pl is a fallback source only (production law on the G checkpoint, + margin, flagged); the insertion-stopped scans: physio_fric3 then physio_relG",
   "rule": "PI 2026-11-10: posterior 0.45-0.55 mm at the evaluation point = grey (analysis only, never a final design), > 0.55 or any-direction > 1 mm = fail; every row/design carries insertion_process and window_law (PI 2026-11-10 option a); PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn",
   "provisional": "verdicts provisional: physio_fric3 windows carry the FEBio stick-point artefact (NUM-13); PI 2026-11-09 decision 1 recomputes them as physio_fric5 (stick-memory law, same checkpoints) which supersedes fric3 per window here; NUM-17 (0.5 mm grey zone) and the density reference (DECISIONS 2026-11-05 item 8) still open",
-  "generated": "2026-11-17 04:19"
+  "generated": "2026-11-17 04:37"
  }
 }

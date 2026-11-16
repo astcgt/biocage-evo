@@ -548,9 +548,9 @@
    }
   },
   "source": "physio_rot_split4/p093_gpu2/w_AR_right",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": "",
+  "verdict": "grey",
+  "class": "GREY/friction-posterior-0.45-0.55",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey); p093: flexion: own posterior 0.906 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey); p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]",
   "duplicates": [
    "p145"
   ],
@@ -560,19 +560,22 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "fail",
+    "verdict": "grey",
     "reasons": [
-     "p093: extension@ROM u_h 0.55 post 0.55",
-     "p145: unified to replicate p093 (most conservative of the deck group; its reasons: extension@ROM u_h 0.55 post 0.55)"
+     "replicate group on the limit (spread 0.0124 mm <= 0.02): grey by PI 2026-11-17"
     ],
     "open_reason": null,
     "role": "check",
-    "grey": [],
+    "grey": [
+     "p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
+     "p093: flexion: own posterior 0.906 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
+     "p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]"
+    ],
     "soft_face_locking": null,
     "numerical_flags": [
      "replicate-inconsistent"
     ],
-    "verdict_source": null,
+    "verdict_source": "replicate group on the limit -> grey (PI 2026-11-17; own verdict under own_verdict)",
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -594,13 +597,14 @@
    }
   },
   "friction_check": {
-   "verdict": "exceeded",
-   "provisional": true,
+   "verdict": "grey",
+   "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
-    "p093: extension@ROM u_h 0.55 post 0.55",
-    "p145: unified to replicate p093 (most conservative of the deck group; its reasons: extension@ROM u_h 0.55 post 0.55)"
+    "p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
+    "p093: flexion: own posterior 0.906 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
+    "p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]"
    ],
-   "rule": "PI 2026-11-07: check, not a gate"
+   "rule": "PI 2026-11-10"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -2012,9 +2016,9 @@
    }
   },
   "source": "physio_rot_split4/p093_gpu2/w_AR_right",
-  "verdict": "pass",
-  "class": "PASS",
-  "reason": "",
+  "verdict": "grey",
+  "class": "GREY/friction-posterior-0.45-0.55",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey); p093: flexion: own posterior 0.906 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey); p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]",
   "duplicates": [
    "p093"
   ],
@@ -2024,19 +2028,22 @@
     "cls": "PASS"
    },
    "dislocation_friction": {
-    "verdict": "fail",
+    "verdict": "grey",
     "reasons": [
-     "p093: extension@ROM u_h 0.55 post 0.55",
-     "p145: unified to replicate p093 (most conservative of the deck group; its reasons: extension@ROM u_h 0.55 post 0.55)"
+     "replicate group on the limit (spread 0.0124 mm <= 0.02): grey by PI 2026-11-17"
     ],
     "open_reason": null,
     "role": "check",
-    "grey": [],
+    "grey": [
+     "p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
+     "p093: flexion: own posterior 0.906 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
+     "p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]"
+    ],
     "soft_face_locking": null,
     "numerical_flags": [
      "replicate-inconsistent"
     ],
-    "verdict_source": null,
+    "verdict_source": "replicate group on the limit -> grey (PI 2026-11-17; own verdict under own_verdict)",
     "fallback": {},
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
@@ -2058,13 +2065,14 @@
    }
   },
   "friction_check": {
-   "verdict": "exceeded",
-   "provisional": true,
+   "verdict": "grey",
+   "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
-    "p093: extension@ROM u_h 0.55 post 0.55",
-    "p145: unified to replicate p093 (most conservative of the deck group; its reasons: extension@ROM u_h 0.55 post 0.55)"
+    "p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
+    "p093: flexion: own posterior 0.906 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
+    "p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]"
    ],
-   "rule": "PI 2026-11-07: check, not a gate"
+   "rule": "PI 2026-11-10"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -6270,11 +6278,13 @@
     "cls": "DESIGN/compression-peak-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "grey",
     "reasons": [],
-    "open_reason": "window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
+    "open_reason": null,
     "role": "check",
-    "grey": [],
+    "grey": [
+     "p102: extension@ROM post 0.458 in grey zone [0.45, 0.55]"
+    ],
     "soft_face_locking": null,
     "numerical_flags": null,
     "verdict_source": null,
@@ -6290,11 +6300,21 @@
     "fabrication": "interleave"
    }
   },
+  "friction_check": {
+   "verdict": "grey",
+   "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
+   "reasons": [
+    "p102: extension@ROM post 0.458 in grey zone [0.45, 0.55]"
+   ],
+   "rule": "PI 2026-11-10"
+  },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
+   "extension": "stick memory (patch 6+7)",
    "flexion": "production"
   },
   "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
    "flexion": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)"
   }
  },
