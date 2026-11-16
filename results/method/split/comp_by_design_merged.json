@@ -84,6 +84,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p086": {
@@ -226,6 +230,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p005": {
@@ -407,6 +415,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p098": {
@@ -551,8 +563,7 @@
     "verdict": "fail",
     "reasons": [
      "p093: extension@ROM u_h 0.55 post 0.55",
-     "p145: extension@ROM u_h 0.55 post 0.55",
-     "p145: unified to replicate p093 (most conservative of the deck group)"
+     "p145: unified to replicate p093 (most conservative of the deck group; its reasons: extension@ROM u_h 0.55 post 0.55)"
     ],
     "open_reason": null,
     "role": "check",
@@ -587,8 +598,7 @@
    "provisional": true,
    "reasons": [
     "p093: extension@ROM u_h 0.55 post 0.55",
-    "p145: extension@ROM u_h 0.55 post 0.55",
-    "p145: unified to replicate p093 (most conservative of the deck group)"
+    "p145: unified to replicate p093 (most conservative of the deck group; its reasons: extension@ROM u_h 0.55 post 0.55)"
    ],
    "rule": "PI 2026-11-07: check, not a gate"
   },
@@ -596,6 +606,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p080": {
@@ -756,6 +770,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p029": {
@@ -982,6 +1000,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p075": {
@@ -1141,6 +1163,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p017": {
@@ -1411,6 +1437,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p120": {
@@ -1497,6 +1527,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p100": {
@@ -1639,6 +1673,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p036": {
@@ -1780,6 +1818,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p121": {
@@ -1863,6 +1905,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p145": {
@@ -1981,8 +2027,7 @@
     "verdict": "fail",
     "reasons": [
      "p093: extension@ROM u_h 0.55 post 0.55",
-     "p145: extension@ROM u_h 0.55 post 0.55",
-     "p145: unified to replicate p093 (most conservative of the deck group)"
+     "p145: unified to replicate p093 (most conservative of the deck group; its reasons: extension@ROM u_h 0.55 post 0.55)"
     ],
     "open_reason": null,
     "role": "check",
@@ -2017,8 +2062,7 @@
    "provisional": true,
    "reasons": [
     "p093: extension@ROM u_h 0.55 post 0.55",
-    "p145: extension@ROM u_h 0.55 post 0.55",
-    "p145: unified to replicate p093 (most conservative of the deck group)"
+    "p145: unified to replicate p093 (most conservative of the deck group; its reasons: extension@ROM u_h 0.55 post 0.55)"
    ],
    "rule": "PI 2026-11-07: check, not a gate"
   },
@@ -2026,6 +2070,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p015": {
@@ -2238,6 +2286,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p124": {
@@ -2325,6 +2377,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p044": {
@@ -2489,6 +2545,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p135": {
@@ -2586,6 +2646,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p144": {
@@ -2821,6 +2885,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p115": {
@@ -2906,6 +2974,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p021": {
@@ -2983,8 +3055,16 @@
     "cls": "DESIGN/compression-peak"
    },
    "dislocation_friction": {
-    "verdict": "not run",
-    "role": "check"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "role": "check",
+    "grey": null,
+    "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
+    "fallback": {},
+    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -2994,7 +3074,10 @@
     "gradient": "axial",
     "fabrication": "interleave"
    }
-  }
+  },
+  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
+  "window_law": {},
+  "window_drive": {}
  },
  "p122": {
   "sustained": 0.01165629126276625,
@@ -3081,6 +3164,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p142": {
@@ -3223,6 +3310,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p041": {
@@ -3407,10 +3498,7 @@
     "numerical_flags": null,
     "verdict_source": null,
     "fallback": {},
-    "insertion_process": [
-     "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
-     "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
-    ]
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
     "verdict": "fail",
@@ -3432,10 +3520,7 @@
     "fabrication": "mix"
    }
   },
-  "insertion_process": [
-   "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
-   "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
-  ],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
    "AR_left": "production",
    "AR_right": "production",
@@ -3443,6 +3528,14 @@
    "LB_right": "production",
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "AR_left": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "AR_right": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "LB_left": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "LB_right": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p013": {
@@ -3656,6 +3749,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p020": {
@@ -3833,6 +3930,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p116": {
@@ -3974,6 +4075,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p010": {
@@ -4140,6 +4245,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p108": {
@@ -4260,6 +4369,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p128": {
@@ -4418,6 +4531,10 @@
   "window_law": {
    "extension": "production (fallback)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   },
   "friction_fallback": {
    "extension": {
@@ -4610,6 +4727,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p069": {
@@ -4806,6 +4927,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p079": {
@@ -4893,6 +5018,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p028": {
@@ -5354,6 +5483,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p072": {
@@ -5517,6 +5650,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p045": {
@@ -5629,6 +5766,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p074": {
@@ -5718,6 +5859,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p095": {
@@ -5876,6 +6021,10 @@
   "window_law": {
    "extension": "production (fallback)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   },
   "friction_fallback": {
    "extension": {
@@ -6065,6 +6214,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p102": {
@@ -6117,8 +6270,16 @@
     "cls": "DESIGN/compression-peak-lowerbound"
    },
    "dislocation_friction": {
-    "verdict": "not run",
-    "role": "check"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
+    "role": "check",
+    "grey": [],
+    "soft_face_locking": null,
+    "numerical_flags": null,
+    "verdict_source": null,
+    "fallback": {},
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
    "interface_shear": {
     "verdict": "not run"
@@ -6128,6 +6289,13 @@
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "window_law": {
+   "flexion": "production"
+  },
+  "window_drive": {
+   "flexion": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)"
   }
  },
  "p070": {
@@ -6413,6 +6581,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p066": {
@@ -6500,6 +6672,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p114": {
@@ -6594,6 +6770,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p081": {
@@ -6692,6 +6872,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p004": {
@@ -6897,6 +7081,14 @@
    "LB_right": "production",
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "AR_left": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "AR_right": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "LB_left": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "LB_right": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p090": {
@@ -7083,6 +7275,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p014": {
@@ -7170,6 +7366,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)"
   }
  },
  "p048": {
@@ -7307,6 +7507,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p037": {
@@ -7427,6 +7631,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p024": {
@@ -7831,6 +8039,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p027": {
@@ -8106,6 +8318,14 @@
    "LB_right": "production",
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "AR_left": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "AR_right": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "LB_left": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "LB_right": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)"
   }
  },
  "p106": {
@@ -8272,6 +8492,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p105": {
@@ -8359,6 +8583,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p136": {
@@ -8545,6 +8773,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p031": {
@@ -8669,6 +8901,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p002": {
@@ -8756,6 +8992,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p064": {
@@ -8893,6 +9133,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p092": {
@@ -9046,6 +9290,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p033": {
@@ -9223,6 +9471,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p030": {
@@ -9548,6 +9800,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p065": {
@@ -9635,6 +9891,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p023": {
@@ -9779,6 +10039,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p016": {
@@ -9930,6 +10194,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p096": {
@@ -10083,6 +10351,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p107": {
@@ -10344,6 +10616,10 @@
    "extension": "stick memory (patch 6+7)",
    "flexion": "production (fallback)"
   },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)"
+  },
   "friction_fallback": {
    "flexion": {
     "source": "physio_fric3 (production law, same checkpoint)",
@@ -10457,6 +10733,10 @@
   "window_law": {
    "extension": "production (fallback)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   },
   "friction_fallback": {
    "extension": {
@@ -10718,6 +10998,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p026": {
@@ -10816,6 +11100,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p011": {
@@ -11056,6 +11344,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p049": {
@@ -11239,6 +11531,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p067": {
@@ -11326,6 +11622,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)"
   }
  },
  "p076": {
@@ -11423,6 +11723,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p127": {
@@ -11576,6 +11880,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p019": {
@@ -11729,6 +12037,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p012": {
@@ -11980,6 +12292,10 @@
   "window_law": {
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  }
 }

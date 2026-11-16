@@ -247,7 +247,7 @@ for p in sorted(set(best) | set(comp) | set(lastj)):
         # a tied PASS whose friction check is grey leaves class PASS so that no grey design is counted as a pass
         c['friction_check'] = dict(verdict='grey', note='灰區：僅供分析，不得作為 final design', reasons=fv.get('grey', []), rule='PI 2026-11-10')
         if c['verdict'] == 'pass' and p in lists['both']: move('grey', 'GREY/friction-posterior-0.45-0.55', '灰區：摩擦 run 後方平移 0.45-0.55 mm，僅供分析，不得作為 final design; ' + '; '.join(fv.get('grey', []))); fgrey.append(p)
-    if fv: c['insertion_process'] = fv.get('insertion_process'); c['window_law'] = {w: x.get('window_law') for w, x in (fv.get('windows') or {}).items()}   # provenance (PI 2026-11-10 option a)
+    if fv: c['insertion_process'] = fv.get('insertion_process'); c['window_law'] = {w: x.get('window_law') for w, x in (fv.get('windows') or {}).items()}; c['window_drive'] = {w: x.get('window_drive') for w, x in (fv.get('windows') or {}).items()}   # provenance (PI 2026-11-10 option a; window_drive 2026-11-17)
     if fv and any((x or {}).get('fallback') for x in (fv.get('windows') or {}).values()):
         c['friction_fallback'] = {w: x['fallback'] for w, x in fv['windows'].items() if x.get('fallback')}   # PI 2026-11-10 item 1: production-law read-out + 0.043 mm margin
     classes.setdefault(c['class'], []).append(p)

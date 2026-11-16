@@ -197,7 +197,7 @@ def target_bracket(cd, sch):
     mode = drive_mode(cd); rows = rigid_drive_rows(cd, sch) if mode == 'rigid_relative' else drive_rows(cd); Mt = sch['target_moment_Nmm']; rb = rb_rows(cd)
     for i, w in enumerate(sch['windows']):
         up = [(tt, d[i + 1][COL[w['dof']]]) for tt, d in rows if (i + 1) in d and w['t0'] + 1e-9 < tt <= w['t_peak'] + 1e-9]
-        dyn, fz = dyn_residuals(rb, [t for t, _ in up], exclude='all' if mode == 'rigid_relative' else None)   # route E: all three rotations are prescribed (Ry driven, Rx/Rz relative 0): their reactions are not residuals (audit 2026-11-13 D-20261111-32); the force residual still filters
+        dyn, fz = dyn_residuals(rb, [t for t, _ in up], exclude='all' if mode == 'rigid_relative' else None)   # route E: all three rotations are prescribed (Ry driven, Rx/Rz relative 0): their reactions are not residuals (audit 2026-11-13 D-20261111-32); the force residual is recorded only (DYN_F None) - no rigid-body residual filtering under route E
         valid, invalid = filter_rows(up, w['t0'], Mt, dyn, abs(fz) if fz else None)
         mono = all(abs(valid[k][2]) >= 0.98 * abs(valid[k - 1][2]) for k in range(1, len(valid)))
         chk = dict(n_rows=len(up), n_invalid=len(invalid), n_dyn=sum(r[3] == 'dyn' for r in invalid), dt_min=min((v[1] for v in valid), default=None),
