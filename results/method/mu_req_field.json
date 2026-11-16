@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "generated": "2026-11-17 04:37",
+  "generated": "2026-11-17 07:44",
   "n_designs": 149,
   "mu_max": 0.6,
   "mu_real": 0.35,
@@ -5238,8 +5238,8 @@
    "computable": true,
    "no_mu_req_reason": null,
    "ratio_to_mu_real": 0.388,
-   "friction_check": "open",
-   "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
+   "friction_check": "pass",
+   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
    "grey_band": true,
    "soft_face_locking": false,
    "replicates": null,

@@ -3063,19 +3063,26 @@
     "cls": "DESIGN/compression-peak"
    },
    "dislocation_friction": {
-    "verdict": "open",
+    "verdict": "pass",
     "reasons": [],
-    "open_reason": "frictional insertion run stopped at t 3.050 in the first dynamic step after the C3 hold release (release impact, DECISIONS 2026-11-04 01:30)",
+    "open_reason": null,
     "role": "check",
-    "grey": null,
+    "grey": [],
     "soft_face_locking": null,
     "numerical_flags": null,
     "verdict_source": null,
     "fallback": {},
-    "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)"
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "open",
+    "reasons": [],
+    "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 0.888
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -3083,9 +3090,15 @@
     "fabrication": "interleave"
    }
   },
-  "insertion_process": "production (insertion stopped before the windows; PI 2026-11-10 option a: to be rerun with process G as physio_relG)",
-  "window_law": {},
-  "window_drive": {}
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "window_law": {
+   "extension": "stick memory (patch 6+7)",
+   "flexion": "stick memory (patch 6+7)"
+  },
+  "window_drive": {
+   "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+   "flexion": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)"
+  }
  },
  "p122": {
   "sustained": 0.01165629126276625,
@@ -6292,7 +6305,17 @@
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "fail",
+    "reasons": [
+     "p102: flexion@ROM shear p99 5.5 MPa > 3.0"
+    ],
+    "open_reason": null,
+    "threshold_MPa": 3.0,
+    "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
+    "shear_p99_at_rom": {
+     "extension": 1.244,
+     "flexion": 5.538
+    }
    },
    "design_rule": {
     "verdict": "pass",
@@ -6311,11 +6334,11 @@
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
    "extension": "stick memory (patch 6+7)",
-   "flexion": "production"
+   "flexion": "stick memory (patch 6+7)"
   },
   "window_drive": {
    "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
-   "flexion": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)"
+   "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
  },
  "p070": {

@@ -18,6 +18,7 @@
      "shear_p99_at_rom": 2.76,
      "horizontal": null,
      "vertical": 2.759628553361484,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.81978257719365
     },
@@ -27,6 +28,7 @@
      "shear_p99_at_rom": 17.735,
      "horizontal": null,
      "vertical": 17.7345092667592,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 56.550145359145645
     }
@@ -45,6 +47,7 @@
      "shear_p99_at_rom": 2.642,
      "horizontal": null,
      "vertical": 2.642373643496901,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.525127365916451
     },
@@ -54,6 +57,7 @@
      "shear_p99_at_rom": 15.796,
      "horizontal": null,
      "vertical": 15.795903214708785,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 51.546608146623505
     }
@@ -73,6 +77,7 @@
      "shear_p99_at_rom": 3.015,
      "horizontal": null,
      "vertical": 3.0146471093861846,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.8840941306031507
     },
@@ -82,6 +87,7 @@
      "shear_p99_at_rom": 15.749,
      "horizontal": null,
      "vertical": 15.749216863923802,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 51.664228744525424
     }
@@ -101,6 +107,7 @@
      "shear_p99_at_rom": 5.04,
      "horizontal": 5.040133185912128,
      "vertical": 0.7716585663854943,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.639396306769782
     },
@@ -110,6 +117,7 @@
      "shear_p99_at_rom": 14.762,
      "horizontal": 13.734738071109442,
      "vertical": 14.76247666800512,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": true,
      "fallback_note": "PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only",
      "peel_max_at_rom": 34.59137110777886
@@ -129,6 +137,7 @@
      "shear_p99_at_rom": 2.349,
      "horizontal": null,
      "vertical": 2.34880857022539,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.4752256399721384
     },
@@ -138,6 +147,7 @@
      "shear_p99_at_rom": 16.909,
      "horizontal": null,
      "vertical": 16.909047110885187,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 55.049037818252586
     }
@@ -156,6 +166,7 @@
      "shear_p99_at_rom": 0.442,
      "horizontal": 0.4423930988253032,
      "vertical": 0.3626232097434784,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 1.8877484422279023
     },
@@ -165,6 +176,7 @@
      "shear_p99_at_rom": 3.359,
      "horizontal": 3.358510015357976,
      "vertical": 1.610424389930071,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.0713483563156827
     }
@@ -193,6 +205,7 @@
      "shear_p99_at_rom": 21.894,
      "horizontal": null,
      "vertical": 21.893660735484026,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 62.41475112713315
     }
@@ -211,6 +224,7 @@
      "shear_p99_at_rom": 0.497,
      "horizontal": 0.49737543214532404,
      "vertical": 0.36430365201587395,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.7332540394306049
     },
@@ -220,6 +234,7 @@
      "shear_p99_at_rom": 2.153,
      "horizontal": 2.153285866360214,
      "vertical": 1.5316148309870312,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.478163391771729
     }
@@ -238,6 +253,7 @@
      "shear_p99_at_rom": 0.426,
      "horizontal": 0.4258374012532969,
      "vertical": 0.313262695482653,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.647977936655532
     },
@@ -247,6 +263,7 @@
      "shear_p99_at_rom": 3.169,
      "horizontal": 3.169088433894874,
      "vertical": 1.8672154166822272,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.5158369408781547
     }
@@ -265,6 +282,7 @@
      "shear_p99_at_rom": 0.482,
      "horizontal": 0.4820080853083929,
      "vertical": 0.3432932191989989,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.6031628212310038
     },
@@ -274,6 +292,7 @@
      "shear_p99_at_rom": 3.011,
      "horizontal": 3.0105711238249193,
      "vertical": 1.8165916793354218,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.3042514040948348
     }
@@ -293,6 +312,7 @@
      "shear_p99_at_rom": 6.542,
      "horizontal": 6.541731450583695,
      "vertical": 1.9084580126489037,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.5841730550326116
     },
@@ -302,6 +322,7 @@
      "shear_p99_at_rom": 11.409,
      "horizontal": 11.409117321612609,
      "vertical": 10.168369679232192,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 17.257169954134568
     }
@@ -321,6 +342,7 @@
      "shear_p99_at_rom": 6.384,
      "horizontal": 6.384195570990065,
      "vertical": 1.3835791284869934,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.5180068159155446
     },
@@ -330,6 +352,7 @@
      "shear_p99_at_rom": 11.541,
      "horizontal": 11.541161536169048,
      "vertical": 11.088046663659998,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 26.53022186979207
     }
@@ -346,6 +369,7 @@
      "shear_p99_at_rom": 0.082,
      "horizontal": 0.08174139154809328,
      "vertical": 0.06555701199450595,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.3766978086544984
     }
@@ -368,6 +392,7 @@
      "shear_p99_at_rom": 4.443,
      "horizontal": 4.442751727971622,
      "vertical": 0.6255469062416884,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.8596675578051524
     },
@@ -377,6 +402,7 @@
      "shear_p99_at_rom": 13.105,
      "horizontal": 10.517399647380168,
      "vertical": 13.10489320617829,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 24.606451241856636
     }
@@ -396,6 +422,7 @@
      "shear_p99_at_rom": 4.721,
      "horizontal": 4.721269188446118,
      "vertical": 0.9590925066881284,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.261296536662752
     },
@@ -405,6 +432,7 @@
      "shear_p99_at_rom": 14.593,
      "horizontal": 13.002825437845576,
      "vertical": 14.593151742782352,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 43.34736594482629
     }
@@ -424,6 +452,7 @@
      "shear_p99_at_rom": 5.26,
      "horizontal": 5.260359654108698,
      "vertical": 1.2588333170759756,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 1.966795080911471
     },
@@ -433,6 +462,7 @@
      "shear_p99_at_rom": 12.487,
      "horizontal": 12.487135784953152,
      "vertical": 12.048974801309324,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 39.259210836601156
     }
@@ -451,6 +481,7 @@
      "shear_p99_at_rom": 2.48,
      "horizontal": null,
      "vertical": 2.480141014181086,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 9.85600895641769
     },
@@ -460,6 +491,7 @@
      "shear_p99_at_rom": 21.877,
      "horizontal": null,
      "vertical": 21.876623445732882,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 62.347282815447535
     }
@@ -478,6 +510,7 @@
      "shear_p99_at_rom": 2.392,
      "horizontal": null,
      "vertical": 2.391837231233038,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 6.862608194186894
     },
@@ -487,6 +520,7 @@
      "shear_p99_at_rom": 19.874,
      "horizontal": null,
      "vertical": 19.87353997867985,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 59.42044533197601
     }
@@ -503,6 +537,7 @@
      "shear_p99_at_rom": 0.488,
      "horizontal": 0.48849470168878173,
      "vertical": 0.33282074307077925,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.710370347962919
     },
@@ -512,6 +547,7 @@
      "shear_p99_at_rom": 2.382,
      "horizontal": 2.382137259509263,
      "vertical": 1.5175639818613893,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.362132475950087
     }
@@ -528,6 +564,7 @@
      "shear_p99_at_rom": 2.319,
      "horizontal": null,
      "vertical": 2.3192754713868196,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 8.358076223895237
     }
@@ -547,6 +584,7 @@
      "shear_p99_at_rom": 0.495,
      "horizontal": 0.4952468809244611,
      "vertical": 0.3671665982092783,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.7281694894060963
     },
@@ -556,6 +594,7 @@
      "shear_p99_at_rom": 2.151,
      "horizontal": 2.1514808335596762,
      "vertical": 1.5283855569631266,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.44448039546275
     }
@@ -575,6 +614,7 @@
      "shear_p99_at_rom": 4.532,
      "horizontal": 4.531699319751201,
      "vertical": 1.6083273205347353,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.3031995838668964
     },
@@ -584,6 +624,7 @@
      "shear_p99_at_rom": 11.985,
      "horizontal": 10.439432276614093,
      "vertical": 11.98465834365355,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 22.18735124129639
     }
@@ -603,6 +644,7 @@
      "shear_p99_at_rom": 4.433,
      "horizontal": 4.433113481058853,
      "vertical": 1.1137762747906723,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 1.7270259650153945
     },
@@ -612,6 +654,7 @@
      "shear_p99_at_rom": 13.847,
      "horizontal": 10.821952735239819,
      "vertical": 13.84706348954583,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 32.825510593291646
     }
@@ -630,6 +673,7 @@
      "shear_p99_at_rom": 2.425,
      "horizontal": null,
      "vertical": 2.4253043666321696,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 3.4846872401836673
     },
@@ -639,6 +683,7 @@
      "shear_p99_at_rom": 17.939,
      "horizontal": null,
      "vertical": 17.93865006829993,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 58.13432885720222
     }
@@ -657,6 +702,7 @@
      "shear_p99_at_rom": 2.813,
      "horizontal": null,
      "vertical": 2.8127893988295023,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.966920155994323
     },
@@ -666,6 +712,7 @@
      "shear_p99_at_rom": 18.394,
      "horizontal": null,
      "vertical": 18.39393122477903,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 59.78153811547323
     }
@@ -685,6 +732,7 @@
      "shear_p99_at_rom": 3.287,
      "horizontal": null,
      "vertical": 3.2871352231059903,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 4.087806097900186
     },
@@ -694,6 +742,7 @@
      "shear_p99_at_rom": 15.844,
      "horizontal": null,
      "vertical": 15.843529984026981,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 53.252644416072584
     }
@@ -712,6 +761,7 @@
      "shear_p99_at_rom": 0.147,
      "horizontal": 0.14677898148313323,
      "vertical": 0.12192660466381658,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.3560454144435425
     },
@@ -721,6 +771,7 @@
      "shear_p99_at_rom": 4.04,
      "horizontal": 4.039505205285666,
      "vertical": 1.4392511370787961,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.8178592668483433
     }
@@ -739,6 +790,7 @@
      "shear_p99_at_rom": 0.276,
      "horizontal": 0.27575980150234275,
      "vertical": 0.17741807016265482,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 0.4012226731437013
     },
@@ -748,6 +800,7 @@
      "shear_p99_at_rom": 3.176,
      "horizontal": 3.1757730702635745,
      "vertical": 1.645895609249444,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 4.343034353027266
     }
@@ -766,6 +819,7 @@
      "shear_p99_at_rom": 21.868,
      "horizontal": null,
      "vertical": 21.867801978371457,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 62.33619955222509
     }
@@ -784,6 +838,7 @@
      "shear_p99_at_rom": 0.305,
      "horizontal": 0.30460356936663535,
      "vertical": 0.22063059934503268,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 0.4485516680272966
     },
@@ -793,6 +848,7 @@
      "shear_p99_at_rom": 2.718,
      "horizontal": 2.717604234927874,
      "vertical": 1.4680240034140102,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.557635719687709
     }
@@ -811,6 +867,7 @@
      "shear_p99_at_rom": 0.147,
      "horizontal": 0.1469480793142506,
      "vertical": 0.12219723147299728,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.358777139430989
     },
@@ -820,6 +877,7 @@
      "shear_p99_at_rom": 4.128,
      "horizontal": 4.127775702898034,
      "vertical": 1.449852196052821,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.917653685279358
     }
@@ -836,6 +894,7 @@
      "shear_p99_at_rom": 0.327,
      "horizontal": 0.3267752456091432,
      "vertical": 0.2013227184879501,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.4966431116045417
     },
@@ -845,6 +904,7 @@
      "shear_p99_at_rom": 2.328,
      "horizontal": 2.32755068100741,
      "vertical": 1.2615463934303308,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.285795311621051
     }
@@ -861,6 +921,7 @@
      "shear_p99_at_rom": 0.354,
      "horizontal": 0.35373336107176206,
      "vertical": 0.2245261907067335,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.7655684582936946
     },
@@ -870,6 +931,7 @@
      "shear_p99_at_rom": 1.963,
      "horizontal": 1.9630852916281487,
      "vertical": 1.0763883704327437,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.3008959234896964
     }
@@ -889,6 +951,7 @@
      "shear_p99_at_rom": 6.726,
      "horizontal": 6.726286209032026,
      "vertical": 0.7377077309135117,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.600056819057781
     },
@@ -898,6 +961,7 @@
      "shear_p99_at_rom": 14.195,
      "horizontal": 14.19527848990218,
      "vertical": 12.903748455041486,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 20.345828609613875
     }
@@ -916,6 +980,7 @@
      "shear_p99_at_rom": 2.091,
      "horizontal": null,
      "vertical": 2.0910087965057564,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": true,
      "fallback_note": "PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only",
      "peel_max_at_rom": 6.655119697637813
@@ -926,6 +991,7 @@
      "shear_p99_at_rom": 19.176,
      "horizontal": null,
      "vertical": 19.176120791121807,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 55.54567016065986
     }
@@ -944,6 +1010,7 @@
      "shear_p99_at_rom": 1.836,
      "horizontal": null,
      "vertical": 1.8358460416448845,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 8.360421344506458
     },
@@ -953,6 +1020,7 @@
      "shear_p99_at_rom": 18.368,
      "horizontal": null,
      "vertical": 18.368256656067874,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 39.60815334488721
     }
@@ -969,6 +1037,7 @@
      "shear_p99_at_rom": 0.303,
      "horizontal": 0.3029839390866018,
      "vertical": 0.22026136406712574,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.44806298739278727
     },
@@ -978,6 +1047,7 @@
      "shear_p99_at_rom": 2.73,
      "horizontal": 2.73001595350383,
      "vertical": 1.4678044427170156,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.5155768125301474
     }
@@ -996,6 +1066,7 @@
      "shear_p99_at_rom": 0.22,
      "horizontal": 0.21967752838939236,
      "vertical": 0.14528399207080686,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.30985082673611036
     },
@@ -1005,8 +1076,38 @@
      "shear_p99_at_rom": 3.798,
      "horizontal": 3.798370896252047,
      "vertical": 1.78739311516057,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 4.424590903017642
+    }
+   },
+   "missing": []
+  },
+  "p102": {
+   "verdict": "fail",
+   "reasons": [
+    "flexion@ROM shear p99 5.5 MPa > 3.0"
+   ],
+   "windows": {
+    "extension": {
+     "set": "physio_fric5r",
+     "case_dir": "p102",
+     "shear_p99_at_rom": 1.244,
+     "horizontal": 1.243853771952888,
+     "vertical": 0.4932876332875141,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
+     "fallback": false,
+     "peel_max_at_rom": 0.6613491372196663
+    },
+    "flexion": {
+     "set": "physio_fric5r",
+     "case_dir": "p102",
+     "shear_p99_at_rom": 5.538,
+     "horizontal": 5.537941244086018,
+     "vertical": 0.9737384326119107,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
+     "fallback": false,
+     "peel_max_at_rom": 3.8976354452391844
     }
    },
    "missing": []
@@ -1023,6 +1124,7 @@
      "shear_p99_at_rom": 2.05,
      "horizontal": null,
      "vertical": 2.049787056115694,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": true,
      "fallback_note": "PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only",
      "peel_max_at_rom": 2.6283701518085554
@@ -1033,6 +1135,7 @@
      "shear_p99_at_rom": 15.025,
      "horizontal": null,
      "vertical": 15.024744295404405,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 42.35270490906377
     }
@@ -1052,6 +1155,7 @@
      "shear_p99_at_rom": 7.892,
      "horizontal": 7.8915581012958755,
      "vertical": 2.3346024647145245,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.1461092732860645
     },
@@ -1061,6 +1165,7 @@
      "shear_p99_at_rom": 13.736,
      "horizontal": 13.735800960084829,
      "vertical": 11.195935471813083,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 20.12263991150306
     }
@@ -1079,6 +1184,7 @@
      "shear_p99_at_rom": 2.436,
      "horizontal": null,
      "vertical": 2.435926973082162,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 9.83394312317619
     },
@@ -1088,6 +1194,7 @@
      "shear_p99_at_rom": 21.21,
      "horizontal": null,
      "vertical": 21.21049962538342,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 61.34390704783014
     }
@@ -1107,6 +1214,7 @@
      "shear_p99_at_rom": 6.564,
      "horizontal": 6.564099083070829,
      "vertical": 0.8862313921966195,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.3103500783981112
     },
@@ -1116,6 +1224,7 @@
      "shear_p99_at_rom": 14.864,
      "horizontal": 14.280755103645618,
      "vertical": 14.864028859955853,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 31.67244775970772
     }
@@ -1135,6 +1244,7 @@
      "shear_p99_at_rom": 6.112,
      "horizontal": 6.112358250228314,
      "vertical": 1.3956476319484996,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 1.9969125156921441
     },
@@ -1144,6 +1254,7 @@
      "shear_p99_at_rom": 12.678,
      "horizontal": 12.54056685153685,
      "vertical": 12.677592761969189,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 31.854924555611838
     }
@@ -1162,6 +1273,7 @@
      "shear_p99_at_rom": 2.523,
      "horizontal": null,
      "vertical": 2.5227652801375977,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.4734915578141776
     },
@@ -1171,6 +1283,7 @@
      "shear_p99_at_rom": 12.935,
      "horizontal": null,
      "vertical": 12.934881983517151,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 42.914270637122634
     }
@@ -1189,6 +1302,7 @@
      "shear_p99_at_rom": 2.809,
      "horizontal": null,
      "vertical": 2.809475661951162,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.679399670620441
     },
@@ -1198,6 +1312,7 @@
      "shear_p99_at_rom": 12.221,
      "horizontal": null,
      "vertical": 12.220887717334216,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 41.560632707677875
     }
@@ -1214,6 +1329,7 @@
      "shear_p99_at_rom": 0.384,
      "horizontal": 0.3840802638244187,
      "vertical": 0.25603209542395017,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.6531679737261898
     },
@@ -1223,6 +1339,7 @@
      "shear_p99_at_rom": 2.045,
      "horizontal": 2.0452137761109537,
      "vertical": 1.2837193579386594,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.829522064979863
     }
@@ -1239,6 +1356,7 @@
      "shear_p99_at_rom": 0.159,
      "horizontal": 0.15873860544489818,
      "vertical": 0.11228586550438645,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 1.520150428429948
     }
@@ -1260,6 +1378,7 @@
      "shear_p99_at_rom": 2.353,
      "horizontal": null,
      "vertical": 2.352991004001264,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 8.89352482819911
     },
@@ -1269,6 +1388,7 @@
      "shear_p99_at_rom": 21.326,
      "horizontal": null,
      "vertical": 21.325813458659827,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 61.85589138565629
     }
@@ -1285,6 +1405,7 @@
      "shear_p99_at_rom": 0.326,
      "horizontal": 0.3257417860309095,
      "vertical": 0.2015440305388855,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.4921040904964731
     },
@@ -1294,6 +1415,7 @@
      "shear_p99_at_rom": 2.322,
      "horizontal": 2.322102390450643,
      "vertical": 1.2540523815066267,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.32253365579261
     }
@@ -1312,6 +1434,7 @@
      "shear_p99_at_rom": 0.155,
      "horizontal": 0.1554161419984117,
      "vertical": 0.10996864137040038,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.40105113739134435
     },
@@ -1321,6 +1444,7 @@
      "shear_p99_at_rom": 3.228,
      "horizontal": 3.2284683012267723,
      "vertical": 1.30362542881033,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.466388686278549
     }
@@ -1337,6 +1461,7 @@
      "shear_p99_at_rom": 0.145,
      "horizontal": 0.14458683100646266,
      "vertical": 0.12141128745886255,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.37389200516586635
     }
@@ -1359,6 +1484,7 @@
      "shear_p99_at_rom": 6.636,
      "horizontal": 6.636452197353044,
      "vertical": 1.9261490661373104,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.597207445013072
     },
@@ -1368,6 +1494,7 @@
      "shear_p99_at_rom": 11.72,
      "horizontal": 11.719995067558434,
      "vertical": 10.434260875100243,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 17.890697118842226
     }
@@ -1387,6 +1514,7 @@
      "shear_p99_at_rom": 5.474,
      "horizontal": 5.47365536260998,
      "vertical": 0.8169483431539036,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.1014725113420836
     },
@@ -1396,6 +1524,7 @@
      "shear_p99_at_rom": 13.873,
      "horizontal": 12.241987117217377,
      "vertical": 13.87327710137695,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 29.769150066793166
     }
@@ -1414,6 +1543,7 @@
      "shear_p99_at_rom": 2.636,
      "horizontal": null,
      "vertical": 2.635787909698075,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.5289731082944096
     },
@@ -1423,6 +1553,7 @@
      "shear_p99_at_rom": 15.742,
      "horizontal": null,
      "vertical": 15.741887321565477,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 51.14140973377835
     }
@@ -1441,6 +1572,7 @@
      "shear_p99_at_rom": 2.487,
      "horizontal": null,
      "vertical": 2.486892935539446,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 9.758287155009286
     },
@@ -1450,6 +1582,7 @@
      "shear_p99_at_rom": 21.887,
      "horizontal": null,
      "vertical": 21.886540079752713,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 62.363448540425104
     }
@@ -1468,6 +1601,7 @@
      "shear_p99_at_rom": 2.155,
      "horizontal": null,
      "vertical": 2.1547297948659683,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 7.075532496232509
     },
@@ -1477,6 +1611,7 @@
      "shear_p99_at_rom": 19.203,
      "horizontal": null,
      "vertical": 19.202713772999623,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 55.55280815464358
     }
@@ -1495,6 +1630,7 @@
      "shear_p99_at_rom": 0.288,
      "horizontal": 0.2881806465884793,
      "vertical": 0.21637822069853133,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.40496239317788085
     },
@@ -1504,6 +1640,7 @@
      "shear_p99_at_rom": 3.228,
      "horizontal": 3.2278275900127484,
      "vertical": 1.6410206358923978,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 4.106211635816537
     }
@@ -1522,6 +1659,7 @@
      "shear_p99_at_rom": 2.195,
      "horizontal": null,
      "vertical": 2.1947808530173916,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.6405772423051346
     },
@@ -1531,6 +1669,7 @@
      "shear_p99_at_rom": 18.124,
      "horizontal": null,
      "vertical": 18.1240063306467,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 53.636425044298306
     }
@@ -1550,6 +1689,7 @@
      "shear_p99_at_rom": 5.752,
      "horizontal": 5.752443142826857,
      "vertical": 1.3125194916815373,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 2.1090037796549295
     },
@@ -1559,6 +1699,7 @@
      "shear_p99_at_rom": 16.22,
      "horizontal": 12.752428449592799,
      "vertical": 16.220449330688,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 30.244239852408064
     }
@@ -1577,6 +1718,7 @@
      "shear_p99_at_rom": 2.372,
      "horizontal": null,
      "vertical": 2.37187995677368,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.207711686660233
     },
@@ -1586,6 +1728,7 @@
      "shear_p99_at_rom": 16.255,
      "horizontal": null,
      "vertical": 16.25490285779986,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 53.04478555950706
     }
@@ -1605,6 +1748,7 @@
      "shear_p99_at_rom": 3.086,
      "horizontal": null,
      "vertical": 3.085522997767531,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.928561970568442
     },
@@ -1614,6 +1758,7 @@
      "shear_p99_at_rom": 14.825,
      "horizontal": null,
      "vertical": 14.82458766203784,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 49.03069463025149
     }
@@ -1633,6 +1778,7 @@
      "shear_p99_at_rom": 4.75,
      "horizontal": 4.750298628385394,
      "vertical": 1.6230704897632513,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 1.9297087694482526
     },
@@ -1642,6 +1788,7 @@
      "shear_p99_at_rom": 11.111,
      "horizontal": 9.98654224683823,
      "vertical": 11.111167108397051,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 20.30782606487205
     }
@@ -1661,6 +1808,7 @@
      "shear_p99_at_rom": 4.433,
      "horizontal": 4.433113481058853,
      "vertical": 1.1137762747906723,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 1.7270259650153945
     },
@@ -1670,6 +1818,7 @@
      "shear_p99_at_rom": 13.847,
      "horizontal": 10.822278592034195,
      "vertical": 13.847261062690457,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 32.82717588304357
     }
@@ -1688,6 +1837,7 @@
      "shear_p99_at_rom": 0.216,
      "horizontal": 0.21556809491591422,
      "vertical": 0.1463944121609785,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.3480348939467678
     },
@@ -1697,6 +1847,7 @@
      "shear_p99_at_rom": 4.0,
      "horizontal": 4.000237152943347,
      "vertical": 1.8595010160605772,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 4.38828722232173
     }
@@ -1713,6 +1864,7 @@
      "shear_p99_at_rom": 0.304,
      "horizontal": 0.30418043039353604,
      "vertical": 0.21973605149063172,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.45275268350530234
     },
@@ -1722,6 +1874,7 @@
      "shear_p99_at_rom": 2.704,
      "horizontal": 2.704318774115586,
      "vertical": 1.4676097285575906,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.5724439464299316
     }
@@ -1738,6 +1891,7 @@
      "shear_p99_at_rom": 0.327,
      "horizontal": 0.3272482465422465,
      "vertical": 0.20153111048081018,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.4985692569363925
     },
@@ -1747,6 +1901,7 @@
      "shear_p99_at_rom": 2.323,
      "horizontal": 2.3231936623511413,
      "vertical": 1.2530601112247113,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": false,
      "peel_max_at_rom": 3.3466709767095666
     }
@@ -1763,6 +1918,7 @@
      "shear_p99_at_rom": 0.35,
      "horizontal": 0.35029312025457165,
      "vertical": 0.22365966699100484,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 0.744521081996223
     },
@@ -1772,6 +1928,7 @@
      "shear_p99_at_rom": 1.959,
      "horizontal": 1.9592372368843267,
      "vertical": 1.0758147002209386,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 3.3074346236340744
     }
@@ -1791,6 +1948,7 @@
      "shear_p99_at_rom": 3.847,
      "horizontal": 3.846581590720888,
      "vertical": 1.1963294366860764,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 1.4747554688191178
     },
@@ -1800,6 +1958,7 @@
      "shear_p99_at_rom": 14.031,
      "horizontal": 12.209356894644545,
      "vertical": 14.03120944138053,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 44.253815781688616
     }
@@ -1818,6 +1977,7 @@
      "shear_p99_at_rom": 2.983,
      "horizontal": null,
      "vertical": 2.982593455455044,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
      "fallback": false,
      "peel_max_at_rom": 4.028493115526001
     },
@@ -1827,12 +1987,33 @@
      "shear_p99_at_rom": 15.401,
      "horizontal": null,
      "vertical": 15.401059816294113,
+     "window_drive": "absolute rigid joint (snaps C3 to its t=0 orientation at activation)",
      "fallback": true,
      "fallback_note": "PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only",
      "peel_max_at_rom": 57.91643181459867
     }
    },
    "missing": []
+  },
+  "p149": {
+   "verdict": "open",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_relGr",
+     "case_dir": "p149",
+     "shear_p99_at_rom": 0.888,
+     "horizontal": 0.8878038984039494,
+     "vertical": 0.21560763179478035,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
+     "fallback": false,
+     "peel_max_at_rom": 0.1828764291585309
+    }
+   },
+   "missing": [
+    "flexion"
+   ],
+   "open_reason": "window(s) flexion did not reach the intact ROM (or missing)"
   }
  }
 }

@@ -259,7 +259,10 @@ for h, ps in _groups.items():
         for _w in REQ:   # per window: the posterior read-out at the window's evaluation point, spread across the computed replicates
             _posts = [abs((x.get('post_at_1p5Nm') if x.get('eval_point') == '1.5Nm' else x.get('post_at_rom')) or 0) for q in computed for _wn, x in verd[q]['windows'].items() if _wn == _w and x.get('usable')]
             _spread = max([_spread] + [abs(a - b) for a in _posts for b in _posts])
-        if _spread <= REPL_NOISE and 'grey' in {verd[q]['verdict'] for q in computed} | {'grey' if verd[worst]['verdict'] == 'fail' else ''}:
+        # the rule covers only fails from the posterior limit itself: a member failing on any-direction translation (u_h > LIM_ANY) is never softened to grey
+        _uh_fail = any((x.get('u_h_at_1p5Nm') if x.get('eval_point') == '1.5Nm' else x.get('u_h_at_rom')) is not None and (x.get('u_h_at_1p5Nm') if x.get('eval_point') == '1.5Nm' else x.get('u_h_at_rom')) > LIM_ANY
+                       for q in computed if verd[q]['verdict'] == 'fail' for x in verd[q]['windows'].values() if x.get('bad'))
+        if _spread <= REPL_NOISE and not _uh_fail and 'grey' in {verd[q]['verdict'] for q in computed} | {'grey' if verd[worst]['verdict'] == 'fail' else ''}:
             worst = next((q for q in computed if verd[q]['verdict'] == 'grey'), worst); boundary = True
         else: boundary = False
         for q in computed:
