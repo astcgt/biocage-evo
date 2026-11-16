@@ -80,6 +80,7 @@ for r in [best[k] for k in sorted(best)]:
     v = max(x for x in (r.get('horizontal_shear_p99_at_rom'), r.get('vertical_shear_p99_at_rom')) if x is not None)
     k = (r['design'], r['window']); fb = r['set'] == 'physio_relG_pl' or (r['set'] == 'physio_fric3' and 'physio_fric5' in sets_of[k])   # production-law window used because the stick-law one did not reach the ROM
     d['windows'][r['window']] = dict(set=r['set'], case_dir=r['case_dir'], shear_p99_at_rom=round(v, 3), horizontal=r.get('horizontal_shear_p99_at_rom'), vertical=r.get('vertical_shear_p99_at_rom'),
+                                     window_drive=('relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)' if r['set'] in ('physio_fric5r', 'physio_relGr') else 'absolute rigid joint (snaps C3 to its t=0 orientation at activation)'),   # S8 2026-11-17: provenance as in fric_compare
                                      fallback=fb, **({'fallback_note': 'PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only'} if fb else {}),
                                      peel_max_at_rom=max(x for x in (r.get('horizontal_peel_max_at_rom'), r.get('vertical_peel_max_at_rom')) if x is not None))
     if v > THR: d['reasons'].append(f"{r['window']}@ROM shear p99 {v:.1f} MPa > {THR}")
