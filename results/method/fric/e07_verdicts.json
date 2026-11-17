@@ -4,7 +4,7 @@
   "threshold_MPa": 3.0,
   "metric": "soft-side p99 interface shear at the intact-ROM state, max of layer and band-boundary interfaces, flexion and extension (frictional runs; physio_fric5 stick-memory windows supersede physio_fric3 per design and window, PI 2026-11-09 decision 1)",
   "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
-  "decided": "PI 2026-11-04; PI 2026-11-11 decision 6: fallback (production-law) windows count, flagged fallback=True"
+  "decided": "PI 2026-11-18: 3 MPa is a FLAG + ranking key (shear_req), not a design gate, until the bond strength is measured; PI 2026-11-04; PI 2026-11-11 decision 6: fallback (production-law) windows count, flagged fallback=True"
  },
  "designs": {
   "p002": {

@@ -191,3 +191,5 @@ Implemented 2026-11-08 in ops/collect_split.py (see ../biocage_simulation_test_o
 ## 2026-11-17 04:4x PI boundary-grey rule (p093 / p145 fail -> grey): verdicts pass 52 / grey 15 / open 4 / fail 0 (71); classes interface-shear-provisional 28, radial-mix-excluded 28, friction-computability 0, friction-check-exceeded 0, GREY 10, PASS 3.
 
 - 2026-11-17 08:00 (old repo DECISIONS): p102 / p149 complete; 73 designs 摩擦判定 pass 53 / 灰區 grey 16 / fail 0 / open 4（73 設計）. Class counts for R5: interface-shear-provisional 28, radial-mix-excluded 28, friction-computability 0, friction-check-exceeded 0, GREY 10, PASS 3.
+
+- 2026-11-18 04:07 (old repo DECISIONS): PI 2026-11-18 shear 3 MPa = flag + ranking; class interface-shear-provisional retired. Class counts for R5: interface-shear 54 (flagged), radial-mix-excluded 28, friction-computability 0, friction-check-exceeded 0, GREY 12, PASS 31.

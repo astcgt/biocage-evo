@@ -118,34 +118,37 @@
    "p023",
    "p053"
   ],
-  "DESIGN/interface-shear-provisional": [
+  "PASS": [
    "p036",
    "p039",
    "p052",
    "p061",
    "p062",
    "p063",
+   "p064",
    "p065",
    "p066",
    "p067",
-   "p076",
    "p077",
    "p082",
    "p083",
+   "p086",
    "p088",
    "p094",
+   "p100",
    "p101",
    "p105",
    "p110",
    "p111",
    "p120",
+   "p121",
    "p122",
    "p124",
    "p129",
    "p131",
-   "p135",
    "p139",
    "p140",
+   "p142",
    "p146"
   ],
   "[\u6578\u503c]/not-computable-both-laws": [
@@ -157,21 +160,14 @@
    "p060",
    "p072",
    "p075",
+   "p076",
    "p092",
    "p093",
    "p114",
    "p117",
+   "p135",
    "p143",
    "p145"
-  ],
-  "[\u89c0\u6e2c]/friction-window": [
-   "p064",
-   "p121"
-  ],
-  "PASS": [
-   "p086",
-   "p100",
-   "p142"
   ]
  },
  "rejected_windows": {},
@@ -181,12 +177,730 @@
   "p060",
   "p072",
   "p075",
+  "p076",
   "p092",
   "p093",
   "p114",
   "p117",
+  "p135",
   "p143",
   "p145"
  ],
+ "shear_check_exceeded": [
+  "p002",
+  "p014",
+  "p026",
+  "p036",
+  "p038",
+  "p039",
+  "p050",
+  "p052",
+  "p061",
+  "p062",
+  "p063",
+  "p065",
+  "p066",
+  "p067",
+  "p068",
+  "p071",
+  "p076",
+  "p077",
+  "p078",
+  "p079",
+  "p081",
+  "p082",
+  "p083",
+  "p084",
+  "p088",
+  "p094",
+  "p095",
+  "p097",
+  "p101",
+  "p102",
+  "p104",
+  "p105",
+  "p109",
+  "p110",
+  "p111",
+  "p112",
+  "p113",
+  "p116",
+  "p120",
+  "p122",
+  "p124",
+  "p125",
+  "p127",
+  "p128",
+  "p129",
+  "p130",
+  "p131",
+  "p132",
+  "p133",
+  "p135",
+  "p139",
+  "p140",
+  "p146",
+  "p148"
+ ],
+ "shear_ranking": [
+  {
+   "design": "p064",
+   "shear_req_p99_MPa": 0.082,
+   "shear_req_max_MPa": 0.097,
+   "complete": false,
+   "flag": "not evaluated",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p121",
+   "shear_req_p99_MPa": 0.155,
+   "shear_req_max_MPa": 0.211,
+   "complete": false,
+   "flag": "not evaluated",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p115",
+   "shear_req_p99_MPa": 0.181,
+   "shear_req_max_MPa": 1.478,
+   "complete": false,
+   "flag": "not evaluated",
+   "cls": "[\u6578\u503c]/not-computable-both-laws",
+   "verdict": "open"
+  },
+  {
+   "design": "p149",
+   "shear_req_p99_MPa": 0.888,
+   "shear_req_max_MPa": 1.205,
+   "complete": false,
+   "flag": "not evaluated",
+   "cls": "DESIGN/compression-peak",
+   "verdict": "fail"
+  },
+  {
+   "design": "p093",
+   "shear_req_p99_MPa": 1.963,
+   "shear_req_max_MPa": 2.947,
+   "complete": true,
+   "flag": "within",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p145",
+   "shear_req_p99_MPa": 1.963,
+   "shear_req_max_MPa": 2.947,
+   "complete": true,
+   "flag": "within",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p114",
+   "shear_req_p99_MPa": 2.045,
+   "shear_req_max_MPa": 3.117,
+   "complete": true,
+   "flag": "within",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p051",
+   "shear_req_p99_MPa": 2.153,
+   "shear_req_max_MPa": 3.088,
+   "complete": true,
+   "flag": "within",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p075",
+   "shear_req_p99_MPa": 2.153,
+   "shear_req_max_MPa": 3.088,
+   "complete": true,
+   "flag": "within",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p092",
+   "shear_req_p99_MPa": 2.328,
+   "shear_req_max_MPa": 3.79,
+   "complete": true,
+   "flag": "within",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p117",
+   "shear_req_p99_MPa": 2.328,
+   "shear_req_max_MPa": 3.79,
+   "complete": true,
+   "flag": "within",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p143",
+   "shear_req_p99_MPa": 2.328,
+   "shear_req_max_MPa": 3.79,
+   "complete": true,
+   "flag": "within",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p060",
+   "shear_req_p99_MPa": 2.382,
+   "shear_req_max_MPa": 3.808,
+   "complete": true,
+   "flag": "within",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p072",
+   "shear_req_p99_MPa": 2.382,
+   "shear_req_max_MPa": 3.808,
+   "complete": true,
+   "flag": "within",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p086",
+   "shear_req_p99_MPa": 2.718,
+   "shear_req_max_MPa": 4.535,
+   "complete": true,
+   "flag": "within",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p100",
+   "shear_req_p99_MPa": 2.718,
+   "shear_req_max_MPa": 4.535,
+   "complete": true,
+   "flag": "within",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p142",
+   "shear_req_p99_MPa": 2.718,
+   "shear_req_max_MPa": 4.535,
+   "complete": true,
+   "flag": "within",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p059",
+   "shear_req_p99_MPa": 2.923,
+   "shear_req_max_MPa": 6.132,
+   "complete": false,
+   "flag": "not evaluated",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p074",
+   "shear_req_p99_MPa": 2.923,
+   "shear_req_max_MPa": 6.132,
+   "complete": false,
+   "flag": "not evaluated",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p061",
+   "shear_req_p99_MPa": 3.011,
+   "shear_req_max_MPa": 4.596,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p052",
+   "shear_req_p99_MPa": 3.169,
+   "shear_req_max_MPa": 5.18,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p083",
+   "shear_req_p99_MPa": 3.176,
+   "shear_req_max_MPa": 6.532,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p120",
+   "shear_req_p99_MPa": 3.228,
+   "shear_req_max_MPa": 5.598,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p129",
+   "shear_req_p99_MPa": 3.228,
+   "shear_req_max_MPa": 5.577,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p039",
+   "shear_req_p99_MPa": 3.359,
+   "shear_req_max_MPa": 5.476,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p101",
+   "shear_req_p99_MPa": 3.798,
+   "shear_req_max_MPa": 6.304,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p140",
+   "shear_req_p99_MPa": 4.0,
+   "shear_req_max_MPa": 6.683,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p082",
+   "shear_req_p99_MPa": 4.04,
+   "shear_req_max_MPa": 7.355,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p088",
+   "shear_req_p99_MPa": 4.04,
+   "shear_req_max_MPa": 7.355,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p102",
+   "shear_req_p99_MPa": 5.538,
+   "shear_req_max_MPa": 7.601,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/compression-peak-lowerbound",
+   "verdict": "fail"
+  },
+  {
+   "design": "p135",
+   "shear_req_p99_MPa": 11.111,
+   "shear_req_max_MPa": 14.975,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p062",
+   "shear_req_p99_MPa": 11.441,
+   "shear_req_max_MPa": 16.008,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p063",
+   "shear_req_p99_MPa": 11.541,
+   "shear_req_max_MPa": 15.67,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p122",
+   "shear_req_p99_MPa": 11.744,
+   "shear_req_max_MPa": 16.302,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p076",
+   "shear_req_p99_MPa": 11.985,
+   "shear_req_max_MPa": 15.959,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p113",
+   "shear_req_p99_MPa": 12.221,
+   "shear_req_max_MPa": 21.772,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p067",
+   "shear_req_p99_MPa": 12.487,
+   "shear_req_max_MPa": 17.715,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p111",
+   "shear_req_p99_MPa": 12.678,
+   "shear_req_max_MPa": 17.977,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p112",
+   "shear_req_p99_MPa": 12.935,
+   "shear_req_max_MPa": 22.894,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p065",
+   "shear_req_p99_MPa": 13.105,
+   "shear_req_max_MPa": 14.342,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p105",
+   "shear_req_p99_MPa": 13.736,
+   "shear_req_max_MPa": 19.499,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p077",
+   "shear_req_p99_MPa": 13.847,
+   "shear_req_max_MPa": 15.154,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p139",
+   "shear_req_p99_MPa": 13.847,
+   "shear_req_max_MPa": 15.154,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p124",
+   "shear_req_p99_MPa": 13.873,
+   "shear_req_max_MPa": 17.383,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p146",
+   "shear_req_p99_MPa": 14.031,
+   "shear_req_max_MPa": 18.612,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p094",
+   "shear_req_p99_MPa": 14.195,
+   "shear_req_max_MPa": 20.667,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p066",
+   "shear_req_p99_MPa": 14.593,
+   "shear_req_max_MPa": 18.756,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p036",
+   "shear_req_p99_MPa": 14.762,
+   "shear_req_max_MPa": 19.841,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p133",
+   "shear_req_p99_MPa": 14.825,
+   "shear_req_max_MPa": 25.573,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p110",
+   "shear_req_p99_MPa": 14.864,
+   "shear_req_max_MPa": 20.898,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p104",
+   "shear_req_p99_MPa": 15.025,
+   "shear_req_max_MPa": 25.607,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p148",
+   "shear_req_p99_MPa": 15.401,
+   "shear_req_max_MPa": 26.467,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p125",
+   "shear_req_p99_MPa": 15.742,
+   "shear_req_max_MPa": 28.771,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p026",
+   "shear_req_p99_MPa": 15.749,
+   "shear_req_max_MPa": 27.451,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p014",
+   "shear_req_p99_MPa": 15.796,
+   "shear_req_max_MPa": 28.949,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p081",
+   "shear_req_p99_MPa": 15.844,
+   "shear_req_max_MPa": 26.225,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p131",
+   "shear_req_p99_MPa": 16.22,
+   "shear_req_max_MPa": 17.332,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p132",
+   "shear_req_p99_MPa": 16.255,
+   "shear_req_max_MPa": 29.914,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p038",
+   "shear_req_p99_MPa": 16.909,
+   "shear_req_max_MPa": 31.263,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p002",
+   "shear_req_p99_MPa": 17.735,
+   "shear_req_max_MPa": 31.267,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p078",
+   "shear_req_p99_MPa": 17.939,
+   "shear_req_max_MPa": 33.013,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p130",
+   "shear_req_p99_MPa": 18.124,
+   "shear_req_max_MPa": 33.438,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p097",
+   "shear_req_p99_MPa": 18.368,
+   "shear_req_max_MPa": 30.724,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p079",
+   "shear_req_p99_MPa": 18.394,
+   "shear_req_max_MPa": 31.911,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p095",
+   "shear_req_p99_MPa": 19.176,
+   "shear_req_max_MPa": 36.703,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p128",
+   "shear_req_p99_MPa": 19.176,
+   "shear_req_max_MPa": 36.703,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p071",
+   "shear_req_p99_MPa": 19.874,
+   "shear_req_max_MPa": 36.88,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p109",
+   "shear_req_p99_MPa": 21.21,
+   "shear_req_max_MPa": 40.179,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p116",
+   "shear_req_p99_MPa": 21.326,
+   "shear_req_max_MPa": 40.102,
+   "complete": true,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p050",
+   "shear_req_p99_MPa": 21.894,
+   "shear_req_max_MPa": 41.006,
+   "complete": false,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p068",
+   "shear_req_p99_MPa": 21.894,
+   "shear_req_max_MPa": 41.006,
+   "complete": false,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p084",
+   "shear_req_p99_MPa": 21.894,
+   "shear_req_max_MPa": 41.006,
+   "complete": false,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p127",
+   "shear_req_p99_MPa": 21.894,
+   "shear_req_max_MPa": 41.006,
+   "complete": false,
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  }
+ ],
+ "shear_rule": "PI 2026-11-18: interface shear 3 MPa = flag + ranking by shear_req (lower required strength first); gate after the bond-strength test",
  "grey_note": "GREY/*: \u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10)"
 }

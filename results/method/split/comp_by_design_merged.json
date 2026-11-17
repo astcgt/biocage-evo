@@ -62,6 +62,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p132: flexion@ROM shear p99 16.3 MPa > 3.0"
     ],
@@ -79,6 +80,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 16.255,
+   "shear_req_max_MPa": 29.914,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p132: flexion@ROM shear p99 16.3 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -211,6 +225,7 @@
    },
    "interface_shear": {
     "verdict": "pass",
+    "role": "check",
     "reasons": [],
     "open_reason": null,
     "threshold_MPa": 3.0,
@@ -225,6 +240,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "within",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 2.718,
+   "shear_req_max_MPa": 4.535,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -260,13 +286,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p113": {
@@ -385,6 +423,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p113: flexion@ROM shear p99 12.2 MPa > 3.0"
     ],
@@ -402,6 +441,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 12.221,
+   "shear_req_max_MPa": 21.772,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p113: flexion@ROM shear p99 12.2 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -438,13 +490,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p093": {
@@ -580,6 +644,7 @@
    },
    "interface_shear": {
     "verdict": "pass",
+    "role": "check",
     "reasons": [],
     "open_reason": null,
     "threshold_MPa": 3.0,
@@ -594,6 +659,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "within",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 1.963,
+   "shear_req_max_MPa": 2.947,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -631,13 +707,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p083": {
@@ -729,9 +817,9 @@
    }
   },
   "source": "physio_rot_split2/p083_gpu1/w_LB_right",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p083: flexion@ROM shear p99 3.2 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -751,6 +839,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p083: flexion@ROM shear p99 3.2 MPa > 3.0"
     ],
@@ -767,6 +856,19 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 3.176,
+   "shear_req_max_MPa": 6.532,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p083: flexion@ROM shear p99 3.2 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -832,13 +934,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p060": {
@@ -975,6 +1089,7 @@
    },
    "interface_shear": {
     "verdict": "pass",
+    "role": "check",
     "reasons": [],
     "open_reason": null,
     "threshold_MPa": 3.0,
@@ -989,6 +1104,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "within",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 2.382,
+   "shear_req_max_MPa": 3.808,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -1137,6 +1263,7 @@
    },
    "interface_shear": {
     "verdict": "pass",
+    "role": "check",
     "reasons": [],
     "open_reason": null,
     "threshold_MPa": 3.0,
@@ -1151,6 +1278,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "within",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 2.153,
+   "shear_req_max_MPa": 3.088,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -1195,13 +1333,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p001": {
@@ -1258,13 +1408,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p025": {
@@ -1291,13 +1453,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p112": {
@@ -1417,6 +1591,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p112: flexion@ROM shear p99 12.9 MPa > 3.0"
     ],
@@ -1434,6 +1609,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 12.935,
+   "shear_req_max_MPa": 22.894,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p112: flexion@ROM shear p99 12.9 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -1486,9 +1674,9 @@
    }
   },
   "source": "physio_rot_dyn/p120_gpu1",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p120: flexion@ROM shear p99 3.2 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -1508,6 +1696,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p120: flexion@ROM shear p99 3.2 MPa > 3.0"
     ],
@@ -1524,6 +1713,19 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 3.228,
+   "shear_req_max_MPa": 5.598,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p120: flexion@ROM shear p99 3.2 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -1656,6 +1858,7 @@
    },
    "interface_shear": {
     "verdict": "pass",
+    "role": "check",
     "reasons": [],
     "open_reason": null,
     "threshold_MPa": 3.0,
@@ -1670,6 +1873,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "within",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 2.718,
+   "shear_req_max_MPa": 4.535,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -1776,9 +1990,9 @@
    }
   },
   "source": "physio_rot_split4/p036_gpu2/w_AR_left",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p036: extension@ROM shear p99 5.0 MPa > 3.0; p036: flexion@ROM shear p99 14.8 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -1798,6 +2012,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p036: extension@ROM shear p99 5.0 MPa > 3.0",
      "p036: flexion@ROM shear p99 14.8 MPa > 3.0"
@@ -1815,6 +2030,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 14.762,
+   "shear_req_max_MPa": 19.841,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p036: extension@ROM shear p99 5.0 MPa > 3.0",
+    "p036: flexion@ROM shear p99 14.8 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -1867,9 +2096,9 @@
    }
   },
   "source": "physio_rot_dyn/p121_gpu4",
-  "verdict": "open",
-  "class": "[\u89c0\u6e2c]/friction-window",
-  "reason": "tied screening passed, gate 4 passed; interface shear: window(s) flexion did not reach the intact ROM (or missing)",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -1889,6 +2118,7 @@
    },
    "interface_shear": {
     "verdict": "open",
+    "role": "check",
     "reasons": [],
     "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
     "threshold_MPa": 3.0,
@@ -1902,6 +2132,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 0.155,
+   "shear_req_max_MPa": 0.211,
+   "shear_req_window": "extension",
+   "shear_req_complete": false,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -2046,6 +2287,7 @@
    },
    "interface_shear": {
     "verdict": "pass",
+    "role": "check",
     "reasons": [],
     "open_reason": null,
     "threshold_MPa": 3.0,
@@ -2060,6 +2302,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "within",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 1.963,
+   "shear_req_max_MPa": 2.947,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -2197,13 +2450,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p039": {
@@ -2247,9 +2512,9 @@
    }
   },
   "source": "physio_rot_dyn2/p039_gpu2",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p039: flexion@ROM shear p99 3.4 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -2269,6 +2534,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p039: flexion@ROM shear p99 3.4 MPa > 3.0"
     ],
@@ -2285,6 +2551,19 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 3.359,
+   "shear_req_max_MPa": 5.476,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p039: flexion@ROM shear p99 3.4 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -2337,9 +2616,9 @@
    }
   },
   "source": "physio_rot/p124_gpu4",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p124: extension@ROM shear p99 5.5 MPa > 3.0; p124: flexion@ROM shear p99 13.9 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -2359,6 +2638,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p124: extension@ROM shear p99 5.5 MPa > 3.0",
      "p124: flexion@ROM shear p99 13.9 MPa > 3.0"
@@ -2376,6 +2656,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 13.873,
+   "shear_req_max_MPa": 17.383,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p124: extension@ROM shear p99 5.5 MPa > 3.0",
+    "p124: flexion@ROM shear p99 13.9 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -2404,7 +2698,8 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "excluded",
@@ -2412,6 +2707,17 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p129": {
@@ -2506,9 +2812,9 @@
    }
   },
   "source": "physio_rot_split2/p129_gpu2/w_flexion",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p129: flexion@ROM shear p99 3.2 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -2528,6 +2834,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p129: flexion@ROM shear p99 3.2 MPa > 3.0"
     ],
@@ -2544,6 +2851,19 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 3.228,
+   "shear_req_max_MPa": 5.577,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p129: flexion@ROM shear p99 3.2 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -2596,9 +2916,9 @@
    }
   },
   "source": "physio_rot/p135_gpu4",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p135: extension@ROM shear p99 4.8 MPa > 3.0; p135: flexion@ROM shear p99 11.1 MPa > 3.0",
+  "verdict": "grey",
+  "class": "GREY/friction-posterior-0.45-0.55",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p135: extension@ROM post 0.472 in grey zone [0.45, 0.55]",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -2620,6 +2940,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p135: extension@ROM shear p99 4.8 MPa > 3.0",
      "p135: flexion@ROM shear p99 11.1 MPa > 3.0"
@@ -2637,6 +2958,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 11.111,
+   "shear_req_max_MPa": 14.975,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p135: extension@ROM shear p99 4.8 MPa > 3.0",
+    "p135: flexion@ROM shear p99 11.1 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -2710,13 +3045,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p008": {
@@ -2743,7 +3090,8 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "excluded",
@@ -2751,6 +3099,17 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p130": {
@@ -2867,6 +3226,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p130: flexion@ROM shear p99 18.1 MPa > 3.0"
     ],
@@ -2884,6 +3244,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 18.124,
+   "shear_req_max_MPa": 33.438,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p130: flexion@ROM shear p99 18.1 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -2960,6 +3333,7 @@
    },
    "interface_shear": {
     "verdict": "open",
+    "role": "check",
     "reasons": [],
     "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
     "threshold_MPa": 3.0,
@@ -2973,6 +3347,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 0.181,
+   "shear_req_max_MPa": 1.478,
+   "shear_req_window": "extension",
+   "shear_req_complete": false,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -3000,13 +3385,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p149": {
@@ -3072,6 +3469,7 @@
    },
    "interface_shear": {
     "verdict": "open",
+    "role": "check",
     "reasons": [],
     "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
     "threshold_MPa": 3.0,
@@ -3085,6 +3483,17 @@
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 0.888,
+   "shear_req_max_MPa": 1.205,
+   "shear_req_window": "extension",
+   "shear_req_complete": false,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -3137,9 +3546,9 @@
    }
   },
   "source": "physio_rot/p122_gpu3",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p122: extension@ROM shear p99 6.6 MPa > 3.0; p122: flexion@ROM shear p99 11.7 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -3159,6 +3568,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p122: extension@ROM shear p99 6.6 MPa > 3.0",
      "p122: flexion@ROM shear p99 11.7 MPa > 3.0"
@@ -3176,6 +3586,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 11.744,
+   "shear_req_max_MPa": 16.302,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p122: extension@ROM shear p99 6.6 MPa > 3.0",
+    "p122: flexion@ROM shear p99 11.7 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -3308,6 +3732,7 @@
    },
    "interface_shear": {
     "verdict": "pass",
+    "role": "check",
     "reasons": [],
     "open_reason": null,
     "threshold_MPa": 3.0,
@@ -3322,6 +3747,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "within",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 2.718,
+   "shear_req_max_MPa": 4.535,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -3447,13 +3883,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p109": {
@@ -3519,6 +3967,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p109: flexion@ROM shear p99 21.2 MPa > 3.0"
     ],
@@ -3536,6 +3985,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 21.21,
+   "shear_req_max_MPa": 40.179,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p109: flexion@ROM shear p99 21.2 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -3609,13 +4071,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p085": {
@@ -3672,13 +4146,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p071": {
@@ -3744,6 +4230,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p071: flexion@ROM shear p99 19.9 MPa > 3.0"
     ],
@@ -3761,6 +4248,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 19.874,
+   "shear_req_max_MPa": 36.88,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p071: flexion@ROM shear p99 19.9 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -3789,7 +4289,8 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "excluded",
@@ -3797,6 +4298,17 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p147": {
@@ -3853,13 +4365,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p094": {
@@ -3903,9 +4427,9 @@
    }
   },
   "source": "physio_rot_dyn/p094_gpu2",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p094: extension@ROM shear p99 6.7 MPa > 3.0; p094: flexion@ROM shear p99 14.2 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -3925,6 +4449,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p094: extension@ROM shear p99 6.7 MPa > 3.0",
      "p094: flexion@ROM shear p99 14.2 MPa > 3.0"
@@ -3942,6 +4467,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 14.195,
+   "shear_req_max_MPa": 20.667,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p094: extension@ROM shear p99 6.7 MPa > 3.0",
+    "p094: flexion@ROM shear p99 14.2 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -4070,6 +4609,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p116: flexion@ROM shear p99 21.3 MPa > 3.0"
     ],
@@ -4087,6 +4627,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 21.326,
+   "shear_req_max_MPa": 40.102,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p116: flexion@ROM shear p99 21.3 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -4122,13 +4675,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p146": {
@@ -4218,9 +4783,9 @@
    }
   },
   "source": "physio_rot_split2/p146_gpu2/w_flexion",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p146: extension@ROM shear p99 3.8 MPa > 3.0; p146: flexion@ROM shear p99 14.0 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -4240,6 +4805,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p146: extension@ROM shear p99 3.8 MPa > 3.0",
      "p146: flexion@ROM shear p99 14.0 MPa > 3.0"
@@ -4257,6 +4823,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 14.031,
+   "shear_req_max_MPa": 18.612,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p146: extension@ROM shear p99 3.8 MPa > 3.0",
+    "p146: flexion@ROM shear p99 14.0 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -4292,13 +4872,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p131": {
@@ -4342,9 +4934,9 @@
    }
   },
   "source": "physio_rot/p131_gpu3",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p131: extension@ROM shear p99 5.8 MPa > 3.0; p131: flexion@ROM shear p99 16.2 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -4364,6 +4956,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p131: extension@ROM shear p99 5.8 MPa > 3.0",
      "p131: flexion@ROM shear p99 16.2 MPa > 3.0"
@@ -4381,6 +4974,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 16.22,
+   "shear_req_max_MPa": 17.332,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p131: extension@ROM shear p99 5.8 MPa > 3.0",
+    "p131: flexion@ROM shear p99 16.2 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -4525,6 +5132,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p095: flexion@ROM shear p99 19.2 MPa > 3.0",
      "p128: flexion@ROM shear p99 19.2 MPa > 3.0"
@@ -4543,6 +5151,20 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 19.176,
+   "shear_req_max_MPa": 36.703,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p095: flexion@ROM shear p99 19.2 MPa > 3.0",
+    "p128: flexion@ROM shear p99 19.2 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -4584,13 +5206,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p143": {
@@ -4715,6 +5349,7 @@
    },
    "interface_shear": {
     "verdict": "pass",
+    "role": "check",
     "reasons": [],
     "open_reason": null,
     "threshold_MPa": 3.0,
@@ -4729,6 +5364,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "within",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 2.328,
+   "shear_req_max_MPa": 3.79,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -4804,13 +5450,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p088": {
@@ -4897,9 +5555,9 @@
    }
   },
   "source": "physio_rot_split4/p082_gpu1/w_flexion",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p082: flexion@ROM shear p99 4.0 MPa > 3.0; p088: flexion@ROM shear p99 4.1 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p082"
   ],
@@ -4922,6 +5580,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p082: flexion@ROM shear p99 4.0 MPa > 3.0",
      "p088: flexion@ROM shear p99 4.1 MPa > 3.0"
@@ -4939,6 +5598,20 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 4.04,
+   "shear_req_max_MPa": 7.355,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p082: flexion@ROM shear p99 4.0 MPa > 3.0",
+    "p088: flexion@ROM shear p99 4.1 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -5013,6 +5686,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p079: flexion@ROM shear p99 18.4 MPa > 3.0"
     ],
@@ -5030,6 +5704,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 18.394,
+   "shear_req_max_MPa": 31.911,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p079: flexion@ROM shear p99 18.4 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -5095,13 +5782,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p058": {
@@ -5120,13 +5819,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p134": {
@@ -5186,13 +5897,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p035": {
@@ -5211,13 +5934,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p003": {
@@ -5340,13 +6075,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p117": {
@@ -5471,6 +6218,7 @@
    },
    "interface_shear": {
     "verdict": "pass",
+    "role": "check",
     "reasons": [],
     "open_reason": null,
     "threshold_MPa": 3.0,
@@ -5485,6 +6233,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "within",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 2.328,
+   "shear_req_max_MPa": 3.79,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -5640,6 +6399,7 @@
    },
    "interface_shear": {
     "verdict": "pass",
+    "role": "check",
     "reasons": [],
     "open_reason": null,
     "threshold_MPa": 3.0,
@@ -5654,6 +6414,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "within",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 2.382,
+   "shear_req_max_MPa": 3.808,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -5689,13 +6460,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p063": {
@@ -5739,9 +6522,9 @@
    }
   },
   "source": "physio_rot/p063_gpu4",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p063: extension@ROM shear p99 6.4 MPa > 3.0; p063: flexion@ROM shear p99 11.5 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -5761,6 +6544,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p063: extension@ROM shear p99 6.4 MPa > 3.0",
      "p063: flexion@ROM shear p99 11.5 MPa > 3.0"
@@ -5778,6 +6562,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 11.541,
+   "shear_req_max_MPa": 15.67,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p063: extension@ROM shear p99 6.4 MPa > 3.0",
+    "p063: flexion@ROM shear p99 11.5 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -5857,6 +6655,7 @@
    },
    "interface_shear": {
     "verdict": "open",
+    "role": "check",
     "reasons": [],
     "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
     "threshold_MPa": 3.0,
@@ -5871,6 +6670,17 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 2.923,
+   "shear_req_max_MPa": 6.132,
+   "shear_req_window": "extension",
+   "shear_req_complete": false,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -6015,6 +6825,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p095: flexion@ROM shear p99 19.2 MPa > 3.0",
      "p128: flexion@ROM shear p99 19.2 MPa > 3.0"
@@ -6033,6 +6844,20 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 19.176,
+   "shear_req_max_MPa": 36.703,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p095: flexion@ROM shear p99 19.2 MPa > 3.0",
+    "p128: flexion@ROM shear p99 19.2 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -6075,13 +6900,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p052": {
@@ -6188,9 +7025,9 @@
    }
   },
   "source": "physio_rot_split2/p052_gpu2/w_LB_left",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p052: flexion@ROM shear p99 3.2 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -6210,6 +7047,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p052: flexion@ROM shear p99 3.2 MPa > 3.0"
     ],
@@ -6226,6 +7064,19 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 3.169,
+   "shear_req_max_MPa": 5.18,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p052: flexion@ROM shear p99 3.2 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -6302,6 +7153,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p102: flexion@ROM shear p99 5.5 MPa > 3.0"
     ],
@@ -6318,6 +7170,19 @@
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 5.538,
+   "shear_req_max_MPa": 7.601,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p102: flexion@ROM shear p99 5.5 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -6391,13 +7256,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p118": {
@@ -6442,13 +7319,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p007": {
@@ -6475,13 +7364,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p097": {
@@ -6598,6 +7499,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p097: flexion@ROM shear p99 18.4 MPa > 3.0"
     ],
@@ -6615,6 +7517,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 18.368,
+   "shear_req_max_MPa": 30.724,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p097: flexion@ROM shear p99 18.4 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -6667,9 +7582,9 @@
    }
   },
   "source": "physio_rot/p066_gpu4",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p066: extension@ROM shear p99 4.7 MPa > 3.0; p066: flexion@ROM shear p99 14.6 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -6689,6 +7604,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p066: extension@ROM shear p99 4.7 MPa > 3.0",
      "p066: flexion@ROM shear p99 14.6 MPa > 3.0"
@@ -6706,6 +7622,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 14.593,
+   "shear_req_max_MPa": 18.756,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p066: extension@ROM shear p99 4.7 MPa > 3.0",
+    "p066: flexion@ROM shear p99 14.6 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -6782,6 +7712,7 @@
    },
    "interface_shear": {
     "verdict": "pass",
+    "role": "check",
     "reasons": [],
     "open_reason": null,
     "threshold_MPa": 3.0,
@@ -6796,6 +7727,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "within",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 2.045,
+   "shear_req_max_MPa": 3.117,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -6880,6 +7822,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p081: extension@ROM shear p99 3.3 MPa > 3.0",
      "p081: flexion@ROM shear p99 15.8 MPa > 3.0"
@@ -6898,6 +7841,20 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 15.844,
+   "shear_req_max_MPa": 26.225,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p081: extension@ROM shear p99 3.3 MPa > 3.0",
+    "p081: flexion@ROM shear p99 15.8 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -6971,13 +7928,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p062": {
@@ -7072,9 +8041,9 @@
    }
   },
   "source": "physio_rot_split2/p062/w_LB_right",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p062: extension@ROM shear p99 6.5 MPa > 3.0; p062: flexion@ROM shear p99 11.4 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -7094,6 +8063,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p062: extension@ROM shear p99 6.5 MPa > 3.0",
      "p062: flexion@ROM shear p99 11.4 MPa > 3.0"
@@ -7111,6 +8081,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 11.441,
+   "shear_req_max_MPa": 16.008,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p062: extension@ROM shear p99 6.5 MPa > 3.0",
+    "p062: flexion@ROM shear p99 11.4 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -7154,13 +8138,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p084": {
@@ -7290,6 +8286,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
      "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
@@ -7309,6 +8306,22 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 21.894,
+   "shear_req_max_MPa": 41.006,
+   "shear_req_window": "flexion",
+   "shear_req_complete": false,
+   "reasons": [
+    "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
+    "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
+    "p084: flexion@ROM shear p99 21.9 MPa > 3.0",
+    "p127: flexion@ROM shear p99 21.9 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -7383,6 +8396,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p014: flexion@ROM shear p99 15.8 MPa > 3.0"
     ],
@@ -7400,6 +8414,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 15.796,
+   "shear_req_max_MPa": 28.949,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p014: flexion@ROM shear p99 15.8 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -7530,6 +8557,7 @@
    },
    "interface_shear": {
     "verdict": "open",
+    "role": "check",
     "reasons": [],
     "open_reason": "window(s) flexion, extension did not reach the intact ROM (or missing)",
     "threshold_MPa": 3.0,
@@ -7541,6 +8569,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": false,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -7576,13 +8615,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p038": {
@@ -7648,6 +8699,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p038: flexion@ROM shear p99 16.9 MPa > 3.0"
     ],
@@ -7665,6 +8717,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 16.909,
+   "shear_req_max_MPa": 31.263,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p038: flexion@ROM shear p99 16.9 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -7730,13 +8795,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p047": {
@@ -7755,13 +8832,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p055": {
@@ -7780,13 +8869,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p123": {
@@ -7846,13 +8947,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p091": {
@@ -7879,13 +8992,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p126": {
@@ -7912,13 +9037,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p051": {
@@ -8050,6 +9187,7 @@
    },
    "interface_shear": {
     "verdict": "pass",
+    "role": "check",
     "reasons": [],
     "open_reason": null,
     "threshold_MPa": 3.0,
@@ -8064,6 +9202,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "within",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 2.153,
+   "shear_req_max_MPa": 3.088,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -8196,13 +9345,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p073": {
@@ -8259,13 +9420,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p125": {
@@ -8331,6 +9504,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p125: flexion@ROM shear p99 15.7 MPa > 3.0"
     ],
@@ -8348,6 +9522,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 15.742,
+   "shear_req_max_MPa": 28.771,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p125: flexion@ROM shear p99 15.7 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -8391,13 +9578,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p082": {
@@ -8484,9 +9683,9 @@
    }
   },
   "source": "physio_rot_split4/p082_gpu1/w_flexion",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p082: flexion@ROM shear p99 4.0 MPa > 3.0; p088: flexion@ROM shear p99 4.1 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p088"
   ],
@@ -8509,6 +9708,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p082: flexion@ROM shear p99 4.0 MPa > 3.0",
      "p088: flexion@ROM shear p99 4.1 MPa > 3.0"
@@ -8526,6 +9726,20 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 4.04,
+   "shear_req_max_MPa": 7.355,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p082: flexion@ROM shear p99 4.0 MPa > 3.0",
+    "p088: flexion@ROM shear p99 4.1 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -8578,9 +9792,9 @@
    }
   },
   "source": "physio_rot/p105_gpu3",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p105: extension@ROM shear p99 7.9 MPa > 3.0; p105: flexion@ROM shear p99 13.7 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -8600,6 +9814,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p105: extension@ROM shear p99 7.9 MPa > 3.0",
      "p105: flexion@ROM shear p99 13.7 MPa > 3.0"
@@ -8617,6 +9832,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 13.736,
+   "shear_req_max_MPa": 19.499,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p105: extension@ROM shear p99 7.9 MPa > 3.0",
+    "p105: flexion@ROM shear p99 13.7 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -8652,13 +9881,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p050": {
@@ -8788,6 +10029,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
      "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
@@ -8807,6 +10049,22 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 21.894,
+   "shear_req_max_MPa": 41.006,
+   "shear_req_window": "flexion",
+   "shear_req_complete": false,
+   "reasons": [
+    "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
+    "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
+    "p084: flexion@ROM shear p99 21.9 MPa > 3.0",
+    "p127: flexion@ROM shear p99 21.9 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -8835,13 +10093,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p133": {
@@ -8909,6 +10179,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p133: extension@ROM shear p99 3.1 MPa > 3.0",
      "p133: flexion@ROM shear p99 14.8 MPa > 3.0"
@@ -8927,6 +10198,20 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 14.825,
+   "shear_req_max_MPa": 25.573,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p133: extension@ROM shear p99 3.1 MPa > 3.0",
+    "p133: flexion@ROM shear p99 14.8 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -9009,6 +10294,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p002: flexion@ROM shear p99 17.7 MPa > 3.0"
     ],
@@ -9026,6 +10312,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 17.735,
+   "shear_req_max_MPa": 31.267,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p002: flexion@ROM shear p99 17.7 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -9132,9 +10431,9 @@
    }
   },
   "source": "physio_rot_split2/p064_gpu1/w_flexion",
-  "verdict": "open",
-  "class": "[\u89c0\u6e2c]/friction-window",
-  "reason": "tied screening passed, gate 4 passed; interface shear: window(s) flexion did not reach the intact ROM (or missing)",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -9154,6 +10453,7 @@
    },
    "interface_shear": {
     "verdict": "open",
+    "role": "check",
     "reasons": [],
     "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
     "threshold_MPa": 3.0,
@@ -9167,6 +10467,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 0.082,
+   "shear_req_max_MPa": 0.097,
+   "shear_req_window": "extension",
+   "shear_req_complete": false,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -9300,6 +10611,7 @@
    },
    "interface_shear": {
     "verdict": "pass",
+    "role": "check",
     "reasons": [],
     "open_reason": null,
     "threshold_MPa": 3.0,
@@ -9314,6 +10626,17 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "within",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 2.328,
+   "shear_req_max_MPa": 3.79,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -9351,13 +10674,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p061": {
@@ -9467,9 +10802,9 @@
    }
   },
   "source": "physio_rot_split2/p061_gpu2/w_LB_left",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p061: flexion@ROM shear p99 3.0 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -9489,6 +10824,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p061: flexion@ROM shear p99 3.0 MPa > 3.0"
     ],
@@ -9505,6 +10841,19 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 3.011,
+   "shear_req_max_MPa": 4.596,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p061: flexion@ROM shear p99 3.0 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -9540,13 +10889,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p056": {
@@ -9573,13 +10934,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p141": {
@@ -9616,13 +10989,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p138": {
@@ -9679,13 +11064,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p068": {
@@ -9815,6 +11212,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
      "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
@@ -9834,6 +11232,22 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 21.894,
+   "shear_req_max_MPa": 41.006,
+   "shear_req_window": "flexion",
+   "shear_req_complete": false,
+   "reasons": [
+    "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
+    "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
+    "p084: flexion@ROM shear p99 21.9 MPa > 3.0",
+    "p127: flexion@ROM shear p99 21.9 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -9886,9 +11300,9 @@
    }
   },
   "source": "physio_rot/p065_gpu1",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p065: extension@ROM shear p99 4.4 MPa > 3.0; p065: flexion@ROM shear p99 13.1 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -9908,6 +11322,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p065: extension@ROM shear p99 4.4 MPa > 3.0",
      "p065: flexion@ROM shear p99 13.1 MPa > 3.0"
@@ -9925,6 +11340,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 13.105,
+   "shear_req_max_MPa": 14.342,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p065: extension@ROM shear p99 4.4 MPa > 3.0",
+    "p065: flexion@ROM shear p99 13.1 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -9952,13 +11381,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p099": {
@@ -9985,13 +11426,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p140": {
@@ -10035,9 +11488,9 @@
    }
   },
   "source": "physio_rot_r2/p140_gpu5",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p140: flexion@ROM shear p99 4.0 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -10057,6 +11510,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p140: flexion@ROM shear p99 4.0 MPa > 3.0"
     ],
@@ -10073,6 +11527,19 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 4.0,
+   "shear_req_max_MPa": 6.683,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p140: flexion@ROM shear p99 4.0 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -10101,13 +11568,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p119": {
@@ -10134,13 +11613,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p139": {
@@ -10184,9 +11675,9 @@
    }
   },
   "source": "physio_rot_dyn/p139_gpu1",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p077: extension@ROM shear p99 4.4 MPa > 3.0; p077: flexion@ROM shear p99 13.8 MPa > 3.0; p139: extension@ROM shear p99 4.4 MPa > 3.0; p139: flexion@ROM shear p99 13.8 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p077"
   ],
@@ -10209,6 +11700,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p077: extension@ROM shear p99 4.4 MPa > 3.0",
      "p077: flexion@ROM shear p99 13.8 MPa > 3.0",
@@ -10228,6 +11720,22 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 13.847,
+   "shear_req_max_MPa": 15.154,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p077: extension@ROM shear p99 4.4 MPa > 3.0",
+    "p077: flexion@ROM shear p99 13.8 MPa > 3.0",
+    "p139: extension@ROM shear p99 4.4 MPa > 3.0",
+    "p139: flexion@ROM shear p99 13.8 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -10263,13 +11771,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p000": {
@@ -10296,13 +11816,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p110": {
@@ -10346,9 +11878,9 @@
    }
   },
   "source": "physio_rot/p110_gpu3",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p110: extension@ROM shear p99 6.6 MPa > 3.0; p110: flexion@ROM shear p99 14.9 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -10368,6 +11900,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p110: extension@ROM shear p99 6.6 MPa > 3.0",
      "p110: flexion@ROM shear p99 14.9 MPa > 3.0"
@@ -10385,6 +11918,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 14.864,
+   "shear_req_max_MPa": 20.898,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p110: extension@ROM shear p99 6.6 MPa > 3.0",
+    "p110: flexion@ROM shear p99 14.9 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -10513,7 +12060,8 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "excluded",
@@ -10521,6 +12069,17 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p006": {
@@ -10547,13 +12106,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p148": {
@@ -10632,6 +12203,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p148: flexion@ROM shear p99 15.4 MPa > 3.0"
     ],
@@ -10649,6 +12221,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 15.401,
+   "shear_req_max_MPa": 26.467,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p148: flexion@ROM shear p99 15.4 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -10750,6 +12335,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p104: flexion@ROM shear p99 15.0 MPa > 3.0"
     ],
@@ -10767,6 +12353,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 15.025,
+   "shear_req_max_MPa": 25.607,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p104: flexion@ROM shear p99 15.0 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -10816,13 +12415,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p137": {
@@ -10879,13 +12490,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p040": {
@@ -10912,13 +12535,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p034": {
@@ -10938,13 +12573,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p077": {
@@ -10988,9 +12635,9 @@
    }
   },
   "source": "physio_rot_dyn/p139_gpu1",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p077: extension@ROM shear p99 4.4 MPa > 3.0; p077: flexion@ROM shear p99 13.8 MPa > 3.0; p139: extension@ROM shear p99 4.4 MPa > 3.0; p139: flexion@ROM shear p99 13.8 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "duplicates": [
    "p139"
   ],
@@ -11013,6 +12660,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p077: extension@ROM shear p99 4.4 MPa > 3.0",
      "p077: flexion@ROM shear p99 13.8 MPa > 3.0",
@@ -11032,6 +12680,22 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 13.847,
+   "shear_req_max_MPa": 15.154,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p077: extension@ROM shear p99 4.4 MPa > 3.0",
+    "p077: flexion@ROM shear p99 13.8 MPa > 3.0",
+    "p139: extension@ROM shear p99 4.4 MPa > 3.0",
+    "p139: flexion@ROM shear p99 13.8 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -11108,6 +12772,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p026: extension@ROM shear p99 3.0 MPa > 3.0",
      "p026: flexion@ROM shear p99 15.7 MPa > 3.0"
@@ -11126,6 +12791,20 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 15.749,
+   "shear_req_max_MPa": 27.451,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p026: extension@ROM shear p99 3.0 MPa > 3.0",
+    "p026: flexion@ROM shear p99 15.7 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -11161,13 +12840,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p089": {
@@ -11204,13 +12895,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p103": {
@@ -11237,13 +12940,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p087": {
@@ -11263,13 +12978,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p042": {
@@ -11289,13 +13016,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p078": {
@@ -11361,6 +13100,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p078: flexion@ROM shear p99 17.9 MPa > 3.0"
     ],
@@ -11378,6 +13118,19 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 17.939,
+   "shear_req_max_MPa": 33.013,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p078: flexion@ROM shear p99 17.9 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -11423,13 +13176,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p101": {
@@ -11527,9 +13292,9 @@
    }
   },
   "source": "physio_rot_split3/p101_gpu1/w_AR_left",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p101: flexion@ROM shear p99 3.8 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -11549,6 +13314,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p101: flexion@ROM shear p99 3.8 MPa > 3.0"
     ],
@@ -11565,6 +13331,19 @@
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 3.798,
+   "shear_req_max_MPa": 6.304,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p101: flexion@ROM shear p99 3.8 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -11617,9 +13396,9 @@
    }
   },
   "source": "physio_rot/p067_gpu1",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p067: extension@ROM shear p99 5.3 MPa > 3.0; p067: flexion@ROM shear p99 12.5 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -11639,6 +13418,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p067: extension@ROM shear p99 5.3 MPa > 3.0",
      "p067: flexion@ROM shear p99 12.5 MPa > 3.0"
@@ -11656,6 +13436,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 12.487,
+   "shear_req_max_MPa": 17.715,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p067: extension@ROM shear p99 5.3 MPa > 3.0",
+    "p067: flexion@ROM shear p99 12.5 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -11708,9 +13502,9 @@
    }
   },
   "source": "physio_rot/p076_gpu3",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p076: extension@ROM shear p99 4.5 MPa > 3.0; p076: flexion@ROM shear p99 12.0 MPa > 3.0",
+  "verdict": "grey",
+  "class": "GREY/friction-posterior-0.45-0.55",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p076: extension@ROM post 0.478 in grey zone [0.45, 0.55]",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -11732,6 +13526,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p076: extension@ROM shear p99 4.5 MPa > 3.0",
      "p076: flexion@ROM shear p99 12.0 MPa > 3.0"
@@ -11749,6 +13544,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 11.985,
+   "shear_req_max_MPa": 15.959,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p076: extension@ROM shear p99 4.5 MPa > 3.0",
+    "p076: flexion@ROM shear p99 12.0 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "friction_check": {
    "verdict": "grey",
@@ -11895,6 +13704,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
      "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
@@ -11914,6 +13724,22 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 21.894,
+   "shear_req_max_MPa": 41.006,
+   "shear_req_window": "flexion",
+   "shear_req_complete": false,
+   "reasons": [
+    "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
+    "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
+    "p084: flexion@ROM shear p99 21.9 MPa > 3.0",
+    "p127: flexion@ROM shear p99 21.9 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
@@ -11949,13 +13775,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p043": {
@@ -11982,13 +13820,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p111": {
@@ -12032,9 +13882,9 @@
    }
   },
   "source": "physio_rot/p111_gpu1",
-  "verdict": "fail",
-  "class": "DESIGN/interface-shear-provisional",
-  "reason": "interface shear above 3.0 MPa (provisional, pending bond-strength test): p111: extension@ROM shear p99 6.1 MPa > 3.0; p111: flexion@ROM shear p99 12.7 MPa > 3.0",
+  "verdict": "pass",
+  "class": "PASS",
+  "reason": "",
   "gates": {
    "tied_screening": {
     "verdict": "pass",
@@ -12054,6 +13904,7 @@
    },
    "interface_shear": {
     "verdict": "fail",
+    "role": "check",
     "reasons": [
      "p111: extension@ROM shear p99 6.1 MPa > 3.0",
      "p111: flexion@ROM shear p99 12.7 MPa > 3.0"
@@ -12071,6 +13922,20 @@
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "exceeded",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 12.678,
+   "shear_req_max_MPa": 17.977,
+   "shear_req_window": "flexion",
+   "shear_req_complete": true,
+   "reasons": [
+    "p111: extension@ROM shear p99 6.1 MPa > 3.0",
+    "p111: flexion@ROM shear p99 12.7 MPa > 3.0"
+   ],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
@@ -12118,13 +13983,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "axial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p032": {
@@ -12151,7 +14028,8 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "excluded",
@@ -12159,6 +14037,17 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p046": {
@@ -12185,13 +14074,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p057": {
@@ -12210,13 +14111,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "both",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p009": {
@@ -12235,13 +14148,25 @@
     "role": "check"
    },
    "interface_shear": {
-    "verdict": "not run"
+    "verdict": "not run",
+    "role": "check"
    },
    "design_rule": {
     "verdict": "pass",
     "gradient": "radial",
     "fabrication": "interleave"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": null,
+   "shear_req_max_MPa": null,
+   "shear_req_window": null,
+   "shear_req_complete": null,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
  },
  "p059": {
@@ -12312,6 +14237,7 @@
    },
    "interface_shear": {
     "verdict": "open",
+    "role": "check",
     "reasons": [],
     "open_reason": "window(s) flexion did not reach the intact ROM (or missing)",
     "threshold_MPa": 3.0,
@@ -12326,6 +14252,17 @@
     "gradient": "radial",
     "fabrication": "mix"
    }
+  },
+  "shear_check": {
+   "verdict": "not evaluated",
+   "threshold_MPa": 3.0,
+   "provisional": true,
+   "shear_req_p99_MPa": 2.923,
+   "shear_req_max_MPa": 6.132,
+   "shear_req_window": "extension",
+   "shear_req_complete": false,
+   "reasons": [],
+   "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
   "window_law": {
