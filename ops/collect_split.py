@@ -238,8 +238,14 @@ for p in sorted(set(best) | set(comp) | set(lastj)):
             elif fv['verdict'] == 'open':
                 move('open', '[多元]/friction-computability' if fv.get('computability') else '[觀測]/friction-window', 'tied screening passed; gate 4: ' + (fv.get('open_reason') or ''))
     # PI 2026-11-18: interface-shear flag (provisional 3 MPa level) + required strength for ranking; never changes the class
+    # audit D-20261118-16: the flag verdict follows the pooled (identical-parameter group) evidence, but the required-strength VALUES are the design's own e07
+    # read-out whenever it exists (same source as mu_req_field); a design without its own record takes the group representative's value, marked pooled_from.
+    _own = shearv.get(p) if isinstance(shearv.get(p), dict) and shearv[p].get('shear_req_p99_MPa') is not None else None
+    _srcq = p if _own else next((q for q in (dup.get(p, [p])) if isinstance(shearv.get(q), dict) and shearv[q].get('shear_req_p99_MPa') is not None), None)
+    _src = _own or (shearv.get(_srcq) if _srcq else None) or {}
     c['shear_check'] = dict(verdict=('not evaluated' if not shv or shv['verdict'] == 'open' else ('exceeded' if shv['verdict'] == 'fail' else 'within')), threshold_MPa=shear_meta.get('threshold_MPa'), provisional=True,
-                            shear_req_p99_MPa=(shv or {}).get('shear_req_p99_MPa'), shear_req_max_MPa=(shv or {}).get('shear_req_max_MPa'), shear_req_window=(shv or {}).get('shear_req_window'), shear_req_complete=(shv or {}).get('shear_req_complete'),
+                            shear_req_p99_MPa=_src.get('shear_req_p99_MPa'), shear_req_max_MPa=_src.get('shear_req_max_MPa'), shear_req_window=_src.get('shear_req_window'), shear_req_complete=_src.get('shear_req_complete'),
+                            shear_req_source=('own' if _own else (f'pooled from {_srcq}' if _srcq else None)),
                             reasons=(shv or {}).get('reasons', []), rule='PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test')
     if c['shear_check']['verdict'] == 'exceeded': scx.append(p)
     shear_c[p] = c
@@ -258,7 +264,7 @@ for p in sorted(set(best) | set(comp) | set(lastj)):
 json.dump(best, open(os.path.join(OUT, 'best_by_design_merged.json'), 'w'), indent=1)
 json.dump(comp, open(os.path.join(OUT, 'comp_by_design_merged.json'), 'w'), indent=1)
 json.dump(lists, open(os.path.join(OUT, 'verdict_lists_merged.json'), 'w'), indent=1)
-shear_ranking = sorted([dict(design=q, shear_req_p99_MPa=c_['shear_check']['shear_req_p99_MPa'], shear_req_max_MPa=c_['shear_check']['shear_req_max_MPa'], complete=c_['shear_check']['shear_req_complete'], flag=c_['shear_check']['verdict'], cls=c_.get('class'), verdict=c_.get('verdict')) for q, c_ in shear_c.items() if c_['shear_check']['shear_req_p99_MPa'] is not None], key=lambda r: r['shear_req_p99_MPa'])
+shear_ranking = sorted([dict(design=q, shear_req_p99_MPa=c_['shear_check']['shear_req_p99_MPa'], shear_req_max_MPa=c_['shear_check']['shear_req_max_MPa'], complete=c_['shear_check']['shear_req_complete'], source=c_['shear_check'].get('shear_req_source'), flag=c_['shear_check']['verdict'], cls=c_.get('class'), verdict=c_.get('verdict')) for q, c_ in shear_c.items() if c_['shear_check']['shear_req_p99_MPa'] is not None], key=lambda r: (not r['complete'], r['shear_req_p99_MPa']))   # audit D-20261118-14: incomplete (one window only) read-outs rank after the complete ones
 json.dump(dict(classes=classes, rejected_windows=rejected, friction_check_exceeded=sorted(fcx), friction_grey=sorted(fgrey), shear_check_exceeded=sorted(scx), shear_ranking=shear_ranking, shear_rule='PI 2026-11-18: interface shear 3 MPa = flag + ranking by shear_req (lower required strength first); gate after the bond-strength test', grey_note='GREY/*: 僅供分析，不得作為 final design (PI 2026-11-10)'), open(os.path.join(OUT, 'verdict_classes_merged.json'), 'w'), indent=1)
 bo = [p for p in lists['both']]
 mu = max((best[p][w]['mu_squeeze'] for p in bo for w in WIN), default=None)

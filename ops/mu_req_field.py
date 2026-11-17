@@ -52,8 +52,8 @@ for p in designs:
     row['friction_fallback'] = any(bool((x or {}).get('fallback')) for x in ((f or {}).get('windows') or {}).values())   # PI 2026-11-10 item 1: production-law read-out + margin
     rows.append(row)
 keys = sorted({k for prm in allprm.values() for k in prm if k not in SKIP})
-_rk = sorted([r for r in rows if r.get('shear_req_p99_MPa') is not None], key=lambda r: r['shear_req_p99_MPa'])
-for i, r in enumerate(_rk): r['shear_rank'] = i + 1   # PI 2026-11-18: ranking by required interface strength (1 = lowest requirement)
+_rk = sorted([r for r in rows if r.get('shear_req_p99_MPa') is not None], key=lambda r: (not r.get('shear_req_complete'), r['shear_req_p99_MPa']))
+for i, r in enumerate(_rk): r['shear_rank'] = i + 1   # incomplete read-outs after the complete ones (audit D-20261118-14)   # PI 2026-11-18: ranking by required interface strength (1 = lowest requirement)
 for r in rows: r.setdefault('shear_rank', None)
 hyper = [k for k in keys if len({json.dumps(prm.get(k), sort_keys=True) for prm in allprm.values() if prm}) > 1]
 for row in rows:

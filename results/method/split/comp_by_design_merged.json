@@ -89,6 +89,7 @@
    "shear_req_max_MPa": 29.914,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p132: flexion@ROM shear p99 16.3 MPa > 3.0"
    ],
@@ -249,6 +250,7 @@
    "shear_req_max_MPa": 4.535,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -303,6 +305,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -450,6 +453,7 @@
    "shear_req_max_MPa": 21.772,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p113: flexion@ROM shear p99 12.2 MPa > 3.0"
    ],
@@ -507,6 +511,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -668,6 +673,7 @@
    "shear_req_max_MPa": 2.947,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -724,6 +730,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -865,6 +872,7 @@
    "shear_req_max_MPa": 6.532,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p083: flexion@ROM shear p99 3.2 MPa > 3.0"
    ],
@@ -951,6 +959,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -1113,6 +1122,7 @@
    "shear_req_max_MPa": 3.808,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "pooled from p072",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -1283,10 +1293,11 @@
    "verdict": "within",
    "threshold_MPa": 3.0,
    "provisional": true,
-   "shear_req_p99_MPa": 2.153,
-   "shear_req_max_MPa": 3.088,
+   "shear_req_p99_MPa": 2.151,
+   "shear_req_max_MPa": 3.114,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -1350,6 +1361,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -1425,6 +1437,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -1470,6 +1483,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -1618,6 +1632,7 @@
    "shear_req_max_MPa": 22.894,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p112: flexion@ROM shear p99 12.9 MPa > 3.0"
    ],
@@ -1722,6 +1737,7 @@
    "shear_req_max_MPa": 5.598,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p120: flexion@ROM shear p99 3.2 MPa > 3.0"
    ],
@@ -1878,10 +1894,11 @@
    "verdict": "within",
    "threshold_MPa": 3.0,
    "provisional": true,
-   "shear_req_p99_MPa": 2.718,
-   "shear_req_max_MPa": 4.535,
+   "shear_req_p99_MPa": 2.73,
+   "shear_req_max_MPa": 4.531,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -2039,6 +2056,7 @@
    "shear_req_max_MPa": 19.841,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p036: extension@ROM shear p99 5.0 MPa > 3.0",
     "p036: flexion@ROM shear p99 14.8 MPa > 3.0"
@@ -2141,6 +2159,7 @@
    "shear_req_max_MPa": 0.211,
    "shear_req_window": "extension",
    "shear_req_complete": false,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -2307,10 +2326,11 @@
    "verdict": "within",
    "threshold_MPa": 3.0,
    "provisional": true,
-   "shear_req_p99_MPa": 1.963,
-   "shear_req_max_MPa": 2.947,
+   "shear_req_p99_MPa": 1.959,
+   "shear_req_max_MPa": 2.944,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -2467,6 +2487,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -2560,6 +2581,7 @@
    "shear_req_max_MPa": 5.476,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p039: flexion@ROM shear p99 3.4 MPa > 3.0"
    ],
@@ -2665,6 +2687,7 @@
    "shear_req_max_MPa": 17.383,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p124: extension@ROM shear p99 5.5 MPa > 3.0",
     "p124: flexion@ROM shear p99 13.9 MPa > 3.0"
@@ -2716,6 +2739,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -2860,6 +2884,7 @@
    "shear_req_max_MPa": 5.577,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p129: flexion@ROM shear p99 3.2 MPa > 3.0"
    ],
@@ -2967,6 +2992,7 @@
    "shear_req_max_MPa": 14.975,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p135: extension@ROM shear p99 4.8 MPa > 3.0",
     "p135: flexion@ROM shear p99 11.1 MPa > 3.0"
@@ -3062,6 +3088,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -3108,6 +3135,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -3253,6 +3281,7 @@
    "shear_req_max_MPa": 33.438,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p130: flexion@ROM shear p99 18.1 MPa > 3.0"
    ],
@@ -3356,6 +3385,7 @@
    "shear_req_max_MPa": 1.478,
    "shear_req_window": "extension",
    "shear_req_complete": false,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -3402,6 +3432,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -3492,6 +3523,7 @@
    "shear_req_max_MPa": 1.205,
    "shear_req_window": "extension",
    "shear_req_complete": false,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -3595,6 +3627,7 @@
    "shear_req_max_MPa": 16.302,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p122: extension@ROM shear p99 6.6 MPa > 3.0",
     "p122: flexion@ROM shear p99 11.7 MPa > 3.0"
@@ -3752,10 +3785,11 @@
    "verdict": "within",
    "threshold_MPa": 3.0,
    "provisional": true,
-   "shear_req_p99_MPa": 2.718,
-   "shear_req_max_MPa": 4.535,
+   "shear_req_p99_MPa": 2.704,
+   "shear_req_max_MPa": 4.521,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -3900,6 +3934,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -3994,6 +4029,7 @@
    "shear_req_max_MPa": 40.179,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p109: flexion@ROM shear p99 21.2 MPa > 3.0"
    ],
@@ -4088,6 +4124,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -4163,6 +4200,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -4257,6 +4295,7 @@
    "shear_req_max_MPa": 36.88,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p071: flexion@ROM shear p99 19.9 MPa > 3.0"
    ],
@@ -4307,6 +4346,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -4382,6 +4422,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -4476,6 +4517,7 @@
    "shear_req_max_MPa": 20.667,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p094: extension@ROM shear p99 6.7 MPa > 3.0",
     "p094: flexion@ROM shear p99 14.2 MPa > 3.0"
@@ -4636,6 +4678,7 @@
    "shear_req_max_MPa": 40.102,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p116: flexion@ROM shear p99 21.3 MPa > 3.0"
    ],
@@ -4692,6 +4735,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -4832,6 +4876,7 @@
    "shear_req_max_MPa": 18.612,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p146: extension@ROM shear p99 3.8 MPa > 3.0",
     "p146: flexion@ROM shear p99 14.0 MPa > 3.0"
@@ -4889,6 +4934,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -4983,6 +5029,7 @@
    "shear_req_max_MPa": 17.332,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p131: extension@ROM shear p99 5.8 MPa > 3.0",
     "p131: flexion@ROM shear p99 16.2 MPa > 3.0"
@@ -5156,10 +5203,11 @@
    "verdict": "exceeded",
    "threshold_MPa": 3.0,
    "provisional": true,
-   "shear_req_p99_MPa": 19.176,
-   "shear_req_max_MPa": 36.703,
+   "shear_req_p99_MPa": 19.203,
+   "shear_req_max_MPa": 36.574,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p095: flexion@ROM shear p99 19.2 MPa > 3.0",
     "p128: flexion@ROM shear p99 19.2 MPa > 3.0"
@@ -5223,6 +5271,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -5369,10 +5418,11 @@
    "verdict": "within",
    "threshold_MPa": 3.0,
    "provisional": true,
-   "shear_req_p99_MPa": 2.328,
-   "shear_req_max_MPa": 3.79,
+   "shear_req_p99_MPa": 2.323,
+   "shear_req_max_MPa": 3.792,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -5467,6 +5517,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -5603,10 +5654,11 @@
    "verdict": "exceeded",
    "threshold_MPa": 3.0,
    "provisional": true,
-   "shear_req_p99_MPa": 4.04,
-   "shear_req_max_MPa": 7.355,
+   "shear_req_p99_MPa": 4.128,
+   "shear_req_max_MPa": 6.77,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p082: flexion@ROM shear p99 4.0 MPa > 3.0",
     "p088: flexion@ROM shear p99 4.1 MPa > 3.0"
@@ -5713,6 +5765,7 @@
    "shear_req_max_MPa": 31.911,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p079: flexion@ROM shear p99 18.4 MPa > 3.0"
    ],
@@ -5799,6 +5852,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -5836,6 +5890,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -5914,6 +5969,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -5951,6 +6007,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -6092,6 +6149,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -6238,10 +6296,11 @@
    "verdict": "within",
    "threshold_MPa": 3.0,
    "provisional": true,
-   "shear_req_p99_MPa": 2.328,
-   "shear_req_max_MPa": 3.79,
+   "shear_req_p99_MPa": 2.322,
+   "shear_req_max_MPa": 3.788,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -6423,6 +6482,7 @@
    "shear_req_max_MPa": 3.808,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -6477,6 +6537,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -6571,6 +6632,7 @@
    "shear_req_max_MPa": 15.67,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p063: extension@ROM shear p99 6.4 MPa > 3.0",
     "p063: flexion@ROM shear p99 11.5 MPa > 3.0"
@@ -6679,6 +6741,7 @@
    "shear_req_max_MPa": 6.132,
    "shear_req_window": "extension",
    "shear_req_complete": false,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -6853,6 +6916,7 @@
    "shear_req_max_MPa": 36.703,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p095: flexion@ROM shear p99 19.2 MPa > 3.0",
     "p128: flexion@ROM shear p99 19.2 MPa > 3.0"
@@ -6917,6 +6981,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -7073,6 +7138,7 @@
    "shear_req_max_MPa": 5.18,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p052: flexion@ROM shear p99 3.2 MPa > 3.0"
    ],
@@ -7179,6 +7245,7 @@
    "shear_req_max_MPa": 7.601,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p102: flexion@ROM shear p99 5.5 MPa > 3.0"
    ],
@@ -7273,6 +7340,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -7336,6 +7404,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -7381,6 +7450,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -7526,6 +7596,7 @@
    "shear_req_max_MPa": 30.724,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p097: flexion@ROM shear p99 18.4 MPa > 3.0"
    ],
@@ -7631,6 +7702,7 @@
    "shear_req_max_MPa": 18.756,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p066: extension@ROM shear p99 4.7 MPa > 3.0",
     "p066: flexion@ROM shear p99 14.6 MPa > 3.0"
@@ -7736,6 +7808,7 @@
    "shear_req_max_MPa": 3.117,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -7850,6 +7923,7 @@
    "shear_req_max_MPa": 26.225,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p081: extension@ROM shear p99 3.3 MPa > 3.0",
     "p081: flexion@ROM shear p99 15.8 MPa > 3.0"
@@ -7945,6 +8019,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -8090,6 +8165,7 @@
    "shear_req_max_MPa": 16.008,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p062: extension@ROM shear p99 6.5 MPa > 3.0",
     "p062: flexion@ROM shear p99 11.4 MPa > 3.0"
@@ -8155,6 +8231,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -8311,10 +8388,11 @@
    "verdict": "exceeded",
    "threshold_MPa": 3.0,
    "provisional": true,
-   "shear_req_p99_MPa": 21.894,
-   "shear_req_max_MPa": 41.006,
+   "shear_req_p99_MPa": 21.868,
+   "shear_req_max_MPa": 40.868,
    "shear_req_window": "flexion",
    "shear_req_complete": false,
+   "shear_req_source": "own",
    "reasons": [
     "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
     "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
@@ -8423,6 +8501,7 @@
    "shear_req_max_MPa": 28.949,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p014: flexion@ROM shear p99 15.8 MPa > 3.0"
    ],
@@ -8577,7 +8656,8 @@
    "shear_req_p99_MPa": null,
    "shear_req_max_MPa": null,
    "shear_req_window": null,
-   "shear_req_complete": false,
+   "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -8632,6 +8712,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -8726,6 +8807,7 @@
    "shear_req_max_MPa": 31.263,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p038: flexion@ROM shear p99 16.9 MPa > 3.0"
    ],
@@ -8812,6 +8894,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -8849,6 +8932,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -8886,6 +8970,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -8964,6 +9049,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -9009,6 +9095,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -9054,6 +9141,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -9211,6 +9299,7 @@
    "shear_req_max_MPa": 3.088,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -9362,6 +9451,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -9437,6 +9527,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -9531,6 +9622,7 @@
    "shear_req_max_MPa": 28.771,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p125: flexion@ROM shear p99 15.7 MPa > 3.0"
    ],
@@ -9595,6 +9687,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -9735,6 +9828,7 @@
    "shear_req_max_MPa": 7.355,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p082: flexion@ROM shear p99 4.0 MPa > 3.0",
     "p088: flexion@ROM shear p99 4.1 MPa > 3.0"
@@ -9841,6 +9935,7 @@
    "shear_req_max_MPa": 19.499,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p105: extension@ROM shear p99 7.9 MPa > 3.0",
     "p105: flexion@ROM shear p99 13.7 MPa > 3.0"
@@ -9898,6 +9993,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -10058,6 +10154,7 @@
    "shear_req_max_MPa": 41.006,
    "shear_req_window": "flexion",
    "shear_req_complete": false,
+   "shear_req_source": "own",
    "reasons": [
     "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
     "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
@@ -10110,6 +10207,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -10207,6 +10305,7 @@
    "shear_req_max_MPa": 25.573,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p133: extension@ROM shear p99 3.1 MPa > 3.0",
     "p133: flexion@ROM shear p99 14.8 MPa > 3.0"
@@ -10321,6 +10420,7 @@
    "shear_req_max_MPa": 31.267,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p002: flexion@ROM shear p99 17.7 MPa > 3.0"
    ],
@@ -10476,6 +10576,7 @@
    "shear_req_max_MPa": 0.097,
    "shear_req_window": "extension",
    "shear_req_complete": false,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -10635,6 +10736,7 @@
    "shear_req_max_MPa": 3.79,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -10691,6 +10793,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -10850,6 +10953,7 @@
    "shear_req_max_MPa": 4.596,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p061: flexion@ROM shear p99 3.0 MPa > 3.0"
    ],
@@ -10906,6 +11010,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -10951,6 +11056,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -11006,6 +11112,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -11081,6 +11188,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -11237,10 +11345,11 @@
    "verdict": "exceeded",
    "threshold_MPa": 3.0,
    "provisional": true,
-   "shear_req_p99_MPa": 21.894,
-   "shear_req_max_MPa": 41.006,
+   "shear_req_p99_MPa": 21.877,
+   "shear_req_max_MPa": 40.9,
    "shear_req_window": "flexion",
-   "shear_req_complete": false,
+   "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
     "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
@@ -11349,6 +11458,7 @@
    "shear_req_max_MPa": 14.342,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p065: extension@ROM shear p99 4.4 MPa > 3.0",
     "p065: flexion@ROM shear p99 13.1 MPa > 3.0"
@@ -11398,6 +11508,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -11443,6 +11554,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -11536,6 +11648,7 @@
    "shear_req_max_MPa": 6.683,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p140: flexion@ROM shear p99 4.0 MPa > 3.0"
    ],
@@ -11585,6 +11698,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -11630,6 +11744,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -11726,9 +11841,10 @@
    "threshold_MPa": 3.0,
    "provisional": true,
    "shear_req_p99_MPa": 13.847,
-   "shear_req_max_MPa": 15.154,
+   "shear_req_max_MPa": 15.153,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p077: extension@ROM shear p99 4.4 MPa > 3.0",
     "p077: flexion@ROM shear p99 13.8 MPa > 3.0",
@@ -11788,6 +11904,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -11833,6 +11950,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -11927,6 +12045,7 @@
    "shear_req_max_MPa": 20.898,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p110: extension@ROM shear p99 6.6 MPa > 3.0",
     "p110: flexion@ROM shear p99 14.9 MPa > 3.0"
@@ -12078,6 +12197,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -12123,6 +12243,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -12230,6 +12351,7 @@
    "shear_req_max_MPa": 26.467,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p148: flexion@ROM shear p99 15.4 MPa > 3.0"
    ],
@@ -12362,6 +12484,7 @@
    "shear_req_max_MPa": 25.607,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p104: flexion@ROM shear p99 15.0 MPa > 3.0"
    ],
@@ -12432,6 +12555,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -12507,6 +12631,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -12552,6 +12677,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -12590,6 +12716,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -12689,6 +12816,7 @@
    "shear_req_max_MPa": 15.154,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p077: extension@ROM shear p99 4.4 MPa > 3.0",
     "p077: flexion@ROM shear p99 13.8 MPa > 3.0",
@@ -12800,6 +12928,7 @@
    "shear_req_max_MPa": 27.451,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p026: extension@ROM shear p99 3.0 MPa > 3.0",
     "p026: flexion@ROM shear p99 15.7 MPa > 3.0"
@@ -12857,6 +12986,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -12912,6 +13042,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -12957,6 +13088,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -12995,6 +13127,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -13033,6 +13166,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -13127,6 +13261,7 @@
    "shear_req_max_MPa": 33.013,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p078: flexion@ROM shear p99 17.9 MPa > 3.0"
    ],
@@ -13193,6 +13328,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -13340,6 +13476,7 @@
    "shear_req_max_MPa": 6.304,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p101: flexion@ROM shear p99 3.8 MPa > 3.0"
    ],
@@ -13445,6 +13582,7 @@
    "shear_req_max_MPa": 17.715,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p067: extension@ROM shear p99 5.3 MPa > 3.0",
     "p067: flexion@ROM shear p99 12.5 MPa > 3.0"
@@ -13553,6 +13691,7 @@
    "shear_req_max_MPa": 15.959,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p076: extension@ROM shear p99 4.5 MPa > 3.0",
     "p076: flexion@ROM shear p99 12.0 MPa > 3.0"
@@ -13729,10 +13868,11 @@
    "verdict": "exceeded",
    "threshold_MPa": 3.0,
    "provisional": true,
-   "shear_req_p99_MPa": 21.894,
-   "shear_req_max_MPa": 41.006,
+   "shear_req_p99_MPa": 21.887,
+   "shear_req_max_MPa": 40.978,
    "shear_req_window": "flexion",
-   "shear_req_complete": false,
+   "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p050: flexion@ROM shear p99 21.9 MPa > 3.0",
     "p068: flexion@ROM shear p99 21.9 MPa > 3.0",
@@ -13792,6 +13932,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -13837,6 +13978,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -13931,6 +14073,7 @@
    "shear_req_max_MPa": 17.977,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
+   "shear_req_source": "own",
    "reasons": [
     "p111: extension@ROM shear p99 6.1 MPa > 3.0",
     "p111: flexion@ROM shear p99 12.7 MPa > 3.0"
@@ -14000,6 +14143,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -14046,6 +14190,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -14091,6 +14236,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -14128,6 +14274,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -14165,6 +14312,7 @@
    "shear_req_max_MPa": null,
    "shear_req_window": null,
    "shear_req_complete": null,
+   "shear_req_source": null,
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   }
@@ -14261,6 +14409,7 @@
    "shear_req_max_MPa": 6.132,
    "shear_req_window": "extension",
    "shear_req_complete": false,
+   "shear_req_source": "pooled from p074",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
