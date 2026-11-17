@@ -12,9 +12,11 @@ sys.path[:0] = [os.path.join(ROOT, 'methods'), os.path.join(ROOT, 'common')]
 import e04_dislocation as e4
 WIN = sys.argv[1] if len(sys.argv) > 1 else 'extension'
 T0, T1, TS = 3.9, 4.4, 3.95            # hold start / end; settled part starts at TS
-REF = [('pilot_holdA', 'p062_gpu1'), ('pilot_holdA', 'p139_gpu2'), ('pilot_holdE', 'p062_gpu1'), ('pilot_holdE', 'p139_gpu2')]
-ARMS = [(c, d) for c in ('pilot_holdH', 'pilot_holdHf', 'pilot_holdR', 'pilot_holdRh') if os.path.isdir(os.path.join(AL, c))
-        for d in sorted(os.listdir(os.path.join(AL, c))) if re.match(r'p\d+_[a-zA-Z0-9]+$' if c not in ('pilot_holdR', 'pilot_holdRh') else r'p\d+$', d)]   # pilot_holdR cases carry no arm suffix (one arm: route E + stick memory)
+REF = [('pilot_holdA', 'p062_gpu1'), ('pilot_holdA', 'p139_gpu2'), ('pilot_holdE', 'p062_gpu1'), ('pilot_holdE', 'p139_gpu2'),
+       ('pilot_holdQ', 'p062_gpu1'), ('pilot_holdQ', 'p139_gpu4')]   # pilot_holdQ (2026-11-18): true half-step hold (deck dtmax 0.025 over the hold), joint-driven production-law windows (h18)
+ONE_ARM = ('pilot_holdR', 'pilot_holdRh', 'pilot_holdQR')   # route-E + stick-memory classes: one arm, cases carry no arm suffix; pilot_holdQR = half-step hold restarted from pilot_holdQ
+ARMS = [(c, d) for c in ('pilot_holdH', 'pilot_holdHf') + ONE_ARM if os.path.isdir(os.path.join(AL, c))
+        for d in sorted(os.listdir(os.path.join(AL, c))) if re.match(r'p\d+_[a-zA-Z0-9]+$' if c not in ONE_ARM else r'p\d+$', d)]   # pilot_holdR cases carry no arm suffix (one arm: route E + stick memory)
 rep = dict(prov=provenance(), window=WIN, note='trend = linear-fit slope x 0.5 over t 3.95-4.4; fine dynamic holds oscillate (elastic stick contact + '
            '1e-6 density segment, no damping once the friction law stops dissipating), so start/end differences are phase samples', rows=[])
 for c, dn in REF + ARMS:
