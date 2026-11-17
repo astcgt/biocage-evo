@@ -1,7 +1,7 @@
 {
  "prov": {
-  "time": "2026-11-18 02:31:32",
-  "git": "dea2aeb",
+  "time": "2026-11-18 03:17:39",
+  "git": "61b8cb0",
   "dirty_gpufe": true,
   "inputs": {},
   "opts": {},
@@ -287,6 +287,64 @@
    "std": 0.0006,
    "steps_up": 7,
    "steps_down": 6
+  },
+  {
+   "set": "pilot_holdRh",
+   "dir": "p062",
+   "state": "NORMAL",
+   "iters": 5084,
+   "augs": 572,
+   "retries": 0,
+   "t_last": 4.4,
+   "env": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "OMP_NUM_THREADS": "5",
+    "OMP_STACKSIZE": "1G",
+    "BIOCAGE_STICK_MEMORY": "1"
+   },
+   "febio_sha256": "88c24a0d06811eaf5c1637a649998b49eddb11b154ba24dd89c2a83e9e7c6700",
+   "lib_sha256": "be7b357f71f155e462e1c3e3ca60d60b7bd9308d35d79b5cef5805ca149b2f89",
+   "u_ramp_end": 0.4263,
+   "n_hold": 23,
+   "u_start": 0.4263,
+   "u_end": 0.4284,
+   "drift_start_end": 0.0021,
+   "trend_per_hold": 0.0,
+   "mean_first_q": 0.4284,
+   "mean_last_q": 0.4284,
+   "peak_to_peak": 0.0006,
+   "std": 0.0001,
+   "steps_up": 6,
+   "steps_down": 5
+  },
+  {
+   "set": "pilot_holdRh",
+   "dir": "p139",
+   "state": "NORMAL",
+   "iters": 1543,
+   "augs": 178,
+   "retries": 0,
+   "t_last": 4.4,
+   "env": {
+    "CUDA_VISIBLE_DEVICES": "4",
+    "OMP_NUM_THREADS": "5",
+    "OMP_STACKSIZE": "1G",
+    "BIOCAGE_STICK_MEMORY": "1"
+   },
+   "febio_sha256": "88c24a0d06811eaf5c1637a649998b49eddb11b154ba24dd89c2a83e9e7c6700",
+   "lib_sha256": "be7b357f71f155e462e1c3e3ca60d60b7bd9308d35d79b5cef5805ca149b2f89",
+   "u_ramp_end": 0.5546,
+   "n_hold": 39,
+   "u_start": 0.5546,
+   "u_end": 0.5604,
+   "drift_start_end": 0.0058,
+   "trend_per_hold": 0.0006,
+   "mean_first_q": 0.5599,
+   "mean_last_q": 0.5604,
+   "peak_to_peak": 0.0021,
+   "std": 0.0005,
+   "steps_up": 4,
+   "steps_down": 7
   }
  ]
 }
