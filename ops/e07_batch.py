@@ -49,7 +49,7 @@ for w, o in done:
             v = series(cls, key); rec[f'{cls}_{key}_insertion'] = float(v[int(np.argmin(np.abs(t - 3.5)))])   # state at t 3.5 (the restart's first states can be t 0 / t 3)
             if r.get('t_rom'):
                 tr = r['t_rom']; m = t <= tr + 1e-9
-                rec[f'{cls}_{key}_at_rom'] = float(np.interp(tr, t, v)); rec[f'{cls}_{key}_max_to_rom'] = float(np.nanmax(v[m])) if m.any() else None
+                rec[f'{cls}_{key}_at_rom'] = float(np.interp(tr, t, v)); rec[f'{cls}_{key}_max_to_rom'] = float(max(np.nanmax(v[m]) if m.any() else -np.inf, np.interp(tr, t, v)))   # audit D-20261118-1: the ROM state itself (interpolated) belongs to 'up to the ROM'
             rec[f'{cls}_{key}_max_window'] = float(np.nanmax(v))
     out.append(rec)
 keys = sorted({k for r in out for k in r}, key=lambda k: (k not in ('design', 'set', 'case_dir', 'window'), k))
@@ -84,11 +84,20 @@ for r in [best[k] for k in sorted(best)]:
                                      fallback=fb, **({'fallback_note': 'PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only'} if fb else {}),
                                      peel_max_at_rom=max(x for x in (r.get('horizontal_peel_max_at_rom'), r.get('vertical_peel_max_at_rom')) if x is not None))
     if v > THR: d['reasons'].append(f"{r['window']}@ROM shear p99 {v:.1f} MPa > {THR}")
+    # PI 2026-11-18 「如果可以完整跑完模擬，就紀錄最大需要承受的剪力」: the required interface strength of the design = the largest soft-side
+    # interface shear seen anywhere in a window that ran to the intact ROM (p99 statistic as the gate metric, and the absolute maximum), with the window.
+    _p99 = [x for x in (r.get('horizontal_shear_p99_max_to_rom'), r.get('vertical_shear_p99_max_to_rom')) if x is not None]
+    _mx = [x for x in (r.get('horizontal_shear_max_max_to_rom'), r.get('vertical_shear_max_max_to_rom')) if x is not None]
+    d['windows'][r['window']].update(shear_p99_max_to_rom=round(max(_p99), 3) if _p99 else None, shear_max_to_rom=round(max(_mx), 3) if _mx else None)
 for p, d in ev.items():
     d['missing'] = [w for w in REQ if w not in d['windows']]
     d['verdict'] = 'fail' if d['reasons'] else ('open' if d['missing'] else 'pass')
+    _w = [(w, x['shear_p99_max_to_rom']) for w, x in d['windows'].items() if x.get('shear_p99_max_to_rom') is not None]
+    d['shear_req_p99_MPa'] = max(v for _, v in _w) if _w else None; d['shear_req_window'] = max(_w, key=lambda t: t[1])[0] if _w else None
+    d['shear_req_max_MPa'] = max((x['shear_max_to_rom'] for x in d['windows'].values() if x.get('shear_max_to_rom') is not None), default=None)
+    d['shear_req_complete'] = not d['missing']   # both required windows ran to the intact ROM: the required strength covers the whole physiological range
     if d['verdict'] == 'open': d['open_reason'] = 'window(s) ' + ', '.join(d['missing']) + ' did not reach the intact ROM (or missing)'
-meta = dict(threshold_MPa=THR, metric='soft-side p99 interface shear at the intact-ROM state, max of layer and band-boundary interfaces, flexion and extension (frictional runs; physio_fric5 stick-memory windows supersede physio_fric3 per design and window, PI 2026-11-09 decision 1)',
+meta = dict(shear_req='PI 2026-11-18: shear_req_p99_MPa / shear_req_max_MPa = largest soft-side interface shear (p99 statistic / absolute max) over the completed windows up to the intact ROM, with its window; shear_req_complete = both required windows completed; the 3 MPa threshold stays as recorded (gate or flag: PI decision pending)', threshold_MPa=THR, metric='soft-side p99 interface shear at the intact-ROM state, max of layer and band-boundary interfaces, flexion and extension (frictional runs; physio_fric5 stick-memory windows supersede physio_fric3 per design and window, PI 2026-11-09 decision 1)',
             provisional='PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface', decided='PI 2026-11-04; PI 2026-11-11 decision 6: fallback (production-law) windows count, flagged fallback=True')
 json.dump(dict(meta=meta, designs=ev), open(os.path.join(E, 'results/method/fric/e07_verdicts.json'), 'w'), indent=1)
 import collections

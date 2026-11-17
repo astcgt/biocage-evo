@@ -550,7 +550,7 @@
   "source": "physio_rot_split4/p093_gpu2/w_AR_right",
   "verdict": "grey",
   "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey); p093: flexion: own posterior 0.906 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey); p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey); p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]",
   "duplicates": [
    "p145"
   ],
@@ -568,7 +568,6 @@
     "role": "check",
     "grey": [
      "p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
-     "p093: flexion: own posterior 0.906 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
      "p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
@@ -601,7 +600,6 @@
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
     "p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
-    "p093: flexion: own posterior 0.906 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
     "p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
@@ -2018,7 +2016,7 @@
   "source": "physio_rot_split4/p093_gpu2/w_AR_right",
   "verdict": "grey",
   "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey); p093: flexion: own posterior 0.906 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey); p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey); p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]",
   "duplicates": [
    "p093"
   ],
@@ -2036,7 +2034,6 @@
     "role": "check",
     "grey": [
      "p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
-     "p093: flexion: own posterior 0.906 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
      "p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
@@ -2069,7 +2066,6 @@
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
     "p093: extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
-    "p093: flexion: own posterior 0.906 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)",
     "p145: extension@ROM post 0.539 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"

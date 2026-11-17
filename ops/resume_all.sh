@@ -111,10 +111,80 @@ if ! tmux has-session -t relG_drive 2>/dev/null && ! grep -q 'RELG DRIVE DONE' "
 fi
 # physio_relG_pl fallback windows (h51 driver, tmux relGpl_drive, started 11-10 17:1x): production-law restarts of the process-G windows
 # that stopped under the stick law (+ 6 control windows); waits for free quota behind the relG drive: marker RELG_PL DONE
+# workers 2 -> 5 (foreman 11-10 22:0x, ops/relGpl_handoff.sh): the 32-core quota check in h51 still limits the total
 f=human_study/al_v2/physio_relG_pl/run_batch.log
 if ! tmux has-session -t relGpl_drive 2>/dev/null && ! grep -q 'RELG_PL DONE' "$OLD/$f" 2>/dev/null && ! pgrep -u "$USER" -f "h51_relG_fallback.py run" >/dev/null; then
-  tmux new-session -d -s relGpl_drive "cd '$OLD' && python3 -u scripts/5_compute/h51_relG_fallback.py run 2 1,2,3,4 6 +p039:extension +p039:flexion +p052:extension +p052:flexion +p061:extension +p061:flexion >> $f 2>&1"
+  tmux new-session -d -s relGpl_drive "cd '$OLD' && python3 -u scripts/5_compute/h51_relG_fallback.py run 5 1,2,3,4 6 +p039:extension +p039:flexion +p052:extension +p052:flexion +p061:extension +p061:flexion >> $f 2>&1"
 fi
+# relG_pl ctrl2 (h51 'only' list of 7 'first increments' windows), started 11-10 23:51 in tmux relGpl_ctrl2; h51 skips windows with a
+# done marker on re-run; marker: a RELG_PL DONE line after the last 'ctrl2:' line of run_batch.log (foreman 11-10 23:5x)
+if ! tmux has-session -t relGpl_ctrl2 2>/dev/null && ! awk '/ctrl2:/{c=1;d=0} c&&/RELG_PL DONE/{d=1} END{exit !(c&&d)}' "$OLD/$f" 2>/dev/null && ! pgrep -u "$USER" -f "h51_relG_fallback.py run" >/dev/null; then
+  tmux new-session -d -s relGpl_ctrl2 "cd '$OLD' && python3 -u scripts/5_compute/h51_relG_fallback.py run 5 1,2,3,4 6 p050:flexion p074:flexion p084:extension p109:flexion p109:extension p115:flexion p127:flexion >> $f 2>&1"
+fi
+# pilot_relGdrv (h51 'only' list, window_drive="from_state", 5 windows), started 11-11 01:07 in tmux relGdrv_pilot; h51 skips windows
+# with a done marker on re-run; marker RELG_PL DONE in its run_batch.log (foreman 11-11 01:1x)
+f=human_study/al_v2/pilot_relGdrv/run_batch.log
+if ! tmux has-session -t relGdrv_pilot 2>/dev/null && ! grep -q 'RELG_PL DONE' "$OLD/$f" 2>/dev/null && ! pgrep -u "$USER" -f "H51_DST=pilot_relGdrv" >/dev/null; then
+  tmux new-session -d -s relGdrv_pilot "cd '$OLD' && H51_DST=pilot_relGdrv H51_KEYS='window_drive=\"from_state\"' python3 -u scripts/5_compute/h51_relG_fallback.py run 3 2,3,4 6 p050:flexion p068:flexion p084:extension p039:extension p048:flexion >> $f 2>&1"
+fi
+# pilot_relGfix (h51 'only' list, window_joint penalty + from_state, 4 windows, tmux relGfix_pilot, started 11-11 01:33) and
+# pilot_relGrel (window_drive_mode="rigid_relative", 4 windows, tmux relGrel_pilot, started 11-11 01:45); h51 skips windows with a
+# done marker on re-run; marker RELG_PL DONE in each run_batch.log (foreman 11-11 02:1x)
+f=human_study/al_v2/pilot_relGfix/run_batch.log
+if ! tmux has-session -t relGfix_pilot 2>/dev/null && ! grep -q 'RELG_PL DONE' "$OLD/$f" 2>/dev/null && ! pgrep -u "$USER" -f "H51_DST=pilot_relGfix" >/dev/null; then
+  tmux new-session -d -s relGfix_pilot "cd '$OLD' && H51_DST=pilot_relGfix H51_KEYS='window_joint={\"laugon\": 0, \"penalty\": 1000000.0}|window_drive=\"from_state\"' python3 -u scripts/5_compute/h51_relG_fallback.py run 3 3,4,2 6 p050:flexion p068:flexion p084:extension p039:extension >> $f 2>&1"
+fi
+f=human_study/al_v2/pilot_relGrel/run_batch.log
+if ! tmux has-session -t relGrel_pilot 2>/dev/null && ! grep -q 'RELG_PL DONE' "$OLD/$f" 2>/dev/null && ! pgrep -u "$USER" -f "H51_DST=pilot_relGrel" >/dev/null; then
+  tmux new-session -d -s relGrel_pilot "cd '$OLD' && H51_DST=pilot_relGrel H51_KEYS='window_drive_mode=\"rigid_relative\"' python3 -u scripts/5_compute/h51_relG_fallback.py run 3 2,3,4 6 p050:flexion p068:flexion p084:extension p039:extension >> $f 2>&1"
+fi
+# pilot_relGrel validation set (7 windows, tmux relGrel_val, started 11-11 15:00; same log, so marker = RELG_PL DONE after the
+# 'only p039:flexion p068:extension p048:flexion' start line) and pilot_fric5rel (H51_SRC=physio_fric3, 6 windows, tmux
+# fric5rel_val, started 11-11 15:00, marker RELG_PL DONE); h51 skips windows with a done marker on re-run (foreman 11-11 15:0x)
+if ! tmux has-session -t relGrel_val 2>/dev/null && ! awk '/only p039:flexion p068:extension p048:flexion/{c=1;d=0} c&&/RELG_PL DONE/{d=1} END{exit !(c&&d)}' "$OLD/$f" 2>/dev/null && ! pgrep -u "$USER" -f "H51_DST=pilot_relGrel" >/dev/null; then
+  tmux new-session -d -s relGrel_val "cd '$OLD' && H51_DST=pilot_relGrel H51_KEYS='window_drive_mode=\"rigid_relative\"' python3 -u scripts/5_compute/h51_relG_fallback.py run 3 2,3,4 6 p039:flexion p068:extension p048:flexion p048:extension p109:flexion p109:extension p084:extension >> $f 2>&1"
+fi
+# pilot_relGrel p039/p068 re-run (4 windows, tmux relGrel_val2, started 11-13 03:07; marker RELG_PL DONE after its 'only p039:flexion
+# p039:extension' start line). pilot_fric5rel relaunched 11-13 03:09 as tmux fric5rel_val2, 3 workers GPUs 1,4,2 (foreman 11-13 03:1x)
+f=human_study/al_v2/pilot_relGrel/run_batch.log
+if ! tmux has-session -t relGrel_val2 2>/dev/null && ! awk '/only p039:flexion p039:extension p068:flexion p068:extension/{c=1;d=0} c&&/RELG_PL DONE/{d=1} END{exit !(c&&d)}' "$OLD/$f" 2>/dev/null && ! pgrep -u "$USER" -f "H51_DST=pilot_relGrel" >/dev/null; then
+  tmux new-session -d -s relGrel_val2 "cd '$OLD' && H51_DST=pilot_relGrel H51_KEYS='window_drive_mode=\"rigid_relative\"' python3 -u scripts/5_compute/h51_relG_fallback.py run 2 2,3 6 p039:flexion p039:extension p068:flexion p068:extension >> $f 2>&1"
+fi
+f=human_study/al_v2/pilot_fric5rel/run_batch.log
+if ! tmux has-session -t fric5rel_val2 2>/dev/null && [ -f "$OLD/$f" ] && ! grep -q 'RELG_PL DONE' "$OLD/$f" 2>/dev/null && ! pgrep -u "$USER" -f "H51_DST=pilot_fric5rel" >/dev/null; then
+  tmux new-session -d -s fric5rel_val2 "cd '$OLD' && H51_SRC=physio_fric3 H51_DST=pilot_fric5rel H51_KEYS='window_drive_mode=\"rigid_relative\"|restart_env={\"BIOCAGE_STICK_MEMORY\": \"1\"}|window_min_residual=0.0001' python3 -u scripts/5_compute/h51_relG_fallback.py run 3 1,4,2 6 p002:flexion p002:extension p036:flexion p100:extension p026:flexion p026:extension >> $f 2>&1"
+fi
+# physio_fric3 p102 / p149 (h18, default cbuild binary, no BIOCAGE_ env, 6 cores, GPUs 1 / 4; resume from case.dmp), started by hand
+# 11-17 03:43 in tmux fric3_p102 / fric3_p149: done when h18 wrote <case>_gpu<g>/resources.json (also on ERROR) (foreman 11-17 03:5x)
+for a in fric3_p102:1:p102 fric3_p149:4:p149; do
+  IFS=: read -r s g c <<< "$a"; d=human_study/al_v2/physio_fric3/$c
+  if ! tmux has-session -t $s 2>/dev/null && [ -f "$OLD/$d/case.feb" ] && [ ! -f "$OLD/${d}_gpu$g/resources.json" ] && ! pgrep -u "$USER" -f "h18_run_gpu_case.py $g $d( |$)" >/dev/null; then
+    tmux new-session -d -s $s "cd '$OLD' && python3 -u scripts/5_compute/h18_run_gpu_case.py $g $d 6 >> ${d}_run.log 2>&1"
+  fi
+done
+# physio_fric5r p102 route-E windows (h51 'only p102:flexion p102:extension', GPUs 1,2, tmux fric5r_p102, started 11-17 04:22; h51 skips
+# windows with a done marker; marker RELG_PL DONE after that start line) and physio_relG p149 (h50 run 1 4 6 p149, tmux relG_p149,
+# started 11-17 04:22). p149 resumes with h18 directly (h18 resumes p149_gpu4 from case.dmp, env as h50 sets it): h50's running()
+# would skip p149 for 20 min after a stop (case.log mtime) and exit; done when p149_gpu4/resources.json exists, also on ERROR (foreman 11-17 04:5x)
+f=human_study/al_v2/physio_fric5r/run_batch.log
+if ! tmux has-session -t fric5r_p102 2>/dev/null && [ -f "$OLD/$f" ] && ! awk '/only p102:flexion p102:extension/{c=1;d=0} c&&/RELG_PL DONE/{d=1} END{exit !(c&&d)}' "$OLD/$f" 2>/dev/null && ! pgrep -u "$USER" -f "H51_DST=physio_fric5r" >/dev/null; then
+  tmux new-session -d -s fric5r_p102 "cd '$OLD' && H51_SRC=physio_fric3 H51_DST=physio_fric5r H51_KEYS='window_drive_mode=\"rigid_relative\"|restart_env={\"BIOCAGE_STICK_MEMORY\": \"1\"}|window_min_residual=0.0001' python3 -u scripts/5_compute/h51_relG_fallback.py run 2 1,2 6 p102:flexion p102:extension >> $f 2>&1"
+fi
+d=human_study/al_v2/physio_relG
+if ! tmux has-session -t relG_p149 2>/dev/null && [ -d "$OLD/$d/p149_gpu4" ] && [ ! -f "$OLD/$d/p149_gpu4/resources.json" ] && ! pgrep -u "$USER" -f "h18_run_gpu_case.py 4 \S*$d/p149( |$)" >/dev/null; then
+  tmux new-session -d -s relG_p149 "cd '$OLD' && BIOCAGE_FEBIO=$OLD/third_party/FEBio/cbuild_fric/bin/febio4 BIOCAGE_STICK_MEMORY=1 python3 -u scripts/5_compute/h18_run_gpu_case.py 4 $d/p149 6 >> $d/p149_run.log 2>&1"
+fi
+# pilot_holdR wave 1 (h47, route-E hold windows, launch_wave1.sh), started 11-18 02:02 in tmux holdR_pilot: a re-run restarts the
+# window from restart.feb; h47 writes <case>/done (extension) / done_flexion at exit, also on error (foreman 11-18 02:1x)
+if ! tmux has-session -t holdR_pilot 2>/dev/null; then
+  for a in p062:1:extension p062:1:flexion p139:4:extension p139:4:flexion; do
+    IFS=: read -r p g w <<< "$a"; c="human_study/al_v2/pilot_holdR/$p"; m=done; [ $w = extension ] || m=done_$w
+    [ -f "$OLD/$c/$m" ] || pgrep -u "$USER" -f "h47_restart_pilot.py run $c [0-9]+ [0-9]+ $w" >/dev/null || \
+      { tmux new-session -d -s "holdR_${p}_$w" "cd '$OLD' && python scripts/5_compute/h47_restart_pilot.py run $c $g 5 $w >> $c.$w.resume.log 2>&1"; sleep 5; }
+  done
+fi
+# FEBio core pinner (foreman 11-10 22:5x): moves each new FEBio run once to disjoint idle cores on its GPU's NUMA node (log work/ops/febio_pin.log)
+tmux has-session -t febio_pin 2>/dev/null || pgrep -u "$USER" -f "ops/febio_pin.sh" >/dev/null || tmux new-session -d -s febio_pin "cd '$EVO' && while true; do ops/febio_pin.sh; echo \"\$(date '+%m-%d %H:%M:%S') febio_pin exit \$?, restart in 30 s\" >> work/ops/febio_pin.log; sleep 30; done"
 # report real work as Jupyter activity so the idle culler does not stop a computing server (PI-authorised 2026-10-26)
 tmux has-session -t evo_keepalive 2>/dev/null || tmux new-session -d -s evo_keepalive "cd '$EVO' && python ops/activity_keepalive.py"
 echo "$(date -Is) resume_all" >> "$EVO/work/agents/resume_all.log"

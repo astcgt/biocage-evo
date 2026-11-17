@@ -14,6 +14,7 @@ MU_REAL = 0.35      # the coefficient the real-friction check runs with (physio_
 SKIP = {'fsu', 'fsu_info', 'frame', 'cage_npz', 'test', 'physio_windows', 'restart_source', 'restart_env', 'window_min_residual', 'physio_split', 'physio_dynamic', 'physio_rot_rad', 'nonsym', 'contact_type'}
 best = json.load(open(os.path.join(E, 'results/method/split/best_by_design_merged.json')))
 cls = json.load(open(os.path.join(E, 'results/method/split/verdict_classes_merged.json')))['classes']; cls_of = {p: c for c, ps in cls.items() for p in ps}
+e7v = os.path.join(E, 'results/method/fric/e07_verdicts.json'); e07 = (json.load(open(e7v)).get('designs', {}) if os.path.exists(e7v) else {})   # PI 2026-11-18 shear_req fields
 fv = os.path.join(E, 'results/method/fric/verdicts.json'); fric = {k: v for k, v in (json.load(open(fv)) if os.path.exists(fv) else {}).items() if not k.startswith('_')}
 comp = json.load(open(os.path.join(E, 'results/method/split/comp_by_design_merged.json')))
 designs = sorted(set(best) | set(cls_of) | set(comp))   # QA 2026-11-09 不符 #4: the field must have a row for EVERY design of the merged verdict (149), not only the 94 with a tied-screening row
@@ -47,6 +48,7 @@ for p in designs:
     row['replicates'] = ((f or {}).get('replicates') or {}).get('designs')      # 2026-11-11: designs built from the identical deck (their verdicts may differ: run-to-run variability)
     row['numerical_flags'] = (f or {}).get('numerical_flags')                  # PI 2026-11-11 decision 4: replicate-not-reproduced / replicate-inconsistent (platform layer)
     row['verdict_source'] = (f or {}).get('verdict_source')                    # 'replicate pXXX ...' when the friction verdict is inherited from the computed replicate
+    e7 = e07.get(p) or {}; row['shear_req_p99_MPa'] = e7.get('shear_req_p99_MPa'); row['shear_req_max_MPa'] = e7.get('shear_req_max_MPa'); row['shear_req_window'] = e7.get('shear_req_window'); row['shear_req_complete'] = e7.get('shear_req_complete'); row['shear_check'] = e7.get('verdict')   # PI 2026-11-18: required interface strength next to mu_req
     row['friction_fallback'] = any(bool((x or {}).get('fallback')) for x in ((f or {}).get('windows') or {}).values())   # PI 2026-11-10 item 1: production-law read-out + margin
     rows.append(row)
 keys = sorted({k for prm in allprm.values() for k in prm if k not in SKIP})
