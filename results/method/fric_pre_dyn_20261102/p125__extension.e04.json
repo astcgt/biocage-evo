@@ -1,0 +1,27 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_stimulation_test_oct2026/human_study/al_v2/physio_fric/p125/w_extension",
+ "windows": {
+  "extension": {
+   "t": 4.0,
+   "target_reached": false,
+   "M_at_target": 482.541231619,
+   "mu_squeeze": 0.037140285225252666,
+   "net_push_N": 7.417977149722969,
+   "net_twist_Nmm": 0.20246571821602277,
+   "N_total": 207.4571766034541,
+   "one_face_slip_bound_mm": 0.19853871006687995,
+   "cage_translation_tied_mm": [
+    -0.04072244694514902,
+    0.0009266096298597078,
+    0.0734988268877334
+   ]
+  }
+ },
+ "provenance": {
+  "git": "3b41de29d4f047f81781146531e0b02e0c093a8b",
+  "script_dirty": false,
+  "script_sha256": "f6580ee1300fdd0024b8f55ef5c960061c3d8e445805cd2549f7b0439730e1ce",
+  "case_feb": "0dbdcd913bd6ade14736d6d3620f6125781024280142b15ff656300f22b9bccd",
+  "case_xplt": "f82e538898d6a8cba7925994c5af25db9b0cca082e88f756a2daa9839f29a247"
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "physio_rot_split2": {
+  "label": "baseline",
+  "tol": null,
+  "reached": true,
+  "t_eval": 3.934254670775841,
+  "horizontal_shear_p99": 5.7192287492787335,
+  "horizontal_shear_max": 7.947681957968164,
+  "horizontal_hard_side_shear_p99": 4.642390882029242,
+  "vertical_shear_p99": 2.9366344428177293,
+  "vertical_shear_max": 3.1481950668271903,
+  "vertical_hard_side_shear_p99": 3.2011897506032514,
+  "dev_layer_p99_pct": 0.0,
+  "dev_band_p99_pct": 0.0
+ },
+ "numconv_hz01": {
+  "label": "HZ 0.1 mm",
+  "tol": 0.05,
+  "reached": true,
+  "t_eval": 3.9382087019712415,
+  "horizontal_shear_p99": 4.8121802240826135,
+  "horizontal_shear_max": 5.940873355632371,
+  "horizontal_hard_side_shear_p99": 4.630384715523002,
+  "vertical_shear_p99": 3.4262942936453853,
+  "vertical_shear_max": 3.6996016264850518,
+  "vertical_hard_side_shear_p99": 3.4066279535288886,
+  "dev_layer_p99_pct": -15.859630117269052,
+  "dev_band_p99_pct": 16.674184695519088
+ },
+ "numconv_pen05": {
+  "label": "penalty x0.5",
+  "tol": 0.05,
+  "reached": true,
+  "t_eval": 3.94462039226866,
+  "horizontal_shear_p99": 5.664276262352948,
+  "horizontal_shear_max": 7.571457126218298,
+  "horizontal_hard_side_shear_p99": 4.625617933079571,
+  "vertical_shear_p99": 2.7730146500629274,
+  "vertical_shear_max": 3.020601900736167,
+  "vertical_hard_side_shear_p99": 3.113024384573762,
+  "dev_layer_p99_pct": -0.9608373669739212,
+  "dev_band_p99_pct": -5.5716772359928886
+ },
+ "numconv_pen20": {
+  "label": "penalty x2",
+  "tol": 0.05,
+  "reached": true,
+  "t_eval": 3.9310379311464736,
+  "horizontal_shear_p99": 5.903831224504869,
+  "horizontal_shear_max": 8.16471561828479,
+  "horizontal_hard_side_shear_p99": 4.670620729034194,
+  "vertical_shear_p99": 2.984530133206293,
+  "vertical_shear_max": 3.1831250515312695,
+  "vertical_hard_side_shear_p99": 3.2318737318941366,
+  "dev_layer_p99_pct": 3.2277512111998696,
+  "dev_band_p99_pct": 1.6309721663077426
+ },
+ "numconv_dt": {
+  "label": "dt x0.5",
+  "tol": 0.02,
+  "reached": true,
+  "t_eval": 3.9344085983340435,
+  "horizontal_shear_p99": 5.7173219244613955,
+  "horizontal_shear_max": 7.949285014025515,
+  "horizontal_hard_side_shear_p99": 4.643810017110118,
+  "vertical_shear_p99": 2.9371584554545533,
+  "vertical_shear_max": 3.1487985023229,
+  "vertical_hard_side_shear_p99": 3.2017920238761928,
+  "dev_layer_p99_pct": -0.033340593652220196,
+  "dev_band_p99_pct": 0.017843985931098594
+ }
+}
