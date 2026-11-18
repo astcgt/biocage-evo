@@ -179,7 +179,12 @@
      -0.38,
      -0.0
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.37,
+     "radial_interleave": -0.1,
+     "radial_mix": -0.63
+    }
    },
    "hp_E_soft": {
     "rho_pooled": 0.35,
@@ -194,7 +199,12 @@
      -0.26,
      0.09
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": -0.42,
+     "radial_interleave": -0.08,
+     "radial_mix": 0.09
+    }
    },
    "hp_d": {
     "rho_pooled": -0.94,
@@ -206,7 +216,8 @@
     "rho_with_height": 1.0,
     "rho_at_same_height": null,
     "ci90_at_same_height": null,
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {}
    },
    "hp_theta": {
     "rho_pooled": 0.11,
@@ -221,7 +232,12 @@
      -0.02,
      0.37
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.85,
+     "radial_interleave": -0.0,
+     "radial_mix": 0.04
+    }
    },
    "void_frac": {
     "note": "constant in this data"
@@ -236,7 +252,12 @@
     "rho_with_height": 1.0,
     "rho_at_same_height": null,
     "ci90_at_same_height": null,
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": NaN,
+     "radial_mix": NaN
+    }
    },
    "contact_area_mm2": {
     "note": "constant in this data"
@@ -254,7 +275,12 @@
      -0.09,
      0.25
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.16,
+     "radial_mix": NaN
+    }
    },
    "face_hard_frac": {
     "rho_pooled": 0.18,
@@ -269,7 +295,12 @@
      -0.03,
      0.26
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.21,
+     "radial_mix": NaN
+    }
    },
    "core_hard_frac": {
     "rho_pooled": 0.22,
@@ -284,7 +315,12 @@
      -0.21,
      0.1
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": -0.14,
+     "radial_mix": NaN
+    }
    },
    "post_hard_frac": {
     "rho_pooled": -0.15,
@@ -299,7 +335,12 @@
      -0.1,
      0.25
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.16,
+     "radial_mix": NaN
+    }
    },
    "ant_hard_frac": {
     "rho_pooled": -0.15,
@@ -314,7 +355,12 @@
      -0.1,
      0.25
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.16,
+     "radial_mix": NaN
+    }
    },
    "inner_hard_frac": {
     "rho_pooled": -0.15,
@@ -329,7 +375,12 @@
      -0.1,
      0.24
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.16,
+     "radial_mix": NaN
+    }
    },
    "outer_hard_frac": {
     "rho_pooled": -0.01,
@@ -344,7 +395,12 @@
      -0.16,
      0.23
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": NaN,
+     "radial_mix": NaN
+    }
    },
    "face_soft_thick_mm": {
     "rho_pooled": -0.41,
@@ -359,7 +415,12 @@
      -0.3,
      0.06
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": -0.28,
+     "radial_mix": -0.11
+    }
    },
    "binary_material": {
     "rho_pooled": 0.22,
@@ -371,7 +432,12 @@
     "rho_with_height": NaN,
     "rho_at_same_height": null,
     "ci90_at_same_height": null,
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": NaN,
+     "radial_mix": NaN
+    }
    },
    "log_k_axial": {
     "rho_pooled": -0.26,
@@ -386,7 +452,12 @@
      -0.61,
      -0.3
     ],
-    "rule": true
+    "rule": true,
+    "by_family_at_same_height": {
+     "axial_mix": -0.86,
+     "radial_interleave": -0.1,
+     "radial_mix": -0.64
+    }
    },
    "log_k_face": {
     "rho_pooled": -0.4,
@@ -401,7 +472,12 @@
      -0.68,
      -0.31
     ],
-    "rule": true
+    "rule": true,
+    "by_family_at_same_height": {
+     "axial_mix": -0.87,
+     "radial_interleave": -0.1,
+     "radial_mix": -0.69
+    }
    },
    "log_col_compliance": {
     "rho_pooled": -0.27,
@@ -416,7 +492,12 @@
      -0.01,
      0.4
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.86,
+     "radial_interleave": 0.08,
+     "radial_mix": -0.12
+    }
    },
    "log_contrast": {
     "rho_pooled": -0.24,
@@ -431,7 +512,12 @@
      -0.12,
      0.24
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.87,
+     "radial_interleave": -0.07,
+     "radial_mix": -0.24
+    }
    },
    "log_post_ant_stiffness": {
     "rho_pooled": -0.82,
@@ -446,7 +532,12 @@
      -0.1,
      0.45
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.84,
+     "radial_interleave": -0.14,
+     "radial_mix": 0.02
+    }
    },
    "defl_100N_over_d": {
     "rho_pooled": 0.75,
@@ -461,7 +552,12 @@
      0.24,
      0.63
     ],
-    "rule": true
+    "rule": true,
+    "by_family_at_same_height": {
+     "axial_mix": 0.84,
+     "radial_interleave": 0.05,
+     "radial_mix": 0.7
+    }
    },
    "soft_volume_frac": {
     "rho_pooled": 0.2,
@@ -476,7 +572,12 @@
      -0.12,
      0.32
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.78,
+     "radial_interleave": -0.16,
+     "radial_mix": NaN
+    }
    },
    "log_E_face": {
     "rho_pooled": -0.13,
@@ -491,7 +592,12 @@
      -0.45,
      -0.03
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": -0.88,
+     "radial_interleave": 0.14,
+     "radial_mix": -0.33
+    }
    },
    "log_k_bend": {
     "rho_pooled": -0.25,
@@ -506,7 +612,12 @@
      -0.59,
      -0.3
     ],
-    "rule": true
+    "rule": true,
+    "by_family_at_same_height": {
+     "axial_mix": -0.86,
+     "radial_interleave": -0.1,
+     "radial_mix": -0.64
+    }
    },
    "stiff_centre_x_mm": {
     "rho_pooled": 0.74,
@@ -521,7 +632,12 @@
      -0.48,
      0.04
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": -0.84,
+     "radial_interleave": -0.09,
+     "radial_mix": 0.29
+    }
    },
    "face_strain_100N": {
     "rho_pooled": 0.13,
@@ -536,7 +652,12 @@
      0.03,
      0.44
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.88,
+     "radial_interleave": -0.14,
+     "radial_mix": 0.33
+    }
    }
   },
   "uh_flex": {
@@ -553,7 +674,12 @@
      -0.23,
      0.12
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.22,
+     "radial_interleave": 0.02,
+     "radial_mix": -0.16
+    }
    },
    "hp_E_soft": {
     "rho_pooled": 0.34,
@@ -568,7 +694,12 @@
      -0.33,
      0.06
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": -0.27,
+     "radial_interleave": -0.39,
+     "radial_mix": 0.05
+    }
    },
    "hp_d": {
     "rho_pooled": -0.5,
@@ -580,7 +711,8 @@
     "rho_with_height": 1.0,
     "rho_at_same_height": null,
     "ci90_at_same_height": null,
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {}
    },
    "hp_theta": {
     "rho_pooled": 0.5,
@@ -595,7 +727,12 @@
      -0.06,
      0.41
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.69,
+     "radial_interleave": -0.13,
+     "radial_mix": 0.27
+    }
    },
    "void_frac": {
     "note": "constant in this data"
@@ -610,7 +747,12 @@
     "rho_with_height": 1.0,
     "rho_at_same_height": null,
     "ci90_at_same_height": null,
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": NaN,
+     "radial_mix": NaN
+    }
    },
    "contact_area_mm2": {
     "note": "constant in this data"
@@ -628,7 +770,12 @@
      0.05,
      0.43
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.27,
+     "radial_mix": NaN
+    }
    },
    "face_hard_frac": {
     "rho_pooled": 0.66,
@@ -643,7 +790,12 @@
      -0.01,
      0.41
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.36,
+     "radial_mix": NaN
+    }
    },
    "core_hard_frac": {
     "rho_pooled": -0.27,
@@ -658,7 +810,12 @@
      -0.09,
      0.33
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.1,
+     "radial_mix": NaN
+    }
    },
    "post_hard_frac": {
     "rho_pooled": -0.51,
@@ -673,7 +830,12 @@
      0.02,
      0.43
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.27,
+     "radial_mix": NaN
+    }
    },
    "ant_hard_frac": {
     "rho_pooled": -0.51,
@@ -688,7 +850,12 @@
      0.02,
      0.41
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.27,
+     "radial_mix": NaN
+    }
    },
    "inner_hard_frac": {
     "rho_pooled": -0.51,
@@ -703,7 +870,12 @@
      0.03,
      0.41
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.27,
+     "radial_mix": NaN
+    }
    },
    "outer_hard_frac": {
     "rho_pooled": 0.54,
@@ -718,7 +890,12 @@
      -0.01,
      0.39
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": NaN,
+     "radial_mix": NaN
+    }
    },
    "face_soft_thick_mm": {
     "rho_pooled": 0.18,
@@ -733,7 +910,12 @@
      -0.48,
      -0.02
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": -0.28,
+     "radial_mix": -0.17
+    }
    },
    "binary_material": {
     "rho_pooled": 0.58,
@@ -745,7 +927,12 @@
     "rho_with_height": NaN,
     "rho_at_same_height": null,
     "ci90_at_same_height": null,
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": NaN,
+     "radial_mix": NaN
+    }
    },
    "log_k_axial": {
     "rho_pooled": -0.6,
@@ -760,7 +947,12 @@
      -0.52,
      -0.07
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": -0.7,
+     "radial_interleave": -0.02,
+     "radial_mix": -0.23
+    }
    },
    "log_k_face": {
     "rho_pooled": -0.41,
@@ -775,7 +967,12 @@
      -0.53,
      -0.1
     ],
-    "rule": true
+    "rule": true,
+    "by_family_at_same_height": {
+     "axial_mix": -0.73,
+     "radial_interleave": -0.04,
+     "radial_mix": -0.23
+    }
    },
    "log_col_compliance": {
     "rho_pooled": 0.2,
@@ -790,7 +987,12 @@
      0.05,
      0.43
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.7,
+     "radial_interleave": 0.35,
+     "radial_mix": -0.07
+    }
    },
    "log_contrast": {
     "rho_pooled": 0.13,
@@ -805,7 +1007,12 @@
      -0.14,
      0.28
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.67,
+     "radial_interleave": 0.08,
+     "radial_mix": -0.12
+    }
    },
    "log_post_ant_stiffness": {
     "rho_pooled": -0.66,
@@ -820,7 +1027,12 @@
      -0.15,
      0.37
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.61,
+     "radial_interleave": -0.42,
+     "radial_mix": 0.13
+    }
    },
    "defl_100N_over_d": {
     "rho_pooled": 0.75,
@@ -835,7 +1047,12 @@
      0.01,
      0.47
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.7,
+     "radial_interleave": -0.15,
+     "radial_mix": 0.35
+    }
    },
    "soft_volume_frac": {
     "rho_pooled": 0.69,
@@ -850,7 +1067,12 @@
      -0.21,
      0.28
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.69,
+     "radial_interleave": -0.27,
+     "radial_mix": NaN
+    }
    },
    "log_E_face": {
     "rho_pooled": -0.25,
@@ -865,7 +1087,12 @@
      -0.31,
      0.17
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": -0.72,
+     "radial_interleave": 0.32,
+     "radial_mix": -0.14
+    }
    },
    "log_k_bend": {
     "rho_pooled": -0.58,
@@ -880,7 +1107,12 @@
      -0.48,
      -0.07
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": -0.7,
+     "radial_interleave": -0.02,
+     "radial_mix": -0.23
+    }
    },
    "stiff_centre_x_mm": {
     "rho_pooled": 0.31,
@@ -895,7 +1127,12 @@
      -0.56,
      -0.06
     ],
-    "rule": true
+    "rule": true,
+    "by_family_at_same_height": {
+     "axial_mix": -0.61,
+     "radial_interleave": -0.26,
+     "radial_mix": -0.13
+    }
    },
    "face_strain_100N": {
     "rho_pooled": 0.25,
@@ -910,7 +1147,12 @@
      -0.16,
      0.31
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.72,
+     "radial_interleave": -0.32,
+     "radial_mix": 0.14
+    }
    }
   },
   "mu_req": {
@@ -927,7 +1169,12 @@
      -0.07,
      0.4
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.04,
+     "radial_interleave": 0.35,
+     "radial_mix": 0.06
+    }
    },
    "hp_E_soft": {
     "rho_pooled": 0.32,
@@ -942,7 +1189,12 @@
      -0.55,
      0.06
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": -0.21,
+     "radial_interleave": -0.59,
+     "radial_mix": 0.07
+    }
    },
    "hp_d": {
     "rho_pooled": -0.96,
@@ -954,7 +1206,8 @@
     "rho_with_height": 1.0,
     "rho_at_same_height": null,
     "ci90_at_same_height": null,
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {}
    },
    "hp_theta": {
     "rho_pooled": -0.15,
@@ -969,7 +1222,12 @@
      -0.41,
      0.13
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.52,
+     "radial_interleave": -0.47,
+     "radial_mix": -0.09
+    }
    },
    "void_frac": {
     "note": "constant in this data"
@@ -984,7 +1242,12 @@
     "rho_with_height": 1.0,
     "rho_at_same_height": null,
     "ci90_at_same_height": null,
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": NaN,
+     "radial_mix": NaN
+    }
    },
    "contact_area_mm2": {
     "note": "constant in this data"
@@ -1002,7 +1265,12 @@
      -0.25,
      0.26
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.04,
+     "radial_mix": NaN
+    }
    },
    "face_hard_frac": {
     "rho_pooled": -0.17,
@@ -1017,7 +1285,12 @@
      -0.2,
      0.31
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.07,
+     "radial_mix": NaN
+    }
    },
    "core_hard_frac": {
     "rho_pooled": 0.46,
@@ -1032,7 +1305,12 @@
      -0.28,
      0.24
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.0,
+     "radial_mix": NaN
+    }
    },
    "post_hard_frac": {
     "rho_pooled": 0.11,
@@ -1047,7 +1325,12 @@
      -0.2,
      0.26
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.04,
+     "radial_mix": NaN
+    }
    },
    "ant_hard_frac": {
     "rho_pooled": 0.1,
@@ -1062,7 +1345,12 @@
      -0.28,
      0.23
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.04,
+     "radial_mix": NaN
+    }
    },
    "inner_hard_frac": {
     "rho_pooled": 0.1,
@@ -1077,7 +1365,12 @@
      -0.24,
      0.24
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": 0.04,
+     "radial_mix": NaN
+    }
    },
    "outer_hard_frac": {
     "rho_pooled": -0.3,
@@ -1092,7 +1385,12 @@
      -0.2,
      0.18
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": NaN,
+     "radial_mix": NaN
+    }
    },
    "face_soft_thick_mm": {
     "rho_pooled": -0.65,
@@ -1107,7 +1405,12 @@
      -0.27,
      0.19
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": -0.08,
+     "radial_mix": -0.21
+    }
    },
    "binary_material": {
     "rho_pooled": 0.08,
@@ -1119,7 +1422,12 @@
     "rho_with_height": NaN,
     "rho_at_same_height": null,
     "ci90_at_same_height": null,
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": NaN,
+     "radial_interleave": NaN,
+     "radial_mix": NaN
+    }
    },
    "log_k_axial": {
     "rho_pooled": -0.11,
@@ -1134,7 +1442,12 @@
      -0.18,
      0.29
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": -0.65,
+     "radial_interleave": 0.31,
+     "radial_mix": 0.11
+    }
    },
    "log_k_face": {
     "rho_pooled": -0.37,
@@ -1149,7 +1462,12 @@
      -0.18,
      0.26
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": -0.55,
+     "radial_interleave": 0.32,
+     "radial_mix": 0.05
+    }
    },
    "log_col_compliance": {
     "rho_pooled": -0.5,
@@ -1164,7 +1482,12 @@
      -0.15,
      0.56
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.65,
+     "radial_interleave": 0.66,
+     "radial_mix": -0.27
+    }
    },
    "log_contrast": {
     "rho_pooled": -0.4,
@@ -1179,7 +1502,12 @@
      -0.11,
      0.53
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.54,
+     "radial_interleave": 0.42,
+     "radial_mix": -0.13
+    }
    },
    "log_post_ant_stiffness": {
     "rho_pooled": -0.6,
@@ -1194,7 +1522,12 @@
      -0.18,
      0.4
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.81,
+     "radial_interleave": -0.71,
+     "radial_mix": 0.68
+    }
    },
    "defl_100N_over_d": {
     "rho_pooled": 0.63,
@@ -1209,7 +1542,12 @@
      -0.28,
      0.21
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.65,
+     "radial_interleave": -0.47,
+     "radial_mix": 0.11
+    }
    },
    "soft_volume_frac": {
     "rho_pooled": -0.1,
@@ -1224,7 +1562,12 @@
      -0.18,
      0.38
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.57,
+     "radial_interleave": -0.04,
+     "radial_mix": NaN
+    }
    },
    "log_E_face": {
     "rho_pooled": -0.1,
@@ -1239,7 +1582,12 @@
      -0.21,
      0.24
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": -0.54,
+     "radial_interleave": 0.25,
+     "radial_mix": 0.01
+    }
    },
    "log_k_bend": {
     "rho_pooled": -0.11,
@@ -1254,7 +1602,12 @@
      -0.17,
      0.29
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": -0.65,
+     "radial_interleave": 0.31,
+     "radial_mix": 0.11
+    }
    },
    "stiff_centre_x_mm": {
     "rho_pooled": 0.64,
@@ -1269,7 +1622,12 @@
      -0.47,
      0.08
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": -0.81,
+     "radial_interleave": -0.61,
+     "radial_mix": 0.39
+    }
    },
    "face_strain_100N": {
     "rho_pooled": 0.1,
@@ -1284,7 +1642,12 @@
      -0.27,
      0.27
     ],
-    "rule": false
+    "rule": false,
+    "by_family_at_same_height": {
+     "axial_mix": 0.54,
+     "radial_interleave": -0.25,
+     "radial_mix": -0.01
+    }
    }
   }
  },

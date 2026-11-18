@@ -33,6 +33,7 @@ ZH = dict(hp_E_hard='硬料模數', hp_E_soft='軟料模數', hp_d='撐高量（
           face_soft_thick_mm='接觸面軟層厚度', binary_material='硬軟分明（交錯列印）', log_k_axial='整體軸向剛度', log_k_face='接觸面附近剛度', log_col_compliance='柱體順應性（越大越軟）',
           log_contrast='硬軟模數對比', log_post_ant_stiffness='後方對前方剛度比', defl_100N_over_d='100 牛頓下高度損失佔撐高量的比例', soft_volume_frac='軟料體積比例', log_E_face='接觸面模數',
           log_k_bend='抗彎剛度', stiff_centre_x_mm='剛度中心的前後位置', face_strain_100N='100 牛頓下接觸面應變')
+FZH = dict(radial_interleave='徑向交錯', radial_mix='徑向混合（已排除的類別）', axial_interleave='軸向交錯', axial_mix='軸向混合', both_interleave='雙向交錯', both_mix='雙向混合')
 TZH = dict(post_ext='後伸的後方位移', uh_flex='屈曲的位移', mu_req='所需摩擦係數')
 
 
@@ -97,21 +98,24 @@ def main():
             lo, hi = (np.percentile(bs, [5, 95]) if bs else (np.nan, np.nan)); plo, phi_ = (np.percentile(bp, [5, 95]) if bp else (np.nan, np.nan))
             cor[c] = dict(rho_pooled=round(float(r_p), 2), rho_within_family=round(r_w, 2), ci90=[round(float(lo), 2), round(float(hi), 2)], rho_with_height=round(r_d, 2),
                           rho_at_same_height=None if np.isnan(r_part) else round(r_part, 2), ci90_at_same_height=None if np.isnan(r_part) else [round(float(plo), 2), round(float(phi_), 2)],
-                          rule=bool(not np.isnan(r_part) and abs(r_part) >= 0.3 and (plo > 0 or phi_ < 0)))
+                          rule=bool(not np.isnan(r_part) and abs(r_part) >= 0.3 and (plo > 0 or phi_ < 0)),
+                          by_family_at_same_height={f_: round(partial(vw, yw, np.where(fam == f_)[0]), 2) for f_ in sorted(set(fam)) if (fam == f_).sum() >= 8 and c != 'hp_d'})
         out['correlations'][name] = cor; out.setdefault('n', {})[name] = dict(rows=len(y), groups=len(ug), families={f: int((fam == f).sum()) for f in sorted(set(fam))})
     os.makedirs(os.path.join(S.EVO, 'results/principles'), exist_ok=True)
     json.dump(out, open(os.path.join(S.EVO, f'results/principles/features_{date}.json'), 'w'), indent=1, ensure_ascii=False)
     # ---- generated plain-language page
     L = [f'# 設計原則（自動產生 {date}；不要手改）', '', '由 `ops/principles.py` 從模擬結果算出。**這些是相關性，不是因果**：每一條都是下一輪要用模擬去檢驗的假設。', '',
          '**撐高量**＝支架比原本椎間盤空間高出多少。它是既有設計裡影響最大的因素（越高，被周圍組織夾得越緊）。PI 2026-11-18 決定：設計要在**同一撐高量**下比較，',
-         '所以下表只列「把撐高量的影響扣掉之後」仍然成立的規則（門檻事前宣告：同一家族、同一撐高量下的等級相關絕對值 ≥ 0.3，且 90 % 區間不跨 0）。', '']
+         '所以下表只列「把撐高量的影響扣掉之後」仍然成立的規則。門檻（等級相關絕對值 ≥ 0.3、90 % 區間不跨 0）是事前宣告的；「扣掉撐高量」這一步是看過第一次結果後才加的修正（稽核 D-20261118-43）。',
+         '**合併的數字可能只來自部分家族**，請看「各家族分開看」一欄：一條規則在某個家族接近 0，就表示它在那個家族不成立。', '']
     for name, cor in out['correlations'].items():
         n = out['n'][name]; rules = sorted([(c, d) for c, d in cor.items() if d.get('rule')], key=lambda a: -abs(a[1]['rho_at_same_height']))
         L += [f'## {TZH[name]}（{n["rows"]} 筆、{n["groups"]} 組設計）', '', f"- 撐高量本身：家族內相關 {cor['hp_d']['rho_within_family']:+.2f}（越高，{TZH[name]}越小）。", '',
-              '| 特徵 | 同一撐高量下的相關 | 90 % 區間 | 白話 |', '|---|---|---|---|']
+              '| 特徵 | 同一撐高量下的相關（各家族合併） | 90 % 區間 | 各家族分開看 | 白話 |', '|---|---|---|---|---|']
         for c, d in rules:
-            L.append(f"| {ZH.get(c, c)} | {d['rho_at_same_height']:+.2f} | {d['ci90_at_same_height'][0]:+.2f} ～ {d['ci90_at_same_height'][1]:+.2f} | 同一撐高量下，{ZH.get(c, c)}越大，{TZH[name]}越{'大' if d['rho_at_same_height'] > 0 else '小'} |")
-        if not rules: L.append('| （扣掉撐高量後，沒有特徵達到門檻） | | | |')
+            bf = '、'.join(f'{FZH.get(k, k)} {v:+.2f}' for k, v in d['by_family_at_same_height'].items() if v == v)
+            L.append(f"| {ZH.get(c, c)} | {d['rho_at_same_height']:+.2f} | {d['ci90_at_same_height'][0]:+.2f} ～ {d['ci90_at_same_height'][1]:+.2f} | {bf} | 同一撐高量下，{ZH.get(c, c)}越大，{TZH[name]}越{'大' if d['rho_at_same_height'] > 0 else '小'} |")
+        if not rules: L.append('| （扣掉撐高量後，沒有特徵達到門檻） | | | | |')
         gone = [ZH.get(c, c) for c, d in cor.items() if not d.get('rule') and d.get('rho_at_same_height') is not None and abs(d.get('rho_within_family') or 0) >= 0.3]
         L += ['', '原本看起來有關、扣掉撐高量後不成立的特徵：' + ('、'.join(gone) if gone else '無') + '。', '']
     L += ['## 新特徵能不能幫估算器預測「沒看過的家族」', '', '事前宣告的留用規則：整個家族留出時誤差至少降 10 %，且一般驗證誤差不升超過 5 %。只有 4–5 個家族可留出，證據偏弱。', '',
