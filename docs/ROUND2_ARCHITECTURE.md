@@ -242,6 +242,9 @@ Built and tested without the platform: Geometry Compiler + grammar reference (B1
 ## PI decisions 2026-11-18 12:21 on the cage height [rev 5]
 The gene d is the cage's height above the natural disc space (撐高量), not the insertion step. Designs are compared at the same height: every design of every arm runs at the reference height 0.8 mm (verdict; first set to 1.0 mm, changed the same day after the PI delegated the choice - evidence results/round2/settings_optimisation_2026-11-18.json) and the loosened height 0.5 mm (fixation without relying on the tissue squeeze force). d is no longer proposed by any arm (this replaces 'd' in the feature list of A1 for proposals; it stays a model input). A5 as implemented: ops/propose_round.py docstring; pre-registration: results/round2/prereg.json + prereg_amendment_2026-11-18a.json. Rules of part C are listed only when they survive at the same height.
 
+## Batch per round as of 2026-11-18 12:47 [rev 6]
+A 10 runs (4 new designs x 2 heights + 2 replicates), B <= 7 designs x 2 heights + 7 ablation twins (tied, loosened height), R 7 designs x 2 heights, audit lane 1 design x 2 heights; 14 naive ideas per round. This replaces every earlier batch figure in this document (20 / 5 / 5 and '10 seed ideas'). Pre-registration: results/round2/prereg.json + amendments a, b, c.
+
 ## H. Timeline [rev 2]
 Week 1: C (incl. C6 descriptors) + A1-A4 grouped validation + Design Grammar v0 and Geometry Compiler with its acceptance test
 (no GPU except the 2 acceptance designs). Week 2: round 1 = A 20 (4 exploration + 2 replicates inside) + B 5 (+ 5 ablation

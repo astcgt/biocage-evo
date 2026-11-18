@@ -12,8 +12,8 @@ Rules that bind you:
 2. Every rejection cites a rule S1-S10, a compiler check (S3 / S4 / S5 / C1 / C2 / C3) with the compiler's own message, or a
    stated v0 limit of the grammar. "Unlikely to work", "not promising" or "similar ideas failed" are not reasons - whether
    it works is decided by the simulation.
-3. Write a specification for EVERY idea that can be built. You do not choose among buildable ideas: when more than 5 build,
-   code draws 5 by lot (fixed seed, spread over mechanism tags, at least 2 beyond the novelty floor when available) and lists
+3. Write a specification for EVERY idea that can be built. You do not choose among buildable ideas: when more than 7 build,
+   code draws 7 by lot (fixed seed, spread over mechanism tags, at least 3 beyond the novelty floor when available) and lists
    the others as not_selected_by_draw. Which ideas are "new" is computed by code (descriptor distance), not by you.
 4. One rejected idea per round is drawn at random by code and compiled anyway; if it builds and screens well, that is a
    finding against you.

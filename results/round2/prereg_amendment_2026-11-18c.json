@@ -1,0 +1,48 @@
+{
+ "amends": [
+  "results/round2/prereg.json",
+  "results/round2/prereg_amendment_2026-11-18a.json",
+  "results/round2/prereg_amendment_2026-11-18b.json"
+ ],
+ "amends_sha256": [
+  "4359a4f751d394aab7cb00af0f38aae3d000cabfc32f598e4a12a4bd3a7ae432",
+  "b4bf9957138a685a38f295c4acb95eeda318aaa84d40ae6a12a8ca3e2e4dbeda",
+  "075ab977ecf418abbb270aea8bff4060fbaa7be1fa78c560eff4191be01c6da0"
+ ],
+ "dated": "2026-11-18 12:47",
+ "status": "added before any round-2 simulation; earlier files unchanged",
+ "reason": "PI 2026-11-18 「G7：照建議」: the 10 runs freed in arm A go to arms B and R",
+ "budgets": {
+  "B": "<= 7 designs x 2 heights + 7 ablation twins (tied screening at the loosened height)",
+  "R": "7 designs x 2 heights",
+  "A": "10 runs (amendment b)",
+  "audit_lane": "1 design x 2 heights",
+  "friction_cases_per_round": "about 40 (A 10 + B 14 + R 14 + audit 2) plus 7 tied twin runs"
+ },
+ "comparison": {
+  "primary": "B vs R on passing-novel designs per design proposed, 7 vs 7 per round",
+  "detectable_gap_one_sided_fisher_5pct": {
+   "7 per arm": [
+    "4 of 7 vs 0 of 7",
+    "6 of 7 vs 1 of 7",
+    "7 of 7 vs 2 of 7"
+   ],
+   "14 per arm": [
+    "4 of 14 vs 0 of 14",
+    "6 of 14 vs 1 of 14",
+    "8 of 14 vs 2 of 14"
+   ],
+   "21 per arm": [
+    "5 of 21 vs 0 of 21",
+    "6 of 21 vs 1 of 21",
+    "8 of 21 vs 2 of 21"
+   ]
+  },
+  "claim_rule": "no claim of an advantage before 14 designs per arm (2 rounds); round 1 is reported descriptively (replaces \"15 per arm\")"
+ },
+ "ideation": {
+  "naive_ideas_per_round": 14,
+  "note": "integrator choice: 10 raw ideas (PI 2026-11-18 first message) cannot reliably yield 7 buildable designs; 14 separate naive processes, still one idea each; cost is tokens only",
+  "draw": "when more than 7 specifications build, code draws 7 by lot (fixed seed, spread over mechanism tags, at least 3 beyond the novelty floor when available)"
+ }
+}
