@@ -1,0 +1,97 @@
+{
+ "title": "Round 2 pre-registration: does the AI ideation arm add effective exploration?",
+ "frozen": "2026-11-18 11:53",
+ "status": "frozen before any round-2 simulation; a change needs a new dated entry, never an edit",
+ "arms": {
+  "A": "estimator-guided search inside the existing design-A families: 20 per round = 14 steered + 4 pure exploration + 2 replicates (ops/propose_round.py)",
+  "B": "ideation chain naive -> tagger -> senior -> mentor -> Geometry Compiler: <= 5 designs per round, each with an ablation twin (tied screening only)",
+  "R": "control: 5 random draws from the Design Grammar per round, no language model (ops/grammar_random.py; draws the compiler refuses are discarded and counted)",
+  "audit_lane": "1 mentor-rejected idea per round, drawn by code, compiled with minimal repair"
+ },
+ "excluded_from_comparison": [
+  "pre-round gap-fill designs",
+  "replicates",
+  "ablation twins",
+  "audit-lane design"
+ ],
+ "baseline_archive": {
+  "designs": 149,
+  "meshes": 101,
+  "files": {
+   "results/method/mu_req_field.csv": "793a31dc59300411ae83900dc4035efc522c4c6290b73f0d124ea83cb556d979",
+   "results/method/fric/verdicts.json": "3b59089ce95bc44fbb85a92dc3a7f0fd462ae0d6a46897fa1efb7eb706a6ec34"
+  }
+ },
+ "distance": {
+  "space": "12 geometric descriptors of ops/descriptors.py (NAMES), each divided by its standard deviation over the baseline archive meshes (constant ones left unscaled)",
+  "descriptor_mean": {
+   "void_frac": 0.60841,
+   "mean_height_mm": 4.91228,
+   "contact_area_mm2": 33.90178,
+   "hard_frac": 0.574,
+   "face_hard_frac": 0.29842,
+   "core_hard_frac": 0.66427,
+   "post_hard_frac": 0.5918,
+   "ant_hard_frac": 0.56904,
+   "inner_hard_frac": 0.32682,
+   "outer_hard_frac": 0.82548,
+   "face_soft_thick_mm": 1.26368,
+   "binary_material": 0.54455
+  },
+  "descriptor_sd": {
+   "void_frac": 0.02043,
+   "mean_height_mm": 0.47411,
+   "contact_area_mm2": 6.33759,
+   "hard_frac": 0.2321,
+   "face_hard_frac": 0.21249,
+   "core_hard_frac": 0.27629,
+   "post_hard_frac": 0.23088,
+   "ant_hard_frac": 0.23102,
+   "inner_hard_frac": 0.3877,
+   "outer_hard_frac": 0.2189,
+   "face_soft_thick_mm": 0.79144,
+   "binary_material": 0.49801
+  },
+  "novelty_floor": 0.9074,
+  "floor_rule": "largest nearest-neighbour distance between two meshes of the baseline archive: a design is NEW when it is farther from every archive mesh, and from every earlier design of the same round, than any archive design is from its neighbour",
+  "random_grammar_reference": "20 random grammar draws (seed 1, d 1.0): 20 beyond the floor, median distance 6.39",
+  "note": "every one of 20 random grammar draws lies beyond the floor (distances 2.3-11.7 against 0.907): the archive is tightly clustered, so for grammar designs the rule mainly guards against near-copies inside one round; this is why the primary metric also requires PASS"
+ },
+ "definitions": {
+  "valid": "passes the compiler L0 checks, builds (h14 + h24 preflight), both friction windows reach a usable read-out",
+  "valid_novel": "valid AND new (distance rule)",
+  "passing": "final class PASS under the verdict chain in force when the round is read out (the chain version is recorded with the result)"
+ },
+ "metrics": [
+  "build success rate (compiled and preflight-passed / proposed)",
+  "PRIMARY: passing-novel designs per design proposed (new by the distance rule AND final class PASS); also reported per GPU-hour",
+  "valid-novel designs per design proposed (secondary)",
+  "new archive cells (void fraction x mean hard fraction x shape class)",
+  "hypervolume gain on (fixation margin, void fraction)",
+  "mechanism tags with >= 1 passing design",
+  "estimator learning gain: change of the leave-one-group-out RMSE of post_ext after adding the arm's data (same model specification)",
+  "experiment cards: confirmed / refuted / inconclusive"
+ ],
+ "comparisons": {
+  "primary": "B vs R on passing-novel designs per design proposed (equal counts, 5 vs 5 per round)",
+  "secondary": "B vs A per GPU-hour (A runs 20)",
+  "test": "one-sided Fisher exact test, 5 %",
+  "detectable_gap": {
+   "5 per arm": "4 of 5 vs 0 of 5",
+   "15 per arm (3 rounds)": "8 of 15 vs 2 of 15, or 6 vs 1",
+   "25 per arm": "8 of 25 vs 2 of 25"
+  },
+  "claim_rule": "no claim of an advantage before 15 designs per arm; round 1 is reported descriptively"
+ },
+ "experiment_cards": {
+  "primary_readout": "mu_req from tied screening, design vs its ablation twin, both through the same screening pass",
+  "noise_floor_mu_req": 0.006,
+  "noise_basis": "largest difference between screening pass types seen in the archive (0.003-0.006); provisional",
+  "outcomes": "confirmed: difference in the predicted direction beyond the floor; refuted: beyond the floor in the other direction; inconclusive: inside the floor or a run not computable"
+ },
+ "weights": {
+  "fixation": 0.8,
+  "space": 0.2
+ },
+ "estimator_validation": "results/surrogate/validation_2026-11-18.json"
+}

@@ -1,0 +1,93 @@
+{
+ "note": "POST-HOC 2026-11-18: does the estimator hold for a material set it has not seen? groups = (E_hard, E_soft, theta) instead of design",
+ "results": {
+  "post_ext": {
+   "leave-one-design-out (run 3 grouping)": {
+    "n_groups": 59,
+    "coverage": 0.843,
+    "coverage_by_group": 0.873,
+    "conformal": 0.914,
+    "conformal_by_group": 0.924,
+    "width_conformal": 0.0984,
+    "mae": 0.019,
+    "rmse": 0.0338,
+    "rmse_baseline": 0.1004,
+    "skill": 0.664,
+    "under": []
+   },
+   "leave-one-MATERIAL-SET-out": {
+    "n_groups": 23,
+    "coverage": 0.857,
+    "coverage_by_group": 0.916,
+    "conformal": 0.914,
+    "conformal_by_group": 0.942,
+    "width_conformal": 0.1004,
+    "mae": 0.0221,
+    "rmse": 0.0337,
+    "rmse_baseline": 0.1077,
+    "skill": 0.687,
+    "under": []
+   }
+  },
+  "uh_flex": {
+   "leave-one-design-out (run 3 grouping)": {
+    "n_groups": 58,
+    "coverage": 0.868,
+    "coverage_by_group": 0.845,
+    "conformal": 0.912,
+    "conformal_by_group": 0.897,
+    "width_conformal": 0.2492,
+    "mae": 0.051,
+    "rmse": 0.073,
+    "rmse_baseline": 0.1913,
+    "skill": 0.619,
+    "under": [
+     "radial_interleave"
+    ]
+   },
+   "leave-one-MATERIAL-SET-out": {
+    "n_groups": 23,
+    "coverage": 0.838,
+    "coverage_by_group": 0.86,
+    "conformal": 0.897,
+    "conformal_by_group": 0.934,
+    "width_conformal": 0.3461,
+    "mae": 0.0691,
+    "rmse": 0.0933,
+    "rmse_baseline": 0.2218,
+    "skill": 0.579,
+    "under": []
+   }
+  },
+  "mu_req (with pass type)": {
+   "leave-one-design-out (run 3 grouping)": {
+    "n_groups": 64,
+    "coverage": 0.696,
+    "coverage_by_group": 0.664,
+    "conformal": 0.911,
+    "conformal_by_group": 0.898,
+    "width_conformal": 0.0098,
+    "mae": 0.0024,
+    "rmse": 0.0039,
+    "rmse_baseline": 0.0204,
+    "skill": 0.81,
+    "under": [
+     "axial_interleave"
+    ]
+   },
+   "leave-one-MATERIAL-SET-out": {
+    "n_groups": 24,
+    "coverage": 0.709,
+    "coverage_by_group": 0.725,
+    "conformal": 0.911,
+    "conformal_by_group": 0.903,
+    "width_conformal": 0.0102,
+    "mae": 0.0027,
+    "rmse": 0.0042,
+    "rmse_baseline": 0.0222,
+    "skill": 0.813,
+    "under": []
+   }
+  }
+ }
+}

@@ -236,6 +236,9 @@ constraint in the grammar checks and the naive task text); batch = A 20 + B 5
 (+ 5 twins) + R 5 + 1 audit; mentor may leave the families (>= 2 of 5 beyond the distance floor); control arm R approved;
 Hugging Face uploads under the PI's identity only, no AI / Claude trace in contributors, commit messages or the card.
 
+## State 2026-11-18 11:55 [rev 4]
+Built and tested without the platform: Geometry Compiler + grammar reference (B12 / B13; relabels the existing lattice), proposal program (A5, dry run), principle extraction (C; composites not adopted by the declared rule), pre-registration and control-arm sampler (E), role prompts (B8-B11), h37 R21 / R23. Waiting for the platform: any simulation of a new design (release shock, new-design runner). Results and findings: docs/DECISIONS.md 2026-11-18 11:55.
+
 ## H. Timeline [rev 2]
 Week 1: C (incl. C6 descriptors) + A1-A4 grouped validation + Design Grammar v0 and Geometry Compiler with its acceptance test
 (no GPU except the 2 acceptance designs). Week 2: round 1 = A 20 (4 exploration + 2 replicates inside) + B 5 (+ 5 ablation
