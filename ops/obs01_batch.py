@@ -3,6 +3,8 @@
 'source' dirs) and the real-friction winners (results/method/fric/verdicts.json windows: set + case_dir) - and summarise.
 Read-out only: nothing here changes a verdict or a class (PI 2026-11-03 item 7: e06 secondary). Windows whose xplt is gone
 (retired to the NAS or deleted) are listed as 'no_xplt'.
+Friction windows judged at the intact ROM are read at that state (t19_at / e06.at_time); windows judged at 1.5 N m use e04's
+target bracket, which is that state.
 usage: python obs01_batch.py [workers]      -> results/method/obs01/<config>__<design>__<window>.{e04,e06}.json + obs01_summary.json"""
 import os, sys, json, glob, subprocess, time
 from concurrent.futures import ThreadPoolExecutor
@@ -16,17 +18,45 @@ for p, d in tied.items():
             src = r['source']; cd = R + src if not src.startswith('/') else src
             if not os.path.isdir(cd + '/w_' + wn) and os.path.isdir(cd): pass
             elif os.path.isdir(cd + '/w_' + wn): cd = cd + '/w_' + wn
-            jobs.append(('TIED', p, wn, cd))
+            jobs.append(('TIED', p, wn, cd, None, None))
 fric = json.load(open(os.path.join(E, 'results/method/fric/verdicts.json')))
 for p, d in fric.items():
     if not isinstance(d, dict) or 'windows' not in d: continue
     for wn, r in d['windows'].items():
         if r.get('placeholder'): continue
-        jobs.append(('FRIC', p, wn, R + f"{r['set']}/{r['case_dir']}/w_{wn}"))
+        jobs.append(('FRIC', p, wn, R + f"{r['set']}/{r['case_dir']}/w_{wn}", r.get('eval_point'), r.get('t_rom')))   # 2026-11-18 13:0x: read at the verdict's evaluation point
+
+sys.path.insert(0, os.path.join(E, 'methods')); sys.path.insert(0, os.path.join(E, 'common'))
+def rom_time(cd, wn):
+    """time at which |C3 rotation| reaches the intact segment's ROM (same rule as fric_compare.at_intact_rom)."""
+    import e03_mu_req as e3, e04_dislocation as e4, numpy as np
+    INTACT = dict(flexion=0.1009, extension=0.1286, LB_right=0.0713, LB_left=0.0717, AR_left=0.0905, AR_right=0.0907)
+    c3 = e4.read_log(os.path.join(cd, 'C3pot.txt')); sch = json.load(open(os.path.join(cd, 'physio_schedule.json'))); w = sch['windows'][0]
+    pts = []
+    for t in sorted(c3):
+        if t < w['t0'] - 1e-6: continue
+        pts.append((float(np.linalg.norm(c3[t][2][3:6])), t))
+    R0 = INTACT[wn]; k = next((i for i, (th, t) in enumerate(pts) if th >= R0), None)
+    if k is None: return None
+    a, b = (pts[k - 1], pts[k]) if k > 0 else (pts[k], pts[k]); fr = (R0 - a[0]) / (b[0] - a[0]) if b[0] > a[0] else 0
+    return a[1] + fr * (b[1] - a[1])
 
 def one(job):
-    cfg, p, wn, cd = job; tag = f'{cfg}__{p}__{wn}'; res = dict(config=cfg, design=p, window=wn, case_dir=os.path.relpath(cd, R))
+    cfg, p, wn, cd, evp, t_rom = job; tag = f'{cfg}__{p}__{wn}'; res = dict(config=cfg, design=p, window=wn, case_dir=os.path.relpath(cd, R), eval_point=evp)
     if not os.path.exists(os.path.join(cd, 'case.xplt')): res['status'] = 'no_xplt'; return res
+    if cfg == 'FRIC' and evp in ('ROM', 'rom'):                     # friction windows judged at the intact ROM: read T19 / e06 there, not at e04's drive-end bracket
+        import e04_dislocation as e4, e06_hard_stress as e6
+        try:
+            t = rom_time(cd, wn); res['t_rom'] = t
+            if t is None: res['status'] = 'rom_not_reached'; return res
+            o4 = os.path.join(OUT, f'{tag}.t19rom.json'); o6 = os.path.join(OUT, f'{tag}.e06rom.json')
+            if not os.path.exists(o4): json.dump(e4.t19_at(cd, t), open(o4, 'w'), indent=1)
+            if not os.path.exists(o6): json.dump(dict(e6.at_time(cd, t), **{k: v for k, v in e6.main(cd).items() if k in ('limit_MPa', 'sustained', 'hard_phi')}), open(o6, 'w'), indent=1)
+            w = json.load(open(o4)); res['e04'] = {k: w[k] for k in w if k.startswith(('t19', 'posterior', 'hard_')) or k == 'cage_translation_tied_mm'}
+            j = json.load(open(o6)); res['e06'] = dict(limit_MPa=j['limit_MPa'], sustained_p99=j['sustained']['p99'] if j['sustained'] else None, sustained_max=j['sustained']['max'] if j['sustained'] else None,
+                                                      peak_p99=j['p99'], peak_max=j['max'], within_sustained=(j['sustained']['p99'] <= j['limit_MPa']) if j['sustained'] else None, at='ROM')
+            res['status'] = 'ok'; return res
+        except Exception as ex: res['status'] = 'error'; res['error'] = str(ex)[:200]; return res
     for m, s in (('e04', 'methods/e04_dislocation.py'), ('e06', 'methods/e06_hard_stress.py')):
         o = os.path.join(OUT, f'{tag}.{m}.json')
         if not os.path.exists(o):

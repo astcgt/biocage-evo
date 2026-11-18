@@ -1,0 +1,33 @@
+{
+ "cage_translation_tied_mm": [
+  -0.39197564349625763,
+  0.0007845881879898451,
+  0.38136256939450053
+ ],
+ "t19_available": true,
+ "posterior_rim_n": 3175.0,
+ "posterior_rim_translation_mm": [
+  -0.30095594478127013,
+  -0.0008595253860012562,
+  -0.09194381404439184
+ ],
+ "posterior_rim_posterior_mm": 0.30095594478127013,
+ "posterior_most_node_posterior_mm": 0.6964533122565664,
+ "posterior_rim_minus_mean_mm": 0.09103455515911991,
+ "hard_fit_n": 13400.0,
+ "hard_phi": 1.0,
+ "hard_fit_translation_mm": [
+  -0.38623518784454547,
+  0.0009260701977499399,
+  0.3851754547030818
+ ],
+ "hard_fit_rotation_deg": 6.823013543280486,
+ "hard_fit_rotation_z_deg": 0.027434628568830624,
+ "hard_fit_rms_mm": 0.03537667638171948,
+ "hard_fit_minus_mean_mm": 0.005742200911852255,
+ "hard_local_max_inplane_mm": 0.08081422213646403,
+ "t_eval": 3.885208129951351,
+ "t_a": 3.883852005004883,
+ "t_b": 3.8971633911132812,
+ "interpolated": true
+}

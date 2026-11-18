@@ -66,6 +66,21 @@ def main(cd, out=None):
     return res
 
 
+def at_time(cd, t):
+    """hard-phase p99 / max von Mises at time t (interpolated between the bracketing logged states) + the sustained value."""
+    import xplt
+    root = ET.parse(os.path.join(cd, 'case.feb')).getroot(); blocks, pmax = hard_blocks(root)
+    states = xplt.read(os.path.join(cd, 'case.xplt'))['states']
+    def meas(st):
+        S = st['elem']['stress']; vm = np.concatenate([von_mises(S[b]) for b in blocks if b in S]); return float(np.percentile(vm, Q)), float(vm.max())
+    ts = [s_['time'] for s_ in states]; i = int(np.searchsorted(ts, t))
+    if i == 0 or t > ts[-1] + 1e-6: p99, mx = meas(states[min(i, len(states) - 1)]); f = None
+    else:
+        a, b = states[i - 1], states[i]; f = (t - a['time']) / (b['time'] - a['time']) if b['time'] > a['time'] else 0.0
+        (pa, ma), (pb, mb) = meas(a), meas(b); p99, mx = pa + f * (pb - pa), ma + f * (mb - ma)
+    return dict(t_eval=t, p99=p99, max=mx, interpolated=f is not None)
+
+
 def selftest():
     """uniaxial sigma_xx = 2 -> von Mises 2; pure shear tau_xy = 1 -> sqrt(3); hydrostatic -> 0; p99 of 100 elements with one outlier."""
     vm = von_mises([[2, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0], [-3, -3, -3, 0, 0, 0]]); ok = np.allclose(vm, [2, np.sqrt(3), 0])

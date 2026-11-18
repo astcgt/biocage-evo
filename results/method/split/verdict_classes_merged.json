@@ -324,19 +324,19 @@
    "verdict": "grey"
   },
   {
-   "design": "p060",
+   "design": "p072",
    "shear_req_p99_MPa": 2.382,
    "shear_req_max_MPa": 3.808,
    "complete": true,
-   "source": "pooled from p072",
+   "source": "own",
    "flag": "within",
    "cls": "GREY/friction-posterior-0.45-0.55",
    "verdict": "grey"
   },
   {
-   "design": "p072",
-   "shear_req_p99_MPa": 2.382,
-   "shear_req_max_MPa": 3.808,
+   "design": "p060",
+   "shear_req_p99_MPa": 2.394,
+   "shear_req_max_MPa": 3.817,
    "complete": true,
    "source": "own",
    "flag": "within",

@@ -1073,7 +1073,7 @@
   "source": "physio_rot_split2/p060_gpu3/w_AR_right",
   "verdict": "grey",
   "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p060: extension@ROM post 0.475 in grey zone [0.45, 0.55]; p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]",
   "duplicates": [
    "p072"
   ],
@@ -1088,6 +1088,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [
+     "p060: extension@ROM post 0.475 in grey zone [0.45, 0.55]",
      "p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
@@ -1105,7 +1106,7 @@
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
      "extension": 0.488,
-     "flexion": 2.382
+     "flexion": 2.394
     }
    },
    "design_rule": {
@@ -1118,11 +1119,11 @@
    "verdict": "within",
    "threshold_MPa": 3.0,
    "provisional": true,
-   "shear_req_p99_MPa": 2.382,
-   "shear_req_max_MPa": 3.808,
+   "shear_req_p99_MPa": 2.394,
+   "shear_req_max_MPa": 3.817,
    "shear_req_window": "flexion",
    "shear_req_complete": true,
-   "shear_req_source": "pooled from p072",
+   "shear_req_source": "own",
    "reasons": [],
    "rule": "PI 2026-11-18: flag + ranking by shear_req; gate after the bond-strength test"
   },
@@ -1130,16 +1131,25 @@
    "verdict": "grey",
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
+    "p060: extension@ROM post 0.475 in grey zone [0.45, 0.55]",
     "p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
+   "AR_left": "production",
+   "AR_right": "production",
+   "LB_left": "production",
+   "LB_right": "production",
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
   },
   "window_drive": {
+   "AR_left": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "AR_right": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "LB_left": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "LB_right": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
    "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
    "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }
@@ -6433,7 +6443,7 @@
   "source": "physio_rot_split2/p060_gpu3/w_AR_right",
   "verdict": "grey",
   "class": "GREY/friction-posterior-0.45-0.55",
-  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]",
+  "reason": "\u7070\u5340\uff1a\u6469\u64e6 run \u5f8c\u65b9\u5e73\u79fb 0.45-0.55 mm\uff0c\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design; p060: extension@ROM post 0.475 in grey zone [0.45, 0.55]; p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]",
   "duplicates": [
    "p060"
   ],
@@ -6448,6 +6458,7 @@
     "open_reason": null,
     "role": "check",
     "grey": [
+     "p060: extension@ROM post 0.475 in grey zone [0.45, 0.55]",
      "p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]"
     ],
     "soft_face_locking": null,
@@ -6465,7 +6476,7 @@
     "provisional": "PI 2026-11-04: threshold provisional, pending bond-strength test of the co-printed PLCL hard / soft interface",
     "shear_p99_at_rom": {
      "extension": 0.488,
-     "flexion": 2.382
+     "flexion": 2.394
     }
    },
    "design_rule": {
@@ -6490,16 +6501,25 @@
    "verdict": "grey",
    "note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design",
    "reasons": [
+    "p060: extension@ROM post 0.475 in grey zone [0.45, 0.55]",
     "p072: extension@ROM post 0.469 in grey zone [0.45, 0.55]"
    ],
    "rule": "PI 2026-11-10"
   },
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
   "window_law": {
+   "AR_left": "production",
+   "AR_right": "production",
+   "LB_left": "production",
+   "LB_right": "production",
    "extension": "stick memory (patch 6+7)",
    "flexion": "stick memory (patch 6+7)"
   },
   "window_drive": {
+   "AR_left": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "AR_right": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "LB_left": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+   "LB_right": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
    "extension": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
    "flexion": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)"
   }

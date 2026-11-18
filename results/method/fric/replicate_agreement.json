@@ -287,6 +287,53 @@
    }
   },
   {
+   "deck_sha256": "85146a807d38295c",
+   "designs": [
+    "p060",
+    "p072"
+   ],
+   "windows": {
+    "flexion": {
+     "values": {
+      "p060": {
+       "set": "physio_fric5r",
+       "eval_point": "fric",
+       "u_h": 0.7971658549365802,
+       "post": -0.7971653528207058
+      },
+      "p072": {
+       "set": "physio_fric5r",
+       "eval_point": "fric",
+       "u_h": 0.7935839074252671,
+       "post": -0.7935832463728191
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0035819475113131327,
+     "spread_post_mm": 0.0035821064478867015
+    },
+    "extension": {
+     "values": {
+      "p060": {
+       "set": "physio_fric5r",
+       "eval_point": "rom",
+       "u_h": 0.47472249572701924,
+       "post": 0.47472175450245857
+      },
+      "p072": {
+       "set": "physio_fric5r",
+       "eval_point": "rom",
+       "u_h": 0.46920980775440524,
+       "post": 0.46920889513853953
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0055126879726140054,
+     "spread_post_mm": 0.005512859363919043
+    }
+   }
+  },
+  {
    "deck_sha256": "9343badac8255ab1",
    "designs": [
     "p086",
@@ -390,9 +437,9 @@
  ],
  "note": "Replicate agreement under one window set (PI 2026-11-11 decision 4, platform layer: \u300c\u540c\u4e00\u500b\u8a2d\u8a08\u80fd\u6709\u7a69\u5b9a\u7684\u6a21\u64ec\u7d50\u679c\u6578\u503c\u300d).",
  "summary": {
-  "groups": 8,
-  "windows_with_two_or_more": 14,
-  "windows_disagreeing_over_0p005_or_mixed_eval_point": 2,
+  "groups": 9,
+  "windows_with_two_or_more": 16,
+  "windows_disagreeing_over_0p005_or_mixed_eval_point": 3,
   "worst_spread_u_h_mm": 0.012415672940065736,
   "criterion": "same evaluation point and |spread| <= 0.005 mm (read-out noise seen in the validation); larger spreads are platform [\u6578\u503c] items, not design results"
  }

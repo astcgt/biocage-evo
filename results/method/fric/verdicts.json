@@ -593,7 +593,7 @@
   "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
  },
  "p060": {
-  "verdict": "open",
+  "verdict": "grey",
   "reasons": [],
   "windows": {
    "AR_left": {
@@ -673,54 +673,68 @@
     "window_law": "production"
    },
    "extension": {
-    "set": "physio_fric2",
+    "set": "physio_fric5r",
     "case_dir": "p060",
-    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
-    "grey_sub": "grey-high",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-low",
     "usable": true,
     "eval_point": "ROM",
     "monotonic": true,
-    "u_h_at_rom": 0.5413270293059436,
-    "post_at_rom": 0.5413171224341372,
-    "u_h_at_1p5Nm": 1.401794524438749,
-    "post_at_1p5Nm": 1.401791651990622,
-    "rot_max_deg": 15.686094266054528,
+    "u_h_at_rom": 0.47472249572701924,
+    "post_at_rom": 0.47472175450245857,
+    "u_h_at_1p5Nm": 0.7566979751187313,
+    "post_at_1p5Nm": 0.7566941732574387,
+    "rot_max_deg": 9.439775110825659,
     "bad": [],
     "grey": [
-     "extension@ROM post 0.541 in grey zone [0.45, 0.55]"
+     "extension@ROM post 0.475 in grey zone [0.45, 0.55]"
     ],
     "fallback": null,
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
-    "window_law": "production"
+    "window_law": "stick memory (patch 6+7)"
    },
    "flexion": {
-    "set": "physio_fric2",
+    "set": "physio_fric5r",
     "case_dir": "p060",
-    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
     "grey_sub": null,
-    "usable": false,
-    "eval_point": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
     "monotonic": true,
-    "u_h_at_rom": 0.7867307655579606,
-    "post_at_rom": -0.7867303308749333,
-    "u_h_at_1p5Nm": 0.7867307655579606,
-    "post_at_1p5Nm": -0.7867303308749333,
-    "rot_max_deg": 4.266903614204519,
+    "u_h_at_rom": 1.006805137854126,
+    "post_at_rom": -1.0068048222584343,
+    "u_h_at_1p5Nm": 0.7971658549365802,
+    "post_at_1p5Nm": -0.7971653528207058,
+    "rot_max_deg": 7.0039396103310585,
     "bad": [],
     "grey": [],
     "fallback": null,
     "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
-    "window_law": "production"
+    "window_law": "stick memory (patch 6+7)"
    }
   },
-  "missing": [
-   "flexion"
-  ],
+  "missing": [],
   "grey": [
-   "extension@ROM post 0.541 in grey zone [0.45, 0.55]"
+   "extension@ROM post 0.475 in grey zone [0.45, 0.55]"
   ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
   "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
-  "open_reason": "window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)"
+  "replicates": {
+   "deck_sha256": "85146a807d38295c",
+   "designs": [
+    "p072"
+   ],
+   "verdicts": {
+    "p060": "grey",
+    "p072": "grey"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p060": "grey",
+    "p072": "grey"
+   },
+   "unified": false
+  }
  },
  "p061": {
   "verdict": "pass",
@@ -1293,7 +1307,23 @@
    "extension@ROM post 0.469 in grey zone [0.45, 0.55]"
   ],
   "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
-  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "85146a807d38295c",
+   "designs": [
+    "p060"
+   ],
+   "verdicts": {
+    "p060": "grey",
+    "p072": "grey"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p060": "grey",
+    "p072": "grey"
+   },
+   "unified": false
+  }
  },
  "p074": {
   "verdict": "open",
@@ -4403,6 +4433,6 @@
   "set_precedence": "per window the highest-ranked set in SETS wins: physio_fric5 (stick-memory law, PI 2026-11-09) supersedes physio_fric3 (production law, NUM-13 artefact); physio_relG (process G, PI 2026-11-10 option a) holds the 27 insertion-stopped designs; physio_relG_pl is a fallback source only (production law on the G checkpoint, + margin, flagged); the insertion-stopped scans: physio_fric3 then physio_relG",
   "rule": "PI 2026-11-10: posterior 0.45-0.55 mm at the evaluation point = grey (analysis only, never a final design), > 0.55 or any-direction > 1 mm = fail; every row/design carries insertion_process and window_law (PI 2026-11-10 option a); PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn",
   "provisional": "verdicts provisional: physio_fric3 windows carry the FEBio stick-point artefact (NUM-13); PI 2026-11-09 decision 1 recomputes them as physio_fric5 (stick-memory law, same checkpoints) which supersedes fric3 per window here; NUM-17 (0.5 mm grey zone) and the density reference (DECISIONS 2026-11-05 item 8) still open",
-  "generated": "2026-11-18 02:15"
+  "generated": "2026-11-18 13:45"
  }
 }

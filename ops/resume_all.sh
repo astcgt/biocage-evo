@@ -156,7 +156,8 @@ if ! tmux has-session -t fric5rel_val2 2>/dev/null && [ -f "$OLD/$f" ] && ! grep
 fi
 # physio_fric3 p102 / p149 (h18, default cbuild binary, no BIOCAGE_ env, 6 cores, GPUs 1 / 4; resume from case.dmp), started by hand
 # 11-17 03:43 in tmux fric3_p102 / fric3_p149: done when h18 wrote <case>_gpu<g>/resources.json (also on ERROR) (foreman 11-17 03:5x)
-for a in fric3_p102:1:p102 fric3_p149:4:p149; do
+# physio_fric3 p060 (same rule, GPU 1), started by hand 11-18 12:59 in tmux p060_fric3 (foreman 11-18 13:0x)
+for a in fric3_p102:1:p102 fric3_p149:4:p149 p060_fric3:1:p060; do
   IFS=: read -r s g c <<< "$a"; d=human_study/al_v2/physio_fric3/$c
   if ! tmux has-session -t $s 2>/dev/null && [ -f "$OLD/$d/case.feb" ] && [ ! -f "$OLD/${d}_gpu$g/resources.json" ] && ! pgrep -u "$USER" -f "h18_run_gpu_case.py $g $d( |$)" >/dev/null; then
     tmux new-session -d -s $s "cd '$OLD' && python3 -u scripts/5_compute/h18_run_gpu_case.py $g $d 6 >> ${d}_run.log 2>&1"
@@ -174,14 +175,44 @@ d=human_study/al_v2/physio_relG
 if ! tmux has-session -t relG_p149 2>/dev/null && [ -d "$OLD/$d/p149_gpu4" ] && [ ! -f "$OLD/$d/p149_gpu4/resources.json" ] && ! pgrep -u "$USER" -f "h18_run_gpu_case.py 4 \S*$d/p149( |$)" >/dev/null; then
   tmux new-session -d -s relG_p149 "cd '$OLD' && BIOCAGE_FEBIO=$OLD/third_party/FEBio/cbuild_fric/bin/febio4 BIOCAGE_STICK_MEMORY=1 python3 -u scripts/5_compute/h18_run_gpu_case.py 4 $d/p149 6 >> $d/p149_run.log 2>&1"
 fi
+# pilot_holdQ p062 / p139 (h18 split case, default cbuild binary, no BIOCAGE_ env, 6 cores, GPUs 1 / 4; launch.sh in tmux holdQ_pilot,
+# started 11-18 03:22): h18 resumes from case.dmp, h31 skips ended windows; done when <case>_gpu<g>/resources.json exists (foreman 11-18 04:1x)
+if ! tmux has-session -t holdQ_pilot 2>/dev/null; then
+  for a in p062:1 p139:4; do
+    IFS=: read -r c g <<< "$a"; d=human_study/al_v2/pilot_holdQ/$c
+    if [ -f "$OLD/$d/case.feb" ] && [ ! -f "$OLD/${d}_gpu$g/resources.json" ] && ! pgrep -u "$USER" -f "h18_run_gpu_case.py $g $d( |$)" >/dev/null; then
+      tmux new-session -d -s holdQ_$c "cd '$OLD' && python3 -u scripts/5_compute/h18_run_gpu_case.py $g $d 6 >> ${d}_run.log 2>&1"; sleep 10
+    fi
+  done
+fi
 # pilot_holdR wave 1 (h47, route-E hold windows, launch_wave1.sh), started 11-18 02:02 in tmux holdR_pilot: a re-run restarts the
 # window from restart.feb; h47 writes <case>/done (extension) / done_flexion at exit, also on error (foreman 11-18 02:1x)
-if ! tmux has-session -t holdR_pilot 2>/dev/null; then
+# pilot_holdRh wave 1 (same windows, window_dt 0.025), started 11-18 02:38 in tmux holdRh_pilot: same rule (foreman 11-18 03:0x)
+# pilot_holdQR wave 1 (holdQ t 3.5 checkpoints, deck dtmax 0.025 over the hold), started 11-18 05:47 in tmux holdQR_pilot: same rule (foreman 11-18 06:0x)
+for k in holdR holdRh holdQR; do
+if ! tmux has-session -t ${k}_pilot 2>/dev/null; then
   for a in p062:1:extension p062:1:flexion p139:4:extension p139:4:flexion; do
-    IFS=: read -r p g w <<< "$a"; c="human_study/al_v2/pilot_holdR/$p"; m=done; [ $w = extension ] || m=done_$w
+    IFS=: read -r p g w <<< "$a"; c="human_study/al_v2/pilot_$k/$p"; m=done; [ $w = extension ] || m=done_$w
     [ -f "$OLD/$c/$m" ] || pgrep -u "$USER" -f "h47_restart_pilot.py run $c [0-9]+ [0-9]+ $w" >/dev/null || \
-      { tmux new-session -d -s "holdR_${p}_$w" "cd '$OLD' && python scripts/5_compute/h47_restart_pilot.py run $c $g 5 $w >> $c.$w.resume.log 2>&1"; sleep 5; }
+      { tmux new-session -d -s "${k}_${p}_$w" "cd '$OLD' && python scripts/5_compute/h47_restart_pilot.py run $c $g 5 $w >> $c.$w.resume.log 2>&1"; sleep 5; }
   done
+fi
+done
+# pilot_rep3 wave 1 (h47, third replicate of physio_fric5r p093/p145 extension GPU 1, p051/p075 flexion GPU 4), started 11-18 11:28
+# in tmux rep3_pilot: same rule, markers done / done_flexion (foreman 11-18 11:3x)
+if ! tmux has-session -t rep3_pilot 2>/dev/null; then
+  for a in p093:1:extension p145:1:extension p051:4:flexion p075:4:flexion; do
+    IFS=: read -r p g w <<< "$a"; c="human_study/al_v2/pilot_rep3/$p"; m=done; [ $w = extension ] || m=done_$w
+    [ -f "$OLD/$c/$m" ] || pgrep -u "$USER" -f "h47_restart_pilot.py run $c [0-9]+ [0-9]+ $w" >/dev/null || \
+      { tmux new-session -d -s "rep3_${p}_$w" "cd '$OLD' && python scripts/5_compute/h47_restart_pilot.py run $c $g 5 $w >> $c.$w.resume.log 2>&1"; sleep 5; }
+  done
+fi
+# pilot_rep3 p093 variants (launch_p093_variants.sh, tmux p093var, started 11-18 13:00): p093n extension GPU 4, 6 cores, same rule;
+# p093d not covered (its h24 preflight failed at launch: window_dt not in PILOT_KEYS) (foreman 11-18 13:0x)
+if ! tmux has-session -t p093var 2>/dev/null; then
+  c=human_study/al_v2/pilot_rep3/p093n
+  [ ! -d "$OLD/$c" ] || [ -f "$OLD/$c/done" ] || pgrep -u "$USER" -f "h47_restart_pilot.py run $c [0-9]+ [0-9]+ extension" >/dev/null || \
+    tmux new-session -d -s rep3_p093n_extension "cd '$OLD' && python scripts/5_compute/h47_restart_pilot.py run $c 4 6 extension >> $c.extension.resume.log 2>&1"
 fi
 # FEBio core pinner (foreman 11-10 22:5x): moves each new FEBio run once to disjoint idle cores on its GPU's NUMA node (log work/ops/febio_pin.log)
 tmux has-session -t febio_pin 2>/dev/null || pgrep -u "$USER" -f "ops/febio_pin.sh" >/dev/null || tmux new-session -d -s febio_pin "cd '$EVO' && while true; do ops/febio_pin.sh; echo \"\$(date '+%m-%d %H:%M:%S') febio_pin exit \$?, restart in 30 s\" >> work/ops/febio_pin.log; sleep 30; done"

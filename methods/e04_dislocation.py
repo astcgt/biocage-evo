@@ -177,6 +177,24 @@ def metrics_at(st, faces, com, c3, cn, c4, geo=None):
                 N_total=float(Pn.sum()), one_face_slip_bound_mm=slip_bound, cage_translation_tied_mm=uc.tolist(), **t19_metrics(st, geo, u4, uc))
 
 
+def t19_at(cd, t):
+    """T19 quantities of a case at time t (linear interpolation between the two logged xplt states bracketing t; both relative to
+    the C4 endplate mean displacement). Used by ops/obs01_batch.py to read friction windows at their verdict evaluation point
+    (ROM or 1.5 N m) instead of e04's drive-end bracket."""
+    import xplt
+    root = ET.parse(os.path.join(cd, 'case.feb')).getroot(); g = root.find('Geometry'); com, X = rigid_com(root)
+    blocks = [(eb.get('name'), np.array([[int(v) for v in e.text.split(',')] for e in eb])) for eb in g.findall('Elements')]
+    geo = t19_geometry(blocks, X); states = xplt.read(os.path.join(cd, 'case.xplt'))['states']
+    cn = read_log(os.path.join(cd, 'cage_nodes.txt')); c4 = read_log(os.path.join(cd, 'C4_endplate_nodes.txt'))
+    def at(st):
+        u4 = np.array(list(nearest(c4, st['time'])[0].values())).mean(0); uc = np.array(list(nearest(cn, st['time'])[0].values())).mean(0) - u4
+        return dict(cage_translation_tied_mm=uc.tolist(), **t19_metrics(st, geo, u4, uc))
+    ts = [s_['time'] for s_ in states]; i = int(np.searchsorted(ts, t))
+    if i == 0 or t > ts[-1] + 1e-6: return dict(at(states[min(i, len(states) - 1)]), t_eval=t, t_state=ts[min(i, len(states) - 1)], interpolated=False)
+    a, b = states[i - 1], states[i]; f = (t - a['time']) / (b['time'] - a['time']) if b['time'] > a['time'] else 0.0
+    return dict(e3.lerp(at(a), at(b), f), t_eval=t, t_a=a['time'], t_b=b['time'], interpolated=True)
+
+
 def selftest():
     """(1) e03 bracket + lerp self-tests; (2) a flat 2 x 2 face patch under uniform pressure p and shear q, with the C3 pot
     translated by (dx, dy): mu_squeeze = q/p (both faces together carry the shear), one-face slip bound = |(dx, dy)| when C4

@@ -345,6 +345,41 @@
    "shear_req_max_MPa": 5.18,
    "shear_req_complete": true
   },
+  "p060": {
+   "verdict": "pass",
+   "reasons": [],
+   "windows": {
+    "extension": {
+     "set": "physio_fric5r",
+     "case_dir": "p060",
+     "shear_p99_at_rom": 0.488,
+     "horizontal": 0.4879877258392979,
+     "vertical": 0.3338828293858649,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
+     "fallback": false,
+     "peel_max_at_rom": 0.6999061226156054,
+     "shear_p99_max_to_rom": 0.488,
+     "shear_max_to_rom": 0.593
+    },
+    "flexion": {
+     "set": "physio_fric5r",
+     "case_dir": "p060",
+     "shear_p99_at_rom": 2.394,
+     "horizontal": 2.3937569933271985,
+     "vertical": 1.5126402580762728,
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)",
+     "fallback": false,
+     "peel_max_at_rom": 2.435665393513322,
+     "shear_p99_max_to_rom": 2.394,
+     "shear_max_to_rom": 3.817
+    }
+   },
+   "missing": [],
+   "shear_req_p99_MPa": 2.394,
+   "shear_req_window": "flexion",
+   "shear_req_max_MPa": 3.817,
+   "shear_req_complete": true
+  },
   "p061": {
    "verdict": "fail",
    "reasons": [
