@@ -1,0 +1,39 @@
+{
+ "amends": [
+  "results/round2/prereg.json",
+  "results/round2/prereg_amendment_2026-11-18a.json"
+ ],
+ "amends_sha256": [
+  "4359a4f751d394aab7cb00af0f38aae3d000cabfc32f598e4a12a4bd3a7ae432",
+  "b4bf9957138a685a38f295c4acb95eeda318aaa84d40ae6a12a8ca3e2e4dbeda"
+ ],
+ "dated": "2026-11-18 12:41",
+ "status": "added before any round-2 simulation; earlier files unchanged",
+ "reasons": [
+  "PI 2026-11-18 delegated the two numbers (「你幫忙最佳化」): the fixed heights and the number of new designs in arm A",
+  "PI 2026-11-18 on the compiler numbers: thin-feature tolerance 2 %, repair limit 2 % and endplate contact 25 % accepted; the overhang rule must not forbid printable holes"
+ ],
+ "evidence": "results/round2/settings_optimisation_2026-11-18.json",
+ "heights": {
+  "reference_mm": 0.8,
+  "loosened_mm": 0.5,
+  "replaces": "reference 1.0 mm of amendment a",
+  "squeeze_force_N": {
+   "reference": "about 24",
+   "loosened": "about 9"
+  },
+  "why": "at 1.0 mm all candidates of the usable families are predicted to pass (share undecided 0.00) and 4 archive designs sit there; at 0.8 mm the share undecided is 0.61, 5 archive designs (all PASS) sit there, the height is clinically more modest, and its squeeze force is 2.6 x that of the loosened height"
+ },
+ "budgets": {
+  "A": "10 runs = 4 new designs x 2 heights (3 steered + 1 exploration) + 2 replicates",
+  "replaces": "A 20 runs of amendment a",
+  "why": "sequential uncertainty sampling inside the families lowers the mean 90 % interval of the posterior translation only from 0.165 to 0.163 mm after 12 designs: more arm-A designs teach the estimator almost nothing",
+  "proposal_not_applied": "move the 10 freed runs to arms B and R (5 -> 7 designs each, two heights), total friction cases per round unchanged at about 47; waits for the PI"
+ },
+ "compiler_rules": {
+  "S5_overhang": "supported from below or a side neighbour (45 degrees), or part of a flat bridge of at most 2.0 mm between two supported elements of the same layer (2.0 mm provisional until the laboratory printer value for PLCL is known); tolerance 0.5 %",
+  "S5_thin": "2 % (PI)",
+  "repair_limit": "2 % (PI)",
+  "S4_endplate_contact": "25 % (PI)"
+ }
+}

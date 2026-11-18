@@ -39,6 +39,15 @@ if __name__ == '__main__':
     for k, sol in probes.items():
         rp, _ = G.compile_spec(dict(name=k, base_mesh=base, fabrication='mix', solid=sol, phi=[])); out['s4_probes'][k] = dict(built=rp['built'], **rp['checks']['S4_void'])
         print('S4 probe', k, '(must be refused): built', rp['built'], {a: b for a, b in rp['checks']['S4_void'].items() if a.startswith('void')})
+    # holes (PI 2026-11-18): side holes with a flat roof up to the bridge span must BUILD; a wide flat slot must be refused
+    wall = dict(op='ring', outer=0.0, inner=1.2); band = dict(op='face', side='bottom', lo=1.0, hi=2.0)
+    mid = dict(op='band', axis='y', lo=-2.5, hi=3.5)      # only where the front and back walls run across (tunnels along x through the wall)
+    holes = dict(many_side_holes_1mm=(dict(op='subtract', a=wall, b=dict(op='intersect', of=[dict(op='bars', axis='y', pitch=2.4, width=1.0, phase=0.0), band, mid])), True),
+                 one_side_slot_4mm=(dict(op='subtract', a=wall, b=dict(op='intersect', of=[dict(op='band', axis='y', lo=-2.0, hi=2.0), band])), False))
+    out['hole_probes'] = {}
+    for k, (sol, want) in holes.items():
+        rp, _ = G.compile_spec(dict(name=k, base_mesh=base, fabrication='mix', solid=sol, phi=[])); out['hole_probes'][k] = dict(built=rp['built'], expected=want, failed=[c for c, v in rp['checks'].items() if not v['ok']], **rp['checks']['S5_overhang'])
+        print('hole probe', k, 'built', rp['built'], '(expected', want, ')', {a: b for a, b in rp['checks']['S5_overhang'].items() if a in ('unsupported_elements', 'bridged_elements', 'fraction')}, out['hole_probes'][k]['failed'])
     json.dump(out, open(os.path.join(G.EVO, f'results/grammar/acceptance_{date}.json'), 'w'), indent=1)
     print('L0 failures', out['l0_failures'][:6], 'void volume range', min(r['void_volume'] for r in rows), max(r['void_volume'] for r in rows),
           'thin max', max(r['thin_fraction'] for r in rows), 'overhang max', max(r['overhang_fraction'] for r in rows))

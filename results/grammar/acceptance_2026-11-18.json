@@ -887,5 +887,31 @@
    "void_fraction_projected": 0.0338,
    "void_regions_touching_both_endplates": 1
   }
+ },
+ "hole_probes": {
+  "many_side_holes_1mm": {
+   "built": true,
+   "expected": true,
+   "failed": [],
+   "ok": true,
+   "unsupported_elements": 23,
+   "bridged_elements": 83,
+   "max_bridge_mm": 2.0,
+   "fraction": 0.001,
+   "tolerance": 0.005
+  },
+  "one_side_slot_4mm": {
+   "built": false,
+   "expected": false,
+   "failed": [
+    "S5_overhang"
+   ],
+   "ok": false,
+   "unsupported_elements": 185,
+   "bridged_elements": 11,
+   "max_bridge_mm": 2.0,
+   "fraction": 0.008,
+   "tolerance": 0.005
+  }
  }
 }

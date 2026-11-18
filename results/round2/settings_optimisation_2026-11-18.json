@@ -1,0 +1,273 @@
+{
+ "date": "2026-11-18",
+ "heights": [
+  {
+   "height_mm": 0.5,
+   "squeeze_force_N": 9.2,
+   "archive_designs_pool_families": 10,
+   "with_friction_windows": 10,
+   "archive_classes": {
+    "GREY": 7,
+    "PASS": 3
+   },
+   "predicted_post_ext_mm": [
+    0.444,
+    0.502,
+    0.525
+   ],
+   "interval_width_mm": 0.103,
+   "share_undecided": 0.4,
+   "share_p_gt_0p9": 0.0,
+   "share_p_lt_0p1": 0.6,
+   "spread_between_designs_over_interval": 0.79
+  },
+  {
+   "height_mm": 0.65,
+   "squeeze_force_N": 15.0,
+   "archive_designs_pool_families": 9,
+   "with_friction_windows": 9,
+   "archive_classes": {
+    "GREY": 5,
+    "PASS": 4
+   },
+   "predicted_post_ext_mm": [
+    0.406,
+    0.461,
+    0.484
+   ],
+   "interval_width_mm": 0.103,
+   "share_undecided": 0.96,
+   "share_p_gt_0p9": 0.03,
+   "share_p_lt_0p1": 0.01,
+   "spread_between_designs_over_interval": 0.75
+  },
+  {
+   "height_mm": 0.8,
+   "squeeze_force_N": 23.6,
+   "archive_designs_pool_families": 5,
+   "with_friction_windows": 5,
+   "archive_classes": {
+    "PASS": 5
+   },
+   "predicted_post_ext_mm": [
+    0.371,
+    0.418,
+    0.439
+   ],
+   "interval_width_mm": 0.105,
+   "share_undecided": 0.61,
+   "share_p_gt_0p9": 0.39,
+   "share_p_lt_0p1": 0.0,
+   "spread_between_designs_over_interval": 0.64
+  },
+  {
+   "height_mm": 0.9,
+   "squeeze_force_N": 30.6,
+   "archive_designs_pool_families": 2,
+   "with_friction_windows": 2,
+   "archive_classes": {
+    "PASS": 2
+   },
+   "predicted_post_ext_mm": [
+    0.347,
+    0.388,
+    0.408
+   ],
+   "interval_width_mm": 0.108,
+   "share_undecided": 0.03,
+   "share_p_gt_0p9": 0.97,
+   "share_p_lt_0p1": 0.0,
+   "spread_between_designs_over_interval": 0.56
+  },
+  {
+   "height_mm": 1.0,
+   "squeeze_force_N": 38.0,
+   "archive_designs_pool_families": 4,
+   "with_friction_windows": 4,
+   "archive_classes": {
+    "PASS": 4
+   },
+   "predicted_post_ext_mm": [
+    0.324,
+    0.358,
+    0.376
+   ],
+   "interval_width_mm": 0.111,
+   "share_undecided": 0.0,
+   "share_p_gt_0p9": 1.0,
+   "share_p_lt_0p1": 0.0,
+   "spread_between_designs_over_interval": 0.47
+  },
+  {
+   "height_mm": 1.1,
+   "squeeze_force_N": 48.9,
+   "archive_designs_pool_families": 3,
+   "with_friction_windows": 2,
+   "archive_classes": {
+    "other": 1,
+    "PASS": 2
+   },
+   "predicted_post_ext_mm": [
+    0.3,
+    0.329,
+    0.345
+   ],
+   "interval_width_mm": 0.116,
+   "share_undecided": 0.0,
+   "share_p_gt_0p9": 1.0,
+   "share_p_lt_0p1": 0.0,
+   "spread_between_designs_over_interval": 0.39
+  },
+  {
+   "height_mm": 1.2,
+   "squeeze_force_N": 54.1,
+   "archive_designs_pool_families": 4,
+   "with_friction_windows": 2,
+   "archive_classes": {
+    "other": 2,
+    "PASS": 2
+   },
+   "predicted_post_ext_mm": [
+    0.276,
+    0.299,
+    0.313
+   ],
+   "interval_width_mm": 0.123,
+   "share_undecided": 0.0,
+   "share_p_gt_0p9": 1.0,
+   "share_p_lt_0p1": 0.0,
+   "spread_between_designs_over_interval": 0.3
+  },
+  {
+   "height_mm": 1.35,
+   "squeeze_force_N": 67.0,
+   "archive_designs_pool_families": 2,
+   "with_friction_windows": 1,
+   "archive_classes": {
+    "other": 1,
+    "PASS": 1
+   },
+   "predicted_post_ext_mm": [
+    0.239,
+    0.255,
+    0.268
+   ],
+   "interval_width_mm": 0.134,
+   "share_undecided": 0.0,
+   "share_p_gt_0p9": 1.0,
+   "share_p_lt_0p1": 0.0,
+   "spread_between_designs_over_interval": 0.21
+  },
+  {
+   "height_mm": 1.5,
+   "squeeze_force_N": 94.8,
+   "archive_designs_pool_families": 4,
+   "with_friction_windows": 1,
+   "archive_classes": {
+    "other": 3,
+    "PASS": 1
+   },
+   "predicted_post_ext_mm": [
+    0.204,
+    0.214,
+    0.225
+   ],
+   "interval_width_mm": 0.153,
+   "share_undecided": 0.0,
+   "share_p_gt_0p9": 1.0,
+   "share_p_lt_0p1": 0.0,
+   "spread_between_designs_over_interval": 0.14
+  }
+ ],
+ "declared": "Choice of the two round-2 settings the PI delegated on 2026-11-18 (「你幫忙最佳化」): (a) the two fixed heights at which every\ndesign is simulated, (b) how many NEW designs arm A runs. Evidence only from the archive and the validated estimator;\nnothing is launched. Output: results/round2/settings_optimisation_<date>.json.\n\n(a) Heights. For each candidate height h: squeeze force (archive median), number of archive designs at h (support of the\n    estimator and of replicates), and - over 600 random material sets in the two usable families - the predicted posterior\n    translation in extension, its 90 % interval width, the share of candidates whose outcome is UNDECIDED\n    (0.1 < P(post_ext < 0.45) < 0.9) and the spread between candidates relative to the interval (how well designs can be\n    told apart). Criteria, declared here: the REFERENCE height should be clinically modest (well below the 2 mm linked with\n    subsidence), well supported by archive designs, and not trivially passed; the LOOSENED height should have the lowest\n    squeeze force that the archive still covers.\n(b) Designs in arm A. Mean interval width of the posterior translation over the pool (both heights) after adding k designs\n    chosen one at a time where the uncertainty is largest (the Gaussian process variance does not need the outcomes). The\n    design count is taken where one more design lowers the mean width by less than 2 % of the starting width.",
+ "design_count": {
+  "reference_0.8": {
+   "mean_interval_width_mm": [
+    0.1651,
+    0.1647,
+    0.1644,
+    0.1641,
+    0.164,
+    0.1638,
+    0.1637,
+    0.1636,
+    0.1634,
+    0.1634,
+    0.1633,
+    0.1632,
+    0.1632,
+    0.1631,
+    0.163,
+    0.163,
+    0.1629,
+    0.1629,
+    0.1628
+   ],
+   "relative_gain_per_design": [
+    0.002,
+    0.002,
+    0.002,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.001,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "designs_until_gain_below_2pct": 0
+  },
+  "reference_1.0": {
+   "mean_interval_width_mm": [
+    0.1651,
+    0.1647,
+    0.1644,
+    0.1642,
+    0.164,
+    0.1638,
+    0.1637,
+    0.1636,
+    0.1635,
+    0.1635,
+    0.1634,
+    0.1633,
+    0.1633,
+    0.1632,
+    0.1632,
+    0.1631,
+    0.1631,
+    0.1631,
+    0.163
+   ],
+   "relative_gain_per_design": [
+    0.002,
+    0.002,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "designs_until_gain_below_2pct": 0
+  }
+ }
+}

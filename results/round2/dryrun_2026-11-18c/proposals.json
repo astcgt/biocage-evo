@@ -1,0 +1,310 @@
+{
+ "meta": {
+  "status": "DRY RUN - NOT LAUNCHED (waits for the from-scratch insertion fix and the new-design runner)",
+  "arm": "A",
+  "created": "2026-11-18 12:41",
+  "seed": 0,
+  "n_candidates": 4000,
+  "heights_mm": {
+   "reference": 0.8,
+   "loosened": 0.5
+  },
+  "runs": 10,
+  "weights": {
+   "fixation": 0.8,
+   "space": 0.2
+  },
+  "limits": {
+   "post_ext_mm": 0.45,
+   "uh_flex_mm": 1.0,
+   "grey_upper_mm": 0.55
+  },
+  "mu_real": 0.35,
+  "beta": 0.3,
+  "reference_conditions": {
+   "screening_pass": "split windows",
+   "insertion_process": "both predicted, less favourable used"
+  },
+  "conformal_scale": {
+   "post_ext": 1.71,
+   "uh_flex": 1.36,
+   "mu_req": 1.82
+  },
+  "pool_families": [
+   "axial_mix",
+   "radial_interleave"
+  ],
+  "friction_rows_per_family": {
+   "radial_mix": 24,
+   "axial_mix": 18,
+   "radial_interleave": 26,
+   "axial_interleave": 2
+  },
+  "family_rate_not_compression": {
+   "axial_interleave": 0.0,
+   "axial_mix": 0.82,
+   "both_interleave": 0.1,
+   "both_mix": 0.0,
+   "radial_interleave": 0.97,
+   "radial_mix": 1.0
+  },
+  "family_rate_computable": {
+   "axial_mix": 1.0,
+   "radial_interleave": 0.87
+  },
+  "notes": {
+   "p_limits": "probability that the translation limits are met at the reference height x family rates; not the PASS-class probability",
+   "mu_req_model": "post-hoc pass-type variant (Gaussian coverage 0.70, conformal 0.91), not in the run-3 validation file",
+   "integrator_choices": "fixed heights 1.0 / 0.5 mm, run budget 20 = 9 designs x 2 heights + 2 replicates, spread penalty in material space, fixation score formula, space score fixed at void 0.597"
+  },
+  "pool_summary": {
+   "candidates": 4000,
+   "steerable": 3047,
+   "out_of_distribution": 953,
+   "p_limits_reference_gt_0p5": 3976,
+   "fixation_score_loosened_range": [
+    0.32,
+    0.421
+   ],
+   "post_ext_loosened_range_mm": [
+    0.43,
+    0.529
+   ]
+  },
+  "inputs": {
+   "results/method/mu_req_field.csv": "2026-11-18 04:16",
+   "results/method/fric/verdicts.json": "2026-11-18 02:15"
+  }
+ },
+ "proposals": [
+  {
+   "source": "surrogate",
+   "why": "highest P(limits met at the reference height) x utility (fixation at the loosened height) + uncertainty bonus, spread over materials",
+   "family": "axial_mix",
+   "E_hard_MPa": 840.5,
+   "E_soft_MPa": 10.5,
+   "theta": 0.201,
+   "runs": [
+    {
+     "height_mm": 0.8,
+     "role": "reference: the verdict is read here",
+     "predicted": {
+      "post_ext_mm": 0.362,
+      "post_ext_interval90_mm": [
+       0.291,
+       0.433
+      ],
+      "uh_flex_mm": 0.05,
+      "mu_req": 0.1274
+     }
+    },
+    {
+     "height_mm": 0.5,
+     "role": "loosened: fixation without relying on the squeeze force",
+     "predicted": {
+      "post_ext_mm": 0.43,
+      "post_ext_interval90_mm": [
+       0.334,
+       0.526
+      ],
+      "uh_flex_mm": 0.149,
+      "mu_req": 0.1317
+     }
+    }
+   ],
+   "predicted": {
+    "p_limits_reference": 0.801,
+    "fixation_score_loosened": 0.421,
+    "utility": 0.376,
+    "score": 0.486
+   },
+   "flags": {
+    "out_of_distribution": false,
+    "family_has_friction_data": true,
+    "under_covered_family_for": []
+   },
+   "id": "A-01"
+  },
+  {
+   "source": "surrogate",
+   "why": "highest P(limits met at the reference height) x utility (fixation at the loosened height) + uncertainty bonus, spread over materials",
+   "family": "axial_mix",
+   "E_hard_MPa": 799.7,
+   "E_soft_MPa": 2.734,
+   "theta": 0.2,
+   "runs": [
+    {
+     "height_mm": 0.8,
+     "role": "reference: the verdict is read here",
+     "predicted": {
+      "post_ext_mm": 0.363,
+      "post_ext_interval90_mm": [
+       0.291,
+       0.434
+      ],
+      "uh_flex_mm": 0.048,
+      "mu_req": 0.1257
+     }
+    },
+    {
+     "height_mm": 0.5,
+     "role": "loosened: fixation without relying on the squeeze force",
+     "predicted": {
+      "post_ext_mm": 0.43,
+      "post_ext_interval90_mm": [
+       0.334,
+       0.526
+      ],
+      "uh_flex_mm": 0.15,
+      "mu_req": 0.1336
+     }
+    }
+   ],
+   "predicted": {
+    "p_limits_reference": 0.8,
+    "fixation_score_loosened": 0.418,
+    "utility": 0.373,
+    "score": 0.484
+   },
+   "flags": {
+    "out_of_distribution": false,
+    "family_has_friction_data": true,
+    "under_covered_family_for": []
+   },
+   "id": "A-02"
+  },
+  {
+   "source": "surrogate",
+   "why": "highest P(limits met at the reference height) x utility (fixation at the loosened height) + uncertainty bonus, spread over materials",
+   "family": "axial_mix",
+   "E_hard_MPa": 502.3,
+   "E_soft_MPa": 5.861,
+   "theta": 0.202,
+   "runs": [
+    {
+     "height_mm": 0.8,
+     "role": "reference: the verdict is read here",
+     "predicted": {
+      "post_ext_mm": 0.367,
+      "post_ext_interval90_mm": [
+       0.296,
+       0.438
+      ],
+      "uh_flex_mm": 0.059,
+      "mu_req": 0.1261
+     }
+    },
+    {
+     "height_mm": 0.5,
+     "role": "loosened: fixation without relying on the squeeze force",
+     "predicted": {
+      "post_ext_mm": 0.434,
+      "post_ext_interval90_mm": [
+       0.34,
+       0.529
+      ],
+      "uh_flex_mm": 0.164,
+      "mu_req": 0.1329
+     }
+    }
+   ],
+   "predicted": {
+    "p_limits_reference": 0.796,
+    "fixation_score_loosened": 0.415,
+    "utility": 0.371,
+    "score": 0.479
+   },
+   "flags": {
+    "out_of_distribution": false,
+    "family_has_friction_data": true,
+    "under_covered_family_for": []
+   },
+   "id": "A-03"
+  },
+  {
+   "source": "exploration",
+   "why": "material set farthest from every simulated design of its family",
+   "family": "radial_interleave",
+   "E_hard_MPa": 878.4,
+   "E_soft_MPa": 1.674,
+   "theta": 0.214,
+   "runs": [
+    {
+     "height_mm": 0.8,
+     "role": "reference: the verdict is read here",
+     "predicted": {
+      "post_ext_mm": 0.379,
+      "post_ext_interval90_mm": [
+       0.313,
+       0.445
+      ],
+      "uh_flex_mm": 0.59,
+      "mu_req": 0.1216
+     }
+    },
+    {
+     "height_mm": 0.5,
+     "role": "loosened: fixation without relying on the squeeze force",
+     "predicted": {
+      "post_ext_mm": 0.452,
+      "post_ext_interval90_mm": [
+       0.39,
+       0.514
+      ],
+      "uh_flex_mm": 0.736,
+      "mu_req": 0.1319
+     }
+    }
+   ],
+   "predicted": {
+    "p_limits_reference": 0.786,
+    "fixation_score_loosened": 0.401,
+    "utility": 0.36,
+    "score": 0.402
+   },
+   "flags": {
+    "out_of_distribution": true,
+    "family_has_friction_data": true,
+    "under_covered_family_for": [
+     "uh_flex",
+     "mu_req"
+    ]
+   },
+   "id": "A-04"
+  },
+  {
+   "source": "replicate",
+   "why": "existing design at height 0.5 mm closest to the 0.45 mm limit",
+   "replicate_of": "p062",
+   "family": "axial_mix",
+   "E_hard_MPa": 649.53,
+   "E_soft_MPa": 8.194,
+   "theta": 0.219,
+   "runs": [
+    {
+     "height_mm": 0.5,
+     "role": "replicate",
+     "observed_post_ext_mm": 0.443
+    }
+   ],
+   "id": "A-05"
+  },
+  {
+   "source": "replicate",
+   "why": "existing design at height 0.8 mm closest to the 0.45 mm limit",
+   "replicate_of": "p086",
+   "family": "radial_interleave",
+   "E_hard_MPa": 576.06,
+   "E_soft_MPa": 10.346,
+   "theta": 0.358,
+   "runs": [
+    {
+     "height_mm": 0.8,
+     "role": "replicate",
+     "observed_post_ext_mm": 0.44
+    }
+   ],
+   "id": "A-06"
+  }
+ ]
+}

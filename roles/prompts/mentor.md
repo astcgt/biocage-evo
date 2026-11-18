@@ -19,7 +19,7 @@ Rules that bind you:
    finding against you.
 5. Use the `custom` escape hatch when the grammar cannot express the mechanism, and say what primitive is missing.
 6. Do not predict scores and do not rank the kept ideas. When you are blocked, search the literature first and cite it.
-Every specification must compile on the base meshes of BOTH fixed heights (reference 1.0 mm and loosened 0.5 mm above the
+Every specification must compile on the base meshes of BOTH fixed heights (reference 0.8 mm and loosened 0.5 mm above the
 natural disc space; PI 2026-11-18): describe shapes relative to the outline and the faces, not in absolute height.
 Output: work/board/rNNNN/mentor.json = {"role": "mentor", "round": N, "built": [{"idea_id": "...", "spec_file": "...",
  "twin_spec_file": "...", "repairs": ["what was changed and why"], "mechanism_kept": "one sentence"}],

@@ -3,8 +3,13 @@
 PI 2026-11-18 (three decisions on the cage height): (1) designs are compared at the SAME height above the natural disc space
 (gene d, called 撐高量 in reports) - d is no longer a free gene of a proposal; (2) a 'loosened' condition tests fixation that
 does not rely on the tissue squeeze force; (3) wording. Implemented as: every proposed design = family + material set, and
-it is simulated at two fixed heights: REFERENCE 1.0 mm (squeeze force about 38 N) and LOOSENED 0.5 mm (about 9 N).
-Run budget unchanged (PI: 20 per round): 9 designs x 2 heights + 2 replicates = 20 runs (7 steered + 2 exploration designs).
+it is simulated at two fixed heights: REFERENCE 0.8 mm (squeeze force about 24 N) and LOOSENED 0.5 mm (about 9 N).
+The PI delegated the two numbers (「你幫忙最佳化」); evidence in results/round2/settings_optimisation_2026-11-18.json:
+  heights - at 1.0 mm every candidate of the usable families is predicted to pass (no information) and only 4 archive designs
+  sit there; at 0.8 mm 61 % of the candidates are undecided, 5 archive designs (all PASS) support it, it is the lower, clinically
+  more modest height, and its squeeze force is still 2.6 x that of the loosened height, so the two runs test different things;
+  designs - adding designs inside the families barely narrows the estimator (mean interval 0.165 -> 0.163 mm after 12 designs),
+  so arm A is cut to what it is needed for: 4 new designs x 2 heights + 2 replicates = 10 runs (3 steered + 1 exploration).
 
 Models (as validated by ops/surrogate_fit.py, input set G = genes + family one-hot), refitted here from the tables:
   post_ext / uh_flex with the insertion process as an input; each candidate is predicted under BOTH processes and the less
@@ -36,8 +41,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import surrogate_fit as S
 
 LIM_POST, LIM_UH, MU_REAL, BETA, W_FIX, W_SPACE, Z = 0.45, 1.0, 0.35, 0.3, 0.8, 0.2, 1.6449
-N_STEER, N_EXPLORE, N_REPL, MIN_ROWS = 7, 2, 2, 10
-H_REF, H_LOOSE, LIM_GREY_HI = 1.0, 0.5, 0.55
+N_STEER, N_EXPLORE, N_REPL, MIN_ROWS = 3, 1, 2, 10
+H_REF, H_LOOSE, LIM_GREY_HI = 0.8, 0.5, 0.55
 PASS_KIND = {'physio_rot': 'static', 'physio_rot_r2': 'static', 'physio_rot_dyn': 'dyn', 'physio_rot_dyn2': 'dyn'}
 pass_extra = lambda src: (float(PASS_KIND.get(src.split('/')[0], 'split') == 'dyn'), float(PASS_KIND.get(src.split('/')[0], 'split') == 'split'))
 

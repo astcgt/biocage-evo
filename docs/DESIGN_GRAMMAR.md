@@ -36,15 +36,18 @@ Regions (boolean over the lattice elements; lengths in mm; x = anterior (+) / po
 Interleave realisation (as h12): an element is hard when (print-line index + layer) mod 4 < round(4 phi); the print-line
 index is the 0.4 mm contour line counted from the footprint outline.
 L0 checks by code (safety rules of docs/PLAN.md; the numbers marked provisional are owned by the safety guard):
-  S3 one connected solid part (islands are removed and logged; refused when > 2 % of the solid voxels would change -
-     provisional limit);
+  S3 one connected solid part (islands are removed and logged; refused when > 2 % of the solid voxels would change;
+     PI 2026-11-18);
   S4 the void that touches BOTH endplates (one connected region) is >= 50 % of the disc-space volume (PLAN.md S4: 'void
-     connected to both endplates, >= 50 %'); and that region meets EACH endplate over >= 25 % of the footprint (provisional number: a void that
+     connected to both endplates, >= 50 %'); and that region meets EACH endplate over >= 25 % of the footprint (PI 2026-11-18: a void that
      reaches an endplate only through a small hole does not let the endplate feed the biodisc); the total void is reported
      next to it (audit D-20261118-38: the first version tested the total void and only required some through-going void);
-  S5 in-plane feature >= 0.4 mm (2 columns; provisional tolerance 2 % for staircase cells) and every solid element
-     supported from the layer below by the element underneath or one of its four side neighbours (45 degrees in the axis
-     directions; a diagonal step would be 55 degrees and is not accepted; provisional tolerance 0.5 %);
+  S5 in-plane feature >= 0.4 mm (2 columns; tolerance 2 % for staircase cells, PI 2026-11-18) and every solid element is
+     supported: by the element underneath or one of its four side neighbours (45 degrees), OR it belongs to a BRIDGE - a
+     straight flat run of at most 2.0 mm between two supported solid elements of the same layer (the roof of a hole; PI
+     2026-11-18: a cage with holes can be printed, so the rule must not forbid holes; 2.0 mm is provisional until the
+     laboratory's printer value for PLCL is known - rigid filaments bridge 5-20 mm, flexible ones about 4 mm or less).
+     Tolerance for what is still unsupported: 0.5 % (provisional);
   C1 the part touches both endplates; C2 no face quad over a void column that h14 would still take as contact;
   C3 solid columns that do not reach a face are counted (no contact surface is defined there - warning).
 ```

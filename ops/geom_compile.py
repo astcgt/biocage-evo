@@ -24,15 +24,18 @@ Regions (boolean over the lattice elements; lengths in mm; x = anterior (+) / po
 Interleave realisation (as h12): an element is hard when (print-line index + layer) mod 4 < round(4 phi); the print-line
 index is the 0.4 mm contour line counted from the footprint outline.
 L0 checks by code (safety rules of docs/PLAN.md; the numbers marked provisional are owned by the safety guard):
-  S3 one connected solid part (islands are removed and logged; refused when > 2 % of the solid voxels would change -
-     provisional limit);
+  S3 one connected solid part (islands are removed and logged; refused when > 2 % of the solid voxels would change;
+     PI 2026-11-18);
   S4 the void that touches BOTH endplates (one connected region) is >= 50 % of the disc-space volume (PLAN.md S4: 'void
-     connected to both endplates, >= 50 %'); and that region meets EACH endplate over >= 25 % of the footprint (provisional number: a void that
+     connected to both endplates, >= 50 %'); and that region meets EACH endplate over >= 25 % of the footprint (PI 2026-11-18: a void that
      reaches an endplate only through a small hole does not let the endplate feed the biodisc); the total void is reported
      next to it (audit D-20261118-38: the first version tested the total void and only required some through-going void);
-  S5 in-plane feature >= 0.4 mm (2 columns; provisional tolerance 2 % for staircase cells) and every solid element
-     supported from the layer below by the element underneath or one of its four side neighbours (45 degrees in the axis
-     directions; a diagonal step would be 55 degrees and is not accepted; provisional tolerance 0.5 %);
+  S5 in-plane feature >= 0.4 mm (2 columns; tolerance 2 % for staircase cells, PI 2026-11-18) and every solid element is
+     supported: by the element underneath or one of its four side neighbours (45 degrees), OR it belongs to a BRIDGE - a
+     straight flat run of at most 2.0 mm between two supported solid elements of the same layer (the roof of a hole; PI
+     2026-11-18: a cage with holes can be printed, so the rule must not forbid holes; 2.0 mm is provisional until the
+     laboratory's printer value for PLCL is known - rigid filaments bridge 5-20 mm, flexible ones about 4 mm or less).
+     Tolerance for what is still unsupported: 0.5 % (provisional);
   C1 the part touches both endplates; C2 no face quad over a void column that h14 would still take as contact;
   C3 solid columns that do not reach a face are counted (no contact surface is defined there - warning).
 usage: python ops/geom_compile.py <spec.json> <out.npz> [report.json]       exit 0 = built, 2 = refused
@@ -45,6 +48,7 @@ EVO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PLAT = os.path.dirname(os.path.dirname(json.load(open(os.path.join(EVO, 'config.json')))['febio_src']))
 sys.path.insert(0, os.path.join(PLAT, 'scripts', 'common'))
 LINE, MAX_REPAIR, TOL_FEATURE, TOL_OVERHANG, MIN_VOID_FACE = 0.4, 0.02, 0.02, 0.005, 0.25
+MAX_BRIDGE = 2.0      # mm; flat roof of a hole that the printer can span between two supported sides (provisional, PI 2026-11-18: holes must stay printable)
 FSU, FRAME = os.path.join(PLAT, 'human_study/fsu/C34_fsu_refined.feb'), os.path.join(PLAT, 'human_study/frame_c3c4.json')
 _fp_cache = {}
 
@@ -133,7 +137,21 @@ def compile_spec(spec, out=None):
     opened = np.stack([ndimage.binary_opening(g[:, :, k], structure=np.ones((2, 2), bool)) for k in range(K)], axis=2)
     thin = int((g & ~opened).sum()); chk['S5_min_feature'] = dict(ok=bool(thin <= TOL_FEATURE * g.sum()), thin_elements=thin, fraction=round(thin / max(1, int(g.sum())), 4), tolerance=TOL_FEATURE)
     sup = np.stack([g[:, :, 0]] + [ndimage.binary_dilation(g[:, :, k - 1], structure=ndimage.generate_binary_structure(2, 1)) for k in range(1, K)], axis=2)
-    unsup = int((g & ~sup).sum()); chk['S5_overhang'] = dict(ok=bool(unsup <= TOL_OVERHANG * g.sum()), unsupported_elements=unsup, fraction=round(unsup / max(1, int(g.sum())), 4), tolerance=TOL_OVERHANG)
+    un = g & ~sup; anchored = g & sup; bridged = np.zeros_like(g); nmax = int(round(MAX_BRIDGE / F['h']))
+    for k in range(1, K):
+        if not un[:, :, k].any(): continue
+        for ax in (0, 1):
+            U = un[:, :, k] if ax == 0 else un[:, :, k].T; A = anchored[:, :, k] if ax == 0 else anchored[:, :, k].T; Bm = np.zeros_like(U)
+            for jj in np.where(U.any(0))[0]:
+                col_ = U[:, jj]; start = None
+                for ii in range(len(col_) + 1):
+                    on = ii < len(col_) and col_[ii]
+                    if on and start is None: start = ii
+                    if not on and start is not None:
+                        if ii - start <= nmax and start > 0 and ii < len(col_) and A[start - 1, jj] and A[ii, jj]: Bm[start:ii, jj] = True
+                        start = None
+            bridged[:, :, k] |= Bm if ax == 0 else Bm.T
+    unsup = int((un & ~bridged).sum()); chk['S5_overhang'] = dict(ok=bool(unsup <= TOL_OVERHANG * g.sum()), unsupported_elements=unsup, bridged_elements=int(bridged.sum()), max_bridge_mm=MAX_BRIDGE, fraction=round(unsup / max(1, int(g.sum())), 4), tolerance=TOL_OVERHANG)
     nt, nb = int(g[:, :, K - 1].sum()), int(g[:, :, 0].sum()); chk['C1_touches_both_endplates'] = dict(ok=bool(nt > 0 and nb > 0), top_columns=nt, bottom_columns=nb)
     cage_nodes = np.zeros(len(base['Q']), bool); cage_nodes[np.unique(H[solid])] = True; lay = F['layer']
     spur = 0
