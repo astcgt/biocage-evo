@@ -1,20 +1,20 @@
 {
- "generated": "2026-11-18T12:00",
+ "generated": "2026-11-18T13:57",
  "n_designs_with_friction_verdict": 73,
  "n_ext": 72,
- "spearman_ext_posterior": 0.9090032074479447,
- "spearman_ext_p": 2.5832197825391262e-28,
+ "spearman_ext_posterior": 0.9150986111213837,
+ "spearman_ext_p": 2.534639979280979e-29,
  "linear_fit_ext": {
-  "slope": 4.646538216155573,
-  "intercept": -0.17157666622010453,
-  "rms_residual_mm": 0.03922144455173445,
-  "max_abs_residual_mm": 0.15223851994795706,
-  "p90_abs_residual_mm": 0.05829317784594975
+  "slope": 4.61069346638746,
+  "intercept": -0.16832563875346257,
+  "rms_residual_mm": 0.03749440470362367,
+  "max_abs_residual_mm": 0.15061824592111234,
+  "p90_abs_residual_mm": 0.05449703721401764
  },
- "mu_req_at_0p5mm": 0.1445326897097491,
- "mu_req_at_0p55mm": 0.15529338889568386,
- "n_flex": 70,
- "spearman_flex_u_h": 0.4748370292240241,
+ "mu_req_at_0p5mm": 0.14495121907922123,
+ "mu_req_at_0p55mm": 0.15579557478503997,
+ "n_flex": 71,
+ "spearman_flex_u_h": 0.4746570188888049,
  "grey_band_0p140_pm_0p005": [
   "p051",
   "p075",
@@ -32,8 +32,8 @@
  "grey_band_without_friction_run": [],
  "agreement_table": {
   "('tied<=mu(0.5mm)', 'pass')": 53,
-  "('tied<=mu(0.5mm)', 'grey')": 16,
-  "('tied<=mu(0.5mm)', 'open')": 4
+  "('tied<=mu(0.5mm)', 'grey')": 17,
+  "('tied<=mu(0.5mm)', 'open')": 3
  },
  "rule": "PI 2026-11-10: Spearman >= 0.9 and linear residual <= 0.05 mm (RMS reading; max also reported); grey band mu_req 0.140 +- 0.005 must have a friction run",
  "rows": [
@@ -169,16 +169,16 @@
   },
   {
    "design": "p060",
-   "verdict": "open",
+   "verdict": "grey",
    "own_verdict": null,
    "mu_req_max": 0.131,
    "tied_class": "GREY/friction-posterior-0.45-0.55",
-   "ext_posterior_mm": 0.5413171224341372,
+   "ext_posterior_mm": 0.47472175450245857,
    "ext_eval": "ROM",
    "ext_usable": true,
-   "flex_u_h_mm": 0.7867307655579606,
-   "flex_eval": null,
-   "flex_usable": false
+   "flex_u_h_mm": 0.7971658549365802,
+   "flex_eval": "1.5Nm",
+   "flex_usable": true
   },
   {
    "design": "p061",

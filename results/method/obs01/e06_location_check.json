@@ -1,0 +1,77 @@
+{
+ "generated": "2026-11-18T13:58",
+ "state": "sustained t 3.5",
+ "question": "do the top-1 % hard-phase von Mises elements sit on the hard/soft interface (face shared with a soft element)?",
+ "rows": [
+  {
+   "case": "human_study/al_v2/physio_fric5r/p093/w_extension",
+   "n_hard": 11147,
+   "K": 23,
+   "frac_interface_adjacent_all": 0.4766304835381717,
+   "frac_interface_adjacent_top1pct": 0.48214285714285715,
+   "top1pct_layers": {
+    "22": 46,
+    "21": 20,
+    "0": 10,
+    "1": 8,
+    "19": 7,
+    "20": 5
+   },
+   "vm_MPa": {
+    "median": 5.117186428073569,
+    "p90": 9.578345055566492,
+    "p99": 12.378891375001004,
+    "max": 17.120484967469736
+   },
+   "p99_nonadjacent": 12.376343620969072,
+   "p99_adjacent": 12.37882788531271
+  },
+  {
+   "case": "human_study/al_v2/physio_rot_split2/p015/w_extension",
+   "n_hard": 13113,
+   "K": 27,
+   "frac_interface_adjacent_all": 0.4767025089605735,
+   "frac_interface_adjacent_top1pct": 0.4015151515151515,
+   "top1pct_layers": {
+    "25": 24,
+    "24": 18,
+    "26": 15,
+    "23": 14,
+    "14": 10,
+    "17": 10
+   },
+   "vm_MPa": {
+    "median": 5.090498552039476,
+    "p90": 10.656955390805658,
+    "p99": 13.12999233627677,
+    "max": 16.949776889762063
+   },
+   "p99_nonadjacent": 13.386046151192664,
+   "p99_adjacent": 13.072911714162021
+  },
+  {
+   "case": "human_study/al_v2/physio_fric5r/p142/w_extension",
+   "n_hard": 12445,
+   "K": 25,
+   "frac_interface_adjacent_all": 0.46364001607071115,
+   "frac_interface_adjacent_top1pct": 0.256,
+   "top1pct_layers": {
+    "23": 24,
+    "24": 23,
+    "0": 16,
+    "1": 14,
+    "2": 8,
+    "3": 6
+   },
+   "vm_MPa": {
+    "median": 5.238068605211479,
+    "p90": 10.312645477390841,
+    "p99": 13.347700648461899,
+    "max": 22.050680634231938
+   },
+   "p99_nonadjacent": 14.040201564419277,
+   "p99_adjacent": 12.520082387846765
+  }
+ ],
+ "reading": "the top-1 % share adjacent to the interface (0.26-0.48) equals or is below the overall interface share (0.46-0.48); the non-adjacent p99 equals or exceeds the all-element p99; the top elements sit in the endplate-contact layers -> load-carrying strut stress, not interface singularity"
+}

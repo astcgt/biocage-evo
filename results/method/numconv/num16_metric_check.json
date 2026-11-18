@@ -1,0 +1,50 @@
+{
+ "generated": "2026-11-18T13:59",
+ "window": "p062 flexion at 1.5 N m (tied), horizontal interfaces, soft-side shear traction",
+ "coarse": {
+  "n_faces": 5368,
+  "t_eval": 3.934254670775841,
+  "reached": true,
+  "max": 7.947682977785986,
+  "p99": 5.716858940544108,
+  "p95": 4.3081692941865235,
+  "p90": 3.736383673402954,
+  "median": 1.9717910462039892,
+  "mean": 2.0675579640038206,
+  "n_patches": 198,
+  "patch_mean_p99": 3.9405886901940104,
+  "patch_mean_max": 4.424567004778484,
+  "patch_mean_p90": 3.2485547271315807
+ },
+ "fine": {
+  "n_faces": 5610,
+  "t_eval": 3.9382087019712415,
+  "reached": true,
+  "max": 5.940873866792864,
+  "p99": 4.8154850652899865,
+  "p95": 3.9395203333538844,
+  "p90": 3.4483953643751453,
+  "median": 1.7604720513304457,
+  "mean": 1.8783849314291576,
+  "n_patches": 198,
+  "patch_mean_p99": 4.028489781977813,
+  "patch_mean_max": 4.247516964928548,
+  "patch_mean_p90": 2.952304525603829
+ },
+ "fine_minus_coarse_rel": {
+  "max": -0.25250241065254037,
+  "p99": -0.1576694273251269,
+  "p95": -0.08556974799715898,
+  "p90": -0.07707674965979068,
+  "median": -0.10717108959408557,
+  "mean": -0.0914958786491915,
+  "patch_mean_p99": 0.022306588861339557,
+  "patch_mean_max": -0.04001522401146238,
+  "patch_mean_p90": -0.09119446227994916
+ },
+ "within_5pct": [
+  "patch_mean_p99",
+  "patch_mean_max"
+ ],
+ "note": "statistic candidates for a mesh-robust shear read-out (NUM-16); patch = 0.5 mm in-plane bins of face centroids"
+}
