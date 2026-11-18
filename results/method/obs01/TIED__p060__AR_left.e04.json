@@ -1,0 +1,126 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split2/p060_gpu3/w_AR_left",
+ "windows": {
+  "AR_left": {
+   "t": 3.966741731116542,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.0077072656260181,
+   "net_push_N": 1.7851688122145501,
+   "net_twist_Nmm": 1.8910216465012124,
+   "N_total": 203.25014172703638,
+   "one_face_slip_bound_mm": 0.3833457603600973,
+   "cage_translation_tied_mm": [
+    -0.020465518673094305,
+    -0.00404948750328208,
+    -0.0385996497257312
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3175.0,
+   "posterior_rim_translation_mm": [
+    -0.025808405847203033,
+    -0.11837446920832345,
+    -0.040637875458120205
+   ],
+   "posterior_rim_posterior_mm": 0.025808405847203033,
+   "posterior_most_node_posterior_mm": 0.2886449307092002,
+   "posterior_rim_minus_mean_mm": 0.1144567858752815,
+   "hard_fit_n": 19233.0,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    -0.017662710300628093,
+    -0.005290202338637366,
+    -0.03823455229114386
+   ],
+   "hard_fit_rotation_deg": 1.5917339532810688,
+   "hard_fit_rotation_z_deg": 1.5164391890362439,
+   "hard_fit_rms_mm": 0.09341274778950663,
+   "hard_fit_minus_mean_mm": 0.0030653383152259173,
+   "hard_local_max_inplane_mm": 0.19876133112609537,
+   "eval": {
+    "t_a": 3.95654956,
+    "M_a": -1439.08561815,
+    "t_b": 4.0,
+    "M_b": -1698.77088672,
+    "frac": 0.2345700323527596,
+    "coarse": false,
+    "invalid": [
+     [
+      3.69545455,
+      0.045454550000000093,
+      -1443.90545837,
+      "dyn",
+      1561.0,
+      4.62
+     ],
+     [
+      3.73149423,
+      0.03603968000000002,
+      -484.209965202,
+      "dyn",
+      240.6,
+      3.25
+     ],
+     [
+      3.76640539,
+      0.03491116000000005,
+      -551.182176552,
+      "dyn",
+      108.2,
+      1.83
+     ],
+     [
+      3.78943278,
+      0.02302738999999976,
+      -633.300643958,
+      "dyn",
+      110.8,
+      1.12
+     ],
+     [
+      3.82763554,
+      0.01910138000000039,
+      -806.348425146,
+      "dyn",
+      55.7,
+      0.62
+     ],
+     [
+      3.84782141,
+      0.020185869999999717,
+      -892.387250826,
+      "dyn",
+      43.3,
+      0.38
+     ],
+     [
+      3.987184,
+      0.03063444000000004,
+      -1632.93884672,
+      "dyn",
+      32.2,
+      2.17
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 17,
+    "n_invalid": 7,
+    "n_dyn": 7,
+    "dt_min": 0.012815999999999939,
+    "monotonic": true,
+    "rb_res_max": 28.486426836621956,
+    "rb_fres_max": 0.4919223236141681,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "aedd06bf2db9082783f9b24a252913a776e6d18f",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "8699a5132fa35c596a44a9f8438ff303a1dcc2b50e8a37dede8d8025f8286582",
+  "case_xplt": "5c27eefb2d62dae34619ed65c4b34aff6ce71641e70130d5f23477e5a116090c"
+ }
+}

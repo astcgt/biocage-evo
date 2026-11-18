@@ -1,0 +1,69 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric5r/p075/w_extension",
+ "windows": {
+  "extension": {
+   "t": 4.0,
+   "target_reached": false,
+   "M_at_target": 520.067214433,
+   "mu_squeeze": 0.07779715838147819,
+   "net_push_N": 15.712351163092427,
+   "net_twist_Nmm": 0.16141526396745062,
+   "N_total": 205.29317857492345,
+   "one_face_slip_bound_mm": 1.5886404649175425,
+   "cage_translation_tied_mm": [
+    -0.8808301974786792,
+    -0.0023164438866887824,
+    0.2881853963356894
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3048,
+   "posterior_rim_translation_mm": [
+    -0.6252187043309408,
+    -0.0002212518781638276,
+    -0.24908941950984403
+   ],
+   "posterior_rim_posterior_mm": 0.6252187043309408,
+   "posterior_most_node_posterior_mm": 1.3837239904883984,
+   "posterior_rim_minus_mean_mm": 0.2556200799209031,
+   "hard_fit_n": 18083,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    -0.8594352095893412,
+    -0.00046073976580401216,
+    0.3022268309380287
+   ],
+   "hard_fit_rotation_deg": 8.498216364428657,
+   "hard_fit_rotation_z_deg": 0.006011529361348919,
+   "hard_fit_rms_mm": 0.20567023309408183,
+   "hard_fit_minus_mean_mm": 0.021475314772295875,
+   "hard_local_max_inplane_mm": 0.5009214851835713,
+   "eval": {
+    "t_a": 4.0,
+    "M_a": 520.067214433,
+    "t_b": 4.0,
+    "M_b": 520.067214433,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": []
+   },
+   "window_check": {
+    "n_rows": 91,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.0014873600000000486,
+    "monotonic": false,
+    "rb_res_max": 0.0,
+    "rb_fres_max": 5.376294173624415,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "1934172e51540998dc468078b3e20b8fc6be8433",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "17c138e48cb888d37b47b92ccc7384ed6c7b59f6e7552d966481c8156b266c95",
+  "case_xplt": "4744bc91695fc5c558bc64b0a7333c546ff545f6863417c03a0769a27fb70ed1"
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "hard_blocks": [
+  10
+ ],
+ "hard_phi": 1.0,
+ "sig_hard_MPa": 15.0,
+ "limit_MPa": 2.6999999999999997,
+ "limit_rule": "0.18 x sig_hard (PI 2026-11-03 item 7, secondary; short-term strength proxied by the wet yield parameter - provisional)",
+ "sustained": {
+  "p99": 16.704012999158067,
+  "max": 21.754913636685707,
+  "n": 13762
+ },
+ "t_sustained": 3.5,
+ "t_last": 4.0,
+ "windows": {
+  "AR_left": {
+   "peak_p99": 24.347176366677314,
+   "peak_max": 34.08476953242193,
+   "reached": true,
+   "t_eval": 3.956421951096363,
+   "window_check": {
+    "n_rows": 17,
+    "n_invalid": 1,
+    "n_dyn": 1,
+    "dt_min": 0.011890670000000103,
+    "monotonic": true,
+    "rb_res_max": 16.868085030246856,
+    "rb_fres_max": 0.20783112838024237,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "peak_p99": 24.347176366677314,
+ "within_sustained": false,
+ "within_peak": false,
+ "provenance": {
+  "git": "a1b1581d2b035a94b7290c310b1a348f67e22da0",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "acec07cf16ec3990c129406a8d4e4101a88485736cfe6fee04ea974983cc6b38",
+  "case_xplt": "501f707715de0d05720731a1c99ec2a638572d05d8376ba8ed98b790776a4bc2"
+ }
+}

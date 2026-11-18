@@ -1,0 +1,78 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split2/p107_gpu3/w_AR_left",
+ "windows": {
+  "AR_left": {
+   "t": 3.7679131201162743,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.027150258547576623,
+   "net_push_N": 5.006445608876518,
+   "net_twist_Nmm": 18.830374788291255,
+   "N_total": 269.77664027511497,
+   "one_face_slip_bound_mm": 0.3045911273815218,
+   "cage_translation_tied_mm": [
+    0.0041129742062313065,
+    -0.0010142833675802836,
+    -0.02784103084439575
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3556.0,
+   "posterior_rim_translation_mm": [
+    -0.0004942319572900022,
+    -0.09251869726373665,
+    -0.05810390998761866
+   ],
+   "posterior_rim_posterior_mm": 0.0004942319572900022,
+   "posterior_most_node_posterior_mm": 0.19869420254980347,
+   "posterior_rim_minus_mean_mm": 0.0916226341855179,
+   "hard_fit_n": 15008.0,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    0.007729440445422668,
+    -0.0010819441014732758,
+    -0.028163545244483872
+   ],
+   "hard_fit_rotation_deg": 1.354697603360801,
+   "hard_fit_rotation_z_deg": 1.2789387873958298,
+   "hard_fit_rms_mm": 0.0747214939630813,
+   "hard_fit_minus_mean_mm": 0.0036176174942011735,
+   "hard_local_max_inplane_mm": 0.14715110019618166,
+   "eval": {
+    "t_a": 3.76060178,
+    "M_a": -1427.42796175,
+    "t_b": 3.7785233,
+    "M_b": -1605.31617571,
+    "frac": 0.40796428630352466,
+    "coarse": false,
+    "invalid": [
+     [
+      3.7,
+      0.050000000000000266,
+      -945.761877265,
+      "dyn",
+      153.6,
+      22.44
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 17,
+    "n_invalid": 1,
+    "n_dyn": 1,
+    "dt_min": 0.01677798000000008,
+    "monotonic": true,
+    "rb_res_max": 9.71192043966312,
+    "rb_fres_max": 0.46870797918273016,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "1934172e51540998dc468078b3e20b8fc6be8433",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "0ff2dccedc98b3f502f14ff19cb6871b59e6fe3190cb102ce323bea4ea2e477f",
+  "case_xplt": "2390fc4a5732f1ffa6f17db720001441f411773700564bec87d481b23921f425"
+ }
+}

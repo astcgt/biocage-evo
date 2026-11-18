@@ -1,0 +1,78 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split3/p003_gpu1/w_LB_right",
+ "windows": {
+  "LB_right": {
+   "t": 4.0,
+   "target_reached": false,
+   "M_at_target": -1036.82704397,
+   "mu_squeeze": 0.06391496823688196,
+   "net_push_N": 13.700883249714032,
+   "net_twist_Nmm": 31.76792718273039,
+   "N_total": 249.64396224394136,
+   "one_face_slip_bound_mm": 0.1962064885192984,
+   "cage_translation_tied_mm": [
+    0.01691542125056467,
+    -0.044183477749400575,
+    -0.07144954079655379
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3556,
+   "posterior_rim_translation_mm": [
+    -0.03946801369856189,
+    -0.006796519399828332,
+    -0.12146462740685507
+   ],
+   "posterior_rim_posterior_mm": 0.03946801369856189,
+   "posterior_most_node_posterior_mm": 0.14837411274273785,
+   "posterior_rim_minus_mean_mm": 0.06765261555398311,
+   "hard_fit_n": 21148,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    0.012856989020994414,
+    -0.03643437220983926,
+    -0.06934912878158794
+   ],
+   "hard_fit_rotation_deg": 1.1087496479898997,
+   "hard_fit_rotation_z_deg": -0.3220308236105215,
+   "hard_fit_rms_mm": 0.08384343177629575,
+   "hard_fit_minus_mean_mm": 0.008747543016486087,
+   "hard_local_max_inplane_mm": 0.15803917220164254,
+   "eval": {
+    "t_a": 4.0,
+    "M_a": -1036.82704397,
+    "t_b": 4.0,
+    "M_b": -1036.82704397,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": [
+     [
+      3.55,
+      0.04999999999999982,
+      -113.412144219,
+      "dyn",
+      30.7,
+      4.74
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 10,
+    "n_invalid": 1,
+    "n_dyn": 1,
+    "dt_min": 0.04999999999999982,
+    "monotonic": true,
+    "rb_res_max": 10.391805301270594,
+    "rb_fres_max": 0.8286178974912601,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "060859de988d992c7aed234517e76a3878c9e588",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "613f76b6e35fa1829176eac037f4209d6076028ffe95f907cfad5b16ee175222",
+  "case_xplt": "72518ffb8bef47df0e4a461e2ef96e4920401374e6fe9ed4c82025f02f551c55"
+ }
+}

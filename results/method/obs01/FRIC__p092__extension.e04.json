@@ -1,0 +1,69 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric5r/p092/w_extension",
+ "windows": {
+  "extension": {
+   "t": 4.0,
+   "target_reached": false,
+   "M_at_target": 535.631202587,
+   "mu_squeeze": 0.0931018816959364,
+   "net_push_N": 18.941209937609315,
+   "net_twist_Nmm": 0.14667319695048558,
+   "N_total": 206.97888858578838,
+   "one_face_slip_bound_mm": 1.5631505032091912,
+   "cage_translation_tied_mm": [
+    -0.8917357344489987,
+    -0.001090683557389958,
+    0.37183626187137525
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3175,
+   "posterior_rim_translation_mm": [
+    -0.6331162131059629,
+    -0.00031550561434846874,
+    -0.1994053473872715
+   ],
+   "posterior_rim_posterior_mm": 0.6331162131059629,
+   "posterior_most_node_posterior_mm": 1.3286849589608984,
+   "posterior_rim_minus_mean_mm": 0.2586206830873051,
+   "hard_fit_n": 19233,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    -0.8869633731070998,
+    -0.0004098211712271751,
+    0.3797839449340774
+   ],
+   "hard_fit_rotation_deg": 8.871640769278848,
+   "hard_fit_rotation_z_deg": 0.005731066187883123,
+   "hard_fit_rms_mm": 0.17430636288783255,
+   "hard_fit_minus_mean_mm": 0.004820685259020944,
+   "hard_local_max_inplane_mm": 0.458712815950241,
+   "eval": {
+    "t_a": 4.0,
+    "M_a": 535.631202587,
+    "t_b": 4.0,
+    "M_b": 535.631202587,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": []
+   },
+   "window_check": {
+    "n_rows": 79,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.001078619999999919,
+    "monotonic": true,
+    "rb_res_max": 0.0,
+    "rb_fres_max": 1.1382274755524948,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "1934172e51540998dc468078b3e20b8fc6be8433",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "6eb648a4ba0a7144bc5cde90a433a31ffeecbe582c4a5ad2d953f41f9f1ee92b",
+  "case_xplt": "3575850cd1ad30fe9abc1faf6330b8926799628502b61a8d5cc81417761a54f2"
+ }
+}

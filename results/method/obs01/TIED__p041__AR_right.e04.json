@@ -1,0 +1,78 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split2/p041_gpu1/w_AR_right",
+ "windows": {
+  "AR_right": {
+   "t": 4.0,
+   "target_reached": false,
+   "M_at_target": 867.420811446,
+   "mu_squeeze": 0.014236294076670292,
+   "net_push_N": 1.6808449247252557,
+   "net_twist_Nmm": 9.989224336187572,
+   "N_total": 218.47062930656693,
+   "one_face_slip_bound_mm": 0.26222876488625585,
+   "cage_translation_tied_mm": [
+    0.014582675091704822,
+    -0.009994765062351406,
+    -0.05491316625820536
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3302,
+   "posterior_rim_translation_mm": [
+    -0.01712683779864722,
+    0.06198673846972213,
+    -0.05057770539408074
+   ],
+   "posterior_rim_posterior_mm": 0.01712683779864722,
+   "posterior_most_node_posterior_mm": 0.16783002658093477,
+   "posterior_rim_minus_mean_mm": 0.0786564050696529,
+   "hard_fit_n": 19087,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    0.010851460839812477,
+    -0.014537633745681958,
+    -0.04601711982452805
+   ],
+   "hard_fit_rotation_deg": 1.0389395278967761,
+   "hard_fit_rotation_z_deg": -0.9968201863585655,
+   "hard_fit_rms_mm": 0.07074945233868427,
+   "hard_fit_minus_mean_mm": 0.0058787426944466635,
+   "hard_local_max_inplane_mm": 0.158451339178187,
+   "eval": {
+    "t_a": 4.0,
+    "M_a": 867.420811446,
+    "t_b": 4.0,
+    "M_b": 867.420811446,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": [
+     [
+      3.75,
+      0.04999999999999982,
+      293.91076591,
+      "dyn",
+      41.7,
+      0.48
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 14,
+    "n_invalid": 1,
+    "n_dyn": 1,
+    "dt_min": 0.009378270000000022,
+    "monotonic": true,
+    "rb_res_max": 23.89258136599483,
+    "rb_fres_max": 1.560828246306337,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "aedd06bf2db9082783f9b24a252913a776e6d18f",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "16f597382384f9185e06799ffcf41c3e73750211de9b388e802a4c0123b291dc",
+  "case_xplt": "5b4565b86c307277dcc7b735cabaa92d171e762a02a974ba47d44868bf73775b"
+ }
+}

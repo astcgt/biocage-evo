@@ -1,0 +1,76 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric5r/p135/w_flexion",
+ "windows": {
+  "flexion": {
+   "t": 3.734952755520146,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.04727024581821096,
+   "net_push_N": 14.594989201594574,
+   "net_twist_Nmm": 0.30100579575374087,
+   "N_total": 310.02543136355513,
+   "one_face_slip_bound_mm": 0.522413718391525,
+   "cage_translation_tied_mm": [
+    0.22909045023655925,
+    0.00025185648168759585,
+    0.09844332051814705
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3048.0,
+   "posterior_rim_translation_mm": [
+    0.2389885381418552,
+    -0.0009586755602993403,
+    0.2870395500973356
+   ],
+   "posterior_rim_posterior_mm": -0.2389885381418552,
+   "posterior_most_node_posterior_mm": -0.10155887636517155,
+   "posterior_rim_minus_mean_mm": 0.00998216479829308,
+   "hard_fit_n": 19836.0,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    0.22439878459677706,
+    -7.035904334882032e-05,
+    0.10821627987259234
+   ],
+   "hard_fit_rotation_deg": 2.5931474000263357,
+   "hard_fit_rotation_z_deg": 0.011105947015268298,
+   "hard_fit_rms_mm": 0.039480886674439296,
+   "hard_fit_minus_mean_mm": 0.004702784321584217,
+   "hard_local_max_inplane_mm": 0.08555368248053948,
+   "eval": {
+    "t_a": 3.72025541,
+    "M_a": -1383.60614793,
+    "t_b": 3.74750168,
+    "M_b": -1599.37969122,
+    "frac": 0.5394259662018271,
+    "coarse": false,
+    "invalid": [
+     [
+      4.0,
+      9.850000000088954e-06,
+      -3865.63785872,
+      "dt"
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 195,
+    "n_invalid": 1,
+    "n_dyn": 0,
+    "dt_min": 0.000500000000000167,
+    "monotonic": true,
+    "rb_res_max": 0.0,
+    "rb_fres_max": 0.6341382371337996,
+    "t_last": 3.99999015,
+    "complete": false
+   }
+  }
+ },
+ "provenance": {
+  "git": "9e579acec682b208d5bed18818e87b8e479d0a7d",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "feae4a2d022bd873704d9bf5f99b2848084a7ec5cc6b4f485092b8192b383005",
+  "case_xplt": "23418ce0e8e0b5f034990bb4f1551bfbed5b14dcac9187f4dcaf2c3c1e2b4625"
+ }
+}

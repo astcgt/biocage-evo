@@ -1,0 +1,94 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split3/p015_gpu2/w_extension",
+ "windows": {
+  "extension": {
+   "t": 3.973801616929162,
+   "target_reached": true,
+   "M_at_target": 1500.0,
+   "mu_squeeze": 0.017025234396490774,
+   "net_push_N": 1.6020837848061569,
+   "net_twist_Nmm": 0.05145009903399915,
+   "N_total": 168.24856989214922,
+   "one_face_slip_bound_mm": 0.5990292620444941,
+   "cage_translation_tied_mm": [
+    -0.18778183014222244,
+    0.00044568249324985603,
+    -0.05790853351980104
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3556.0,
+   "posterior_rim_translation_mm": [
+    -0.3785182667251252,
+    0.0005911155012920954,
+    -0.28786236520719677
+   ],
+   "posterior_rim_posterior_mm": 0.3785182667251252,
+   "posterior_most_node_posterior_mm": 0.820512761740615,
+   "posterior_rim_minus_mean_mm": 0.19073649204669404,
+   "hard_fit_n": 21148.0,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    -0.2130654487890825,
+    0.0004720327049025183,
+    -0.05970686162782707
+   ],
+   "hard_fit_rotation_deg": 3.219692216093482,
+   "hard_fit_rotation_z_deg": -0.00019833484466801282,
+   "hard_fit_rms_mm": 0.18725640317423511,
+   "hard_fit_minus_mean_mm": 0.02528363391198566,
+   "hard_local_max_inplane_mm": 0.6233547598048463,
+   "eval": {
+    "t_a": 3.97111458,
+    "M_a": 1489.5184721,
+    "t_b": 3.98280079,
+    "M_b": 1535.1037541,
+    "frac": 0.2299322816517828,
+    "coarse": false,
+    "invalid": [
+     [
+      3.78165211,
+      0.04334731000000014,
+      796.04828857,
+      "dyn",
+      32.5,
+      0.24
+     ],
+     [
+      3.81836469,
+      0.036712580000000106,
+      925.977387913,
+      "dyn",
+      1086.7,
+      284.06
+     ],
+     [
+      3.94516069,
+      0.01629857999999995,
+      1330.66261564,
+      "dyn",
+      55.5,
+      0.04
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 17,
+    "n_invalid": 3,
+    "n_dyn": 3,
+    "dt_min": 0.006191600000000186,
+    "monotonic": false,
+    "rb_res_max": 25.439516786664562,
+    "rb_fres_max": 2.7735404560683405,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "aedd06bf2db9082783f9b24a252913a776e6d18f",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "908e4641a37f54730979c8fdb3fdac9df905b6dba37bad51f95a286892332900",
+  "case_xplt": "61999734c7caced494d161734ee36d1cec1526538a72888b4ae0899314d732c7"
+ }
+}

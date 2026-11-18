@@ -1,0 +1,69 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split2/p097_gpu2/w_LB_right",
+ "windows": {
+  "LB_right": {
+   "t": 3.9034891459204952,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.08242495919074076,
+   "net_push_N": 20.77437031058087,
+   "net_twist_Nmm": 46.54553002011898,
+   "N_total": 291.37315241995367,
+   "one_face_slip_bound_mm": 0.16097314862449372,
+   "cage_translation_tied_mm": [
+    0.0001547533278297857,
+    -0.03015226825666551,
+    -0.03134577979546297
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3683.0,
+   "posterior_rim_translation_mm": [
+    -0.011580648770221766,
+    -0.006393769156113313,
+    -0.07331346460817222
+   ],
+   "posterior_rim_posterior_mm": 0.011580648770221766,
+   "posterior_most_node_posterior_mm": 0.06720712746132725,
+   "posterior_rim_minus_mean_mm": 0.02650039972804329,
+   "hard_fit_n": 15544.0,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    0.004256561166342202,
+    -0.023895998311140317,
+    -0.031650992088957115
+   ],
+   "hard_fit_rotation_deg": 0.9201932706779745,
+   "hard_fit_rotation_z_deg": -0.1765887301105552,
+   "hard_fit_rms_mm": 0.04505302984188972,
+   "hard_fit_minus_mean_mm": 0.007481408618070686,
+   "hard_local_max_inplane_mm": 0.06350815250428682,
+   "eval": {
+    "t_a": 3.9,
+    "M_a": -1487.35141268,
+    "t_b": 3.95,
+    "M_b": -1668.60762277,
+    "frac": 0.06978291840990977,
+    "coarse": false,
+    "invalid": []
+   },
+   "window_check": {
+    "n_rows": 10,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.04999999999999982,
+    "monotonic": true,
+    "rb_res_max": 2.2834111198349736,
+    "rb_fres_max": 0.23111253951545446,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "060859de988d992c7aed234517e76a3878c9e588",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "648b84b9fe0ebc2be35f3625e6947107661bbc1181de4d6a7de59cd18609692f",
+  "case_xplt": "8a4d29b7f404cffa04fdcc407f52f2f068913d558ff5e85411714606a503e954"
+ }
+}

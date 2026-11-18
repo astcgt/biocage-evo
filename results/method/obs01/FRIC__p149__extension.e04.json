@@ -1,0 +1,69 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_relGr/p149/w_extension",
+ "windows": {
+  "extension": {
+   "t": 4.0,
+   "target_reached": false,
+   "M_at_target": 590.277261683,
+   "mu_squeeze": 0.06097604319897242,
+   "net_push_N": 11.90873840193051,
+   "net_twist_Nmm": 0.0310471035965047,
+   "N_total": 199.1804653785358,
+   "one_face_slip_bound_mm": 1.2958753698541021,
+   "cage_translation_tied_mm": [
+    -0.5683367829810494,
+    -0.0012111715195070574,
+    0.45599079781093677
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3302,
+   "posterior_rim_translation_mm": [
+    -0.43750041843371085,
+    -0.0007379765879593925,
+    -0.14486150551847668
+   ],
+   "posterior_rim_posterior_mm": 0.43750041843371085,
+   "posterior_most_node_posterior_mm": 1.0315668756135523,
+   "posterior_rim_minus_mean_mm": 0.1308372202448803,
+   "hard_fit_n": 27211,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    -0.5525721930428913,
+    8.003395242676004e-05,
+    0.46342615485378236
+   ],
+   "hard_fit_rotation_deg": 8.845450232718928,
+   "hard_fit_rotation_z_deg": 0.015375930446956001,
+   "hard_fit_rms_mm": 0.04829821144376427,
+   "hard_fit_minus_mean_mm": 0.015817379918590422,
+   "hard_local_max_inplane_mm": 0.11276855472170137,
+   "eval": {
+    "t_a": 4.0,
+    "M_a": 590.277261683,
+    "t_b": 4.0,
+    "M_b": 590.277261683,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": []
+   },
+   "window_check": {
+    "n_rows": 28,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.004454959999999897,
+    "monotonic": true,
+    "rb_res_max": 0.0,
+    "rb_fres_max": 1.087344289031507,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "9e579acec682b208d5bed18818e87b8e479d0a7d",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "3018ea2746113553e0108625ffb91f4500d62e6d33f535e61c7636841e8c4752",
+  "case_xplt": "e388db3a0e6f2d6bfd936df95d5f0c36c9c820e2ff9452eefb8ca159e7e6b03b"
+ }
+}

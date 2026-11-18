@@ -1,0 +1,69 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric5r/p143/w_extension",
+ "windows": {
+  "extension": {
+   "t": 4.0,
+   "target_reached": false,
+   "M_at_target": 536.233736193,
+   "mu_squeeze": 0.09290094124239474,
+   "net_push_N": 18.902762658219626,
+   "net_twist_Nmm": 0.12563640300511875,
+   "N_total": 207.02264968023755,
+   "one_face_slip_bound_mm": 1.56475496038157,
+   "cage_translation_tied_mm": [
+    -0.8920813697348294,
+    -0.000994817596037323,
+    0.37221924133929746
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3175,
+   "posterior_rim_translation_mm": [
+    -0.6334746638109459,
+    -0.00027546127976793084,
+    -0.199543654521112
+   ],
+   "posterior_rim_posterior_mm": 0.6334746638109459,
+   "posterior_most_node_posterior_mm": 1.3305031219983008,
+   "posterior_rim_minus_mean_mm": 0.25860770642483133,
+   "hard_fit_n": 19233,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    -0.8873627209578279,
+    -0.0003160483959576566,
+    0.3801510223782989
+   ],
+   "hard_fit_rotation_deg": 8.879959902627801,
+   "hard_fit_rotation_z_deg": 0.006719085952889578,
+   "hard_fit_rms_mm": 0.17437142982666703,
+   "hard_fit_minus_mean_mm": 0.004767218676301221,
+   "hard_local_max_inplane_mm": 0.4593181304812819,
+   "eval": {
+    "t_a": 4.0,
+    "M_a": 536.233736193,
+    "t_b": 4.0,
+    "M_b": 536.233736193,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": []
+   },
+   "window_check": {
+    "n_rows": 83,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.00048951999999991,
+    "monotonic": true,
+    "rb_res_max": 0.0,
+    "rb_fres_max": 1.8491953653359352,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "9e579acec682b208d5bed18818e87b8e479d0a7d",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "6eb648a4ba0a7144bc5cde90a433a31ffeecbe582c4a5ad2d953f41f9f1ee92b",
+  "case_xplt": "06d973f38a0e133268454e5d0c7390043894bb73f618cfa041ed9f5665f9d7f6"
+ }
+}

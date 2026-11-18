@@ -1,0 +1,78 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split4/p113_gpu2/w_extension",
+ "windows": {
+  "extension": {
+   "t": 3.9594956746366794,
+   "target_reached": true,
+   "M_at_target": 1500.0,
+   "mu_squeeze": 0.014040783631219843,
+   "net_push_N": 1.3101219410845157,
+   "net_twist_Nmm": 0.0591900925571973,
+   "N_total": 190.06769117099702,
+   "one_face_slip_bound_mm": 0.17278351902937814,
+   "cage_translation_tied_mm": [
+    -0.05129191160531505,
+    8.798820516315275e-05,
+    -0.018053994657420976
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3048.0,
+   "posterior_rim_translation_mm": [
+    -0.048753813301152624,
+    -0.0007582537054648801,
+    -0.11140835499009233
+   ],
+   "posterior_rim_posterior_mm": 0.048753813301152624,
+   "posterior_most_node_posterior_mm": 0.12631712950816598,
+   "posterior_rim_minus_mean_mm": 0.0026945940371511123,
+   "hard_fit_n": 12864.0,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    -0.042384052815219925,
+    1.556698700210374e-05,
+    -0.018452762950888164
+   ],
+   "hard_fit_rotation_deg": 1.395186342334873,
+   "hard_fit_rotation_z_deg": 0.014306225629430472,
+   "hard_fit_rms_mm": 0.0433277883648681,
+   "hard_fit_minus_mean_mm": 0.008908153537434512,
+   "hard_local_max_inplane_mm": 0.04372287141784508,
+   "eval": {
+    "t_a": 3.95,
+    "M_a": 1462.06214086,
+    "t_b": 3.98962305,
+    "M_b": 1620.36723735,
+    "frac": 0.2396502701503137,
+    "coarse": false,
+    "invalid": [
+     [
+      3.75,
+      0.04999999999999982,
+      819.68519421,
+      "dyn",
+      37.4,
+      9.62
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 11,
+    "n_invalid": 1,
+    "n_dyn": 1,
+    "dt_min": 0.01037694999999994,
+    "monotonic": true,
+    "rb_res_max": 5.90985794832345,
+    "rb_fres_max": 1.5134611021568807,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "aedd06bf2db9082783f9b24a252913a776e6d18f",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "017d04e48147513f879a7dd6e93d65dbaf78c66b628395c524a58014c5f65686",
+  "case_xplt": "d13f09f548d1a42a79936347802db8af1a578a1a94edad5dd796d9e095a02736"
+ }
+}

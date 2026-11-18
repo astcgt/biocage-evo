@@ -1,0 +1,131 @@
+{
+ "generated": "2026-11-18T11:58",
+ "n": 149,
+ "open": [
+  "p003",
+  "p023",
+  "p027",
+  "p048",
+  "p053",
+  "p115"
+ ],
+ "overall": 0.040268456375838924,
+ "limit": 0.08053691275167785,
+ "source": "mu_req_field.csv (11-18 04:16) + al_v2/cases params for the 12 designs without field rows",
+ "family": {
+  "A": {
+   "open": 5,
+   "n": 125,
+   "rate": 0.04,
+   "over": false
+  },
+  "B": {
+   "open": 1,
+   "n": 24,
+   "rate": 0.042,
+   "over": false
+  }
+ },
+ "gradient": {
+  "axial": {
+   "open": 0,
+   "n": 58,
+   "rate": 0.0,
+   "over": false
+  },
+  "both": {
+   "open": 2,
+   "n": 25,
+   "rate": 0.08,
+   "over": false
+  },
+  "radial": {
+   "open": 4,
+   "n": 66,
+   "rate": 0.061,
+   "over": false
+  }
+ },
+ "fabrication": {
+  "interleave": {
+   "open": 6,
+   "n": 80,
+   "rate": 0.075,
+   "over": false
+  },
+  "mix": {
+   "open": 0,
+   "n": 69,
+   "rate": 0.0,
+   "over": false
+  }
+ },
+ "E_soft_tercile": {
+  "low": {
+   "open": 3,
+   "n": 49,
+   "rate": 0.061,
+   "over": false
+  },
+  "high": {
+   "open": 0,
+   "n": 50,
+   "rate": 0.0,
+   "over": false
+  },
+  "mid": {
+   "open": 3,
+   "n": 50,
+   "rate": 0.06,
+   "over": false
+  }
+ },
+ "E_soft_cuts": [
+  2.82,
+  7.44
+ ],
+ "open_designs": {
+  "p003": {
+   "family": "A",
+   "gradient": "radial",
+   "fabrication": "interleave",
+   "d": 1.325,
+   "E_soft": 5.672
+  },
+  "p023": {
+   "family": "B",
+   "gradient": "both",
+   "fabrication": "interleave",
+   "d": 1.013,
+   "E_soft": 1.502
+  },
+  "p027": {
+   "family": "A",
+   "gradient": "radial",
+   "fabrication": "interleave",
+   "d": 1.49,
+   "E_soft": 3.449
+  },
+  "p048": {
+   "family": "A",
+   "gradient": "radial",
+   "fabrication": "interleave",
+   "d": 1.5,
+   "E_soft": 1.674
+  },
+  "p053": {
+   "family": "A",
+   "gradient": "both",
+   "fabrication": "interleave",
+   "d": 1.5,
+   "E_soft": 1.572
+  },
+  "p115": {
+   "family": "A",
+   "gradient": "radial",
+   "fabrication": "interleave",
+   "d": 1.45,
+   "E_soft": 7.38
+  }
+ }
+}

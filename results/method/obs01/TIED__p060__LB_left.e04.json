@@ -1,0 +1,86 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split2/p060_gpu3/w_LB_left",
+ "windows": {
+  "LB_left": {
+   "t": 3.9640632744691024,
+   "target_reached": true,
+   "M_at_target": 1500.0,
+   "mu_squeeze": 0.13101436485823736,
+   "net_push_N": 18.56283083614716,
+   "net_twist_Nmm": 51.256397064070924,
+   "N_total": 227.45982195020716,
+   "one_face_slip_bound_mm": 0.18151636237850666,
+   "cage_translation_tied_mm": [
+    0.013428685301603162,
+    0.04752485315391892,
+    -0.044024402118881686
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3175.0,
+   "posterior_rim_translation_mm": [
+    -0.011534965143494783,
+    0.005294009416071585,
+    -0.06773740186599551
+   ],
+   "posterior_rim_posterior_mm": 0.011534965143494783,
+   "posterior_most_node_posterior_mm": 0.10459898502102376,
+   "posterior_rim_minus_mean_mm": 0.04906881184233333,
+   "hard_fit_n": 19233.0,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    0.014221553294854056,
+    0.03683600714742551,
+    -0.04348169896844889
+   ],
+   "hard_fit_rotation_deg": 1.4395810396841033,
+   "hard_fit_rotation_z_deg": 0.32080517040621404,
+   "hard_fit_rms_mm": 0.07030482447951888,
+   "hard_fit_minus_mean_mm": 0.010718437646395945,
+   "hard_local_max_inplane_mm": 0.09826699829798466,
+   "eval": {
+    "t_a": 3.92869241,
+    "M_a": 1360.63737578,
+    "t_b": 3.97739865,
+    "M_b": 1552.54191428,
+    "frac": 0.7262080683933386,
+    "coarse": false,
+    "invalid": [
+     [
+      3.78351956,
+      0.047737119999999855,
+      880.487605939,
+      "dyn",
+      84.0,
+      12.36
+     ],
+     [
+      3.83170926,
+      0.0481897,
+      1033.87728561,
+      "dyn",
+      33.4,
+      3.41
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 11,
+    "n_invalid": 2,
+    "n_dyn": 2,
+    "dt_min": 0.022601349999999965,
+    "monotonic": true,
+    "rb_res_max": 10.566064942966111,
+    "rb_fres_max": 1.5249065830499522,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "aedd06bf2db9082783f9b24a252913a776e6d18f",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "8c408d5a0154257c2b5033a05e9319a0bf0ae3ded47027897d6626e68ed77a5c",
+  "case_xplt": "412414ba63b2ea1f6adb908f9329329bd11ca978390385d2d9a3e0a94f638bfb"
+ }
+}

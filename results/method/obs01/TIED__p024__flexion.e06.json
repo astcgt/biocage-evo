@@ -1,0 +1,130 @@
+{
+ "hard_blocks": [
+  13
+ ],
+ "hard_phi": 1.0,
+ "sig_hard_MPa": 15.0,
+ "limit_MPa": 2.6999999999999997,
+ "limit_rule": "0.18 x sig_hard (PI 2026-11-03 item 7, secondary; short-term strength proxied by the wet yield parameter - provisional)",
+ "sustained": {
+  "p99": 5.67128433952302,
+  "max": 6.302398904422304,
+  "n": 18506
+ },
+ "t_sustained": 3.5,
+ "t_last": 9.5,
+ "windows": {
+  "flexion": {
+   "peak_p99": 13.170557699521929,
+   "peak_max": 15.39852336078693,
+   "reached": true,
+   "t_eval": 3.9344448436147883,
+   "window_check": {
+    "n_rows": 10,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.04999999999999982,
+    "monotonic": true,
+    "rb_res_max": 14.429364930307623,
+    "rb_fres_max": 2.649485833976738,
+    "t_last": 4.0,
+    "complete": true
+   }
+  },
+  "extension": {
+   "peak_p99": 9.814474020514439,
+   "peak_max": 11.323228038869116,
+   "reached": false,
+   "t_eval": 4.96565787,
+   "window_check": {
+    "n_rows": 10,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.04186270000000025,
+    "monotonic": false,
+    "rb_res_max": 27.13827656037093,
+    "rb_fres_max": 6.836588846895398,
+    "t_last": 4.96565787,
+    "complete": false
+   }
+  },
+  "LB_right": {
+   "peak_p99": 11.143041782197193,
+   "peak_max": 13.186661656987969,
+   "reached": false,
+   "t_eval": 5.97727482,
+   "window_check": {
+    "n_rows": 11,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.040204049999999825,
+    "monotonic": true,
+    "rb_res_max": 1.7746684306991405,
+    "rb_fres_max": 0.19775158643128343,
+    "t_last": 5.97727482,
+    "complete": false
+   }
+  },
+  "LB_left": {
+   "peak_p99": 11.590300039329437,
+   "peak_max": 13.771907643657329,
+   "reached": false,
+   "t_eval": 7.0,
+   "window_check": {
+    "n_rows": 10,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.04999999999999982,
+    "monotonic": true,
+    "rb_res_max": 3.035835910897977,
+    "rb_fres_max": 0.31815726917796233,
+    "t_last": 7.0,
+    "complete": true
+   }
+  },
+  "AR_left": {
+   "peak_p99": 8.263941375812001,
+   "peak_max": 11.578646506768075,
+   "reached": false,
+   "t_eval": 7.99272488,
+   "window_check": {
+    "n_rows": 17,
+    "n_invalid": 1,
+    "n_dyn": 1,
+    "dt_min": 0.009872109999999878,
+    "monotonic": true,
+    "rb_res_max": 22.487795930012254,
+    "rb_fres_max": 0.969668890288575,
+    "t_last": 7.99272488,
+    "complete": false
+   }
+  },
+  "AR_right": {
+   "peak_p99": 8.385294272650631,
+   "peak_max": 11.609364531391158,
+   "reached": false,
+   "t_eval": 8.99886553,
+   "window_check": {
+    "n_rows": 13,
+    "n_invalid": 1,
+    "n_dyn": 1,
+    "dt_min": 0.01973861000000099,
+    "monotonic": true,
+    "rb_res_max": 22.141426051541476,
+    "rb_fres_max": 1.5571822233735415,
+    "t_last": 8.99886553,
+    "complete": false
+   }
+  }
+ },
+ "peak_p99": 13.170557699521929,
+ "within_sustained": false,
+ "within_peak": false,
+ "provenance": {
+  "git": "a1b1581d2b035a94b7290c310b1a348f67e22da0",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "edabd6d1e3b4dc7251513390feb755ec84dae6fca3ae10c2f7cbf9292a66fda6",
+  "case_xplt": "ee5fa04271f731ea54266442407db61072fba28dacef0d538877e47df1db0fe3"
+ }
+}

@@ -1,5 +1,5 @@
 """Minimal reader for FEBio .xplt plot files (format 3.x as written by FEBio 4): dictionary, surface names and
-per-state surface (face) data. Chunk ids from FEBioPlot/FEBioPlotFile.h. Only what the validation needs.
+per-state surface (face), element and nodal data. Chunk ids from FEBioPlot/FEBioPlotFile.h. Only what the validation needs.
 """
 import struct, zlib
 import numpy as np
@@ -14,6 +14,7 @@ DOMAIN_SECTION, DOMAIN, DOMAIN_HDR, DOM_ELEM_TYPE, DOM_PART_ID, DOM_ELEMS, DOM_N
                                                                                      0x01042102, 0x01042103, 0x01032104, 0x01032105)
 DOM_ELEM_LIST, ELEMENT = 0x01042200, 0x01042201
 ELEMENT_DATA = 0x02020400
+NODE_DATA = 0x02020300                                 # 2026-11-18 (T19): nodal variables (displacement) are read too
 VAR, VAR_ID, VAR_DATA, FACE_DATA = 0x02020001, 0x02020002, 0x02020003, 0x02020500
 NCOMP = {0: 1, 1: 3, 2: 6, 3: 3, 4: 9, 5: 9}        # float, vec3f, mat3fs, mat3fd, tens4fs, mat3f
 
@@ -80,16 +81,16 @@ def read(path):
                     out['surfaces'][sid] = _name(hdr[SURFACE_NAME]) if SURFACE_NAME in hdr else str(sid)
         elif cid == STATE:
             d = zlib.decompress(d) if compressed else d
-            st = dict(time=None, face={}, elem={})
+            st = dict(time=None, face={}, elem={}, node={})
             for c2, d2 in chunks(d):
                 if c2 == STATE_HEADER:
                     for c3, d3 in chunks(d2):
                         if c3 == STATE_TIME: st['time'] = struct.unpack('<f', d3)[0]
                 elif c2 == STATE_DATA:
                     for c3, d3 in chunks(d2):
-                        if c3 not in (FACE_DATA, ELEMENT_DATA): continue
-                        sec = DIC_SURFACE if c3 == FACE_DATA else DIC_DOMAIN
-                        target = st['face'] if c3 == FACE_DATA else st['elem']
+                        if c3 not in (FACE_DATA, ELEMENT_DATA, NODE_DATA): continue
+                        sec = DIC_SURFACE if c3 == FACE_DATA else (DIC_DOMAIN if c3 == ELEMENT_DATA else DIC_NODAL)
+                        target = st['face'] if c3 == FACE_DATA else (st['elem'] if c3 == ELEMENT_DATA else st['node'])
                         for c4, v in chunks(d3):
                             if c4 != VAR: continue
                             f = {c5: d5 for c5, d5 in chunks(v)}

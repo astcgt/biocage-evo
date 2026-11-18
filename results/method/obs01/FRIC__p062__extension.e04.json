@@ -1,0 +1,69 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_fric5r/p062/w_extension",
+ "windows": {
+  "extension": {
+   "t": 4.0,
+   "target_reached": false,
+   "M_at_target": 590.49892648,
+   "mu_squeeze": 0.0542943597939422,
+   "net_push_N": 10.352785920262876,
+   "net_twist_Nmm": 0.054945777065921374,
+   "N_total": 195.10796365877584,
+   "one_face_slip_bound_mm": 1.2426334629621876,
+   "cage_translation_tied_mm": [
+    -0.6629351201639405,
+    0.00010240343482591287,
+    0.4841796839699649
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3048,
+   "posterior_rim_translation_mm": [
+    -0.5295005600563764,
+    -0.0008341688687220068,
+    -0.1400183936161862
+   ],
+   "posterior_rim_posterior_mm": 0.5295005600563764,
+   "posterior_most_node_posterior_mm": 1.0585645306285922,
+   "posterior_rim_minus_mean_mm": 0.133437846950477,
+   "hard_fit_n": 19836,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    -0.6533373636703228,
+    0.00023621977793135407,
+    0.4598803136160017
+   ],
+   "hard_fit_rotation_deg": 8.910718482290534,
+   "hard_fit_rotation_z_deg": 0.019636957103902276,
+   "hard_fit_rms_mm": 0.05050125140730461,
+   "hard_fit_minus_mean_mm": 0.009598689312841786,
+   "hard_local_max_inplane_mm": 0.13143526032911929,
+   "eval": {
+    "t_a": 4.0,
+    "M_a": 590.49892648,
+    "t_b": 4.0,
+    "M_b": 590.49892648,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": []
+   },
+   "window_check": {
+    "n_rows": 23,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.012670079999999917,
+    "monotonic": true,
+    "rb_res_max": 0.0,
+    "rb_fres_max": 0.4326759747128161,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "1934172e51540998dc468078b3e20b8fc6be8433",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "f58e8c790a0e3b5554f85987b93e3ecccf83e7ecdee75fac0384c928507a0e92",
+  "case_xplt": "590826618202288c6d6716f08c53cb74b340dbd8b67fbee43829e3064088c406"
+ }
+}

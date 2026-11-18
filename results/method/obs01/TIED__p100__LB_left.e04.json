@@ -1,0 +1,69 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split3/p100_gpu3/w_LB_left",
+ "windows": {
+  "LB_left": {
+   "t": 3.9909107916242355,
+   "target_reached": true,
+   "M_at_target": 1500.0,
+   "mu_squeeze": 0.12266808380005988,
+   "net_push_N": 18.25592873622868,
+   "net_twist_Nmm": 49.774784578778764,
+   "N_total": 231.6214956351077,
+   "one_face_slip_bound_mm": 0.13539617170886298,
+   "cage_translation_tied_mm": [
+    0.01309976432232663,
+    0.0348842299948236,
+    -0.02886445086560917
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3302.0,
+   "posterior_rim_translation_mm": [
+    -0.005553263926088411,
+    0.007969066025833443,
+    -0.0461853750767605
+   ],
+   "posterior_rim_posterior_mm": 0.005553263926088411,
+   "posterior_most_node_posterior_mm": 0.06398148594396365,
+   "posterior_rim_minus_mean_mm": 0.03274849373293534,
+   "hard_fit_n": 20076.0,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    0.014080265785194114,
+    0.02792420890777379,
+    -0.02855094045031214
+   ],
+   "hard_fit_rotation_deg": 1.0373467518892585,
+   "hard_fit_rotation_z_deg": 0.20828016147292594,
+   "hard_fit_rms_mm": 0.048222038532710156,
+   "hard_fit_minus_mean_mm": 0.007028764930141173,
+   "hard_local_max_inplane_mm": 0.06501487268003037,
+   "eval": {
+    "t_a": 3.95,
+    "M_a": 1372.00199555,
+    "t_b": 4.0,
+    "M_b": 1528.43749749,
+    "frac": 0.8182158324847068,
+    "coarse": false,
+    "invalid": []
+   },
+   "window_check": {
+    "n_rows": 10,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.04999999999999982,
+    "monotonic": true,
+    "rb_res_max": 14.814308653702566,
+    "rb_fres_max": 1.5982788993116581,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "aedd06bf2db9082783f9b24a252913a776e6d18f",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "43bb4e595c060c7dab2891e77f1dea42444412dbff8d03c8e0c1e070c800f626",
+  "case_xplt": "515a8e24b493873771b9b799d3334a7deff8328544e2235bb166e536e79ba6f8"
+ }
+}
