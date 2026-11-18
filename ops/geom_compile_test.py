@@ -30,5 +30,15 @@ if __name__ == '__main__':
     out = dict(date=date, meshes=len(rows), identical=len(rows) - len(bad), not_identical=bad[:20], l0_failures=[(r['mesh'], r['checks_failed']) for r in rows if r['checks_failed']], rows=rows)
     os.makedirs(os.path.join(G.EVO, 'results/grammar'), exist_ok=True); json.dump(out, open(os.path.join(G.EVO, f'results/grammar/acceptance_{date}.json'), 'w'), indent=1)
     print('meshes', len(rows), 'identical', len(rows) - len(bad), 'not identical', len(bad), [(r['mesh'], r['region_mismatch'], r['phi_mismatch'], r['hard_mismatch']) for r in bad[:6]])
+    # probe of S4 (audit D-20261118-38): a big pocket with a 0.6 mm floor + a small separate through hole must be REFUSED
+    base = sorted(glob.glob(os.path.join(G.PLAT, 'human_study/al/meshes/cage_A_*_d1.000.npz')))[0]
+    floor = dict(op='face', side='bottom', lo=0.0, hi=0.6); hole = dict(op='disk', cx=0.0, cy=0.0, r=1.0); ringw = dict(op='ring', outer=0.0, inner=0.8)
+    probes = dict(pocket_with_connected_small_hole=dict(op='union', of=[ringw, dict(op='subtract', a=floor, b=hole)]),
+                  pocket_with_separate_small_hole=dict(op='union', of=[ringw, dict(op='subtract', a=floor, b=hole), dict(op='subtract', a=dict(op='disk', cx=0.0, cy=0.0, r=1.5), b=hole)]))
+    out['s4_probes'] = {}
+    for k, sol in probes.items():
+        rp, _ = G.compile_spec(dict(name=k, base_mesh=base, fabrication='mix', solid=sol, phi=[])); out['s4_probes'][k] = dict(built=rp['built'], **rp['checks']['S4_void'])
+        print('S4 probe', k, '(must be refused): built', rp['built'], {a: b for a, b in rp['checks']['S4_void'].items() if a.startswith('void')})
+    json.dump(out, open(os.path.join(G.EVO, f'results/grammar/acceptance_{date}.json'), 'w'), indent=1)
     print('L0 failures', out['l0_failures'][:6], 'void volume range', min(r['void_volume'] for r in rows), max(r['void_volume'] for r in rows),
           'thin max', max(r['thin_fraction'] for r in rows), 'overhang max', max(r['overhang_fraction'] for r in rows))

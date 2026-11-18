@@ -1,0 +1,44 @@
+{
+ "amends": "results/round2/prereg.json",
+ "amends_sha256": "4359a4f751d394aab7cb00af0f38aae3d000cabfc32f598e4a12a4bd3a7ae432",
+ "dated": "2026-11-18 12:21",
+ "status": "added before any round-2 simulation; the original file is unchanged",
+ "reasons": [
+  "PI 2026-11-18: compare designs at the same height; add a loosened condition; report wording",
+  "layer-B audit D-20261118-45 / -41: cross-arm order for the novelty rule; a metric for B vs A"
+ ],
+ "heights": {
+  "reference_mm": 1.0,
+  "loosened_mm": 0.5,
+  "rule": "every design of every arm is simulated at both heights (base meshes cage_A_*_d1.000 / d0.500); the height is not a free choice of any arm",
+  "squeeze_force_N": {
+   "reference": "about 38",
+   "loosened": "about 9",
+   "source": "al_v2/points.json res.clamp_N medians"
+  }
+ },
+ "verdict": "the final class is read at the REFERENCE height with the verdict chain in force when the round is read out",
+ "added_metrics": [
+  "holds-when-loosened: at the loosened height both friction windows are usable and the posterior translation in extension is below 0.45 mm (the archive families reach 0.43-0.55 mm there)",
+  "loosened fixation values: posterior translation in extension and mu_req at the loosened height (lower is better), reported per design"
+ ],
+ "primary_metric": "unchanged for B vs R: passing-novel designs per design proposed; holds-when-loosened designs per design proposed is reported next to it as the test of fixation by shape",
+ "b_vs_a": {
+  "note": "arm A designs can never be new by the distance rule (they stay inside the archive families), so the primary metric does not apply to A",
+  "metric": "designs that PASS at the reference height AND hold when loosened, per GPU-hour"
+ },
+ "novelty_order": "within a round the designs are ordered R-01..R-05, then B-01..B-05, then the audit-lane design; a design is compared with the archive and with every earlier design in this order; arm A designs, twins and replicates are not part of the order",
+ "budgets": {
+  "A": "20 runs = 9 designs x 2 heights + 2 replicates",
+  "B": "<= 5 designs x 2 heights + 5 ablation twins (tied screening at the loosened height only)",
+  "R": "5 designs x 2 heights",
+  "audit_lane": "1 design x 2 heights",
+  "change": "B, R and the audit lane run twice as many friction cases as planned before (two heights): about 11 more cases per round"
+ },
+ "card_readout": "mu_req from tied screening at the LOOSENED height, design vs twin (replaces \"tied screening\" without a height)",
+ "compiler_rules": {
+  "S4": "void region touching both endplates >= 50 % of the disc-space volume and meeting each endplate over >= 25 % of the footprint (25 % provisional)",
+  "S5_overhang": "support from the element underneath or a side neighbour (45 degrees)",
+  "note": "valid = passes these checks as implemented on the day the design is compiled; the compiler version (git hash) is recorded with each design"
+ }
+}

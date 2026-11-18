@@ -24,10 +24,15 @@ Regions (boolean over the lattice elements; lengths in mm; x = anterior (+) / po
 Interleave realisation (as h12): an element is hard when (print-line index + layer) mod 4 < round(4 phi); the print-line
 index is the 0.4 mm contour line counted from the footprint outline.
 L0 checks by code (safety rules of docs/PLAN.md; the numbers marked provisional are owned by the safety guard):
-  S3 one connected solid part (islands are removed and logged; refused when > 2 % of the solid voxels would change);
-  S4 void >= 50 % of the disc-space volume and one void region touching both endplates;
+  S3 one connected solid part (islands are removed and logged; refused when > 2 % of the solid voxels would change -
+     provisional limit);
+  S4 the void that touches BOTH endplates (one connected region) is >= 50 % of the disc-space volume (PLAN.md S4: 'void
+     connected to both endplates, >= 50 %'); and that region meets EACH endplate over >= 25 % of the footprint (provisional number: a void that
+     reaches an endplate only through a small hole does not let the endplate feed the biodisc); the total void is reported
+     next to it (audit D-20261118-38: the first version tested the total void and only required some through-going void);
   S5 in-plane feature >= 0.4 mm (2 columns; provisional tolerance 2 % for staircase cells) and every solid element
-     supported from the layer below within one column (45 degrees; provisional tolerance 0.5 %);
+     supported from the layer below by the element underneath or one of its four side neighbours (45 degrees in the axis
+     directions; a diagonal step would be 55 degrees and is not accepted; provisional tolerance 0.5 %);
   C1 the part touches both endplates; C2 no face quad over a void column that h14 would still take as contact;
   C3 solid columns that do not reach a face are counted (no contact surface is defined there - warning).
 usage: python ops/geom_compile.py <spec.json> <out.npz> [report.json]       exit 0 = built, 2 = refused
@@ -39,7 +44,7 @@ from scipy import ndimage
 EVO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PLAT = os.path.dirname(os.path.dirname(json.load(open(os.path.join(EVO, 'config.json')))['febio_src']))
 sys.path.insert(0, os.path.join(PLAT, 'scripts', 'common'))
-LINE, MAX_REPAIR, TOL_FEATURE, TOL_OVERHANG = 0.4, 0.02, 0.02, 0.005
+LINE, MAX_REPAIR, TOL_FEATURE, TOL_OVERHANG, MIN_VOID_FACE = 0.4, 0.02, 0.02, 0.005, 0.25
 FSU, FRAME = os.path.join(PLAT, 'human_study/fsu/C34_fsu_refined.feb'), os.path.join(PLAT, 'human_study/frame_c3c4.json')
 _fp_cache = {}
 
@@ -121,11 +126,13 @@ def compile_spec(spec, out=None):
     g = grid(F, solid); act = grid(F, np.ones(F['n'], bool)); vol = F['hcol'] / K; chk = {}
     chk['S3_one_part'] = dict(ok=bool(ndimage.label(g)[1] == 1), islands_removed=int(n - 1 if n > 1 else 0), changed_fraction=round(changed / max(1, int(solid.sum()) + changed), 4))
     vlab, vn = ndimage.label(act & ~g); through = [i for i in range(1, vn + 1) if (vlab[:, :, 0] == i).any() and (vlab[:, :, K - 1] == i).any()]
-    vf = float(1 - vol[solid].sum() / vol.sum())
-    chk['S4_void'] = dict(ok=bool(vf >= 0.5 and len(through) >= 1), void_fraction_volume=round(vf, 4), void_fraction_projected=round(float(1 - g.any(2).sum() / act.any(2).sum()), 4), void_regions_touching_both_endplates=len(through))
+    vf = float(1 - vol[solid].sum() / vol.sum()); vL = vlab[F['gi'], F['gj'], F['layer']]
+    main = max(through, key=lambda i: float(vol[vL == i].sum()), default=None); vthrough = float(vol[vL == main].sum() / vol.sum()) if main else 0.0
+    ncol = int(act.any(2).sum()); face_top = float((vlab[:, :, K - 1] == main).sum() / ncol) if main else 0.0; face_bot = float((vlab[:, :, 0] == main).sum() / ncol) if main else 0.0
+    chk['S4_void'] = dict(ok=bool(vthrough >= 0.5 and min(face_top, face_bot) >= MIN_VOID_FACE), void_fraction_through_both_endplates=round(vthrough, 4), void_face_fraction_top=round(face_top, 4), void_face_fraction_bottom=round(face_bot, 4), min_face_fraction_provisional=MIN_VOID_FACE, void_fraction_volume=round(vf, 4), void_fraction_projected=round(float(1 - g.any(2).sum() / act.any(2).sum()), 4), void_regions_touching_both_endplates=len(through))
     opened = np.stack([ndimage.binary_opening(g[:, :, k], structure=np.ones((2, 2), bool)) for k in range(K)], axis=2)
     thin = int((g & ~opened).sum()); chk['S5_min_feature'] = dict(ok=bool(thin <= TOL_FEATURE * g.sum()), thin_elements=thin, fraction=round(thin / max(1, int(g.sum())), 4), tolerance=TOL_FEATURE)
-    sup = np.stack([g[:, :, 0]] + [ndimage.binary_dilation(g[:, :, k - 1], structure=np.ones((3, 3), bool)) for k in range(1, K)], axis=2)
+    sup = np.stack([g[:, :, 0]] + [ndimage.binary_dilation(g[:, :, k - 1], structure=ndimage.generate_binary_structure(2, 1)) for k in range(1, K)], axis=2)
     unsup = int((g & ~sup).sum()); chk['S5_overhang'] = dict(ok=bool(unsup <= TOL_OVERHANG * g.sum()), unsupported_elements=unsup, fraction=round(unsup / max(1, int(g.sum())), 4), tolerance=TOL_OVERHANG)
     nt, nb = int(g[:, :, K - 1].sum()), int(g[:, :, 0].sum()); chk['C1_touches_both_endplates'] = dict(ok=bool(nt > 0 and nb > 0), top_columns=nt, bottom_columns=nb)
     cage_nodes = np.zeros(len(base['Q']), bool); cage_nodes[np.unique(H[solid])] = True; lay = F['layer']
@@ -158,5 +165,5 @@ def compile_spec(spec, out=None):
 if __name__ == '__main__':
     spec = json.load(open(sys.argv[1])); rep, _ = compile_spec(spec, sys.argv[2])
     if len(sys.argv) > 3: json.dump(rep, open(sys.argv[3], 'w'), indent=1, ensure_ascii=False)
-    print(json.dumps(dict(built=rep['built'], failed=[k for k, c in rep['checks'].items() if not c['ok']], void=rep['checks']['S4_void']['void_fraction_volume'], log=rep['log']), ensure_ascii=False))
+    print(json.dumps(dict(built=rep['built'], failed=[k for k, c in rep['checks'].items() if not c['ok']], void_through=rep['checks']['S4_void']['void_fraction_through_both_endplates'], void_total=rep['checks']['S4_void']['void_fraction_volume'], log=rep['log']), ensure_ascii=False))
     sys.exit(0 if rep['built'] else 2)

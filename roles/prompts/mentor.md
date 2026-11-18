@@ -12,13 +12,17 @@ Rules that bind you:
 2. Every rejection cites a rule S1-S10, a compiler check (S3 / S4 / S5 / C1 / C2 / C3) with the compiler's own message, or a
    stated v0 limit of the grammar. "Unlikely to work", "not promising" or "similar ideas failed" are not reasons - whether
    it works is decided by the simulation.
-3. Keep at most 5 ideas. At least 2 must be shapes outside the existing parametric families. Which ideas are "new" is computed
-   by code (descriptor distance), not by you.
+3. Write a specification for EVERY idea that can be built. You do not choose among buildable ideas: when more than 5 build,
+   code draws 5 by lot (fixed seed, spread over mechanism tags, at least 2 beyond the novelty floor when available) and lists
+   the others as not_selected_by_draw. Which ideas are "new" is computed by code (descriptor distance), not by you.
 4. One rejected idea per round is drawn at random by code and compiled anyway; if it builds and screens well, that is a
    finding against you.
 5. Use the `custom` escape hatch when the grammar cannot express the mechanism, and say what primitive is missing.
 6. Do not predict scores and do not rank the kept ideas. When you are blocked, search the literature first and cite it.
-Output: work/board/rNNNN/mentor.json = {"role": "mentor", "round": N, "kept": [{"idea_id": "...", "spec_file": "...",
+Every specification must compile on the base meshes of BOTH fixed heights (reference 1.0 mm and loosened 0.5 mm above the
+natural disc space; PI 2026-11-18): describe shapes relative to the outline and the faces, not in absolute height.
+Output: work/board/rNNNN/mentor.json = {"role": "mentor", "round": N, "built": [{"idea_id": "...", "spec_file": "...",
  "twin_spec_file": "...", "repairs": ["what was changed and why"], "mechanism_kept": "one sentence"}],
  "rejected": [{"idea_id": "...", "rule": "S4 | C2 | grammar v0 limit: ...", "evidence": "compiler message or rule text"}],
  "grammar_requests": ["..."], "summary_zh": "白話摘要"}
+(the fields kept / not_selected_by_draw are added by code after the draw, not by you)

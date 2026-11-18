@@ -863,5 +863,29 @@
    "thin_fraction": 0.0,
    "overhang_fraction": 0.0
   }
- ]
+ ],
+ "s4_probes": {
+  "pocket_with_connected_small_hole": {
+   "built": false,
+   "ok": false,
+   "void_fraction_through_both_endplates": 0.6537,
+   "void_face_fraction_top": 0.7192,
+   "void_face_fraction_bottom": 0.0338,
+   "min_face_fraction_provisional": 0.25,
+   "void_fraction_volume": 0.6537,
+   "void_fraction_projected": 0.0338,
+   "void_regions_touching_both_endplates": 1
+  },
+  "pocket_with_separate_small_hole": {
+   "built": false,
+   "ok": false,
+   "void_fraction_through_both_endplates": 0.0383,
+   "void_face_fraction_top": 0.0338,
+   "void_face_fraction_bottom": 0.0338,
+   "min_face_fraction_provisional": 0.25,
+   "void_fraction_volume": 0.6127,
+   "void_fraction_projected": 0.0338,
+   "void_regions_touching_both_endplates": 1
+  }
+ }
 }

@@ -1,6 +1,6 @@
 {
  "date": "2026-11-18",
- "declared": "Principle extraction and search for new design parameters (ROUND2_ARCHITECTURE.md part C, C6; PI 2026-11-18).\n\nDeclared BEFORE scoring (2026-11-18):\n  Features tried = the 12 geometric descriptors (descriptors.NAMES), the 11 material x geometry composites\n  (descriptors.PNAMES) and the 4 genes. No feature value is estimated by a language model; all are computed by code.\n  Model variants (same Gaussian process as ops/surrogate_fit.py): D = genes + geometric descriptors (reference, no family\n  label); P = genes + composites; DP = genes + descriptors + composites. Friction targets also take the insertion process,\n  mu_req the screening pass type.\n  Keep rule: the composites are adopted as estimator inputs for a target only if, against D, they lower the\n  leave-one-FAMILY-out RMSE by >= 10 % and do not raise the leave-one-group-out RMSE by more than 5 %. Every variant and\n  every feature is reported, kept or not. Leave-one-family-out has only 4-5 folds: weak evidence, no error bar.\n  Rules: Spearman correlation of every feature with every target, pooled and WITHIN family (rank-centred per family), with\n  a bootstrap interval over design groups (300 resamples); a rule is listed when |rho within family| >= 0.3 and its 90 %\n  interval excludes 0. Correlation is not causation: rules are hypotheses for the next round.",
+ "declared": "Principle extraction and search for new design parameters (ROUND2_ARCHITECTURE.md part C, C6; PI 2026-11-18).\n\nDeclared BEFORE scoring (2026-11-18):\n  Features tried = the 12 geometric descriptors (descriptors.NAMES), the 11 material x geometry composites\n  (descriptors.PNAMES) and the 4 genes. No feature value is estimated by a language model; all are computed by code.\n  Model variants (same Gaussian process as ops/surrogate_fit.py): D = genes + geometric descriptors (reference, no family\n  label); P = genes + composites; DP = genes + descriptors + composites. Friction targets also take the insertion process,\n  mu_req the screening pass type.\n  Keep rule: the composites are adopted as estimator inputs for a target only if, against D, they lower the\n  leave-one-FAMILY-out RMSE by >= 10 % and do not raise the leave-one-group-out RMSE by more than 5 %. Every variant and\n  every feature is reported, kept or not. Leave-one-family-out has only 4-5 folds: weak evidence, no error bar.\n  Rules: Spearman correlation of every feature with every target, pooled and WITHIN family (rank-centred per family), with\n  a bootstrap interval over design groups (300 resamples); a rule is listed when |rho within family| >= 0.3 and its 90 %\n  interval excludes 0. Correlation is not causation: rules are hypotheses for the next round.\nChanged 2026-11-18 (PI decision: designs are compared at the SAME height; audit D-20261118-43): a rule is now listed only\n  when it survives after the height d is removed - partial rank correlation within family controlling for d, |rho| >= 0.3\n  and 90 % bootstrap interval excluding 0. The plain within-family correlation is still stored. Reason: softer soft\n  material, hard / soft contrast and column compliance looked like rules, but they are themselves correlated with d in\n  the archive (-0.43 / +0.43 / +0.62) and vanish once d is removed.",
  "features": [
   "hp_E_hard",
   "hp_E_soft",
@@ -173,7 +173,13 @@
      -0.54,
      -0.12
     ],
-    "rule": true
+    "rho_with_height": 0.3,
+    "rho_at_same_height": -0.21,
+    "ci90_at_same_height": [
+     -0.38,
+     -0.0
+    ],
+    "rule": false
    },
    "hp_E_soft": {
     "rho_pooled": 0.35,
@@ -182,7 +188,13 @@
      0.17,
      0.59
     ],
-    "rule": true
+    "rho_with_height": -0.43,
+    "rho_at_same_height": -0.08,
+    "ci90_at_same_height": [
+     -0.26,
+     0.09
+    ],
+    "rule": false
    },
    "hp_d": {
     "rho_pooled": -0.94,
@@ -191,7 +203,10 @@
      -0.98,
      -0.95
     ],
-    "rule": true
+    "rho_with_height": 1.0,
+    "rho_at_same_height": null,
+    "ci90_at_same_height": null,
+    "rule": false
    },
    "hp_theta": {
     "rho_pooled": 0.11,
@@ -199,6 +214,12 @@
     "ci90": [
      -0.24,
      0.26
+    ],
+    "rho_with_height": 0.03,
+    "rho_at_same_height": 0.18,
+    "ci90_at_same_height": [
+     -0.02,
+     0.37
     ],
     "rule": false
    },
@@ -212,7 +233,10 @@
      -0.98,
      -0.95
     ],
-    "rule": true
+    "rho_with_height": 1.0,
+    "rho_at_same_height": null,
+    "ci90_at_same_height": null,
+    "rule": false
    },
    "contact_area_mm2": {
     "note": "constant in this data"
@@ -224,7 +248,13 @@
      -0.54,
      -0.05
     ],
-    "rule": true
+    "rho_with_height": 0.34,
+    "rho_at_same_height": 0.09,
+    "ci90_at_same_height": [
+     -0.09,
+     0.25
+    ],
+    "rule": false
    },
    "face_hard_frac": {
     "rho_pooled": 0.18,
@@ -232,6 +262,12 @@
     "ci90": [
      -0.07,
      0.41
+    ],
+    "rho_with_height": -0.13,
+    "rho_at_same_height": 0.13,
+    "ci90_at_same_height": [
+     -0.03,
+     0.26
     ],
     "rule": false
    },
@@ -242,7 +278,13 @@
      0.27,
      0.64
     ],
-    "rule": true
+    "rho_with_height": -0.51,
+    "rho_at_same_height": -0.05,
+    "ci90_at_same_height": [
+     -0.21,
+     0.1
+    ],
+    "rule": false
    },
    "post_hard_frac": {
     "rho_pooled": -0.15,
@@ -251,7 +293,13 @@
      -0.55,
      -0.1
     ],
-    "rule": true
+    "rho_with_height": 0.34,
+    "rho_at_same_height": 0.09,
+    "ci90_at_same_height": [
+     -0.1,
+     0.25
+    ],
+    "rule": false
    },
    "ant_hard_frac": {
     "rho_pooled": -0.15,
@@ -260,7 +308,13 @@
      -0.52,
      -0.05
     ],
-    "rule": true
+    "rho_with_height": 0.34,
+    "rho_at_same_height": 0.09,
+    "ci90_at_same_height": [
+     -0.1,
+     0.25
+    ],
+    "rule": false
    },
    "inner_hard_frac": {
     "rho_pooled": -0.15,
@@ -269,7 +323,13 @@
      -0.53,
      -0.04
     ],
-    "rule": true
+    "rho_with_height": 0.34,
+    "rho_at_same_height": 0.09,
+    "ci90_at_same_height": [
+     -0.1,
+     0.24
+    ],
+    "rule": false
    },
    "outer_hard_frac": {
     "rho_pooled": -0.01,
@@ -278,7 +338,13 @@
      -0.48,
      -0.26
     ],
-    "rule": true
+    "rho_with_height": 0.39,
+    "rho_at_same_height": 0.02,
+    "ci90_at_same_height": [
+     -0.16,
+     0.23
+    ],
+    "rule": false
    },
    "face_soft_thick_mm": {
     "rho_pooled": -0.41,
@@ -287,7 +353,13 @@
      -0.9,
      -0.8
     ],
-    "rule": true
+    "rho_with_height": 0.86,
+    "rho_at_same_height": -0.14,
+    "ci90_at_same_height": [
+     -0.3,
+     0.06
+    ],
+    "rule": false
    },
    "binary_material": {
     "rho_pooled": 0.22,
@@ -296,6 +368,9 @@
      NaN,
      NaN
     ],
+    "rho_with_height": NaN,
+    "rho_at_same_height": null,
+    "ci90_at_same_height": null,
     "rule": false
    },
    "log_k_axial": {
@@ -305,7 +380,13 @@
      -0.4,
      -0.01
     ],
-    "rule": false
+    "rho_with_height": 0.09,
+    "rho_at_same_height": -0.45,
+    "ci90_at_same_height": [
+     -0.61,
+     -0.3
+    ],
+    "rule": true
    },
    "log_k_face": {
     "rho_pooled": -0.4,
@@ -313,6 +394,12 @@
     "ci90": [
      -0.67,
      -0.3
+    ],
+    "rho_with_height": 0.38,
+    "rho_at_same_height": -0.51,
+    "ci90_at_same_height": [
+     -0.68,
+     -0.31
     ],
     "rule": true
    },
@@ -323,7 +410,13 @@
      -0.72,
      -0.37
     ],
-    "rule": true
+    "rho_with_height": 0.62,
+    "rho_at_same_height": 0.18,
+    "ci90_at_same_height": [
+     -0.01,
+     0.4
+    ],
+    "rule": false
    },
    "log_contrast": {
     "rho_pooled": -0.24,
@@ -332,7 +425,13 @@
      -0.6,
      -0.2
     ],
-    "rule": true
+    "rho_with_height": 0.43,
+    "rho_at_same_height": 0.06,
+    "ci90_at_same_height": [
+     -0.12,
+     0.24
+    ],
+    "rule": false
    },
    "log_post_ant_stiffness": {
     "rho_pooled": -0.82,
@@ -341,7 +440,13 @@
      -0.97,
      -0.93
     ],
-    "rule": true
+    "rho_with_height": 0.99,
+    "rho_at_same_height": 0.19,
+    "ci90_at_same_height": [
+     -0.1,
+     0.45
+    ],
+    "rule": false
    },
    "defl_100N_over_d": {
     "rho_pooled": 0.75,
@@ -349,6 +454,12 @@
     "ci90": [
      0.81,
      0.94
+    ],
+    "rho_with_height": -0.85,
+    "rho_at_same_height": 0.45,
+    "ci90_at_same_height": [
+     0.24,
+     0.63
     ],
     "rule": true
    },
@@ -359,6 +470,12 @@
      -0.09,
      0.42
     ],
+    "rho_with_height": -0.17,
+    "rho_at_same_height": 0.08,
+    "ci90_at_same_height": [
+     -0.12,
+     0.32
+    ],
     "rule": false
    },
    "log_E_face": {
@@ -367,6 +484,12 @@
     "ci90": [
      -0.19,
      0.29
+    ],
+    "rho_with_height": -0.1,
+    "rho_at_same_height": -0.23,
+    "ci90_at_same_height": [
+     -0.45,
+     -0.03
     ],
     "rule": false
    },
@@ -377,7 +500,13 @@
      -0.37,
      0.03
     ],
-    "rule": false
+    "rho_with_height": 0.09,
+    "rho_at_same_height": -0.45,
+    "ci90_at_same_height": [
+     -0.59,
+     -0.3
+    ],
+    "rule": true
    },
    "stiff_centre_x_mm": {
     "rho_pooled": 0.74,
@@ -386,7 +515,13 @@
      0.93,
      0.97
     ],
-    "rule": true
+    "rho_with_height": -0.99,
+    "rho_at_same_height": -0.2,
+    "ci90_at_same_height": [
+     -0.48,
+     0.04
+    ],
+    "rule": false
    },
    "face_strain_100N": {
     "rho_pooled": 0.13,
@@ -394,6 +529,12 @@
     "ci90": [
      -0.29,
      0.17
+    ],
+    "rho_with_height": 0.1,
+    "rho_at_same_height": 0.23,
+    "ci90_at_same_height": [
+     0.03,
+     0.44
     ],
     "rule": false
    }
@@ -406,6 +547,12 @@
      -0.45,
      -0.06
     ],
+    "rho_with_height": 0.28,
+    "rho_at_same_height": -0.04,
+    "ci90_at_same_height": [
+     -0.23,
+     0.12
+    ],
     "rule": false
    },
    "hp_E_soft": {
@@ -414,6 +561,12 @@
     "ci90": [
      0.05,
      0.45
+    ],
+    "rho_with_height": -0.42,
+    "rho_at_same_height": -0.15,
+    "ci90_at_same_height": [
+     -0.33,
+     0.06
     ],
     "rule": false
    },
@@ -424,7 +577,10 @@
      -0.89,
      -0.75
     ],
-    "rule": true
+    "rho_with_height": 1.0,
+    "rho_at_same_height": null,
+    "ci90_at_same_height": null,
+    "rule": false
    },
    "hp_theta": {
     "rho_pooled": 0.5,
@@ -432,6 +588,12 @@
     "ci90": [
      -0.21,
      0.3
+    ],
+    "rho_with_height": 0.07,
+    "rho_at_same_height": 0.18,
+    "ci90_at_same_height": [
+     -0.06,
+     0.41
     ],
     "rule": false
    },
@@ -445,7 +607,10 @@
      -0.89,
      -0.76
     ],
-    "rule": true
+    "rho_with_height": 1.0,
+    "rho_at_same_height": null,
+    "ci90_at_same_height": null,
+    "rule": false
    },
    "contact_area_mm2": {
     "note": "constant in this data"
@@ -457,6 +622,12 @@
      -0.37,
      0.07
     ],
+    "rho_with_height": 0.35,
+    "rho_at_same_height": 0.23,
+    "ci90_at_same_height": [
+     0.05,
+     0.43
+    ],
     "rule": false
    },
    "face_hard_frac": {
@@ -465,6 +636,12 @@
     "ci90": [
      -0.07,
      0.49
+    ],
+    "rho_with_height": -0.12,
+    "rho_at_same_height": 0.21,
+    "ci90_at_same_height": [
+     -0.01,
+     0.41
     ],
     "rule": false
    },
@@ -475,7 +652,13 @@
      0.32,
      0.65
     ],
-    "rule": true
+    "rho_with_height": -0.53,
+    "rho_at_same_height": 0.1,
+    "ci90_at_same_height": [
+     -0.09,
+     0.33
+    ],
+    "rule": false
    },
    "post_hard_frac": {
     "rho_pooled": -0.51,
@@ -483,6 +666,12 @@
     "ci90": [
      -0.38,
      0.08
+    ],
+    "rho_with_height": 0.35,
+    "rho_at_same_height": 0.23,
+    "ci90_at_same_height": [
+     0.02,
+     0.43
     ],
     "rule": false
    },
@@ -493,6 +682,12 @@
      -0.4,
      0.07
     ],
+    "rho_with_height": 0.35,
+    "rho_at_same_height": 0.23,
+    "ci90_at_same_height": [
+     0.02,
+     0.41
+    ],
     "rule": false
    },
    "inner_hard_frac": {
@@ -501,6 +696,12 @@
     "ci90": [
      -0.39,
      0.09
+    ],
+    "rho_with_height": 0.35,
+    "rho_at_same_height": 0.23,
+    "ci90_at_same_height": [
+     0.03,
+     0.41
     ],
     "rule": false
    },
@@ -511,6 +712,12 @@
      -0.37,
      -0.12
     ],
+    "rho_with_height": 0.41,
+    "rho_at_same_height": 0.21,
+    "ci90_at_same_height": [
+     -0.01,
+     0.39
+    ],
     "rule": false
    },
    "face_soft_thick_mm": {
@@ -520,7 +727,13 @@
      -0.86,
      -0.7
     ],
-    "rule": true
+    "rho_with_height": 0.86,
+    "rho_at_same_height": -0.27,
+    "ci90_at_same_height": [
+     -0.48,
+     -0.02
+    ],
+    "rule": false
    },
    "binary_material": {
     "rho_pooled": 0.58,
@@ -529,6 +742,9 @@
      NaN,
      NaN
     ],
+    "rho_with_height": NaN,
+    "rho_at_same_height": null,
+    "ci90_at_same_height": null,
     "rule": false
    },
    "log_k_axial": {
@@ -537,6 +753,12 @@
     "ci90": [
      -0.44,
      -0.01
+    ],
+    "rho_with_height": 0.08,
+    "rho_at_same_height": -0.27,
+    "ci90_at_same_height": [
+     -0.52,
+     -0.07
     ],
     "rule": false
    },
@@ -547,6 +769,12 @@
      -0.63,
      -0.27
     ],
+    "rho_with_height": 0.35,
+    "rho_at_same_height": -0.31,
+    "ci90_at_same_height": [
+     -0.53,
+     -0.1
+    ],
     "rule": true
    },
    "log_col_compliance": {
@@ -556,7 +784,13 @@
      -0.56,
      -0.18
     ],
-    "rule": true
+    "rho_with_height": 0.6,
+    "rho_at_same_height": 0.23,
+    "ci90_at_same_height": [
+     0.05,
+     0.43
+    ],
+    "rule": false
    },
    "log_contrast": {
     "rho_pooled": 0.13,
@@ -564,6 +798,12 @@
     "ci90": [
      -0.49,
      -0.09
+    ],
+    "rho_with_height": 0.41,
+    "rho_at_same_height": 0.09,
+    "ci90_at_same_height": [
+     -0.14,
+     0.28
     ],
     "rule": false
    },
@@ -574,7 +814,13 @@
      -0.89,
      -0.73
     ],
-    "rule": true
+    "rho_with_height": 0.99,
+    "rho_at_same_height": 0.11,
+    "ci90_at_same_height": [
+     -0.15,
+     0.37
+    ],
+    "rule": false
    },
    "defl_100N_over_d": {
     "rho_pooled": 0.75,
@@ -583,7 +829,13 @@
      0.66,
      0.85
     ],
-    "rule": true
+    "rho_with_height": -0.84,
+    "rho_at_same_height": 0.24,
+    "ci90_at_same_height": [
+     0.01,
+     0.47
+    ],
+    "rule": false
    },
    "soft_volume_frac": {
     "rho_pooled": 0.69,
@@ -591,6 +843,12 @@
     "ci90": [
      -0.12,
      0.4
+    ],
+    "rho_with_height": -0.17,
+    "rho_at_same_height": 0.04,
+    "ci90_at_same_height": [
+     -0.21,
+     0.28
     ],
     "rule": false
    },
@@ -601,6 +859,12 @@
      -0.18,
      0.3
     ],
+    "rho_with_height": -0.13,
+    "rho_at_same_height": -0.07,
+    "ci90_at_same_height": [
+     -0.31,
+     0.17
+    ],
     "rule": false
    },
    "log_k_bend": {
@@ -609,6 +873,12 @@
     "ci90": [
      -0.45,
      -0.02
+    ],
+    "rho_with_height": 0.08,
+    "rho_at_same_height": -0.27,
+    "ci90_at_same_height": [
+     -0.48,
+     -0.07
     ],
     "rule": false
    },
@@ -619,6 +889,12 @@
      0.71,
      0.86
     ],
+    "rho_with_height": -0.99,
+    "rho_at_same_height": -0.35,
+    "ci90_at_same_height": [
+     -0.56,
+     -0.06
+    ],
     "rule": true
    },
    "face_strain_100N": {
@@ -627,6 +903,12 @@
     "ci90": [
      -0.31,
      0.16
+    ],
+    "rho_with_height": 0.13,
+    "rho_at_same_height": 0.07,
+    "ci90_at_same_height": [
+     -0.16,
+     0.31
     ],
     "rule": false
    }
@@ -639,7 +921,13 @@
      -0.52,
      -0.14
     ],
-    "rule": true
+    "rho_with_height": 0.36,
+    "rho_at_same_height": 0.16,
+    "ci90_at_same_height": [
+     -0.07,
+     0.4
+    ],
+    "rule": false
    },
    "hp_E_soft": {
     "rho_pooled": 0.32,
@@ -648,7 +936,13 @@
      0.26,
      0.61
     ],
-    "rule": true
+    "rho_with_height": -0.49,
+    "rho_at_same_height": -0.22,
+    "ci90_at_same_height": [
+     -0.55,
+     0.06
+    ],
+    "rule": false
    },
    "hp_d": {
     "rho_pooled": -0.96,
@@ -657,7 +951,10 @@
      -0.99,
      -0.98
     ],
-    "rule": true
+    "rho_with_height": 1.0,
+    "rho_at_same_height": null,
+    "ci90_at_same_height": null,
+    "rule": false
    },
    "hp_theta": {
     "rho_pooled": -0.15,
@@ -665,6 +962,12 @@
     "ci90": [
      -0.37,
      0.07
+    ],
+    "rho_with_height": 0.13,
+    "rho_at_same_height": -0.15,
+    "ci90_at_same_height": [
+     -0.41,
+     0.13
     ],
     "rule": false
    },
@@ -678,7 +981,10 @@
      -0.99,
      -0.98
     ],
-    "rule": true
+    "rho_with_height": 1.0,
+    "rho_at_same_height": null,
+    "ci90_at_same_height": null,
+    "rule": false
    },
    "contact_area_mm2": {
     "note": "constant in this data"
@@ -690,7 +996,13 @@
      -0.52,
      -0.07
     ],
-    "rule": true
+    "rho_with_height": 0.31,
+    "rho_at_same_height": 0.01,
+    "ci90_at_same_height": [
+     -0.25,
+     0.26
+    ],
+    "rule": false
    },
    "face_hard_frac": {
     "rho_pooled": -0.17,
@@ -698,6 +1010,12 @@
     "ci90": [
      -0.22,
      0.33
+    ],
+    "rho_with_height": -0.06,
+    "rho_at_same_height": 0.05,
+    "ci90_at_same_height": [
+     -0.2,
+     0.31
     ],
     "rule": false
    },
@@ -708,7 +1026,13 @@
      0.3,
      0.66
     ],
-    "rule": true
+    "rho_with_height": -0.51,
+    "rho_at_same_height": 0.0,
+    "ci90_at_same_height": [
+     -0.28,
+     0.24
+    ],
+    "rule": false
    },
    "post_hard_frac": {
     "rho_pooled": 0.11,
@@ -717,7 +1041,13 @@
      -0.5,
      -0.05
     ],
-    "rule": true
+    "rho_with_height": 0.31,
+    "rho_at_same_height": 0.01,
+    "ci90_at_same_height": [
+     -0.2,
+     0.26
+    ],
+    "rule": false
    },
    "ant_hard_frac": {
     "rho_pooled": 0.1,
@@ -726,7 +1056,13 @@
      -0.55,
      -0.07
     ],
-    "rule": true
+    "rho_with_height": 0.31,
+    "rho_at_same_height": 0.02,
+    "ci90_at_same_height": [
+     -0.28,
+     0.23
+    ],
+    "rule": false
    },
    "inner_hard_frac": {
     "rho_pooled": 0.1,
@@ -735,7 +1071,13 @@
      -0.51,
      -0.08
     ],
-    "rule": true
+    "rho_with_height": 0.31,
+    "rho_at_same_height": 0.01,
+    "ci90_at_same_height": [
+     -0.24,
+     0.24
+    ],
+    "rule": false
    },
    "outer_hard_frac": {
     "rho_pooled": -0.3,
@@ -744,7 +1086,13 @@
      -0.46,
      -0.25
     ],
-    "rule": true
+    "rho_with_height": 0.36,
+    "rho_at_same_height": -0.01,
+    "ci90_at_same_height": [
+     -0.2,
+     0.18
+    ],
+    "rule": false
    },
    "face_soft_thick_mm": {
     "rho_pooled": -0.65,
@@ -753,7 +1101,13 @@
      -0.92,
      -0.81
     ],
-    "rule": true
+    "rho_with_height": 0.88,
+    "rho_at_same_height": -0.06,
+    "ci90_at_same_height": [
+     -0.27,
+     0.19
+    ],
+    "rule": false
    },
    "binary_material": {
     "rho_pooled": 0.08,
@@ -762,6 +1116,9 @@
      NaN,
      NaN
     ],
+    "rho_with_height": NaN,
+    "rho_at_same_height": null,
+    "ci90_at_same_height": null,
     "rule": false
    },
    "log_k_axial": {
@@ -770,6 +1127,12 @@
     "ci90": [
      -0.3,
      0.12
+    ],
+    "rho_with_height": 0.09,
+    "rho_at_same_height": 0.05,
+    "ci90_at_same_height": [
+     -0.18,
+     0.29
     ],
     "rule": false
    },
@@ -780,7 +1143,13 @@
      -0.57,
      -0.2
     ],
-    "rule": true
+    "rho_with_height": 0.41,
+    "rho_at_same_height": 0.03,
+    "ci90_at_same_height": [
+     -0.18,
+     0.26
+    ],
+    "rule": false
    },
    "log_col_compliance": {
     "rho_pooled": -0.5,
@@ -789,7 +1158,13 @@
      -0.78,
      -0.45
     ],
-    "rule": true
+    "rho_with_height": 0.66,
+    "rho_at_same_height": 0.22,
+    "ci90_at_same_height": [
+     -0.15,
+     0.56
+    ],
+    "rule": false
    },
    "log_contrast": {
     "rho_pooled": -0.4,
@@ -798,7 +1173,13 @@
      -0.64,
      -0.24
     ],
-    "rule": true
+    "rho_with_height": 0.5,
+    "rho_at_same_height": 0.18,
+    "ci90_at_same_height": [
+     -0.11,
+     0.53
+    ],
+    "rule": false
    },
    "log_post_ant_stiffness": {
     "rho_pooled": -0.6,
@@ -807,7 +1188,13 @@
      -0.99,
      -0.97
     ],
-    "rule": true
+    "rho_with_height": 0.99,
+    "rho_at_same_height": 0.11,
+    "ci90_at_same_height": [
+     -0.18,
+     0.4
+    ],
+    "rule": false
    },
    "defl_100N_over_d": {
     "rho_pooled": 0.63,
@@ -816,7 +1203,13 @@
      0.77,
      0.9
     ],
-    "rule": true
+    "rho_with_height": -0.87,
+    "rho_at_same_height": -0.04,
+    "ci90_at_same_height": [
+     -0.28,
+     0.21
+    ],
+    "rule": false
    },
    "soft_volume_frac": {
     "rho_pooled": -0.1,
@@ -824,6 +1217,12 @@
     "ci90": [
      -0.09,
      0.41
+    ],
+    "rho_with_height": -0.17,
+    "rho_at_same_height": 0.08,
+    "ci90_at_same_height": [
+     -0.18,
+     0.38
     ],
     "rule": false
    },
@@ -834,6 +1233,12 @@
      -0.13,
      0.37
     ],
+    "rho_with_height": -0.13,
+    "rho_at_same_height": 0.02,
+    "ci90_at_same_height": [
+     -0.21,
+     0.24
+    ],
     "rule": false
    },
    "log_k_bend": {
@@ -842,6 +1247,12 @@
     "ci90": [
      -0.31,
      0.14
+    ],
+    "rho_with_height": 0.09,
+    "rho_at_same_height": 0.05,
+    "ci90_at_same_height": [
+     -0.17,
+     0.29
     ],
     "rule": false
    },
@@ -852,7 +1263,13 @@
      0.96,
      0.98
     ],
-    "rule": true
+    "rho_with_height": -0.99,
+    "rho_at_same_height": -0.16,
+    "ci90_at_same_height": [
+     -0.47,
+     0.08
+    ],
+    "rule": false
    },
    "face_strain_100N": {
     "rho_pooled": 0.1,
@@ -860,6 +1277,12 @@
     "ci90": [
      -0.42,
      0.11
+    ],
+    "rho_with_height": 0.13,
+    "rho_at_same_height": -0.02,
+    "ci90_at_same_height": [
+     -0.27,
+     0.27
     ],
     "rule": false
    }

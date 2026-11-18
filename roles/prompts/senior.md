@@ -6,8 +6,9 @@ proposals of the other arms or any result newer than the pre-registration.
 A card states what the idea's mechanism M predicts and what would prove it wrong:
 - hypothesis: "if M works, then <read-out> of the design is <lower / higher> than that of its ablation twin by more than the noise floor"
 - ablation twin: the same design with M removed, described precisely enough for the mentor to build it (one change only)
-- read-out: the primary read-out is mu_req (required friction coefficient) from tied screening, design and twin through the same
-  screening pass; secondary read-outs (posterior translation in extension, translation in flexion, required interface shear)
+- read-out: the primary read-out is mu_req (required friction coefficient) from tied screening at the LOOSENED height (0.5 mm
+  above the natural disc space, tissue squeeze force about 9 N; PI 2026-11-18: this is where fixation by shape shows, because
+  the squeeze force cannot do the work), design and twin through the same screening pass; secondary read-outs (posterior translation in extension, translation in flexion, required interface shear)
   may be named but do not decide the card
 - refutation: the difference that would refute M (direction and size; the floor is in prereg.json)
 - learnt either way: one sentence each for "confirmed" and "refuted"
