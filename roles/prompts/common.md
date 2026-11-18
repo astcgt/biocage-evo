@@ -15,3 +15,5 @@ Rules:
 - Do not trust other roles or the integrator; check.
 - Your verdict JSON must follow the schema in your role prompt and include "summary_zh": a plain-language summary in
   Traditional Chinese for the PI (no abbreviations without explanation, no pronouns without a clear referent).
+- When you are blocked (a method does not work, no obvious way forward), search the literature FIRST and cite what you
+  found (or 'none found') before proposing your own fix (PI 2026-11-18).

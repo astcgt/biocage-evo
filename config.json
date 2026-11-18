@@ -3,5 +3,13 @@
  "febio_bin": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/third_party/FEBio/cbuild/bin/febio4",
  "mkl_lib": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/third_party/mkl/lib",
  "gpu": "5",
- "febio_src": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/third_party/FEBio"
+ "febio_src": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/third_party/FEBio",
+ "huggingface_repo": {
+  "id": "ast-atp/biocage_evo",
+  "type": "model",
+  "remote": "git@hf.co:ast-atp/biocage_evo",
+  "clone": "../biocage_evo_hf",
+  "identity": "Yi Liu <ast-atp@users.noreply.huggingface.co> (PI; no AI / Claude trace)",
+  "state_2026-11-18": "cloned; git-xet 0.2.1 local config; push refused until the PI registers this server's SSH key; nothing uploaded"
+ }
 }
