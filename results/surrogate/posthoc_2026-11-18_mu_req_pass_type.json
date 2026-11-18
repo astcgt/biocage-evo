@@ -1,0 +1,31 @@
+{
+ "note": "POST-HOC variant after the miss analysis of 2026-11-18 (radial_interleave under-coverage of mu_req): screening pass type as an extra input",
+ "results": {
+  "G (as run 3)": {
+   "coverage": 0.823,
+   "conformal": 0.911,
+   "width_conformal": 0.013,
+   "mae": 0.0029,
+   "skill": 0.789,
+   "radial_interleave": {
+    "group_coverage": 0.68,
+    "group_conformal_coverage": 0.74,
+    "under_covered": true,
+    "mae": 0.0025
+   }
+  },
+  "G + pass type (static / dynamic / split)": {
+   "coverage": 0.696,
+   "conformal": 0.911,
+   "width_conformal": 0.0098,
+   "mae": 0.0024,
+   "skill": 0.81,
+   "radial_interleave": {
+    "group_coverage": 0.82,
+    "group_conformal_coverage": 0.92,
+    "under_covered": false,
+    "mae": 0.0014
+   }
+  }
+ }
+}

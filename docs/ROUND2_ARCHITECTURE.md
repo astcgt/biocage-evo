@@ -75,7 +75,7 @@ available before simulation, so no leakage); replicate noise 0.012 mm sets the f
 [rev 2 precedence: where B1-B6 differ from section B' (B7-B13), B' wins - in particular 10 separate naive processes instead of
 one (B8), and archive distance, feasibility checks and build success are computed by code, not by the mentor (B11, B13).]
 Source: D'Ambrosio, Albalak, Lehman, Stanley 2026, arXiv 2611.11725 (naive model kept ignorant of the topic produces seed
-ideas; a mentor model turns them into concrete proposals; novelty and usefulness both rose). Related: EvoSci (ACL 2026)
+ideas; a mentor model turns them into concrete proposals; novelty and usefulness both rose). Related: EvoSci (ACL 2026; not re-verified 2026-11-18, the other four citations of B and C were checked against arXiv)
 mentor agent; LLM self-judged novelty is unreliable (arXiv 2606.12071; AI2 novelty bench) -> our judge is the simulation.
 **B1 Naive proposer.** A small model (Haiku-class) or the same model with a context stripped of PLAN / DECISIONS / results;
 it gets only: the physical task in lay terms (a resorbable spacer that must not slide out of the C3-C4 disc space under bending,
