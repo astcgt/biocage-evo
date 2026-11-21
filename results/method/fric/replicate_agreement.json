@@ -1,7 +1,11 @@
 {
  "sets": [
   "physio_fric5r",
-  "physio_relGr"
+  "physio_relGr",
+  "pilot_mu03rN",
+  "pilot_mu03GrN",
+  "pilot_mu03r",
+  "pilot_mu03Gr"
  ],
  "groups": [
   {
@@ -31,6 +35,31 @@
      "spread_u_h_mm": 0.002736314997332845,
      "spread_post_mm": 0.0027363129848182455
     },
+    "flexion@mu0.3": {
+     "values": {
+      "p092": {
+       "set": "pilot_mu03r",
+       "eval_point": "fric",
+       "u_h": 0.8510094578503129,
+       "post": -0.8510094376358076
+      },
+      "p117": {
+       "set": "pilot_mu03rN",
+       "eval_point": "fric",
+       "u_h": 0.8488452577558842,
+       "post": -0.848845225369115
+      },
+      "p143": {
+       "set": "pilot_mu03r",
+       "eval_point": "fric",
+       "u_h": 0.8506143344373962,
+       "post": -0.85061430266864
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0021642000944287476,
+     "spread_post_mm": 0.002164212266692611
+    },
     "extension": {
      "values": {
       "p092": {
@@ -55,6 +84,31 @@
      "same_eval_point": true,
      "spread_u_h_mm": 0.00238875039142894,
      "spread_post_mm": 0.002388768894701354
+    },
+    "extension@mu0.3": {
+     "values": {
+      "p092": {
+       "set": "pilot_mu03r",
+       "eval_point": "rom",
+       "u_h": 0.529685516409666,
+       "post": 0.5296847796156551
+      },
+      "p117": {
+       "set": "pilot_mu03rN",
+       "eval_point": "rom",
+       "u_h": 0.5305050009776502,
+       "post": 0.5305042429389765
+      },
+      "p143": {
+       "set": "pilot_mu03r",
+       "eval_point": "rom",
+       "u_h": 0.5293162017808306,
+       "post": 0.5293153706367989
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0011887991968195788,
+     "spread_post_mm": 0.0011888723021775682
     }
    }
   },
@@ -84,6 +138,25 @@
      "spread_u_h_mm": 0.0039967349700471555,
      "spread_post_mm": 0.003996836865152953
     },
+    "flexion@mu0.3": {
+     "values": {
+      "p093": {
+       "set": "pilot_mu03rN",
+       "eval_point": "fric",
+       "u_h": 0.8860778957379525,
+       "post": -0.8860777381602888
+      },
+      "p145": {
+       "set": "pilot_mu03r",
+       "eval_point": "fric",
+       "u_h": 0.8823380990709064,
+       "post": -0.882337879626278
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.003739796667046047,
+     "spread_post_mm": 0.0037398585340108204
+    },
     "extension": {
      "values": {
       "p093": {
@@ -102,6 +175,25 @@
      "same_eval_point": true,
      "spread_u_h_mm": 0.012415672940065736,
      "spread_post_mm": 0.012415616963535325
+    },
+    "extension@mu0.3": {
+     "values": {
+      "p093": {
+       "set": "pilot_mu03r",
+       "eval_point": "rom",
+       "u_h": 0.6010593459932199,
+       "post": 0.6010585505557939
+      },
+      "p145": {
+       "set": "pilot_mu03r",
+       "eval_point": "rom",
+       "u_h": 0.5989182461089262,
+       "post": 0.5989174188504605
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0021410998842936735,
+     "spread_post_mm": 0.0021411317053334766
     }
    }
   },
@@ -131,6 +223,11 @@
      "spread_u_h_mm": 0.00017406692777227617,
      "spread_post_mm": 0.00017413433053359295
     },
+    "flexion@mu0.3": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    },
     "extension": {
      "values": {
       "p082": {
@@ -149,6 +246,11 @@
      "same_eval_point": true,
      "spread_u_h_mm": 0.0009201729352949495,
      "spread_post_mm": 0.0009202621624823104
+    },
+    "extension@mu0.3": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
     }
    }
   },
@@ -178,7 +280,31 @@
      "spread_u_h_mm": 0.0007721460927213875,
      "spread_post_mm": 0.0007720555152253838
     },
+    "flexion@mu0.3": {
+     "values": {
+      "p095": {
+       "set": "pilot_mu03Gr",
+       "eval_point": "fric",
+       "u_h": 0.17587800981562982,
+       "post": -0.17587781349033182
+      },
+      "p128": {
+       "set": "pilot_mu03Gr",
+       "eval_point": "fric",
+       "u_h": 0.17523902792504178,
+       "post": -0.17523881882651093
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0006389818905880307,
+     "spread_post_mm": 0.000638994663820891
+    },
     "extension": {
+     "values": {},
+     "computed": 0,
+     "note": "fewer than two replicates computed in these sets"
+    },
+    "extension@mu0.3": {
      "values": {},
      "computed": 0,
      "note": "fewer than two replicates computed in these sets"
@@ -225,6 +351,18 @@
      "spread_u_h_mm": 0.00014938038883935412,
      "spread_post_mm": 0.0001493800393597977
     },
+    "flexion@mu0.3": {
+     "values": {
+      "p050": {
+       "set": "pilot_mu03Gr",
+       "eval_point": "fric",
+       "u_h": 0.18132927786826478,
+       "post": -0.18132927785954742
+      }
+     },
+     "computed": 1,
+     "note": "fewer than two replicates computed in these sets"
+    },
     "extension": {
      "values": {
       "p127": {
@@ -235,6 +373,11 @@
       }
      },
      "computed": 1,
+     "note": "fewer than two replicates computed in these sets"
+    },
+    "extension@mu0.3": {
+     "values": {},
+     "computed": 0,
      "note": "fewer than two replicates computed in these sets"
     }
    }
@@ -265,6 +408,25 @@
      "spread_u_h_mm": 1.686034645231871e-11,
      "spread_post_mm": 1.682751160636542e-11
     },
+    "flexion@mu0.3": {
+     "values": {
+      "p077": {
+       "set": "pilot_mu03r",
+       "eval_point": "fric",
+       "u_h": 0.23262030327734387,
+       "post": -0.2326201208971264
+      },
+      "p139": {
+       "set": "pilot_mu03r",
+       "eval_point": "fric",
+       "u_h": 0.23262030326532443,
+       "post": -0.23262012088509815
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 1.2019440998045638e-11,
+     "spread_post_mm": 1.2028239515515793e-11
+    },
     "extension": {
      "values": {
       "p077": {
@@ -283,6 +445,25 @@
      "same_eval_point": true,
      "spread_u_h_mm": 1.6084356069256955e-12,
      "spread_post_mm": 1.608324584623233e-12
+    },
+    "extension@mu0.3": {
+     "values": {
+      "p077": {
+       "set": "pilot_mu03r",
+       "eval_point": "rom",
+       "u_h": 0.4460031759902157,
+       "post": 0.4460031601309474
+      },
+      "p139": {
+       "set": "pilot_mu03r",
+       "eval_point": "rom",
+       "u_h": 0.4460031759470662,
+       "post": 0.44600316008779545
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 4.3149539497022715e-11,
+     "spread_post_mm": 4.315192647652566e-11
     }
    }
   },
@@ -312,6 +493,25 @@
      "spread_u_h_mm": 0.0035819475113131327,
      "spread_post_mm": 0.0035821064478867015
     },
+    "flexion@mu0.3": {
+     "values": {
+      "p060": {
+       "set": "pilot_mu03r",
+       "eval_point": "fric",
+       "u_h": 0.8370544678398323,
+       "post": -0.8370541806259475
+      },
+      "p072": {
+       "set": "pilot_mu03r",
+       "eval_point": "fric",
+       "u_h": 0.8368967023676773,
+       "post": -0.836896391270162
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.00015776547215495818,
+     "spread_post_mm": 0.00015778935578547593
+    },
     "extension": {
      "values": {
       "p060": {
@@ -330,6 +530,25 @@
      "same_eval_point": true,
      "spread_u_h_mm": 0.0055126879726140054,
      "spread_post_mm": 0.005512859363919043
+    },
+    "extension@mu0.3": {
+     "values": {
+      "p060": {
+       "set": "pilot_mu03r",
+       "eval_point": "rom",
+       "u_h": 0.505347046825665,
+       "post": 0.5053445671872578
+      },
+      "p072": {
+       "set": "pilot_mu03r",
+       "eval_point": "rom",
+       "u_h": 0.5041803269010254,
+       "post": 0.5041781114441057
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0011667199246395699,
+     "spread_post_mm": 0.001166455743152106
     }
    }
   },
@@ -366,6 +585,25 @@
      "spread_u_h_mm": 0.0013468412878528957,
      "spread_post_mm": 0.0013468647638638087
     },
+    "flexion@mu0.3": {
+     "values": {
+      "p100": {
+       "set": "pilot_mu03r",
+       "eval_point": "fric",
+       "u_h": 0.8798097386795485,
+       "post": -0.8798095247511443
+      },
+      "p142": {
+       "set": "pilot_mu03r",
+       "eval_point": "fric",
+       "u_h": 0.88812425374033,
+       "post": -0.8881241187135686
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.008314515060781513,
+     "spread_post_mm": 0.008314593962424288
+    },
     "extension": {
      "values": {
       "p100": {
@@ -384,6 +622,31 @@
      "same_eval_point": true,
      "spread_u_h_mm": 0.0001565710057345182,
      "spread_post_mm": 0.00015656232621036326
+    },
+    "extension@mu0.3": {
+     "values": {
+      "p086": {
+       "set": "pilot_mu03r",
+       "eval_point": "rom",
+       "u_h": 0.46008871693151016,
+       "post": 0.46008832781939096
+      },
+      "p100": {
+       "set": "pilot_mu03r",
+       "eval_point": "rom",
+       "u_h": 0.4610732379001161,
+       "post": 0.4610727115211687
+      },
+      "p142": {
+       "set": "pilot_mu03r",
+       "eval_point": "rom",
+       "u_h": 0.46053273640281334,
+       "post": 0.46053211754273504
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.000984520968605962,
+     "spread_post_mm": 0.0009843837017777246
     }
    }
   },
@@ -413,6 +676,25 @@
      "spread_u_h_mm": 0.006757793566873671,
      "spread_post_mm": 0.006757798253934522
     },
+    "flexion@mu0.3": {
+     "values": {
+      "p051": {
+       "set": "pilot_mu03r",
+       "eval_point": "fric",
+       "u_h": 0.8596794089859627,
+       "post": -0.8596790694719243
+      },
+      "p075": {
+       "set": "pilot_mu03r",
+       "eval_point": "fric",
+       "u_h": 0.8536567186687308,
+       "post": -0.85365629630605
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.006022690317231905,
+     "spread_post_mm": 0.0060227731658742956
+    },
     "extension": {
      "values": {
       "p051": {
@@ -431,6 +713,25 @@
      "same_eval_point": true,
      "spread_u_h_mm": 0.0031039281523985718,
      "spread_post_mm": 0.00310424458403169
+    },
+    "extension@mu0.3": {
+     "values": {
+      "p051": {
+       "set": "pilot_mu03r",
+       "eval_point": "rom",
+       "u_h": 0.6205134705253287,
+       "post": 0.6205099268923919
+      },
+      "p075": {
+       "set": "pilot_mu03r",
+       "eval_point": "rom",
+       "u_h": 0.6209585542487396,
+       "post": 0.6209551582250997
+      }
+     },
+     "same_eval_point": true,
+     "spread_u_h_mm": 0.0004450837234108995,
+     "spread_post_mm": 0.00044523133270779613
     }
    }
   }
@@ -438,8 +739,8 @@
  "note": "Replicate agreement under one window set (PI 2026-11-11 decision 4, platform layer: \u300c\u540c\u4e00\u500b\u8a2d\u8a08\u80fd\u6709\u7a69\u5b9a\u7684\u6a21\u64ec\u7d50\u679c\u6578\u503c\u300d).",
  "summary": {
   "groups": 9,
-  "windows_with_two_or_more": 16,
-  "windows_disagreeing_over_0p005_or_mixed_eval_point": 3,
+  "windows_with_two_or_more": 29,
+  "windows_disagreeing_over_0p005_or_mixed_eval_point": 5,
   "worst_spread_u_h_mm": 0.012415672940065736,
   "criterion": "same evaluation point and |spread| <= 0.005 mm (read-out noise seen in the validation); larger spreads are platform [\u6578\u503c] items, not design results"
  }

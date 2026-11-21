@@ -1,39 +1,82 @@
 {
- "time": "2026-11-10T17:00",
+ "time": "2026-11-22T01:35",
  "resources": {
   "cpu_quota_cores": 32,
-  "cpu_busy_cores": 23.7,
-  "cpu_throttled_ms_per_s": 0,
-  "load1_node": 28.1,
-  "node_cores": 256,
-  "mem_cgroup_gb": {"used": 122.1, "max": 137.4, "anon": 16.3, "file": 103.0},
-  "oom_kill": 0,
-  "gpus": {
-   "mine": {"1": "relG p071", "2": "relG p068", "3": "relG p064", "4": "relG p074 + p082"},
-   "used_gb_total": {"0": 38.5, "1": 2.8, "2": 19.4, "3": 9.3, "4": 10.2, "5": 39.8, "6": 39.8},
-   "util_pct": {"0": 0, "1": 7, "2": 0, "3": 0, "4": 22, "5": 0, "6": 0},
-   "others_full": [0, 5, 6]
+  "host_cores": 256,
+  "load1": 29.9,
+  "febio_threads_live": 28,
+  "febio_threads_at_0108": 32,
+  "throttled_pct_0109_0113": 52,
+  "cpu_stat_0113": {
+   "nr_periods": 3528079,
+   "nr_throttled": 870079
   },
-  "disk_raid_free_tb": 2.4
+  "mem_anon_gb": 25.4,
+  "mem_file_gb": 95.3,
+  "mem_max_gb": 137.4,
+  "oom_kill": 2,
+  "disk_free_tb": 2.4,
+  "gpus": {
+   "0": "0% 4.8GB weimin2 only",
+   "1": "94% 6.4GB mine mu03G p064 flex + weimin2 3.0",
+   "2": "0% 16.9GB weimin2 only",
+   "3": "35% 8.2GB mine pushG p082, mu03G p116",
+   "4": "7% 3.2GB mine cyc3vdt p124, push p117",
+   "5": "0% 39.8GB thlin full",
+   "6": "0% 39.8GB thlin full"
+  },
+  "binding": "cpu quota 32; waiting asks: cyc8 3x6, mu03e fric 6, push2 lane5 4, newtonC G 6 (+fric half building)",
+  "febio_t": {
+   "push p117 push_post2": 3.809,
+   "pushG p082 push_post2": 3.787,
+   "mu03G p064 flex": 3.72,
+   "cyc3vdt p124 flex": 5.218,
+   "mu03G p116": 2.979,
+   "ASTM p064 shear45": 0.778
+  }
  },
  "queues": {
-  "febio_h19": {"waiting": 0, "running": 0, "done": 2600, "failed": 2},
-  "evo_tasks": {"waiting": 0, "running": 0, "done": 1, "failed": 5},
-  "physio_relG_h50": {"designs": 27, "finished_normal": 5, "running": 5, "waiting": 17,
-   "finished": ["p050 15:36 60 min", "p048 15:48 71 min", "p061 16:21 86 min", "p052 16:29 113 min", "p039 16:45 128 min"],
-   "mean_run_min": 92, "eta": "about 23:30"}
+  "h19": {
+   "waiting": 0,
+   "running": 0,
+   "done": 2680,
+   "failed": 2
+  },
+  "evo": {
+   "queued": 0,
+   "running": 0,
+   "done": 1,
+   "failed": 5
+  },
+  "febio_live": 7,
+  "lanes_waiting_quota": 5,
+  "ended_2309_0108": {
+   "total": 6,
+   "normal": 3,
+   "error": 3
+  }
  },
  "actions": [
-  "16:52 core overlap fix: p068 febio 3099181 + parent 3015922 mask 12,20,24,27-29 -> 20,24,26-29 (node 1); p082 also had a thread on core 12; all 5 masks now disjoint, no thread stacking"
+  "appended PUSH2 LANE 0/1/2 DONE markers (lanes finished all 6 designs, died on syntax error after push2_lane.sh edit 11-21 15:08); unblocks push2_finish.sh",
+  "appended PUSH2 RETRY 0/1 DONE markers (p075 p093 p039 p064 complete, lanes died after push2_retry.sh edit 20:47)",
+  "ran h24_preflight.check on pilot_pushG/p129 (stale after current_settings.json edit 01:03): ok, valid True",
+  "restart coverage: new ops/cyc8_lane.sh, ops/newtonC_lane.sh, ops/finish_lane.sh + resume_all.sh blocks for biocage_cyc8 / biocage_newtonC / biocage_finish; dry-run tested"
  ],
  "problems": [
-  "binding resource = 32-core quota: 5 runs x 6 cores, 23.7 cores used, throttled 0; a 6th 6-thread run over-subscribes (tested 16:03); ~8 quota cores and most GPU capacity idle",
-  "h06/h18 core assignment again produced an overlapping mask (core 12 shared by p068 and p082)",
-  "h50_relG_batch.py: a single-design call whose run fails in < 2 min is requeued every 10 min with no limit"
+  "lane scripts edited while running killed 5 lanes before their DONE marker (push2_lane.sh 15:08, push2_retry.sh 20:47)",
+  "current_settings.json edits stale built-unstarted cases; push2_lane.sh h47 loop does not re-check h24",
+  "h51 busy_threads misses CPU-only ASTM febio (4 thr)",
+  "push_post2 ERROR cluster at t 3.78-3.81 (p101, p072, p064 retry 01:08); p117/p082 now there",
+  "mu03G p064 flex t 3.72, 6217 ERROR lines",
+  "ASTM p064 shear45 t 0.778 after 10.3 h"
  ],
  "requests": [
-  "science role (still open): exclude physio_relG/*_gpu5 run dirs (launcher failures, normal:false) from read-outs",
-  "owner of h50_relG_batch.py / h18: cap the < 2 min requeue (for example 3 tries); allow 5-thread runs so 6 fit in the 32-core quota; make h18 core picks disjoint and inside one NUMA node"
+  "Person: replace running lane scripts via copy+mv, never edit in place",
+  "Person: re-run h24 check() inside retry loops (push2_lane.sh) or batch settings edits",
+  "Person: h51 busy_threads -> count all febio4 OMP threads / use wait_quota.sh",
+  "Person: commit ops/ (cyc8_lane.sh, newtonC_lane.sh, finish_lane.sh, resume_all.sh) and wait_quota.sh",
+  "Scientist: push_post2 failures near t 3.8; mu03G p064 flex; keep ASTM p064 shear45 or stop",
+  "Person: sweep built-but-unstarted cases (mu03e lanes, h51 DST dirs) for h24 staled by the 01:03 current_settings.json edit"
  ],
- "summary_zh": "目前在跑：physio_relG 批次 5 個 FEBio（GPU 1-4），已完成 5/27（p050、p048、p061、p052、p039 都正常結束，平均約 1.5 小時），還有 17 個在排隊，預計今晚 23:30 左右跑完。CPU 用了 23.7/32 核心，沒有被限速；記憶體 122/137 GB，沒有記憶體不足。我的處理：發現 p068 和 p082 兩個運算擠在同一個 CPU 核心（12 號），把 p068 移到同一節點的空閒核心，現在 5 個運算互不重疊。閒置：約 8 個 CPU 核心和大部分 GPU 沒用到，因為每個運算固定用 6 核心，多開一個會超過配額。需要人處理：讀結果時要排除 *_gpu5 資料夾；h50 程式快速失敗的設計會無限次重排，建議設上限；可考慮改成每個運算 5 核心，才能同時跑 6 個。"
+ "summary_zh": "現在 6 個 FEBio 在跑（推出測試 2 個、mu03G 2 個、循環 1 個、ASTM 1 個），另有 5 條排隊等 CPU（8 次循環 3 條、mu03e、推出 lane5）和 Newton 確認計算。CPU 配額 32 核是瓶頸，GPU 和記憶體都有空。兩個排程佇列都是空的。這次我做了：(1) 推出測試的 5 條 lane 其實已算完，但因為腳本在執行中被修改而當掉、沒留下完成記號，收尾程式會永遠等；我補上完成記號。(2) 01:03 改了 current_settings.json，讓 pushG p129 的預檢失效，會空等 6 小時；我重跑了正式預檢（通過）。(3) 今天新開的 8 次循環、Newton 確認、收尾三組計算原本伺服器重開後不會自動恢復，我加進 resume_all.sh 並測過。過去 2 小時結束 6 個，3 個正常、3 個推出測試在 t≈3.8 失敗。需要人：不要在執行中直接改腳本；改設定檔後要重跑預檢；修 h51 計數；commit ops/。需要科學家：推出測試 t≈3.8 的失敗、ASTM p064 要不要繼續。"
 }

@@ -1,0 +1,69 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/pilot_mu03r/p117/w_extension",
+ "windows": {
+  "extension": {
+   "t": 3.58639429,
+   "target_reached": false,
+   "M_at_target": 584.201814549,
+   "mu_squeeze": 0.030790666778324965,
+   "net_push_N": 5.677271194503254,
+   "net_twist_Nmm": 0.8521273991301376,
+   "N_total": 199.70899249522395,
+   "one_face_slip_bound_mm": 0.03324090984898816,
+   "cage_translation_tied_mm": [
+    0.03543725909188674,
+    -0.0003953776415911473,
+    -0.04065235401169215
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3175,
+   "posterior_rim_translation_mm": [
+    -0.002000243268603784,
+    -0.0003570298936557585,
+    -0.09057024023824972
+   ],
+   "posterior_rim_posterior_mm": 0.002000243268603784,
+   "posterior_most_node_posterior_mm": 0.04380254489366758,
+   "posterior_rim_minus_mean_mm": 0.03743752200054786,
+   "hard_fit_n": 19233,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    0.035792525387120855,
+    9.984002723149865e-05,
+    -0.04147146560879911
+   ],
+   "hard_fit_rotation_deg": 0.8216992686972636,
+   "hard_fit_rotation_z_deg": 0.008400123338617501,
+   "hard_fit_rms_mm": 0.05499285188851301,
+   "hard_fit_minus_mean_mm": 0.0006094708196817212,
+   "hard_local_max_inplane_mm": 0.11561784748238821,
+   "eval": {
+    "t_a": 3.58639429,
+    "M_a": 584.201814549,
+    "t_b": 3.58639429,
+    "M_b": 584.201814549,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": []
+   },
+   "window_check": {
+    "n_rows": 2,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.03639429000000005,
+    "monotonic": true,
+    "rb_res_max": 0.0,
+    "rb_fres_max": 3.223178339931277,
+    "t_last": 3.58639429,
+    "complete": false
+   }
+  }
+ },
+ "provenance": {
+  "git": "eb7ec338f3f2673e3784b391fbb51091d8695aa0",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "4e716e71eb2867a75a4fd0441737532883ba6edc0a7f331e21f87582558fa068",
+  "case_xplt": "076237ac80deb0ae5c384f415c3890d76060e6c7698d192517bcdea2f9d19e4c"
+ }
+}

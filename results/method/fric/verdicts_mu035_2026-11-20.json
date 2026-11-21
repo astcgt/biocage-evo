@@ -1,0 +1,4438 @@
+{
+ "p002": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p002",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.39511682608742893,
+    "post_at_rom": 0.3951162728455383,
+    "u_h_at_1p5Nm": 0.6515038061816224,
+    "post_at_1p5Nm": 0.6515036671017849,
+    "rot_max_deg": 9.486222928491298,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p002",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1468082230003116,
+    "post_at_rom": -1.1468080523195676,
+    "u_h_at_1p5Nm": 0.31154426710723027,
+    "post_at_1p5Nm": -0.31154379886076167,
+    "rot_max_deg": 6.957666391830412,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p014": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p014",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.40003745829982346,
+    "post_at_rom": 0.40003681279093,
+    "u_h_at_1p5Nm": 0.6612961334056413,
+    "post_at_1p5Nm": 0.6612959745593722,
+    "rot_max_deg": 9.503006273383589,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5",
+    "case_dir": "p014",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1295965851076546,
+    "post_at_rom": -1.1295963446592452,
+    "u_h_at_1p5Nm": 0.34671450527630093,
+    "post_at_1p5Nm": -0.3467143675796676,
+    "rot_max_deg": 7.21927067188431,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p026": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p026",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-low",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4549568389676474,
+    "post_at_rom": 0.45495630262734255,
+    "u_h_at_1p5Nm": 0.7184514320066373,
+    "post_at_1p5Nm": 0.7184512958499263,
+    "rot_max_deg": 9.382197109623764,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.455 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p026",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0875480083033127,
+    "post_at_rom": -1.087547448040183,
+    "u_h_at_1p5Nm": 0.3431768714239656,
+    "post_at_1p5Nm": -0.34317484917524277,
+    "rot_max_deg": 7.061693462360053,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.455 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p036": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p036",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.19529689029697328,
+    "post_at_rom": 0.1952964114892444,
+    "u_h_at_1p5Nm": 0.5208949266569565,
+    "post_at_1p5Nm": 0.5208948574946388,
+    "rot_max_deg": 10.757679092691966,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p036",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.615824207687146,
+    "post_at_rom": -0.615823361009567,
+    "u_h_at_1p5Nm": 0.1492761945340344,
+    "post_at_1p5Nm": -0.1492754992042324,
+    "rot_max_deg": 5.686209754217847,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p038": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p038",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.35152680589989294,
+    "post_at_rom": 0.35152633115577453,
+    "u_h_at_1p5Nm": 0.6056415129252746,
+    "post_at_1p5Nm": 0.6056413231088906,
+    "rot_max_deg": 9.614746456365156,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p038",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.168589712712234,
+    "post_at_rom": -1.1685896691779971,
+    "u_h_at_1p5Nm": 0.34903757645716044,
+    "post_at_1p5Nm": -0.3490370883235398,
+    "rot_max_deg": 6.829142586035901,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p039": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p039",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.3258360580878132,
+    "post_at_rom": 0.32583386365429173,
+    "u_h_at_1p5Nm": 0.6305275719911364,
+    "post_at_1p5Nm": 0.6305205251244412,
+    "rot_max_deg": 10.107633850097736,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p039",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0200162611677341,
+    "post_at_rom": -1.0200160259811835,
+    "u_h_at_1p5Nm": 0.7186996112504577,
+    "post_at_1p5Nm": -0.7186995891182327,
+    "rot_max_deg": 6.110685763824184,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p048": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p048",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": false,
+    "eval_point": null,
+    "monotonic": true,
+    "u_h_at_rom": 0.0783141013423329,
+    "post_at_rom": -0.07831408420382921,
+    "u_h_at_1p5Nm": 0.0783141013423329,
+    "post_at_1p5Nm": -0.07831408420382921,
+    "rot_max_deg": 1.513032631204212,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p048",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": false,
+    "u_h_at_rom": 0.8352522491590173,
+    "post_at_rom": -0.835252247878844,
+    "u_h_at_1p5Nm": 0.20778561393427472,
+    "post_at_1p5Nm": -0.20778480740855212,
+    "rot_max_deg": 2.925261482420539,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [
+   "extension"
+  ],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "first_increment_pattern": [
+   "extension"
+  ],
+  "soft_face_locking": [
+   "extension"
+  ],
+  "soft_face_locking_evidence": {
+   "extension": "not computable under either friction law (stick-memory t_last 3.51554, production-law restart t_last 3.50455, first increments)"
+  },
+  "open_reason": "extension stopped at 1.5 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
+  "computability": true,
+  "soft_face_locking_note": "\u751f\u7406\u7a97\u53e3\u7b97\u4e0d\u51fa\uff1a\u5169\u7a2e\u6469\u64e6\u5f8b\uff08\u9ecf\u6eef\u8a18\u61b6\u5f8b\u3001\u53c3\u8003\u5f8b\uff09\u5f9e\u540c\u4e00\u6aa2\u67e5\u9ede\u91cd\u555f\u90fd\u5728\u8a55\u4f30\u9ede\u524d\u4e2d\u6b62 (PI 2026-11-10 item 2 class; 2026-11-11: the soft-face-locking hypothesis is not supported by the replicate evidence, see replicates; windows extension)"
+ },
+ "p050": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relG",
+    "case_dir": "p068_gpu2",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.20105104761283354,
+    "post_at_rom": 0.2010507540099561,
+    "u_h_at_1p5Nm": 0.38737994768442485,
+    "post_at_1p5Nm": 0.3873784058373265,
+    "rot_max_deg": 9.224638681526981,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)",
+    "inherited_from": "p068"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p068",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": false,
+    "u_h_at_rom": 1.3264260367059832,
+    "post_at_rom": -1.3264258451332063,
+    "u_h_at_1p5Nm": 0.16219863226970163,
+    "post_at_1p5Nm": -0.16219862670328591,
+    "rot_max_deg": 6.061256275713683,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)",
+    "inherited_from": "p068"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "replicates": {
+   "deck_sha256": "500c814ead46dec2",
+   "designs": [
+    "p068",
+    "p084",
+    "p127"
+   ],
+   "verdicts": {
+    "p050": "pass",
+    "p068": "pass",
+    "p084": "pass",
+    "p127": "pass"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p050": "pass",
+    "p068": "pass",
+    "p084": "pass",
+    "p127": "pass"
+   },
+   "unified": false
+  },
+  "own": {
+   "verdict": "open",
+   "windows": {
+    "extension": {
+     "set": "physio_relGr",
+     "case_dir": "p050",
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+     "grey_sub": null,
+     "usable": false,
+     "eval_point": null,
+     "monotonic": false,
+     "u_h_at_rom": 0.05770150169280219,
+     "post_at_rom": -0.057701430040539146,
+     "u_h_at_1p5Nm": 0.05770150169280219,
+     "post_at_1p5Nm": -0.057701430040539146,
+     "rot_max_deg": 2.3774236438867535,
+     "bad": [],
+     "grey": [],
+     "fallback": null,
+     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+     "window_law": "stick memory (patch 6+7)"
+    },
+    "flexion": {
+     "set": "physio_relGr",
+     "case_dir": "p050",
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+     "grey_sub": null,
+     "usable": true,
+     "eval_point": "1.5Nm",
+     "monotonic": false,
+     "u_h_at_rom": 1.3276568063133767,
+     "post_at_rom": -1.3276566259350067,
+     "u_h_at_1p5Nm": 0.1621074633798316,
+     "post_at_1p5Nm": -0.16210745978024316,
+     "rot_max_deg": 6.061238798896375,
+     "bad": [],
+     "grey": [],
+     "fallback": null,
+     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+     "window_law": "stick memory (patch 6+7)"
+    }
+   },
+   "missing": [
+    "extension"
+   ],
+   "open_reason": "extension stopped at 2.4 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
+   "computability": true,
+   "soft_face_locking": [
+    "extension"
+   ],
+   "soft_face_locking_evidence": {
+    "extension": "not computable under either friction law (stick-memory t_last 3.5685, production-law restart t_last 3.50455)"
+   },
+   "soft_face_locking_note": "\u751f\u7406\u7a97\u53e3\u7b97\u4e0d\u51fa\uff1a\u5169\u7a2e\u6469\u64e6\u5f8b\uff08\u9ecf\u6eef\u8a18\u61b6\u5f8b\u3001\u53c3\u8003\u5f8b\uff09\u5f9e\u540c\u4e00\u6aa2\u67e5\u9ede\u91cd\u555f\u90fd\u5728\u8a55\u4f30\u9ede\u524d\u4e2d\u6b62 (PI 2026-11-10 item 2 class; 2026-11-11: the soft-face-locking hypothesis is not supported by the replicate evidence, see replicates; windows extension)"
+  },
+  "verdict_source": "replicate p068 (PI 2026-11-11 decision 4: same deck + same procedure = one design result; own result under own)",
+  "numerical_flags": [
+   "replicate-not-reproduced"
+  ]
+ },
+ "p051": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p051",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-high",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.5028554232208061,
+    "post_at_rom": 0.5028498566157731,
+    "u_h_at_1p5Nm": 0.8822646930200921,
+    "post_at_1p5Nm": 0.8822613879627937,
+    "rot_max_deg": 9.313643141210152,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.503 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p051",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.963970561787577,
+    "post_at_rom": -0.9639702429986867,
+    "u_h_at_1p5Nm": 0.8275413863344497,
+    "post_at_1p5Nm": -0.8275410560322489,
+    "rot_max_deg": 7.130247038611039,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.503 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "becf8bb3940ec3d4",
+   "designs": [
+    "p075"
+   ],
+   "verdicts": {
+    "p051": "grey",
+    "p075": "grey"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p051": "grey",
+    "p075": "grey"
+   },
+   "unified": false
+  }
+ },
+ "p052": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p052",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.3580636164374278,
+    "post_at_rom": 0.3580604233644616,
+    "u_h_at_1p5Nm": 0.6558087416102737,
+    "post_at_1p5Nm": 0.6558019252202465,
+    "rot_max_deg": 9.936955467898656,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p052",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0394505707862711,
+    "post_at_rom": -1.0394505607630016,
+    "u_h_at_1p5Nm": 0.7559597485819944,
+    "post_at_1p5Nm": -0.7559597448319605,
+    "rot_max_deg": 6.506934903860436,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p060": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "AR_left": {
+    "set": "physio_fric2",
+    "case_dir": "p060",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.11551745502817104,
+    "post_at_rom": 0.11325045642386157,
+    "u_h_at_1p5Nm": 0.08682581454024496,
+    "post_at_1p5Nm": 0.07697714841510479,
+    "rot_max_deg": 7.657886005205845,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "AR_right": {
+    "set": "physio_fric2",
+    "case_dir": "p060",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.0853334557712124,
+    "post_at_rom": 0.07647984582751335,
+    "u_h_at_1p5Nm": 0.08300786362923183,
+    "post_at_1p5Nm": 0.07340891297679016,
+    "rot_max_deg": 4.510795736787212,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "LB_left": {
+    "set": "physio_fric2",
+    "case_dir": "p060",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.11634705303347179,
+    "post_at_rom": -0.11280632603769121,
+    "u_h_at_1p5Nm": 0.07799561123234869,
+    "post_at_1p5Nm": -0.028430574847278147,
+    "rot_max_deg": 6.101855947649632,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "LB_right": {
+    "set": "physio_fric2",
+    "case_dir": "p060",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.11578869683876646,
+    "post_at_rom": -0.1110813242269205,
+    "u_h_at_1p5Nm": 0.09253468599773035,
+    "post_at_1p5Nm": -0.01938708836041382,
+    "rot_max_deg": 7.884495547756008,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p060",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-low",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.47472249572701924,
+    "post_at_rom": 0.47472175450245857,
+    "u_h_at_1p5Nm": 0.7566979751187313,
+    "post_at_1p5Nm": 0.7566941732574387,
+    "rot_max_deg": 9.439775110825659,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.475 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p060",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.006805137854126,
+    "post_at_rom": -1.0068048222584343,
+    "u_h_at_1p5Nm": 0.7971658549365802,
+    "post_at_1p5Nm": -0.7971653528207058,
+    "rot_max_deg": 7.0039396103310585,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.475 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "85146a807d38295c",
+   "designs": [
+    "p072"
+   ],
+   "verdicts": {
+    "p060": "grey",
+    "p072": "grey"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p060": "grey",
+    "p072": "grey"
+   },
+   "unified": false
+  }
+ },
+ "p061": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p061",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.43185063438030963,
+    "post_at_rom": 0.4318469926429938,
+    "u_h_at_1p5Nm": 0.6983881950611318,
+    "post_at_1p5Nm": 0.6983862663385428,
+    "rot_max_deg": 9.682336034450403,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p061",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0448681338273422,
+    "post_at_rom": -1.0448681183706843,
+    "u_h_at_1p5Nm": 0.8357668042690684,
+    "post_at_1p5Nm": -0.8357666644619633,
+    "rot_max_deg": 6.76060894685803,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p062": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "AR_left": {
+    "set": "physio_fric2",
+    "case_dir": "p062",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.13506833535677756,
+    "post_at_rom": 0.10823353635313898,
+    "u_h_at_1p5Nm": 0.09220526907291665,
+    "post_at_1p5Nm": 0.06832685092099355,
+    "rot_max_deg": 4.618781705354806,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "AR_right": {
+    "set": "physio_fric2",
+    "case_dir": "p062",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.17733461502235584,
+    "post_at_rom": 0.14874254896290348,
+    "u_h_at_1p5Nm": 0.09030670188475647,
+    "post_at_1p5Nm": 0.06387468216374631,
+    "rot_max_deg": 5.2290214649596045,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "LB_left": {
+    "set": "physio_fric2",
+    "case_dir": "p062",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.0922068297185016,
+    "post_at_rom": -0.052439462286219984,
+    "u_h_at_1p5Nm": 0.09870895264417023,
+    "post_at_1p5Nm": -0.062018819181548016,
+    "rot_max_deg": 4.942005810781472,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "LB_right": {
+    "set": "physio_fric2",
+    "case_dir": "p062",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.09451319699896171,
+    "post_at_rom": -0.05415454108587669,
+    "u_h_at_1p5Nm": 0.10255766334721089,
+    "post_at_1p5Nm": -0.06314012697894444,
+    "rot_max_deg": 4.959090372525859,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p062",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4426392914608945,
+    "post_at_rom": 0.44263922733038996,
+    "u_h_at_1p5Nm": 0.6629351280730579,
+    "post_at_1p5Nm": 0.6629351201639405,
+    "rot_max_deg": 9.337738107470438,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p062",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.4265562947714573,
+    "post_at_rom": -0.42655544979656046,
+    "u_h_at_1p5Nm": 0.17468655975868344,
+    "post_at_1p5Nm": -0.1746864543498965,
+    "rot_max_deg": 7.106151172065793,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p063": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p063",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.39773482994271814,
+    "post_at_rom": 0.3977346917824804,
+    "u_h_at_1p5Nm": 0.6284408705608585,
+    "post_at_1p5Nm": 0.6284408426413295,
+    "rot_max_deg": 9.421237817130997,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p063",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.445167127167569,
+    "post_at_rom": -0.44516522990631474,
+    "u_h_at_1p5Nm": 0.17309423984775413,
+    "post_at_1p5Nm": -0.1730940862952369,
+    "rot_max_deg": 7.022651361999545,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p064": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p064",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.236427436344983,
+    "post_at_rom": 0.2364273254643824,
+    "u_h_at_1p5Nm": 0.5315641505134564,
+    "post_at_1p5Nm": 0.5315622834997596,
+    "rot_max_deg": 10.266011802575171,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p064",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.9256295514946854,
+    "post_at_rom": -0.9256293563831294,
+    "u_h_at_1p5Nm": 0.2150730075698066,
+    "post_at_1p5Nm": -0.21507295816846028,
+    "rot_max_deg": 3.190830821339579,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p065": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p065",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.3886810743575861,
+    "post_at_rom": 0.38868105388122176,
+    "u_h_at_1p5Nm": 0.6292796361818226,
+    "post_at_1p5Nm": 0.6292796129767072,
+    "rot_max_deg": 9.552158412615041,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p065",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.036889174839527444,
+    "post_at_rom": -0.03688727085371093,
+    "u_h_at_1p5Nm": 0.036889174839527444,
+    "post_at_1p5Nm": -0.03688727085371093,
+    "rot_max_deg": 0.32876726261013756,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p066": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p066",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.24728327618633972,
+    "post_at_rom": 0.24728311649325027,
+    "u_h_at_1p5Nm": 0.49343396181800314,
+    "post_at_1p5Nm": 0.4934339095368066,
+    "rot_max_deg": 10.005577325013858,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p066",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.6054145595042875,
+    "post_at_rom": -0.6054139961888041,
+    "u_h_at_1p5Nm": 0.15130098304324516,
+    "post_at_1p5Nm": -0.1512999116570359,
+    "rot_max_deg": 6.438311655483976,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p067": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p067",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.28025095597621597,
+    "post_at_rom": 0.28025028097264726,
+    "u_h_at_1p5Nm": 0.5202749406717911,
+    "post_at_1p5Nm": 0.5202748086348858,
+    "rot_max_deg": 9.901521725445496,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5",
+    "case_dir": "p067",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5647247585241867,
+    "post_at_rom": -0.5647238707270043,
+    "u_h_at_1p5Nm": 0.15993086583937954,
+    "post_at_1p5Nm": -0.15992913130281683,
+    "rot_max_deg": 7.101414878674127,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p068": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relG",
+    "case_dir": "p068_gpu2",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.20105104761283354,
+    "post_at_rom": 0.2010507540099561,
+    "u_h_at_1p5Nm": 0.38737994768442485,
+    "post_at_1p5Nm": 0.3873784058373265,
+    "rot_max_deg": 9.224638681526981,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p068",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": false,
+    "u_h_at_rom": 1.3264260367059832,
+    "post_at_rom": -1.3264258451332063,
+    "u_h_at_1p5Nm": 0.16219863226970163,
+    "post_at_1p5Nm": -0.16219862670328591,
+    "rot_max_deg": 6.061256275713683,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "replicates": {
+   "deck_sha256": "500c814ead46dec2",
+   "designs": [
+    "p050",
+    "p084",
+    "p127"
+   ],
+   "verdicts": {
+    "p050": "pass",
+    "p068": "pass",
+    "p084": "pass",
+    "p127": "pass"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p050": "pass",
+    "p068": "pass",
+    "p084": "pass",
+    "p127": "pass"
+   },
+   "unified": false
+  }
+ },
+ "p071": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p071",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.3182806028236465,
+    "post_at_rom": 0.3182789104121491,
+    "u_h_at_1p5Nm": 0.5705025966669404,
+    "post_at_1p5Nm": 0.570502194720203,
+    "rot_max_deg": 9.91906593219529,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p071",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.2334256666573387,
+    "post_at_rom": -1.2334254936572675,
+    "u_h_at_1p5Nm": 0.19551968150795854,
+    "post_at_1p5Nm": -0.1955189737302471,
+    "rot_max_deg": 6.524823242651455,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p072": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p072",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-low",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.46920980775440524,
+    "post_at_rom": 0.46920889513853953,
+    "u_h_at_1p5Nm": 0.7487062156494085,
+    "post_at_1p5Nm": 0.7487031121063653,
+    "rot_max_deg": 9.419405146291208,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.469 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p072",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0147922513918528,
+    "post_at_rom": -1.0147918532929066,
+    "u_h_at_1p5Nm": 0.7935839074252671,
+    "post_at_1p5Nm": -0.7935832463728191,
+    "rot_max_deg": 7.024484742345029,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.469 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "85146a807d38295c",
+   "designs": [
+    "p060"
+   ],
+   "verdicts": {
+    "p060": "grey",
+    "p072": "grey"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p060": "grey",
+    "p072": "grey"
+   },
+   "unified": false
+  }
+ },
+ "p074": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relG",
+    "case_dir": "p074_gpu4",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.26215487245994273,
+    "post_at_rom": 0.26214897818591104,
+    "u_h_at_1p5Nm": 0.43322877071357635,
+    "post_at_1p5Nm": 0.433225080293732,
+    "rot_max_deg": 9.224655537554842,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p074",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": false,
+    "eval_point": null,
+    "monotonic": true,
+    "u_h_at_rom": 0.07872613484674834,
+    "post_at_rom": -0.0787096074119698,
+    "u_h_at_1p5Nm": 0.07872613484674834,
+    "post_at_1p5Nm": -0.0787096074119698,
+    "rot_max_deg": 0.397487137366436,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [
+   "flexion"
+  ],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "soft_face_locking": [
+   "flexion"
+  ],
+  "soft_face_locking_evidence": {
+   "flexion": "not computable under either friction law (stick-memory t_last 3.53491, production-law restart t_last 3.54545)"
+  },
+  "open_reason": "flexion stopped at 0.4 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+  "computability": true,
+  "soft_face_locking_note": "\u751f\u7406\u7a97\u53e3\u7b97\u4e0d\u51fa\uff1a\u5169\u7a2e\u6469\u64e6\u5f8b\uff08\u9ecf\u6eef\u8a18\u61b6\u5f8b\u3001\u53c3\u8003\u5f8b\uff09\u5f9e\u540c\u4e00\u6aa2\u67e5\u9ede\u91cd\u555f\u90fd\u5728\u8a55\u4f30\u9ede\u524d\u4e2d\u6b62 (PI 2026-11-10 item 2 class; 2026-11-11: the soft-face-locking hypothesis is not supported by the replicate evidence, see replicates; windows flexion)"
+ },
+ "p075": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p075",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-high",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.5059593513732047,
+    "post_at_rom": 0.5059541011998048,
+    "u_h_at_1p5Nm": 0.8808332434136493,
+    "post_at_1p5Nm": 0.8808301974786792,
+    "rot_max_deg": 9.305970763715381,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.506 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p075",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.9560979843885382,
+    "post_at_rom": -0.9560978617881588,
+    "u_h_at_1p5Nm": 0.8207835927675761,
+    "post_at_1p5Nm": -0.8207832577783144,
+    "rot_max_deg": 7.1374713720174565,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.506 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "becf8bb3940ec3d4",
+   "designs": [
+    "p051"
+   ],
+   "verdicts": {
+    "p051": "grey",
+    "p075": "grey"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p051": "grey",
+    "p075": "grey"
+   },
+   "unified": false
+  }
+ },
+ "p076": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p076",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-low",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4776477308559538,
+    "post_at_rom": 0.4776477160960715,
+    "u_h_at_1p5Nm": 0.7015698031303345,
+    "post_at_1p5Nm": 0.7015697195415969,
+    "rot_max_deg": 9.344201030078919,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.478 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p076",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5352579065709947,
+    "post_at_rom": -0.5352577792411045,
+    "u_h_at_1p5Nm": 0.23371202841119987,
+    "post_at_1p5Nm": -0.23371188897243836,
+    "rot_max_deg": 7.099688549590783,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.478 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p077": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p077",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.43529088153594164,
+    "post_at_rom": 0.43529087464923116,
+    "u_h_at_1p5Nm": 0.6665104318429299,
+    "post_at_1p5Nm": 0.6665103669593698,
+    "rot_max_deg": 9.433503864269143,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p077",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5522982818956492,
+    "post_at_rom": -0.5522979558003507,
+    "u_h_at_1p5Nm": 0.21741073490718127,
+    "post_at_1p5Nm": -0.21741062677418707,
+    "rot_max_deg": 7.010385544642988,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "557bf57bb136f57e",
+   "designs": [
+    "p139"
+   ],
+   "verdicts": {
+    "p077": "pass",
+    "p139": "pass"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p077": "pass",
+    "p139": "pass"
+   },
+   "unified": false
+  }
+ },
+ "p078": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5",
+    "case_dir": "p078",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.3463632386544409,
+    "post_at_rom": 0.34636318237617786,
+    "u_h_at_1p5Nm": 0.5601092076039783,
+    "post_at_1p5Nm": 0.560107139848283,
+    "rot_max_deg": 9.224628538577365,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p078",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.180156087792931,
+    "post_at_rom": -1.1801560873922372,
+    "u_h_at_1p5Nm": 0.3177406919755484,
+    "post_at_1p5Nm": -0.3177401414398342,
+    "rot_max_deg": 6.810083283822229,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p079": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p079",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.39197656291398286,
+    "post_at_rom": 0.3919757776839204,
+    "u_h_at_1p5Nm": 0.6504917243169474,
+    "post_at_1p5Nm": 0.6504913830635719,
+    "rot_max_deg": 9.486059965741573,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p079",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.151063673028151,
+    "post_at_rom": -1.1510636559736718,
+    "u_h_at_1p5Nm": 0.3000568697342399,
+    "post_at_1p5Nm": -0.30005656238354106,
+    "rot_max_deg": 6.957829731882815,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p081": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5",
+    "case_dir": "p081",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": "grey-low",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.48165614335422424,
+    "post_at_rom": 0.481656091676114,
+    "u_h_at_1p5Nm": 0.726547173219131,
+    "post_at_1p5Nm": 0.7265470356992753,
+    "rot_max_deg": 9.22464304065668,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.482 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p081",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0767020280083857,
+    "post_at_rom": -1.0767017177546743,
+    "u_h_at_1p5Nm": 0.3588509634176447,
+    "post_at_1p5Nm": -0.3588476853504894,
+    "rot_max_deg": 7.09218158193911,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.482 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p082": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p082",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.2863321479320779,
+    "post_at_rom": 0.28633200393983954,
+    "u_h_at_1p5Nm": 0.5834189248580233,
+    "post_at_1p5Nm": 0.5834187294796291,
+    "rot_max_deg": 10.033612499425635,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p082",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.3806644525136025,
+    "post_at_rom": -1.3806639140026546,
+    "u_h_at_1p5Nm": 0.2608299431692259,
+    "post_at_1p5Nm": -0.26082945589417805,
+    "rot_max_deg": 5.8316681674399025,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "replicates": {
+   "deck_sha256": "2c07583af40432eb",
+   "designs": [
+    "p088"
+   ],
+   "verdicts": {
+    "p082": "pass",
+    "p088": "pass"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p082": "pass",
+    "p088": "pass"
+   },
+   "unified": false
+  }
+ },
+ "p083": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relG",
+    "case_dir": "p083_gpu3",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.3419679596738313,
+    "post_at_rom": 0.3419608931894021,
+    "u_h_at_1p5Nm": 0.5689903291776535,
+    "post_at_1p5Nm": 0.56897136923147,
+    "rot_max_deg": 9.22481609455625,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p083",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.230481969470974,
+    "post_at_rom": -1.230481722208901,
+    "u_h_at_1p5Nm": 0.6432726166364781,
+    "post_at_1p5Nm": -0.643272593436453,
+    "rot_max_deg": 6.581339127130184,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p084": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relG",
+    "case_dir": "p068_gpu2",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.20105104761283354,
+    "post_at_rom": 0.2010507540099561,
+    "u_h_at_1p5Nm": 0.38737994768442485,
+    "post_at_1p5Nm": 0.3873784058373265,
+    "rot_max_deg": 9.224638681526981,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)",
+    "inherited_from": "p068"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p068",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": false,
+    "u_h_at_rom": 1.3264260367059832,
+    "post_at_rom": -1.3264258451332063,
+    "u_h_at_1p5Nm": 0.16219863226970163,
+    "post_at_1p5Nm": -0.16219862670328591,
+    "rot_max_deg": 6.061256275713683,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)",
+    "inherited_from": "p068"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "replicates": {
+   "deck_sha256": "500c814ead46dec2",
+   "designs": [
+    "p050",
+    "p068",
+    "p127"
+   ],
+   "verdicts": {
+    "p050": "pass",
+    "p068": "pass",
+    "p084": "pass",
+    "p127": "pass"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p050": "pass",
+    "p068": "pass",
+    "p084": "pass",
+    "p127": "pass"
+   },
+   "unified": false
+  },
+  "own": {
+   "verdict": "open",
+   "windows": {
+    "extension": {
+     "set": "physio_relGr",
+     "case_dir": "p084",
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+     "grey_sub": null,
+     "usable": false,
+     "eval_point": null,
+     "monotonic": true,
+     "u_h_at_rom": 0.05306816443896448,
+     "post_at_rom": -0.05306785281705379,
+     "u_h_at_1p5Nm": 0.05306816443896448,
+     "post_at_1p5Nm": -0.05306785281705379,
+     "rot_max_deg": 2.080562604325096,
+     "bad": [],
+     "grey": [],
+     "fallback": null,
+     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+     "window_law": "stick memory (patch 6+7)"
+    },
+    "flexion": {
+     "set": "physio_relGr",
+     "case_dir": "p084",
+     "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+     "grey_sub": null,
+     "usable": true,
+     "eval_point": "1.5Nm",
+     "monotonic": false,
+     "u_h_at_rom": 1.3258150109840323,
+     "post_at_rom": -1.3258148015387805,
+     "u_h_at_1p5Nm": 0.16218266249939317,
+     "post_at_1p5Nm": -0.16218266218872232,
+     "rot_max_deg": 6.061173175535594,
+     "bad": [],
+     "grey": [],
+     "fallback": null,
+     "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+     "window_law": "stick memory (patch 6+7)"
+    }
+   },
+   "missing": [
+    "extension"
+   ],
+   "open_reason": "extension stopped at 2.1 deg (negative jacobians); window(s) extension did not reach the intact ROM or 1.5 N m (or missing)",
+   "computability": true,
+   "soft_face_locking": [
+    "extension"
+   ],
+   "soft_face_locking_evidence": {
+    "extension": "not computable under either friction law (stick-memory t_last 3.55455, production-law restart t_last 3.50455)"
+   },
+   "soft_face_locking_note": "\u751f\u7406\u7a97\u53e3\u7b97\u4e0d\u51fa\uff1a\u5169\u7a2e\u6469\u64e6\u5f8b\uff08\u9ecf\u6eef\u8a18\u61b6\u5f8b\u3001\u53c3\u8003\u5f8b\uff09\u5f9e\u540c\u4e00\u6aa2\u67e5\u9ede\u91cd\u555f\u90fd\u5728\u8a55\u4f30\u9ede\u524d\u4e2d\u6b62 (PI 2026-11-10 item 2 class; 2026-11-11: the soft-face-locking hypothesis is not supported by the replicate evidence, see replicates; windows extension)"
+  },
+  "verdict_source": "replicate p068 (PI 2026-11-11 decision 4: same deck + same procedure = one design result; own result under own)",
+  "numerical_flags": [
+   "replicate-not-reproduced"
+  ]
+ },
+ "p086": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5",
+    "case_dir": "p086",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.439745930264123,
+    "post_at_rom": 0.4397458615013331,
+    "u_h_at_1p5Nm": 0.7184613687898458,
+    "post_at_1p5Nm": 0.7184612007624459,
+    "rot_max_deg": 9.224650031366968,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p086",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1736668427882748,
+    "post_at_rom": -1.1736665597121831,
+    "u_h_at_1p5Nm": 0.817378431398996,
+    "post_at_1p5Nm": -0.8173783717425411,
+    "rot_max_deg": 6.899953428742207,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "9343badac8255ab1",
+   "designs": [
+    "p100",
+    "p142"
+   ],
+   "verdicts": {
+    "p086": "pass",
+    "p100": "pass",
+    "p142": "pass"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p086": "pass",
+    "p100": "pass",
+    "p142": "pass"
+   },
+   "unified": false
+  }
+ },
+ "p088": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p088",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.28725232086737285,
+    "post_at_rom": 0.28725226610232185,
+    "u_h_at_1p5Nm": 0.5818673235974972,
+    "post_at_1p5Nm": 0.5818672720692465,
+    "rot_max_deg": 10.033467306589035,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p088",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.374988355710275,
+    "post_at_rom": -1.3749879473026567,
+    "u_h_at_1p5Nm": 0.2610040100969982,
+    "post_at_1p5Nm": -0.26100359022471165,
+    "rot_max_deg": 5.9207892746782775,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "replicates": {
+   "deck_sha256": "2c07583af40432eb",
+   "designs": [
+    "p082"
+   ],
+   "verdicts": {
+    "p082": "pass",
+    "p088": "pass"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p082": "pass",
+    "p088": "pass"
+   },
+   "unified": false
+  }
+ },
+ "p092": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p092",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-low",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.47711378975743524,
+    "post_at_rom": 0.4771126473032327,
+    "u_h_at_1p5Nm": 0.8917364014572453,
+    "post_at_1p5Nm": 0.8917357344489987,
+    "rot_max_deg": 9.419200582781697,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.477 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p092",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1279526377421618,
+    "post_at_rom": -1.1279523678476164,
+    "u_h_at_1p5Nm": 0.880253976375649,
+    "post_at_1p5Nm": -0.8802539734885607,
+    "rot_max_deg": 7.024689882575914,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.477 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "140e86114a6694a9",
+   "designs": [
+    "p117",
+    "p143"
+   ],
+   "verdicts": {
+    "p092": "grey",
+    "p117": "grey",
+    "p143": "grey"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p092": "grey",
+    "p117": "grey",
+    "p143": "grey"
+   },
+   "unified": false
+  }
+ },
+ "p093": {
+  "verdict": "grey",
+  "reasons": [
+   "replicate group on the limit (spread 0.0124 mm <= 0.02): grey by PI 2026-11-17"
+  ],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p093",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.5517407189437596,
+    "post_at_rom": 0.5517397705651959,
+    "u_h_at_1p5Nm": 1.0700605059345223,
+    "post_at_1p5Nm": 1.0700593817393997,
+    "rot_max_deg": 9.342782762423678,
+    "bad": [
+     "extension@ROM u_h 0.55 post 0.55"
+    ],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p093",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.072341534921507,
+    "post_at_rom": -1.0723413493153404,
+    "u_h_at_1p5Nm": 0.9058101340912623,
+    "post_at_1p5Nm": -0.9058098915521968,
+    "rot_max_deg": 7.101107099114932,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension: own posterior 0.552 mm on the 0.55 limit (replicate group straddles it; PI 2026-11-17 boundary grey)"
+  ],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "17f7470a3e22834c",
+   "designs": [
+    "p145"
+   ],
+   "verdicts": {
+    "p093": "grey",
+    "p145": "grey"
+   },
+   "consistent": false,
+   "own_verdicts": {
+    "p093": "fail",
+    "p145": "grey"
+   },
+   "unified": true
+  },
+  "numerical_flags": [
+   "replicate-inconsistent"
+  ],
+  "own_verdict": "fail",
+  "own_reasons": [
+   "extension@ROM u_h 0.55 post 0.55"
+  ],
+  "own_grey": [],
+  "verdict_source": "replicate group on the limit -> grey (PI 2026-11-17; own verdict under own_verdict)"
+ },
+ "p094": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p094",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.30788373957935455,
+    "post_at_rom": 0.3078833047936242,
+    "u_h_at_1p5Nm": 0.5367513264183192,
+    "post_at_1p5Nm": 0.5367511957173823,
+    "rot_max_deg": 9.714250330207525,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p094",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.49957379726567275,
+    "post_at_rom": -0.4995734085978233,
+    "u_h_at_1p5Nm": 0.14291422789724004,
+    "post_at_1p5Nm": -0.1429129364704503,
+    "rot_max_deg": 6.7296383950966625,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p095": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relG_pl",
+    "case_dir": "p095",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.3274879149773686,
+    "post_at_rom": 0.3274862919118262,
+    "u_h_at_1p5Nm": 0.5105853684017453,
+    "post_at_1p5Nm": 0.5105853633001858,
+    "rot_max_deg": 9.224623523874506,
+    "bad": [],
+    "grey": [],
+    "fallback": {
+     "source": "physio_relG_pl (production law, same checkpoint)",
+     "margin_mm": 0.0581,
+     "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+     "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py); applied to a route-E (relative-drive) stick-law window although the margin was measured on joint-driven pairs - approximation (audit 2026-11-13 S5)",
+     "first_increment_pattern": false,
+     "superseded": {
+      "set": "physio_relGr",
+      "case_dir": "p095",
+      "t_last": 3.54466
+     }
+    },
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "production (fallback)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p095",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.261750921775282,
+    "post_at_rom": -1.261750774191472,
+    "u_h_at_1p5Nm": 0.14968303017176365,
+    "post_at_1p5Nm": -0.14968274314207636,
+    "rot_max_deg": 6.313317649582675,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "replicates": {
+   "deck_sha256": "4d02bd61097bef12",
+   "designs": [
+    "p128"
+   ],
+   "verdicts": {
+    "p095": "pass",
+    "p128": "pass"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p095": "pass",
+    "p128": "pass"
+   },
+   "unified": false
+  }
+ },
+ "p097": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p097",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.20839684883651258,
+    "post_at_rom": 0.20839551627359665,
+    "u_h_at_1p5Nm": 0.5240962729144276,
+    "post_at_1p5Nm": 0.5240962646287972,
+    "rot_max_deg": 10.539264422580779,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p097",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.2355837434488532,
+    "post_at_rom": -1.2355834832489576,
+    "u_h_at_1p5Nm": 0.18537234433254818,
+    "post_at_1p5Nm": -0.18537233095425112,
+    "rot_max_deg": 5.904625703326115,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p100": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p100",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4364955165969882,
+    "post_at_rom": 0.43649535323795813,
+    "u_h_at_1p5Nm": 0.7679391765211881,
+    "post_at_1p5Nm": 0.7679390016120216,
+    "rot_max_deg": 9.537078707142868,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p100",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.179451505259116,
+    "post_at_rom": -1.179451208127453,
+    "u_h_at_1p5Nm": 0.8185020768780595,
+    "post_at_1p5Nm": -0.8185019553728535,
+    "rot_max_deg": 6.9065055215014555,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "9343badac8255ab1",
+   "designs": [
+    "p086",
+    "p142"
+   ],
+   "verdicts": {
+    "p086": "pass",
+    "p100": "pass",
+    "p142": "pass"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p086": "pass",
+    "p100": "pass",
+    "p142": "pass"
+   },
+   "unified": false
+  }
+ },
+ "p101": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p101",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.31288320985029944,
+    "post_at_rom": 0.31288308604985,
+    "u_h_at_1p5Nm": 0.6167692439397594,
+    "post_at_1p5Nm": 0.6167691521994191,
+    "rot_max_deg": 9.931226796272059,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p101",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.1028398172386253,
+    "post_at_rom": -0.10283961087063102,
+    "u_h_at_1p5Nm": 0.09738493504594727,
+    "post_at_1p5Nm": -0.09738465440001846,
+    "rot_max_deg": 1.0770608070576684,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p102": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p102",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-low",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4581757354639172,
+    "post_at_rom": 0.45817529425987924,
+    "u_h_at_1p5Nm": 0.6838283195440085,
+    "post_at_1p5Nm": 0.6838281498138278,
+    "rot_max_deg": 9.232662370202942,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.458 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p102",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.36025669868777566,
+    "post_at_rom": -0.3602544505332657,
+    "u_h_at_1p5Nm": 0.23874322866542472,
+    "post_at_1p5Nm": -0.23873311088108978,
+    "rot_max_deg": 7.211227244110582,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.458 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p104": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relG_pl",
+    "case_dir": "p104",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4163466687251694,
+    "post_at_rom": 0.4163466650812996,
+    "u_h_at_1p5Nm": 0.6260666307996156,
+    "post_at_1p5Nm": 0.6260660249466384,
+    "rot_max_deg": 9.224627943692166,
+    "bad": [],
+    "grey": [],
+    "fallback": {
+     "source": "physio_relG_pl (production law, same checkpoint)",
+     "margin_mm": 0.0581,
+     "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+     "margin_basis": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py); applied to a route-E (relative-drive) stick-law window although the margin was measured on joint-driven pairs - approximation (audit 2026-11-13 S5)",
+     "first_increment_pattern": false,
+     "superseded": {
+      "set": "physio_relGr",
+      "case_dir": "p104",
+      "t_last": 3.55455
+     }
+    },
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "production (fallback)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p104",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1162018917076857,
+    "post_at_rom": -1.116201628311577,
+    "u_h_at_1p5Nm": 0.27670262647726396,
+    "post_at_1p5Nm": -0.2767019436638775,
+    "rot_max_deg": 6.673004792475055,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p105": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p105",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.43188926919982207,
+    "post_at_rom": 0.431889171669044,
+    "u_h_at_1p5Nm": 0.6473292468708202,
+    "post_at_1p5Nm": 0.6473292074914562,
+    "rot_max_deg": 9.333740260843722,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p105",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.4098296501443764,
+    "post_at_rom": -0.40982923429284274,
+    "u_h_at_1p5Nm": 0.15385935173058124,
+    "post_at_1p5Nm": -0.15385781843979607,
+    "rot_max_deg": 7.110148940644272,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p109": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "AR_left": {
+    "set": "physio_fric2",
+    "case_dir": "p109",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.09064147244982622,
+    "post_at_rom": -0.018321168174858283,
+    "u_h_at_1p5Nm": 0.133325865279669,
+    "post_at_1p5Nm": -0.11676245328086575,
+    "rot_max_deg": 5.746958649328986,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "AR_right": {
+    "set": "physio_fric2",
+    "case_dir": "p109",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.09223944777883927,
+    "post_at_rom": -0.031700421493347584,
+    "u_h_at_1p5Nm": 0.13155564543658796,
+    "post_at_1p5Nm": -0.11641753846516478,
+    "rot_max_deg": 6.596656596670082,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "LB_left": {
+    "set": "physio_fric2",
+    "case_dir": "p109",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.1938606562602779,
+    "post_at_rom": -0.17795807997530305,
+    "u_h_at_1p5Nm": 0.19351215767577712,
+    "post_at_1p5Nm": -0.17992869853719715,
+    "rot_max_deg": 4.051793917676015,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "LB_right": {
+    "set": "physio_fric2",
+    "case_dir": "p109",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": false,
+    "eval_point": null,
+    "monotonic": true,
+    "u_h_at_rom": 0.18481176035074745,
+    "post_at_rom": -0.17714839613849853,
+    "u_h_at_1p5Nm": 0.18481176035074745,
+    "post_at_1p5Nm": -0.17714839613849853,
+    "rot_max_deg": 3.115998074353037,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p109",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.20426296569849178,
+    "post_at_rom": 0.20426131031438613,
+    "u_h_at_1p5Nm": 0.5001723214131636,
+    "post_at_1p5Nm": 0.5001722658594236,
+    "rot_max_deg": 10.389435279528254,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p109",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": false,
+    "u_h_at_rom": 1.3107401933518816,
+    "post_at_rom": -1.3107400305336905,
+    "u_h_at_1p5Nm": 0.16095799802119007,
+    "post_at_1p5Nm": -0.16095798641645598,
+    "rot_max_deg": 6.054455596717305,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p110": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p110",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.29834303106684873,
+    "post_at_rom": 0.29834251037775733,
+    "u_h_at_1p5Nm": 0.5303978645816323,
+    "post_at_1p5Nm": 0.5303977526699657,
+    "rot_max_deg": 9.776818220441145,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p110",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5107257585069417,
+    "post_at_rom": -0.5107253757060052,
+    "u_h_at_1p5Nm": 0.14294029121657015,
+    "post_at_1p5Nm": -0.14293929929654814,
+    "rot_max_deg": 6.667070503723811,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p111": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p111",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.40096159806759885,
+    "post_at_rom": 0.4009614863099097,
+    "u_h_at_1p5Nm": 0.6268792420755016,
+    "post_at_1p5Nm": 0.6268792215729146,
+    "rot_max_deg": 9.413689255413875,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p111",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.4600926063735723,
+    "post_at_rom": -0.46009247749307935,
+    "u_h_at_1p5Nm": 0.16679299583854212,
+    "post_at_1p5Nm": -0.16679280780535327,
+    "rot_max_deg": 7.0300399552683075,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p112": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p112",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4385999189720015,
+    "post_at_rom": 0.43859969378428315,
+    "u_h_at_1p5Nm": 0.6925080018187353,
+    "post_at_1p5Nm": 0.6925079768654393,
+    "rot_max_deg": 9.44948104993332,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p112",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0391018381232482,
+    "post_at_rom": -1.0391017869982866,
+    "u_h_at_1p5Nm": 0.40849197344729166,
+    "post_at_1p5Nm": -0.4084919471076355,
+    "rot_max_deg": 6.994409570322096,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p113": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p113",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-low",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4849246564419527,
+    "post_at_rom": 0.4849242237478666,
+    "u_h_at_1p5Nm": 0.7567715099632408,
+    "post_at_1p5Nm": 0.7567714602079638,
+    "rot_max_deg": 9.354903659706677,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.485 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p113",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0102320411421823,
+    "post_at_rom": -1.0102319401091069,
+    "u_h_at_1p5Nm": 0.47239098491942394,
+    "post_at_1p5Nm": -0.4723906505807763,
+    "rot_max_deg": 7.088987251860837,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.485 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p114": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p114",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-high",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.5254384707733102,
+    "post_at_rom": 0.5254361330907843,
+    "u_h_at_1p5Nm": 0.9665877018477601,
+    "post_at_1p5Nm": 0.9665862039602953,
+    "rot_max_deg": 9.342814289577472,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.525 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p114",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0405159476923729,
+    "post_at_rom": -1.0405158950387001,
+    "u_h_at_1p5Nm": 0.879368233762696,
+    "post_at_1p5Nm": -0.8793682068926675,
+    "rot_max_deg": 7.099492390899789,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.525 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p115": {
+  "verdict": "open",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relG",
+    "case_dir": "p115_gpu4",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.21121535074897524,
+    "post_at_rom": 0.2112146377604403,
+    "u_h_at_1p5Nm": 0.41676124747791277,
+    "post_at_1p5Nm": 0.41675192415803364,
+    "rot_max_deg": 9.224672396116683,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p115",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": false,
+    "eval_point": null,
+    "monotonic": true,
+    "u_h_at_rom": 0.08726894172471678,
+    "post_at_rom": -0.08726649945334912,
+    "u_h_at_1p5Nm": 0.08726894172471678,
+    "post_at_1p5Nm": -0.08726649945334912,
+    "rot_max_deg": 0.7575398012090735,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [
+   "flexion"
+  ],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "soft_face_locking": [
+   "flexion"
+  ],
+  "soft_face_locking_evidence": {
+   "flexion": "not computable under either friction law (stick-memory t_last 3.52896, production-law restart t_last 3.50455)"
+  },
+  "open_reason": "flexion stopped at 0.8 deg (negative jacobians); window(s) flexion did not reach the intact ROM or 1.5 N m (or missing)",
+  "computability": true,
+  "soft_face_locking_note": "\u751f\u7406\u7a97\u53e3\u7b97\u4e0d\u51fa\uff1a\u5169\u7a2e\u6469\u64e6\u5f8b\uff08\u9ecf\u6eef\u8a18\u61b6\u5f8b\u3001\u53c3\u8003\u5f8b\uff09\u5f9e\u540c\u4e00\u6aa2\u67e5\u9ede\u91cd\u555f\u90fd\u5728\u8a55\u4f30\u9ede\u524d\u4e2d\u6b62 (PI 2026-11-10 item 2 class; 2026-11-11: the soft-face-locking hypothesis is not supported by the replicate evidence, see replicates; windows flexion)"
+ },
+ "p116": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relG",
+    "case_dir": "p116_gpu4",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.23322744950445035,
+    "post_at_rom": 0.23322725491107615,
+    "u_h_at_1p5Nm": 0.4123186742361232,
+    "post_at_1p5Nm": 0.41231851582725815,
+    "rot_max_deg": 9.22462431358775,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p116",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.299563542414237,
+    "post_at_rom": -1.299563360523364,
+    "u_h_at_1p5Nm": 0.14871690591465636,
+    "post_at_1p5Nm": -0.14871689243331246,
+    "rot_max_deg": 6.218277958580628,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p117": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p117",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-low",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4759626153515569,
+    "post_at_rom": 0.4759613824910321,
+    "u_h_at_1p5Nm": 0.8971566005235836,
+    "post_at_1p5Nm": 0.897155953380868,
+    "rot_max_deg": 9.426534438165838,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.476 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p117",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1263391812927193,
+    "post_at_rom": -1.1263389568557072,
+    "u_h_at_1p5Nm": 0.8775176613783161,
+    "post_at_1p5Nm": -0.8775176605037425,
+    "rot_max_deg": 7.01735574952449,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.476 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "140e86114a6694a9",
+   "designs": [
+    "p092",
+    "p143"
+   ],
+   "verdicts": {
+    "p092": "grey",
+    "p117": "grey",
+    "p143": "grey"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p092": "grey",
+    "p117": "grey",
+    "p143": "grey"
+   },
+   "unified": false
+  }
+ },
+ "p120": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p120",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.33832925801021485,
+    "post_at_rom": 0.3383291785420342,
+    "u_h_at_1p5Nm": 0.6398098013865026,
+    "post_at_1p5Nm": 0.639809782680094,
+    "rot_max_deg": 9.791256104541374,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p120",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.3472477673838819,
+    "post_at_rom": -1.3472468872076058,
+    "u_h_at_1p5Nm": 0.49640865881026797,
+    "post_at_1p5Nm": -0.4964085875410597,
+    "rot_max_deg": 6.545375388578968,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p121": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p121",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.27052445246522816,
+    "post_at_rom": 0.27052434714571943,
+    "u_h_at_1p5Nm": 0.565472882219083,
+    "post_at_1p5Nm": 0.5654727256700459,
+    "rot_max_deg": 10.098022496678869,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p121",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.3691399550021472,
+    "post_at_rom": -1.369139617735266,
+    "u_h_at_1p5Nm": 0.23007087776143875,
+    "post_at_1p5Nm": -0.2300704202201908,
+    "rot_max_deg": 5.693325407472858,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p122": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p122",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.44175288112502387,
+    "post_at_rom": 0.44175281522134885,
+    "u_h_at_1p5Nm": 0.6589230322894178,
+    "post_at_1p5Nm": 0.6589230182709953,
+    "rot_max_deg": 9.3371294814243,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p122",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.4260794988489892,
+    "post_at_rom": -0.42607906451564087,
+    "u_h_at_1p5Nm": 0.17143356819421487,
+    "post_at_1p5Nm": -0.17143335304307264,
+    "rot_max_deg": 7.10675979999715,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p124": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p124",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.3018574705598492,
+    "post_at_rom": 0.30185681554702887,
+    "u_h_at_1p5Nm": 0.5366203907270031,
+    "post_at_1p5Nm": 0.5366202083299321,
+    "rot_max_deg": 9.790464861434883,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p124",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5337582658085867,
+    "post_at_rom": -0.5337580409566505,
+    "u_h_at_1p5Nm": 0.15998012152490176,
+    "post_at_1p5Nm": -0.1599782590176496,
+    "rot_max_deg": 6.653423872958989,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p125": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "AR_left": {
+    "set": "physio_fric2",
+    "case_dir": "p125",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.0592121647717177,
+    "post_at_rom": 0.048595597492060584,
+    "u_h_at_1p5Nm": 0.030480213691500387,
+    "post_at_1p5Nm": 0.01886913743116744,
+    "rot_max_deg": 4.493600592982304,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "AR_right": {
+    "set": "physio_fric2",
+    "case_dir": "p125",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.028755948620059698,
+    "post_at_rom": 0.013868615844629228,
+    "u_h_at_1p5Nm": 0.026964686109477182,
+    "post_at_1p5Nm": 0.012137309371623316,
+    "rot_max_deg": 3.95467202758716,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "LB_left": {
+    "set": "physio_fric2",
+    "case_dir": "p125",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.08414801856324772,
+    "post_at_rom": -0.08335451386769588,
+    "u_h_at_1p5Nm": 0.07003538648063228,
+    "post_at_1p5Nm": -0.06948196806478996,
+    "rot_max_deg": 5.704193029543576,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "LB_right": {
+    "set": "physio_fric2",
+    "case_dir": "p125",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.09177233122045293,
+    "post_at_rom": -0.09169069708054485,
+    "u_h_at_1p5Nm": 0.10077209085629663,
+    "post_at_1p5Nm": -0.10057408902105278,
+    "rot_max_deg": 5.682331820718874,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production"
+   },
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p125",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4033368347259187,
+    "post_at_rom": 0.40333648193283156,
+    "u_h_at_1p5Nm": 0.6623288697564377,
+    "post_at_1p5Nm": 0.6623287963409251,
+    "rot_max_deg": 9.496523806090124,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5",
+    "case_dir": "p125",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1277636180768733,
+    "post_at_rom": -1.127763389729129,
+    "u_h_at_1p5Nm": 0.33700057940189865,
+    "post_at_1p5Nm": -0.3370002358823399,
+    "rot_max_deg": 7.219279135971985,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p127": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p127",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.20395275929721673,
+    "post_at_rom": 0.20395102832840553,
+    "u_h_at_1p5Nm": 0.500171085076662,
+    "post_at_1p5Nm": 0.5001710206397112,
+    "rot_max_deg": 10.382670691611128,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p127",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": false,
+    "u_h_at_rom": 1.3270587327253645,
+    "post_at_rom": -1.3270585113581925,
+    "u_h_at_1p5Nm": 0.16204925188086228,
+    "post_at_1p5Nm": -0.16204924666392612,
+    "rot_max_deg": 6.06122027476346,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "replicates": {
+   "deck_sha256": "500c814ead46dec2",
+   "designs": [
+    "p050",
+    "p068",
+    "p084"
+   ],
+   "verdicts": {
+    "p050": "pass",
+    "p068": "pass",
+    "p084": "pass",
+    "p127": "pass"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p050": "pass",
+    "p068": "pass",
+    "p084": "pass",
+    "p127": "pass"
+   },
+   "unified": false
+  }
+ },
+ "p128": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relG",
+    "case_dir": "p128_gpu2",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.2852031022658461,
+    "post_at_rom": 0.28391376232415894,
+    "u_h_at_1p5Nm": 0.4448639781184517,
+    "post_at_1p5Nm": 0.44451376275251914,
+    "rot_max_deg": 9.227416176606605,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p128",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.2573034390016227,
+    "post_at_rom": -1.2573033261488846,
+    "u_h_at_1p5Nm": 0.15045517626448504,
+    "post_at_1p5Nm": -0.15045479865730174,
+    "rot_max_deg": 6.3133593590527255,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+  "replicates": {
+   "deck_sha256": "4d02bd61097bef12",
+   "designs": [
+    "p095"
+   ],
+   "verdicts": {
+    "p095": "pass",
+    "p128": "pass"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p095": "pass",
+    "p128": "pass"
+   },
+   "unified": false
+  }
+ },
+ "p129": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p129",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.3776140176002667,
+    "post_at_rom": 0.3776139161933148,
+    "u_h_at_1p5Nm": 0.7086585524461471,
+    "post_at_1p5Nm": 0.7086585380031583,
+    "rot_max_deg": 9.745163908641045,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p129",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.2336943602108263,
+    "post_at_rom": -1.2336942036913778,
+    "u_h_at_1p5Nm": 0.8629309835251125,
+    "post_at_1p5Nm": -0.8629309422185953,
+    "rot_max_deg": 6.698726654010743,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p130": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p130",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": false,
+    "u_h_at_rom": 0.31385790775487693,
+    "post_at_rom": 0.3138573805668146,
+    "u_h_at_1p5Nm": 0.5764163565425044,
+    "post_at_1p5Nm": 0.5764160768662715,
+    "rot_max_deg": 9.824055636642713,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p130",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1904672954144526,
+    "post_at_rom": -1.1904670170374019,
+    "u_h_at_1p5Nm": 0.19491623812285155,
+    "post_at_1p5Nm": -0.19491560404676153,
+    "rot_max_deg": 6.61983575967387,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p131": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p131",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.3390036655747493,
+    "post_at_rom": 0.3390032417891613,
+    "u_h_at_1p5Nm": 0.5724546172242931,
+    "post_at_1p5Nm": 0.5724544446022819,
+    "rot_max_deg": 9.61162855907012,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p131",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5148446691072344,
+    "post_at_rom": -0.5148441251587484,
+    "u_h_at_1p5Nm": 0.1610648534228607,
+    "post_at_1p5Nm": -0.16106405916994615,
+    "rot_max_deg": 6.832260207586574,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p132": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p132",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.36108228411776044,
+    "post_at_rom": 0.3610808234950493,
+    "u_h_at_1p5Nm": 0.6170816868163423,
+    "post_at_1p5Nm": 0.6170813723114772,
+    "rot_max_deg": 9.608615916599241,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p132",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1579948663831867,
+    "post_at_rom": -1.1579948337655415,
+    "u_h_at_1p5Nm": 0.3338980265406523,
+    "post_at_1p5Nm": -0.3338974444681885,
+    "rot_max_deg": 6.835272887073963,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p133": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p133",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-low",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4833944875620045,
+    "post_at_rom": 0.48339378605668876,
+    "u_h_at_1p5Nm": 0.7599719716402753,
+    "post_at_1p5Nm": 0.759971781767706,
+    "rot_max_deg": 9.35742166656229,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.483 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p133",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0714193425522895,
+    "post_at_rom": -1.0714192262008735,
+    "u_h_at_1p5Nm": 0.3938165137175523,
+    "post_at_1p5Nm": -0.39381449696484155,
+    "rot_max_deg": 7.086470426432999,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.483 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p135": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p135",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-low",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4724895597257206,
+    "post_at_rom": 0.47248955710368834,
+    "u_h_at_1p5Nm": 0.6972750346258763,
+    "post_at_1p5Nm": 0.6972749800601753,
+    "rot_max_deg": 9.343343808906422,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.472 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p135",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.5160600704419437,
+    "post_at_rom": -0.5160597097008007,
+    "u_h_at_1p5Nm": 0.2290905886789695,
+    "post_at_1p5Nm": -0.22909045023655925,
+    "rot_max_deg": 7.100403480139627,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.472 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p139": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p139",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4352908815375501,
+    "post_at_rom": 0.4352908746508395,
+    "u_h_at_1p5Nm": 0.6665104318443443,
+    "post_at_1p5Nm": 0.6665103669607845,
+    "rot_max_deg": 9.433503864269143,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p139",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.55230185626306,
+    "post_at_rom": -0.5523015314667651,
+    "u_h_at_1p5Nm": 0.21741073492404162,
+    "post_at_1p5Nm": -0.21741062679101458,
+    "rot_max_deg": 7.010385544642988,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "557bf57bb136f57e",
+   "designs": [
+    "p077"
+   ],
+   "verdicts": {
+    "p077": "pass",
+    "p139": "pass"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p077": "pass",
+    "p139": "pass"
+   },
+   "unified": false
+  }
+ },
+ "p140": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p140",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.3009011207658331,
+    "post_at_rom": 0.30090103326942735,
+    "u_h_at_1p5Nm": 0.6067506168807589,
+    "post_at_1p5Nm": 0.6067505945451594,
+    "rot_max_deg": 9.995530942629829,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relGr",
+    "case_dir": "p140",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.345165089465413,
+    "post_at_rom": -1.34516470444861,
+    "u_h_at_1p5Nm": 0.2942505725437356,
+    "post_at_1p5Nm": -0.29425019700372085,
+    "rot_max_deg": 6.44835827554545,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "p142": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p142",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4363389455912537,
+    "post_at_rom": 0.43633879091174776,
+    "u_h_at_1p5Nm": 0.7663679879718384,
+    "post_at_1p5Nm": 0.7663678380207046,
+    "rot_max_deg": 9.533215453254654,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p142",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1763718748418572,
+    "post_at_rom": -1.1763714561381797,
+    "u_h_at_1p5Nm": 0.8171552355902066,
+    "post_at_1p5Nm": -0.8171550906089897,
+    "rot_max_deg": 6.91067425846727,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "9343badac8255ab1",
+   "designs": [
+    "p086",
+    "p100"
+   ],
+   "verdicts": {
+    "p086": "pass",
+    "p100": "pass",
+    "p142": "pass"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p086": "pass",
+    "p100": "pass",
+    "p142": "pass"
+   },
+   "unified": false
+  }
+ },
+ "p143": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p143",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-low",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.4747250393660063,
+    "post_at_rom": 0.47472387840853136,
+    "u_h_at_1p5Nm": 0.8920819244273582,
+    "post_at_1p5Nm": 0.8920813697348294,
+    "rot_max_deg": 9.427688036657964,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.475 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5",
+    "case_dir": "p143",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1291031821903397,
+    "post_at_rom": -1.1291031703295118,
+    "u_h_at_1p5Nm": 0.8927371856934893,
+    "post_at_1p5Nm": -0.8927370225069606,
+    "rot_max_deg": 7.120387094562942,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.475 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "140e86114a6694a9",
+   "designs": [
+    "p092",
+    "p117"
+   ],
+   "verdicts": {
+    "p092": "grey",
+    "p117": "grey",
+    "p143": "grey"
+   },
+   "consistent": true,
+   "own_verdicts": {
+    "p092": "grey",
+    "p117": "grey",
+    "p143": "grey"
+   },
+   "unified": false
+  }
+ },
+ "p145": {
+  "verdict": "grey",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p145",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": "grey-high",
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.5393250460036939,
+    "post_at_rom": 0.5393241536016605,
+    "u_h_at_1p5Nm": 1.068685124428034,
+    "post_at_1p5Nm": 1.0686839705894693,
+    "rot_max_deg": 9.341937919723305,
+    "bad": [],
+    "grey": [
+     "extension@ROM post 0.539 in grey zone [0.45, 0.55]"
+    ],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p145",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.0706259936397624,
+    "post_at_rom": -1.0706258785081868,
+    "u_h_at_1p5Nm": 0.9098068690613095,
+    "post_at_1p5Nm": -0.9098067284173498,
+    "rot_max_deg": 7.101223493837605,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [
+   "extension@ROM post 0.539 in grey zone [0.45, 0.55]"
+  ],
+  "grey_note": "\u7070\u5340\uff1a\u50c5\u4f9b\u5206\u6790\uff0c\u4e0d\u5f97\u4f5c\u70ba final design (PI 2026-11-10; posterior 0.45-0.55 mm)",
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+  "replicates": {
+   "deck_sha256": "17f7470a3e22834c",
+   "designs": [
+    "p093"
+   ],
+   "verdicts": {
+    "p093": "grey",
+    "p145": "grey"
+   },
+   "consistent": false,
+   "own_verdicts": {
+    "p093": "fail",
+    "p145": "grey"
+   },
+   "unified": true
+  },
+  "numerical_flags": [
+   "replicate-inconsistent"
+  ]
+ },
+ "p146": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p146",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.3170335073143453,
+    "post_at_rom": 0.3170328746535755,
+    "u_h_at_1p5Nm": 0.5717105132669922,
+    "post_at_1p5Nm": 0.5717102945292569,
+    "rot_max_deg": 9.909321760692658,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric5r",
+    "case_dir": "p146",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.6825608131143668,
+    "post_at_rom": -0.6825608082856415,
+    "u_h_at_1p5Nm": 0.21601223345009693,
+    "post_at_1p5Nm": -0.21601074690797945,
+    "rot_max_deg": 6.534569672140754,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p148": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_fric5r",
+    "case_dir": "p148",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.42158404466516136,
+    "post_at_rom": 0.421583512278964,
+    "u_h_at_1p5Nm": 0.674668310081221,
+    "post_at_1p5Nm": 0.6746681218908684,
+    "rot_max_deg": 9.422688038546948,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_fric3",
+    "case_dir": "p148_gpu1",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 1.1594481520053515,
+    "post_at_rom": -1.073246867464,
+    "u_h_at_1p5Nm": 0.35391575332023606,
+    "post_at_1p5Nm": -0.2677140402522804,
+    "rot_max_deg": 7.219273739848452,
+    "bad": [],
+    "grey": [],
+    "fallback": {
+     "source": "physio_fric3 (production law, same checkpoint)",
+     "margin_mm": 0.0431,
+     "rule": "PI 2026-11-10 item 1: production-law read-out + law-change shift margin, flagged",
+     "margin_basis": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs); applied to a route-E (relative-drive) stick-law window although the margin was measured on joint-driven pairs - approximation (audit 2026-11-13 S5)",
+     "first_increment_pattern": false,
+     "superseded": {
+      "set": "physio_fric5r",
+      "case_dir": "p148",
+      "t_last": 3.58214
+     }
+    },
+    "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)",
+    "window_law": "production (fallback)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)"
+ },
+ "p149": {
+  "verdict": "pass",
+  "reasons": [],
+  "windows": {
+   "extension": {
+    "set": "physio_relGr",
+    "case_dir": "p149",
+    "window_drive": "relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "ROM",
+    "monotonic": true,
+    "u_h_at_rom": 0.30765056136054864,
+    "post_at_rom": 0.3076493574074808,
+    "u_h_at_1p5Nm": 0.5683380735316772,
+    "post_at_1p5Nm": 0.5683367829810494,
+    "rot_max_deg": 9.677920044355734,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   },
+   "flexion": {
+    "set": "physio_relG",
+    "case_dir": "p149_gpu4",
+    "window_drive": "absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)",
+    "grey_sub": null,
+    "usable": true,
+    "eval_point": "1.5Nm",
+    "monotonic": true,
+    "u_h_at_rom": 0.36083571062306224,
+    "post_at_rom": -0.3608334807736852,
+    "u_h_at_1p5Nm": 0.16506724042172416,
+    "post_at_1p5Nm": -0.16506707726891556,
+    "rot_max_deg": 5.489161338971507,
+    "bad": [],
+    "grey": [],
+    "fallback": null,
+    "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)",
+    "window_law": "stick memory (patch 6+7)"
+   }
+  },
+  "missing": [],
+  "grey": [],
+  "insertion_process": "G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)"
+ },
+ "_meta": {
+  "fallback_margin_mm": {
+   "physio_fric3": 0.0431,
+   "physio_relG_pl": 0.0581
+  },
+  "margin_basis": {
+   "physio_fric3": "abs_p90 of fric3_to_fric5_shift.json (74 production-inserted checkpoint pairs)",
+   "physio_relG_pl": "max(abs_p90 fric3_to_fric5_shift.json 0.0431, abs_max relG_law_shift.json 0.05806208706318722) over n 4 process-G control pairs (ops/law_shift.py)"
+  },
+  "window_drive_disclosure": "every joint-driven window (sets physio_fric*, physio_relG, physio_relG_pl) starts with a snap of C3 back to its t=0 orientation (insertion tilt: production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87; DECISIONS 2026-11-11 01:00) - its read-outs are superseded per window by the route-E sets physio_fric5r / physio_relGr (PI 2026-11-11 1a) where those reached an evaluation point; each window row carries window_drive",
+  "grey_sub_rule": "analysis only (\u6388\u6b0a\u81ea\u6c7a 2026-11-13): posterior 0.45-0.50 grey-low, 0.50-0.55 grey-high; verdict unchanged",
+  "replicate_rule": "PI 2026-11-11 decision 4: a not-computable replicate inherits the computed replicate of the same deck (verdict_source, own); numerical_flags replicate-not-reproduced / replicate-inconsistent mark the platform reproducibility items",
+  "not_computable_rule": "2026-11-11: a required window is classed not computable (key soft_face_locking, compatibility name) only when the stick-memory window AND the production-law restart of the same checkpoint both stopped before an evaluation point; the first-increment pattern alone is noted (first_increment_pattern) and no longer vetoes a fallback; designs built from identical decks list each other under replicates",
+  "set_precedence": "per window the highest-ranked set in SETS wins: physio_fric5 (stick-memory law, PI 2026-11-09) supersedes physio_fric3 (production law, NUM-13 artefact); physio_relG (process G, PI 2026-11-10 option a) holds the 27 insertion-stopped designs; physio_relG_pl is a fallback source only (production law on the G checkpoint, + margin, flagged); the insertion-stopped scans: physio_fric3 then physio_relG",
+  "rule": "PI 2026-11-10: posterior 0.45-0.55 mm at the evaluation point = grey (analysis only, never a final design), > 0.55 or any-direction > 1 mm = fail; every row/design carries insertion_process and window_law (PI 2026-11-10 option a); PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn",
+  "provisional": "verdicts provisional: physio_fric3 windows carry the FEBio stick-point artefact (NUM-13); PI 2026-11-09 decision 1 recomputes them as physio_fric5 (stick-memory law, same checkpoints) which supersedes fric3 per window here; NUM-17 (0.5 mm grey zone) and the density reference (DECISIONS 2026-11-05 item 8) still open",
+  "generated": "2026-11-18 13:45"
+ }
+}

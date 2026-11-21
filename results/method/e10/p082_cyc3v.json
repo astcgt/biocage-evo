@@ -1,0 +1,71 @@
+{
+ "window": "../biocage_simulation_test_oct2026/human_study/al_v2/pilot_cyc3vG/p082_gpu2/w_flexion",
+ "baseline": "insertion log 3.5000 (human_study/al_v2/pilot_cyc3vG/p082_gpu2)",
+ "cycles": 3,
+ "t_end": 5.72435406,
+ "completed_cycles": 1,
+ "neutral": [
+  {
+   "t": 3.5,
+   "u_mm": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "posterior_mm": 0.0,
+   "inplane_mm": 0.0
+  },
+  {
+   "t": 5.49993703,
+   "u_mm": [
+    0.37579760397574713,
+    0.001115271860744941,
+    0.07902687955205799
+   ],
+   "posterior_mm": -0.37579760397574713,
+   "inplane_mm": 0.3757992588939417
+  },
+  null,
+  null
+ ],
+ "peaks": [
+  {
+   "flexion": {
+    "t": 4.00006641,
+    "u_mm": [
+     1.2080309708419594,
+     -0.0010993461118500338,
+     -0.024925889769204394
+    ],
+    "posterior_mm": -1.2080309708419594,
+    "inplane_mm": 1.2080314710615947
+   },
+   "extension": {
+    "t": 4.99983572,
+    "u_mm": [
+     -0.2324795507422402,
+     -0.0011766895703579283,
+     0.5179447332590656
+    ],
+    "posterior_mm": 0.2324795507422402,
+    "inplane_mm": 0.23248252861593455
+   }
+  },
+  {
+   "flexion": null,
+   "extension": null
+  },
+  {
+   "flexion": null,
+   "extension": null
+  }
+ ],
+ "posterior_increment_per_cycle_mm": [
+  -0.37579760397574713,
+  null,
+  null
+ ],
+ "ratcheting": null,
+ "rule": "ratcheting = cycle-3 posterior increment >= cycle-2 increment and > 0.005 mm (proposal)",
+ "max_inplane_mm": 1.2080314710615947
+}

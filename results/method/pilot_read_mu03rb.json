@@ -1,0 +1,513 @@
+[
+ {
+  "tag": "mu03rb",
+  "p": "p077",
+  "w": "flexion",
+  "eval_point": "1.5Nm",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p077/w_flexion",
+   "t_rom": 3.914725520088463,
+   "rom_posterior_mm": -0.4100764160675177,
+   "rom_inplane_mm": 0.4100772320013501,
+   "t_15Nm": 3.717876796710243,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.2326201208971264,
+   "Nm15_inplane_mm": 0.23262030327734387,
+   "N_total": 316.31091480481757
+  },
+  "prod": {
+   "cd": "physio_fric5r/p077/w_flexion",
+   "t_rom": 3.914863846859115,
+   "rom_posterior_mm": -0.5522979975675035,
+   "rom_inplane_mm": 0.5522983236600102,
+   "t_15Nm": 3.7124926692894173,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.21741062677418707,
+   "Nm15_inplane_mm": 0.21741073490718127,
+   "N_total": 316.09719295388913
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p077",
+  "w": "extension",
+  "eval_point": "ROM",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p077/w_extension",
+   "t_rom": 3.888165069968249,
+   "rom_posterior_mm": 0.446003235760253,
+   "rom_inplane_mm": 0.44600325158500537,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.6751877752940167,
+   "Nm15_inplane_mm": 0.6751877754878189,
+   "N_total": 199.94121039431423
+  },
+  "prod": {
+   "cd": "physio_fric5r/p077/w_extension",
+   "t_rom": 3.8880568252269407,
+   "rom_posterior_mm": 0.43529102084329807,
+   "rom_inplane_mm": 0.4352910269553877,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.6665103669593698,
+   "Nm15_inplane_mm": 0.6665104318429299,
+   "N_total": 199.65968843948198
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p086",
+  "w": "flexion",
+  "status": "not_done"
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p086",
+  "w": "extension",
+  "eval_point": "ROM",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p086/w_extension",
+   "t_rom": 3.882502634360248,
+   "rom_posterior_mm": 0.46008820653847105,
+   "rom_inplane_mm": 0.46008859562124904,
+   "t_15Nm": 3.99993399,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.939591936807152,
+   "Nm15_inplane_mm": 0.9395921753637317,
+   "N_total": 212.12825803768038
+  },
+  "prod": {
+   "cd": "physio_fric5/p086/w_extension",
+   "t_rom": 3.899378550256379,
+   "rom_posterior_mm": 0.43974583812261736,
+   "rom_inplane_mm": 0.4397459046088924,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.7184612007624459,
+   "Nm15_inplane_mm": 0.7184613687898458,
+   "N_total": 206.67659567811577
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p093",
+  "w": "flexion",
+  "status": "not_done"
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p093",
+  "w": "extension",
+  "eval_point": "ROM",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p093/w_extension",
+   "t_rom": 3.893380957741758,
+   "rom_posterior_mm": 0.6010580113386217,
+   "rom_inplane_mm": 0.601058806755828,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 1.2886267628267387,
+   "Nm15_inplane_mm": 1.2886276792742009,
+   "N_total": 215.41116716467005
+  },
+  "prod": {
+   "cd": "physio_fric5r/p093/w_extension",
+   "t_rom": 3.8929741533562843,
+   "rom_posterior_mm": 0.5517401544876513,
+   "rom_inplane_mm": 0.5517411028253142,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 1.0700593817393997,
+   "Nm15_inplane_mm": 1.0700605059345223,
+   "N_total": 209.64290063628636
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p105",
+  "w": "flexion",
+  "eval_point": "1.5Nm",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p105/w_flexion",
+   "t_rom": 3.9079052834057224,
+   "rom_posterior_mm": -0.33362588080711114,
+   "rom_inplane_mm": 0.33363427688980385,
+   "t_15Nm": 3.7238034144235974,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.1694326108846164,
+   "Nm15_inplane_mm": 0.16943278024044514,
+   "N_total": 312.49793731634134
+  },
+  "prod": {
+   "cd": "physio_fric5r/p105/w_flexion",
+   "t_rom": 3.907954324894528,
+   "rom_posterior_mm": -0.40982937048630824,
+   "rom_inplane_mm": 0.4098297851388566,
+   "t_15Nm": 3.7175637513679014,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.15385781843979607,
+   "Nm15_inplane_mm": 0.15385935173058124,
+   "N_total": 311.41332585423186
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p105",
+  "w": "extension",
+  "eval_point": "ROM",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p105/w_extension",
+   "t_rom": 3.8935026590821145,
+   "rom_posterior_mm": 0.4457408600554817,
+   "rom_inplane_mm": 0.44574095751513776,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.662309794655467,
+   "Nm15_inplane_mm": 0.6623098431005241,
+   "N_total": 195.68988197123588
+  },
+  "prod": {
+   "cd": "physio_fric5r/p105/w_extension",
+   "t_rom": 3.8934642851713916,
+   "rom_posterior_mm": 0.43188911055669704,
+   "rom_inplane_mm": 0.43188920808183173,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.6473292074914562,
+   "Nm15_inplane_mm": 0.6473292468708202,
+   "N_total": 194.64705420680136
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p114",
+  "w": "flexion",
+  "eval_point": "1.5Nm",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p114/w_flexion",
+   "t_rom": 3.908447550978975,
+   "rom_posterior_mm": -1.023491109455071,
+   "rom_inplane_mm": 1.0234912512561516,
+   "t_15Nm": 3.82824611594693,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.8599677712565748,
+   "Nm15_inplane_mm": 0.8599677827899429,
+   "N_total": 290.53498503885527
+  },
+  "prod": {
+   "cd": "physio_fric5r/p114/w_flexion",
+   "t_rom": 3.9086923797643776,
+   "rom_posterior_mm": -1.0405160320114977,
+   "rom_inplane_mm": 1.0405160834397416,
+   "t_15Nm": 3.8306321240318666,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.8793682068926675,
+   "Nm15_inplane_mm": 0.879368233762696,
+   "N_total": 290.4424218426244
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p114",
+  "w": "extension",
+  "eval_point": "ROM",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p114/w_extension",
+   "t_rom": 3.8930782513930753,
+   "rom_posterior_mm": 0.5944952483328487,
+   "rom_inplane_mm": 0.5944972244044298,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 1.2531352233208348,
+   "Nm15_inplane_mm": 1.2531366561356079,
+   "N_total": 214.71393025649002
+  },
+  "prod": {
+   "cd": "physio_fric5r/p114/w_extension",
+   "t_rom": 3.892886626310764,
+   "rom_posterior_mm": 0.525436257678987,
+   "rom_inplane_mm": 0.5254385952186852,
+   "t_15Nm": 3.99991419,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.9665862039602953,
+   "Nm15_inplane_mm": 0.9665877018477601,
+   "N_total": 207.059184557182
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p122",
+  "w": "flexion",
+  "eval_point": "1.5Nm",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p122/w_flexion",
+   "t_rom": 3.908139020621815,
+   "rom_posterior_mm": -0.3366226523286403,
+   "rom_inplane_mm": 0.3366258886157348,
+   "t_15Nm": 3.7315945376823216,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.1917368280726269,
+   "Nm15_inplane_mm": 0.19173712339475837,
+   "N_total": 311.70375883078384
+  },
+  "prod": {
+   "cd": "physio_fric5r/p122/w_flexion",
+   "t_rom": 3.9081890544714057,
+   "rom_posterior_mm": -0.42607905104051014,
+   "rom_inplane_mm": 0.42607948535165385,
+   "t_15Nm": 3.723804620846218,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.17143335304307264,
+   "Nm15_inplane_mm": 0.17143356819421487,
+   "N_total": 310.7553155434352
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p122",
+  "w": "extension",
+  "eval_point": "ROM",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p122/w_extension",
+   "t_rom": 3.89331973938073,
+   "rom_posterior_mm": 0.4558738176305605,
+   "rom_inplane_mm": 0.4558739487854978,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.6761721234611434,
+   "Nm15_inplane_mm": 0.6761721668717493,
+   "N_total": 196.03607526319087
+  },
+  "prod": {
+   "cd": "physio_fric5r/p122/w_extension",
+   "t_rom": 3.8932805800533585,
+   "rom_posterior_mm": 0.4417527719318225,
+   "rom_inplane_mm": 0.441752837820531,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.6589230182709953,
+   "Nm15_inplane_mm": 0.6589230322894178,
+   "N_total": 194.99326263059402
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p139",
+  "w": "flexion",
+  "eval_point": "1.5Nm",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p139/w_flexion",
+   "t_rom": 3.914725526121554,
+   "rom_posterior_mm": -0.4097959641649625,
+   "rom_inplane_mm": 0.4097967413762574,
+   "t_15Nm": 3.7178767967042674,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.23262012088509815,
+   "Nm15_inplane_mm": 0.23262030326532443,
+   "N_total": 316.3109148020428
+  },
+  "prod": {
+   "cd": "physio_fric5r/p139/w_flexion",
+   "t_rom": 3.9148638416763997,
+   "rom_posterior_mm": -0.5523014694157092,
+   "rom_inplane_mm": 0.5523017941995481,
+   "t_15Nm": 3.7124926692833253,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.21741062679101458,
+   "Nm15_inplane_mm": 0.21741073492404162,
+   "N_total": 316.09719293480026
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p139",
+  "w": "extension",
+  "eval_point": "ROM",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p139/w_extension",
+   "t_rom": 3.888165069968249,
+   "rom_posterior_mm": 0.44600323571710043,
+   "rom_inplane_mm": 0.4460032515418551,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.6751877752817507,
+   "Nm15_inplane_mm": 0.6751877754755526,
+   "N_total": 199.94121040375853
+  },
+  "prod": {
+   "cd": "physio_fric5r/p139/w_extension",
+   "t_rom": 3.8880568252269407,
+   "rom_posterior_mm": 0.4352910208449064,
+   "rom_inplane_mm": 0.4352910269569961,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.6665103669607845,
+   "Nm15_inplane_mm": 0.6665104318443443,
+   "N_total": 199.65968843895394
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p142",
+  "w": "flexion",
+  "status": "not_done"
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p142",
+  "w": "extension",
+  "eval_point": "ROM",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p142/w_extension",
+   "t_rom": 3.8832561543034756,
+   "rom_posterior_mm": 0.4605323040095572,
+   "rom_inplane_mm": 0.4605329228632556,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.9383684172676493,
+   "Nm15_inplane_mm": 0.9383688292175786,
+   "N_total": 212.111371289016
+  },
+  "prod": {
+   "cd": "physio_fric5r/p142/w_extension",
+   "t_rom": 3.882652169938772,
+   "rom_posterior_mm": 0.4363386852312683,
+   "rom_inplane_mm": 0.4363388396792426,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.7663678380207046,
+   "Nm15_inplane_mm": 0.7663679879718384,
+   "N_total": 207.1934560631898
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p145",
+  "w": "flexion",
+  "eval_point": "1.5Nm",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p145/w_flexion",
+   "t_rom": 3.9078982765777655,
+   "rom_posterior_mm": -1.0573701488076674,
+   "rom_inplane_mm": 1.0573704778886563,
+   "t_15Nm": 3.8231916116056293,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.882337879626278,
+   "Nm15_inplane_mm": 0.8823380990709064,
+   "N_total": 290.8868969932239
+  },
+  "prod": {
+   "cd": "physio_fric5r/p145/w_flexion",
+   "t_rom": 3.908572486202459,
+   "rom_posterior_mm": -1.070626136674073,
+   "rom_inplane_mm": 1.0706262516648068,
+   "t_15Nm": 3.8277349267990814,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.9098067284173498,
+   "Nm15_inplane_mm": 0.9098068690613095,
+   "N_total": 290.75833972817
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p145",
+  "w": "extension",
+  "eval_point": "ROM",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03r/p145/w_extension",
+   "t_rom": 3.8935080787130216,
+   "rom_posterior_mm": 0.5989174686599733,
+   "rom_inplane_mm": 0.5989182952585383,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 1.2875191110171786,
+   "Nm15_inplane_mm": 1.287519999561546,
+   "N_total": 215.27291226711176
+  },
+  "prod": {
+   "cd": "physio_fric5r/p145/w_extension",
+   "t_rom": 3.892980472574506,
+   "rom_posterior_mm": 0.5393241586684553,
+   "rom_inplane_mm": 0.5393250509629229,
+   "t_15Nm": 3.99996053,
+   "target_reached": false,
+   "Nm15_posterior_mm": 1.0686839705894693,
+   "Nm15_inplane_mm": 1.068685124428034,
+   "N_total": 209.44333987970782
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p061",
+  "w": "flexion",
+  "eval_point": "1.5Nm",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03Gr/p061/w_flexion",
+   "t_rom": 3.9326944122626126,
+   "rom_posterior_mm": -1.052646951942623,
+   "rom_inplane_mm": 1.0526469655375992,
+   "t_15Nm": 3.8204715504501885,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.8169178623219645,
+   "Nm15_inplane_mm": 0.8169180119044135,
+   "N_total": 315.34664889950443
+  },
+  "prod": {
+   "cd": "physio_relGr/p061/w_flexion",
+   "t_rom": 3.9320976096375584,
+   "rom_posterior_mm": -1.0448682621985046,
+   "rom_inplane_mm": 1.0448682776534552,
+   "t_15Nm": 3.8217472689655416,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.8357666644619633,
+   "Nm15_inplane_mm": 0.8357668042690684,
+   "N_total": 315.6476692089323
+  }
+ },
+ {
+  "tag": "mu03rb",
+  "p": "p061",
+  "w": "extension",
+  "eval_point": "ROM",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_mu03Gr/p061/w_extension",
+   "t_rom": 3.874102356155166,
+   "rom_posterior_mm": 0.47168409479428075,
+   "rom_inplane_mm": 0.47168644726136444,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.855353601396748,
+   "Nm15_inplane_mm": 0.8553561130316607,
+   "N_total": 209.50797666422804
+  },
+  "prod": {
+   "cd": "physio_relGr/p061/w_extension",
+   "t_rom": 3.874569416527843,
+   "rom_posterior_mm": 0.4318468873616688,
+   "rom_inplane_mm": 0.43185052804158375,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.6983862663385428,
+   "Nm15_inplane_mm": 0.6983881950611318,
+   "N_total": 205.0717927912096
+  }
+ }
+]

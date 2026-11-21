@@ -1,0 +1,16 @@
+#!/bin/bash
+# Block until the account's FEBio threads + N fit in the CPU quota (cgroup cpu.max = 32 cores; the lane drivers that call h18 / h47
+# directly have no quota check of their own - on 2026-11-20 the account ran ~45 threads, everything crawled and the watchdog stopped
+# two runs for 'no progress'). Counts the threads asked for by every running febio4 of this user (OMP_NUM_THREADS in its environment).
+# usage: wait_quota.sh <threads to add> [limit=32]
+N=$1; LIM=${2:-32}
+while true; do
+  used=0
+  for p in /proc/[0-9]*; do
+    [ "$(cat $p/comm 2>/dev/null)" = febio4 ] || continue
+    [ "$(stat -c %u $p 2>/dev/null)" = "$(id -u)" ] || continue
+    t=$(tr '\0' '\n' < $p/environ 2>/dev/null | sed -n 's/^OMP_NUM_THREADS=//p' | head -1); used=$((used + ${t:-4}))
+  done
+  [ $((used + N)) -le $LIM ] && exit 0
+  sleep $((60 + RANDOM % 60))
+done

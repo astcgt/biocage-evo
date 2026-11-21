@@ -1,0 +1,60 @@
+[
+ {
+  "tag": "fl250r",
+  "p": "p062",
+  "w": "flexion",
+  "eval_point": "1.5Nm",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_fl250r/p062/w_flexion",
+   "t_rom": 3.898693773896093,
+   "rom_posterior_mm": -0.35208409823882153,
+   "rom_inplane_mm": 0.3520992723960557,
+   "t_15Nm": 3.677546459561117,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.09082744865811743,
+   "Nm15_inplane_mm": 0.09082777496392806,
+   "N_total": 564.2424526570609
+  },
+  "prod": {
+   "cd": "physio_fric5r/p062/w_flexion",
+   "t_rom": 3.908231207629059,
+   "rom_posterior_mm": -0.42655544310920535,
+   "rom_inplane_mm": 0.42655628808273904,
+   "t_15Nm": 3.7247477853227697,
+   "target_reached": true,
+   "Nm15_posterior_mm": -0.1746864543498965,
+   "Nm15_inplane_mm": 0.17468655975868344,
+   "N_total": 310.45163100839136
+  }
+ },
+ {
+  "tag": "fl250r",
+  "p": "p062",
+  "w": "extension",
+  "eval_point": "ROM",
+  "verdict_value": null,
+  "pilot": {
+   "cd": "pilot_fl250r/p062/w_extension",
+   "t_rom": 3.9007115760443054,
+   "rom_posterior_mm": 0.4123945799145987,
+   "rom_inplane_mm": 0.41239472110312475,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.6234384197302659,
+   "Nm15_inplane_mm": 0.6234385785271802,
+   "N_total": 489.0426824660256
+  },
+  "prod": {
+   "cd": "physio_fric5r/p062/w_extension",
+   "t_rom": 3.8932475917676226,
+   "rom_posterior_mm": 0.44263926231481016,
+   "rom_inplane_mm": 0.44263932588575133,
+   "t_15Nm": 4.0,
+   "target_reached": false,
+   "Nm15_posterior_mm": 0.6629351201639405,
+   "Nm15_inplane_mm": 0.6629351280730579,
+   "N_total": 195.10796365877584
+  }
+ }
+]

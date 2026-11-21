@@ -5,6 +5,8 @@ intact-ROM state (t_rom from results/method/fric/compare.json), the maximum up t
 Verdict (second part of this file): PI 2026-11-04 threshold 3 MPa on the soft-side p99 at the intact-ROM state, PROVISIONAL (bond strength
 of the co-printed interface not measured). 2026-11-04 QA fix: the ROM-state value and max-to-ROM are interpolated over the VALID states only
 (NUM-14 two-layer filter, e3.target_bracket valid_times), as gate 4 does; before, rejected micro-step / dynamic-residual states entered the interpolation.
+2026-11-21 (PI 2026-11-20 decision 9, mu 0.3 official): sets pilot_mu03r / pilot_mu03Gr (route E, stick-memory law, mu 0.3) added at the top rank,
+as in fric_compare.py; a mu 0.3 window that did not reach the intact ROM never outranks a usable mu 0.35 window (rom_reached first).
 usage: python ops/e07_batch.py [workers]
 """
 import os, sys, glob, json, csv, subprocess
@@ -16,7 +18,7 @@ E = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 R = '/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/'
 OUT = os.path.join(E, 'results/method/fric/e07'); os.makedirs(OUT, exist_ok=True)
 ended = lambda log: os.path.exists(log) and any(k in open(log, errors='ignore').read()[-4000:] for k in ('N O R M A L', 'E R R O R'))
-SETS = ('physio_fric3', 'physio_fric5', 'physio_relG_pl', 'physio_relG', 'physio_fric5r', 'physio_relGr'); RANK = {s_: i for i, s_ in enumerate(SETS)}   # physio_relG_pl (2026-11-10 17:xx): production-law fallback source of the process-G windows, ranked below physio_relG   # 2026-11-09 (PI decision 1): fric5 = the same windows recomputed with the stick-memory law; it supersedes fric3 per (design, window) in the shear gate too
+SETS = ('physio_fric3', 'physio_fric5', 'physio_relG_pl', 'physio_relG', 'physio_fric5r', 'physio_relGr', 'pilot_mu03rN', 'pilot_mu03GrN', 'pilot_mu03r', 'pilot_mu03Gr'); RANK = {s_: i for i, s_ in enumerate(SETS)}   # 2026-11-22: full-Newton mu 0.3 sets (PI item 12) added, ranked below the quasi-Newton mu 0.3 sets as in fric_compare;   # physio_relG_pl (2026-11-10 17:xx): production-law fallback source of the process-G windows, ranked below physio_relG   # 2026-11-09 (PI decision 1): fric5 = the same windows recomputed with the stick-memory law; it supersedes fric3 per (design, window) in the shear gate too
 wds = [w for s_ in SETS for w in sorted(glob.glob(R + s_ + '/p*/w_*')) if ended(w + '/case.log') and os.path.exists(w + '/case.xplt')]
 set_of = lambda w: w.split('/al_v2/')[1].split('/')[0]
 
@@ -80,7 +82,7 @@ for r in [best[k] for k in sorted(best)]:
     v = max(x for x in (r.get('horizontal_shear_p99_at_rom'), r.get('vertical_shear_p99_at_rom')) if x is not None)
     k = (r['design'], r['window']); fb = r['set'] == 'physio_relG_pl' or (r['set'] == 'physio_fric3' and 'physio_fric5' in sets_of[k])   # production-law window used because the stick-law one did not reach the ROM
     d['windows'][r['window']] = dict(set=r['set'], case_dir=r['case_dir'], shear_p99_at_rom=round(v, 3), horizontal=r.get('horizontal_shear_p99_at_rom'), vertical=r.get('vertical_shear_p99_at_rom'),
-                                     window_drive=('relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)' if r['set'] in ('physio_fric5r', 'physio_relGr') else 'absolute rigid joint (snaps C3 to its t=0 orientation at activation)'),   # S8 2026-11-17: provenance as in fric_compare
+                                     window_drive=('relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a)' if r['set'] in ('physio_fric5r', 'physio_relGr', 'pilot_mu03rN', 'pilot_mu03GrN', 'pilot_mu03r', 'pilot_mu03Gr') else 'absolute rigid joint (snaps C3 to its t=0 orientation at activation)'),   # S8 2026-11-17: provenance as in fric_compare
                                      fallback=fb, **({'fallback_note': 'PI 2026-11-11 decision 6: production-law window of the same checkpoint; no law-shift margin exists for the shear metric (not quantified), flagged only'} if fb else {}),
                                      peel_max_at_rom=max(x for x in (r.get('horizontal_peel_max_at_rom'), r.get('vertical_peel_max_at_rom')) if x is not None))
     if v > THR: d['reasons'].append(f"{r['window']}@ROM shear p99 {v:.1f} MPa > {THR}")

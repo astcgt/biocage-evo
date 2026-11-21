@@ -7,7 +7,7 @@ OLD="/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026
 EVO="$(cd "$(dirname "$0")/.." && pwd)"
 # the pgrep -u "$USER" relaunch guards need USER; a minimal server-start env may lack it (empty -> pgrep fails -> duplicate launches)
 export USER="${USER:-$(id -un)}"
-tmux has-session -t biocage_watchdog 2>/dev/null || tmux new-session -d -s biocage_watchdog "cd '$OLD' && python scripts/5_compute/h23_watchdog.py 2>> human_study/watchdog.err"
+bash "$EVO/ops/resume_daemons.sh"   # resident daemon: the platform watchdog (it brings back scheduler, samplers, preflight, QA); own file since 2026-11-22 so that lane edits below do not touch it
 tmux has-session -t evo_daemon 2>/dev/null || tmux new-session -d -s evo_daemon "cd '$EVO' && ops/evo_daemon.sh >> work/agents/evo_daemon.log 2>&1"
 [ -f "$OLD/human_study/al_v2/physio_v3_prerun.done" ] || tmux has-session -t biocage_physio_v3 2>/dev/null || \
   tmux new-session -d -s biocage_physio_v3 "cd '$OLD' && python scripts/6_active_learning/h28_physio_prerun.py 12 >> human_study/al_v2/physio_v3_prerun.log 2>&1 && touch human_study/al_v2/physio_v3_prerun.done"
@@ -214,6 +214,237 @@ if ! tmux has-session -t p093var 2>/dev/null; then
   [ ! -d "$OLD/$c" ] || [ -f "$OLD/$c/done" ] || pgrep -u "$USER" -f "h47_restart_pilot.py run $c [0-9]+ [0-9]+ extension" >/dev/null || \
     tmux new-session -d -s rep3_p093n_extension "cd '$OLD' && python scripts/5_compute/h47_restart_pilot.py run $c 4 6 extension >> $c.extension.resume.log 2>&1"
 fi
+# pilot_rep3 full-Newton set 2 (launch_fullnewton2.sh, tmux fullnewton2, started 11-18 13:56): p093n2 GPU 1 5 cores,
+# p093n3 GPU 3 6 cores, p145n GPU 4 6 cores, extension; same rule, marker done (foreman 11-18 14:0x)
+if ! tmux has-session -t fullnewton2 2>/dev/null; then
+  for a in p093n2:1:5 p093n3:3:6 p145n:4:6; do
+    IFS=: read -r p g n <<< "$a"; c="human_study/al_v2/pilot_rep3/$p"
+    [ ! -d "$OLD/$c" ] || [ -f "$OLD/$c/done" ] || pgrep -u "$USER" -f "h47_restart_pilot.py run $c [0-9]+ [0-9]+ extension" >/dev/null || \
+      { tmux new-session -d -s "rep3_${p}_extension" "cd '$OLD' && python scripts/5_compute/h47_restart_pilot.py run $c $g $n extension >> $c.extension.resume.log 2>&1"; sleep 5; }
+  done
+fi
+# pilot_push p062 (h47, push-out windows push_post then push_ant, GPU 1, 6 cores), started 11-19 04:56 in tmux biocage_push: a re-run
+# restarts the window from restart.feb (hard-linked case.dmp, never rewritten); markers done_push_post / done_push_ant, only missing
+# windows are relaunched, in order (foreman 11-19 05:0x)
+c=human_study/al_v2/pilot_push/p062
+if ! tmux has-session -t biocage_push 2>/dev/null && [ -d "$OLD/$c" ] && ! pgrep -u "$USER" -f "h47_restart_pilot.py run $c " >/dev/null; then
+  cmd=""; for w in push_post push_ant; do [ -f "$OLD/$c/done_$w" ] || cmd="$cmd python scripts/5_compute/h47_restart_pilot.py run $c 1 6 $w >> ${c%/*}/$w.resume.log 2>&1;"; done
+  [ -n "$cmd" ] && tmux new-session -d -s biocage_push "cd '$OLD' && $cmd"
+fi
+# pilot_cyc3 p062 (h18 split case, GPU 4) / pilot_lbar p062 (GPU 3), default cbuild binary, no BIOCAGE_ env, 6 cores, started by hand
+# 11-19 05:02 / 05:04 in tmux biocage_cyc3 / biocage_lbar: h18 resumes from case.dmp, h31 skips ended windows; done when
+# <case>_gpu<g>/resources.json exists (foreman 11-19 06:0x)
+for a in biocage_cyc3:4:pilot_cyc3 biocage_lbar:3:pilot_lbar; do
+  IFS=: read -r s g k <<< "$a"; d=human_study/al_v2/$k/p062
+  if ! tmux has-session -t $s 2>/dev/null && [ -f "$OLD/$d/case.feb" ] && [ ! -f "$OLD/${d}_gpu$g/resources.json" ] && ! pgrep -u "$USER" -f "h18_run_gpu_case.py $g $d( |$)" >/dev/null; then
+    tmux new-session -d -s $s "cd '$OLD' && python3 -u scripts/5_compute/h18_run_gpu_case.py $g $d 6 >> ${d}_run.log 2>&1"
+  fi
+done
+# pilot_cyc3r p062 (h47, flexion window, GPU 2, 6 cores), started 11-19 05:19 in tmux biocage_cyc3r: a re-run restarts the window
+# from restart.feb; marker done_flexion (foreman 11-19 06:0x)
+c=human_study/al_v2/pilot_cyc3r/p062
+if ! tmux has-session -t biocage_cyc3r 2>/dev/null && [ -d "$OLD/$c" ] && [ ! -f "$OLD/$c/done_flexion" ] && ! pgrep -u "$USER" -f "h47_restart_pilot.py run $c [0-9]+ [0-9]+ flexion" >/dev/null; then
+  tmux new-session -d -s biocage_cyc3r "cd '$OLD' && python scripts/5_compute/h47_restart_pilot.py run $c 2 6 flexion >> ${c}_run.log 2>&1"
+fi
+# pilot_mu03r (PI 11-19 option 乙; drive_mu03r.sh in tmux biocage_mu03, started 05:20): all 5 designs were built 05:48, so a resume
+# runs only its h51 run phase (re-running the script would rebuild the built dirs); h51 skips windows with a done marker; marker
+# RELG_PL DONE in drive.log. The 5 pilot_mu03 base runs are h19 queue jobs (re-queued by the scheduler) (foreman 11-19 06:0x)
+f=human_study/al_v2/pilot_mu03/drive.log; o="p062:flexion p062:extension p131:flexion p131:extension p100:flexion p100:extension p063:flexion p063:extension p110:flexion p110:extension"
+if ! tmux has-session -t biocage_mu03 2>/dev/null && [ -f "$OLD/$f" ] && grep -q '^built: ' "$OLD/$f" && ! grep -q 'RELG_PL DONE' "$OLD/$f" && ! pgrep -u "$USER" -f "h51_relG_fallback.py run 3 2,3,4 6 p062:flexion p062:extension p131" >/dev/null; then
+  tmux new-session -d -s biocage_mu03 "cd '$OLD' && H51_SRC=pilot_mu03 H51_DST=pilot_mu03r H51_KEYS='restart_env={\"BIOCAGE_STICK_MEMORY\": \"1\"}|window_drive_mode=\"rigid_relative\"|window_min_residual=0.0001' python3 -u scripts/5_compute/h51_relG_fallback.py run 3 2,3,4 6 $o >> $f 2>&1; echo MU03R DONE >> $f"
+fi
+# pilot_fl250r p062 (GPU 1) / pilot_lbarr p062 (GPU 3): h51 only-mode restarts of pilot_fl250 / pilot_lbar, started by hand 11-19 08:44
+# in tmux biocage_fl250r / biocage_lbarr; h51 skips windows with a done marker (done for extension, done_<w> otherwise); a missing
+# marker = still to run (foreman 11-19 09:0x). lbarr removed (foreman 11-19 12:0x): LB done, AR windows stopped on purpose ~11:22
+# (DECISIONS 11-19, stalled near t 3.9) without done markers, so the cover would have relaunched them
+for a in "biocage_fl250r:pilot_fl250:pilot_fl250r:1:p062:flexion p062:extension"; do
+  IFS=: read -r s src dst g o <<< "$a"; d=human_study/al_v2/$dst; todo=0
+  for it in $o; do w=${it#*:}; m=done_$w; [ "$w" = extension ] && m=done; [ -f "$OLD/$d/${it%%:*}/$m" ] || todo=1; done
+  if [ $todo = 1 ] && [ -d "$OLD/$d/p062" ] && ! tmux has-session -t $s 2>/dev/null && ! pgrep -u "$USER" -f "h51_relG_fallback.py run 2 $g 6 $o" >/dev/null; then
+    tmux new-session -d -s $s "cd '$OLD' && H51_SRC=$src H51_DST=$dst H51_KEYS='restart_env={\"BIOCAGE_STICK_MEMORY\": \"1\"}|window_drive_mode=\"rigid_relative\"|window_min_residual=0.0001' python3 -u scripts/5_compute/h51_relG_fallback.py run 2 $g 6 $o >> $d/run.log 2>&1"
+  fi
+done
+# pilot_cyc3v S9 cycle lanes (lanes.sh, tmux biocage_cycA/B/C, 11-19 10:38), pilot_push batch (push_batch.sh, tmux biocage_pushB,
+# 10:38), pilot_mu03 drivers (drive_mu03r_b.sh / drive_mu03G.sh, tmux biocage_mu03b / biocage_mu03G, 10:51), all started by hand:
+# a lane re-runs with the designs its log does not report ended (an interrupted insertion resumes from case.dmp via h18; one whose
+# insertion had ended normal re-runs it from case.feb); push_batch skips valid / started builds and h51 skips done windows; h51
+# build skips valid / started dirs. Markers: LANE <g> DONE / PUSH BATCH DONE / MU03R_B DONE / MU03G DONE (foreman 11-19 11:1x)
+A=human_study/al_v2
+for a in "biocage_cycA:1:A:p036 p121 p088 p062" "biocage_cycB:4:B:p064 p067 p140" "biocage_cycC:2:C:p066 p082 p110 p124"; do
+  IFS=: read -r s g l ids <<< "$a"; f=$OLD/$A/pilot_cyc3v/lane$l.log; left=""
+  [ -f "$f" ] && ! grep -q "LANE $g DONE" "$f" || continue
+  for p in $ids; do grep -qE "^[0-9:]+ $p (relG done|route-E cycle window done|insertion not normal)" "$f" || left="$left $p"; done
+  if [ -n "$left" ] && ! tmux has-session -t $s 2>/dev/null && ! pgrep -u "$USER" -f "lanes.sh $g 6 " >/dev/null; then
+    tmux new-session -d -s $s "cd '$OLD/$A' && bash pilot_cyc3v/lanes.sh $g 6$left 2>&1 | tee -a pilot_cyc3v/lane$l.log"
+  fi
+done
+# push_batch v2 (11-19 11:14, tmux biocage_pushB0/B1, usage <gpu> <lane> <n lanes>) replaced the v1 biocage_pushB batch (batch.log,
+# no done marker): lane skips designs with done_push_post + normal, h47 resumes a started window. Marker PUSH LANE <l> DONE (foreman 11-19 12:0x)
+# 11-20 12:1x lane 1 split (live push_batch list truncated after p129): lanes 1 and 2 restart through ops/push_lanes.sh on explicit,
+# disjoint design lists (push_batch.sh 3 1 would regenerate the full lane-1 list and re-run lane 2's designs). Lane 0 unchanged.
+# 11-20 13:1x lane 1 split again (live list truncated after p120, offset 560): p122 p129 -> lane 3 on GPU 4 (tmux biocage_pushB3).
+for a in "biocage_pushB0:0:0:" "biocage_pushB1:3:1:p110 p114 p120" "biocage_pushB2:1:2:p135 p140 p143 p146" "biocage_pushB3:4:3:p122 p129"; do
+  IFS=: read -r s g l ds <<< "$a"; f=$OLD/$A/pilot_push/batch_lane$l.log
+  if [ -f "$f" ] && ! grep -q "PUSH LANE $l DONE" "$f" && ! tmux has-session -t $s 2>/dev/null && ! pgrep -u "$USER" -f "pilot_push/push_batch.sh $g $l " >/dev/null && ! pgrep -u "$USER" -f "ops/push_lanes.sh $g $l " >/dev/null; then
+    if [ -z "$ds" ]; then
+      tmux new-session -d -s $s "mkdir -p /tmp/claude-1024; cd '$OLD/$A' && bash pilot_push/push_batch.sh $g $l 2 2>&1 | tee -a pilot_push/batch_lane$l.log"
+    else
+      tmux new-session -d -s $s "bash '$EVO/ops/push_lanes.sh' $g $l $ds 2>&1 | tee -a '$f'; sleep 86400"
+    fi
+  fi
+done
+# ASTM F2077 static tests (h55, astm_f2077/batch.sh, tmux biocage_astm, 11-19 11:20, by hand): skips designs with e11 json and tests with
+# resources.json (an interrupted test re-runs, ~5 min). Marker ASTM BATCH DONE (foreman 11-19 12:0x)
+f=$OLD/$A/astm_f2077/batch.log
+if [ -f "$f" ] && ! grep -q 'ASTM BATCH DONE' "$f" && ! ls $OLD/$A/astm_f2077/lane_*.log >/dev/null 2>&1 && ! tmux has-session -t biocage_astm 2>/dev/null && ! pgrep -u "$USER" -f "astm_f2077/batch.sh" >/dev/null; then
+  tmux new-session -d -s biocage_astm "mkdir -p /tmp/claude-1024; cd '$OLD/$A' && bash astm_f2077/batch.sh 2>&1 | tee -a astm_f2077/batch.log"
+fi
+# ASTM 2-lane hand-over (ops/astm_lanes.sh F|R, tmux biocage_astmF / biocage_astmR, log astm_f2077/lane_<L>.log): once a lane log
+# exists batch.sh is not restarted; a lane re-takes its own claims, skips e11 / resources.json. Marker ASTM LANE <L> DONE (foreman 11-20 08:1x)
+for l in F R; do
+  f=$OLD/$A/astm_f2077/lane_$l.log
+  if [ -f "$f" ] && ! grep -q "ASTM LANE $l DONE" "$f" && ! tmux has-session -t biocage_astm$l 2>/dev/null && ! pgrep -u "$USER" -f "ops/astm_lanes.sh $l" >/dev/null; then
+    tmux new-session -d -s biocage_astm$l "bash '$EVO/ops/astm_lanes.sh' $l 2>&1 | tee -a '$f'; sleep 86400"
+  fi
+done
+# 11-20 13:42 drive_mu03r_c.sh (p111 p051 p075, tmux biocage_mu03c, by hand), same pattern as _b, marker MU03R_C DONE (foreman 11-20 14:1x)
+for a in "biocage_mu03b:drive_mu03r_b.sh:drive_b.log:MU03R_B DONE" "biocage_mu03G:drive_mu03G.sh 4:drive_G.log:MU03G DONE" "biocage_mu03c:drive_mu03r_c.sh:drive_c.log:MU03R_C DONE"; do
+  IFS=: read -r s sh lg m <<< "$a"; f=$OLD/$A/pilot_mu03/$lg
+  if [ -f "$f" ] && ! grep -q "$m" "$f" && ! tmux has-session -t $s 2>/dev/null && ! pgrep -u "$USER" -f "pilot_mu03/${sh%% *}" >/dev/null; then
+    tmux new-session -d -s $s "cd '$OLD/$A' && bash pilot_mu03/$sh 2>&1 | tee -a pilot_mu03/$lg"
+  fi
+done
+# 11-20 22:04 pilot_mu06/drive_mu06r.sh (tmux biocage_mu06, by hand): waits for the h19 insertion mu06_p062 (h19 resumes it), then
+# h51 build (skips valid / started dirs) + run (skips done windows). Marker MU06R DONE in pilot_mu06/drive.log (foreman 11-20 22:1x)
+f=$OLD/$A/pilot_mu06/drive.log
+if [ -f "$f" ] && ! grep -q 'MU06R DONE' "$f" && ! tmux has-session -t biocage_mu06 2>/dev/null && ! pgrep -u "$USER" -f "pilot_mu06/drive_mu06r.sh" >/dev/null; then
+  tmux new-session -d -s biocage_mu06 "cd '$OLD' && bash human_study/al_v2/pilot_mu06/drive_mu06r.sh >> $A/pilot_mu06/drive.log 2>&1"
+fi
+# 11-20 22:06 pilot_cyc3vnum/run_one.sh (tmux biocage_cycnum, 4 windows, by hand): h47 flexion window from the insertion checkpoint;
+# done = <class>/<design>/resources_flexion.json (written at the end), a killed window re-runs from restart.feb (foreman 11-20 22:1x)
+for a in "pilot_cyc3vdt:p062:4" "pilot_cyc3vpen:p062:0" "pilot_cyc3vdt:p124:4" "pilot_cyc3vpen:p124:3"; do
+  IFS=: read -r c p g <<< "$a"; D=$A/$c/$p
+  if [ -d "$OLD/$D" ] && [ ! -f "$OLD/$D/resources_flexion.json" ] && ! pgrep -u "$USER" -f "run_one.sh $c $p " >/dev/null && ! pgrep -u "$USER" -f "h47_restart_pilot.py run $D " >/dev/null; then
+    cmd="cd '$OLD' && bash $A/pilot_cyc3vnum/run_one.sh $c $p $g 4 >> $A/pilot_cyc3vnum/lanes.log 2>&1"
+    if tmux has-session -t biocage_cycnum 2>/dev/null; then tmux new-window -t biocage_cycnum "$cmd"; else tmux new-session -d -s biocage_cycnum "$cmd"; fi
+  fi
+done
+# 11-20 22:43 / 22:52 pilot_mu03/drive_mu03r_d.sh fric (tmux biocage_mu03d, insertions = h19 jobs *_mu03d) and G 2 3 (tmux biocage_mu03dG,
+# h18 lanes resume from case.dmp); h51 build skips valid dirs, run skips done windows. Marker MU03R_D <mode> DONE (foreman 11-20 23:08)
+for a in "biocage_mu03d:GPUS=0,3,4:fric:drive_d.log" "biocage_mu03dG:GPUS=2,3:G 2 3:drive_dG.log"; do
+  IFS=: read -r s g m lg <<< "$a"; f=$OLD/$A/pilot_mu03/$lg
+  if [ -f "$f" ] && ! grep -q "MU03R_D ${m%% *} DONE" "$f" && ! tmux has-session -t $s 2>/dev/null && ! pgrep -u "$USER" -f "drive_mu03r_d.sh ${m%% *}" >/dev/null; then
+    tmux new-session -d -s $s "cd '$OLD' && $g bash $A/pilot_mu03/drive_mu03r_d.sh $m >> $A/pilot_mu03/$lg 2>&1"
+  fi
+done
+# 11-20 22:44 astm_f2077_plastic_hard/lane.sh (tmux biocage_astmP, by hand): skips tests with resources.json, a killed test re-runs from its
+# deck. Marker ASTM PLASTIC LANE DONE in lane.log (foreman 11-20 23:08)
+f=$OLD/$A/astm_f2077_plastic_hard/lane.log
+if [ -f "$f" ] && ! grep -q 'ASTM PLASTIC LANE DONE' "$f" && ! tmux has-session -t =biocage_astmP 2>/dev/null && ! pgrep -u "$USER" -f "astm_f2077_plastic_hard/lane.sh" >/dev/null; then
+  tmux new-session -d -s biocage_astmP "cd '$OLD' && bash $A/astm_f2077_plastic_hard/lane.sh >> $A/astm_f2077_plastic_hard/lane.log 2>&1"
+fi
+# 11-21 09:5x ops/astm_plastic_lanes.sh 1 / 2 (+ 3 / 4 11-21 10:4x, + 5 11-21 12:4x) (tmux biocage_astmP<L>, log plastic_hard/plastic_lane_<L>.log): reverse walk with claims,
+# gated on lane.sh still at p064 (exits otherwise), so a relaunch is safe. Marker ASTM PLASTIC LANE <L> DONE (foreman 11-21 09:5x)
+for l in 1 2 3 4 5 6; do
+  f=$OLD/$A/astm_f2077_plastic_hard/plastic_lane_$l.log
+  floor=; [ "$l" = 6 ] && floor=p064  # lane 6 (foreman 11-21 13:4x) does p066 / p065
+  if [ -f "$f" ] && ! grep -q "ASTM PLASTIC LANE $l DONE" "$f" && ! tmux has-session -t biocage_astmP$l 2>/dev/null && ! pgrep -u "$USER" -f "ops/astm_plastic_lanes.sh $l" >/dev/null; then
+    tmux new-session -d -s biocage_astmP$l "bash '$EVO/ops/astm_plastic_lanes.sh' $l $floor >> '$f' 2>&1"
+  fi
+done
+# 11-21 14:34 pilot_push/push2_lane.sh <gpu> 4 <designs> (tmux biocage_push2, 3 windows, by hand): skips done_push_post2, h24 check, add2
+# only without restart.feb, h47 window re-runs from restart.feb. Marker PUSH2 LANE <gpu> DONE in push2_lane<gpu>.log (foreman 11-21 14:5x)
+# + lanes 3 / 4 / 5 (11-21 15:0x, by hand; log lane5 runs on GPU 2): entry = log no : gpu : designs, guard = the exact lane command
+# line (two lanes share GPU 2) (foreman 11-21 15:5x)
+for a in "0:0:p062 p036" "1:1:p051 p105" "2:2:p061 p140" "3:3:p039 p052 p060 p072 p082 p083 p086 p092 p063 p065 p066 p067 p076" \
+         "4:4:p093 p100 p101 p117 p121 p142 p143 p077 p094 p110 p111 p122" "5:2:p064 p075 p088 p114 p120 p129 p145 p124 p131 p135 p139 p146"; do
+  IFS=: read -r l g ds <<< "$a"; f=$OLD/$A/pilot_push/push2_lane$l.log
+  if [ -f "$f" ] && ! grep -q "PUSH2 LANE $g DONE" "$f" && ! pgrep -u "$USER" -f "push2_lane.sh $g 4 $ds" >/dev/null; then
+    cmd="cd '$OLD' && bash $A/pilot_push/push2_lane.sh $g 4 $ds >> $A/pilot_push/push2_lane$l.log 2>&1"
+    if tmux has-session -t biocage_push2 2>/dev/null; then tmux new-window -t biocage_push2 "$cmd"; else tmux new-session -d -s biocage_push2 "$cmd"; fi
+  fi
+done
+# 11-21 16:19 pilot_push/push2_retry.sh <gpu> 4 <designs> (tmux biocage_push2r, 2 windows, by hand). It skips designs that already have
+# case_first_fail.log, so the relaunch goes through ops/push2r_lane.sh (h47 + e09 for an interrupted retry). Marker PUSH2 RETRY <gpu> DONE
+# in push2_retry.log (shared by both lanes); guard = either script with the exact arguments (foreman 11-21 16:5x)
+for a in "0:p075 p093" "1:p039 p064"; do
+  IFS=: read -r g ds <<< "$a"; f=$OLD/$A/pilot_push/push2_retry.log
+  if [ -f "$f" ] && ! grep -q "PUSH2 RETRY $g DONE" "$f" && ! pgrep -u "$USER" -f "push2_retry.sh $g 4 $ds" >/dev/null && ! pgrep -u "$USER" -f "push2r_lane.sh $g 4 $ds" >/dev/null; then
+    cmd="bash '$EVO/ops/push2r_lane.sh' $g 4 $ds >> '$f' 2>&1"
+    if tmux has-session -t biocage_push2r 2>/dev/null; then tmux new-window -t biocage_push2r "$cmd"; else tmux new-session -d -s biocage_push2r "$cmd"; fi
+  fi
+done
+# 11-21 14:40 pilot_mu03/drive_mu03rN.sh (tmux biocage_mu03N, by hand) = 2 h51 halves; G half moved 14:46 from GPU 5 (other user 39.7 / 40 GB)
+# to GPU 4 via ops/mu03rN_lane.sh G 4 (tmux biocage_mu03NG). Relaunch each half on its own: marker h51 RELG_PL DONE in drive_N_<half>.log
+# (not MU03RN DONE, the driver echoes it when fric alone ends). Guards: the driver, the lane script, the half's h51 run (foreman 11-21 14:5x)
+for a in "fric:0,3:p014:extension" "G:4:p095:extension"; do
+  IFS=: read -r h g w1 w2 <<< "$a"; f=$OLD/$A/pilot_mu03/drive_N_$h.log
+  if [ -f "$f" ] && ! grep -q 'RELG_PL DONE' "$f" && ! tmux has-session -t biocage_mu03N$h 2>/dev/null && ! pgrep -u "$USER" -f "ops/mu03rN_lane.sh $h" >/dev/null \
+     && ! pgrep -u "$USER" -f "h51_relG_fallback.py run .*$w1:$w2" >/dev/null && { [ "$h" = G ] || ! pgrep -u "$USER" -f "pilot_mu03/drive_mu03rN.sh" >/dev/null; }; then
+    tmux new-session -d -s biocage_mu03N$h "bash '$EVO/ops/mu03rN_lane.sh' $h $g >> '$f' 2>&1"
+  fi
+done
+# 11-21 15:20 pilot_mu03/drive_mu03r_e.sh fric 0 / G 1 / G 3 (tmux biocage_mu03e, by hand): h51 build skips valid dirs, run skips done
+# windows; relaunch through ops/mu03e_lane.sh (resumes an interrupted h18 insertion first). Marker MU03R_E <kind> lane <gpu> DONE (foreman 11-21 15:5x)
+for a in "fric:0:drive_e_fric.log:p036 p066 p067 p094 p124 p146" "G:1:drive_e_G1.log:p039 p050 p064 p068 p071 p082 p084 p088 p097" \
+         "G:3:drive_e_G3.log:p101 p109 p116 p121 p127 p130 p140 p149"; do
+  IFS=: read -r k g lg ds <<< "$a"; f=$OLD/$A/pilot_mu03/$lg
+  if [ -f "$f" ] && ! grep -q "MU03R_E $k lane $g DONE" "$f" && ! pgrep -u "$USER" -f "drive_mu03r_e.sh $k $g " >/dev/null && ! pgrep -u "$USER" -f "mu03e_lane.sh $k $g " >/dev/null; then
+    cmd="bash '$EVO/ops/mu03e_lane.sh' $k $g $ds >> '$f' 2>&1"
+    if tmux has-session -t =biocage_mu03e 2>/dev/null; then tmux new-window -t =biocage_mu03e "$cmd"; else tmux new-session -d -s biocage_mu03e "$cmd"; fi
+  fi
+done
+# 11-21 15:12 pilot_cyc3vnum/run_one.sh pilot_cyc3vrN p124 then pilot_cyc3vGN p121, GPU 3, 6 cores (tmux biocage_cycN, by hand): same rule as
+# cycnum above (done = resources_flexion.json); the not-done ones are chained again in one window (foreman 11-21 15:5x)
+cmd=
+for a in "pilot_cyc3vrN:p124" "pilot_cyc3vGN:p121"; do
+  IFS=: read -r c p <<< "$a"; D=$A/$c/$p
+  if [ -d "$OLD/$D" ] && [ ! -f "$OLD/$D/resources_flexion.json" ] && ! pgrep -u "$USER" -f "run_one.sh $c $p " >/dev/null && ! pgrep -u "$USER" -f "h47_restart_pilot.py run $D " >/dev/null; then
+    cmd="$cmd${cmd:+; }bash $A/pilot_cyc3vnum/run_one.sh $c $p 3 6 >> $A/pilot_cyc3vnum/lanes.log 2>&1"
+  fi
+done
+[ -n "$cmd" ] && ! tmux has-session -t =biocage_cycN 2>/dev/null && tmux new-session -d -s biocage_cycN "cd '$OLD' && $cmd"
+# 11-21 14:57 astm_f2077_mesh/lane.sh (tmux biocage_astmM, by hand): skips tests with resources.json, a killed test re-runs from its deck.
+# Marker ASTM MESH LANE DONE in lane.log (foreman 11-21 15:5x)
+f=$OLD/$A/astm_f2077_mesh/lane.log
+if [ -f "$f" ] && ! grep -q 'ASTM MESH LANE DONE' "$f" && ! tmux has-session -t =biocage_astmM 2>/dev/null && ! pgrep -u "$USER" -f "astm_f2077_mesh/lane.sh" >/dev/null; then
+  tmux new-session -d -s biocage_astmM "cd '$OLD' && bash $A/astm_f2077_mesh/lane.sh >> $A/astm_f2077_mesh/lane.log 2>&1"
+fi
+# 11-21 14:51 pilot_staticR_run.sh 1 5 flexion (tmux biocage_staticR, by hand; extension done 14:54): h47 window re-runs from restart.feb.
+# Done = pilot_staticR/p062/resources_flexion.json (foreman 11-21 15:5x)
+D=$A/pilot_staticR/p062
+if [ -d "$OLD/$D/w_flexion" ] && [ ! -f "$OLD/$D/resources_flexion.json" ] && ! pgrep -u "$USER" -f "pilot_staticR_run.sh" >/dev/null && ! pgrep -u "$USER" -f "h47_restart_pilot.py run $D " >/dev/null; then
+  tmux new-session -d -s biocage_staticR "cd '$OLD' && bash $A/pilot_staticR_run.sh 1 5 flexion >> $A/pilot_staticR/run.log 2>&1"
+fi
+# 11-22 01:05 pilot_cyc8v/lanes8.sh <gpu> 6 <design> (tmux biocage_cyc8, 3 windows, by hand, PI item 14): relaunch through
+# ops/cyc8_lane.sh (skips a finished insertion / valid build). Done = the design's 'ended' / 'not normal' line in lanes8.log (foreman 11-22 01:2x)
+f=$OLD/$A/pilot_cyc8v/lanes8.log
+for a in "4:p124" "2:p036" "0:p140"; do
+  IFS=: read -r g p <<< "$a"
+  if [ -f "$f" ] && ! grep -qE "$p (process-G 8-cycle run ended|8-cycle window ended|insertion not normal)" "$f" && ! pgrep -u "$USER" -f "lanes8.sh $g 6 $p" >/dev/null \
+     && ! pgrep -u "$USER" -f "cyc8_lane.sh $g 6 $p" >/dev/null && ! pgrep -u "$USER" -f "h18_run_gpu_case.py .*pilot_cyc8v[A-Za-z]*/$p " >/dev/null \
+     && ! pgrep -u "$USER" -f "h47_restart_pilot.py run .*pilot_cyc8vrN/$p " >/dev/null; then
+    cmd="bash '$EVO/ops/cyc8_lane.sh' $g 6 $p >> '$f' 2>&1"
+    if tmux has-session -t =biocage_cyc8 2>/dev/null; then tmux new-window -t =biocage_cyc8 "$cmd"; else tmux new-session -d -s biocage_cyc8 "$cmd"; fi
+  fi
+done
+# 11-22 01:05 pilot_mu03/drive_newton_confirm.sh (tmux biocage_newtonC, by hand, PI item 12): 2 h51 halves; relaunch the half whose
+# h51 build / run is not live through ops/newtonC_lane.sh (appends the logs). Marker NEWTON_CONFIRM DONE in drive_NC_fric.log (foreman 11-22 01:2x)
+f=$OLD/$A/pilot_mu03/drive_NC_fric.log
+if [ -f "$f" ] && ! grep -q 'NEWTON_CONFIRM DONE' "$f" && ! pgrep -u "$USER" -f "drive_newton_confirm.sh" >/dev/null && ! pgrep -u "$USER" -f "ops/newtonC_lane.sh" >/dev/null; then
+  h=; pgrep -u "$USER" -f "h51_relG_fallback.py (build p105|run 2 1,3 6 p105:flexion)" >/dev/null || h=fric
+  pgrep -u "$USER" -f "h51_relG_fallback.py (build p052|run 1 4 6 p052:flexion)" >/dev/null || { [ -n "$h" ] && h=both || h=G; }
+  [ -n "$h" ] && tmux new-session -d -s biocage_newtonC "bash '$EVO/ops/newtonC_lane.sh' $h"
+fi
+# 11-21 20:48 pilot_push/push2_finish.sh + pilot_mu03/finish_e.sh (tmux biocage_finish, by hand): waiters, then retry + summary / verdict
+# pipeline. Relaunch through ops/finish_lane.sh. Markers PUSH2 FINISH DONE in push2_retry.log, PIPELINE_E DONE in pipeline_e.log (foreman 11-22 01:2x)
+for a in "push2:$OLD/$A/pilot_push/push2_retry.log:PUSH2 FINISH DONE:push2_finish.sh" "e:$EVO/results/method/fric/pipeline_e.log:PIPELINE_E DONE:finish_e.sh"; do
+  IFS=: read -r k f m s <<< "$a"
+  if ! grep -qs "$m" "$f" && ! pgrep -u "$USER" -f "$s" >/dev/null && ! pgrep -u "$USER" -f "ops/finish_lane.sh $k" >/dev/null; then
+    cmd="bash '$EVO/ops/finish_lane.sh' $k"
+    if tmux has-session -t =biocage_finish 2>/dev/null; then tmux new-window -t =biocage_finish "$cmd"; else tmux new-session -d -s biocage_finish "$cmd"; fi
+  fi
+done
 # FEBio core pinner (foreman 11-10 22:5x): moves each new FEBio run once to disjoint idle cores on its GPU's NUMA node (log work/ops/febio_pin.log)
 tmux has-session -t febio_pin 2>/dev/null || pgrep -u "$USER" -f "ops/febio_pin.sh" >/dev/null || tmux new-session -d -s febio_pin "cd '$EVO' && while true; do ops/febio_pin.sh; echo \"\$(date '+%m-%d %H:%M:%S') febio_pin exit \$?, restart in 30 s\" >> work/ops/febio_pin.log; sleep 30; done"
 # report real work as Jupyter activity so the idle culler does not stop a computing server (PI-authorised 2026-10-26)

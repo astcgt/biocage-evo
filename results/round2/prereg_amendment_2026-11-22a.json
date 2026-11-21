@@ -1,0 +1,9 @@
+{
+ "date": "2026-11-22",
+ "by": "PI decision (platform DECISIONS 2026-11-22, pending item 17)",
+ "change": "ops/propose_round.py MU_REAL 0.35 -> 0.3",
+ "reason": "mu 0.3 is the official friction coefficient since PI 2026-11-20 decision 9; the fixation score 0.5*clip(1 - post_ext/0.55) + 0.5*clip(1 - mu_req/MU_REAL) used 0.35",
+ "effect": "the mu_req half of the fixation score drops for every candidate (clip(1 - mu_req/0.3) instead of /0.35); ranking may change",
+ "todo": "recompute the candidate list (propose_round) before the first round-2 simulation, AFTER the remaining mu 0.3 reruns and the estimator re-validation (h37 R23) are done; any list made before this date was computed with 0.35",
+ "note": "prereg.json and the amendments a-c of 2026-11-18 did not name this constant; this file is its first record"
+}

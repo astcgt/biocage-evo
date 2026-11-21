@@ -15,7 +15,7 @@ R = '/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026
 OUT = os.path.join(E, 'results/method/fric'); os.makedirs(OUT, exist_ok=True)
 WIN = ('flexion', 'extension', 'LB_right', 'LB_left', 'AR_left', 'AR_right')
 ended = lambda log: os.path.exists(log) and any(k in open(log, errors='ignore').read()[-4000:] for k in ('N O R M A L', 'E R R O R'))
-SETS = ('physio_fric', 'physio_fric2', 'physio_fric3', 'physio_fric5', 'physio_relG_pl', 'physio_relG', 'physio_fric5r', 'physio_relGr')   # physio_relG (PI 2026-11-10, issue 2 option a): process-G insertion of the designs whose production insertion stopped; different designs, so it supersedes nothing in practice
+SETS = ('physio_fric', 'physio_fric2', 'physio_fric3', 'physio_fric5', 'physio_relG_pl', 'physio_relG', 'physio_fric5r', 'physio_relGr', 'pilot_mu03rN', 'pilot_mu03GrN', 'pilot_mu03r', 'pilot_mu03Gr')   # physio_relG (PI 2026-11-10, issue 2 option a): process-G insertion of the designs whose production insertion stopped; different designs, so it supersedes nothing in practice
 PROCESS = {s: 'production (release at t 3.0 with the static->dynamic switch; production friction law in the insertion)' for s in ('physio_fric', 'physio_fric2', 'physio_fric3', 'physio_fric5')}
 PROCESS['physio_relG'] = 'G (all steps dynamic, stored moment ramped to zero under the follower load, stick-memory law in the insertion; PI 2026-11-10 option a)'
 WINDOW_LAW = {'physio_fric': 'production', 'physio_fric2': 'production', 'physio_fric3': 'production', 'physio_fric5': 'stick memory (patch 6+7)', 'physio_relG': 'stick memory (patch 6+7)'}
@@ -30,7 +30,21 @@ PROCESS['physio_fric5r'] = PROCESS['physio_fric5']; PROCESS['physio_relGr'] = PR
 WINDOW_LAW['physio_fric5r'] = WINDOW_LAW['physio_relGr'] = 'stick memory (patch 6+7)'
 WINDOW_DRIVE = {s: 'absolute rigid joint (Lagrange multipliers; snaps C3 to its t=0 orientation at activation: insertion tilt measured over the 70 checkpoints - production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87)' for s in SETS}
 WINDOW_DRIVE['physio_fric5r'] = WINDOW_DRIVE['physio_relGr'] = 'relative prescribed rotation of the C3 pot (route E, PI 2026-11-11 1a; drive moment = rigid-body reaction)'
-STICK_SETS = ('physio_fric5', 'physio_relG', 'physio_fric5r', 'physio_relGr')   # stick-memory-law sets (joint drive and route-E drive)
+# PI 2026-11-20 decision 9 (「9 照建議」): mu 0.3 is the official friction coefficient (the PI's 10-26 main value); the borderline designs rerun at
+# mu 0.3 (decision 7 = 甲′: pilot_mu03r = physio_fric5r recipe with mu 0.3, pilot_mu03Gr = physio_relGr recipe with mu 0.3, same route-E window drive
+# and stick-memory law) supersede their mu 0.35 windows per (design, window); the mu 0.35 read-out stays on file in each window (mu035); a design
+# whose required windows are still mu 0.35 is flagged when its 0.35 read-out plus the largest observed 0.35 -> 0.3 shift would reach a line.
+MU03_SETS = ('pilot_mu03rN', 'pilot_mu03GrN', 'pilot_mu03r', 'pilot_mu03Gr')
+# PI 2026-11-22 (pending item 12): full Newton (window Control max_ups 0; sets pilot_mu03rN / pilot_mu03GrN, same mu 0.3 checkpoints, route-E drive, stick-memory
+# law) is the official window solver setting. Existing quasi-Newton mu 0.3 windows keep their slot (ranked above); a full-Newton window takes the slot where
+# the quasi-Newton window did not reach an evaluation point, and is the only mu 0.3 window of designs computed from now on. window_solver is recorded per window.
+NEWTON_SETS = ('pilot_mu03rN', 'pilot_mu03GrN'); SOLVER = lambda s_: 'full Newton (max_ups 0)' if s_ in NEWTON_SETS else 'quasi-Newton (BFGS, max_ups 10)'
+PROCESS['pilot_mu03r'] = PROCESS['physio_fric5']; PROCESS['pilot_mu03Gr'] = PROCESS['physio_relG']; PROCESS['pilot_mu03rN'] = PROCESS['physio_fric5']; PROCESS['pilot_mu03GrN'] = PROCESS['physio_relG']
+WINDOW_LAW['pilot_mu03r'] = WINDOW_LAW['pilot_mu03Gr'] = WINDOW_LAW['pilot_mu03rN'] = WINDOW_LAW['pilot_mu03GrN'] = 'stick memory (patch 6+7)'
+WINDOW_DRIVE['pilot_mu03r'] = WINDOW_DRIVE['pilot_mu03Gr'] = WINDOW_DRIVE['pilot_mu03rN'] = WINDOW_DRIVE['pilot_mu03GrN'] = WINDOW_DRIVE['physio_fric5r']
+MU = {s: (0.3 if s in MU03_SETS else 0.35) for s in SETS}
+BOUNDARY = 0.005   # PI 2026-11-20 decision 9: a posterior read-out within 0.005 mm of the 0.45 / 0.55 line is marked 「邊界」 (boundary)
+STICK_SETS = ('physio_fric5', 'physio_relG', 'physio_fric5r', 'physio_relGr', 'pilot_mu03rN', 'pilot_mu03GrN', 'pilot_mu03r', 'pilot_mu03Gr')   # stick-memory-law sets (joint drive and route-E drive)
 FALLBACK_SRC = {'physio_fric5': 'physio_fric3', 'physio_relG': 'physio_relG_pl', 'physio_fric5r': 'physio_fric3', 'physio_relGr': 'physio_relG_pl'}   # stick-law set -> production-law set of the same checkpoints (route-E sets: the production-law windows are joint-driven; the margin was measured on joint pairs - approximation, flagged in margin_basis)
 FALLBACK_ONLY = ('physio_relG_pl',)                                                 # sets that exist only as a fallback source
 LOCK_T, LOCK_NJ = 3.52, 100   # first-increment pattern (last converged time < 3.52, > 100 negative-Jacobian warnings). 2026-11-11: noted only (first_increment_pattern), no veto - the identical decks p050 / p068 / p084 / p127 differ in this outcome (run-to-run variability, not a design property)
@@ -102,6 +116,10 @@ for r in rows:
     if 'note' in r: r = dict(r, fric_reached=False, rom_reached=False, fric_M=None, fric_translation_mm=None, fric_posterior_mm=None, u_h_at_rom=None, post_at_rom=None, placeholder=True)
     k = (r['design'], r['window'])
     if r['set'] in FALLBACK_ONLY: continue                                        # fallback source only (below)
+    # 2026-11-21: a mu 0.3 window that did not reach an evaluation point never takes the slot (p095 / p104 extension: their mu 0.35 slot is the
+    # production-law fallback + margin; the unusable mu 0.3 row outranked the unusable mu 0.35 stick-law row and turned the design OPEN). The slot
+    # keeps its mu 0.35 result, flagged mu03_not_computable (provisional) below.
+    if r['set'] in MU03_SETS and not (r.get('fric_reached') or r.get('rom_reached')): continue
     # 2026-11-13 (audit 不符 D-20261113-6): per (design, window) the STICK-LAW rows (fric5 / relG / fric5r / relGr) always beat the production-law rows
     # (so the fallback + margin logic below still governs when the stick-law window stopped); among stick-law rows one that REACHED an evaluation point
     # beats one that did not, then the later set in SETS wins (route E over the joint drive) - a route-E window that failed keeps the joint-driven row.
@@ -161,7 +179,7 @@ for (p, wn), r in sorted(best.items()):
     uh, post = (r['fric_translation_mm'], r['fric_posterior_mm']) if ev_point == '1.5Nm' else ((r['u_h_at_rom'], r['post_at_rom']) if ev_point == 'ROM' else (None, None))
     if ev_point and (uh > LIM_ANY or post > GREY_HI): bad.append(f'{wn}@{ev_point} u_h {uh:.2f} post {post:.2f}')
     elif ev_point and GREY_LO <= post <= GREY_HI: grey.append(f'{wn}@{ev_point} post {post:.3f} in grey zone [{GREY_LO}, {GREY_HI}]')
-    d['windows'][wn] = dict(set=r['set'], case_dir=r.get('case_dir'), window_drive=r.get('window_drive'), grey_sub=(None if post is None else ('grey-low' if GREY_LO <= post < 0.50 else 'grey-high' if 0.50 <= post <= GREY_HI else None)), usable=usable, eval_point=ev_point, monotonic=(r.get('window_check') or {}).get('monotonic'),
+    d['windows'][wn] = dict(set=r['set'], case_dir=r.get('case_dir'), window_drive=r.get('window_drive'), window_solver=SOLVER(r['set']), grey_sub=(None if post is None else ('grey-low' if GREY_LO <= post < 0.50 else 'grey-high' if 0.50 <= post <= GREY_HI else None)), usable=usable, eval_point=ev_point, monotonic=(r.get('window_check') or {}).get('monotonic'),
                             u_h_at_rom=r.get('u_h_at_rom'), post_at_rom=r.get('post_at_rom'), u_h_at_1p5Nm=r.get('fric_translation_mm'), post_at_1p5Nm=r.get('fric_posterior_mm'),
                             rot_max_deg=r.get('rot_max_deg'), bad=bad, grey=grey, fallback=r.get('fallback'), insertion_process=r.get('insertion_process'), window_law=r.get('window_law'))
     d['reasons'] += bad; d.setdefault('grey', []).extend(grey)
@@ -216,6 +234,52 @@ for rd in sorted(glob.glob(R + 'physio_relG/p*_gpu*')):
     if t_end >= 3.499 or (str(verd.get(p, {}).get('insertion_process', '')).startswith('G') and verd[p].get('t_end', -1) >= t_end): continue
     verd[p] = dict(verdict='open', reasons=[], windows={}, missing=list(REQ), t_end=t_end, case_dir=os.path.basename(rd), insertion_process=f'G (insertion stopped at t {t_end:.3f}; PI 2026-11-10 option a)',
                    open_reason=f'process-G frictional insertion run stopped at t {t_end:.3f}, before the windows', computability=True, stop_phase='G_insertion')
+# PI 2026-11-20 decision 9: mu bookkeeping per window / design (see MU03_SETS)
+def _ev(r):
+    if r.get('fric_reached'): return '1.5Nm', r.get('fric_posterior_mm'), r.get('fric_translation_mm')
+    if r.get('rom_reached'): return 'ROM', r.get('post_at_rom'), r.get('u_h_at_rom')
+    return None, None, None
+for _d in verd.values():                          # audit D-20261121-B1/7: every window carries the mu of its OWN set (before, only windows that also had a
+    for _w in (_d.get('windows') or {}).values():  # mu 0.35 row were labelled, so a window known only at mu 0.3 would have read 0.35)
+        if _w.get('set'): _w['mu'] = MU.get(_w['set'], 0.35)
+best35 = {}
+for r in rows:                                   # the winner per (design, window) WITHOUT the mu 0.3 sets = the mu 0.35 result kept on file
+    if 'note' in r or r['set'] in FALLBACK_ONLY or r['set'] in MU03_SETS: continue
+    k = (r['design'], r['window']); _key = (r['set'] in STICK_SETS, bool(r.get('fric_reached') or r.get('rom_reached')) if r['set'] in STICK_SETS else False, RANK[r['set']])
+    if k not in best35 or _key > best35[k][0]: best35[k] = (_key, r)
+_shifts = []
+for (p, wn), (_, r35) in best35.items():
+    w = verd.get(p, {}).get('windows', {}).get(wn)
+    if not w: continue
+    w['mu'] = MU.get(w['set'], 0.35)
+    if w['set'] in MU03_SETS:
+        e, post35, uh35 = _ev(r35); w['mu035'] = dict(set=r35['set'], case_dir=r35.get('case_dir'), eval_point=e, posterior_mm=post35, u_h_mm=uh35)
+        e3_, post3, _u = _ev(dict(fric_reached=w['eval_point'] == '1.5Nm', fric_posterior_mm=w.get('post_at_1p5Nm'), rom_reached=w['eval_point'] == 'ROM', post_at_rom=w.get('post_at_rom')))
+        if post35 is not None and post3 is not None and e == e3_ and post35 > 0: _shifts.append(post3 - post35)
+MU_SHIFT_MAX = max(_shifts) if _shifts else None
+# advisor 2026-11-20: the any-direction limit too - largest observed growth of the in-plane translation u_h from mu 0.35 to 0.3 (same evaluation point)
+_uh = [(w.get('u_h_at_1p5Nm') if w['eval_point'] == '1.5Nm' else w.get('u_h_at_rom')) - w['mu035']['u_h_mm'] for d_ in verd.values() for w in d_.get('windows', {}).values()
+       if w.get('mu035') and w['mu035'].get('u_h_mm') is not None and w['mu035']['eval_point'] == w['eval_point'] and (w.get('u_h_at_1p5Nm') if w['eval_point'] == '1.5Nm' else w.get('u_h_at_rom')) is not None]
+MU_SHIFT_UH_MAX = max(_uh) if _uh else None
+# a mu 0.3 window that exists but lost its slot (did not reach an evaluation point) -> the design stays on mu 0.35 there, flagged (no silent fallback)
+_mu03_rows = {(r['design'], r['window']): r for r in rows if r['set'] in MU03_SETS}
+for p, d in verd.items():
+    if not d.get('windows'): continue
+    mus = {d['windows'][w].get('mu', 0.35) for w in REQ if w in d['windows']}; d['mu_basis'] = mus.pop() if len(mus) == 1 else sorted(mus)
+    for w in REQ:
+        x = d['windows'].get(w)
+        if not x or not x.get('usable'): continue
+        post = x.get('post_at_1p5Nm') if x.get('eval_point') == '1.5Nm' else x.get('post_at_rom')
+        if post is None: continue
+        near = [L for L in (GREY_LO, GREY_HI) if abs(post - L) <= BOUNDARY]
+        if near: d.setdefault('boundary', []).append(f'{w}@{x["eval_point"]} post {post:.3f} within {BOUNDARY} mm of the {near[0]} line (邊界)')
+        uh = x.get('u_h_at_1p5Nm') if x.get('eval_point') == '1.5Nm' else x.get('u_h_at_rom')
+        if x.get('mu', 0.35) == 0.35 and (p, w) in _mu03_rows:
+            d.setdefault('mu03_not_computable', []).append(f'{w}: mu 0.3 window {_mu03_rows[(p, w)].get("case_dir")} did not reach an evaluation point; judged on mu 0.35 (provisional)')
+        elif x.get('mu', 0.35) == 0.35 and ((MU_SHIFT_MAX and post > 0 and any(post < L - BOUNDARY <= post + MU_SHIFT_MAX for L in (GREY_LO, GREY_HI))) or
+                                           (MU_SHIFT_UH_MAX and uh is not None and uh < LIM_ANY - BOUNDARY <= uh + MU_SHIFT_UH_MAX)):
+            d.setdefault('mu03_not_run', []).append(f'{w}@{x["eval_point"]} mu 0.35 post {post:.3f} u_h {uh:.3f} + largest observed 0.35->0.3 shift (post {MU_SHIFT_MAX:.3f}, u_h {MU_SHIFT_UH_MAX:.3f}) reaches a line: rerun at mu 0.3 needed')
+    if d.get('boundary'): d['boundary_note'] = '邊界：距 0.45 / 0.55 毫米線 0.005 毫米以內 (PI 2026-11-20 decision 9)'
 # 2026-11-11 replicates: designs built from byte-identical decks (same launched_feb.sha256 / case.feb hash of the production build) are one design;
 # their outcomes differ only by run-to-run numerical variability (p050 / p068 / p084 / p127: one passes both windows, three have a window that
 # stopped in the first increments). Verdicts stay per design id (PI decision pending); every such design lists its replicates and their verdicts.
@@ -276,7 +340,7 @@ for h, ps in _groups.items():
                 verd[q]['verdict_source'] = (f'replicate group on the limit -> grey (PI 2026-11-17; own verdict under own_verdict)' if boundary else f'replicate group, most conservative member {worst} (PI 2026-11-11 decision 4; own verdict under own_verdict)')
     # D-20261113-26(c) sign-off (2026-11-17, 授權自行決定): 'consistent' = the members' OWN computed verdicts agree (own_verdict where unified); 'unified' says the group verdict was imposed
     for q in ps: verd[q]['replicates']['verdicts'] = {r: verd[r]['verdict'] for r in ps}; verd[q]['replicates']['own_verdicts'] = {r: verd[r].get('own_verdict', verd[r]['verdict']) for r in ps}; verd[q]['replicates']['consistent'] = len({verd[r].get('own_verdict', verd[r]['verdict']) for r in ps}) == 1; verd[q]['replicates']['unified'] = any('own_verdict' in verd[r] for r in ps)
-verd['_meta'] = dict(fallback_margin_mm=FALLBACK_MARGIN, margin_basis=MARGIN_BASIS, window_drive_disclosure='every joint-driven window (sets physio_fric*, physio_relG, physio_relG_pl) starts with a snap of C3 back to its t=0 orientation (insertion tilt: production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87; DECISIONS 2026-11-11 01:00) - its read-outs are superseded per window by the route-E sets physio_fric5r / physio_relGr (PI 2026-11-11 1a) where those reached an evaluation point; each window row carries window_drive', grey_sub_rule='analysis only (授權自決 2026-11-13): posterior 0.45-0.50 grey-low, 0.50-0.55 grey-high; verdict unchanged', replicate_rule='PI 2026-11-11 decision 4: a not-computable replicate inherits the computed replicate of the same deck (verdict_source, own); numerical_flags replicate-not-reproduced / replicate-inconsistent mark the platform reproducibility items', not_computable_rule='2026-11-11: a required window is classed not computable (key soft_face_locking, compatibility name) only when the stick-memory window AND the production-law restart of the same checkpoint both stopped before an evaluation point; the first-increment pattern alone is noted (first_increment_pattern) and no longer vetoes a fallback; designs built from identical decks list each other under replicates', set_precedence='per window the highest-ranked set in SETS wins: physio_fric5 (stick-memory law, PI 2026-11-09) supersedes physio_fric3 (production law, NUM-13 artefact); physio_relG (process G, PI 2026-11-10 option a) holds the 27 insertion-stopped designs; physio_relG_pl is a fallback source only (production law on the G checkpoint, + margin, flagged); the insertion-stopped scans: physio_fric3 then physio_relG', rule='PI 2026-11-10: posterior 0.45-0.55 mm at the evaluation point = grey (analysis only, never a final design), > 0.55 or any-direction > 1 mm = fail; every row/design carries insertion_process and window_law (PI 2026-11-10 option a); PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn',
+verd['_meta'] = dict(mu_official=0.3, mu_rule='PI 2026-11-20 decision 9: mu 0.3 official; pilot_mu03r / pilot_mu03Gr windows supersede mu 0.35 per (design, window); mu 0.35 read-out kept in windows[*].mu035; boundary = within 0.005 mm of 0.45 / 0.55; mu03_not_run = mu 0.35 design that the largest observed shift could move across a line', mu_shift_max_mm=MU_SHIFT_MAX, mu_shift_uh_max_mm=MU_SHIFT_UH_MAX, mu_shift_n=len(_shifts), mu035_verdicts_file='results/method/fric/verdicts_mu035_2026-11-20.json', fallback_margin_mm=FALLBACK_MARGIN, margin_basis=MARGIN_BASIS, window_drive_disclosure='every joint-driven window (sets physio_fric*, physio_relG, physio_relG_pl) starts with a snap of C3 back to its t=0 orientation (insertion tilt: production 0.08-1.53 deg, median 0.21; process G 0.46-1.31 deg, median 0.87; DECISIONS 2026-11-11 01:00) - its read-outs are superseded per window by the route-E sets physio_fric5r / physio_relGr (PI 2026-11-11 1a) where those reached an evaluation point; each window row carries window_drive', grey_sub_rule='analysis only (授權自決 2026-11-13): posterior 0.45-0.50 grey-low, 0.50-0.55 grey-high; verdict unchanged', replicate_rule='PI 2026-11-11 decision 4: a not-computable replicate inherits the computed replicate of the same deck (verdict_source, own); numerical_flags replicate-not-reproduced / replicate-inconsistent mark the platform reproducibility items', not_computable_rule='2026-11-11: a required window is classed not computable (key soft_face_locking, compatibility name) only when the stick-memory window AND the production-law restart of the same checkpoint both stopped before an evaluation point; the first-increment pattern alone is noted (first_increment_pattern) and no longer vetoes a fallback; designs built from identical decks list each other under replicates', set_precedence='per window the highest-ranked set in SETS wins: physio_fric5 (stick-memory law, PI 2026-11-09) supersedes physio_fric3 (production law, NUM-13 artefact); physio_relG (process G, PI 2026-11-10 option a) holds the 27 insertion-stopped designs; physio_relG_pl is a fallback source only (production law on the G checkpoint, + margin, flagged); the insertion-stopped scans: physio_fric3 then physio_relG', rule='PI 2026-11-10: posterior 0.45-0.55 mm at the evaluation point = grey (analysis only, never a final design), > 0.55 or any-direction > 1 mm = fail; every row/design carries insertion_process and window_law (PI 2026-11-10 option a); PI 2026-11-03 04:30, confirmed 2026-11-05: evaluation point = 1.5 N m state when transmitted, else intact ROM; limits 1 mm any / 0.5 mm posterior; PI 2026-11-07 decision 1: this friction result is a CHECK of the mu_req (tied) slip-out verdict, not a gate (collect_split records friction_check); the 2026-11-03 gate-4 role is withdrawn',
                      provisional='verdicts provisional: physio_fric3 windows carry the FEBio stick-point artefact (NUM-13); PI 2026-11-09 decision 1 recomputes them as physio_fric5 (stick-memory law, same checkpoints) which supersedes fric3 per window here; NUM-17 (0.5 mm grey zone) and the density reference (DECISIONS 2026-11-05 item 8) still open', generated=__import__('time').strftime('%Y-%m-%d %H:%M'))
 json.dump(verd, open(os.path.join(OUT, 'verdicts.json'), 'w'), indent=1)
 import collections as _c; print('\nfriction verdicts (PI rule 2026-11-03 / 2026-11-05, no pass by absence 2026-11-04):', dict(_c.Counter(v['verdict'] for p, v in verd.items() if p != '_meta')))

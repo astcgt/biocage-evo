@@ -1,0 +1,383 @@
+{
+ "rule": "resolved = at least 0.5 mm of push after the force maximum",
+ "n": 13,
+ "n_resolved": 10,
+ "n_full_3mm": 3,
+ "ranking": [
+  [
+   "p036",
+   134.0
+  ],
+  [
+   "p140",
+   104.4
+  ],
+  [
+   "p105",
+   98.6
+  ],
+  [
+   "p062",
+   94.8
+  ],
+  [
+   "p100",
+   88.7
+  ],
+  [
+   "p052",
+   86.9
+  ],
+  [
+   "p039",
+   86.5
+  ],
+  [
+   "p061",
+   83.4
+  ],
+  [
+   "p075",
+   79.7
+  ],
+  [
+   "p051",
+   79.3
+  ]
+ ],
+ "lower_bound_only": [
+  [
+   "p064",
+   0.0
+  ],
+  [
+   "p088",
+   74.7
+  ],
+  [
+   "p093",
+   -0.0
+  ]
+ ],
+ "same_quantity_check": [
+  {
+   "design": "p036",
+   "one_wall_N": 149.3,
+   "carried_N": 134.0,
+   "diff_pct": -10.2
+  },
+  {
+   "design": "p062",
+   "one_wall_N": 96.0,
+   "carried_N": 94.8,
+   "diff_pct": -1.2
+  },
+  {
+   "design": "p105",
+   "one_wall_N": 98.3,
+   "carried_N": 98.6,
+   "diff_pct": 0.3
+  }
+ ],
+ "rows": [
+  {
+   "design": "p036",
+   "carried": {
+    "peak_N": 133.98175048828125,
+    "peak_at_mm": 1.0817748755216599,
+    "end_mm": 2.991460368037224,
+    "end_N": 117.92801666259766,
+    "resolved": true,
+    "full": true,
+    "free_mean_end_mm": 2.9887552335858345,
+    "plateau_N": 124.11558787027995
+   },
+   "one_wall": {
+    "peak_N": 149.26022338867188,
+    "peak_at_mm": 1.4697238057851791,
+    "end_mm": 2.995205745100975,
+    "end_N": 112.56108093261719,
+    "resolved": true,
+    "full": true,
+    "free_mean_end_mm": 2.7719492688775063,
+    "plateau_N": 136.225056858386
+   }
+  },
+  {
+   "design": "p039",
+   "carried": {
+    "peak_N": 86.47268676757812,
+    "peak_at_mm": 0.2377423495054245,
+    "end_mm": 2.0771931409835815,
+    "end_N": 72.37977600097656,
+    "resolved": true,
+    "full": false,
+    "free_mean_end_mm": 1.9855672530829906,
+    "plateau_N": 76.25536193369324
+   },
+   "one_wall": {
+    "peak_N": 54.82737731933594,
+    "peak_at_mm": 1.3403268605470657,
+    "end_mm": 1.3403268605470657,
+    "end_N": 54.82737731933594,
+    "resolved": false,
+    "full": false,
+    "free_mean_end_mm": 0.4412643779069185,
+    "plateau_N": null
+   }
+  },
+  {
+   "design": "p051",
+   "carried": {
+    "peak_N": 79.27422332763672,
+    "peak_at_mm": 0.24847199022769928,
+    "end_mm": 2.176534488797188,
+    "end_N": 65.45472717285156,
+    "resolved": true,
+    "full": false,
+    "free_mean_end_mm": 2.0923187360167503,
+    "plateau_N": 70.46609743820247
+   },
+   "one_wall": {
+    "peak_N": 64.3533935546875,
+    "peak_at_mm": 2.643449619412422,
+    "end_mm": 2.6464415341615677,
+    "end_N": 64.23872375488281,
+    "resolved": false,
+    "full": false,
+    "free_mean_end_mm": 0.8773804754018784,
+    "plateau_N": null
+   }
+  },
+  {
+   "design": "p052",
+   "carried": {
+    "peak_N": 86.88192749023438,
+    "peak_at_mm": 0.22719992324709892,
+    "end_mm": 2.125038381665945,
+    "end_N": 69.94158172607422,
+    "resolved": true,
+    "full": false,
+    "free_mean_end_mm": 2.0460398960858583,
+    "plateau_N": 77.47902073654225
+   },
+   "one_wall": {
+    "peak_N": 69.78440856933594,
+    "peak_at_mm": 2.8012241162359715,
+    "end_mm": 2.803949002176523,
+    "end_N": 69.71342468261719,
+    "resolved": false,
+    "full": false,
+    "free_mean_end_mm": 0.9729988276958466,
+    "plateau_N": null
+   }
+  },
+  {
+   "design": "p061",
+   "carried": {
+    "peak_N": 83.37584686279297,
+    "peak_at_mm": 0.21700377389788628,
+    "end_mm": 2.1456266157329082,
+    "end_N": 68.36331176757812,
+    "resolved": true,
+    "full": false,
+    "free_mean_end_mm": 2.061159262433648,
+    "plateau_N": 75.31182091596926
+   },
+   "one_wall": {
+    "peak_N": 0.0011830329895019531,
+    "peak_at_mm": -0.0,
+    "end_mm": -0.0,
+    "end_N": 0.0011830329895019531,
+    "resolved": false,
+    "full": false,
+    "free_mean_end_mm": -0.0,
+    "plateau_N": null
+   }
+  },
+  {
+   "design": "p062",
+   "carried": {
+    "peak_N": 94.8421630859375,
+    "peak_at_mm": 2.2852401407435536,
+    "end_mm": 2.9965555341914296,
+    "end_N": 90.88067626953125,
+    "resolved": true,
+    "full": true,
+    "free_mean_end_mm": 2.987998327240348,
+    "plateau_N": 90.80117475069486
+   },
+   "one_wall": {
+    "peak_N": 95.98284912109375,
+    "peak_at_mm": 1.0483787786215544,
+    "end_mm": 2.997425628826022,
+    "end_N": 88.54509735107422,
+    "resolved": true,
+    "full": true,
+    "free_mean_end_mm": 2.8571896981447935,
+    "plateau_N": 89.14179593778503
+   }
+  },
+  {
+   "design": "p064",
+   "carried": {
+    "peak_N": 0.0007381439208984375,
+    "peak_at_mm": -0.0,
+    "end_mm": -0.0,
+    "end_N": 0.0007381439208984375,
+    "resolved": false,
+    "full": false,
+    "free_mean_end_mm": -0.0,
+    "plateau_N": null
+   },
+   "one_wall": {
+    "peak_N": 0.0007381439208984375,
+    "peak_at_mm": -0.0,
+    "end_mm": -0.0,
+    "end_N": 0.0007381439208984375,
+    "resolved": false,
+    "full": false,
+    "free_mean_end_mm": -0.0,
+    "plateau_N": null
+   }
+  },
+  {
+   "design": "p075",
+   "carried": {
+    "peak_N": 79.670654296875,
+    "peak_at_mm": 0.23207903653383255,
+    "end_mm": 2.1825938746333122,
+    "end_N": 66.06301879882812,
+    "resolved": true,
+    "full": false,
+    "free_mean_end_mm": 2.099266290664673,
+    "plateau_N": 69.94662824322288
+   },
+   "one_wall": {
+    "peak_N": 0.00036597251892089844,
+    "peak_at_mm": -0.0,
+    "end_mm": -0.0,
+    "end_N": 0.00036597251892089844,
+    "resolved": false,
+    "full": false,
+    "free_mean_end_mm": -0.0,
+    "plateau_N": null
+   }
+  },
+  {
+   "design": "p088",
+   "carried": {
+    "peak_N": 74.6994857788086,
+    "peak_at_mm": 0.03918024152517319,
+    "end_mm": 0.03918024152517319,
+    "end_N": 74.6994857788086,
+    "resolved": false,
+    "full": false,
+    "free_mean_end_mm": 0.02419347409158945,
+    "plateau_N": null
+   },
+   "one_wall": {
+    "peak_N": -0.0018405914306640625,
+    "peak_at_mm": -0.0,
+    "end_mm": -0.0,
+    "end_N": -0.0018405914306640625,
+    "resolved": false,
+    "full": false,
+    "free_mean_end_mm": -0.0,
+    "plateau_N": null
+   }
+  },
+  {
+   "design": "p093",
+   "carried": {
+    "peak_N": -0.00336456298828125,
+    "peak_at_mm": -0.0,
+    "end_mm": -0.0,
+    "end_N": -0.00336456298828125,
+    "resolved": false,
+    "full": false,
+    "free_mean_end_mm": -0.0,
+    "plateau_N": null
+   },
+   "one_wall": {
+    "peak_N": 85.71112060546875,
+    "peak_at_mm": 2.259997181594372,
+    "end_mm": 2.259997181594372,
+    "end_N": 85.71112060546875,
+    "resolved": false,
+    "full": false,
+    "free_mean_end_mm": 0.8754132576286793,
+    "plateau_N": null
+   }
+  },
+  {
+   "design": "p100",
+   "carried": {
+    "peak_N": 88.72232818603516,
+    "peak_at_mm": 0.19135086238384247,
+    "end_mm": 2.2023716270923615,
+    "end_N": 76.61174774169922,
+    "resolved": true,
+    "full": false,
+    "free_mean_end_mm": 2.151009179651737,
+    "plateau_N": 81.54005482630808
+   },
+   "one_wall": {
+    "peak_N": 90.31037139892578,
+    "peak_at_mm": 2.1906618177890778,
+    "end_mm": 2.1936494410037994,
+    "end_N": 90.21987915039062,
+    "resolved": false,
+    "full": false,
+    "free_mean_end_mm": 0.8764405846595764,
+    "plateau_N": null
+   }
+  },
+  {
+   "design": "p105",
+   "carried": {
+    "peak_N": 98.63639068603516,
+    "peak_at_mm": 2.2782506719231606,
+    "end_mm": 2.9962889924645424,
+    "end_N": 95.4394760131836,
+    "resolved": true,
+    "full": true,
+    "free_mean_end_mm": 2.9910708693787456,
+    "plateau_N": 95.88194768569049
+   },
+   "one_wall": {
+    "peak_N": 98.33950805664062,
+    "peak_at_mm": 0.9623619057238102,
+    "end_mm": 2.9972381927073,
+    "end_N": 90.40277099609375,
+    "resolved": true,
+    "full": true,
+    "free_mean_end_mm": 2.882868554443121,
+    "plateau_N": 92.25903004719072
+   }
+  },
+  {
+   "design": "p140",
+   "carried": {
+    "peak_N": 104.37734985351562,
+    "peak_at_mm": 0.5098839029669762,
+    "end_mm": 2.1951254531741142,
+    "end_N": 90.88867950439453,
+    "resolved": true,
+    "full": false,
+    "free_mean_end_mm": 2.1586295180022717,
+    "plateau_N": 94.45354326905688
+   },
+   "one_wall": {
+    "peak_N": 44.45277404785156,
+    "peak_at_mm": 0.1172213964164257,
+    "end_mm": 0.1172213964164257,
+    "end_N": 44.45277404785156,
+    "resolved": false,
+    "full": false,
+    "free_mean_end_mm": 0.03725642990320921,
+    "plateau_N": null
+   }
+  }
+ ]
+}

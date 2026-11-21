@@ -1,0 +1,69 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/pilot_mu03r/p062/w_extension",
+ "windows": {
+  "extension": {
+   "t": 4.0,
+   "target_reached": false,
+   "M_at_target": 584.067656632,
+   "mu_squeeze": 0.05055284671666905,
+   "net_push_N": 9.686053335955018,
+   "net_twist_Nmm": 0.1145836584254856,
+   "N_total": 195.99864307691644,
+   "one_face_slip_bound_mm": 1.2624334083946072,
+   "cage_translation_tied_mm": [
+    -0.6784888761623327,
+    0.00021451170187872484,
+    0.4759978150503454
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3048,
+   "posterior_rim_translation_mm": [
+    -0.5455799501166877,
+    -0.0008298039642710936,
+    -0.145897903113355
+   ],
+   "posterior_rim_posterior_mm": 0.5455799501166877,
+   "posterior_most_node_posterior_mm": 1.0783395027447187,
+   "posterior_rim_minus_mean_mm": 0.13291302877377104,
+   "hard_fit_n": 19836,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    -0.6686820457414704,
+    0.0003312969030007428,
+    0.45187662658774475
+   ],
+   "hard_fit_rotation_deg": 8.890553613482775,
+   "hard_fit_rotation_z_deg": 0.020850638498018152,
+   "hard_fit_rms_mm": 0.05158517526462037,
+   "hard_fit_minus_mean_mm": 0.009807525767835173,
+   "hard_local_max_inplane_mm": 0.14000214138764253,
+   "eval": {
+    "t_a": 4.0,
+    "M_a": 584.067656632,
+    "t_b": 4.0,
+    "M_b": 584.067656632,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": []
+   },
+   "window_check": {
+    "n_rows": 27,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.00023960000000000647,
+    "monotonic": true,
+    "rb_res_max": 0.0,
+    "rb_fres_max": 0.541318290449351,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "eb7ec338f3f2673e3784b391fbb51091d8695aa0",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "11af80d10e4cbee633a530a9362a3c900c32c960576520b5f3295e2e54df2ee3",
+  "case_xplt": "a5dcb288011cb0ee770b2fbfe3d43ec7a06a6200e5f3992416e984fbb04257b8"
+ }
+}

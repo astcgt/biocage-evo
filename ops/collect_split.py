@@ -250,8 +250,12 @@ for p in sorted(set(best) | set(comp) | set(lastj)):
     if c['shear_check']['verdict'] == 'exceeded': scx.append(p)
     shear_c[p] = c
     if fv and fv['verdict'] == 'fail':
-        c['friction_check'] = dict(verdict='exceeded', provisional=True, reasons=fv['reasons'], rule='PI 2026-11-07: check, not a gate')
+        c['friction_check'] = dict(verdict='exceeded', provisional=True, reasons=fv['reasons'], rule='PI 2026-11-22: a friction fail leaves the pass list (class DESIGN/dislocation-friction)')
         if c['verdict'] == 'pass': fcx.append(p)
+        # PI 2026-11-22 (pending item 11, 「其他照建議」): a tied PASS whose real-friction verdict is FAIL (posterior > 0.55 mm or any direction > 1 mm at the
+        # evaluation point) is no longer kept in class PASS with a flag (the 2026-11-07 'check, not a gate' rule left the five mu 0.3 fails in the pass list
+        # while grey designs were removed from it). The class name is the one used before 2026-11-07.
+        if c['verdict'] == 'pass' and p in lists['both']: move('fail', 'DESIGN/dislocation-friction', '真實摩擦判定不通過（後方平移超過 0.55 mm 或任向超過 1 mm）: ' + '; '.join(fv['reasons']))
     elif fv and fv['verdict'] == 'grey':
         # PI 2026-11-10: a friction read-out in the posterior grey zone (0.45-0.55 mm) is recorded as grey - analysis only, never a final design;
         # a tied PASS whose friction check is grey leaves class PASS so that no grey design is counted as a pass

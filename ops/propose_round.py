@@ -40,7 +40,7 @@ from sklearn.preprocessing import StandardScaler
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import surrogate_fit as S
 
-LIM_POST, LIM_UH, MU_REAL, BETA, W_FIX, W_SPACE, Z = 0.45, 1.0, 0.35, 0.3, 0.8, 0.2, 1.6449
+LIM_POST, LIM_UH, MU_REAL, BETA, W_FIX, W_SPACE, Z = 0.45, 1.0, 0.3, 0.3, 0.8, 0.2, 1.6449   # MU_REAL 0.35 -> 0.3: PI 2026-11-22 (platform pending item 17; official friction coefficient since PI 2026-11-20 decision 9); amendment results/round2/prereg_amendment_2026-11-22a.json
 N_STEER, N_EXPLORE, N_REPL, MIN_ROWS = 3, 1, 2, 10
 H_REF, H_LOOSE, LIM_GREY_HI = 0.8, 0.5, 0.55
 PASS_KIND = {'physio_rot': 'static', 'physio_rot_r2': 'static', 'physio_rot_dyn': 'dyn', 'physio_rot_dyn2': 'dyn'}

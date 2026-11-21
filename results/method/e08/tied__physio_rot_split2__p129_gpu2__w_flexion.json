@@ -1,0 +1,47 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/physio_rot_split2/p129_gpu2/w_flexion",
+ "rule": "Morgan & Keaveny 2001 trabecular yield strain (-0.75 % / +0.70 %), 0-3 mm below the footprint, onset > 10 % yielded volume (h15 endpoint b)",
+ "region_volume_mm3": {
+  "C3": 181.92161365735484,
+  "C4": 178.6344499730615
+ },
+ "region_elements": {
+  "C3": 8349,
+  "C4": 8578
+ },
+ "states": [
+  {
+   "t": 3.5,
+   "C3": 0.0,
+   "C3_min_strain": -0.006229258142411709,
+   "C3_comp": 0.0,
+   "C3_tens": 0.0,
+   "C3_max_strain": 0.0018727376591414213,
+   "C4": 0.0,
+   "C4_min_strain": -0.005348521750420332,
+   "C4_comp": 0.0,
+   "C4_tens": 0.0,
+   "C4_max_strain": 0.0023617057595402002,
+   "combined": 0.0
+  },
+  {
+   "t": 3.950000047683716,
+   "C3": 0.014764304065868677,
+   "C3_min_strain": -0.012421660125255585,
+   "C3_comp": 0.014764304065868677,
+   "C3_tens": 0.00019381879840353632,
+   "C3_max_strain": 0.007584957405924797,
+   "C4": 0.00831836472323124,
+   "C4_min_strain": -0.010577627457678318,
+   "C4_comp": 0.00831836472323124,
+   "C4_tens": 0.0,
+   "C4_max_strain": 0.0029562574345618486,
+   "combined": 0.011570717977098712
+  }
+ ],
+ "max": {
+  "combined": 0.011570717977098712,
+  "worst_vertebra": 0.014764304065868677
+ },
+ "onset": false
+}

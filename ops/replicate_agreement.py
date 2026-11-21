@@ -14,6 +14,7 @@ groups = collections.defaultdict(set)
 for p, d in verd.items():
     if p.startswith('_') or not d.get('replicates'): continue
     groups[d['replicates']['deck_sha256']].update([p] + list(d['replicates']['designs']))
+MU = lambda s: 0.3 if 'mu03' in s else 0.35      # pilot_mu03r / pilot_mu03Gr = the route-E recipe at mu 0.3 (PI 2026-11-20 decision 9)
 def readout(r):
     if r.get('fric_reached'): return 'fric', r.get('fric_translation_mm'), r.get('fric_posterior_mm')
     if r.get('rom_reached'): return 'rom', r.get('u_h_at_rom'), r.get('post_at_rom')
@@ -23,14 +24,16 @@ out = dict(sets=sets, groups=[], note=__doc__.split('\n')[0])
 worst = 0.0; n_pairs = 0; n_disagree = 0
 for h, ps in sorted(groups.items()):
     g = dict(deck_sha256=h, designs=sorted(ps), windows={})
-    for w in ('flexion', 'extension'):
+    for w, mu in [(w, mu) for w in ('flexion', 'extension') for mu in sorted({MU(s) for s in sets}, reverse=True)]:
         vals = {}
         for p in sorted(ps):
             for s in sets:
-                r = byk.get((s, p, w))
+                if MU(s) != mu: continue                # 2026-11-21: replicates are compared at ONE friction coefficient (a mu 0.3 window against a
+                r = byk.get((s, p, w))                  # mu 0.35 window of its replicate is a mu effect, not a reproducibility defect)
                 if r:
                     ep, uh, post = readout(r)
                     if ep: vals[p] = dict(set=s, eval_point=ep, u_h=uh, post=post)
+        w = w if mu == 0.35 else f'{w}@mu{mu:g}'
         if len(vals) >= 2:
             eps = {v['eval_point'] for v in vals.values()}
             spread_u = max(v['u_h'] for v in vals.values()) - min(v['u_h'] for v in vals.values()) if len(eps) == 1 else None

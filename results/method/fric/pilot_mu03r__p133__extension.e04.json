@@ -1,0 +1,69 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/pilot_mu03r/p133/w_extension",
+ "windows": {
+  "extension": {
+   "t": 4.0,
+   "target_reached": false,
+   "M_at_target": 556.264103058,
+   "mu_squeeze": 0.054729141270728546,
+   "net_push_N": 10.80357478276059,
+   "net_twist_Nmm": 0.007282367998924816,
+   "N_total": 201.59258930284423,
+   "one_face_slip_bound_mm": 1.406419264081371,
+   "cage_translation_tied_mm": [
+    -0.8002360825563919,
+    0.0005083140172316134,
+    0.43353270154420653
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3048,
+   "posterior_rim_translation_mm": [
+    -0.5977077802031746,
+    -0.000949655793764333,
+    -0.16540535948547241
+   ],
+   "posterior_rim_posterior_mm": 0.5977077802031746,
+   "posterior_most_node_posterior_mm": 1.2161111652181975,
+   "posterior_rim_minus_mean_mm": 0.20253355013440605,
+   "hard_fit_n": 12864,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    -0.8020804422639363,
+    0.0007426000598973375,
+    0.434344760946642
+   ],
+   "hard_fit_rotation_deg": 8.8746479688377,
+   "hard_fit_rotation_z_deg": 0.030803406732714558,
+   "hard_fit_rms_mm": 0.10681617597262283,
+   "hard_fit_minus_mean_mm": 0.0018591806476513074,
+   "hard_local_max_inplane_mm": 0.2978496193919868,
+   "eval": {
+    "t_a": 4.0,
+    "M_a": 556.264103058,
+    "t_b": 4.0,
+    "M_b": 556.264103058,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": []
+   },
+   "window_check": {
+    "n_rows": 49,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.000709940000000131,
+    "monotonic": true,
+    "rb_res_max": 0.0,
+    "rb_fres_max": 0.48499525729066273,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "eb7ec338f3f2673e3784b391fbb51091d8695aa0",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "1533dc7dff578891456619cd050dd76aef40715cc10f2eb52d28f5bcbe875bc3",
+  "case_xplt": "3a4604883774081a7fb77830ba2ee6ece45c6a800cd319cfd81268f2fabb609e"
+ }
+}

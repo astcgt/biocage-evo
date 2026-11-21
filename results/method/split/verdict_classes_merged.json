@@ -122,8 +122,6 @@
    "p036",
    "p039",
    "p052",
-   "p061",
-   "p062",
    "p063",
    "p064",
    "p065",
@@ -132,59 +130,70 @@
    "p077",
    "p082",
    "p083",
-   "p086",
    "p088",
    "p094",
-   "p100",
    "p101",
    "p105",
    "p110",
    "p111",
    "p120",
    "p121",
-   "p122",
    "p124",
    "p129",
    "p131",
    "p139",
    "p140",
-   "p142",
    "p146"
   ],
   "[\u6578\u503c]/not-computable-both-laws": [
    "p048",
    "p115"
   ],
-  "GREY/friction-posterior-0.45-0.55": [
+  "DESIGN/dislocation-friction": [
    "p051",
-   "p060",
-   "p072",
    "p075",
-   "p076",
-   "p092",
    "p093",
    "p114",
-   "p117",
-   "p135",
-   "p143",
    "p145"
+  ],
+  "GREY/friction-posterior-0.45-0.55": [
+   "p060",
+   "p061",
+   "p062",
+   "p072",
+   "p076",
+   "p086",
+   "p092",
+   "p100",
+   "p117",
+   "p122",
+   "p135",
+   "p142",
+   "p143"
   ]
  },
  "rejected_windows": {},
- "friction_check_exceeded": [],
- "friction_grey": [
+ "friction_check_exceeded": [
   "p051",
-  "p060",
-  "p072",
   "p075",
-  "p076",
-  "p092",
   "p093",
   "p114",
-  "p117",
-  "p135",
-  "p143",
   "p145"
+ ],
+ "friction_grey": [
+  "p060",
+  "p061",
+  "p062",
+  "p072",
+  "p076",
+  "p086",
+  "p092",
+  "p100",
+  "p117",
+  "p122",
+  "p135",
+  "p142",
+  "p143"
  ],
  "shear_check_exceeded": [
   "p002",
@@ -195,7 +204,6 @@
   "p039",
   "p050",
   "p052",
-  "p061",
   "p062",
   "p063",
   "p065",
@@ -209,7 +217,6 @@
   "p079",
   "p081",
   "p082",
-  "p083",
   "p084",
   "p088",
   "p094",
@@ -245,48 +252,58 @@
  "shear_ranking": [
   {
    "design": "p145",
-   "shear_req_p99_MPa": 1.959,
-   "shear_req_max_MPa": 2.944,
+   "shear_req_p99_MPa": 1.854,
+   "shear_req_max_MPa": 2.865,
    "complete": true,
    "source": "own",
    "flag": "within",
-   "cls": "GREY/friction-posterior-0.45-0.55",
-   "verdict": "grey"
+   "cls": "DESIGN/dislocation-friction",
+   "verdict": "fail"
   },
   {
    "design": "p093",
-   "shear_req_p99_MPa": 1.963,
-   "shear_req_max_MPa": 2.947,
+   "shear_req_p99_MPa": 1.859,
+   "shear_req_max_MPa": 2.871,
    "complete": true,
    "source": "own",
    "flag": "within",
-   "cls": "GREY/friction-posterior-0.45-0.55",
-   "verdict": "grey"
+   "cls": "DESIGN/dislocation-friction",
+   "verdict": "fail"
   },
   {
    "design": "p114",
-   "shear_req_p99_MPa": 2.045,
-   "shear_req_max_MPa": 3.117,
+   "shear_req_p99_MPa": 1.976,
+   "shear_req_max_MPa": 3.009,
    "complete": true,
    "source": "own",
    "flag": "within",
-   "cls": "GREY/friction-posterior-0.45-0.55",
-   "verdict": "grey"
+   "cls": "DESIGN/dislocation-friction",
+   "verdict": "fail"
   },
   {
    "design": "p075",
-   "shear_req_p99_MPa": 2.151,
-   "shear_req_max_MPa": 3.114,
+   "shear_req_p99_MPa": 2.123,
+   "shear_req_max_MPa": 3.037,
    "complete": true,
    "source": "own",
    "flag": "within",
-   "cls": "GREY/friction-posterior-0.45-0.55",
-   "verdict": "grey"
+   "cls": "DESIGN/dislocation-friction",
+   "verdict": "fail"
   },
   {
    "design": "p051",
-   "shear_req_p99_MPa": 2.153,
-   "shear_req_max_MPa": 3.088,
+   "shear_req_p99_MPa": 2.136,
+   "shear_req_max_MPa": 3.065,
+   "complete": true,
+   "source": "own",
+   "flag": "within",
+   "cls": "DESIGN/dislocation-friction",
+   "verdict": "fail"
+  },
+  {
+   "design": "p092",
+   "shear_req_p99_MPa": 2.195,
+   "shear_req_max_MPa": 3.771,
    "complete": true,
    "source": "own",
    "flag": "within",
@@ -295,8 +312,8 @@
   },
   {
    "design": "p117",
-   "shear_req_p99_MPa": 2.322,
-   "shear_req_max_MPa": 3.788,
+   "shear_req_p99_MPa": 2.21,
+   "shear_req_max_MPa": 3.762,
    "complete": true,
    "source": "own",
    "flag": "within",
@@ -305,28 +322,8 @@
   },
   {
    "design": "p143",
-   "shear_req_p99_MPa": 2.323,
-   "shear_req_max_MPa": 3.792,
-   "complete": true,
-   "source": "own",
-   "flag": "within",
-   "cls": "GREY/friction-posterior-0.45-0.55",
-   "verdict": "grey"
-  },
-  {
-   "design": "p092",
-   "shear_req_p99_MPa": 2.328,
-   "shear_req_max_MPa": 3.79,
-   "complete": true,
-   "source": "own",
-   "flag": "within",
-   "cls": "GREY/friction-posterior-0.45-0.55",
-   "verdict": "grey"
-  },
-  {
-   "design": "p072",
-   "shear_req_p99_MPa": 2.382,
-   "shear_req_max_MPa": 3.808,
+   "shear_req_p99_MPa": 2.211,
+   "shear_req_max_MPa": 3.769,
    "complete": true,
    "source": "own",
    "flag": "within",
@@ -335,8 +332,18 @@
   },
   {
    "design": "p060",
-   "shear_req_p99_MPa": 2.394,
-   "shear_req_max_MPa": 3.817,
+   "shear_req_p99_MPa": 2.294,
+   "shear_req_max_MPa": 3.744,
+   "complete": true,
+   "source": "own",
+   "flag": "within",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p072",
+   "shear_req_p99_MPa": 2.323,
+   "shear_req_max_MPa": 3.794,
    "complete": true,
    "source": "own",
    "flag": "within",
@@ -345,13 +352,23 @@
   },
   {
    "design": "p142",
-   "shear_req_p99_MPa": 2.704,
-   "shear_req_max_MPa": 4.521,
+   "shear_req_p99_MPa": 2.65,
+   "shear_req_max_MPa": 4.494,
    "complete": true,
    "source": "own",
    "flag": "within",
-   "cls": "PASS",
-   "verdict": "pass"
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p100",
+   "shear_req_p99_MPa": 2.655,
+   "shear_req_max_MPa": 4.495,
+   "complete": true,
+   "source": "own",
+   "flag": "within",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
   },
   {
    "design": "p086",
@@ -360,13 +377,23 @@
    "complete": true,
    "source": "own",
    "flag": "within",
-   "cls": "PASS",
-   "verdict": "pass"
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
   },
   {
-   "design": "p100",
-   "shear_req_p99_MPa": 2.73,
-   "shear_req_max_MPa": 4.531,
+   "design": "p061",
+   "shear_req_p99_MPa": 2.925,
+   "shear_req_max_MPa": 4.528,
+   "complete": true,
+   "source": "own",
+   "flag": "within",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p083",
+   "shear_req_p99_MPa": 2.987,
+   "shear_req_max_MPa": 5.662,
    "complete": true,
    "source": "own",
    "flag": "within",
@@ -374,9 +401,9 @@
    "verdict": "pass"
   },
   {
-   "design": "p061",
-   "shear_req_p99_MPa": 3.011,
-   "shear_req_max_MPa": 4.596,
+   "design": "p129",
+   "shear_req_p99_MPa": 3.079,
+   "shear_req_max_MPa": 4.877,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -385,18 +412,8 @@
   },
   {
    "design": "p052",
-   "shear_req_p99_MPa": 3.169,
-   "shear_req_max_MPa": 5.18,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "PASS",
-   "verdict": "pass"
-  },
-  {
-   "design": "p083",
-   "shear_req_p99_MPa": 3.176,
-   "shear_req_max_MPa": 6.532,
+   "shear_req_p99_MPa": 3.093,
+   "shear_req_max_MPa": 9.487,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -405,18 +422,8 @@
   },
   {
    "design": "p120",
-   "shear_req_p99_MPa": 3.228,
-   "shear_req_max_MPa": 5.598,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "PASS",
-   "verdict": "pass"
-  },
-  {
-   "design": "p129",
-   "shear_req_p99_MPa": 3.228,
-   "shear_req_max_MPa": 5.577,
+   "shear_req_p99_MPa": 3.094,
+   "shear_req_max_MPa": 5.311,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -435,8 +442,8 @@
   },
   {
    "design": "p101",
-   "shear_req_p99_MPa": 3.798,
-   "shear_req_max_MPa": 6.304,
+   "shear_req_p99_MPa": 3.571,
+   "shear_req_max_MPa": 5.766,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -485,48 +492,8 @@
   },
   {
    "design": "p135",
-   "shear_req_p99_MPa": 11.111,
-   "shear_req_max_MPa": 14.975,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "GREY/friction-posterior-0.45-0.55",
-   "verdict": "grey"
-  },
-  {
-   "design": "p062",
-   "shear_req_p99_MPa": 11.441,
-   "shear_req_max_MPa": 16.008,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "PASS",
-   "verdict": "pass"
-  },
-  {
-   "design": "p063",
-   "shear_req_p99_MPa": 11.541,
-   "shear_req_max_MPa": 15.67,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "PASS",
-   "verdict": "pass"
-  },
-  {
-   "design": "p122",
-   "shear_req_p99_MPa": 11.744,
-   "shear_req_max_MPa": 16.302,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "PASS",
-   "verdict": "pass"
-  },
-  {
-   "design": "p076",
-   "shear_req_p99_MPa": 11.985,
-   "shear_req_max_MPa": 15.959,
+   "shear_req_p99_MPa": 11.767,
+   "shear_req_max_MPa": 25.948,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -535,13 +502,33 @@
   },
   {
    "design": "p113",
-   "shear_req_p99_MPa": 12.221,
-   "shear_req_max_MPa": 21.772,
+   "shear_req_p99_MPa": 11.925,
+   "shear_req_max_MPa": 19.804,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
    "cls": "DESIGN/radial-mix-excluded",
    "verdict": "fail"
+  },
+  {
+   "design": "p062",
+   "shear_req_p99_MPa": 12.024,
+   "shear_req_max_MPa": 23.809,
+   "complete": true,
+   "source": "own",
+   "flag": "exceeded",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
+   "design": "p122",
+   "shear_req_p99_MPa": 12.396,
+   "shear_req_max_MPa": 24.633,
+   "complete": true,
+   "source": "own",
+   "flag": "exceeded",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
   },
   {
    "design": "p067",
@@ -554,9 +541,9 @@
    "verdict": "pass"
   },
   {
-   "design": "p111",
-   "shear_req_p99_MPa": 12.678,
-   "shear_req_max_MPa": 17.977,
+   "design": "p066",
+   "shear_req_p99_MPa": 12.538,
+   "shear_req_max_MPa": 20.613,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -565,8 +552,8 @@
   },
   {
    "design": "p112",
-   "shear_req_p99_MPa": 12.935,
-   "shear_req_max_MPa": 22.894,
+   "shear_req_p99_MPa": 12.592,
+   "shear_req_max_MPa": 21.22,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -574,39 +561,29 @@
    "verdict": "fail"
   },
   {
+   "design": "p063",
+   "shear_req_p99_MPa": 12.773,
+   "shear_req_max_MPa": 25.508,
+   "complete": true,
+   "source": "own",
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p076",
+   "shear_req_p99_MPa": 12.801,
+   "shear_req_max_MPa": 27.85,
+   "complete": true,
+   "source": "own",
+   "flag": "exceeded",
+   "cls": "GREY/friction-posterior-0.45-0.55",
+   "verdict": "grey"
+  },
+  {
    "design": "p065",
-   "shear_req_p99_MPa": 13.105,
-   "shear_req_max_MPa": 14.342,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "PASS",
-   "verdict": "pass"
-  },
-  {
-   "design": "p105",
-   "shear_req_p99_MPa": 13.736,
-   "shear_req_max_MPa": 19.499,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "PASS",
-   "verdict": "pass"
-  },
-  {
-   "design": "p077",
-   "shear_req_p99_MPa": 13.847,
-   "shear_req_max_MPa": 15.154,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "PASS",
-   "verdict": "pass"
-  },
-  {
-   "design": "p139",
-   "shear_req_p99_MPa": 13.847,
-   "shear_req_max_MPa": 15.153,
+   "shear_req_p99_MPa": 13.762,
+   "shear_req_max_MPa": 28.65,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -624,6 +601,26 @@
    "verdict": "pass"
   },
   {
+   "design": "p133",
+   "shear_req_p99_MPa": 13.914,
+   "shear_req_max_MPa": 22.411,
+   "complete": true,
+   "source": "own",
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p105",
+   "shear_req_p99_MPa": 13.966,
+   "shear_req_max_MPa": 26.763,
+   "complete": true,
+   "source": "own",
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
    "design": "p146",
    "shear_req_p99_MPa": 14.031,
    "shear_req_max_MPa": 18.612,
@@ -632,6 +629,16 @@
    "flag": "exceeded",
    "cls": "PASS",
    "verdict": "pass"
+  },
+  {
+   "design": "p104",
+   "shear_req_p99_MPa": 14.049,
+   "shear_req_max_MPa": 23.228,
+   "complete": true,
+   "source": "own",
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
   },
   {
    "design": "p094",
@@ -644,9 +651,19 @@
    "verdict": "pass"
   },
   {
-   "design": "p066",
-   "shear_req_p99_MPa": 14.593,
-   "shear_req_max_MPa": 18.756,
+   "design": "p077",
+   "shear_req_p99_MPa": 14.636,
+   "shear_req_max_MPa": 30.362,
+   "complete": true,
+   "source": "own",
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p139",
+   "shear_req_p99_MPa": 14.639,
+   "shear_req_max_MPa": 30.371,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -664,69 +681,9 @@
    "verdict": "pass"
   },
   {
-   "design": "p133",
-   "shear_req_p99_MPa": 14.825,
-   "shear_req_max_MPa": 25.573,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "DESIGN/radial-mix-excluded",
-   "verdict": "fail"
-  },
-  {
-   "design": "p110",
-   "shear_req_p99_MPa": 14.864,
-   "shear_req_max_MPa": 20.898,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "PASS",
-   "verdict": "pass"
-  },
-  {
-   "design": "p104",
-   "shear_req_p99_MPa": 15.025,
-   "shear_req_max_MPa": 25.607,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "DESIGN/radial-mix-excluded",
-   "verdict": "fail"
-  },
-  {
-   "design": "p148",
-   "shear_req_p99_MPa": 15.401,
-   "shear_req_max_MPa": 26.467,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "DESIGN/radial-mix-excluded",
-   "verdict": "fail"
-  },
-  {
-   "design": "p125",
-   "shear_req_p99_MPa": 15.742,
-   "shear_req_max_MPa": 28.771,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "DESIGN/radial-mix-excluded",
-   "verdict": "fail"
-  },
-  {
    "design": "p026",
-   "shear_req_p99_MPa": 15.749,
-   "shear_req_max_MPa": 27.451,
-   "complete": true,
-   "source": "own",
-   "flag": "exceeded",
-   "cls": "DESIGN/radial-mix-excluded",
-   "verdict": "fail"
-  },
-  {
-   "design": "p014",
-   "shear_req_p99_MPa": 15.796,
-   "shear_req_max_MPa": 28.949,
+   "shear_req_p99_MPa": 14.893,
+   "shear_req_max_MPa": 24.574,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -735,8 +692,8 @@
   },
   {
    "design": "p081",
-   "shear_req_p99_MPa": 15.844,
-   "shear_req_max_MPa": 26.225,
+   "shear_req_p99_MPa": 14.996,
+   "shear_req_max_MPa": 23.587,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -744,9 +701,29 @@
    "verdict": "fail"
   },
   {
-   "design": "p131",
-   "shear_req_p99_MPa": 16.22,
-   "shear_req_max_MPa": 17.332,
+   "design": "p125",
+   "shear_req_p99_MPa": 15.178,
+   "shear_req_max_MPa": 26.45,
+   "complete": true,
+   "source": "own",
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p014",
+   "shear_req_p99_MPa": 15.328,
+   "shear_req_max_MPa": 26.682,
+   "complete": true,
+   "source": "own",
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p111",
+   "shear_req_p99_MPa": 15.514,
+   "shear_req_max_MPa": 73.544,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -755,8 +732,18 @@
   },
   {
    "design": "p132",
-   "shear_req_p99_MPa": 16.255,
-   "shear_req_max_MPa": 29.914,
+   "shear_req_p99_MPa": 15.686,
+   "shear_req_max_MPa": 27.693,
+   "complete": true,
+   "source": "own",
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p148",
+   "shear_req_p99_MPa": 16.348,
+   "shear_req_max_MPa": 26.954,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -765,8 +752,8 @@
   },
   {
    "design": "p038",
-   "shear_req_p99_MPa": 16.909,
-   "shear_req_max_MPa": 31.263,
+   "shear_req_p99_MPa": 16.636,
+   "shear_req_max_MPa": 29.648,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -775,8 +762,28 @@
   },
   {
    "design": "p002",
-   "shear_req_p99_MPa": 17.735,
-   "shear_req_max_MPa": 31.267,
+   "shear_req_p99_MPa": 16.667,
+   "shear_req_max_MPa": 28.328,
+   "complete": true,
+   "source": "own",
+   "flag": "exceeded",
+   "cls": "DESIGN/radial-mix-excluded",
+   "verdict": "fail"
+  },
+  {
+   "design": "p110",
+   "shear_req_p99_MPa": 17.159,
+   "shear_req_max_MPa": 30.771,
+   "complete": true,
+   "source": "own",
+   "flag": "exceeded",
+   "cls": "PASS",
+   "verdict": "pass"
+  },
+  {
+   "design": "p079",
+   "shear_req_p99_MPa": 17.364,
+   "shear_req_max_MPa": 28.807,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -785,8 +792,8 @@
   },
   {
    "design": "p078",
-   "shear_req_p99_MPa": 17.939,
-   "shear_req_max_MPa": 33.013,
+   "shear_req_p99_MPa": 17.463,
+   "shear_req_max_MPa": 31.415,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -814,9 +821,9 @@
    "verdict": "fail"
   },
   {
-   "design": "p079",
-   "shear_req_p99_MPa": 18.394,
-   "shear_req_max_MPa": 31.911,
+   "design": "p095",
+   "shear_req_p99_MPa": 18.69,
+   "shear_req_max_MPa": 33.17,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -824,19 +831,19 @@
    "verdict": "fail"
   },
   {
-   "design": "p095",
-   "shear_req_p99_MPa": 19.176,
-   "shear_req_max_MPa": 36.703,
+   "design": "p131",
+   "shear_req_p99_MPa": 18.692,
+   "shear_req_max_MPa": 33.874,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
-   "cls": "DESIGN/radial-mix-excluded",
-   "verdict": "fail"
+   "cls": "PASS",
+   "verdict": "pass"
   },
   {
    "design": "p128",
-   "shear_req_p99_MPa": 19.203,
-   "shear_req_max_MPa": 36.574,
+   "shear_req_p99_MPa": 18.712,
+   "shear_req_max_MPa": 33.219,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -855,8 +862,8 @@
   },
   {
    "design": "p109",
-   "shear_req_p99_MPa": 21.21,
-   "shear_req_max_MPa": 40.179,
+   "shear_req_p99_MPa": 20.672,
+   "shear_req_max_MPa": 38.15,
    "complete": true,
    "source": "own",
    "flag": "exceeded",
@@ -954,9 +961,9 @@
    "verdict": "fail"
   },
   {
-   "design": "p084",
-   "shear_req_p99_MPa": 21.868,
-   "shear_req_max_MPa": 40.868,
+   "design": "p050",
+   "shear_req_p99_MPa": 21.218,
+   "shear_req_max_MPa": 38.347,
    "complete": false,
    "source": "own",
    "flag": "exceeded",
@@ -964,9 +971,9 @@
    "verdict": "fail"
   },
   {
-   "design": "p050",
-   "shear_req_p99_MPa": 21.894,
-   "shear_req_max_MPa": 41.006,
+   "design": "p084",
+   "shear_req_p99_MPa": 21.868,
+   "shear_req_max_MPa": 40.868,
    "complete": false,
    "source": "own",
    "flag": "exceeded",

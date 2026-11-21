@@ -1,0 +1,69 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/pilot_mu03r/p078/w_extension",
+ "windows": {
+  "extension": {
+   "t": 4.0,
+   "target_reached": false,
+   "M_at_target": 577.995796837,
+   "mu_squeeze": 0.05401102776945635,
+   "net_push_N": 10.870337394522586,
+   "net_twist_Nmm": 0.04173086885928165,
+   "N_total": 205.83845789161492,
+   "one_face_slip_bound_mm": 1.300227732767988,
+   "cage_translation_tied_mm": [
+    -0.6084592575239101,
+    0.00017992239075580434,
+    0.49661410005867573
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3302,
+   "posterior_rim_translation_mm": [
+    -0.4525637374696027,
+    -0.0008302980811410943,
+    -0.12840451057827793
+   ],
+   "posterior_rim_posterior_mm": 0.4525637374696027,
+   "posterior_most_node_posterior_mm": 1.019797250374512,
+   "posterior_rim_minus_mean_mm": 0.15589879319098265,
+   "hard_fit_n": 13936,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    -0.6023545160594501,
+    0.0004400479946889077,
+    0.501423676173177
+   ],
+   "hard_fit_rotation_deg": 9.098612872485958,
+   "hard_fit_rotation_z_deg": 0.02531848637084618,
+   "hard_fit_rms_mm": 0.06040807854104697,
+   "hard_fit_minus_mean_mm": 0.006110280981895845,
+   "hard_local_max_inplane_mm": 0.13873509551409777,
+   "eval": {
+    "t_a": 4.0,
+    "M_a": 577.995796837,
+    "t_b": 4.0,
+    "M_b": 577.995796837,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": []
+   },
+   "window_check": {
+    "n_rows": 39,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.0032474900000001306,
+    "monotonic": true,
+    "rb_res_max": 0.0,
+    "rb_fres_max": 0.3778374564456165,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "eb7ec338f3f2673e3784b391fbb51091d8695aa0",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "edea241f0de53e0c6f454c9338790ef16030fa417d5ed062ee2ba7b4071d4cd5",
+  "case_xplt": "e37e68a27a04cf5edf3d825f4bf978bd56cb3c934ce844e7aee653852202cacc"
+ }
+}

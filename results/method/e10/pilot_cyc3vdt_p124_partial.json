@@ -1,0 +1,53 @@
+{
+ "window": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/pilot_cyc3vdt/p124/w_flexion",
+ "baseline": "insertion log 3.5000 (human_study/al_v2/pilot_cyc3v/p124_gpu2)",
+ "cycles": 3,
+ "t_end": 4.14107082,
+ "completed_cycles": 0,
+ "neutral": [
+  {
+   "t": 3.5,
+   "u_mm": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "posterior_mm": 0.0,
+   "inplane_mm": 0.0
+  },
+  null,
+  null,
+  null
+ ],
+ "peaks": [
+  {
+   "flexion": {
+    "t": 3.9999553,
+    "u_mm": [
+     0.4677499260861939,
+     0.0001457022017913814,
+     0.12318266849526488
+    ],
+    "posterior_mm": -0.4677499260861939,
+    "inplane_mm": 0.4677499487790154
+   },
+   "extension": null
+  },
+  {
+   "flexion": null,
+   "extension": null
+  },
+  {
+   "flexion": null,
+   "extension": null
+  }
+ ],
+ "posterior_increment_per_cycle_mm": [
+  null,
+  null,
+  null
+ ],
+ "ratcheting": null,
+ "rule": "ratcheting = cycle-3 posterior increment >= cycle-2 increment and > 0.005 mm (proposal)",
+ "max_inplane_mm": 0.4677499487790154
+}

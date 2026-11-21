@@ -42,7 +42,10 @@ def rom_time(cd, wn):
     return a[1] + fr * (b[1] - a[1])
 
 def one(job):
-    cfg, p, wn, cd, evp, t_rom = job; tag = f'{cfg}__{p}__{wn}'; res = dict(config=cfg, design=p, window=wn, case_dir=os.path.relpath(cd, R), eval_point=evp)
+    cfg, p, wn, cd, evp, t_rom = job
+    # 2026-11-21: the result files are cached per tag; a friction window whose verdict source moved to a mu 0.3 set (PI 2026-11-20 decision 9)
+    # must not reuse the read-out of the mu 0.35 window of the same design -> the set is part of the tag for those sets
+    _set = os.path.relpath(cd, R).split('/')[0]; tag = f'{cfg}__{p}__{wn}' if not _set.startswith('pilot_mu03') else f'{cfg}__{_set}__{p}__{wn}'; res = dict(config=cfg, design=p, window=wn, case_dir=os.path.relpath(cd, R), eval_point=evp)
     if not os.path.exists(os.path.join(cd, 'case.xplt')): res['status'] = 'no_xplt'; return res
     if cfg == 'FRIC' and evp in ('ROM', 'rom'):                     # friction windows judged at the intact ROM: read T19 / e06 there, not at e04's drive-end bracket
         import e04_dislocation as e4, e06_hard_stress as e6

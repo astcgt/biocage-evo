@@ -1,0 +1,78 @@
+{
+ "window": "../biocage_simulation_test_oct2026/human_study/al_v2/pilot_pushG/p061/w_push_post",
+ "push": {
+  "test": "pushout",
+  "direction": "push_post",
+  "pushed_node_set": "push_ant",
+  "mm": -3.0,
+  "axis": "frame X (anterior +)",
+  "t": [
+   3.5,
+   4.0
+  ],
+  "lc": 22,
+  "c3": "held (x y Rx Ry Rz relative 0), follower 100 N",
+  "note": "post-processing geometry copy case.feb is the flexion window deck"
+ },
+ "n_pushed": 1118,
+ "states": [
+  {
+   "t": 3.5,
+   "push_mm": 0.0,
+   "force_N": [
+    -0.0011830329895019531,
+    0.0005949592450633645,
+    0.01343536376953125
+   ],
+   "force_push_dir_N": 0.0011830329895019531,
+   "force_stress_N": [
+    -2.7462399821047705,
+    0.032217754124643755,
+    3.3944409105526425
+   ],
+   "force_push_dir_stress_N": 2.7462399821047705,
+   "contact_normal_z_N": [
+    -110.90552520751953,
+    110.89208984375
+   ],
+   "cage_free_mean_mm": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "recovered_logged_nodes": {}
+  },
+  {
+   "t": 3.5,
+   "push_mm": 0.0,
+   "force_N": [
+    -0.0011830329895019531,
+    0.0005949592450633645,
+    0.01343536376953125
+   ],
+   "force_push_dir_N": 0.0011830329895019531,
+   "force_stress_N": [
+    -2.7462399821047705,
+    0.032217754124643755,
+    3.3944409105526425
+   ],
+   "force_push_dir_stress_N": 2.7462399821047705,
+   "contact_normal_z_N": [
+    -110.90552520751953,
+    110.89208984375
+   ],
+   "cage_free_mean_mm": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "recovered_logged_nodes": {}
+  }
+ ],
+ "reaction_check": null,
+ "peak_N": 0.0011830329895019531,
+ "peak_at_push_mm": 0.0,
+ "completed_push_mm": 0.0,
+ "meets_135N": false,
+ "note": "peak over the computed states; if the run stopped before 3 mm the peak is a lower bound unless the force already dropped"
+}

@@ -1,0 +1,69 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/pilot_mu03r/p038/w_extension",
+ "windows": {
+  "extension": {
+   "t": 4.0,
+   "target_reached": false,
+   "M_at_target": 572.691257948,
+   "mu_squeeze": 0.05657964760804069,
+   "net_push_N": 11.440055655779549,
+   "net_twist_Nmm": 0.10286396153933036,
+   "N_total": 206.58250192321634,
+   "one_face_slip_bound_mm": 1.3045984818691392,
+   "cage_translation_tied_mm": [
+    -0.6172657141570754,
+    0.00023670468210122545,
+    0.48553589947512366
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3302,
+   "posterior_rim_translation_mm": [
+    -0.4531825914263358,
+    -0.0007490448420832552,
+    -0.13554606881845863
+   ],
+   "posterior_rim_posterior_mm": 0.4531825914263358,
+   "posterior_most_node_posterior_mm": 1.0205958276016482,
+   "posterior_rim_minus_mean_mm": 0.16408608370972655,
+   "hard_fit_n": 13936,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    -0.6100057792465345,
+    0.0005812740911146427,
+    0.4907140603151472
+   ],
+   "hard_fit_rotation_deg": 9.084440221320628,
+   "hard_fit_rotation_z_deg": 0.025065087670571994,
+   "hard_fit_rms_mm": 0.06783137589017917,
+   "hard_fit_minus_mean_mm": 0.007268107248996687,
+   "hard_local_max_inplane_mm": 0.152382743602172,
+   "eval": {
+    "t_a": 4.0,
+    "M_a": 572.691257948,
+    "t_b": 4.0,
+    "M_b": 572.691257948,
+    "frac": 0.0,
+    "coarse": false,
+    "invalid": []
+   },
+   "window_check": {
+    "n_rows": 41,
+    "n_invalid": 0,
+    "n_dyn": 0,
+    "dt_min": 0.0025941899999999407,
+    "monotonic": true,
+    "rb_res_max": 0.0,
+    "rb_fres_max": 0.3489314164182366,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "eb7ec338f3f2673e3784b391fbb51091d8695aa0",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "fdce7bb3c77fb4a8b42335b6d7a71c124cce16a497c98c41b3265b9e29127407",
+  "case_xplt": "709fce996e4bc40ae4c509969ebb1e87c3dad724caaf0c48d2def4c63ff20563"
+ }
+}
