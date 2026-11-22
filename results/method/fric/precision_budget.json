@@ -1,0 +1,221 @@
+{
+ "generated": "2026-11-22T11:36",
+ "quantity": "posterior translation of the cage relative to the C4 endplate at the evaluation point (mm)",
+ "components": {
+  "replicate": {
+   "u_mm": 0.002412904964083698,
+   "basis": "pooled SD, 44 pairs in 36 degrees of freedom (replicate_agreement.json)",
+   "max_pair_mm": 0.012415616963535325
+  },
+  "time_step": {
+   "u_mm": 0.011975633293963252,
+   "rms_diff_last_degree_mm": 0.010788858823390316,
+   "rms_diff_1_to_7p8deg_mm": 0.008370300789382636,
+   "max_abs_diff_mm": 0.017864327905330102,
+   "at_intact_rom_mm": [
+    0.015538983000798479,
+    -0.014601305298058032
+   ],
+   "basis": "p124, window_dt 0.001 vs production stepping, extension loading of cycles 1-2, RMS over the last degree before the intact ROM angle (every near-line verdict read-out is extension at the intact ROM), x 1.11 (Richardson q 10, order 1). Upper estimate: the differences alternate in sign (stick-slip texture), not smooth convergence"
+  },
+  "penalty": {
+   "u_mm": 0.009852499347646938,
+   "rms_diff_last_degree_mm": 0.004926249673823469,
+   "rms_diff_1_to_7p8deg_mm": 0.004568723493171191,
+   "max_abs_diff_mm": 0.008240867961563467,
+   "at_intact_rom_mm": [
+    0.0031144160516100583,
+    -0.006449605276201309
+   ],
+   "basis": "p124, penalty x2 vs production, same angles, x 2 (penalty error ~ 1 / penalty). Upper estimate: the penalty arm has its own stepping, so its difference also carries the stick-slip texture"
+  },
+  "solver": {
+   "u_mm": 0.00038908761948431864,
+   "basis": "newton_confirm.json, full minus quasi-Newton at the evaluation point, 10 windows",
+   "max_abs_diff_mm": 0.0008805228275101662
+  },
+  "static_vs_slow_dynamic": {
+   "u_mm": 0.0002886751345948129,
+   "basis": "NUM-08 (2026-11-21, p062, mu 0.35): extension at the intact ROM 0.4421 static vs 0.4426 slow dynamic; rectangular, half-width 0.0005"
+  },
+  "insertion_process": {
+   "u_mm": 0.0005773502691896258,
+   "basis": "NUM-15 (process G vs production, p062 / p094): extension at the intact ROM differs <= 0.001 mm; rectangular, half-width 0.001. Flexion differs 0.02-0.05 mm (usage limit R13); no near-line read-out is a flexion read-out"
+  }
+ },
+ "excluded": {
+  "anchor_drift": "NUM-13 (2026-11-18): hold-phase trend <= 0.0022 mm and production vs half step <= 0.0008 mm; the residual is part of the measured time-step term",
+  "increments_density_20261105": "DECISIONS 2026-11-05 18:08: p062 extension at the intact ROM 0.446-0.566 mm across increment counts / density under the FEBio friction law that resets the stick point every increment (physio_fric3). Superseded by the stick-memory law of every current window (PI 2026-11-09 decision 2, NUM-13 pass 2026-11-18); what is left of the effect is the time-step term above",
+  "mesh": "not measured for this read-out; the guard band room left is reported as mesh_allowance",
+  "model_form": "outside the numerical budget: friction coefficient, material law, boundary conditions, validation accuracy, and the uncertainty of the 0.5 mm limit itself (FDA 2023 names them next to calculation verification)"
+ },
+ "combined_standard_uncertainty_mm": 0.015712342358632177,
+ "coverage_factor": 2.0,
+ "expanded_uncertainty_U95_mm": 0.03142468471726435,
+ "repeatability": {
+  "s_r_mm": 0.002412904964083698,
+  "repeatability_limit_r_mm": 0.0067561338994343535,
+  "pairs": 44,
+  "pairs_over_r": 3,
+  "expected_fraction_over_r": 0.05
+ },
+ "guard_band": {
+  "nominal_limit_mm": 0.5,
+  "pass_line_mm": 0.45,
+  "guard_band_w_mm": 0.04999999999999999,
+  "U_over_w": 0.6284936943452872,
+  "guarded_acceptance_limit_mm": 0.46857531528273566,
+  "pass_line_is_stricter": true,
+  "mesh_allowance_standard_uncertainty_mm": 0.019445366995897318,
+  "note": "w = distance from the PI pass line 0.45 to the PI nominal limit 0.5 mm (PI 2026-11-03 04:30, grey zone PI 2026-11-10); guarded acceptance needs w >= U"
+ },
+ "near_lines_within_U": [
+  {
+   "design": "p077",
+   "verdict": "pass",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.446,
+   "line": 0.45
+  },
+  {
+   "design": "p139",
+   "verdict": "pass",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.446,
+   "line": 0.45
+  },
+  {
+   "design": "p105",
+   "verdict": "pass",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.4457,
+   "line": 0.45
+  },
+  {
+   "design": "p062",
+   "verdict": "grey",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.4556,
+   "line": 0.45
+  },
+  {
+   "design": "p122",
+   "verdict": "grey",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.4559,
+   "line": 0.45
+  },
+  {
+   "design": "p112",
+   "verdict": "grey",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.4585,
+   "line": 0.45
+  },
+  {
+   "design": "p086",
+   "verdict": "grey",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.4601,
+   "line": 0.45
+  },
+  {
+   "design": "p148",
+   "verdict": "pass",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.4396,
+   "line": 0.45
+  },
+  {
+   "design": "p142",
+   "verdict": "grey",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.4605,
+   "line": 0.45
+  },
+  {
+   "design": "p100",
+   "verdict": "grey",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.4611,
+   "line": 0.45
+  },
+  {
+   "design": "p102",
+   "verdict": "grey",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.4674,
+   "line": 0.45
+  },
+  {
+   "design": "p117",
+   "verdict": "grey",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.5305,
+   "line": 0.55
+  },
+  {
+   "design": "p092",
+   "verdict": "grey",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.5297,
+   "line": 0.55
+  },
+  {
+   "design": "p143",
+   "verdict": "grey",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.5293,
+   "line": 0.55
+  },
+  {
+   "design": "p026",
+   "verdict": "grey",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.4714,
+   "line": 0.45
+  },
+  {
+   "design": "p061",
+   "verdict": "grey",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.4717,
+   "line": 0.45
+  },
+  {
+   "design": "p014",
+   "verdict": "pass",
+   "window": "extension",
+   "eval_point": "ROM",
+   "post_mm": 0.422,
+   "line": 0.45
+  }
+ ],
+ "n_designs_near": 17,
+ "references": [
+  "FDA, Assessing the Credibility of Computational Modeling and Simulation in Medical Device Submissions, final guidance, Nov 2023 (section on post-study adequacy: proximity of predictions to decision or safety thresholds, with uncertainty)",
+  "ASME V&V 40-2018, Assessing Credibility of Computational Modeling through Verification and Validation: Application to Medical Devices",
+  "JCGM 100:2008 (GUM), Evaluation of measurement data - Guide to the expression of uncertainty in measurement",
+  "ISO 5725-6:1994 (confirmed 2022), Accuracy (trueness and precision) of measurement methods and results - Part 6: Use in practice of accuracy values (repeatability limit r = 2.8 s_r)",
+  "JCGM 106:2012, Evaluation of measurement data - The role of measurement uncertainty in conformity assessment; ILAC-G8:09/2019, Guidelines on Decision Rules and Statements of Conformity",
+  "Richardson extrapolation for spatial / temporal convergence (Roache 1998, as summarised by the NASA NPARC Alliance CFD V&V tutorial, https://www.grc.nasa.gov/www/wind/valid/tutorial/spatconv.html)",
+  "Campbell JQ et al., J Biomech 2016, Automated finite element meshing of the lumbar spine: verification and validation with 18 specimen-specific models (mesh doubling changes key outputs < 5 %)",
+  "Nabhan A et al., Eur Spine J 2007;16:423-430 (cervical radiostereometry, 99 % confidence limit of anterior-posterior translation 0.45 mm; ISO 16087:2013 governs RSA)"
+ ]
+}
