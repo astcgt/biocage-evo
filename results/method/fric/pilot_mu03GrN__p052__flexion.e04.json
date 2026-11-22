@@ -1,0 +1,82 @@
+{
+ "case": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/pilot_mu03GrN/p052/w_flexion",
+ "windows": {
+  "flexion": {
+   "t": 3.7967326578181195,
+   "target_reached": true,
+   "M_at_target": -1500.0,
+   "mu_squeeze": 0.004543736610596999,
+   "net_push_N": 1.4902101391489677,
+   "net_twist_Nmm": 0.41246963314731466,
+   "N_total": 331.7650737277803,
+   "one_face_slip_bound_mm": 1.2935097858988716,
+   "cage_translation_tied_mm": [
+    0.7261198033154015,
+    -4.3945647175795254e-05,
+    -0.10309353317241433
+   ],
+   "t19_available": true,
+   "posterior_rim_n": 3429.0,
+   "posterior_rim_translation_mm": [
+    0.7279772712930341,
+    -5.626728320794554e-05,
+    0.07340552482272147
+   ],
+   "posterior_rim_posterior_mm": -0.7279772712930341,
+   "posterior_most_node_posterior_mm": -0.11156206207800788,
+   "posterior_rim_minus_mean_mm": 0.0027364841411142912,
+   "hard_fit_n": 20612.0,
+   "hard_phi": 1.0,
+   "hard_fit_translation_mm": [
+    0.7537411021716673,
+    0.0006160743540462878,
+    -0.10512068690456534
+   ],
+   "hard_fit_rotation_deg": 3.1065298039991345,
+   "hard_fit_rotation_z_deg": 0.026156246341570984,
+   "hard_fit_rms_mm": 0.2463939706587132,
+   "hard_fit_minus_mean_mm": 0.027629186469998963,
+   "hard_local_max_inplane_mm": 0.6380330660825826,
+   "eval": {
+    "t_a": 3.79262099,
+    "M_a": -1475.48888647,
+    "t_b": 3.80096615,
+    "M_b": -1525.23735187,
+    "frac": 0.49270089706123876,
+    "coarse": false,
+    "invalid": [
+     [
+      3.99974543,
+      9.545999999982513e-05,
+      -3039.11978921,
+      "dt"
+     ],
+     [
+      3.99992637,
+      8.836999999983775e-05,
+      -2999.12087612,
+      "dt"
+     ]
+    ]
+   },
+   "window_check": {
+    "n_rows": 134,
+    "n_invalid": 2,
+    "n_dyn": 0,
+    "dt_min": 0.00013126000000029947,
+    "monotonic": false,
+    "rb_res_max": 0.0,
+    "rb_fres_max": 42.411528416075484,
+    "t_last": 4.0,
+    "complete": true
+   }
+  }
+ },
+ "provenance": {
+  "git": "0003af53e09edfdf59bfddf225c5416eea81969f",
+  "script_dirty": false,
+  "script_sha256": "6ae52596d92f6c0cb51def6ed9375b33e314b0016541e880ef77e977810c9dab",
+  "case_feb": "85545c3730b90490f1277256e7d32c4abdbf8b583c39b6e67bdb9d4866bfb7c1",
+  "case_xplt": "f4dd6ca098b51c1685a91859d309f810ebbc7503b6140250a2a4fd39ac443be1"
+ }
+}

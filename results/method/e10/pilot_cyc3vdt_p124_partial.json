@@ -1,9 +1,9 @@
 {
- "window": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/pilot_cyc3vdt/p124/w_flexion",
+ "window": "../biocage_simulation_test_oct2026/human_study/al_v2/pilot_cyc3vdt/p124/w_flexion",
  "baseline": "insertion log 3.5000 (human_study/al_v2/pilot_cyc3v/p124_gpu2)",
  "cycles": 3,
- "t_end": 4.14107082,
- "completed_cycles": 0,
+ "t_end": 7.37341016,
+ "completed_cycles": 1,
  "neutral": [
   {
    "t": 3.5,
@@ -15,7 +15,17 @@
    "posterior_mm": 0.0,
    "inplane_mm": 0.0
   },
-  null,
+  {
+   "t": 5.5,
+   "t_nearest_state": 5.49985495,
+   "u_mm": [
+    0.030307329985561432,
+    -0.0007367151182071871,
+    0.020134742688630858
+   ],
+   "posterior_mm": -0.030307329985561432,
+   "inplane_mm": 0.030316282753977377
+  },
   null,
   null
  ],
@@ -23,19 +33,74 @@
   {
    "flexion": {
     "t": 3.9999553,
+    "t_nearest_state": 3.9999553,
     "u_mm": [
      0.4677499260861939,
      0.0001457022017913814,
      0.12318266849526488
     ],
     "posterior_mm": -0.4677499260861939,
-    "inplane_mm": 0.4677499487790154
+    "inplane_mm": 0.4677499487790154,
+    "extreme": {
+     "t": 4.01031661,
+     "posterior_mm": -0.47529406305863287,
+     "inplane_mm": 0.47529407713994415,
+     "n_states": 2321
+    }
    },
-   "extension": null
+   "extension": {
+    "t": 4.99958519,
+    "t_nearest_state": 4.99958519,
+    "u_mm": [
+     -0.5218107723647788,
+     -0.0016650952334928137,
+     0.49280994788347326
+    ],
+    "posterior_mm": 0.5218107723647788,
+    "inplane_mm": 0.5218134290127685,
+    "extreme": {
+     "t": 5.00958673,
+     "posterior_mm": 0.5348563373677677,
+     "inplane_mm": 0.5348581784417804,
+     "n_states": 541
+    }
+   }
   },
   {
-   "flexion": null,
-   "extension": null
+   "flexion": {
+    "t": 6.00001169,
+    "t_nearest_state": 6.00001169,
+    "u_mm": [
+     0.3845168210357239,
+     -0.0005165811785701801,
+     0.10397526133243981
+    ],
+    "posterior_mm": -0.3845168210357239,
+    "inplane_mm": 0.3845171680374401,
+    "extreme": {
+     "t": 6.00821177,
+     "posterior_mm": -0.39231958632543723,
+     "inplane_mm": 0.3923202172602715,
+     "n_states": 1843
+    }
+   },
+   "extension": {
+    "t": 7.00014323,
+    "t_nearest_state": 7.00014323,
+    "u_mm": [
+     -0.6518337603131663,
+     -0.0028834835114859183,
+     0.4806276793697458
+    ],
+    "posterior_mm": 0.6518337603131663,
+    "inplane_mm": 0.6518401380408876,
+    "extreme": {
+     "t": 6.99614323,
+     "posterior_mm": 0.6526743883569335,
+     "inplane_mm": 0.6526807064001919,
+     "n_states": 512
+    }
+   }
   },
   {
    "flexion": null,
@@ -43,11 +108,52 @@
   }
  ],
  "posterior_increment_per_cycle_mm": [
-  null,
+  -0.030307329985561432,
   null,
   null
  ],
+ "steady_state": {
+  "at_extension_peak": {
+   "state": null,
+   "values": [
+    0.5348563373677677,
+    0.6526743883569335
+   ],
+   "changes": [
+    0.11781805098916576
+   ],
+   "noise_mm": 0.03,
+   "note": "fewer than 3 cycles"
+  },
+  "at_neutral": {
+   "state": null,
+   "values": [
+    -0.030307329985561432
+   ],
+   "changes": [],
+   "noise_mm": 0.01,
+   "note": "fewer than 3 cycles"
+  },
+  "at_extension_peak_nearest_state": {
+   "state": null,
+   "values": [
+    0.5218107723647788,
+    0.6518337603131663
+   ],
+   "changes": [
+    0.13002298794838751
+   ],
+   "noise_mm": 0.03,
+   "note": "fewer than 3 cycles"
+  },
+  "noise_peak_mm": 0.03,
+  "noise_neutral_mm": 0.01,
+  "shrink": 0.7,
+  "read_out": "extension peak = extreme posterior translation within +-0.25 s of the peak time; neutral = linear interpolation at the return to neutral",
+  "noise_basis": "p124 time-step check 2026-11-22 (window_dt 0.001 vs production stepping vs penalty x2 vs full Newton, same checkpoint)",
+  "principle": "PI 2026-11-22: a design that reaches a steady state under repeated motion is safe for any motion inside the limits; one that moves further with every cycle is not"
+ },
  "ratcheting": null,
  "rule": "ratcheting = cycle-3 posterior increment >= cycle-2 increment and > 0.005 mm (proposal)",
- "max_inplane_mm": 0.4677499487790154
+ "max_inplane_mm": 0.6518401380408876
 }

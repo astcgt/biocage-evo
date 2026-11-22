@@ -8,7 +8,14 @@ usage: python e10_cycles.py <w_flexion_dir> <out.json>
 """
 import sys, os, json, numpy as np, xml.etree.ElementTree as ET
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import e04_dislocation as e4
-NOISE = 0.005
+NOISE = 0.005          # replicate read-out noise (R20); kept for the old 'ratcheting' field
+# 2026-11-22 time-step check (p124, same checkpoint: window_dt 0.001 against the production stepping, penalty x2, full Newton), compared at the
+# SAME C3 angle: flexion loading agrees within 0.004 mm, but the sliding half cycle (extension loading and unloading) carries a stick-slip
+# texture of +-0.02-0.03 mm whose phase depends on the time step, and the production stepping does not land on the turning point of the
+# drive (largest applied angle 98.6-99.6 % of the peak). The state nearest the peak time is therefore not a stable read-out: the peak is read
+# as the EXTREME of the posterior translation within +-HALF_WIN of the peak time, and the noise floor of that number is NOISE_PEAK.
+# The return to neutral is better conditioned (arms agree within 0.003-0.007 mm): NOISE_NEUTRAL.
+NOISE_PEAK = 0.03; NOISE_NEUTRAL = 0.01; HALF_WIN = 0.25
 SHRINK = 0.7      # 'settling': each cycle-to-cycle change is at most 0.7 x the one before (proposal)
 PLAT = '/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026'
 
@@ -43,13 +50,26 @@ def main(wd, out):
             U = next(iter(st['node']['displacement'].values()))
             u0 = U[ids['cage_nodes.txt'] - 1].mean(0) - U[ids['C4_endplate_nodes.txt'] - 1].mean(0); base = 'xplt %.4f' % st['time']
       except (OSError, KeyError, ImportError) as ex: base += ' (xplt baseline failed: %r)' % ex
-    def at(t):
+    tsa = np.array(ts); _U = None
+    def at(t, interp=False):
         if t > t_end + 1e-3: return None
-        k = min(ts, key=lambda a: abs(a - t)); u = tr(k) - u0
-        return dict(t=k, u_mm=u.tolist(), posterior_mm=float(-u[0]), inplane_mm=float(np.hypot(u[0], u[1])))
-    neutral = [at(3.5 + 2 * k) for k in range(n + 1)]
+        k = min(ts, key=lambda a: abs(a - t)); u = tr(k) - u0; tk = k
+        if interp and ts[0] < t < ts[-1]:                       # linear interpolation between the two bracketing states (neutral: smooth part of the drive)
+            i = int(np.searchsorted(tsa, t)); a, b = ts[i - 1], ts[i]; fr = (t - a) / (b - a) if b > a else 0.0
+            u = (1 - fr) * tr(a) + fr * tr(b) - u0; tk = t
+        return dict(t=tk, t_nearest_state=k, u_mm=u.tolist(), posterior_mm=float(-u[0]), inplane_mm=float(np.hypot(u[0], u[1])))
+    def extreme(tp, sign):
+        # largest posterior (sign +1, extension) / anterior (sign -1, flexion) translation among the states within +-HALF_WIN of the peak time
+        sel = [a for a in ts if tp - HALF_WIN <= a <= tp + HALF_WIN]
+        if not sel or t_end < tp + HALF_WIN - 1e-3: return None   # the whole window around the peak must be computed
+        k = max(sel, key=lambda a: sign * -(tr(a) - u0)[0]); u = tr(k) - u0
+        return dict(t=k, posterior_mm=float(-u[0]), inplane_mm=float(np.hypot(u[0], u[1])), n_states=len(sel))
+    neutral = [at(3.5 + 2 * k, interp=True) for k in range(n + 1)]
     if base.startswith(('xplt', 'insertion log')): neutral[0] = dict(t=3.5, u_mm=[0.0, 0.0, 0.0], posterior_mm=0.0, inplane_mm=0.0)   # the baseline state itself
     peaks = [dict(flexion=at(4.0 + 2 * k), extension=at(5.0 + 2 * k)) for k in range(n)]
+    for k, p in enumerate(peaks):
+        for w, tp, sg in (('flexion', 4.0 + 2 * k, -1), ('extension', 5.0 + 2 * k, 1)):
+            if p[w] is not None: p[w]['extreme'] = extreme(tp, sg)
     inc = [None if (neutral[k] is None or neutral[k - 1] is None) else neutral[k]['posterior_mm'] - neutral[k - 1]['posterior_mm'] for k in range(1, n + 1)]
     done = [x for x in inc if x is not None]
     ratchet = None
@@ -61,17 +81,21 @@ def main(wd, out):
     #   settling    the changes shrink by at least SHRINK each cycle; the geometric limit of the series is reported (projected_limit_mm)
     #   ratcheting  the changes do not shrink (constant or growing)
     # Proposal for the read-out; the pass rule itself is the PI's (to be fixed after the 8-cycle runs).
-    def steady(series):
+    def steady(series, noise):
         v = [x for x in series if x is not None]; d = [b - a for a, b in zip(v[:-1], v[1:])]
-        if len(d) < 2: return dict(state=None, values=v, changes=d, note='fewer than 3 cycles')
-        if abs(d[-1]) <= NOISE and abs(d[-2]) <= NOISE: return dict(state='steady', values=v, changes=d)
+        if len(d) < 2: return dict(state=None, values=v, changes=d, noise_mm=noise, note='fewer than 3 cycles')
+        if abs(d[-1]) <= noise and abs(d[-2]) <= noise: return dict(state='steady', values=v, changes=d, noise_mm=noise)
         r = [abs(b) / abs(a) if abs(a) > 1e-12 else None for a, b in zip(d[:-1], d[1:])]
         if all(x is not None and x <= SHRINK for x in r[-2:]) and (d[-1] > 0) == (d[-2] > 0):
-            q = r[-1]; return dict(state='settling', values=v, changes=d, shrink_ratio=q, projected_limit_mm=float(v[-1] + d[-1] * q / (1 - q)))
-        return dict(state='ratcheting', values=v, changes=d, last_ratio=r[-1])
-    ss_ext = steady([p['extension']['posterior_mm'] if p.get('extension') else None for p in peaks]); ss_neu = steady([x['posterior_mm'] if x else None for x in neutral[1:]])
+            q = r[-1]; return dict(state='settling', values=v, changes=d, noise_mm=noise, shrink_ratio=q, projected_limit_mm=float(v[-1] + d[-1] * q / (1 - q)))
+        return dict(state='ratcheting', values=v, changes=d, noise_mm=noise, last_ratio=r[-1], total_drift_mm=float(v[-1] - v[0]), drift_over_noise=float(abs(v[-1] - v[0]) / noise))
+    ss_ext = steady([p['extension']['extreme']['posterior_mm'] if (p.get('extension') and p['extension'].get('extreme')) else None for p in peaks], NOISE_PEAK)
+    ss_near = steady([p['extension']['posterior_mm'] if p.get('extension') else None for p in peaks], NOISE_PEAK)   # old read-out (state nearest the peak time), kept for comparison
+    ss_neu = steady([x['posterior_mm'] if x else None for x in neutral[1:]], NOISE_NEUTRAL)
     res = dict(window=wd, baseline=base, cycles=n, t_end=t_end, completed_cycles=len(done), neutral=neutral, peaks=peaks, posterior_increment_per_cycle_mm=inc,
-               steady_state=dict(at_extension_peak=ss_ext, at_neutral=ss_neu, noise_mm=NOISE, shrink=SHRINK,
+               steady_state=dict(at_extension_peak=ss_ext, at_neutral=ss_neu, at_extension_peak_nearest_state=ss_near, noise_peak_mm=NOISE_PEAK, noise_neutral_mm=NOISE_NEUTRAL, shrink=SHRINK,
+                                 read_out='extension peak = extreme posterior translation within +-%.2f s of the peak time; neutral = linear interpolation at the return to neutral' % HALF_WIN,
+                                 noise_basis='p124 time-step check 2026-11-22 (window_dt 0.001 vs production stepping vs penalty x2 vs full Newton, same checkpoint)',
                                  principle='PI 2026-11-22: a design that reaches a steady state under repeated motion is safe for any motion inside the limits; one that moves further with every cycle is not'),
                ratcheting=ratchet, rule=f'ratcheting = cycle-3 posterior increment >= cycle-2 increment and > {NOISE} mm (proposal)',
                max_inplane_mm=max((p[w]['inplane_mm'] for p in peaks for w in p if p[w]), default=None))

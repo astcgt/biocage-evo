@@ -1,0 +1,44 @@
+{
+ "window": "../biocage_simulation_test_oct2026/human_study/al_v2/pilot_cyc3vG/p064_gpu4/w_flexion",
+ "baseline": "insertion log 3.5000 (human_study/al_v2/pilot_cyc3vG/p064_gpu4)",
+ "cycles": 3,
+ "t_end": 3.8654842,
+ "completed_cycles": 0,
+ "neutral": [
+  {
+   "t": 3.5,
+   "u_mm": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "posterior_mm": 0.0,
+   "inplane_mm": 0.0
+  },
+  null,
+  null,
+  null
+ ],
+ "peaks": [
+  {
+   "flexion": null,
+   "extension": null
+  },
+  {
+   "flexion": null,
+   "extension": null
+  },
+  {
+   "flexion": null,
+   "extension": null
+  }
+ ],
+ "posterior_increment_per_cycle_mm": [
+  null,
+  null,
+  null
+ ],
+ "ratcheting": null,
+ "rule": "ratcheting = cycle-3 posterior increment >= cycle-2 increment and > 0.005 mm (proposal)",
+ "max_inplane_mm": null
+}

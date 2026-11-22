@@ -1,0 +1,156 @@
+{
+ "window": "/raid/jupyter-alz.ee09/projects/claude-work/biocage_simulation_test_oct2026/human_study/al_v2/pilot_cyc3vG/p140_gpu4/w_flexion",
+ "baseline": "insertion log 3.5000 (human_study/al_v2/pilot_cyc3vG/p140_gpu4)",
+ "cycles": 3,
+ "t_end": 9.5,
+ "completed_cycles": 3,
+ "neutral": [
+  {
+   "t": 3.5,
+   "u_mm": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "posterior_mm": 0.0,
+   "inplane_mm": 0.0
+  },
+  {
+   "t": 5.49917916,
+   "u_mm": [
+    0.3037705890064724,
+    0.0013906044939989836,
+    0.07115755408456746
+   ],
+   "posterior_mm": -0.3037705890064724,
+   "inplane_mm": 0.3037737719524151
+  },
+  {
+   "t": 7.4991609,
+   "u_mm": [
+    0.3214356059871449,
+    0.0019555772047357292,
+    0.07728843610839048
+   ],
+   "posterior_mm": -0.3214356059871449,
+   "inplane_mm": 0.32144155468533736
+  },
+  {
+   "t": 9.5,
+   "u_mm": [
+    0.32840473938159964,
+    0.0024893719988335356,
+    0.07644239788414536
+   ],
+   "posterior_mm": -0.32840473938159964,
+   "inplane_mm": 0.3284141742087953
+  }
+ ],
+ "peaks": [
+  {
+   "flexion": {
+    "t": 3.99980266,
+    "u_mm": [
+     1.1825671758109917,
+     -0.0010670298651271016,
+     -0.018503651389300636
+    ],
+    "posterior_mm": -1.1825671758109917,
+    "inplane_mm": 1.182567657201193
+   },
+   "extension": {
+    "t": 4.99932486,
+    "u_mm": [
+     -0.2517952804854176,
+     -0.0011175271449717918,
+     0.506940183737079
+    ],
+    "posterior_mm": 0.2517952804854176,
+    "inplane_mm": 0.25179776039839963
+   }
+  },
+  {
+   "flexion": {
+    "t": 5.99866174,
+    "u_mm": [
+     1.185193198766838,
+     -0.0007167904493642103,
+     -0.005850465674473587
+    ],
+    "posterior_mm": -1.185193198766838,
+    "inplane_mm": 1.1851934155198964
+   },
+   "extension": {
+    "t": 7.00026276,
+    "u_mm": [
+     -0.24796400675459088,
+     -9.731865187257195e-05,
+     0.5081590605203694
+    ],
+    "posterior_mm": 0.24796400675459088,
+    "inplane_mm": 0.2479640258519586
+   }
+  },
+  {
+   "flexion": {
+    "t": 7.99773963,
+    "u_mm": [
+     1.1826673023393346,
+     -0.0002735740904041104,
+     -0.004949856891986765
+    ],
+    "posterior_mm": -1.1826673023393346,
+    "inplane_mm": 1.1826673339808544
+   },
+   "extension": {
+    "t": 8.99986685,
+    "u_mm": [
+     -0.24860579509358846,
+     0.0008945306336849779,
+     0.5073757274028727
+    ],
+    "posterior_mm": 0.24860579509358846,
+    "inplane_mm": 0.2486074044335162
+   }
+  }
+ ],
+ "posterior_increment_per_cycle_mm": [
+  -0.3037705890064724,
+  -0.017665016980672466,
+  -0.006969133394454763
+ ],
+ "steady_state": {
+  "at_extension_peak": {
+   "state": "steady",
+   "values": [
+    0.2517952804854176,
+    0.24796400675459088,
+    0.24860579509358846
+   ],
+   "changes": [
+    -0.0038312737308267286,
+    0.0006417883389975843
+   ]
+  },
+  "at_neutral": {
+   "state": "settling",
+   "values": [
+    -0.3037705890064724,
+    -0.3214356059871449,
+    -0.32840473938159964
+   ],
+   "changes": [
+    -0.017665016980672466,
+    -0.006969133394454763
+   ],
+   "shrink_ratio": 0.39451608804451116,
+   "projected_limit_mm": -0.3329456283954151
+  },
+  "noise_mm": 0.005,
+  "shrink": 0.7,
+  "principle": "PI 2026-11-22: a design that reaches a steady state under repeated motion is safe for any motion inside the limits; one that moves further with every cycle is not"
+ },
+ "ratcheting": false,
+ "rule": "ratcheting = cycle-3 posterior increment >= cycle-2 increment and > 0.005 mm (proposal)",
+ "max_inplane_mm": 1.1851934155198964
+}

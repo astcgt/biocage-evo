@@ -1,0 +1,101 @@
+{
+ "window": "../biocage_simulation_test_oct2026/human_study/al_v2/pilot_cyc3vdt/p124/w_flexion",
+ "baseline": "insertion log 3.5000 (human_study/al_v2/pilot_cyc3v/p124_gpu2)",
+ "cycles": 3,
+ "t_end": 6.00286777,
+ "completed_cycles": 1,
+ "neutral": [
+  {
+   "t": 3.5,
+   "u_mm": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "posterior_mm": 0.0,
+   "inplane_mm": 0.0
+  },
+  {
+   "t": 5.49985495,
+   "u_mm": [
+    0.03023074655302979,
+    -0.0007381187132279037,
+    0.02018351818436816
+   ],
+   "posterior_mm": -0.03023074655302979,
+   "inplane_mm": 0.03023975622236958
+  },
+  null,
+  null
+ ],
+ "peaks": [
+  {
+   "flexion": {
+    "t": 3.9999553,
+    "u_mm": [
+     0.4677499260861939,
+     0.0001457022017913814,
+     0.12318266849526488
+    ],
+    "posterior_mm": -0.4677499260861939,
+    "inplane_mm": 0.4677499487790154
+   },
+   "extension": {
+    "t": 4.99958519,
+    "u_mm": [
+     -0.5218107723647788,
+     -0.0016650952334928137,
+     0.49280994788347326
+    ],
+    "posterior_mm": 0.5218107723647788,
+    "inplane_mm": 0.5218134290127685
+   }
+  },
+  {
+   "flexion": {
+    "t": 6.00001169,
+    "u_mm": [
+     0.3845168210357239,
+     -0.0005165811785701801,
+     0.10397526133243981
+    ],
+    "posterior_mm": -0.3845168210357239,
+    "inplane_mm": 0.3845171680374401
+   },
+   "extension": null
+  },
+  {
+   "flexion": null,
+   "extension": null
+  }
+ ],
+ "posterior_increment_per_cycle_mm": [
+  -0.03023074655302979,
+  null,
+  null
+ ],
+ "steady_state": {
+  "at_extension_peak": {
+   "state": null,
+   "values": [
+    0.5218107723647788
+   ],
+   "changes": [],
+   "note": "fewer than 3 cycles"
+  },
+  "at_neutral": {
+   "state": null,
+   "values": [
+    -0.03023074655302979
+   ],
+   "changes": [],
+   "note": "fewer than 3 cycles"
+  },
+  "noise_mm": 0.005,
+  "shrink": 0.7,
+  "principle": "PI 2026-11-22: a design that reaches a steady state under repeated motion is safe for any motion inside the limits; one that moves further with every cycle is not"
+ },
+ "ratcheting": null,
+ "rule": "ratcheting = cycle-3 posterior increment >= cycle-2 increment and > 0.005 mm (proposal)",
+ "max_inplane_mm": 0.5218134290127685
+}

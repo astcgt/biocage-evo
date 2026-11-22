@@ -436,6 +436,27 @@ if [ -f "$f" ] && ! grep -q 'NEWTON_CONFIRM DONE' "$f" && ! pgrep -u "$USER" -f 
   pgrep -u "$USER" -f "h51_relG_fallback.py (build p052|run 1 4 6 p052:flexion)" >/dev/null || { [ -n "$h" ] && h=both || h=G; }
   [ -n "$h" ] && tmux new-session -d -s biocage_newtonC "bash '$EVO/ops/newtonC_lane.sh' $h"
 fi
+# 11-22 06:05 pilot_mu03/fill_newton_e.sh G 2 <4 windows> (tmux biocage_fillN, by hand, PI item 12): h51 build skips valid / started dirs,
+# run skips done windows, log appended, so a plain relaunch is safe. Marker FILL_NEWTON_E G ... DONE in fill_N_G.log (foreman 11-22 06:1x)
+f=$OLD/$A/pilot_mu03/fill_N_G.log
+if [ -f "$f" ] && ! grep -q 'FILL_NEWTON_E G .* DONE' "$f" && ! pgrep -u "$USER" -f "pilot_mu03/fill_newton_e.sh G " >/dev/null \
+   && ! pgrep -u "$USER" -f "h51_relG_fallback.py run 1 2 6 p050:extension" >/dev/null && ! tmux has-session -t =biocage_fillN 2>/dev/null; then
+  tmux new-session -d -s biocage_fillN "cd '$OLD' && bash $A/pilot_mu03/fill_newton_e.sh G 2 p050:extension p064:extension p116:extension p121:extension >> $A/pilot_mu03/fill_N_G.log 2>&1"
+fi
+# 11-22 01:08 numconv_hz01/lane16b.sh 1 4 p036 p052 p060 p113 (tmux biocage_16b, by hand, PI item 16(b)): relaunch through
+# ops/num16b_lane.sh (skips ended designs, builds only unbuilt ones). Marker LANE16B DONE in lane16b.log (foreman 11-22 02:1x)
+f=$OLD/$A/numconv_hz01/lane16b.log
+if [ -f "$f" ] && ! grep -q 'LANE16B DONE' "$f" && ! pgrep -u "$USER" -f "(numconv_hz01/lane16b|ops/num16b_lane)\.sh" >/dev/null \
+   && ! pgrep -u "$USER" -f "h18_run_gpu_case.py .*numconv_hz01/" >/dev/null && ! tmux has-session -t =biocage_16b 2>/dev/null; then
+  tmux new-session -d -s biocage_16b "bash '$EVO/ops/num16b_lane.sh' 1 4 p036 p052 p060 p113 >> '$f' 2>&1"
+fi
+# 11-22 09:06 numconv_hz01/lane16c.sh 1 4 numconv_hz01/p146 numconv_hz01/inplane/p060 numconv_hz01/inplane/p052 (tmux biocage_16c, by hand,
+# PI item 16(b) second pass): relaunch through ops/num16c_lane.sh (skips ended designs). Marker LANE16C DONE in lane16c.log (foreman 11-22 09:1x)
+f=$OLD/$A/numconv_hz01/lane16c.log
+if [ -f "$f" ] && ! grep -q 'LANE16C DONE' "$f" && ! pgrep -u "$USER" -f "(numconv_hz01/lane16c|ops/num16c_lane)\.sh" >/dev/null \
+   && ! pgrep -u "$USER" -f "h18_run_gpu_case.py .*numconv_hz01/" >/dev/null && ! tmux has-session -t =biocage_16c 2>/dev/null; then
+  tmux new-session -d -s biocage_16c "bash '$EVO/ops/num16c_lane.sh' 1 4 numconv_hz01/p146 numconv_hz01/inplane/p060 numconv_hz01/inplane/p052 >> '$f' 2>&1"
+fi
 # 11-21 20:48 pilot_push/push2_finish.sh + pilot_mu03/finish_e.sh (tmux biocage_finish, by hand): waiters, then retry + summary / verdict
 # pipeline. Relaunch through ops/finish_lane.sh. Markers PUSH2 FINISH DONE in push2_retry.log, PIPELINE_E DONE in pipeline_e.log (foreman 11-22 01:2x)
 for a in "push2:$OLD/$A/pilot_push/push2_retry.log:PUSH2 FINISH DONE:push2_finish.sh" "e:$EVO/results/method/fric/pipeline_e.log:PIPELINE_E DONE:finish_e.sh"; do

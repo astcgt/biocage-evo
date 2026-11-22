@@ -1,0 +1,382 @@
+{
+ "time": "2026-11-22T05:56",
+ "criterion_mm": 0.005,
+ "n_pairs": 10,
+ "n_within": 10,
+ "worst_abs_diff_mm": 0.0008805228275101662,
+ "worst_abs_diff_any_point_mm": 0.010258975721973762,
+ "n_point_comparisons": 30,
+ "note": "same checkpoint, same deck, only restart Control max_ups 10 (quasi-Newton, BFGS) -> 0 (full Newton); differences are full Newton minus quasi-Newton",
+ "pairs": [
+  {
+   "design": "p105",
+   "window": "flexion",
+   "quasi_newton_set": "pilot_mu03r",
+   "full_newton_set": "pilot_mu03rN",
+   "normal_end": {
+    "quasi_newton": true,
+    "full_newton": true
+   },
+   "at_1p5Nm": {
+    "post": [
+     -0.1694326108846164,
+     -0.16943260830381854
+    ],
+    "u_h": [
+     0.16943278024044514,
+     0.16943277766106626
+    ],
+    "d_post": 2.580797853202199e-09,
+    "d_u_h": -2.5793788771544257e-09
+   },
+   "at_intact_rom": {
+    "post": [
+     -0.3336258443267127,
+     -0.3337621112109212
+    ],
+    "u_h": [
+     0.3336342404703699,
+     0.3337702720626926
+    ],
+    "d_post": -0.0001362668842084802,
+    "d_u_h": 0.00013603159232272732
+   },
+   "evaluation_point": "at_1p5Nm",
+   "d_post_mm": 2.580797853202199e-09,
+   "d_u_h_mm": -2.5793788771544257e-09,
+   "within": true
+  },
+  {
+   "design": "p105",
+   "window": "extension",
+   "quasi_newton_set": "pilot_mu03r",
+   "full_newton_set": "pilot_mu03rN",
+   "normal_end": {
+    "quasi_newton": true,
+    "full_newton": true
+   },
+   "at_1p5Nm": {
+    "reached": [
+     false,
+     false
+    ],
+    "M_max": [
+     591.984583911,
+     591.984583899
+    ]
+   },
+   "at_intact_rom": {
+    "post": [
+     0.4457410398799427,
+     0.4457410398798669
+    ],
+    "u_h": [
+     0.44574113735198967,
+     0.4457411373519139
+    ],
+    "d_post": -7.577272143066693e-14,
+    "d_u_h": -7.577272143066693e-14
+   },
+   "evaluation_point": "at_intact_rom",
+   "d_post_mm": -7.577272143066693e-14,
+   "d_u_h_mm": -7.577272143066693e-14,
+   "within": true
+  },
+  {
+   "design": "p110",
+   "window": "flexion",
+   "quasi_newton_set": "pilot_mu03r",
+   "full_newton_set": "pilot_mu03rN",
+   "normal_end": {
+    "quasi_newton": true,
+    "full_newton": true
+   },
+   "at_1p5Nm": {
+    "post": [
+     -0.1573108951603629,
+     -0.15742731417810285
+    ],
+    "u_h": [
+     0.15731158022265668,
+     0.15742802889484825
+    ],
+    "d_post": -0.00011641901773995489,
+    "d_u_h": 0.0001164486721915714
+   },
+   "at_intact_rom": {
+    "post": [
+     -0.38833069398343373,
+     -0.38764128940314624
+    ],
+    "u_h": [
+     0.3883311078423011,
+     0.38764219021144414
+    ],
+    "d_post": 0.0006894045802874893,
+    "d_u_h": -0.0006889176308569889
+   },
+   "evaluation_point": "at_1p5Nm",
+   "d_post_mm": -0.00011641901773995489,
+   "d_u_h_mm": 0.0001164486721915714,
+   "within": true
+  },
+  {
+   "design": "p110",
+   "window": "extension",
+   "quasi_newton_set": "pilot_mu03r",
+   "full_newton_set": "pilot_mu03rN",
+   "normal_end": {
+    "quasi_newton": true,
+    "full_newton": true
+   },
+   "at_1p5Nm": {
+    "reached": [
+     false,
+     false
+    ],
+    "M_max": [
+     594.269405486,
+     594.2694058
+    ]
+   },
+   "at_intact_rom": {
+    "post": [
+     0.2995845245578238,
+     0.29958452456316637
+    ],
+    "u_h": [
+     0.2995846086951296,
+     0.2995846087004712
+    ],
+    "d_post": 5.342559727949947e-12,
+    "d_u_h": 5.341616038379016e-12
+   },
+   "evaluation_point": "at_intact_rom",
+   "d_post_mm": 5.342559727949947e-12,
+   "d_u_h_mm": 5.341616038379016e-12,
+   "within": true
+  },
+  {
+   "design": "p131",
+   "window": "flexion",
+   "quasi_newton_set": "pilot_mu03r",
+   "full_newton_set": "pilot_mu03rN",
+   "normal_end": {
+    "quasi_newton": true,
+    "full_newton": true
+   },
+   "at_1p5Nm": {
+    "post": [
+     -0.17226003101623477,
+     -0.17226003215717794
+    ],
+    "u_h": [
+     0.172260897852699,
+     0.17226089898740363
+    ],
+    "d_post": -1.1409431732722908e-09,
+    "d_u_h": 1.1347046358078927e-09
+   },
+   "at_intact_rom": {
+    "post": [
+     -0.38815287896795814,
+     -0.3881248992108834
+    ],
+    "u_h": [
+     0.38815289231470884,
+     0.38812491567884555
+    ],
+    "d_post": 2.7979757074747535e-05,
+    "d_u_h": -2.7976635863291577e-05
+   },
+   "evaluation_point": "at_1p5Nm",
+   "d_post_mm": -1.1409431732722908e-09,
+   "d_u_h_mm": 1.1347046358078927e-09,
+   "within": true
+  },
+  {
+   "design": "p131",
+   "window": "extension",
+   "quasi_newton_set": "pilot_mu03r",
+   "full_newton_set": "pilot_mu03rN",
+   "normal_end": {
+    "quasi_newton": true,
+    "full_newton": true
+   },
+   "at_1p5Nm": {
+    "reached": [
+     false,
+     false
+    ],
+    "M_max": [
+     588.648948552,
+     588.648948565
+    ]
+   },
+   "at_intact_rom": {
+    "post": [
+     0.34493763568831987,
+     0.34493763568838215
+    ],
+    "u_h": [
+     0.3449379181205581,
+     0.34493791812062036
+    ],
+    "d_post": 6.228351168147128e-14,
+    "d_u_h": 6.228351168147128e-14
+   },
+   "evaluation_point": "at_intact_rom",
+   "d_post_mm": 6.228351168147128e-14,
+   "d_u_h_mm": 6.228351168147128e-14,
+   "within": true
+  },
+  {
+   "design": "p038",
+   "window": "flexion",
+   "quasi_newton_set": "pilot_mu03r",
+   "full_newton_set": "pilot_mu03rN",
+   "normal_end": {
+    "quasi_newton": true,
+    "full_newton": true
+   },
+   "at_1p5Nm": {
+    "post": [
+     -0.376722716256706,
+     -0.37760323908421617
+    ],
+    "u_h": [
+     0.37672278201783366,
+     0.37760329210429877
+    ],
+    "d_post": -0.0008805228275101662,
+    "d_u_h": 0.0008805100864651139
+   },
+   "at_intact_rom": {
+    "post": [
+     -1.163135498293123,
+     -1.1631159510397213
+    ],
+    "u_h": [
+     1.1631355076804843,
+     1.1631159601913894
+    ],
+    "d_post": 1.9547253401697162e-05,
+    "d_u_h": -1.9547489094939863e-05
+   },
+   "evaluation_point": "at_1p5Nm",
+   "d_post_mm": -0.0008805228275101662,
+   "d_u_h_mm": 0.0008805100864651139,
+   "within": true
+  },
+  {
+   "design": "p038",
+   "window": "extension",
+   "quasi_newton_set": "pilot_mu03r",
+   "full_newton_set": "pilot_mu03rN",
+   "normal_end": {
+    "quasi_newton": true,
+    "full_newton": true
+   },
+   "at_1p5Nm": {
+    "reached": [
+     false,
+     false
+    ],
+    "M_max": [
+     572.691257948,
+     572.691180889
+    ]
+   },
+   "at_intact_rom": {
+    "post": [
+     0.35676533738043587,
+     0.3567653355763096
+    ],
+    "u_h": [
+     0.35676555670850174,
+     0.3567655548777641
+    ],
+    "d_post": -1.8041262928036872e-09,
+    "d_u_h": -1.8307376170589862e-09
+   },
+   "evaluation_point": "at_intact_rom",
+   "d_post_mm": -1.8041262928036872e-09,
+   "d_u_h_mm": -1.8307376170589862e-09,
+   "within": true
+  },
+  {
+   "design": "p052",
+   "window": "flexion",
+   "quasi_newton_set": "pilot_mu03Gr",
+   "full_newton_set": "pilot_mu03GrN",
+   "normal_end": {
+    "quasi_newton": true,
+    "full_newton": true
+   },
+   "at_1p5Nm": {
+    "post": [
+     -0.7252785176137386,
+     -0.7261198033154015
+    ],
+    "u_h": [
+     0.7252785184109962,
+     0.7261198046452233
+    ],
+    "d_post": -0.0008412857016628639,
+    "d_u_h": 0.0008412862342270788
+   },
+   "at_intact_rom": {
+    "post": [
+     -1.0401044949450742,
+     -1.0298455192231004
+    ],
+    "u_h": [
+     1.0401045094574841,
+     1.0298456322784895
+    ],
+    "d_post": 0.010258975721973762,
+    "d_u_h": -0.010258877178994652
+   },
+   "evaluation_point": "at_1p5Nm",
+   "d_post_mm": -0.0008412857016628639,
+   "d_u_h_mm": 0.0008412862342270788,
+   "within": true
+  },
+  {
+   "design": "p052",
+   "window": "extension",
+   "quasi_newton_set": "pilot_mu03Gr",
+   "full_newton_set": "pilot_mu03GrN",
+   "normal_end": {
+    "quasi_newton": true,
+    "full_newton": true
+   },
+   "at_1p5Nm": {
+    "reached": [
+     false,
+     false
+    ],
+    "M_max": [
+     528.521115683,
+     528.736132837
+    ]
+   },
+   "at_intact_rom": {
+    "post": [
+     0.3625262704534031,
+     0.3626576336410475
+    ],
+    "u_h": [
+     0.36252740831969293,
+     0.3626587688906326
+    ],
+    "d_post": 0.00013136318764445098,
+    "d_u_h": 0.0001313605709396537
+   },
+   "evaluation_point": "at_intact_rom",
+   "d_post_mm": 0.00013136318764445098,
+   "d_u_h_mm": 0.0001313605709396537,
+   "within": true
+  }
+ ]
+}

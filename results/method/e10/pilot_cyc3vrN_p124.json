@@ -16,27 +16,30 @@
    "inplane_mm": 0.0
   },
   {
-   "t": 5.5001186,
+   "t": 5.5,
+   "t_nearest_state": 5.5001186,
    "u_mm": [
-    0.033374596533188736,
-    -0.000549929098944787,
-    0.02252210228867649
+    0.033304332150480814,
+    -0.0005497952821189472,
+    0.022587229928967775
    ],
-   "posterior_mm": -0.033374596533188736,
-   "inplane_mm": 0.0333791269473454
+   "posterior_mm": -0.033304332150480814,
+   "inplane_mm": 0.03330886991240907
   },
   {
-   "t": 7.49955158,
+   "t": 7.5,
+   "t_nearest_state": 7.49955158,
    "u_mm": [
-    -0.08930504400605793,
-    -0.0012645945830286423,
-    0.023785536068349523
+    -0.08902999181260357,
+    -0.0012588060061068567,
+    0.023558589348827114
    ],
-   "posterior_mm": 0.08930504400605793,
-   "inplane_mm": 0.08931399713585418
+   "posterior_mm": 0.08902999181260357,
+   "inplane_mm": 0.08903889057436233
   },
   {
    "t": 9.5,
+   "t_nearest_state": 9.5,
    "u_mm": [
     -0.2575771418461255,
     -0.0014812635359976048,
@@ -50,75 +53,173 @@
   {
    "flexion": {
     "t": 4.00017119,
+    "t_nearest_state": 4.00017119,
     "u_mm": [
      0.46831718963555224,
      0.00016680403426300985,
      0.12309146778807001
     ],
     "posterior_mm": -0.46831718963555224,
-    "inplane_mm": 0.4683172193414712
+    "inplane_mm": 0.4683172193414712,
+    "extreme": {
+     "t": 4.01146435,
+     "posterior_mm": -0.47527428635690994,
+     "inplane_mm": 0.47527430134394555,
+     "n_states": 254
+    }
    },
    "extension": {
     "t": 5.0060648,
+    "t_nearest_state": 5.0060648,
     "u_mm": [
      -0.5116352640742002,
      -0.0016840275545493993,
      0.4845543974558506
     ],
     "posterior_mm": 0.5116352640742002,
-    "inplane_mm": 0.5116380355222636
+    "inplane_mm": 0.5116380355222636,
+    "extreme": {
+     "t": 5.0060648,
+     "posterior_mm": 0.5116352640742002,
+     "inplane_mm": 0.5116380355222636,
+     "n_states": 29
+    }
    }
   },
   {
    "flexion": {
     "t": 6.00001361,
+    "t_nearest_state": 6.00001361,
     "u_mm": [
      0.3803003360919614,
      -0.0005193985799792546,
      0.10285130159508812
     ],
     "posterior_mm": -0.3803003360919614,
-    "inplane_mm": 0.3803006907784203
+    "inplane_mm": 0.3803006907784203,
+    "extreme": {
+     "t": 6.00851361,
+     "posterior_mm": -0.3878131166985698,
+     "inplane_mm": 0.387813488791949,
+     "n_states": 259
+    }
    },
    "extension": {
     "t": 6.99384277,
+    "t_nearest_state": 6.99384277,
     "u_mm": [
      -0.6434335361482323,
      -0.002877896325192976,
      0.4780268333912187
     ],
     "posterior_mm": 0.6434335361482323,
-    "inplane_mm": 0.6434399721244222
+    "inplane_mm": 0.6434399721244222,
+    "extreme": {
+     "t": 7.01120355,
+     "posterior_mm": 0.648050700962414,
+     "inplane_mm": 0.6480569645773305,
+     "n_states": 40
+    }
    }
   },
   {
    "flexion": {
     "t": 7.99998031,
+    "t_nearest_state": 7.99998031,
     "u_mm": [
      0.2091749972524511,
      2.7190221988941947e-05,
      0.08525517415924669
     ],
     "posterior_mm": -0.2091749972524511,
-    "inplane_mm": 0.20917499901965123
+    "inplane_mm": 0.20917499901965123,
+    "extreme": {
+     "t": 8.00894489,
+     "posterior_mm": -0.21464239641084676,
+     "inplane_mm": 0.21464239727617598,
+     "n_states": 178
+    }
    },
    "extension": {
     "t": 8.99527989,
+    "t_nearest_state": 8.99527989,
     "u_mm": [
      -0.8055518683927222,
      -0.0029841214089573534,
      0.4607750363953343
     ],
     "posterior_mm": 0.8055518683927222,
-    "inplane_mm": 0.8055573956283866
+    "inplane_mm": 0.8055573956283866,
+    "extreme": {
+     "t": 8.99527989,
+     "posterior_mm": 0.8055518683927222,
+     "inplane_mm": 0.8055573956283866,
+     "n_states": 31
+    }
    }
   }
  ],
  "posterior_increment_per_cycle_mm": [
-  -0.033374596533188736,
-  0.12267964053924667,
-  0.16827209784006758
+  -0.033304332150480814,
+  0.12233432396308438,
+  0.16854715003352194
  ],
+ "steady_state": {
+  "at_extension_peak": {
+   "state": "ratcheting",
+   "values": [
+    0.5116352640742002,
+    0.648050700962414,
+    0.8055518683927222
+   ],
+   "changes": [
+    0.13641543688821378,
+    0.15750116743030818
+   ],
+   "noise_mm": 0.03,
+   "last_ratio": 1.1545699740665947,
+   "total_drift_mm": 0.29391660431852196,
+   "drift_over_noise": 9.797220143950732
+  },
+  "at_neutral": {
+   "state": "ratcheting",
+   "values": [
+    -0.033304332150480814,
+    0.08902999181260357,
+    0.2575771418461255
+   ],
+   "changes": [
+    0.12233432396308438,
+    0.16854715003352194
+   ],
+   "noise_mm": 0.01,
+   "last_ratio": 1.3777584620027226,
+   "total_drift_mm": 0.29088147399660635,
+   "drift_over_noise": 29.088147399660635
+  },
+  "at_extension_peak_nearest_state": {
+   "state": "ratcheting",
+   "values": [
+    0.5116352640742002,
+    0.6434335361482323,
+    0.8055518683927222
+   ],
+   "changes": [
+    0.13179827207403205,
+    0.1621183322444899
+   ],
+   "noise_mm": 0.03,
+   "last_ratio": 1.2300489960401517,
+   "total_drift_mm": 0.29391660431852196,
+   "drift_over_noise": 9.797220143950732
+  },
+  "noise_peak_mm": 0.03,
+  "noise_neutral_mm": 0.01,
+  "shrink": 0.7,
+  "read_out": "extension peak = extreme posterior translation within +-0.25 s of the peak time; neutral = linear interpolation at the return to neutral",
+  "noise_basis": "p124 time-step check 2026-11-22 (window_dt 0.001 vs production stepping vs penalty x2 vs full Newton, same checkpoint)",
+  "principle": "PI 2026-11-22: a design that reaches a steady state under repeated motion is safe for any motion inside the limits; one that moves further with every cycle is not"
+ },
  "ratcheting": true,
  "rule": "ratcheting = cycle-3 posterior increment >= cycle-2 increment and > 0.005 mm (proposal)",
  "max_inplane_mm": 0.8055573956283866

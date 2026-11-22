@@ -38,6 +38,35 @@
   null,
   null
  ],
+ "steady_state": {
+  "at_extension_peak": {
+   "state": null,
+   "values": [],
+   "changes": [],
+   "noise_mm": 0.03,
+   "note": "fewer than 3 cycles"
+  },
+  "at_neutral": {
+   "state": null,
+   "values": [],
+   "changes": [],
+   "noise_mm": 0.01,
+   "note": "fewer than 3 cycles"
+  },
+  "at_extension_peak_nearest_state": {
+   "state": null,
+   "values": [],
+   "changes": [],
+   "noise_mm": 0.03,
+   "note": "fewer than 3 cycles"
+  },
+  "noise_peak_mm": 0.03,
+  "noise_neutral_mm": 0.01,
+  "shrink": 0.7,
+  "read_out": "extension peak = extreme posterior translation within +-0.25 s of the peak time; neutral = linear interpolation at the return to neutral",
+  "noise_basis": "p124 time-step check 2026-11-22 (window_dt 0.001 vs production stepping vs penalty x2 vs full Newton, same checkpoint)",
+  "principle": "PI 2026-11-22: a design that reaches a steady state under repeated motion is safe for any motion inside the limits; one that moves further with every cycle is not"
+ },
  "ratcheting": null,
  "rule": "ratcheting = cycle-3 posterior increment >= cycle-2 increment and > 0.005 mm (proposal)",
  "max_inplane_mm": null
